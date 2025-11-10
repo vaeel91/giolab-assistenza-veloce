@@ -19,7 +19,7 @@ const Header = () => {
     { label: "Home", href: "#hero" },
     { label: "Servizi", href: "#servizi" },
     { label: "Chi Siamo", href: "#chi-siamo" },
-    { label: "Recensioni", href: "#testimonianze" },
+    { label: "Testimonianze", href: "#testimonianze" },
     { label: "FAQ", href: "#faq" },
     { label: "Dove Siamo", href: "#dove-siamo" },
     { label: "Contatti", href: "#contatti" },

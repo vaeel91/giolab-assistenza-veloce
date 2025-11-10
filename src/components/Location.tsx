@@ -7,7 +7,7 @@ const Location = () => {
   const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.8406487877!2d9.000000000000000!3d39.283333333333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12e73440c7e6cf27%3A0x9a0e0c0c0c0c0c0c!2sVia%20Carmine%2C%2020A%2C%2009032%20Assemini%20CA!5e0!3m2!1sit!2sit!4v1234567890123!5m2!1sit!2sit";
 
   const handleGetDirections = () => {
-    window.open(`https://maps.google.com/?q=Via+Carmine+20A+Assemini+CA`, "_blank");
+    window.open(`https://maps.google.com/?q=Via+Carmine+20A+Assemini+CA`, "_blank", "noopener,noreferrer");
   };
 
   return (

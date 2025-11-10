@@ -7,7 +7,7 @@ const Contact = () => {
   const whatsappMessage = encodeURIComponent("Ciao! Vorrei richiedere informazioni sui vostri servizi.");
 
   const handleWhatsApp = () => {
-    window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank");
+    window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank", "noopener,noreferrer");
   };
 
   const contactInfo = [
@@ -15,7 +15,7 @@ const Contact = () => {
       icon: MapPin,
       title: "Dove Siamo",
       content: "Via Carmine 20A, Assemini (CA)",
-      action: () => window.open("https://maps.google.com/?q=Via+Carmine+20A+Assemini+CA", "_blank"),
+      action: () => window.open("https://maps.google.com/?q=Via+Carmine+20A+Assemini+CA", "_blank", "noopener,noreferrer"),
     },
     {
       icon: Phone,
@@ -89,7 +89,7 @@ const Contact = () => {
               variant="outline"
               size="lg"
               className="rounded-full border-2"
-              onClick={() => window.open("https://instagram.com/giolab_iphonefix", "_blank")}
+              onClick={() => window.open("https://instagram.com/giolab_iphonefix", "_blank", "noopener,noreferrer")}
             >
               <Instagram className="h-5 w-5" />
             </Button>
@@ -97,7 +97,7 @@ const Contact = () => {
               variant="outline"
               size="lg"
               className="rounded-full border-2"
-              onClick={() => window.open("https://facebook.com/giolab", "_blank")}
+              onClick={() => window.open("https://facebook.com/giolab", "_blank", "noopener,noreferrer")}
             >
               <Facebook className="h-5 w-5" />
             </Button>

@@ -5,7 +5,7 @@ const Gallery = () => {
   const instagramHandle = "giolab_iphonefix";
 
   const handleInstagramClick = () => {
-    window.open(`https://instagram.com/${instagramHandle}`, "_blank");
+    window.open(`https://instagram.com/${instagramHandle}`, "_blank", "noopener,noreferrer");
   };
 
   return (

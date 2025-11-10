@@ -7,7 +7,7 @@ const Hero = () => {
   const whatsappMessage = encodeURIComponent("Ciao! Vorrei richiedere informazioni sui vostri servizi.");
 
   const handleWhatsApp = () => {
-    window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank");
+    window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank", "noopener,noreferrer");
   };
 
   const handleCall = () => {
@@ -65,7 +65,7 @@ const Hero = () => {
           {/* Trust badges */}
           <div className="grid grid-cols-3 gap-4 md:gap-8 pt-12 max-w-3xl mx-auto animate-fade-in-up delay-400">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-giolab-blue">6+</div>
+              <div className="text-3xl md:text-4xl font-bold text-giolab-blue">10+</div>
               <div className="text-sm md:text-base text-muted-foreground mt-1">Anni di esperienza</div>
             </div>
             <div className="text-center">
