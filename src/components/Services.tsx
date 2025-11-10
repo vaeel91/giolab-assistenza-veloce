@@ -43,6 +43,14 @@ const Services = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Soluzioni complete per ogni esigenza tecnologica con garanzia e professionalità
           </p>
+          <a 
+            href="https://instagram.com/giolab_iphonefix" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block mt-4 text-giolab-blue hover:underline font-medium"
+          >
+            Guarda i nostri lavori
+          </a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
