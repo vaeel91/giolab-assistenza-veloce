@@ -47,6 +47,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        giolab: {
+          blue: "hsl(var(--giolab-blue))",
+          "blue-light": "hsl(var(--giolab-blue-light))",
+          "blue-dark": "hsl(var(--giolab-blue-dark))",
+          gray: "hsl(var(--giolab-gray))",
+          dark: "hsl(var(--giolab-dark))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
