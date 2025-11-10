@@ -7,6 +7,7 @@ import FAQ from "@/components/FAQ";
 import Location from "@/components/Location";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -28,6 +29,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <Header />
       <Hero />
       <Services />
       <About />

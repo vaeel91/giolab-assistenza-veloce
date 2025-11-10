@@ -36,7 +36,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="recensioni" className="py-20 bg-gradient-to-b from-giolab-gray to-background">
+    <section id="testimonianze" className="py-20 bg-gradient-to-b from-giolab-gray to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Cosa Dicono i Nostri Clienti</h2>
