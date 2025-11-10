@@ -26,7 +26,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Logo */}
           <div className="flex justify-center mb-8 animate-fade-in">
-            <img src={giolabLogo} alt="Giolab" className="h-20 md:h-28 w-auto" />
+            <img src={giolabLogo} alt="Giolab" className="h-32 md:h-48 lg:h-56 w-auto" />
           </div>
 
           {/* Main heading */}
