@@ -1,36 +1,70 @@
-import { Smartphone, Laptop, Gamepad2, Battery, HardDrive, Wrench } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 const services = [
   {
-    icon: Smartphone,
+    emoji: "📱",
     title: "Riparazione Smartphone",
     description: "Display, batterie, fotocamere e componenti. Riparazioni rapide anche in 1 ora con ricambi certificati.",
   },
   {
-    icon: Laptop,
-    title: "Assistenza PC",
-    description: "Riparazione hardware e software, upgrade componenti, pulizia e manutenzione professionale.",
+    emoji: "💻",
+    title: "Assistenza PC e Notebook",
+    description: "Riparazioni hardware e software, upgrade SSD o RAM, pulizia interna e ottimizzazione completa.",
   },
   {
-    icon: Gamepad2,
+    emoji: "🎮",
     title: "Riparazione Console",
-    description: "PlayStation, Xbox, Nintendo Switch. Risolviamo ogni problema hardware e software.",
+    description: "PlayStation, Xbox e Nintendo Switch. Risolviamo problemi hardware e software con ricambi originali.",
   },
   {
-    icon: Battery,
+    emoji: "🔋",
     title: "Batterie Maggiorate iPhone",
-    description: "Sostituzione con batterie di capacità superiore. Più autonomia per il tuo iPhone.",
+    description: "Sostituzione con batterie di capacità superiore. Più autonomia e prestazioni per il tuo iPhone.",
   },
   {
-    icon: HardDrive,
+    emoji: "💾",
     title: "Recupero Dati",
-    description: "Recuperiamo i tuoi dati da dispositivi danneggiati. Foto, documenti e file importanti al sicuro.",
+    description: "Recuperiamo foto, video e documenti da smartphone, hard disk o SSD danneggiati. Privacy garantita.",
   },
   {
-    icon: Wrench,
-    title: "Micro-saldature",
-    description: "Riparazioni avanzate di schede madri e componenti elettronici con tecnologia professionale.",
+    emoji: "🧠",
+    title: "Micro-saldature e Riparazioni Avanzate",
+    description: "Interventi su schede madri e circuiti elettronici. Riparazioni di corti, danni da liquidi e chip guasti.",
+  },
+  {
+    emoji: "⚙️",
+    title: "Sostituzione Vetro Posteriore iPhone",
+    description: "Ripariamo il retro in vetro del tuo iPhone con risultati perfetti, senza cambiare la scocca completa.",
+  },
+  {
+    emoji: "🧹",
+    title: "Pulizia e Manutenzione Interna",
+    description: "Rimuoviamo polvere e ossidazioni da smartphone e PC per migliorare prestazioni e raffreddamento.",
+  },
+  {
+    emoji: "📦",
+    title: "Telefono di Cortesia",
+    description: "Non restare mai senza telefono: dispositivi di cortesia disponibili durante la riparazione.",
+  },
+  {
+    emoji: "🛡️",
+    title: "Protezione Schermo e Accessori",
+    description: "Pellicole in vetro, cover, cavi e caricabatterie di qualità per proteggere e completare il tuo dispositivo.",
+  },
+  {
+    emoji: "☁️",
+    title: "Configurazione e Trasferimento Dati",
+    description: "Impostiamo il tuo nuovo smartphone o PC e trasferiamo tutti i tuoi dati in modo sicuro.",
+  },
+  {
+    emoji: "🔍",
+    title: "Diagnosi e Preventivo Rapido",
+    description: "Controllo tecnico immediato e preventivo chiaro prima di qualsiasi intervento.",
+  },
+  {
+    emoji: "🔧",
+    title: "Servizi per Centri Assistenza (B2B)",
+    description: "Rigenerazione display, micro-saldature conto terzi e fornitura di ricambi professionali.",
   },
 ];
 
@@ -61,7 +95,7 @@ const Services = () => {
             >
               <CardHeader>
                 <div className="w-14 h-14 rounded-xl bg-giolab-blue/10 flex items-center justify-center mb-4 group-hover:bg-giolab-blue group-hover:scale-110 transition-all duration-300">
-                  <service.icon className="h-7 w-7 text-giolab-blue group-hover:text-white transition-colors duration-300" />
+                  <span className="text-3xl">{service.emoji}</span>
                 </div>
                 <CardTitle className="text-xl">{service.title}</CardTitle>
               </CardHeader>
