@@ -1,26 +1,24 @@
-import { Award, Clock, Shield, Users } from "lucide-react";
-
 const About = () => {
   const features = [
     {
-      icon: Award,
+      emoji: "🧰",
       title: "Esperienza",
-      description: "Oltre 6 anni nel settore dell'assistenza tecnica",
+      description: "Oltre 10 anni di esperienza nel settore dell'assistenza tecnica e delle micro-riparazioni elettroniche. Ogni intervento è frutto di competenza e precisione maturata sul campo.",
     },
     {
-      icon: Shield,
+      emoji: "🛡️",
       title: "Affidabilità",
-      description: "Garanzia fino a 12 mesi su ogni riparazione",
+      description: "Utilizziamo solo ricambi certificati e garantiamo ogni riparazione fino a 12 mesi. Trasparenza e fiducia sono alla base di ogni lavoro che consegniamo.",
     },
     {
-      icon: Clock,
+      emoji: "⚡",
       title: "Rapidità",
-      description: "Riparazioni anche in 1 ora per i casi urgenti",
+      description: "Riparazioni rapide anche in 1 ora per i casi urgenti. Ottimizziamo i tempi senza mai rinunciare alla qualità e all'accuratezza del risultato finale.",
     },
     {
-      icon: Users,
+      emoji: "🎓",
       title: "Professionalità",
-      description: "Tecnici certificati con formazione continua e corsi di aggiornamento per acquisire competenze avanzate e offrire servizi esclusivi",
+      description: "Partecipiamo costantemente a corsi di aggiornamento e specializzazione per offrire riparazioni sempre più evolute e fuori dall'ordinario. Restiamo al passo con le nuove tecnologie per darti sempre il meglio.",
     },
   ];
 
@@ -36,18 +34,18 @@ const About = () => {
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 <strong className="text-foreground">Giolab</strong> è guidato da{" "}
-                <strong className="text-giolab-blue">Stefano Giordano</strong>, professionista con oltre 6 anni di
+                <strong className="text-giolab-blue">Stefano Giordano</strong>, professionista con oltre 10 anni di
                 esperienza nel settore dell'assistenza e riparazione di dispositivi elettronici.
+                Da sempre investiamo nella formazione continua, partecipando periodicamente a corsi di aggiornamento per acquisire e consolidare nuove competenze tecniche. Questo ci permette di distinguerci e offrire riparazioni evolute, complesse e fuori dall'ordinario, che molti centri non sono in grado di gestire.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                La nostra missione è fornire servizi di riparazione di altissima qualità, utilizzando esclusivamente
-                ricambi certificati e tecniche professionali. Ogni intervento viene eseguito con cura e precisione,
-                garantendo risultati duraturi.
+                La nostra missione è fornire un servizio di assistenza preciso, trasparente e di altissima qualità, utilizzando esclusivamente
+                ricambi certificati e tecniche professionali. Ogni intervento viene eseguito con cura artigianale e attenzione al dettaglio,
+                per garantire risultati affidabili e duraturi.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Ci distinguiamo per la trasparenza, la rapidità e l'attenzione al cliente. Offriamo preventivi gratuiti
-                e dettagliati, tempi di riparazione rapidi e la possibilità di un telefono di cortesia durante
-                l'intervento.
+                Ci contraddistinguono rapidità, competenza e attenzione al cliente: offriamo preventivi chiari,
+                tempi di riparazione brevi e la possibilità di un telefono di cortesia durante l'intervento, per non lasciarti mai senza connessione.
               </p>
             </div>
 
@@ -59,7 +57,7 @@ const About = () => {
                   className="p-6 rounded-2xl bg-gradient-to-br from-giolab-gray to-white border border-border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg"
                 >
                   <div className="w-12 h-12 rounded-xl bg-giolab-blue/10 flex items-center justify-center mb-4">
-                    <feature.icon className="h-6 w-6 text-giolab-blue" />
+                    <span className="text-2xl">{feature.emoji}</span>
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-2">{feature.title}</h3>
                   <p className="text-sm text-muted-foreground">{feature.description}</p>
