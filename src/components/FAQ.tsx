@@ -54,6 +54,10 @@ const FAQ = () => {
     {
       question: "E se il dispositivo si danneggia durante la riparazione?",
       answer: "Lavoriamo con la massima cura e strumenti professionali, ma in caso di eventuale danno imputabile al laboratorio, ci assumiamo la piena responsabilità e troviamo una soluzione immediata e trasparente per il cliente."
+    },
+    {
+      question: "Quanto è rischioso sostituire lo schermo da un tecnico non qualificato o con parti economiche?",
+      answer: "Alta probabilità di problemi: componenti di bassa qualità possono avere colori scadenti, touch irregolare, o incompatibilità con sensori. Tecnica inadeguata può danneggiare il modulo TrueDepth o la scheda madre.\n\nConsiglio: affidati a tecnici esperti e richiedi ricambi certificati; evita soluzioni \"fai da te\" per preservare tutte le funzionalità."
     }
   ];
 
