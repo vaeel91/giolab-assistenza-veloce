@@ -21,7 +21,7 @@ const FAQ = () => {
     },
     {
       question: "Quanto tempo richiede una riparazione?",
-      answer: "Dipende dal tipo di intervento:\n\n• Riparazioni rapide (display, batteria, porta di ricarica) → in 1 ora circa.\n\n• Riparazioni più complesse (scheda madre, data recovery, diagnostica avanzata) → da 1 a 5 giorni lavorativi.\n\nComunichiamo sempre una stima chiara e aggiorniamo il cliente in caso di variazioni."
+      answer: "Dipende dal tipo di intervento:\n\n• Riparazioni rapide (display, batteria, porta di ricarica) → da 30 minuti a circa 1 ora.\n\n• Riparazioni più complesse (scheda madre, data recovery, diagnostica avanzata) → da 1 a 5 giorni lavorativi.\n\nComunichiamo sempre una stima chiara e aggiorniamo il cliente in caso di variazioni."
     },
     {
       question: "Quanto costa la riparazione?",
