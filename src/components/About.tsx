@@ -20,7 +20,7 @@ const About = () => {
     {
       icon: Users,
       title: "Professionalità",
-      description: "Tecnici certificati e costantemente aggiornati",
+      description: "Tecnici certificati con formazione continua e corsi di aggiornamento per acquisire competenze avanzate e offrire servizi esclusivi",
     },
   ];
 
