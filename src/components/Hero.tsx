@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Smartphone, Phone } from "lucide-react";
+import { Smartphone, Phone, FileText } from "lucide-react";
 import giolabLogo from "@/assets/giolab-logo.png";
+import { QuoteRequestDialog } from "./QuoteRequestDialog";
 
 const Hero = () => {
   const whatsappNumber = "393406970686";
@@ -51,6 +52,16 @@ const Hero = () => {
               <Phone className="mr-2 h-5 w-5" />
               Prenota su WhatsApp
             </Button>
+            <QuoteRequestDialog>
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-base md:text-lg px-8 py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue"
+              >
+                <FileText className="mr-2 h-5 w-5" />
+                Richiedi Preventivo
+              </Button>
+            </QuoteRequestDialog>
             <Button
               variant="outline"
               size="lg"
