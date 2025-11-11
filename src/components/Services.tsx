@@ -3,8 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 const services = [
   {
     emoji: "📱",
-    title: "Riparazione Smartphone",
-    description: "Display, batterie, fotocamere e componenti. Riparazioni rapide anche in 1 ora con ricambi certificati.",
+    title: "Riparazione iPhone e Smartphone Assemini",
+    description: "Sostituzione display, batterie, fotocamere e componenti per iPhone, Samsung, Huawei, Xiaomi. Riparazioni rapide anche in 1 ora con ricambi certificati. Servizio disponibile ad Assemini e Cagliari.",
   },
   {
     emoji: "💻",
@@ -18,8 +18,8 @@ const services = [
   },
   {
     emoji: "🔋",
-    title: "Batterie Maggiorate iPhone",
-    description: "Sostituzione con batterie di capacità superiore. Più autonomia e prestazioni per il tuo iPhone.",
+    title: "Batterie Maggiorate iPhone Assemini",
+    description: "Sostituzione batteria iPhone con batterie di capacità superiore. Più autonomia e prestazioni per il tuo iPhone. Servizio specializzato disponibile ad Assemini e provincia di Cagliari.",
   },
   {
     emoji: "💾",
@@ -78,9 +78,9 @@ const Services = () => {
     <section id="servizi" className="py-20 bg-gradient-to-b from-background to-giolab-gray">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">I Nostri Servizi</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Servizi di Riparazione ad Assemini e Cagliari</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Soluzioni complete per ogni esigenza tecnologica con garanzia e professionalità
+            Riparazione professionale di iPhone, smartphone, PC, notebook e console. Interventi rapidi con ricambi certificati, garanzia 12 mesi e preventivo gratuito. Serviamo Assemini, Cagliari e tutta la provincia.
           </p>
           <a 
             href="https://instagram.com/giolab_iphonefix" 

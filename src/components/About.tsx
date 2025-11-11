@@ -30,17 +30,17 @@ const About = () => {
             {/* Left side - Content */}
             <div className="space-y-4 md:space-y-6">
               <h2 className="text-2xl md:text-5xl font-bold text-foreground">
-                Il tuo partner di fiducia per l'assistenza tecnologica
+                Centro Assistenza iPhone e Smartphone ad Assemini
               </h2>
               <p className="text-sm md:text-lg text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">Giolab</strong> è guidato da{" "}
-                <strong className="text-giolab-blue">Stefano Giordano</strong>, con oltre 10 anni di esperienza nell'assistenza e riparazione di dispositivi elettronici. Investiamo costantemente nella formazione tecnica per offrire riparazioni evolute e complesse che altri centri non gestiscono.
+                <strong className="text-foreground">Giolab Assemini</strong> è guidato da{" "}
+                <strong className="text-giolab-blue">Stefano Giordano</strong>, con oltre 10 anni di esperienza nella riparazione iPhone, smartphone, PC e console ad Assemini e Cagliari. Investiamo costantemente nella formazione tecnica per offrire riparazioni evolute e micro-saldature complesse che altri centri assistenza non gestiscono.
               </p>
               <p className="text-sm md:text-lg text-muted-foreground leading-relaxed">
-                Utilizziamo esclusivamente ricambi certificati e tecniche professionali, garantendo risultati affidabili e duraturi con cura artigianale in ogni intervento.
+                Presso il nostro centro assistenza di Via Carmine 20A ad Assemini utilizziamo esclusivamente ricambi certificati e tecniche professionali, garantendo risultati affidabili e duraturi con cura artigianale in ogni intervento di riparazione.
               </p>
               <p className="text-sm md:text-lg text-muted-foreground leading-relaxed">
-                Rapidità, competenza e attenzione al cliente: preventivi chiari, tempi brevi e telefono di cortesia disponibile.
+                Serviamo Assemini, Cagliari e tutta la provincia con rapidità, competenza e attenzione al cliente: preventivi gratuiti chiari, riparazioni in 1 ora per i casi urgenti e telefono di cortesia disponibile durante la riparazione.
               </p>
             </div>
 

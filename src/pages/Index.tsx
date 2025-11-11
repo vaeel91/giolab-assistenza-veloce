@@ -8,6 +8,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import SEOHead from "@/components/SEOHead";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -29,6 +30,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Riparazione iPhone Assemini | Smartphone, PC, Console | Giolab"
+        description="Centro assistenza specializzato ad Assemini e Cagliari. Riparazione iPhone, smartphone, PC e console. Riparazioni in 1 ora, garanzia 12 mesi, batterie maggiorate iPhone. Preventivo gratuito ☎️ 340 69 70 686"
+        keywords="riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza iPhone Cagliari, batteria maggiorata iPhone Assemini, riparazione vetro iPhone Assemini, micro-saldature Assemini, riparazione PC Assemini, assistenza console Assemini, centro assistenza iPhone Cagliari, rigenerazione vetro iPhone"
+      />
       <Header />
       <Hero />
       <Services />

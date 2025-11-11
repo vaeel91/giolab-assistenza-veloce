@@ -27,18 +27,22 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Logo */}
           <div className="flex justify-center mb-8 animate-fade-in">
-            <img src={giolabLogo} alt="Giolab" className="h-32 md:h-48 lg:h-56 w-auto" />
+            <img 
+              src={giolabLogo} 
+              alt="Giolab Assemini - Centro assistenza riparazione iPhone, smartphone, PC e console" 
+              className="h-32 md:h-48 lg:h-56 w-auto" 
+            />
           </div>
 
           {/* Main heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight animate-fade-in-up">
-            Assistenza e vendita
-            <span className="block text-giolab-blue mt-2">Smartphone, PC e Console</span>
+            Riparazione iPhone e Smartphone ad Assemini
+            <span className="block text-giolab-blue mt-2">Assistenza PC, Notebook e Console</span>
           </h1>
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in-up delay-200">
-            Riparazioni professionali con garanzia fino a 12 mesi. Ricambi di alta qualità e preventivo gratuito.
+            Centro assistenza specializzato ad Assemini (CA) e Cagliari. Riparazioni rapide anche in 1 ora con garanzia 12 mesi. Ricambi certificati e preventivo gratuito.
           </p>
 
           {/* CTA buttons */}
