@@ -241,7 +241,7 @@ ${data.message}`;
               name="phone"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Telefono (opzionale)</FormLabel>
+                  <FormLabel>Telefono (Necessario per ricontatto su Whatsapp)</FormLabel>
                   <FormControl>
                     <Input placeholder="340 123 4567" {...field} />
                   </FormControl>
