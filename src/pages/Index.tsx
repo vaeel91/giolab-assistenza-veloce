@@ -93,6 +93,34 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
+    // Converti scroll verticale della rotellina in scroll orizzontale
+    const handleWheel = (e: WheelEvent) => {
+      const container = containerRef.current;
+      if (!container) return;
+      
+      // Previeni lo scroll verticale predefinito
+      e.preventDefault();
+      
+      // Converti deltaY in scroll orizzontale
+      container.scrollBy({
+        left: e.deltaY,
+        behavior: 'auto' // Usa 'auto' per movimento fluido senza smooth (che creerebbe lag)
+      });
+    };
+
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener("wheel", handleWheel, { passive: false });
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener("wheel", handleWheel);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     // Improved touch gesture handlers with dead zones on screen edges
     const DEAD_ZONE_WIDTH = 50; // pixels from edge to ignore touches
     
