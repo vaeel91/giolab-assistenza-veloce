@@ -98,15 +98,15 @@ const Services = () => {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-0.5 md:gap-6 max-w-7xl mx-auto">
           {services.map((service, index) => {
             const card = (
-              <Card className="border-2 hover:border-giolab-blue transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group cursor-pointer">
+              <Card className="h-full flex flex-col border-2 hover:border-giolab-blue transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group cursor-pointer">
                 <CardHeader className="p-4 md:p-6">
                   <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-giolab-blue/10 flex items-center justify-center mb-2 md:mb-4 group-hover:bg-giolab-blue group-hover:scale-110 transition-all duration-300">
                     <span className="text-2xl md:text-3xl">{service.emoji}</span>
                   </div>
                   <CardTitle className="text-sm md:text-xl leading-tight">{service.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="p-4 pt-0 md:p-6 md:pt-0">
-                  <CardDescription className="text-xs md:text-base leading-snug">{service.description}</CardDescription>
+                <CardContent className="flex-1 p-4 pt-0 md:p-6 md:pt-0">
+                  <CardDescription className="text-xs md:text-base leading-snug line-clamp-4">{service.description}</CardDescription>
                 </CardContent>
               </Card>
             );
