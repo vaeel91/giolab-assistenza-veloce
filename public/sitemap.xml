@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://giolab.lovable.app/</loc>
-    <lastmod>2025-01-16</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,7 +12,7 @@
   <!-- Servizi Section -->
   <url>
     <loc>https://giolab.lovable.app/#servizi</loc>
-    <lastmod>2025-01-16</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -20,7 +20,7 @@
   <!-- Chi Siamo Section -->
   <url>
     <loc>https://giolab.lovable.app/#chi-siamo</loc>
-    <lastmod>2025-01-16</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -28,7 +28,7 @@
   <!-- Testimonianze Section -->
   <url>
     <loc>https://giolab.lovable.app/#testimonianze</loc>
-    <lastmod>2025-01-16</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -36,7 +36,7 @@
   <!-- FAQ Section -->
   <url>
     <loc>https://giolab.lovable.app/#faq</loc>
-    <lastmod>2025-01-16</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -44,7 +44,7 @@
   <!-- Dove Siamo Section -->
   <url>
     <loc>https://giolab.lovable.app/#dove-siamo</loc>
-    <lastmod>2025-01-16</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -52,9 +52,152 @@
   <!-- Contatti Section -->
   <url>
     <loc>https://giolab.lovable.app/#contatti</loc>
+    <lastmod>2025-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Index -->
+  <url>
+    <loc>https://giolab.lovable.app/blog</loc>
+    <lastmod>2025-01-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://giolab.lovable.app/blog/microsaldature-scheda-madre</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://giolab.lovable.app/blog/recupero-dati-iphone-rotto</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://giolab.lovable.app/blog/perche-face-id-smette-funzionare</loc>
+    <lastmod>2025-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://giolab.lovable.app/blog/cosa-fare-iphone-caduto-schermo-crepato</loc>
     <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://giolab.lovable.app/blog/come-capire-batteria-iphone-da-sostituire</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://giolab.lovable.app/blog/vantaggi-batteria-maggiorata-iphone</loc>
+    <lastmod>2025-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://giolab.lovable.app/blog/riparazione-iphone-1-ora-giolab</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://giolab.lovable.app/blog/rigenerazione-vetro-iphone</loc>
+    <lastmod>2025-01-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://giolab.lovable.app/blog/conviene-riparare-iphone-vecchio</loc>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://giolab.lovable.app/blog/come-capire-problema-scheda-madre</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://giolab.lovable.app/blog/riparazione-console-assemini</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://giolab.lovable.app/blog/come-evitare-batteria-iphone-rovini</loc>
+    <lastmod>2025-01-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://giolab.lovable.app/blog/qualita-ricambi-durata-riparazione</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://giolab.lovable.app/blog/errori-post-sostituzione-display</loc>
+    <lastmod>2025-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://giolab.lovable.app/blog/servizio-telefono-cortesia</loc>
+    <lastmod>2025-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://giolab.lovable.app/blog/display-originali-vs-compatibili</loc>
+    <lastmod>2025-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://giolab.lovable.app/blog/trasferimento-dati-android-iphone</loc>
+    <lastmod>2025-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Service Pages -->
+  <url>
+    <loc>https://giolab.lovable.app/servizi/riparazione-display-iphone-assemini</loc>
+    <lastmod>2025-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://giolab.lovable.app/servizi/batteria-maggiorata-iphone</loc>
+    <lastmod>2025-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
 </urlset>
