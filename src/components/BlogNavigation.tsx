@@ -16,8 +16,10 @@ const navigationItems = [
 
 const BlogNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const location = useLocation();
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const transitionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [isPulsing, setIsPulsing] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(false);
 
@@ -104,17 +106,25 @@ const BlogNavigation = () => {
   };
 
   const handleMouseLeave = () => {
-    // Imposta un ritardo di 200ms prima di chiudere
+    // Imposta un ritardo di 300ms prima di chiudere
     closeTimeoutRef.current = setTimeout(() => {
       setIsOpen(false);
-    }, 200);
+      // Ritarda l'applicazione di pointer-events-none fino a dopo l'animazione di chiusura (400ms)
+      setIsTransitioning(true);
+      transitionTimeoutRef.current = setTimeout(() => {
+        setIsTransitioning(false);
+      }, 400);
+    }, 300);
   };
 
-  // Pulisci il timeout quando il componente viene smontato
+  // Pulisci i timeout quando il componente viene smontato
   useEffect(() => {
     return () => {
       if (closeTimeoutRef.current) {
         clearTimeout(closeTimeoutRef.current);
+      }
+      if (transitionTimeoutRef.current) {
+        clearTimeout(transitionTimeoutRef.current);
       }
     };
   }, []);
@@ -138,7 +148,7 @@ const BlogNavigation = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         className={`fixed top-24 right-4 z-40 bg-background/70 backdrop-blur-lg border border-border rounded-xl transition-all duration-400 ${
-          isOpen ? "translate-x-0 opacity-100 pointer-events-auto shadow-[0_0_30px_rgba(59,130,246,0.5)]" : "translate-x-[calc(100%+1rem)] opacity-0 pointer-events-none shadow-2xl"
+          isOpen || isTransitioning ? "translate-x-0 opacity-100 pointer-events-auto shadow-[0_0_30px_rgba(59,130,246,0.5)]" : "translate-x-[calc(100%+1rem)] opacity-0 pointer-events-none shadow-2xl"
         }`}
         style={{ 
           marginTop: '60px',
@@ -171,16 +181,20 @@ const BlogNavigation = () => {
                 key={item.id}
                 to={item.link}
                 onClick={() => {
+                  if (closeTimeoutRef.current) {
+                    clearTimeout(closeTimeoutRef.current);
+                  }
                   setIsOpen(false);
+                  setIsTransitioning(true);
+                  transitionTimeoutRef.current = setTimeout(() => {
+                    setIsTransitioning(false);
+                  }, 400);
                 }}
-                className={`flex items-center gap-2 px-2 py-1.5 rounded-lg transition-all duration-200 group text-xs relative ${
+                className={`flex items-center gap-2 px-2 py-1.5 rounded-lg transition-all duration-200 group text-xs relative pointer-events-auto ${
                   isActive
                     ? "bg-giolab-blue text-white font-semibold shadow-sm"
                     : "hover:bg-giolab-blue/10 hover:text-giolab-blue"
                 }`}
-                style={{
-                  animation: isOpen ? `fade-in 0.3s ease-out ${index * 50}ms forwards` : 'none'
-                }}
               >
                 {/* Indicatore visivo compatto per la sezione attiva */}
                 {isActive && (
