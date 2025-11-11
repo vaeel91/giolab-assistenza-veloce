@@ -1,14 +1,55 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Calendar, Clock, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { blogArticles } from "@/data/blogArticles";
+import { useState, useRef, useEffect } from "react";
 
 const BlogPreview = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
   
   // Duplica gli articoli per creare l'effetto infinito
   const duplicatedArticles = [...blogArticles, ...blogArticles];
+
+  const handleScroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 320; // Larghezza card + gap
+      const currentScroll = scrollContainerRef.current.scrollLeft;
+      const newScroll = direction === 'left' 
+        ? currentScroll - scrollAmount 
+        : currentScroll + scrollAmount;
+      
+      scrollContainerRef.current.scrollTo({
+        left: newScroll,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (!scrollContainerRef.current || isPaused) return;
+
+    const container = scrollContainerRef.current;
+    let animationId: number;
+    
+    const scroll = () => {
+      if (container && !isPaused) {
+        container.scrollLeft += 1;
+        
+        // Reset quando raggiunge metà (primo set di articoli completato)
+        if (container.scrollLeft >= container.scrollWidth / 2) {
+          container.scrollLeft = 0;
+        }
+      }
+      animationId = requestAnimationFrame(scroll);
+    };
+    
+    animationId = requestAnimationFrame(scroll);
+    
+    return () => cancelAnimationFrame(animationId);
+  }, [isPaused]);
   
   return (
     <section id="blog" ref={ref} className="py-2 md:py-3 pt-20 md:pt-24 bg-background h-screen flex flex-col justify-center overflow-hidden">
@@ -23,9 +64,25 @@ const BlogPreview = () => {
         </div>
 
         {/* Contenitore con overflow nascosto */}
-        <div className="relative max-w-6xl mx-auto flex-1 overflow-hidden">
-          {/* Track dello scorrimento infinito */}
-          <div className="flex gap-2 md:gap-3 animate-scroll-infinite hover:pause">
+        <div className="relative max-w-6xl mx-auto flex-1">
+          {/* Freccia sinistra */}
+          <button
+            onClick={() => handleScroll('left')}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-background/90 hover:bg-background border-2 border-giolab-blue text-giolab-blue rounded-full p-2 shadow-lg transition-all hover:scale-110"
+            aria-label="Scorri a sinistra"
+          >
+            <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+          </button>
+
+          {/* Track dello scorrimento */}
+          <div 
+            ref={scrollContainerRef}
+            className="overflow-x-auto scrollbar-hide"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            <div className="flex gap-2 md:gap-3 px-12">
             {duplicatedArticles.map((article, index) => {
             
             return (
@@ -62,7 +119,17 @@ const BlogPreview = () => {
               </Link>
             );
           })}
+            </div>
           </div>
+
+          {/* Freccia destra */}
+          <button
+            onClick={() => handleScroll('right')}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-background/90 hover:bg-background border-2 border-giolab-blue text-giolab-blue rounded-full p-2 shadow-lg transition-all hover:scale-110"
+            aria-label="Scorri a destra"
+          >
+            <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+          </button>
         </div>
         
         {/* Bottone per vedere tutti gli articoli */}
@@ -75,6 +142,11 @@ const BlogPreview = () => {
           </Link>
         </div>
       </div>
+      <style>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </section>
   );
 };
