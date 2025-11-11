@@ -47,23 +47,23 @@ const Hero = () => {
           </p>
 
           {/* CTA buttons */}
-          <div className="flex flex-row gap-1 sm:gap-4 justify-center items-center pt-3 md:pt-4 px-2 sm:px-0 animate-fade-in-up delay-300">
+          <div className="flex flex-row gap-2 sm:gap-4 justify-center items-center pt-3 md:pt-4 px-2 sm:px-0 animate-fade-in-up delay-300">
             <Button
               variant="hero"
               size="lg"
               onClick={handleWhatsApp}
-              className="text-xs sm:text-sm md:text-base lg:text-lg px-1.5 py-2.5 sm:px-4 sm:py-4 md:px-8 md:py-6 h-auto"
+              className="text-xs sm:text-sm md:text-base lg:text-lg px-3 py-3 sm:px-4 sm:py-4 md:px-8 md:py-6 h-auto flex items-center justify-center"
             >
-              <Phone className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
+              <Phone className="mr-1.5 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
               <span className="hidden xs:inline sm:inline">Prenota su </span>WhatsApp
             </Button>
             <QuoteRequestDialog>
               <Button
                 variant="outline"
                 size="lg"
-                className="text-xs sm:text-sm md:text-base lg:text-lg px-1.5 py-2.5 sm:px-4 sm:py-4 md:px-8 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue"
+                className="text-xs sm:text-sm md:text-base lg:text-lg px-3 py-3 sm:px-4 sm:py-4 md:px-8 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue flex items-center justify-center"
               >
-                <FileText className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
+                <FileText className="mr-1.5 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
                 <span className="hidden xs:inline sm:inline">Richiedi </span>Preventivo
               </Button>
             </QuoteRequestDialog>
@@ -71,9 +71,9 @@ const Hero = () => {
               variant="outline"
               size="lg"
               onClick={handleCall}
-              className="text-xs sm:text-sm md:text-base lg:text-lg px-1.5 py-2.5 sm:px-4 sm:py-4 md:px-8 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue"
+              className="text-xs sm:text-sm md:text-base lg:text-lg px-3 py-3 sm:px-4 sm:py-4 md:px-8 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue flex items-center justify-center"
             >
-              <Smartphone className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
+              <Smartphone className="mr-1.5 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
               Chiama<span className="hidden xs:inline sm:inline"> Ora</span>
             </Button>
           </div>

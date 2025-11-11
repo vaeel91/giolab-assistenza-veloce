@@ -73,9 +73,9 @@ const Contact = () => {
               size="sm"
               variant="outline"
               onClick={handleWhatsApp}
-              className="bg-white text-giolab-blue hover:bg-white/90 border-0 text-xs md:text-sm px-4 py-2 h-auto font-semibold"
+              className="bg-white text-giolab-blue hover:bg-white/90 border-0 text-xs md:text-sm px-4 py-2 h-auto font-semibold flex items-center justify-center"
             >
-              <MessageCircle className="mr-1 md:mr-2 h-3 w-3 md:h-4 md:w-4" />
+              <MessageCircle className="mr-1.5 md:mr-2 h-3 w-3 md:h-4 md:w-4 flex-shrink-0" />
               Contattaci su WhatsApp
             </Button>
           </div>
