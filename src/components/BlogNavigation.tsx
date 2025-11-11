@@ -22,7 +22,16 @@ const BlogNavigation = () => {
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const transitionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [isPulsing, setIsPulsing] = useState(false);
-  const [soundEnabled, setSoundEnabled] = useState(false);
+  const [soundEnabled, setSoundEnabled] = useState(() => {
+    // Leggi la preferenza dal localStorage
+    const saved = localStorage.getItem('navigationSoundEnabled');
+    return saved ? JSON.parse(saved) : false;
+  });
+
+  // Salva la preferenza quando cambia
+  useEffect(() => {
+    localStorage.setItem('navigationSoundEnabled', JSON.stringify(soundEnabled));
+  }, [soundEnabled]);
 
   // Determina quale sezione è attiva in base alla route corrente
   const getActiveSection = () => {
