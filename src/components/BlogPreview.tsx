@@ -12,21 +12,18 @@ const BlogPreview = () => {
   const displayedArticles = blogArticles.slice(0, 9);
   
   return (
-    <section id="blog" ref={ref} className="py-4 md:py-6 bg-background h-full flex flex-col justify-center">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-3 md:mb-4">
-          <h2 className="text-xl md:text-3xl font-bold text-foreground mb-2">
+    <section id="blog" ref={ref} className="py-2 md:py-3 bg-background h-screen flex flex-col justify-center overflow-hidden">
+      <div className="container mx-auto px-4 h-full flex flex-col justify-center">
+        <div className="text-center mb-2">
+          <h2 className="text-lg md:text-2xl font-bold text-foreground mb-1">
             Articoli e Guide
           </h2>
-          <p className="text-xs md:text-sm text-muted-foreground mb-2">
-            Consigli utili per la cura dei tuoi dispositivi
-          </p>
           <p className="text-xs text-muted-foreground">
-            Mostrando {displayedArticles.length} di {blogArticles.length} articoli disponibili
+            {displayedArticles.length} di {blogArticles.length} articoli
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-1.5 md:gap-2 max-w-6xl mx-auto flex-1 overflow-hidden">
           {displayedArticles.map((article, index) => {
             const delay = index * 100;
             
@@ -38,35 +35,31 @@ const BlogPreview = () => {
                   }`}
                   style={{ animationDelay: `${delay}ms` }}
                 >
-                  <CardHeader className="p-3 md:p-4 pb-2 md:pb-3">
-                    <div className="flex items-start gap-3 mb-2">
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-giolab-blue/10 to-giolab-blue/5 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform text-xl md:text-2xl">
+                  <CardHeader className="p-2 md:p-3 pb-1 md:pb-2">
+                    <div className="flex items-start gap-2 mb-1">
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue/5 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform text-base md:text-xl">
                         {article.image}
                       </div>
-                      <span className="px-2 py-0.5 bg-giolab-blue/10 text-giolab-blue rounded text-xs font-medium">
+                      <span className="px-1.5 py-0.5 bg-giolab-blue/10 text-giolab-blue rounded text-[10px] font-medium">
                         {article.category}
                       </span>
                     </div>
-                    <CardTitle className="text-sm md:text-base leading-tight line-clamp-2 group-hover:text-giolab-blue transition-colors">
+                    <CardTitle className="text-xs md:text-sm leading-tight line-clamp-2 group-hover:text-giolab-blue transition-colors">
                       {article.title}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="p-3 pt-0 md:p-4 md:pt-0">
-                    <p className="text-xs md:text-sm text-muted-foreground mb-2 md:mb-3 line-clamp-2">
+                  <CardContent className="p-2 pt-0 md:p-3 md:pt-0">
+                    <p className="text-[10px] md:text-xs text-muted-foreground mb-1 md:mb-2 line-clamp-2">
                       {article.description}
                     </p>
-                    <div className="flex items-center justify-between text-xs text-muted-foreground">
-                      <div className="flex items-center gap-2 md:gap-3">
-                        <span className="flex items-center gap-1">
-                          <Calendar className="h-3 w-3" />
-                          {new Date(article.date).toLocaleDateString('it-IT', { day: 'numeric', month: 'long' })}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Clock className="h-3 w-3" />
+                    <div className="flex items-center justify-between text-[9px] md:text-xs text-muted-foreground">
+                      <div className="flex items-center gap-1 md:gap-2">
+                        <span className="flex items-center gap-0.5">
+                          <Clock className="h-2.5 w-2.5" />
                           {article.readTime}
                         </span>
                       </div>
-                      <ArrowRight className="h-3 w-3 md:h-4 md:w-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="h-2.5 w-2.5 md:h-3 md:w-3 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </CardContent>
                 </Card>
@@ -75,19 +68,16 @@ const BlogPreview = () => {
           })}
         </div>
 
-        <div className="text-center mt-4 md:mt-6 space-y-2">
+        <div className="text-center mt-2 md:mt-3">
           <Link to="/blog">
             <Button 
-              size="lg" 
-              className="bg-giolab-blue hover:bg-giolab-blue/90 text-white font-semibold text-sm md:text-base px-6 md:px-8 py-3 md:py-4 shadow-lg hover:shadow-xl transition-all"
+              size="sm" 
+              className="bg-giolab-blue hover:bg-giolab-blue/90 text-white font-semibold text-xs md:text-sm px-4 md:px-6 py-2 md:py-3 shadow-lg hover:shadow-xl transition-all"
             >
               Scopri tutti i {blogArticles.length} articoli
-              <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+              <ArrowRight className="ml-1.5 h-3 w-3 md:h-4 md:w-4" />
             </Button>
           </Link>
-          <p className="text-xs text-muted-foreground">
-            Guide complete, tutorial e consigli per i tuoi dispositivi
-          </p>
         </div>
       </div>
     </section>
