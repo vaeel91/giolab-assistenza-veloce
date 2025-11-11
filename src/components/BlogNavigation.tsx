@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home, Wrench, Users, Star, BookOpen, MapPin, HelpCircle, Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -17,6 +17,7 @@ const navigationItems = [
 const BlogNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Determina quale sezione è attiva in base alla route corrente
   const getActiveSection = () => {
@@ -54,12 +55,38 @@ const BlogNavigation = () => {
     setActiveSection(getActiveSection());
   }, [location.pathname, location.hash]);
 
+  // Gestione apertura/chiusura con ritardo
+  const handleMouseEnter = () => {
+    // Cancella qualsiasi timeout di chiusura pendente
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    // Imposta un ritardo di 200ms prima di chiudere
+    closeTimeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 200);
+  };
+
+  // Pulisci il timeout quando il componente viene smontato
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
+
   return (
     <>
       {/* Compact Floating Toggle Button */}
       <Button
         onClick={() => setIsOpen(!isOpen)}
-        onMouseEnter={() => setIsOpen(true)}
+        onMouseEnter={handleMouseEnter}
         className="fixed top-24 right-4 z-50 bg-giolab-blue hover:bg-giolab-blue-dark text-white shadow-lg rounded-full w-12 h-12 p-0 flex items-center justify-center transition-all duration-300 hover:scale-110"
         aria-label="Menu navigazione"
       >
@@ -68,8 +95,8 @@ const BlogNavigation = () => {
 
       {/* Compact Navigation Menu */}
       <nav
-        onMouseEnter={() => setIsOpen(true)}
-        onMouseLeave={() => setIsOpen(false)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         className={`fixed top-24 right-4 z-40 bg-background/80 backdrop-blur-md border border-border rounded-xl shadow-xl transition-all duration-300 origin-top-right ${
           isOpen ? "scale-100 opacity-100 pointer-events-auto" : "scale-95 opacity-0 pointer-events-none"
         }`}
