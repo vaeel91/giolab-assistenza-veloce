@@ -9,6 +9,8 @@ import Blog from "./pages/Blog";
 import RiparazioneDisplayIPhone from "./pages/services/RiparazioneDisplayIPhone";
 import BatteriaMaggiorataIPhone from "./pages/services/BatteriaMaggiorataIPhone";
 import ComeCabireBatteriaIPhone from "./pages/blog/ComeCabireBatteriaIPhone";
+import VantaggiBatteriaMaggiorataIPhone from "./pages/blog/VantaggiBatteriaMaggiorataIPhone";
+import RiparazioneIPhone1OraGiolab from "./pages/blog/RiparazioneIPhone1OraGiolab";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +24,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/come-capire-batteria-iphone-da-sostituire" element={<ComeCabireBatteriaIPhone />} />
+          <Route path="/blog/vantaggi-batteria-maggiorata-iphone" element={<VantaggiBatteriaMaggiorataIPhone />} />
+          <Route path="/blog/riparazione-iphone-1-ora-giolab" element={<RiparazioneIPhone1OraGiolab />} />
           <Route path="/servizi/riparazione-display-iphone-assemini" element={<RiparazioneDisplayIPhone />} />
           <Route path="/servizi/batteria-maggiorata-iphone" element={<BatteriaMaggiorataIPhone />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
