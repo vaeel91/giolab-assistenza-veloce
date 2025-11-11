@@ -177,15 +177,19 @@ const BlogNavigation = () => {
             const isActive = activeSection === item.id;
             const IconComponent = item.icon;
             
-            const handleNavigation = (e: React.MouseEvent) => {
-              e.preventDefault();
-              
+            const handleNavigation = () => {
               if (closeTimeoutRef.current) {
                 clearTimeout(closeTimeoutRef.current);
               }
               
-              // Naviga verso il link
-              navigate(item.link);
+              // Estrai l'id dalla sezione (es. da "/#hero" estrai "hero")
+              const sectionId = item.link.replace("/#", "");
+              const element = document.getElementById(sectionId);
+              
+              if (element) {
+                // Scroll alla sezione usando scrollIntoView con smooth behavior
+                element.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+              }
               
               setIsOpen(false);
               setIsTransitioning(true);
@@ -198,7 +202,7 @@ const BlogNavigation = () => {
               <button
                 key={item.id}
                 onClick={handleNavigation}
-                className={`flex items-center gap-2 px-2 py-1.5 rounded-lg transition-all duration-200 group text-xs relative pointer-events-auto w-full ${
+                className={`flex items-center gap-2 px-2 py-1.5 rounded-lg transition-all duration-200 group text-xs relative pointer-events-auto w-full text-left ${
                   isActive
                     ? "bg-giolab-blue text-white font-semibold shadow-sm"
                     : "hover:bg-giolab-blue/10 hover:text-giolab-blue"
