@@ -39,6 +39,7 @@ const Header = () => {
               src={giolabIcon}
               alt="Giolab"
               className="h-8 md:h-10 w-auto transition-transform group-hover:scale-110"
+              loading="lazy"
             />
             <span className="text-xl md:text-2xl font-bold text-foreground">
               Giolab

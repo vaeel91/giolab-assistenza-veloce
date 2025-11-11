@@ -11,7 +11,12 @@ const Footer = () => {
           {/* Brand section */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <img src={giolabIcon} alt="Giolab" className="h-16 w-16" />
+              <img 
+                src={giolabIcon} 
+                alt="Giolab" 
+                className="h-16 w-16"
+                loading="lazy"
+              />
               <span className="text-2xl font-bold">Giolab</span>
             </div>
             <p className="text-white/70 text-sm">
