@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Smartphone, Phone, FileText } from "lucide-react";
+import { Phone, FileText, BookOpen } from "lucide-react";
 import giolabLogo from "@/assets/giolab-logo.png";
 import { QuoteRequestDialog } from "./QuoteRequestDialog";
 
@@ -9,10 +9,6 @@ const Hero = () => {
 
   const handleWhatsApp = () => {
     window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank", "noopener,noreferrer");
-  };
-
-  const handleCall = () => {
-    window.location.href = "tel:+393406970686";
   };
 
   return (
@@ -70,11 +66,16 @@ const Hero = () => {
             <Button
               variant="outline"
               size="lg"
-              onClick={handleCall}
+              onClick={() => {
+                const element = document.getElementById('blog');
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+                }
+              }}
               className="text-xs sm:text-sm md:text-base lg:text-lg px-3 py-3 sm:px-4 sm:py-4 md:px-8 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue flex items-center justify-center"
             >
-              <Smartphone className="mr-1.5 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
-              Chiama<span className="hidden xs:inline sm:inline"> Ora</span>
+              <BookOpen className="mr-1.5 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
+              <span className="hidden xs:inline sm:inline">Leggi </span>Articoli
             </Button>
           </div>
 
