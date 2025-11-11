@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
+import RelatedArticles from "@/components/RelatedArticles";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -278,6 +279,12 @@ const QualitaRicambiDurataRiparazione = () => {
                 </Button>
               </Link>
             </div>
+
+            <RelatedArticles 
+              currentSlug="qualita-ricambi-durata-riparazione"
+              category="Tecnologia"
+              maxArticles={3}
+            />
           </div>
         </div>
       </article>
