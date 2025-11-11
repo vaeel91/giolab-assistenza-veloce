@@ -106,7 +106,7 @@ const BlogNavigation = () => {
         }}
       >
         <div className="p-2 space-y-1 w-48">
-          {navigationItems.map((item) => {
+          {navigationItems.map((item, index) => {
             const isActive = activeSection === item.id;
             const IconComponent = item.icon;
             
@@ -119,7 +119,11 @@ const BlogNavigation = () => {
                   isActive
                     ? "bg-giolab-blue text-white font-semibold shadow-sm"
                     : "hover:bg-giolab-blue/10 hover:text-giolab-blue"
-                }`}
+                } ${isOpen ? "animate-fade-in" : "opacity-0"}`}
+                style={{
+                  animationDelay: isOpen ? `${index * 50}ms` : '0ms',
+                  animationFillMode: 'forwards'
+                }}
               >
                 {/* Indicatore visivo compatto per la sezione attiva */}
                 {isActive && (
