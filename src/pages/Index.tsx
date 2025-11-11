@@ -84,7 +84,7 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
-    // Enhanced touch gesture handlers with visual feedback
+    // Enhanced touch gesture handlers with magnetic snap
     const handleTouchStart = (e: TouchEvent) => {
       const container = containerRef.current;
       if (!container) return;
@@ -92,7 +92,6 @@ const Index = () => {
       touchStartX.current = e.touches[0].clientX;
       initialScrollLeft.current = container.scrollLeft;
       isDragging.current = true;
-      container.style.scrollSnapType = "none";
     };
 
     const handleTouchMove = (e: TouchEvent) => {
@@ -103,9 +102,8 @@ const Index = () => {
       touchEndX.current = e.touches[0].clientX;
       const diff = touchStartX.current - touchEndX.current;
       
-      // Apply smooth scrolling during drag with resistance
-      const resistance = 0.8; // Makes dragging feel more natural
-      container.scrollLeft = initialScrollLeft.current + (diff * resistance);
+      // Let native scroll snap handle the scrolling
+      // Just track the movement for swipe detection
     };
 
     const handleTouchEnd = () => {
@@ -113,11 +111,10 @@ const Index = () => {
       if (!container) return;
 
       isDragging.current = false;
-      container.style.scrollSnapType = "x mandatory";
-
-      const swipeThreshold = 50;
+      const swipeThreshold = 75; // Increased for more deliberate swipes
       const diff = touchStartX.current - touchEndX.current;
 
+      // Snap to nearest section after swipe
       if (Math.abs(diff) > swipeThreshold) {
         const currentIndex = sectionsRef.current.findIndex(
           (section) => section?.id === visibleSection
@@ -138,17 +135,8 @@ const Index = () => {
             block: "nearest",
           });
         }
-      } else {
-        // Snap back to current section if swipe wasn't strong enough
-        const currentSection = sectionsRef.current.find(
-          (section) => section?.id === visibleSection
-        );
-        currentSection?.scrollIntoView({
-          behavior: "smooth",
-          inline: "start",
-          block: "nearest",
-        });
       }
+      // If swipe wasn't strong enough, native snap will handle centering
 
       touchStartX.current = 0;
       touchEndX.current = 0;
@@ -178,53 +166,53 @@ const Index = () => {
         keywords="riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza iPhone Cagliari, batteria maggiorata iPhone Assemini, riparazione vetro iPhone Assemini, micro-saldature Assemini, riparazione PC Assemini, assistenza console Assemini, centro assistenza iPhone Cagliari, rigenerazione vetro iPhone"
       />
       <Header />
-      <div ref={containerRef} className="h-screen overflow-x-auto overflow-y-hidden snap-x snap-mandatory flex scroll-smooth touch-pan-x">
-        <div
+      <div ref={containerRef} className="h-screen overflow-x-auto overflow-y-hidden snap-x snap-mandatory flex scroll-smooth touch-pan-x overscroll-x-contain">
+        <div 
           id="hero" 
           ref={(el) => (sectionsRef.current[0] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto section-animate"
+          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
           <Hero />
         </div>
         <div 
           id="servizi" 
           ref={(el) => (sectionsRef.current[1] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto section-animate"
+          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
           <Services />
         </div>
         <div 
           id="chi-siamo" 
           ref={(el) => (sectionsRef.current[2] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto section-animate"
+          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
           <About />
         </div>
         <div 
           id="testimonianze" 
           ref={(el) => (sectionsRef.current[3] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto section-animate"
+          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
           <Testimonials />
         </div>
         <div 
           id="dove-siamo" 
           ref={(el) => (sectionsRef.current[4] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto section-animate"
+          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
           <SocialAndLocation />
         </div>
         <div 
           id="faq" 
           ref={(el) => (sectionsRef.current[5] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto section-animate"
+          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
           <FAQ />
         </div>
         <div 
           id="contatti" 
           ref={(el) => (sectionsRef.current[6] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto section-animate"
+          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
           <Contact />
           <Footer />
@@ -272,6 +260,19 @@ const Index = () => {
         
         .scroll-smooth {
           scroll-behavior: smooth;
+        }
+        
+        /* Magnetic snap effect */
+        .snap-always {
+          scroll-snap-stop: always;
+        }
+        
+        /* Enhanced scroll snap */
+        @supports (scroll-snap-type: x mandatory) {
+          .snap-x {
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+          }
         }
         
         /* Parallax effect on scroll */
