@@ -84,14 +84,34 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
-    // Improved touch gesture handlers - distinguish between tap and swipe
+    // Improved touch gesture handlers with dead zones on screen edges
+    const DEAD_ZONE_WIDTH = 50; // pixels from edge to ignore touches
+    
     const handleTouchStart = (e: TouchEvent) => {
-      touchStartX.current = e.touches[0].clientX;
-      touchEndX.current = e.touches[0].clientX; // Initialize end position
+      const touchX = e.touches[0].clientX;
+      const touchY = e.touches[0].clientY;
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+      
+      // Ignore touches in dead zones (near edges)
+      if (
+        touchX < DEAD_ZONE_WIDTH || // Left edge
+        touchX > screenWidth - DEAD_ZONE_WIDTH || // Right edge
+        touchY < DEAD_ZONE_WIDTH || // Top edge
+        touchY > screenHeight - DEAD_ZONE_WIDTH // Bottom edge
+      ) {
+        isDragging.current = false;
+        return;
+      }
+      
+      touchStartX.current = touchX;
+      touchEndX.current = touchX; // Initialize end position
       isDragging.current = false; // Don't set dragging until movement detected
     };
 
     const handleTouchMove = (e: TouchEvent) => {
+      if (touchStartX.current === 0) return; // Touch started in dead zone
+      
       touchEndX.current = e.touches[0].clientX;
       const diff = Math.abs(touchStartX.current - touchEndX.current);
       
@@ -102,6 +122,12 @@ const Index = () => {
     };
 
     const handleTouchEnd = () => {
+      if (touchStartX.current === 0) {
+        // Touch was in dead zone, do nothing
+        isDragging.current = false;
+        return;
+      }
+      
       const swipeThreshold = 75; // Increased threshold for more deliberate swipes
       const diff = touchStartX.current - touchEndX.current;
 
