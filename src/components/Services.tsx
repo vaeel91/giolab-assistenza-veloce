@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Smartphone, Laptop, Gamepad2, BatteryCharging, Cpu, Sparkles, Package, Wind, Shield, Wrench, Cloud, Search, Building2 } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const services = [
   {
@@ -100,8 +101,10 @@ const services = [
 ];
 
 const Services = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   return (
-    <section id="servizi" className="py-4 md:py-6 bg-gradient-to-b from-background to-giolab-gray h-full flex flex-col justify-center">
+    <section id="servizi" ref={ref} className="py-4 md:py-6 bg-gradient-to-b from-background to-giolab-gray h-full flex flex-col justify-center">
       <div className="container mx-auto px-4">
         <div className="text-center mb-4 md:mb-6">
           <h2 className="text-xl md:text-3xl font-bold text-foreground mb-2">Servizi di Riparazione</h2>
@@ -113,9 +116,15 @@ const Services = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-3 max-w-7xl mx-auto">
           {services.slice(0, 6).map((service, index) => {
             const IconComponent = service.icon;
+            const delay = index * 100;
             
             const card = (
-              <Card className="h-full flex flex-col border hover:border-giolab-blue transition-all duration-300 group cursor-pointer">
+              <Card 
+                className={`h-full flex flex-col border hover:border-giolab-blue transition-all duration-300 group cursor-pointer ${
+                  isVisible ? 'animate-fade-in' : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${delay}ms` }}
+              >
                 <CardHeader className="p-2 md:p-3">
                   <div className={`w-8 h-8 md:w-10 md:h-10 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue/5 flex items-center justify-center mb-1 md:mb-2 group-hover:scale-110 transition-transform`}>
                     <IconComponent className={`h-4 w-4 md:h-5 md:w-5 ${service.iconColor}`} />

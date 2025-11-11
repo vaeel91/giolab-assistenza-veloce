@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight, Sparkles, Zap, BatteryCharging } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const blogArticles = [
   {
@@ -40,8 +41,10 @@ const blogArticles = [
 ];
 
 const BlogPreview = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   return (
-    <section id="blog" className="py-4 md:py-6 bg-background h-full flex flex-col justify-center">
+    <section id="blog" ref={ref} className="py-4 md:py-6 bg-background h-full flex flex-col justify-center">
       <div className="container mx-auto px-4">
         <div className="text-center mb-3 md:mb-4">
           <h2 className="text-xl md:text-3xl font-bold text-foreground mb-2">
@@ -53,12 +56,18 @@ const BlogPreview = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3 max-w-7xl mx-auto">
-          {blogArticles.map((article) => {
+          {blogArticles.map((article, index) => {
             const IconComponent = article.icon;
+            const delay = index * 100;
             
             return (
               <Link key={article.id} to={article.link} className="group">
-                <Card className="h-full border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg">
+                <Card 
+                  className={`h-full border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg ${
+                    isVisible ? 'animate-fade-in' : 'opacity-0'
+                  }`}
+                  style={{ animationDelay: `${delay}ms` }}
+                >
                   <CardHeader className="p-3 md:p-4 pb-2 md:pb-3">
                     <div className="flex items-start gap-3 mb-2">
                       <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-giolab-blue/10 to-giolab-blue/5 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}>

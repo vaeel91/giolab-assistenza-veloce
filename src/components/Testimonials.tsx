@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const testimonials = [
   {
@@ -35,16 +36,26 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const { ref, isVisible } = useScrollAnimation();
+  
   return (
-    <section id="testimonianze" className="py-4 md:py-6 bg-gradient-to-b from-giolab-gray to-background h-full flex flex-col justify-center">
+    <section id="testimonianze" ref={ref} className="py-4 md:py-6 bg-gradient-to-b from-giolab-gray to-background h-full flex flex-col justify-center">
       <div className="container mx-auto px-4">
         <div className="text-center mb-3 md:mb-4">
           <h2 className="text-xl md:text-3xl font-bold text-foreground mb-2">Cosa Dicono i Clienti</h2>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 max-w-7xl mx-auto">
-          {testimonials.slice(0, 3).map((testimonial, index) => (
-            <Card key={index} className="border hover:border-giolab-blue transition-all duration-300">
+          {testimonials.slice(0, 3).map((testimonial, index) => {
+            const delay = index * 100;
+            return (
+              <Card 
+                key={index} 
+                className={`border hover:border-giolab-blue transition-all duration-300 ${
+                  isVisible ? 'animate-fade-in' : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${delay}ms` }}
+              >
               <CardContent className="pt-3 p-2 md:p-4">
                 <div className="flex items-center gap-0.5 mb-2">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -55,7 +66,8 @@ const Testimonials = () => {
                 <p className="text-xs font-semibold text-foreground">— {testimonial.name}</p>
               </CardContent>
             </Card>
-          ))}
+            );
+          })}
         </div>
 
         {/* Trust indicator */}
