@@ -36,36 +36,33 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="testimonianze" className="py-20 bg-gradient-to-b from-giolab-gray to-background">
+    <section id="testimonianze" className="py-4 md:py-6 bg-gradient-to-b from-giolab-gray to-background h-full flex flex-col justify-center">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Cosa Dicono i Nostri Clienti</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            La soddisfazione dei clienti è la nostra priorità
-          </p>
+        <div className="text-center mb-3 md:mb-4">
+          <h2 className="text-xl md:text-3xl font-bold text-foreground mb-2">Cosa Dicono i Clienti</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="border-2 hover:border-giolab-blue transition-all duration-300 hover:shadow-lg">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-1 mb-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 max-w-7xl mx-auto">
+          {testimonials.slice(0, 3).map((testimonial, index) => (
+            <Card key={index} className="border hover:border-giolab-blue transition-all duration-300">
+              <CardContent className="pt-3 p-2 md:p-4">
+                <div className="flex items-center gap-0.5 mb-2">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-giolab-blue text-giolab-blue" />
+                    <Star key={i} className="h-3 w-3 md:h-4 md:w-4 fill-giolab-blue text-giolab-blue" />
                   ))}
                 </div>
-                <p className="text-muted-foreground mb-4 italic">"{testimonial.text}"</p>
-                <p className="font-semibold text-foreground">— {testimonial.name}</p>
+                <p className="text-xs md:text-sm text-muted-foreground mb-2 italic line-clamp-3">"{testimonial.text}"</p>
+                <p className="text-xs font-semibold text-foreground">— {testimonial.name}</p>
               </CardContent>
             </Card>
           ))}
         </div>
 
         {/* Trust indicator */}
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-giolab-blue/10 rounded-full">
-            <Star className="h-5 w-5 fill-giolab-blue text-giolab-blue" />
-            <span className="font-semibold text-foreground">4.9/5 valutazione media</span>
+        <div className="mt-3 md:mt-4 text-center">
+          <div className="inline-flex items-center gap-1 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-giolab-blue/10 rounded-full">
+            <Star className="h-3 w-3 md:h-4 md:w-4 fill-giolab-blue text-giolab-blue" />
+            <span className="text-xs md:text-sm font-semibold text-foreground">4.9/5 valutazione media</span>
           </div>
         </div>
       </div>

@@ -79,35 +79,27 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="servizi" className="py-20 bg-gradient-to-b from-background to-giolab-gray">
+    <section id="servizi" className="py-4 md:py-6 bg-gradient-to-b from-background to-giolab-gray h-full flex flex-col justify-center">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Servizi di Riparazione ad Assemini e Cagliari</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Riparazione professionale di iPhone, smartphone, PC, notebook e console. Interventi rapidi con ricambi certificati, garanzia 12 mesi e preventivo gratuito. Serviamo Assemini, Cagliari e tutta la provincia.
+        <div className="text-center mb-4 md:mb-6">
+          <h2 className="text-xl md:text-3xl font-bold text-foreground mb-2">Servizi di Riparazione</h2>
+          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
+            Riparazione professionale di iPhone, smartphone, PC e console. Garanzia 12 mesi.
           </p>
-          <a 
-            href="https://instagram.com/giolab_iphonefix" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-block mt-4 text-giolab-blue hover:underline font-medium"
-          >
-            Guarda i nostri lavori
-          </a>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-0.5 md:gap-6 max-w-7xl mx-auto">
-          {services.map((service, index) => {
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-3 max-w-7xl mx-auto">
+          {services.slice(0, 6).map((service, index) => {
             const card = (
-              <Card className="h-full flex flex-col border-2 hover:border-giolab-blue transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group cursor-pointer">
-                <CardHeader className="p-4 md:p-6">
-                  <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-giolab-blue/10 flex items-center justify-center mb-2 md:mb-4 group-hover:bg-giolab-blue group-hover:scale-110 transition-all duration-300">
-                    <span className="text-2xl md:text-3xl">{service.emoji}</span>
+              <Card className="h-full flex flex-col border hover:border-giolab-blue transition-all duration-300 group cursor-pointer">
+                <CardHeader className="p-2 md:p-3">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-giolab-blue/10 flex items-center justify-center mb-1 md:mb-2 group-hover:bg-giolab-blue transition-all duration-300">
+                    <span className="text-lg md:text-2xl">{service.emoji}</span>
                   </div>
-                  <CardTitle className="text-sm md:text-xl leading-tight">{service.title}</CardTitle>
+                  <CardTitle className="text-xs md:text-sm leading-tight line-clamp-2">{service.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="flex-1 p-4 pt-0 md:p-6 md:pt-0">
-                  <CardDescription className="text-xs md:text-base leading-snug line-clamp-4">{service.description}</CardDescription>
+                <CardContent className="flex-1 p-2 pt-0 md:p-3 md:pt-0">
+                  <CardDescription className="text-xs leading-snug line-clamp-2 hidden md:block">{service.description}</CardDescription>
                 </CardContent>
               </Card>
             );
@@ -125,18 +117,15 @@ const Services = () => {
         </div>
 
         {/* Additional features */}
-        <div className="mt-16 grid grid-cols-3 gap-0.5 md:gap-6 max-w-4xl mx-auto">
-          <div className="text-center p-3 md:p-6 rounded-xl bg-white/50 backdrop-blur border border-border">
-            <div className="text-giolab-blue font-bold text-sm md:text-xl mb-1 md:mb-2">✓ Garanzia 12 mesi</div>
-            <p className="text-xs md:text-sm text-muted-foreground">Su tutte le riparazioni</p>
+        <div className="mt-3 md:mt-4 grid grid-cols-3 gap-2 md:gap-3 max-w-4xl mx-auto">
+          <div className="text-center p-2 md:p-3 rounded-lg bg-white/50 backdrop-blur border border-border">
+            <div className="text-giolab-blue font-bold text-xs md:text-sm">✓ Garanzia 12 mesi</div>
           </div>
-          <div className="text-center p-3 md:p-6 rounded-xl bg-white/50 backdrop-blur border border-border">
-            <div className="text-giolab-blue font-bold text-sm md:text-xl mb-1 md:mb-2">✓ Ricambi Certificati</div>
-            <p className="text-xs md:text-sm text-muted-foreground">Alta qualità e testati</p>
+          <div className="text-center p-2 md:p-3 rounded-lg bg-white/50 backdrop-blur border border-border">
+            <div className="text-giolab-blue font-bold text-xs md:text-sm">✓ Ricambi Certificati</div>
           </div>
-          <div className="text-center p-3 md:p-6 rounded-xl bg-white/50 backdrop-blur border border-border">
-            <div className="text-giolab-blue font-bold text-sm md:text-xl mb-1 md:mb-2">✓ Preventivo Gratuito</div>
-            <p className="text-xs md:text-sm text-muted-foreground">Senza impegno</p>
+          <div className="text-center p-2 md:p-3 rounded-lg bg-white/50 backdrop-blur border border-border">
+            <div className="text-giolab-blue font-bold text-xs md:text-sm">✓ Preventivo Gratuito</div>
           </div>
         </div>
       </div>

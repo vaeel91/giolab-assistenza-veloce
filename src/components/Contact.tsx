@@ -38,68 +38,65 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contatti" className="py-20 bg-background">
+    <section id="contatti" className="py-4 md:py-6 bg-background h-full flex flex-col justify-center">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Contattaci</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Siamo qui per aiutarti. Richiedi un preventivo gratuito o prenota la tua riparazione
-          </p>
+        <div className="text-center mb-3 md:mb-4">
+          <h2 className="text-xl md:text-3xl font-bold text-foreground mb-2">Contattaci</h2>
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 mb-3 md:mb-4">
             {contactInfo.map((info, index) => (
               <Card
                 key={index}
-                className={`border-2 hover:border-giolab-blue transition-all duration-300 ${
-                  info.action ? "cursor-pointer hover:shadow-lg" : ""
+                className={`border hover:border-giolab-blue transition-all duration-300 ${
+                  info.action ? "cursor-pointer" : ""
                 }`}
                 onClick={info.action || undefined}
               >
-                <CardContent className="pt-6 text-center">
-                  <div className="w-12 h-12 rounded-xl bg-giolab-blue/10 flex items-center justify-center mx-auto mb-4">
-                    <info.icon className="h-6 w-6 text-giolab-blue" />
+                <CardContent className="pt-3 p-2 md:p-3 text-center">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-giolab-blue/10 flex items-center justify-center mx-auto mb-2">
+                    <info.icon className="h-4 w-4 md:h-5 md:w-5 text-giolab-blue" />
                   </div>
-                  <h3 className="font-bold text-foreground mb-2">{info.title}</h3>
-                  <p className="text-sm text-muted-foreground">{info.content}</p>
+                  <h3 className="text-xs md:text-sm font-bold text-foreground mb-1">{info.title}</h3>
+                  <p className="text-xs text-muted-foreground">{info.content}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
 
           {/* CTA section */}
-          <div className="bg-gradient-to-br from-giolab-blue to-giolab-blue-light rounded-3xl p-8 md:p-12 text-center text-white shadow-2xl">
-            <h3 className="text-2xl md:text-4xl font-bold mb-4">Prenota la tua riparazione oggi</h3>
-            <p className="text-lg mb-8 opacity-90">Preventivo gratuito e senza impegno in pochi minuti</p>
+          <div className="bg-gradient-to-br from-giolab-blue to-giolab-blue-light rounded-2xl p-4 md:p-6 text-center text-white shadow-xl">
+            <h3 className="text-base md:text-2xl font-bold mb-2">Prenota la tua riparazione</h3>
+            <p className="text-xs md:text-sm mb-3 md:mb-4 opacity-90">Preventivo gratuito e senza impegno</p>
             <Button
-              size="lg"
+              size="sm"
               variant="outline"
               onClick={handleWhatsApp}
-              className="bg-white text-giolab-blue hover:bg-white/90 border-0 text-lg px-8 py-6 h-auto font-semibold hover:scale-105 transition-transform"
+              className="bg-white text-giolab-blue hover:bg-white/90 border-0 text-xs md:text-sm px-4 py-2 h-auto font-semibold"
             >
-              <MessageCircle className="mr-2 h-5 w-5" />
+              <MessageCircle className="mr-1 md:mr-2 h-3 w-3 md:h-4 md:w-4" />
               Contattaci su WhatsApp
             </Button>
           </div>
 
           {/* Social links */}
-          <div className="mt-12 flex justify-center gap-4">
+          <div className="mt-3 md:mt-4 flex justify-center gap-2">
             <Button
               variant="outline"
-              size="lg"
-              className="rounded-full border-2"
+              size="sm"
+              className="rounded-full border"
               onClick={() => window.open("https://instagram.com/giolab_iphonefix", "_blank", "noopener,noreferrer")}
             >
-              <Instagram className="h-5 w-5" />
+              <Instagram className="h-3 w-3 md:h-4 md:w-4" />
             </Button>
             <Button
               variant="outline"
-              size="lg"
-              className="rounded-full border-2"
+              size="sm"
+              className="rounded-full border"
               onClick={() => window.open("https://facebook.com/giolab", "_blank", "noopener,noreferrer")}
             >
-              <Facebook className="h-5 w-5" />
+              <Facebook className="h-3 w-3 md:h-4 md:w-4" />
             </Button>
           </div>
         </div>
