@@ -14,7 +14,7 @@ const SEOHead = ({
   title = "Giolab Assemini | Riparazione iPhone, Smartphone, PC e Console",
   description = "Centro assistenza specializzato ad Assemini (CA). Riparazione smartphone, PC e console con garanzia 12 mesi. Riparazioni rapide anche in 1 ora. Preventivo gratuito.",
   keywords = "riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza PC Assemini, riparazione console Assemini",
-  ogImage = "https://lovable.dev/opengraph-image-p98pqg.png",
+  ogImage = typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
   ogType = "website",
   ogUrl = typeof window !== 'undefined' ? window.location.href : '',
   structuredData
