@@ -20,6 +20,21 @@ const Index = () => {
   const isDragging = useRef<boolean>(false);
   const initialScrollLeft = useRef<number>(0);
 
+  const sections = [
+    { id: "hero", label: "Home" },
+    { id: "servizi", label: "Servizi" },
+    { id: "chi-siamo", label: "Chi Siamo" },
+    { id: "testimonianze", label: "Testimonianze" },
+    { id: "dove-siamo", label: "Dove Siamo" },
+    { id: "faq", label: "FAQ" },
+    { id: "contatti", label: "Contatti" },
+  ];
+
+  const navigateToSection = (sectionId: string) => {
+    const section = sectionsRef.current.find((s) => s?.id === sectionId);
+    section?.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+  };
+
   useEffect(() => {
     // Smooth horizontal scroll for anchor links
     const handleSmoothScroll = (e: MouseEvent) => {
@@ -216,6 +231,30 @@ const Index = () => {
         </div>
       </div>
       <FloatingWhatsApp />
+      
+      {/* Navigation Indicators */}
+      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-40 flex gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-background/80 backdrop-blur-md rounded-full shadow-lg border border-border">
+        {sections.map((section) => (
+          <button
+            key={section.id}
+            onClick={() => navigateToSection(section.id)}
+            className="group relative flex items-center justify-center"
+            aria-label={`Vai a ${section.label}`}
+          >
+            <div
+              className={`transition-all duration-300 rounded-full ${
+                visibleSection === section.id
+                  ? "w-2.5 h-2.5 md:w-3 md:h-3 bg-giolab-blue shadow-lg shadow-giolab-blue/50"
+                  : "w-1.5 h-1.5 md:w-2 md:h-2 bg-muted-foreground/40 hover:bg-giolab-blue/60 hover:w-2 hover:h-2 md:hover:w-2.5 md:hover:h-2.5"
+              }`}
+            />
+            {/* Tooltip - only on desktop */}
+            <span className="hidden md:block absolute bottom-full mb-2 px-2 py-1 text-xs font-medium text-foreground bg-background border border-border rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+              {section.label}
+            </span>
+          </button>
+        ))}
+      </div>
       
       <style>{`
         .section-animate {
