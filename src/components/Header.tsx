@@ -29,7 +29,7 @@ const Header = () => {
       className="fixed top-0 left-0 right-0 z-50 bg-background shadow-lg transition-all duration-300"
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-24 md:h-32">
           {/* Logo */}
           <Link
             to="/"
@@ -38,7 +38,7 @@ const Header = () => {
             <img
               src={giolabIcon}
               alt="Giolab"
-              className="h-8 md:h-12 w-auto transition-transform group-hover:scale-110"
+              className="h-20 md:h-30 w-auto transition-transform group-hover:scale-110"
               loading="lazy"
             />
           </Link>
