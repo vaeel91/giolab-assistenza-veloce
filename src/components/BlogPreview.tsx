@@ -4,27 +4,16 @@ import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { blogArticles } from "@/data/blogArticles";
 import { useState, useRef, useEffect } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const BlogPreview = () => {
   const { ref, isVisible } = useScrollAnimation();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile();
   
   // Duplica gli articoli per creare l'effetto infinito
   const duplicatedArticles = [...blogArticles, ...blogArticles];
-
-  // Rileva se siamo su mobile
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   const handleScroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
@@ -97,14 +86,15 @@ const BlogPreview = () => {
           {/* Track dello scorrimento */}
           <div 
             ref={scrollContainerRef}
-            className="overflow-x-auto scrollbar-hide"
+            className="overflow-x-scroll scrollbar-hide relative z-10"
             style={{ 
               scrollbarWidth: 'none', 
               msOverflowStyle: 'none',
               WebkitOverflowScrolling: 'touch',
-              scrollSnapType: isMobile ? 'none' : 'x mandatory',
+              scrollSnapType: isMobile ? 'x mandatory' : 'x mandatory',
               scrollBehavior: 'smooth',
-              touchAction: 'pan-x'
+              touchAction: 'pan-x',
+              overscrollBehavior: 'contain'
             }}
             onMouseEnter={() => !isMobile && setIsPaused(true)}
             onMouseLeave={() => !isMobile && setIsPaused(false)}
@@ -117,7 +107,7 @@ const BlogPreview = () => {
                 key={`${article.slug}-${index}`} 
                 to={`/blog/${article.slug}`} 
                 className="group flex-shrink-0 w-[280px] md:w-80"
-                style={{ scrollSnapAlign: isMobile ? 'start' : 'center' }}
+                style={{ scrollSnapAlign: 'center' }}
               >
                 <Card className="h-full border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg bg-card">
                   <CardHeader className="p-2 md:p-3 pb-1 md:pb-2">
