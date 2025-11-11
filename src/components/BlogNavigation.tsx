@@ -161,8 +161,7 @@ const BlogNavigation = () => {
           isOpen || isTransitioning ? "translate-x-0 opacity-100 pointer-events-auto shadow-[0_0_30px_rgba(59,130,246,0.5)]" : "translate-x-[calc(100%+1rem)] opacity-0 pointer-events-none shadow-2xl"
         }`}
         style={{ 
-          marginTop: '60px',
-          transitionTimingFunction: isOpen ? 'cubic-bezier(0.68, -0.8, 0.265, 1.8)' : 'ease-out'
+          marginTop: '60px'
         }}
       >
         <div className="p-2 space-y-1 w-48">
