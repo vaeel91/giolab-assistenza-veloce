@@ -97,8 +97,8 @@ const BlogNavigation = () => {
       <nav
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className={`fixed top-24 right-4 z-40 bg-background/70 backdrop-blur-lg border border-border rounded-xl shadow-2xl transition-all duration-400 ${
-          isOpen ? "translate-x-0 opacity-100 pointer-events-auto" : "translate-x-[calc(100%+1rem)] opacity-0 pointer-events-none"
+        className={`fixed top-24 right-4 z-40 bg-background/70 backdrop-blur-lg border border-border rounded-xl transition-all duration-400 ${
+          isOpen ? "translate-x-0 opacity-100 pointer-events-auto shadow-[0_0_30px_rgba(59,130,246,0.5)]" : "translate-x-[calc(100%+1rem)] opacity-0 pointer-events-none shadow-2xl"
         }`}
         style={{ 
           marginTop: '60px',
