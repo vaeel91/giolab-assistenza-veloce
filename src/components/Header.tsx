@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Instagram, Facebook } from "lucide-react";
-import giolabIcon from "@/assets/giolab-icon.png";
+import giolabIcon from "@/assets/giolab-logo-optimized.webp";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 
