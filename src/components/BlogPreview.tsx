@@ -52,24 +52,24 @@ const BlogPreview = () => {
   }, [isPaused]);
   
   return (
-    <section id="blog" ref={ref} className="py-2 md:py-3 pt-20 md:pt-24 bg-background h-screen flex flex-col justify-center overflow-hidden">
-      <div className="container mx-auto px-4 h-full flex flex-col justify-center">
-        <div className="text-center mb-2">
-          <h2 className="text-lg md:text-2xl font-bold text-foreground mb-1">
+    <section id="blog" ref={ref} className="py-4 md:py-6 pt-20 md:pt-24 bg-background h-screen flex flex-col justify-center overflow-hidden">
+      <div className="container mx-auto px-4 h-full flex flex-col justify-center max-w-6xl">
+        <div className="text-center mb-3 md:mb-4">
+          <h2 className="text-xl md:text-2xl font-bold text-foreground mb-1">
             Articoli e Guide
           </h2>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs md:text-sm text-muted-foreground">
             {blogArticles.length} articoli disponibili
           </p>
         </div>
 
         {/* Contenitore con overflow nascosto */}
-        <div className="relative max-w-6xl mx-auto flex-1">
+        <div className="relative flex-shrink-0 mb-4">
           {/* Gradiente sfumato sinistro */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-20 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-20 pointer-events-none" />
           
           {/* Gradiente sfumato destro */}
-          <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-20 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-20 pointer-events-none" />
           
           {/* Freccia sinistra */}
           <button
@@ -83,17 +83,27 @@ const BlogPreview = () => {
           {/* Track dello scorrimento */}
           <div 
             ref={scrollContainerRef}
-            className="overflow-x-auto scrollbar-hide"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            className="overflow-x-auto scrollbar-hide scroll-smooth"
+            style={{ 
+              scrollbarWidth: 'none', 
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch',
+              scrollSnapType: 'x mandatory'
+            }}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            <div className="flex gap-2 md:gap-3 px-12">
+            <div className="flex gap-3 md:gap-4 px-12 md:px-16 py-2">
             {duplicatedArticles.map((article, index) => {
             
             return (
-              <Link key={`${article.slug}-${index}`} to={`/blog/${article.slug}`} className="group flex-shrink-0 w-64 md:w-80">
-                <Card className="h-full border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg">
+              <Link 
+                key={`${article.slug}-${index}`} 
+                to={`/blog/${article.slug}`} 
+                className="group flex-shrink-0 w-[280px] md:w-80"
+                style={{ scrollSnapAlign: 'center' }}
+              >
+                <Card className="h-full border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg bg-card">
                   <CardHeader className="p-2 md:p-3 pb-1 md:pb-2">
                     <div className="flex items-start gap-2 mb-1">
                       <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue/5 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform text-base md:text-xl">
@@ -138,12 +148,12 @@ const BlogPreview = () => {
           </button>
         </div>
         
-        {/* Bottone per vedere tutti gli articoli */}
-        <div className="text-center mt-3">
+        {/* Bottone per vedere tutti gli articoli - posizionato subito sotto le cards */}
+        <div className="text-center flex-shrink-0">
           <Link to="/blog">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-giolab-blue hover:bg-giolab-blue/90 text-white rounded-lg transition-all hover:shadow-lg text-xs md:text-sm font-semibold">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 bg-giolab-blue hover:bg-giolab-blue/90 text-white rounded-lg transition-all hover:shadow-lg text-sm md:text-base font-semibold">
               Scopri tutti i {blogArticles.length} articoli
-              <ArrowRight className="h-3 w-3 md:h-4 md:w-4" />
+              <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
             </div>
           </Link>
         </div>
