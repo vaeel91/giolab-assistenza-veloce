@@ -42,23 +42,23 @@ const Hero = () => {
           </p>
 
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6 animate-fade-in-up delay-300">
+          <div className="flex flex-row gap-2 justify-center items-center pt-6 animate-fade-in-up delay-300">
             <Button
               variant="hero"
               size="lg"
               onClick={handleWhatsApp}
-              className="text-base md:text-lg px-8 py-6 h-auto"
+              className="w-full sm:w-auto text-xs sm:text-sm md:text-base lg:text-lg px-2 py-3 sm:px-4 sm:py-4 md:px-8 md:py-6 h-auto"
             >
-              <Phone className="mr-2 h-5 w-5" />
+              <Phone className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
               Prenota su WhatsApp
             </Button>
             <QuoteRequestDialog>
               <Button
                 variant="outline"
                 size="lg"
-                className="text-base md:text-lg px-8 py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue"
+                className="w-full sm:w-auto text-xs sm:text-sm md:text-base lg:text-lg px-2 py-3 sm:px-4 sm:py-4 md:px-8 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue"
               >
-                <FileText className="mr-2 h-5 w-5" />
+                <FileText className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
                 Richiedi Preventivo
               </Button>
             </QuoteRequestDialog>
@@ -66,9 +66,9 @@ const Hero = () => {
               variant="outline"
               size="lg"
               onClick={handleCall}
-              className="text-base md:text-lg px-8 py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue"
+              className="w-full sm:w-auto text-xs sm:text-sm md:text-base lg:text-lg px-2 py-3 sm:px-4 sm:py-4 md:px-8 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue"
             >
-              <Smartphone className="mr-2 h-5 w-5" />
+              <Smartphone className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
               Chiama Ora
             </Button>
           </div>
