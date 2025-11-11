@@ -65,10 +65,16 @@ const BlogPreview = () => {
 
         {/* Contenitore con overflow nascosto */}
         <div className="relative max-w-6xl mx-auto flex-1">
+          {/* Gradiente sfumato sinistro */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-20 pointer-events-none" />
+          
+          {/* Gradiente sfumato destro */}
+          <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-20 pointer-events-none" />
+          
           {/* Freccia sinistra */}
           <button
             onClick={() => handleScroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-background/90 hover:bg-background border-2 border-giolab-blue text-giolab-blue rounded-full p-2 shadow-lg transition-all hover:scale-110"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-30 bg-background/95 hover:bg-background border-2 border-giolab-blue text-giolab-blue rounded-full p-2 shadow-lg transition-all hover:scale-110"
             aria-label="Scorri a sinistra"
           >
             <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
@@ -125,7 +131,7 @@ const BlogPreview = () => {
           {/* Freccia destra */}
           <button
             onClick={() => handleScroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-background/90 hover:bg-background border-2 border-giolab-blue text-giolab-blue rounded-full p-2 shadow-lg transition-all hover:scale-110"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-30 bg-background/95 hover:bg-background border-2 border-giolab-blue text-giolab-blue rounded-full p-2 shadow-lg transition-all hover:scale-110"
             aria-label="Scorri a destra"
           >
             <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
