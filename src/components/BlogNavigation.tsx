@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Home, Wrench, Users, Star, BookOpen, MapPin, HelpCircle, Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -16,6 +16,34 @@ const navigationItems = [
 
 const BlogNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  // Determina quale sezione è attiva in base alla route corrente
+  const getActiveSection = () => {
+    const path = location.pathname;
+    const hash = location.hash;
+
+    // Se siamo sulla homepage, guarda l'hash
+    if (path === "/" && hash) {
+      const sectionId = hash.replace("#", "");
+      return sectionId;
+    }
+
+    // Se siamo su una pagina blog, evidenzia "blog"
+    if (path.startsWith("/blog")) {
+      return "blog";
+    }
+
+    // Se siamo su una pagina servizi, evidenzia "servizi"
+    if (path.startsWith("/servizi")) {
+      return "servizi";
+    }
+
+    // Default: home
+    return "home";
+  };
+
+  const activeSection = getActiveSection();
 
   return (
     <>
@@ -38,17 +66,37 @@ const BlogNavigation = () => {
           <div className="text-xs font-semibold text-muted-foreground mb-2 px-2 hidden lg:block">
             Navigazione Rapida
           </div>
-          {navigationItems.map((item) => (
-            <Link
-              key={item.id}
-              to={item.link}
-              onClick={() => setIsOpen(false)}
-              className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-giolab-blue/10 hover:text-giolab-blue transition-all duration-200 group text-sm"
-            >
-              <item.icon className="h-4 w-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
-              <span className="font-medium">{item.label}</span>
-            </Link>
-          ))}
+          {navigationItems.map((item) => {
+            const isActive = activeSection === item.id;
+            const IconComponent = item.icon;
+            
+            return (
+              <Link
+                key={item.id}
+                to={item.link}
+                onClick={() => setIsOpen(false)}
+                className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 group text-sm relative ${
+                  isActive
+                    ? "bg-giolab-blue text-white font-semibold shadow-md"
+                    : "hover:bg-giolab-blue/10 hover:text-giolab-blue"
+                }`}
+              >
+                {/* Indicatore visivo per la sezione attiva */}
+                {isActive && (
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-white rounded-r-full" />
+                )}
+                <IconComponent className={`h-4 w-4 flex-shrink-0 transition-transform ${
+                  isActive ? "scale-110" : "group-hover:scale-110"
+                }`} />
+                <span className="font-medium">{item.label}</span>
+                {isActive && (
+                  <span className="ml-auto text-xs bg-white/20 px-2 py-0.5 rounded-full">
+                    Qui
+                  </span>
+                )}
+              </Link>
+            );
+          })}
         </div>
       </nav>
 
