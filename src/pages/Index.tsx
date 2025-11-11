@@ -14,6 +14,9 @@ import { useEffect, useRef, useState } from "react";
 const Index = () => {
   const [visibleSection, setVisibleSection] = useState<string>("hero");
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
 
   useEffect(() => {
     // Smooth horizontal scroll for anchor links
@@ -63,6 +66,65 @@ const Index = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // Touch gesture handlers
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartX.current = e.touches[0].clientX;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      touchEndX.current = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = () => {
+      const container = containerRef.current;
+      if (!container) return;
+
+      const swipeThreshold = 50; // minimum distance for swipe
+      const diff = touchStartX.current - touchEndX.current;
+
+      if (Math.abs(diff) > swipeThreshold) {
+        const currentIndex = sectionsRef.current.findIndex(
+          (section) => section?.id === visibleSection
+        );
+
+        if (diff > 0 && currentIndex < sectionsRef.current.length - 1) {
+          // Swipe left - next section
+          sectionsRef.current[currentIndex + 1]?.scrollIntoView({
+            behavior: "smooth",
+            inline: "start",
+            block: "nearest",
+          });
+        } else if (diff < 0 && currentIndex > 0) {
+          // Swipe right - previous section
+          sectionsRef.current[currentIndex - 1]?.scrollIntoView({
+            behavior: "smooth",
+            inline: "start",
+            block: "nearest",
+          });
+        }
+      }
+
+      touchStartX.current = 0;
+      touchEndX.current = 0;
+    };
+
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener("touchstart", handleTouchStart, { passive: true });
+      container.addEventListener("touchmove", handleTouchMove, { passive: true });
+      container.addEventListener("touchend", handleTouchEnd);
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener("touchstart", handleTouchStart);
+        container.removeEventListener("touchmove", handleTouchMove);
+        container.removeEventListener("touchend", handleTouchEnd);
+      }
+    };
+  }, [visibleSection]);
+
   return (
     <>
       <SEOHead 
@@ -71,8 +133,8 @@ const Index = () => {
         keywords="riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza iPhone Cagliari, batteria maggiorata iPhone Assemini, riparazione vetro iPhone Assemini, micro-saldature Assemini, riparazione PC Assemini, assistenza console Assemini, centro assistenza iPhone Cagliari, rigenerazione vetro iPhone"
       />
       <Header />
-      <div className="h-screen overflow-x-auto overflow-y-hidden snap-x snap-mandatory flex scroll-smooth">
-        <div 
+      <div ref={containerRef} className="h-screen overflow-x-auto overflow-y-hidden snap-x snap-mandatory flex scroll-smooth touch-pan-x">
+        <div
           id="hero" 
           ref={(el) => (sectionsRef.current[0] = el)}
           className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto section-animate"
