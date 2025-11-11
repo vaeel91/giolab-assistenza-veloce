@@ -1,141 +1,43 @@
+import { useState, useMemo } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
-import { Calendar, Clock } from "lucide-react";
-
-const blogPosts = [
-  {
-    slug: "microsaldature-scheda-madre",
-    title: "Micro-saldature su scheda madre: quando servono e perché rivolgersi a un professionista",
-    description: "Scopri quando sono necessarie le micro-saldature sulla scheda madre iPhone e perché affidarsi a un professionista ad Assemini.",
-    date: "2025-01-19",
-    readTime: "8 min",
-    category: "Tecnologia",
-    image: "🔬"
-  },
-  {
-    slug: "recupero-dati-iphone-rotto",
-    title: "Recupero dati da iPhone rotto: cosa si può fare davvero",
-    description: "iPhone rotto e dati importanti da salvare? Scopri cosa è possibile recuperare e come Giolab può aiutarti.",
-    date: "2025-01-18",
-    readTime: "7 min",
-    category: "Guide",
-    image: "💾"
-  },
-  {
-    slug: "perche-face-id-smette-funzionare",
-    title: "Perché il Face ID smette di funzionare dopo una caduta",
-    description: "Face ID non funziona più dopo una caduta? Scopri le cause e come riparare il sensore Face ID ad Assemini.",
-    date: "2025-01-17",
-    readTime: "7 min",
-    category: "Tecnologia",
-    image: "🔐"
-  },
-  {
-    slug: "cosa-fare-iphone-caduto-schermo-crepato",
-    title: "Cosa fare se l'iPhone cade e lo schermo si crepa",
-    description: "iPhone caduto con schermo crepato? Scopri cosa fare immediatamente e come procedere per la riparazione ad Assemini.",
-    date: "2025-01-16",
-    readTime: "6 min",
-    category: "Guide",
-    image: "📱"
-  },
-  {
-    slug: "come-capire-batteria-iphone-da-sostituire",
-    title: "Come capire se la batteria del tuo iPhone va sostituita",
-    description: "Scopri i segnali che indicano quando è il momento di sostituire la batteria del tuo iPhone. Guida completa con consigli pratici.",
-    date: "2025-01-15",
-    readTime: "5 min",
-    category: "Guide",
-    image: "🔋"
-  },
-  {
-    slug: "vantaggi-batteria-maggiorata-iphone",
-    title: "Vantaggi della batteria maggiorata per iPhone: più autonomia, meno stress",
-    description: "Tutto quello che devi sapere sulle batterie maggiorate per iPhone: vantaggi, autonomia extra e perché sceglierle.",
-    date: "2025-01-14",
-    readTime: "6 min",
-    category: "Tecnologia",
-    image: "⚡"
-  },
-  {
-    slug: "riparazione-iphone-1-ora-giolab",
-    title: "Riparazione iPhone in 1 ora: come funziona il servizio Giolab",
-    description: "Scopri come riusciamo a riparare il tuo iPhone in tempi record senza compromettere la qualità. Il nostro metodo spiegato passo passo.",
-    date: "2025-01-13",
-    readTime: "4 min",
-    category: "Servizi",
-    image: "⏱️"
-  },
-  {
-    slug: "rigenerazione-vetro-iphone",
-    title: "Rigenerazione vetro iPhone: risparmia senza compromettere la qualità",
-    description: "Scopri come rigenerare solo il vetro del tuo iPhone mantenendo il display originale. Risparmio economico fino al 40% con qualità garantita.",
-    date: "2025-01-12",
-    readTime: "5 min",
-    category: "Servizi",
-    image: "✨"
-  },
-  {
-    slug: "come-evitare-batteria-iphone-rovini",
-    title: "Come evitare che la batteria del tuo iPhone si rovini troppo in fretta",
-    description: "Scopri i consigli pratici per far durare più a lungo la batteria del tuo iPhone. Trucchi e buone abitudini per preservare la salute della batteria.",
-    date: "2025-01-23",
-    readTime: "7 min",
-    category: "Guide",
-    image: "🔋"
-  },
-  {
-    slug: "qualita-ricambi-durata-riparazione",
-    title: "Quanto incide la qualità del ricambio sulla durata della riparazione",
-    description: "Scopri perché la qualità dei ricambi è fondamentale per la durata della riparazione. Differenze tra ricambi originali e compatibili.",
-    date: "2025-01-22",
-    readTime: "6 min",
-    category: "Tecnologia",
-    image: "⚙️"
-  },
-  {
-    slug: "errori-post-sostituzione-display",
-    title: "I 5 errori più comuni dopo la sostituzione del display iPhone",
-    description: "Scopri i 5 errori più comuni che gli utenti commettono dopo aver sostituito il display dell'iPhone e come evitarli.",
-    date: "2025-01-24",
-    readTime: "6 min",
-    category: "Guide",
-    image: "⚠️"
-  },
-  {
-    slug: "servizio-telefono-cortesia",
-    title: "Come funziona il servizio di telefono di cortesia Giolab",
-    description: "Scopri come funziona il servizio di telefono sostitutivo durante la riparazione del tuo iPhone. Dispositivo di cortesia gratuito.",
-    date: "2025-01-24",
-    readTime: "5 min",
-    category: "Servizi",
-    image: "📱"
-  },
-  {
-    slug: "display-originali-vs-compatibili",
-    title: "Differenze tra display originali e compatibili: cosa cambia davvero",
-    description: "Scopri le differenze tra display originali e compatibili per iPhone. Qualità, prezzo, durata e quale scegliere per la tua riparazione.",
-    date: "2025-01-25",
-    readTime: "8 min",
-    category: "Tecnologia",
-    image: "🖥️"
-  },
-  {
-    slug: "trasferimento-dati-android-iphone",
-    title: "Trasferimento dati da Android a iPhone e viceversa: guida semplice e completa",
-    description: "Guida completa per trasferire contatti, foto, WhatsApp e dati da Android a iPhone e viceversa. Metodi semplici e sicuri.",
-    date: "2025-01-25",
-    readTime: "9 min",
-    category: "Guide",
-    image: "🔄"
-  }
-];
+import { Calendar, Clock, Search, X } from "lucide-react";
+import { blogArticles } from "@/data/blogArticles";
 
 const Blog = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  // Estrai categorie uniche
+  const categories = useMemo(() => {
+    const uniqueCategories = Array.from(new Set(blogArticles.map(article => article.category)));
+    return uniqueCategories.sort();
+  }, []);
+
+  // Filtra articoli basandosi sulla ricerca e categoria
+  const filteredArticles = useMemo(() => {
+    return blogArticles.filter(article => {
+      const matchesSearch = searchQuery.trim() === "" || 
+        article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        article.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        article.category.toLowerCase().includes(searchQuery.toLowerCase());
+      
+      const matchesCategory = selectedCategory === null || article.category === selectedCategory;
+      
+      return matchesSearch && matchesCategory;
+    });
+  }, [searchQuery, selectedCategory]);
+
+  const handleClearSearch = () => {
+    setSearchQuery("");
+    setSelectedCategory(null);
+  };
+
   return (
     <div className="min-h-screen">
       <SEOHead 
@@ -152,9 +54,58 @@ const Blog = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
               Blog Giolab
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
               Guide, consigli e approfondimenti su riparazione iPhone, batterie maggiorate, manutenzione e assistenza smartphone ad Assemini e Cagliari.
             </p>
+
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Input
+                  type="text"
+                  placeholder="Cerca articoli per parola chiave, titolo o contenuto..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-12 pr-12 h-14 text-lg border-2 focus:border-giolab-blue"
+                />
+                {(searchQuery || selectedCategory) && (
+                  <button
+                    onClick={handleClearSearch}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                )}
+              </div>
+
+              {/* Category Filters */}
+              <div className="flex flex-wrap gap-2 mt-4 justify-center">
+                <button
+                  onClick={() => setSelectedCategory(null)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                    selectedCategory === null
+                      ? "bg-giolab-blue text-white"
+                      : "bg-background text-muted-foreground hover:bg-giolab-blue/10 hover:text-giolab-blue border-2"
+                  }`}
+                >
+                  Tutti
+                </button>
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                      selectedCategory === category
+                        ? "bg-giolab-blue text-white"
+                        : "bg-background text-muted-foreground hover:bg-giolab-blue/10 hover:text-giolab-blue border-2"
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -163,8 +114,36 @@ const Blog = () => {
       <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogPosts.map((post) => (
+            {/* Results Count */}
+            <div className="mb-6 text-center text-muted-foreground">
+              {filteredArticles.length === blogArticles.length ? (
+                <p>Mostrando tutti i {blogArticles.length} articoli</p>
+              ) : (
+                <p>
+                  Trovati {filteredArticles.length} articol{filteredArticles.length === 1 ? 'o' : 'i'} su {blogArticles.length}
+                </p>
+              )}
+            </div>
+
+            {filteredArticles.length === 0 ? (
+              <div className="text-center py-12">
+                <Search className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
+                <h3 className="text-2xl font-bold text-foreground mb-2">
+                  Nessun articolo trovato
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  Prova a modificare i termini di ricerca o i filtri di categoria
+                </p>
+                <button
+                  onClick={handleClearSearch}
+                  className="bg-giolab-blue text-white px-6 py-3 rounded-lg hover:bg-giolab-blue-dark transition-colors"
+                >
+                  Azzera ricerca
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredArticles.map((post) => (
                 <Link key={post.slug} to={`/blog/${post.slug}`}>
                   <Card className="h-full border-2 hover:border-giolab-blue transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group cursor-pointer">
                     <CardHeader>
@@ -196,7 +175,8 @@ const Blog = () => {
                   </Card>
                 </Link>
               ))}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
