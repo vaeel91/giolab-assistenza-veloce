@@ -29,16 +29,17 @@ const BlogPreview = () => {
   };
 
   useEffect(() => {
-    if (!scrollContainerRef.current || isPaused) return;
+    // Disabilita auto-scroll su mobile
+    const isMobile = window.innerWidth < 768;
+    if (!scrollContainerRef.current || isPaused || isMobile) return;
 
     const container = scrollContainerRef.current;
     let animationId: number;
     
     const scroll = () => {
       if (container && !isPaused) {
-        container.scrollLeft += 0.8; // Velocità aumentata
+        container.scrollLeft += 0.8;
         
-        // Reset quando raggiunge metà (primo set di articoli completato)
         if (container.scrollLeft >= container.scrollWidth / 2) {
           container.scrollLeft = 0;
         }
@@ -75,22 +76,30 @@ const BlogPreview = () => {
             {/* Track dello scorrimento */}
             <div 
               ref={scrollContainerRef}
-              className="overflow-x-scroll scrollbar-hide w-full touch-pan-x"
+              className="overflow-x-auto scrollbar-hide w-full"
               style={{ 
                 scrollbarWidth: 'none', 
                 msOverflowStyle: 'none',
-                WebkitOverflowScrolling: 'touch'
+                WebkitOverflowScrolling: 'touch',
+                scrollSnapType: 'x mandatory',
+                touchAction: 'pan-x'
               }}
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
-              onTouchStart={() => setIsPaused(true)}
-              onTouchEnd={() => setIsPaused(false)}
             >
               <div className="flex gap-3 md:gap-4 px-12 md:px-16 py-4">
               {duplicatedArticles.map((article, index) => {
               
               return (
-                <Link key={`${article.slug}-${index}`} to={`/blog/${article.slug}`} className="group flex-shrink-0" style={{ width: '240px' }}>
+                <Link 
+                  key={`${article.slug}-${index}`} 
+                  to={`/blog/${article.slug}`} 
+                  className="group flex-shrink-0" 
+                  style={{ 
+                    width: 'min(85vw, 280px)',
+                    scrollSnapAlign: 'center'
+                  }}
+                >
                   <Card className="h-full border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg w-full">
                     <CardHeader className="p-2 md:p-3 pb-1 md:pb-2">
                       <div className="flex items-start gap-2 mb-1">
