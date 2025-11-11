@@ -26,11 +26,11 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-6 md:py-10 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-4 md:space-y-6">
           {/* Logo */}
-          <div className="flex justify-center mb-2 md:mb-4 animate-fade-in">
+          <div className="flex justify-center mb-2 md:mb-4">
             <img 
               src={giolabLogo} 
               alt="Giolab Assemini - Centro assistenza riparazione iPhone, smartphone, PC e console" 
-              className="h-20 md:h-28 lg:h-32 w-auto"
+              className="h-20 md:h-28 lg:h-32 w-auto animate-zoom-in"
               loading="eager"
               fetchPriority="high"
             />
@@ -119,11 +119,25 @@ const Hero = () => {
             transform: translateY(0);
           }
         }
+        @keyframes zoom-in {
+          from {
+            opacity: 0;
+            transform: scale(0.5);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
         .animate-fade-in {
           animation: fade-in 0.8s ease-out;
         }
         .animate-fade-in-up {
           animation: fade-in-up 0.8s ease-out;
+        }
+        .animate-zoom-in {
+          animation: zoom-in 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+          animation-fill-mode: both;
         }
         .delay-200 {
           animation-delay: 0.2s;
