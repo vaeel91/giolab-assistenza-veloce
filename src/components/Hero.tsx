@@ -20,10 +20,10 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-4 py-6 md:py-10 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-4 md:space-y-6">
+        <div className="max-w-4xl mx-auto text-center space-y-2 md:space-y-3">
           {/* Logo */}
-          <div className="flex justify-center mb-2 md:mb-4">
-            <img 
+          <div className="flex justify-center mb-0">
+            <img
               src={giolabLogo} 
               alt="Giolab Assemini - Centro assistenza riparazione iPhone, smartphone, PC e console" 
               className="h-60 md:h-84 lg:h-96 w-auto animate-zoom-in"
