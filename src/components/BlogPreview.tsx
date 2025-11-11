@@ -52,8 +52,8 @@ const BlogPreview = () => {
   }, [isPaused]);
   
   return (
-    <section id="blog" ref={ref} className="py-2 md:py-3 pt-20 md:pt-24 bg-background h-screen flex flex-col justify-center overflow-hidden">
-      <div className="container mx-auto px-4 h-full flex flex-col justify-center">
+    <section id="blog" ref={ref} className="py-2 md:py-3 pt-20 md:pt-24 bg-background min-h-screen flex flex-col justify-center">
+      <div className="container mx-auto px-4 flex flex-col h-full">
         <div className="text-center mb-2">
           <h2 className="text-lg md:text-2xl font-bold text-foreground mb-1">
             Articoli e Guide
@@ -64,27 +64,33 @@ const BlogPreview = () => {
         </div>
 
         {/* Contenitore con overflow nascosto */}
-        <div className="relative max-w-6xl mx-auto">
-          <div className="flex items-center mb-3">
+        <div className="relative max-w-6xl mx-auto w-full">
+          <div className="mb-3">
             {/* Gradiente sfumato sinistro */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-20 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-16 w-12 md:w-20 bg-gradient-to-r from-background via-background/80 to-transparent z-20 pointer-events-none" />
             
             {/* Gradiente sfumato destro */}
-            <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-20 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-16 w-12 md:w-20 bg-gradient-to-l from-background via-background/80 to-transparent z-20 pointer-events-none" />
 
             {/* Track dello scorrimento */}
             <div 
               ref={scrollContainerRef}
-              className="overflow-x-scroll scrollbar-hide w-full"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              className="overflow-x-scroll scrollbar-hide w-full touch-pan-x"
+              style={{ 
+                scrollbarWidth: 'none', 
+                msOverflowStyle: 'none',
+                WebkitOverflowScrolling: 'touch'
+              }}
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
+              onTouchStart={() => setIsPaused(true)}
+              onTouchEnd={() => setIsPaused(false)}
             >
-              <div className="flex gap-3 md:gap-4 px-16 py-4">
+              <div className="flex gap-3 md:gap-4 px-12 md:px-16 py-4">
               {duplicatedArticles.map((article, index) => {
               
               return (
-                <Link key={`${article.slug}-${index}`} to={`/blog/${article.slug}`} className="group flex-shrink-0" style={{ width: '280px' }}>
+                <Link key={`${article.slug}-${index}`} to={`/blog/${article.slug}`} className="group flex-shrink-0" style={{ width: '240px' }}>
                   <Card className="h-full border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg w-full">
                     <CardHeader className="p-2 md:p-3 pb-1 md:pb-2">
                       <div className="flex items-start gap-2 mb-1">
@@ -115,18 +121,18 @@ const BlogPreview = () => {
                     </CardContent>
                   </Card>
                 </Link>
-              );
-            })}
+            );
+          })}
               </div>
             </div>
           </div>
           
           {/* Bottone per vedere tutti gli articoli */}
-          <div className="text-center">
+          <div className="text-center mt-4">
             <Link to="/blog">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-giolab-blue hover:bg-giolab-blue/90 text-white rounded-lg transition-all hover:shadow-lg text-xs md:text-sm font-semibold">
+              <div className="inline-flex items-center gap-2 px-6 py-3 bg-giolab-blue hover:bg-giolab-blue/90 text-white rounded-lg transition-all hover:shadow-lg text-sm md:text-base font-semibold">
                 Scopri tutti i {blogArticles.length} articoli
-                <ArrowRight className="h-3 w-3 md:h-4 md:w-4" />
+                <ArrowRight className="h-4 w-4" />
               </div>
             </Link>
           </div>
