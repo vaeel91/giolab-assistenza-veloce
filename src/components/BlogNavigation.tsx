@@ -95,7 +95,7 @@ const BlogNavigation = () => {
 
       {/* Navigation Menu */}
       <nav
-        className={`fixed top-24 right-4 z-40 bg-background/95 backdrop-blur-md border border-border rounded-xl shadow-xl transition-all duration-300 ${
+        className={`fixed top-24 right-4 z-40 bg-background/80 backdrop-blur-md border border-border rounded-xl shadow-xl transition-all duration-300 ${
           isOpen ? "translate-x-0 opacity-100" : "translate-x-[120%] opacity-0 lg:translate-x-0 lg:opacity-100"
         }`}
       >
