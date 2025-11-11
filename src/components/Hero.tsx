@@ -16,39 +16,39 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-giolab-gray to-background">
+    <section className="relative h-screen max-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-giolab-gray to-background">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-giolab-blue opacity-10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-giolab-blue-light opacity-10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+      <div className="container mx-auto px-4 py-6 md:py-10 relative z-10">
+        <div className="max-w-4xl mx-auto text-center space-y-4 md:space-y-6">
           {/* Logo */}
-          <div className="flex justify-center mb-8 animate-fade-in">
+          <div className="flex justify-center mb-2 md:mb-4 animate-fade-in">
             <img 
               src={giolabLogo} 
               alt="Giolab Assemini - Centro assistenza riparazione iPhone, smartphone, PC e console" 
-              className="h-32 md:h-48 lg:h-56 w-auto"
+              className="h-20 md:h-28 lg:h-32 w-auto"
               loading="eager"
               fetchPriority="high"
             />
           </div>
 
           {/* Main heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight animate-fade-in-up">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight animate-fade-in-up">
             Riparazione iPhone e Smartphone ad Assemini
-            <span className="block text-giolab-blue mt-2">Assistenza PC, Notebook e Console</span>
+            <span className="block text-giolab-blue mt-1 md:mt-2">Assistenza PC, Notebook e Console</span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in-up delay-200">
+          <p className="text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in-up delay-200">
             Centro assistenza specializzato ad Assemini (CA) e Cagliari. Riparazioni rapide anche in 1 ora con garanzia 12 mesi. Ricambi certificati e preventivo gratuito.
           </p>
 
           {/* CTA buttons */}
-          <div className="flex flex-row gap-1 sm:gap-4 justify-center items-center pt-6 px-2 sm:px-0 animate-fade-in-up delay-300">
+          <div className="flex flex-row gap-1 sm:gap-4 justify-center items-center pt-3 md:pt-4 px-2 sm:px-0 animate-fade-in-up delay-300">
             <Button
               variant="hero"
               size="lg"
@@ -80,25 +80,25 @@ const Hero = () => {
           </div>
 
           {/* Trust badges */}
-          <div className="grid grid-cols-3 gap-4 md:gap-8 pt-12 max-w-3xl mx-auto animate-fade-in-up delay-400">
+          <div className="grid grid-cols-3 gap-2 md:gap-6 pt-4 md:pt-8 max-w-3xl mx-auto animate-fade-in-up delay-400">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-giolab-blue">10+</div>
-              <div className="text-sm md:text-base text-muted-foreground mt-1">Anni di esperienza</div>
+              <div className="text-2xl md:text-3xl font-bold text-giolab-blue">10+</div>
+              <div className="text-xs md:text-sm text-muted-foreground mt-0.5 md:mt-1">Anni di esperienza</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-giolab-blue">12</div>
-              <div className="text-sm md:text-base text-muted-foreground mt-1">Mesi di garanzia</div>
+              <div className="text-2xl md:text-3xl font-bold text-giolab-blue">12</div>
+              <div className="text-xs md:text-sm text-muted-foreground mt-0.5 md:mt-1">Mesi di garanzia</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-giolab-blue">1h</div>
-              <div className="text-sm md:text-base text-muted-foreground mt-1">Riparazioni rapide</div>
+              <div className="text-2xl md:text-3xl font-bold text-giolab-blue">1h</div>
+              <div className="text-xs md:text-sm text-muted-foreground mt-0.5 md:mt-1">Riparazioni rapide</div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 right-8 animate-bounce">
+      <div className="absolute bottom-8 right-8 animate-bounce hidden lg:block">
         <div className="w-10 h-6 border-2 border-giolab-blue rounded-full flex items-center justify-center rotate-90">
           <div className="w-3 h-1 bg-giolab-blue rounded-full ml-2 animate-pulse"></div>
         </div>
