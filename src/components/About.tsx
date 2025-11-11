@@ -28,24 +28,19 @@ const About = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Content */}
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+            <div className="space-y-4 md:space-y-6">
+              <h2 className="text-2xl md:text-5xl font-bold text-foreground">
                 Il tuo partner di fiducia per l'assistenza tecnologica
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-sm md:text-lg text-muted-foreground leading-relaxed">
                 <strong className="text-foreground">Giolab</strong> è guidato da{" "}
-                <strong className="text-giolab-blue">Stefano Giordano</strong>, professionista con oltre 10 anni di
-                esperienza nel settore dell'assistenza e riparazione di dispositivi elettronici.
-                Da sempre investiamo nella formazione continua, partecipando periodicamente a corsi di aggiornamento per acquisire e consolidare nuove competenze tecniche. Questo ci permette di distinguerci e offrire riparazioni evolute, complesse e fuori dall'ordinario, che molti centri non sono in grado di gestire.
+                <strong className="text-giolab-blue">Stefano Giordano</strong>, con oltre 10 anni di esperienza nell'assistenza e riparazione di dispositivi elettronici. Investiamo costantemente nella formazione tecnica per offrire riparazioni evolute e complesse che altri centri non gestiscono.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                La nostra missione è fornire un servizio di assistenza preciso, trasparente e di altissima qualità, utilizzando esclusivamente
-                ricambi certificati e tecniche professionali. Ogni intervento viene eseguito con cura artigianale e attenzione al dettaglio,
-                per garantire risultati affidabili e duraturi.
+              <p className="text-sm md:text-lg text-muted-foreground leading-relaxed">
+                Utilizziamo esclusivamente ricambi certificati e tecniche professionali, garantendo risultati affidabili e duraturi con cura artigianale in ogni intervento.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Ci contraddistinguono rapidità, competenza e attenzione al cliente: offriamo preventivi chiari,
-                tempi di riparazione brevi e la possibilità di un telefono di cortesia durante l'intervento, per non lasciarti mai senza connessione.
+              <p className="text-sm md:text-lg text-muted-foreground leading-relaxed">
+                Rapidità, competenza e attenzione al cliente: preventivi chiari, tempi brevi e telefono di cortesia disponibile.
               </p>
             </div>
 
