@@ -5,6 +5,7 @@ import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import RelatedArticles from "@/components/RelatedArticles";
 import SocialShare from "@/components/SocialShare";
+import ReadingProgress from "@/components/ReadingProgress";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,8 @@ import { Button } from "@/components/ui/button";
 const ConvieneRiparareIPhoneVecchio = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead 
+      <ReadingProgress />
+      <SEOHead
         title="Conviene Riparare un iPhone Vecchio o Comprarne uno Ricondizionato? | Giolab"
         description="Riparare o sostituire un iPhone vecchio? Scopri quando conviene riparare e quando è meglio comprare un iPhone ricondizionato. Guida completa da Giolab Assemini."
         keywords="iPhone ricondizionato Assemini, conviene riparare iPhone, iPhone usato vs riparazione, acquisto iPhone ricondizionato Cagliari"

@@ -5,6 +5,7 @@ import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import RelatedArticles from "@/components/RelatedArticles";
 import SocialShare from "@/components/SocialShare";
+import ReadingProgress from "@/components/ReadingProgress";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,8 @@ import { Button } from "@/components/ui/button";
 const VantaggiBatteriaMaggiorataIPhone = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead 
+      <ReadingProgress />
+      <SEOHead
         title="Vantaggi della Batteria Maggiorata per iPhone | Giolab Assemini"
         description="Scopri tutti i vantaggi delle batterie maggiorate per iPhone: più autonomia, meno stress e prestazioni migliorate. Installazione rapida presso Giolab ad Assemini."
         keywords="batteria maggiorata iPhone, batteria maggiore capacità iPhone, autonomia iPhone, batteria potenziata iPhone, batteria lunga durata iPhone Assemini"

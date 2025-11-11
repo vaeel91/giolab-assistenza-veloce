@@ -5,6 +5,7 @@ import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import RelatedArticles from "@/components/RelatedArticles";
 import SocialShare from "@/components/SocialShare";
+import ReadingProgress from "@/components/ReadingProgress";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,8 @@ import { Button } from "@/components/ui/button";
 const DisplayOriginaliVsCompatibili = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead 
+      <ReadingProgress />
+      <SEOHead
         title="Display Originali vs Compatibili iPhone: Cosa Cambia Davvero | Giolab Assemini"
         description="Scopri le differenze tra display originali e compatibili per iPhone. Qualità, prezzo, durata e quale scegliere per la tua riparazione ad Assemini."
         keywords="display originale vs compatibile iPhone, qualità schermo iPhone Assemini, ricambi originali iPhone, schermo aftermarket iPhone"

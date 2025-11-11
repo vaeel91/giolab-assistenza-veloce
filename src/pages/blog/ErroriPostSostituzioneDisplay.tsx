@@ -5,6 +5,7 @@ import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import RelatedArticles from "@/components/RelatedArticles";
 import SocialShare from "@/components/SocialShare";
+import ReadingProgress from "@/components/ReadingProgress";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,8 @@ import { Button } from "@/components/ui/button";
 const ErroriPostSostituzioneDisplay = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead 
+      <ReadingProgress />
+      <SEOHead
         title="I 5 Errori Più Comuni dopo la Sostituzione del Display iPhone | Giolab Assemini"
         description="Scopri i 5 errori più comuni che gli utenti commettono dopo aver sostituito il display dell'iPhone e come evitarli. Consigli pratici da Giolab."
         keywords="display iPhone problemi post riparazione, vetro nuovo non funziona, errori sostituzione schermo iPhone, consigli display iPhone Assemini"

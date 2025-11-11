@@ -5,6 +5,7 @@ import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import RelatedArticles from "@/components/RelatedArticles";
 import SocialShare from "@/components/SocialShare";
+import ReadingProgress from "@/components/ReadingProgress";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,8 @@ import { Button } from "@/components/ui/button";
 const RiparazioneIPhone1OraGiolab = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead 
+      <ReadingProgress />
+      <SEOHead
         title="Riparazione iPhone in 1 Ora: Come Funziona il Servizio Giolab | Assemini"
         description="Scopri come riusciamo a riparare il tuo iPhone in tempi record senza compromettere la qualità. Il metodo Giolab spiegato passo passo dal nostro centro di Assemini."
         keywords="riparazione iPhone veloce, riparazione iPhone 1 ora, riparazione rapida iPhone Assemini, servizio express iPhone, riparazione iPhone in giornata"

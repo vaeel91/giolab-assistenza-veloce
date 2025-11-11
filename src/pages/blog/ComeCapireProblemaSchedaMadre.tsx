@@ -5,6 +5,7 @@ import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import RelatedArticles from "@/components/RelatedArticles";
 import SocialShare from "@/components/SocialShare";
+import ReadingProgress from "@/components/ReadingProgress";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,8 @@ import { Button } from "@/components/ui/button";
 const ComeCapireProblemaSchedaMadre = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead 
+      <ReadingProgress />
+      <SEOHead
         title="Come Capire se il tuo iPhone ha un Problema alla Scheda Madre | Giolab"
         description="Scopri i sintomi di un problema alla scheda madre iPhone: segnali, cause e soluzioni. Diagnosi e riparazione professionale presso Giolab Assemini."
         keywords="sintomi scheda madre iPhone, iPhone non si accende Giolab, problema logica iPhone, riparazione motherboard iPhone Assemini"

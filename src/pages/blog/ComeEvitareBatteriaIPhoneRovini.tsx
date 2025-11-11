@@ -5,6 +5,7 @@ import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import RelatedArticles from "@/components/RelatedArticles";
 import SocialShare from "@/components/SocialShare";
+import ReadingProgress from "@/components/ReadingProgress";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,8 @@ import { Button } from "@/components/ui/button";
 const ComeEvitareBatteriaIPhoneRovini = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead 
+      <ReadingProgress />
+      <SEOHead
         title="Come Evitare che la Batteria del tuo iPhone si Rovini Troppo in Fretta | Giolab"
         description="Scopri i consigli pratici per far durare più a lungo la batteria del tuo iPhone. Trucchi e buone abitudini per preservare la salute della batteria."
         keywords="consigli batteria iPhone, durare batteria più a lungo, preservare batteria iPhone, cicli ricarica iPhone, batteria iPhone durata"
