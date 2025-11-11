@@ -25,25 +25,20 @@ const services = [
     link: "/servizi/batteria-maggiorata-iphone"
   },
   {
-    emoji: "💾",
-    title: "Recupero Dati",
-    description: "Recuperiamo foto, video e documenti da smartphone, hard disk o SSD danneggiati. Privacy garantita.",
-  },
-  {
     emoji: "🧠",
     title: "Micro-saldature e Riparazioni Avanzate",
     description: "Interventi su schede madri e circuiti elettronici. Riparazioni di corti, danni da liquidi e chip guasti.",
-  },
-  {
-    emoji: "⚙️",
-    title: "Sostituzione Vetro Posteriore iPhone",
-    description: "Ripariamo il retro in vetro del tuo iPhone con risultati perfetti, senza cambiare la scocca completa.",
   },
   {
     emoji: "💎",
     title: "Rigenerazione Vetro",
     description: "Rigenerazione professionale del vetro per iPhone e Apple Watch. Sostituiamo solo il vetro del tuo display, consentendoti di mantere lo schermo originale e abbassando il prezzo finale della lavorazione.",
     link: "/blog/rigenerazione-vetro-iphone"
+  },
+  {
+    emoji: "⚙️",
+    title: "Sostituzione Vetro Posteriore iPhone",
+    description: "Ripariamo il retro in vetro del tuo iPhone con risultati perfetti, senza cambiare la scocca completa.",
   },
   {
     emoji: "🧹",
