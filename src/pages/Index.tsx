@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
+import BlogPreview from "@/components/BlogPreview";
 import SocialAndLocation from "@/components/SocialAndLocation";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
@@ -25,6 +26,7 @@ const Index = () => {
     { id: "servizi", label: "Servizi" },
     { id: "chi-siamo", label: "Chi Siamo" },
     { id: "testimonianze", label: "Testimonianze" },
+    { id: "blog", label: "Blog" },
     { id: "dove-siamo", label: "Dove Siamo" },
     { id: "faq", label: "FAQ" },
     { id: "contatti", label: "Contatti" },
@@ -226,8 +228,17 @@ const Index = () => {
           </div>
         </div>
         <div 
-          id="dove-siamo" 
+          id="blog" 
           ref={(el) => (sectionsRef.current[4] = el)}
+          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
+        >
+          <div className="section-content h-full w-full">
+            <BlogPreview />
+          </div>
+        </div>
+        <div 
+          id="dove-siamo" 
+          ref={(el) => (sectionsRef.current[5] = el)}
           className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
           <div className="section-content h-full w-full">
@@ -236,7 +247,7 @@ const Index = () => {
         </div>
         <div 
           id="faq" 
-          ref={(el) => (sectionsRef.current[5] = el)}
+          ref={(el) => (sectionsRef.current[6] = el)}
           className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
           <div className="section-content h-full w-full">
@@ -245,7 +256,7 @@ const Index = () => {
         </div>
         <div 
           id="contatti" 
-          ref={(el) => (sectionsRef.current[6] = el)}
+          ref={(el) => (sectionsRef.current[7] = el)}
           className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
           <div className="section-content h-full w-full">
