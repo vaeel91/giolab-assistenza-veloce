@@ -84,22 +84,85 @@ const models: Record<string, string[]> = {
   "Altro": ["Specifica nel messaggio"],
 };
 
-const services = [
-  "Riparazione Display",
-  "Sostituzione Batteria",
-  "Riparazione Fotocamera",
-  "Assistenza PC/Notebook",
-  "Riparazione Console",
-  "Batteria Maggiorata iPhone",
-  "Recupero Dati",
-  "Micro-saldature",
-  "Sostituzione Vetro Posteriore iPhone",
-  "Pulizia e Manutenzione",
-  "Protezione Schermo",
-  "Configurazione e Trasferimento Dati",
-  "Diagnosi e Preventivo",
-  "Altro",
-];
+const services: Record<string, string[]> = {
+  "Cellulare": [
+    "Riparazione Display",
+    "Sostituzione Batteria",
+    "Batteria Maggiorata (iPhone)",
+    "Riparazione Fotocamera",
+    "Sostituzione Vetro Posteriore",
+    "Riparazione Porta di Ricarica",
+    "Sostituzione Altoparlante/Microfono",
+    "Riparazione Tasti Volume/Accensione",
+    "Recupero Dati",
+    "Micro-saldature",
+    "Riparazione Danni da Liquidi",
+    "Pulizia Interna",
+    "Sostituzione Scocca",
+    "Protezione Schermo",
+    "Configurazione e Trasferimento Dati",
+    "Diagnosi e Preventivo",
+    "Altro",
+  ],
+  "PC": [
+    "Riparazione Hardware",
+    "Upgrade SSD",
+    "Upgrade RAM",
+    "Sostituzione Display",
+    "Sostituzione Batteria Notebook",
+    "Riparazione Tastiera",
+    "Sostituzione Ventola/Dissipatore",
+    "Pulizia Interna e Pasta Termica",
+    "Riparazione Cerniere",
+    "Riparazione Porta USB/HDMI",
+    "Recupero Dati",
+    "Installazione Sistema Operativo",
+    "Rimozione Virus/Malware",
+    "Ottimizzazione Prestazioni",
+    "Micro-saldature Scheda Madre",
+    "Riparazione Danni da Liquidi",
+    "Configurazione e Trasferimento Dati",
+    "Diagnosi e Preventivo",
+    "Altro",
+  ],
+  "Console": [
+    "Riparazione Lettore Dischi",
+    "Sostituzione Porta HDMI",
+    "Sostituzione Porta USB",
+    "Pulizia Interna e Pasta Termica",
+    "Sostituzione Ventola",
+    "Riparazione Surriscaldamento",
+    "Riparazione Controller",
+    "Riparazione Connettività Wi-Fi",
+    "Micro-saldature Scheda Madre",
+    "Riparazione Alimentazione",
+    "Sostituzione Hard Disk/SSD",
+    "Upgrade SSD",
+    "Riparazione Display (Switch)",
+    "Riparazione Danni da Liquidi",
+    "Diagnosi e Preventivo",
+    "Altro",
+  ],
+  "Tablet": [
+    "Riparazione Display",
+    "Sostituzione Batteria",
+    "Riparazione Fotocamera",
+    "Riparazione Vetro Posteriore",
+    "Riparazione Porta di Ricarica",
+    "Sostituzione Altoparlante",
+    "Recupero Dati",
+    "Micro-saldature",
+    "Riparazione Danni da Liquidi",
+    "Pulizia Interna",
+    "Protezione Schermo",
+    "Configurazione e Trasferimento Dati",
+    "Diagnosi e Preventivo",
+    "Altro",
+  ],
+  "Altro": [
+    "Descrivi nel messaggio",
+  ],
+};
 
 interface QuoteRequestDialogProps {
   children: React.ReactNode;
@@ -198,7 +261,8 @@ ${data.message}`;
                       field.onChange(value);
                       form.setValue("brand", "");
                       form.setValue("model", "");
-                    }} 
+                      form.setValue("service", "");
+                    }}
                     defaultValue={field.value}
                   >
                     <FormControl>
@@ -279,30 +343,32 @@ ${data.message}`;
               />
             )}
 
-            <FormField
-              control={form.control}
-              name="service"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Servizio Richiesto *</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Seleziona il servizio" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      {services.map((service) => (
-                        <SelectItem key={service} value={service}>
-                          {service}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+            {selectedDeviceType && services[selectedDeviceType] && (
+              <FormField
+                control={form.control}
+                name="service"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Servizio Richiesto *</FormLabel>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Seleziona il servizio" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        {services[selectedDeviceType].map((service) => (
+                          <SelectItem key={service} value={service}>
+                            {service}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            )}
 
             <FormField
               control={form.control}
