@@ -20,6 +20,14 @@ const ComeCapireProblemaSchedaMadre = () => {
           { name: "Blog", url: "https://giolab.lovable.app/blog" },
           { name: "Problema scheda madre iPhone" }
         ]}
+        articleData={{
+          headline: "Come capire se il tuo iPhone ha un problema alla scheda madre",
+          description: "Scopri i sintomi di un problema alla scheda madre iPhone e quando è necessario un intervento professionale ad Assemini.",
+          author: "Giolab Team",
+          datePublished: "2025-01-21",
+          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+          category: "Tecnologia"
+        }}
       />
       <Header />
       

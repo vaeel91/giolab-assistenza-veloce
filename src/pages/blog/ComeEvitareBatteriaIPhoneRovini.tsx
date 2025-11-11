@@ -20,6 +20,14 @@ const ComeEvitareBatteriaIPhoneRovini = () => {
           { name: "Blog", url: "https://giolab.lovable.app/blog" },
           { name: "Consigli batteria iPhone" }
         ]}
+        articleData={{
+          headline: "Come evitare che la batteria del tuo iPhone si rovini troppo in fretta",
+          description: "Scopri i consigli pratici per far durare più a lungo la batteria del tuo iPhone. Trucchi e buone abitudini per preservare la salute della batteria.",
+          author: "Giolab Team",
+          datePublished: "2025-01-23",
+          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+          category: "Guide"
+        }}
       />
       <Header />
       

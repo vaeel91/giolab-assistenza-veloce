@@ -20,6 +20,14 @@ const CosaFareIPhoneCadutoSchermoCrepato = () => {
           { name: "Blog", url: "https://giolab.lovable.app/blog" },
           { name: "iPhone caduto con schermo crepato" }
         ]}
+        articleData={{
+          headline: "Cosa fare se l'iPhone cade e lo schermo si crepa",
+          description: "iPhone caduto con schermo crepato? Scopri cosa fare immediatamente e come procedere per la riparazione ad Assemini.",
+          author: "Giolab Team",
+          datePublished: "2025-01-16",
+          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+          category: "Guide"
+        }}
       />
       <Header />
       

@@ -20,6 +20,14 @@ const ErroriPostSostituzioneDisplay = () => {
           { name: "Blog", url: "https://giolab.lovable.app/blog" },
           { name: "Errori post sostituzione display" }
         ]}
+        articleData={{
+          headline: "I 5 errori più comuni dopo la sostituzione del display iPhone",
+          description: "Scopri i 5 errori più comuni che gli utenti commettono dopo aver sostituito il display dell'iPhone e come evitarli.",
+          author: "Giolab Team",
+          datePublished: "2025-01-24",
+          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+          category: "Guide"
+        }}
       />
       <Header />
       

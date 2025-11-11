@@ -5,6 +5,16 @@ interface BreadcrumbItem {
   url?: string;
 }
 
+interface ArticleData {
+  headline: string;
+  description: string;
+  author: string;
+  datePublished: string;
+  dateModified?: string;
+  image: string;
+  category?: string;
+}
+
 interface SEOHeadProps {
   title?: string;
   description?: string;
@@ -14,6 +24,7 @@ interface SEOHeadProps {
   ogUrl?: string;
   structuredData?: object;
   breadcrumbs?: BreadcrumbItem[];
+  articleData?: ArticleData;
 }
 
 const SEOHead = ({ 
@@ -24,7 +35,8 @@ const SEOHead = ({
   ogType = "website",
   ogUrl = typeof window !== 'undefined' ? window.location.href : '',
   structuredData,
-  breadcrumbs
+  breadcrumbs,
+  articleData
 }: SEOHeadProps) => {
   
   // Generate breadcrumb structured data if breadcrumbs are provided
@@ -37,6 +49,47 @@ const SEOHead = ({
       "name": item.name,
       ...(item.url && { "item": item.url })
     }))
+  } : null;
+
+  // Generate Article structured data if article data is provided
+  const articleSchema = articleData ? {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": articleData.headline,
+    "description": articleData.description,
+    "image": articleData.image,
+    "datePublished": articleData.datePublished,
+    "dateModified": articleData.dateModified || articleData.datePublished,
+    "author": {
+      "@type": "Person",
+      "name": articleData.author,
+      "url": "https://www.giolab-assemini.it"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Giolab Assemini",
+      "logo": {
+        "@type": "ImageObject",
+        "url": typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg'
+      },
+      "url": "https://www.giolab-assemini.it",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Carmine 20A",
+        "addressLocality": "Assemini",
+        "postalCode": "09032",
+        "addressCountry": "IT"
+      },
+      "telephone": "+39 340 69 70 686",
+      "email": "giolabassemini@gmail.com"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": ogUrl
+    },
+    ...(articleData.category && {
+      "articleSection": articleData.category
+    })
   } : null;
   
   useEffect(() => {
@@ -89,6 +142,18 @@ const SEOHead = ({
       breadcrumbScript.textContent = JSON.stringify(breadcrumbSchema);
     }
     
+    // Add Article structured data
+    if (articleSchema) {
+      let articleScript = document.querySelector('script[type="application/ld+json"]#article-schema');
+      if (!articleScript) {
+        articleScript = document.createElement('script');
+        articleScript.setAttribute('type', 'application/ld+json');
+        articleScript.setAttribute('id', 'article-schema');
+        document.head.appendChild(articleScript);
+      }
+      articleScript.textContent = JSON.stringify(articleSchema);
+    }
+    
     // Add additional structured data if provided
     if (structuredData) {
       let script = document.querySelector('script[type="application/ld+json"]#dynamic-schema');
@@ -100,7 +165,7 @@ const SEOHead = ({
       }
       script.textContent = JSON.stringify(structuredData);
     }
-  }, [title, description, keywords, ogImage, ogType, ogUrl, structuredData, breadcrumbSchema]);
+  }, [title, description, keywords, ogImage, ogType, ogUrl, structuredData, breadcrumbSchema, articleSchema]);
   
   return null;
 };

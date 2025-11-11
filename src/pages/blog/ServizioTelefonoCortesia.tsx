@@ -20,6 +20,14 @@ const ServizioTelefonoCortesia = () => {
           { name: "Blog", url: "https://giolab.lovable.app/blog" },
           { name: "Telefono di cortesia" }
         ]}
+        articleData={{
+          headline: "Come funziona il servizio di telefono di cortesia Giolab",
+          description: "Scopri come funziona il servizio di telefono sostitutivo durante la riparazione del tuo iPhone. Dispositivo di cortesia gratuito.",
+          author: "Giolab Team",
+          datePublished: "2025-01-24",
+          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+          category: "Servizi"
+        }}
       />
       <Header />
       

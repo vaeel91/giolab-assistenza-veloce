@@ -20,6 +20,14 @@ const RecuperoDatiIPhoneRotto = () => {
           { name: "Blog", url: "https://giolab.lovable.app/blog" },
           { name: "Recupero dati iPhone rotto" }
         ]}
+        articleData={{
+          headline: "Recupero dati da iPhone rotto: cosa si può fare davvero",
+          description: "iPhone rotto e dati importanti da salvare? Scopri cosa è possibile recuperare e come Giolab può aiutarti.",
+          author: "Giolab Team",
+          datePublished: "2025-01-18",
+          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+          category: "Guide"
+        }}
       />
       <Header />
       

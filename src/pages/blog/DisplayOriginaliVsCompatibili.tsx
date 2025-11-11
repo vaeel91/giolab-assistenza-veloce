@@ -20,6 +20,14 @@ const DisplayOriginaliVsCompatibili = () => {
           { name: "Blog", url: "https://giolab.lovable.app/blog" },
           { name: "Display originali vs compatibili" }
         ]}
+        articleData={{
+          headline: "Differenze tra display originali e compatibili: cosa cambia davvero",
+          description: "Scopri le differenze tra display originali e compatibili per iPhone. Qualità, prezzo, durata e quale scegliere per la tua riparazione.",
+          author: "Giolab Team",
+          datePublished: "2025-01-25",
+          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+          category: "Tecnologia"
+        }}
       />
       <Header />
       

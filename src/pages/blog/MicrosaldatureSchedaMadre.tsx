@@ -20,6 +20,14 @@ const MicrosaldatureSchedaMadre = () => {
           { name: "Blog", url: "https://giolab.lovable.app/blog" },
           { name: "Micro-saldature scheda madre" }
         ]}
+        articleData={{
+          headline: "Micro-saldature su scheda madre: quando servono e perché rivolgersi a un professionista",
+          description: "Scopri quando sono necessarie le micro-saldature sulla scheda madre iPhone e perché affidarsi a un professionista ad Assemini.",
+          author: "Giolab Team",
+          datePublished: "2025-01-19",
+          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+          category: "Tecnologia"
+        }}
       />
       <Header />
       

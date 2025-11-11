@@ -20,6 +20,14 @@ const RigenerazioneVetroIPhone = () => {
           { name: "Blog", url: "https://giolab.lovable.app/blog" },
           { name: "Rigenerazione vetro iPhone" }
         ]}
+        articleData={{
+          headline: "Rigenerazione vetro iPhone: risparmia senza compromettere la qualità",
+          description: "Scopri come rigenerare solo il vetro del tuo iPhone mantenendo il display originale. Risparmio economico fino al 40% con qualità garantita.",
+          author: "Giolab Team",
+          datePublished: "2025-01-12",
+          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+          category: "Servizi"
+        }}
       />
       <Header />
       

@@ -20,6 +20,14 @@ const TrasferimentoDatiAndroidIPhone = () => {
           { name: "Blog", url: "https://giolab.lovable.app/blog" },
           { name: "Trasferimento dati Android iPhone" }
         ]}
+        articleData={{
+          headline: "Trasferimento dati da Android a iPhone e viceversa: guida semplice e completa",
+          description: "Guida completa per trasferire contatti, foto, WhatsApp e dati da Android a iPhone e viceversa. Metodi semplici e sicuri.",
+          author: "Giolab Team",
+          datePublished: "2025-01-25",
+          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+          category: "Guide"
+        }}
       />
       <Header />
       

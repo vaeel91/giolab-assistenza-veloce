@@ -20,6 +20,14 @@ const RiparazioneIPhone1OraGiolab = () => {
           { name: "Blog", url: "https://giolab.lovable.app/blog" },
           { name: "Riparazione iPhone 1 ora" }
         ]}
+        articleData={{
+          headline: "Riparazione iPhone in 1 ora: come funziona il servizio Giolab",
+          description: "Scopri come riusciamo a riparare il tuo iPhone in tempi record senza compromettere la qualità. Il nostro metodo spiegato passo passo.",
+          author: "Giolab Team",
+          datePublished: "2025-01-13",
+          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+          category: "Servizi"
+        }}
       />
       <Header />
       

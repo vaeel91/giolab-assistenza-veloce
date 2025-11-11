@@ -20,6 +20,14 @@ const ComeCabireBatteriaIPhone = () => {
           { name: "Blog", url: "https://giolab.lovable.app/blog" },
           { name: "Come capire se la batteria va sostituita" }
         ]}
+        articleData={{
+          headline: "Come capire se la batteria del tuo iPhone va sostituita",
+          description: "Scopri i segnali che indicano quando è il momento di sostituire la batteria del tuo iPhone. Guida completa con consigli pratici.",
+          author: "Giolab Team",
+          datePublished: "2025-01-15",
+          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+          category: "Guide"
+        }}
       />
       <Header />
       

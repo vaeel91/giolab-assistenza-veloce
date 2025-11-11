@@ -20,6 +20,14 @@ const VantaggiBatteriaMaggiorataIPhone = () => {
           { name: "Blog", url: "https://giolab.lovable.app/blog" },
           { name: "Vantaggi batteria maggiorata" }
         ]}
+        articleData={{
+          headline: "Vantaggi della batteria maggiorata per iPhone: più autonomia, meno stress",
+          description: "Tutto quello che devi sapere sulle batterie maggiorate per iPhone: vantaggi, autonomia extra e perché sceglierle.",
+          author: "Giolab Team",
+          datePublished: "2025-01-14",
+          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+          category: "Tecnologia"
+        }}
       />
       <Header />
       

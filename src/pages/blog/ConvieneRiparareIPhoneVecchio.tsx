@@ -20,6 +20,14 @@ const ConvieneRiparareIPhoneVecchio = () => {
           { name: "Blog", url: "https://giolab.lovable.app/blog" },
           { name: "Riparare o comprare iPhone ricondizionato" }
         ]}
+        articleData={{
+          headline: "Conviene riparare un iPhone vecchio o comprarne uno ricondizionato?",
+          description: "Analisi completa per decidere se riparare il tuo iPhone vecchio o comprarne uno ricondizionato. Tutti i fattori da considerare.",
+          author: "Giolab Team",
+          datePublished: "2025-01-20",
+          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+          category: "Guide"
+        }}
       />
       <Header />
       

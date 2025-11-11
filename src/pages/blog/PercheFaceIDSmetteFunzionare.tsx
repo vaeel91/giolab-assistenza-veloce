@@ -20,6 +20,14 @@ const PercheFaceIDSmetteFunzionare = () => {
           { name: "Blog", url: "https://giolab.lovable.app/blog" },
           { name: "Face ID non funziona dopo caduta" }
         ]}
+        articleData={{
+          headline: "Perché il Face ID smette di funzionare dopo una caduta",
+          description: "Face ID non funziona più dopo una caduta? Scopri le cause e come riparare il sensore Face ID ad Assemini.",
+          author: "Giolab Team",
+          datePublished: "2025-01-17",
+          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+          category: "Tecnologia"
+        }}
       />
       <Header />
       

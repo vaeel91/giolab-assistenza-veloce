@@ -20,6 +20,14 @@ const RiparazioneConsoleAssemini = () => {
           { name: "Blog", url: "https://giolab.lovable.app/blog" },
           { name: "Riparazione console Assemini" }
         ]}
+        articleData={{
+          headline: "Riparazione console: cosa possiamo fare per la tua PS5, Xbox o Nintendo",
+          description: "Assistenza completa per console PS5, Xbox Series e Nintendo Switch. Scopri tutti i servizi di riparazione disponibili ad Assemini.",
+          author: "Giolab Team",
+          datePublished: "2025-01-21",
+          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+          category: "Servizi"
+        }}
       />
       <Header />
       

@@ -20,6 +20,14 @@ const QualitaRicambiDurataRiparazione = () => {
           { name: "Blog", url: "https://giolab.lovable.app/blog" },
           { name: "Qualità ricambi e durata riparazione" }
         ]}
+        articleData={{
+          headline: "Quanto incide la qualità del ricambio sulla durata della riparazione",
+          description: "Scopri perché la qualità dei ricambi è fondamentale per la durata della riparazione. Differenze tra ricambi originali e compatibili.",
+          author: "Giolab Team",
+          datePublished: "2025-01-22",
+          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+          category: "Tecnologia"
+        }}
       />
       <Header />
       
