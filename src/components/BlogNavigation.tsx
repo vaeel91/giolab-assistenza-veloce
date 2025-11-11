@@ -18,6 +18,7 @@ const BlogNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [isPulsing, setIsPulsing] = useState(false);
 
   // Determina quale sezione è attiva in base alla route corrente
   const getActiveSection = () => {
@@ -52,7 +53,13 @@ const BlogNavigation = () => {
 
   // Aggiorna la sezione attiva quando cambia location (incluso l'hash)
   useEffect(() => {
-    setActiveSection(getActiveSection());
+    const newSection = getActiveSection();
+    if (newSection !== activeSection) {
+      setActiveSection(newSection);
+      // Attiva l'effetto pulse quando cambia sezione
+      setIsPulsing(true);
+      setTimeout(() => setIsPulsing(false), 1000);
+    }
   }, [location.pathname, location.hash]);
 
   // Gestione apertura/chiusura con ritardo
@@ -87,7 +94,9 @@ const BlogNavigation = () => {
       <Button
         onClick={() => setIsOpen(!isOpen)}
         onMouseEnter={handleMouseEnter}
-        className="fixed top-24 right-4 z-50 bg-giolab-blue hover:bg-giolab-blue-dark text-white shadow-lg rounded-full w-12 h-12 p-0 flex items-center justify-center transition-all duration-300 hover:scale-110"
+        className={`fixed top-24 right-4 z-50 bg-giolab-blue hover:bg-giolab-blue-dark text-white shadow-lg rounded-full w-12 h-12 p-0 flex items-center justify-center transition-all duration-300 hover:scale-110 ${
+          isPulsing ? "animate-pulse" : ""
+        }`}
         aria-label="Menu navigazione"
       >
         {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
