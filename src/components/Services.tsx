@@ -92,7 +92,7 @@ const Services = () => {
           </a>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-0.5 md:gap-6 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <Card
               key={index}
@@ -112,7 +112,7 @@ const Services = () => {
         </div>
 
         {/* Additional features */}
-        <div className="mt-16 grid grid-cols-3 gap-3 md:gap-6 max-w-4xl mx-auto">
+        <div className="mt-16 grid grid-cols-3 gap-0.5 md:gap-6 max-w-4xl mx-auto">
           <div className="text-center p-3 md:p-6 rounded-xl bg-white/50 backdrop-blur border border-border">
             <div className="text-giolab-blue font-bold text-sm md:text-xl mb-1 md:mb-2">✓ Garanzia 12 mesi</div>
             <p className="text-xs md:text-sm text-muted-foreground">Su tutte le riparazioni</p>
