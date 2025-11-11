@@ -162,50 +162,64 @@ const Index = () => {
           ref={(el) => (sectionsRef.current[0] = el)}
           className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
-          <Hero />
+          <div className="section-content h-full w-full">
+            <Hero />
+          </div>
         </div>
         <div 
           id="servizi" 
           ref={(el) => (sectionsRef.current[1] = el)}
           className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
-          <Services />
+          <div className="section-content h-full w-full">
+            <Services />
+          </div>
         </div>
         <div 
           id="chi-siamo" 
           ref={(el) => (sectionsRef.current[2] = el)}
           className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
-          <About />
+          <div className="section-content h-full w-full">
+            <About />
+          </div>
         </div>
         <div 
           id="testimonianze" 
           ref={(el) => (sectionsRef.current[3] = el)}
           className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
-          <Testimonials />
+          <div className="section-content h-full w-full">
+            <Testimonials />
+          </div>
         </div>
         <div 
           id="dove-siamo" 
           ref={(el) => (sectionsRef.current[4] = el)}
           className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
-          <SocialAndLocation />
+          <div className="section-content h-full w-full">
+            <SocialAndLocation />
+          </div>
         </div>
         <div 
           id="faq" 
           ref={(el) => (sectionsRef.current[5] = el)}
           className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
-          <FAQ />
+          <div className="section-content h-full w-full">
+            <FAQ />
+          </div>
         </div>
         <div 
           id="contatti" 
           ref={(el) => (sectionsRef.current[6] = el)}
           className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
-          <Contact />
-          <Footer />
+          <div className="section-content h-full w-full">
+            <Contact />
+            <Footer />
+          </div>
         </div>
       </div>
       <FloatingWhatsApp />
@@ -235,15 +249,32 @@ const Index = () => {
       </div>
       
       <style>{`
-        .section-animate {
-          opacity: 0.5;
-          filter: blur(2px);
-          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        /* Sezioni: completamente statiche - zero transform per garantire scroll-snap perfetto */
+        .section-animate,
+        .section-visible {
+          transform: none !important;
         }
         
-        .section-visible {
+        /* Content wrapper per animazioni interne - applica effetti solo agli elementi dentro */
+        .section-content {
+          height: 100%;
+          width: 100%;
+          transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+          will-change: transform, opacity, filter;
+        }
+        
+        /* Stato non visibile - elementi interni sfocati, trasparenti e rimpiccioliti */
+        .section-animate .section-content {
+          opacity: 0.3;
+          filter: blur(4px);
+          transform: scale(0.92);
+        }
+        
+        /* Stato visibile - elementi interni nitidi, opachi e a scala normale con effetto elastico */
+        .section-visible .section-content {
           opacity: 1 !important;
           filter: blur(0) !important;
+          transform: scale(1) !important;
         }
         
         .scroll-smooth {
@@ -260,25 +291,23 @@ const Index = () => {
         .snap-always {
           scroll-snap-stop: always;
           scroll-snap-align: center;
+          scroll-margin: 0;
         }
         
-        /* Ensure sections are exactly viewport width - no transform that moves position */
+        /* Ensure sections are exactly viewport width */
         .w-screen {
           width: 100vw !important;
           min-width: 100vw !important;
           max-width: 100vw !important;
         }
         
-        /* Remove any potential interference */
-        .section-animate,
-        .section-visible {
-          transform: none !important;
-        }
-        
-        /* Parallax effect on scroll */
-        @media (prefers-reduced-motion: no-preference) {
-          .section-animate {
-            will-change: opacity, filter;
+        /* Parallax effect - disable on reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+          .section-content {
+            transition: none !important;
+            transform: none !important;
+            filter: none !important;
+            opacity: 1 !important;
           }
         }
       `}</style>
