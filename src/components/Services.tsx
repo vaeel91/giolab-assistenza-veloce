@@ -37,6 +37,11 @@ const services = [
     description: "Ripariamo il retro in vetro del tuo iPhone con risultati perfetti, senza cambiare la scocca completa.",
   },
   {
+    emoji: "💎",
+    title: "Rigenerazione Vetro",
+    description: "Rigenerazione professionale del vetro per iPhone e Apple Watch. Rimuoviamo graffi e imperfezioni per un risultato come nuovo.",
+  },
+  {
     emoji: "🧹",
     title: "Pulizia e Manutenzione Interna",
     description: "Rimuoviamo polvere e ossidazioni da smartphone e PC per migliorare prestazioni e raffreddamento.",
