@@ -1,0 +1,66 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Home, Wrench, Users, Star, BookOpen, MapPin, HelpCircle, Phone, Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const navigationItems = [
+  { id: "home", label: "Home", icon: Home, link: "/#hero" },
+  { id: "servizi", label: "Servizi", icon: Wrench, link: "/#servizi" },
+  { id: "chi-siamo", label: "Chi Siamo", icon: Users, link: "/#chi-siamo" },
+  { id: "testimonianze", label: "Recensioni", icon: Star, link: "/#testimonianze" },
+  { id: "blog", label: "Blog", icon: BookOpen, link: "/#blog" },
+  { id: "dove-siamo", label: "Dove Siamo", icon: MapPin, link: "/#dove-siamo" },
+  { id: "faq", label: "FAQ", icon: HelpCircle, link: "/#faq" },
+  { id: "contatti", label: "Contatti", icon: Phone, link: "/#contatti" },
+];
+
+const BlogNavigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      {/* Mobile Toggle Button */}
+      <Button
+        onClick={() => setIsOpen(!isOpen)}
+        className="fixed top-20 right-4 z-50 lg:hidden bg-giolab-blue hover:bg-giolab-blue-dark text-white shadow-lg rounded-full w-12 h-12 p-0 flex items-center justify-center"
+        aria-label="Menu navigazione"
+      >
+        {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+      </Button>
+
+      {/* Navigation Menu */}
+      <nav
+        className={`fixed top-24 right-4 z-40 bg-background/95 backdrop-blur-md border border-border rounded-xl shadow-xl transition-all duration-300 ${
+          isOpen ? "translate-x-0 opacity-100" : "translate-x-[120%] opacity-0 lg:translate-x-0 lg:opacity-100"
+        }`}
+      >
+        <div className="p-3 space-y-1">
+          <div className="text-xs font-semibold text-muted-foreground mb-2 px-2 hidden lg:block">
+            Navigazione Rapida
+          </div>
+          {navigationItems.map((item) => (
+            <Link
+              key={item.id}
+              to={item.link}
+              onClick={() => setIsOpen(false)}
+              className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-giolab-blue/10 hover:text-giolab-blue transition-all duration-200 group text-sm"
+            >
+              <item.icon className="h-4 w-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
+              <span className="font-medium">{item.label}</span>
+            </Link>
+          ))}
+        </div>
+      </nav>
+
+      {/* Overlay for mobile */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/20 z-30 lg:hidden"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+    </>
+  );
+};
+
+export default BlogNavigation;

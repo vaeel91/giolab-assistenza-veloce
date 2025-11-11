@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
@@ -241,6 +242,7 @@ const RiparazioneIPhone1OraGiolab = () => {
 
       <Footer />
       <FloatingWhatsApp />
+      <BlogNavigation />
     </div>
   );
 };
