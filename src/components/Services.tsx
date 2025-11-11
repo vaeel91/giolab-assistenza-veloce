@@ -104,7 +104,7 @@ const Services = () => {
   const { ref, isVisible } = useScrollAnimation();
   
   return (
-    <section id="servizi" ref={ref} className="py-4 md:py-6 bg-gradient-to-b from-background to-giolab-gray h-full flex flex-col justify-center">
+    <section id="servizi" ref={ref} className="py-4 md:py-6 pt-20 md:pt-24 bg-gradient-to-b from-background to-giolab-gray h-full flex flex-col justify-center">
       <div className="container mx-auto px-4">
         <div className="text-center mb-4 md:mb-6">
           <h2 className="text-xl md:text-3xl font-bold text-foreground mb-2">Servizi di Riparazione</h2>

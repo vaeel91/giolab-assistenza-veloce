@@ -3,7 +3,7 @@ import Location from "./Location";
 
 const SocialAndLocation = () => {
   return (
-    <section className="py-4 md:py-6 bg-muted/30 h-full flex flex-col justify-center">
+    <section className="py-4 md:py-6 pt-20 md:pt-24 bg-muted/30 h-full flex flex-col justify-center">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-4 max-w-7xl mx-auto">
           <Gallery />

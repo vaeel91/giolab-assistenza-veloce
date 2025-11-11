@@ -23,7 +23,7 @@ const About = () => {
   ];
 
   return (
-    <section id="chi-siamo" className="py-4 md:py-6 bg-background h-full flex flex-col justify-center">
+    <section id="chi-siamo" className="py-4 md:py-6 pt-20 md:pt-24 bg-background h-full flex flex-col justify-center">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-4 md:gap-6 items-center">

@@ -12,7 +12,7 @@ const BlogPreview = () => {
   const displayedArticles = blogArticles.slice(0, 8);
   
   return (
-    <section id="blog" ref={ref} className="py-2 md:py-3 bg-background h-screen flex flex-col justify-center overflow-hidden">
+    <section id="blog" ref={ref} className="py-2 md:py-3 pt-20 md:pt-24 bg-background h-screen flex flex-col justify-center overflow-hidden">
       <div className="container mx-auto px-4 h-full flex flex-col justify-center">
         <div className="text-center mb-2">
           <h2 className="text-lg md:text-2xl font-bold text-foreground mb-1">

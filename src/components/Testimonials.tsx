@@ -39,7 +39,7 @@ const Testimonials = () => {
   const { ref, isVisible } = useScrollAnimation();
   
   return (
-    <section id="testimonianze" ref={ref} className="py-4 md:py-6 bg-gradient-to-b from-giolab-gray to-background h-full flex flex-col justify-center">
+    <section id="testimonianze" ref={ref} className="py-4 md:py-6 pt-20 md:pt-24 bg-gradient-to-b from-giolab-gray to-background h-full flex flex-col justify-center">
       <div className="container mx-auto px-4">
         <div className="text-center mb-3 md:mb-4">
           <h2 className="text-xl md:text-3xl font-bold text-foreground mb-2">Cosa Dicono i Clienti</h2>
