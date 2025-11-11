@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, FileText, BookOpen } from "lucide-react";
-import giolabLogo from "@/assets/giolab-logo.png";
+import giolabLogo from "@/assets/giolab-logo-new.png";
 import { QuoteRequestDialog } from "./QuoteRequestDialog";
 
 const Hero = () => {
