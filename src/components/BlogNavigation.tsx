@@ -4,7 +4,7 @@ import { Home, Wrench, Users, Star, BookOpen, MapPin, HelpCircle, Phone, Menu, X
 import { Button } from "@/components/ui/button";
 
 const navigationItems = [
-  { id: "home", label: "Home", icon: Home, link: "/#hero" },
+  { id: "hero", label: "Home", icon: Home, link: "/#hero" },
   { id: "servizi", label: "Servizi", icon: Wrench, link: "/#servizi" },
   { id: "chi-siamo", label: "Chi Siamo", icon: Users, link: "/#chi-siamo" },
   { id: "testimonianze", label: "Recensioni", icon: Star, link: "/#testimonianze" },
@@ -103,7 +103,7 @@ const BlogNavigation = () => {
       // Riproduce il suono se abilitato
       playTransitionSound();
     }
-  }, [location.pathname, location.hash, soundEnabled]);
+  }, [location.pathname, location.hash]);
 
   // Gestione apertura/chiusura con ritardo
   const handleMouseEnter = () => {
