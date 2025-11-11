@@ -13,6 +13,10 @@ import ComeCabireBatteriaIPhone from "./pages/blog/ComeCabireBatteriaIPhone";
 import VantaggiBatteriaMaggiorataIPhone from "./pages/blog/VantaggiBatteriaMaggiorataIPhone";
 import RiparazioneIPhone1OraGiolab from "./pages/blog/RiparazioneIPhone1OraGiolab";
 import RigenerazioneVetroIPhone from "./pages/blog/RigenerazioneVetroIPhone";
+import CosaFareIPhoneCadutoSchermoCrepato from "./pages/blog/CosaFareIPhoneCadutoSchermoCrepato";
+import PercheFaceIDSmetteFunzionare from "./pages/blog/PercheFaceIDSmetteFunzionare";
+import RecuperoDatiIPhoneRotto from "./pages/blog/RecuperoDatiIPhoneRotto";
+import MicrosaldatureSchedaMadre from "./pages/blog/MicrosaldatureSchedaMadre";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +34,10 @@ const App = () => (
           <Route path="/blog/vantaggi-batteria-maggiorata-iphone" element={<VantaggiBatteriaMaggiorataIPhone />} />
           <Route path="/blog/riparazione-iphone-1-ora-giolab" element={<RiparazioneIPhone1OraGiolab />} />
           <Route path="/blog/rigenerazione-vetro-iphone" element={<RigenerazioneVetroIPhone />} />
+          <Route path="/blog/cosa-fare-iphone-caduto-schermo-crepato" element={<CosaFareIPhoneCadutoSchermoCrepato />} />
+          <Route path="/blog/perche-face-id-smette-funzionare" element={<PercheFaceIDSmetteFunzionare />} />
+          <Route path="/blog/recupero-dati-iphone-rotto" element={<RecuperoDatiIPhoneRotto />} />
+          <Route path="/blog/microsaldature-scheda-madre" element={<MicrosaldatureSchedaMadre />} />
           <Route path="/servizi/riparazione-display-iphone-assemini" element={<RiparazioneDisplayIPhone />} />
           <Route path="/servizi/batteria-maggiorata-iphone" element={<BatteriaMaggiorataIPhone />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

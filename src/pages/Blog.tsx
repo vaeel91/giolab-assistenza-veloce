@@ -8,6 +8,42 @@ import { Calendar, Clock } from "lucide-react";
 
 const blogPosts = [
   {
+    slug: "microsaldature-scheda-madre",
+    title: "Micro-saldature su scheda madre: quando servono e perché rivolgersi a un professionista",
+    description: "Scopri quando sono necessarie le micro-saldature sulla scheda madre iPhone e perché affidarsi a un professionista ad Assemini.",
+    date: "2025-01-19",
+    readTime: "8 min",
+    category: "Tecnologia",
+    image: "🔬"
+  },
+  {
+    slug: "recupero-dati-iphone-rotto",
+    title: "Recupero dati da iPhone rotto: cosa si può fare davvero",
+    description: "iPhone rotto e dati importanti da salvare? Scopri cosa è possibile recuperare e come Giolab può aiutarti.",
+    date: "2025-01-18",
+    readTime: "7 min",
+    category: "Guide",
+    image: "💾"
+  },
+  {
+    slug: "perche-face-id-smette-funzionare",
+    title: "Perché il Face ID smette di funzionare dopo una caduta",
+    description: "Face ID non funziona più dopo una caduta? Scopri le cause e come riparare il sensore Face ID ad Assemini.",
+    date: "2025-01-17",
+    readTime: "7 min",
+    category: "Tecnologia",
+    image: "🔐"
+  },
+  {
+    slug: "cosa-fare-iphone-caduto-schermo-crepato",
+    title: "Cosa fare se l'iPhone cade e lo schermo si crepa",
+    description: "iPhone caduto con schermo crepato? Scopri cosa fare immediatamente e come procedere per la riparazione ad Assemini.",
+    date: "2025-01-16",
+    readTime: "6 min",
+    category: "Guide",
+    image: "📱"
+  },
+  {
     slug: "come-capire-batteria-iphone-da-sostituire",
     title: "Come capire se la batteria del tuo iPhone va sostituita",
     description: "Scopri i segnali che indicano quando è il momento di sostituire la batteria del tuo iPhone. Guida completa con consigli pratici.",
