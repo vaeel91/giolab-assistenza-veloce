@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Smartphone, Phone, FileText } from "lucide-react";
-import giolabLogo from "@/assets/giolab-logo.png";
+import giolabLogo from "@/assets/giolab-logo-optimized.webp";
 import { QuoteRequestDialog } from "./QuoteRequestDialog";
 
 const Hero = () => {
@@ -30,7 +30,9 @@ const Hero = () => {
             <img 
               src={giolabLogo} 
               alt="Giolab Assemini - Centro assistenza riparazione iPhone, smartphone, PC e console" 
-              className="h-32 md:h-48 lg:h-56 w-auto" 
+              className="h-32 md:h-48 lg:h-56 w-auto"
+              loading="eager"
+              fetchPriority="high"
             />
           </div>
 
