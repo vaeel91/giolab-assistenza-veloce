@@ -8,8 +8,8 @@ import { blogArticles } from "@/data/blogArticles";
 const BlogPreview = () => {
   const { ref, isVisible } = useScrollAnimation();
   
-  // Mostra i primi 9 articoli più recenti
-  const displayedArticles = blogArticles.slice(0, 9);
+  // Mostra i primi 8 articoli più recenti (il 9° posto sarà il bottone)
+  const displayedArticles = blogArticles.slice(0, 8);
   
   return (
     <section id="blog" ref={ref} className="py-2 md:py-3 bg-background h-screen flex flex-col justify-center overflow-hidden">
@@ -66,17 +66,30 @@ const BlogPreview = () => {
               </Link>
             );
           })}
-        </div>
-
-        <div className="text-center mt-2 md:mt-3">
-          <Link to="/blog">
-            <Button 
-              size="sm" 
-              className="bg-giolab-blue hover:bg-giolab-blue/90 text-white font-semibold text-xs md:text-sm px-4 md:px-6 py-2 md:py-3 shadow-lg hover:shadow-xl transition-all"
+          
+          {/* Card speciale con bottone per vedere tutti gli articoli */}
+          <Link to="/blog" className="group">
+            <Card 
+              className={`h-full border-2 border-giolab-blue bg-gradient-to-br from-giolab-blue/5 to-giolab-blue/10 hover:from-giolab-blue/10 hover:to-giolab-blue/20 transition-all duration-300 hover:shadow-xl flex items-center justify-center ${
+                isVisible ? 'animate-fade-in' : 'opacity-0'
+              }`}
+              style={{ animationDelay: `${800}ms` }}
             >
-              Scopri tutti i {blogArticles.length} articoli
-              <ArrowRight className="ml-1.5 h-3 w-3 md:h-4 md:w-4" />
-            </Button>
+              <CardContent className="p-4 flex flex-col items-center justify-center text-center h-full">
+                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-giolab-blue flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                  <ArrowRight className="h-6 w-6 md:h-8 md:w-8 text-white" />
+                </div>
+                <h3 className="text-sm md:text-base font-bold text-giolab-blue mb-2">
+                  Scopri tutti gli articoli
+                </h3>
+                <p className="text-xs text-muted-foreground mb-3">
+                  {blogArticles.length} guide e tutorial disponibili
+                </p>
+                <div className="text-xs font-semibold text-giolab-blue group-hover:underline">
+                  Vai al blog completo →
+                </div>
+              </CardContent>
+            </Card>
           </Link>
         </div>
       </div>
