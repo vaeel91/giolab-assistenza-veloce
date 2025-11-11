@@ -63,7 +63,13 @@ const Index = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("section-visible");
-            setVisibleSection(entry.target.id);
+            const sectionId = entry.target.id;
+            setVisibleSection(sectionId);
+            
+            // Aggiorna l'hash dell'URL per sincronizzare con il menu sticky
+            if (window.location.hash !== `#${sectionId}`) {
+              window.history.replaceState(null, '', `#${sectionId}`);
+            }
           } else {
             entry.target.classList.remove("section-visible");
           }

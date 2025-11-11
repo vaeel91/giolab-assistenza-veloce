@@ -24,7 +24,7 @@ const BlogNavigation = () => {
     const path = location.pathname;
     const hash = location.hash;
 
-    // Se siamo sulla homepage, guarda l'hash
+    // Se siamo sulla homepage, guarda l'hash (che viene aggiornato dinamicamente)
     if (path === "/" && hash) {
       const sectionId = hash.replace("#", "");
       return sectionId;
@@ -40,11 +40,20 @@ const BlogNavigation = () => {
       return "servizi";
     }
 
-    // Default: home
-    return "home";
+    // Default: home se siamo sulla homepage senza hash
+    if (path === "/") {
+      return "hero";
+    }
+
+    return "hero";
   };
 
-  const activeSection = getActiveSection();
+  const [activeSection, setActiveSection] = useState(getActiveSection());
+
+  // Aggiorna la sezione attiva quando cambia location (incluso l'hash)
+  useEffect(() => {
+    setActiveSection(getActiveSection());
+  }, [location.pathname, location.hash]);
 
   // Calcola la percentuale di scroll della pagina
   useEffect(() => {
@@ -125,7 +134,7 @@ const BlogNavigation = () => {
                 onClick={() => setIsOpen(false)}
                 className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 group text-sm relative ${
                   isActive
-                    ? "bg-giolab-blue text-white font-semibold shadow-md"
+                    ? "bg-giolab-blue text-white font-semibold shadow-md scale-105"
                     : "hover:bg-giolab-blue/10 hover:text-giolab-blue"
                 }`}
               >
