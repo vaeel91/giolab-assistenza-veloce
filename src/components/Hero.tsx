@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Smartphone, Phone, FileText } from "lucide-react";
-import giolabLogo from "@/assets/giolab-logo-optimized.webp";
+import giolabLogo from "@/assets/giolab-logo.png";
 import { QuoteRequestDialog } from "./QuoteRequestDialog";
 
 const Hero = () => {
