@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Home, Wrench, Users, Star, BookOpen, MapPin, HelpCircle, Phone, Menu, X } from "lucide-react";
+import { Home, Wrench, Users, Star, BookOpen, MapPin, HelpCircle, Phone, Menu, X, Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navigationItems = [
@@ -19,6 +19,7 @@ const BlogNavigation = () => {
   const location = useLocation();
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [isPulsing, setIsPulsing] = useState(false);
+  const [soundEnabled, setSoundEnabled] = useState(false);
 
   // Determina quale sezione è attiva in base alla route corrente
   const getActiveSection = () => {
@@ -51,6 +52,34 @@ const BlogNavigation = () => {
 
   const [activeSection, setActiveSection] = useState(getActiveSection());
 
+  // Funzione per riprodurre un suono sottile
+  const playTransitionSound = () => {
+    if (!soundEnabled) return;
+    
+    try {
+      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      
+      // Imposta un suono piacevole (nota C5 - 523.25 Hz)
+      oscillator.frequency.value = 523.25;
+      oscillator.type = 'sine';
+      
+      // Fade in/out per rendere il suono morbido
+      gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+      gainNode.gain.linearRampToValueAtTime(0.1, audioContext.currentTime + 0.02);
+      gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.15);
+      
+      oscillator.start(audioContext.currentTime);
+      oscillator.stop(audioContext.currentTime + 0.15);
+    } catch (error) {
+      console.log('Audio not supported');
+    }
+  };
+
   // Aggiorna la sezione attiva quando cambia location (incluso l'hash)
   useEffect(() => {
     const newSection = getActiveSection();
@@ -59,8 +88,10 @@ const BlogNavigation = () => {
       // Attiva l'effetto pulse quando cambia sezione
       setIsPulsing(true);
       setTimeout(() => setIsPulsing(false), 1000);
+      // Riproduce il suono se abilitato
+      playTransitionSound();
     }
-  }, [location.pathname, location.hash]);
+  }, [location.pathname, location.hash, soundEnabled]);
 
   // Gestione apertura/chiusura con ritardo
   const handleMouseEnter = () => {
@@ -115,6 +146,22 @@ const BlogNavigation = () => {
         }}
       >
         <div className="p-2 space-y-1 w-48">
+          {/* Sound Toggle */}
+          <button
+            onClick={() => setSoundEnabled(!soundEnabled)}
+            className="flex items-center gap-2 px-2 py-1.5 rounded-lg transition-all duration-200 hover:bg-giolab-blue/10 text-xs w-full mb-2 border-b border-border pb-2"
+            aria-label={soundEnabled ? "Disattiva suono" : "Attiva suono"}
+          >
+            {soundEnabled ? (
+              <Volume2 className="h-3.5 w-3.5 text-giolab-blue" />
+            ) : (
+              <VolumeX className="h-3.5 w-3.5 text-muted-foreground" />
+            )}
+            <span className={`font-medium ${soundEnabled ? "text-giolab-blue" : "text-muted-foreground"}`}>
+              Suono {soundEnabled ? "ON" : "OFF"}
+            </span>
+          </button>
+          
           {navigationItems.map((item, index) => {
             const isActive = activeSection === item.id;
             const IconComponent = item.icon;
