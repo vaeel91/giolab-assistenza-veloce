@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Home, Wrench, Users, Star, BookOpen, MapPin, HelpCircle, Phone, Menu, X, Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -18,6 +18,7 @@ const BlogNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const transitionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [isPulsing, setIsPulsing] = useState(false);
@@ -176,21 +177,28 @@ const BlogNavigation = () => {
             const isActive = activeSection === item.id;
             const IconComponent = item.icon;
             
+            const handleNavigation = (e: React.MouseEvent) => {
+              e.preventDefault();
+              
+              if (closeTimeoutRef.current) {
+                clearTimeout(closeTimeoutRef.current);
+              }
+              
+              // Naviga verso il link
+              navigate(item.link);
+              
+              setIsOpen(false);
+              setIsTransitioning(true);
+              transitionTimeoutRef.current = setTimeout(() => {
+                setIsTransitioning(false);
+              }, 400);
+            };
+            
             return (
-              <Link
+              <button
                 key={item.id}
-                to={item.link}
-                onClick={() => {
-                  if (closeTimeoutRef.current) {
-                    clearTimeout(closeTimeoutRef.current);
-                  }
-                  setIsOpen(false);
-                  setIsTransitioning(true);
-                  transitionTimeoutRef.current = setTimeout(() => {
-                    setIsTransitioning(false);
-                  }, 400);
-                }}
-                className={`flex items-center gap-2 px-2 py-1.5 rounded-lg transition-all duration-200 group text-xs relative pointer-events-auto ${
+                onClick={handleNavigation}
+                className={`flex items-center gap-2 px-2 py-1.5 rounded-lg transition-all duration-200 group text-xs relative pointer-events-auto w-full ${
                   isActive
                     ? "bg-giolab-blue text-white font-semibold shadow-sm"
                     : "hover:bg-giolab-blue/10 hover:text-giolab-blue"
@@ -204,7 +212,7 @@ const BlogNavigation = () => {
                   isActive ? "scale-110" : "group-hover:scale-110"
                 }`} />
                 <span className="font-medium truncate">{item.label}</span>
-              </Link>
+              </button>
             );
            })}
         </div>
