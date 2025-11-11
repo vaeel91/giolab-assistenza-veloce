@@ -141,8 +141,9 @@ const BlogNavigation = () => {
 
   // Gestione dello scroll con la rotellina per permettere lo scorrimento orizzontale
   const handleWheel = (e: React.WheelEvent) => {
-    // Trova il contenitore principale con scroll orizzontale
-    const mainContainer = document.querySelector('[style*="scroll-snap-type"]');
+    e.preventDefault();
+    // Trova il contenitore principale con scroll orizzontale (ha le classi snap-x e snap-mandatory)
+    const mainContainer = document.querySelector('.snap-x.snap-mandatory');
     if (mainContainer) {
       // Propaga l'evento di scroll al contenitore principale
       mainContainer.scrollBy({
