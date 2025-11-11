@@ -4,6 +4,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import RelatedArticles from "@/components/RelatedArticles";
+import SocialShare from "@/components/SocialShare";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -199,6 +200,15 @@ const RecuperoDatiIPhoneRotto = () => {
                   Richiedi Diagnosi Gratuita
                 </Button>
               </div>
+            </div>
+
+            {/* Social Share */}
+            <div className="mt-12">
+              <SocialShare
+                url="/blog/recupero-dati-iphone-rotto"
+                title="Recupero dati da iPhone rotto: cosa si può fare davvero"
+                description="iPhone rotto e dati importanti da salvare? Scopri cosa è possibile recuperare."
+              />
             </div>
 
             <div className="mt-12">

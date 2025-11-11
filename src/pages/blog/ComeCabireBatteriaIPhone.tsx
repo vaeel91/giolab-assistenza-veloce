@@ -4,6 +4,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import RelatedArticles from "@/components/RelatedArticles";
+import SocialShare from "@/components/SocialShare";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -180,6 +181,15 @@ const ComeCabireBatteriaIPhone = () => {
                   </Button>
                 </Link>
               </div>
+            </div>
+
+            {/* Social Share */}
+            <div className="mt-12">
+              <SocialShare
+                url="/blog/come-capire-batteria-iphone-da-sostituire"
+                title="Come capire se la batteria del tuo iPhone va sostituita"
+                description="Scopri i segnali che indicano quando è il momento di sostituire la batteria del tuo iPhone. Guida completa con consigli pratici."
+              />
             </div>
 
             {/* Back to Blog */}

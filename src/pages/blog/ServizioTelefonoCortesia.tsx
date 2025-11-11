@@ -4,6 +4,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import RelatedArticles from "@/components/RelatedArticles";
+import SocialShare from "@/components/SocialShare";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -210,6 +211,15 @@ const ServizioTelefonoCortesia = () => {
                   Prenota con Telefono di Cortesia
                 </Button>
               </div>
+            </div>
+
+            {/* Social Share */}
+            <div className="mt-12">
+              <SocialShare
+                url="/blog/servizio-telefono-cortesia"
+                title="Come funziona il servizio di telefono di cortesia Giolab"
+                description="Scopri come funziona il servizio di telefono sostitutivo durante la riparazione del tuo iPhone."
+              />
             </div>
 
             <div className="mt-12">

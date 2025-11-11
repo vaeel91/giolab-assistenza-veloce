@@ -4,6 +4,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import RelatedArticles from "@/components/RelatedArticles";
+import SocialShare from "@/components/SocialShare";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -242,6 +243,15 @@ const ConvieneRiparareIPhoneVecchio = () => {
                   Richiedi Consulenza Gratuita
                 </Button>
               </div>
+            </div>
+
+            {/* Social Share */}
+            <div className="mt-12">
+              <SocialShare
+                url="/blog/conviene-riparare-iphone-vecchio"
+                title="Conviene riparare un iPhone vecchio o comprarne uno ricondizionato?"
+                description="Analisi completa per decidere se riparare il tuo iPhone vecchio o comprarne uno ricondizionato."
+              />
             </div>
 
             <div className="mt-12">

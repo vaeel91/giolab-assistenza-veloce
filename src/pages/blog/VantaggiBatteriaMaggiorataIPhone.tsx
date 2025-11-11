@@ -4,6 +4,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import RelatedArticles from "@/components/RelatedArticles";
+import SocialShare from "@/components/SocialShare";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -199,6 +200,15 @@ const VantaggiBatteriaMaggiorataIPhone = () => {
                   </Button>
                 </Link>
               </div>
+            </div>
+
+            {/* Social Share */}
+            <div className="mt-12">
+              <SocialShare
+                url="/blog/vantaggi-batteria-maggiorata-iphone"
+                title="Vantaggi della batteria maggiorata per iPhone: più autonomia, meno stress"
+                description="Tutto quello che devi sapere sulle batterie maggiorate per iPhone: vantaggi, autonomia extra e perché sceglierle."
+              />
             </div>
 
             {/* Back to Blog */}

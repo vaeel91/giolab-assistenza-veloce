@@ -4,6 +4,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import RelatedArticles from "@/components/RelatedArticles";
+import SocialShare from "@/components/SocialShare";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -239,6 +240,15 @@ const RiparazioneIPhone1OraGiolab = () => {
                   </Button>
                 </Link>
               </div>
+            </div>
+
+            {/* Social Share */}
+            <div className="mt-12">
+              <SocialShare
+                url="/blog/riparazione-iphone-1-ora-giolab"
+                title="Riparazione iPhone in 1 ora: come funziona il servizio Giolab"
+                description="Scopri come riusciamo a riparare il tuo iPhone in tempi record senza compromettere la qualità."
+              />
             </div>
 
             {/* Back to Blog */}

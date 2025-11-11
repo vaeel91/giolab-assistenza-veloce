@@ -4,6 +4,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import RelatedArticles from "@/components/RelatedArticles";
+import SocialShare from "@/components/SocialShare";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -277,6 +278,15 @@ const QualitaRicambiDurataRiparazione = () => {
                   Richiedi Preventivo
                 </Button>
               </div>
+            </div>
+
+            {/* Social Share */}
+            <div className="mt-12">
+              <SocialShare
+                url="/blog/qualita-ricambi-durata-riparazione"
+                title="Quanto incide la qualità del ricambio sulla durata della riparazione"
+                description="Scopri perché la qualità dei ricambi è fondamentale per la durata della riparazione."
+              />
             </div>
 
             <div className="mt-12">

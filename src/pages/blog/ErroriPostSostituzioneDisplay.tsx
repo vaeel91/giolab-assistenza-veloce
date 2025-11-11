@@ -4,6 +4,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import RelatedArticles from "@/components/RelatedArticles";
+import SocialShare from "@/components/SocialShare";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -203,6 +204,15 @@ const ErroriPostSostituzioneDisplay = () => {
                   Contattaci per Supporto
                 </Button>
               </div>
+            </div>
+
+            {/* Social Share */}
+            <div className="mt-12">
+              <SocialShare
+                url="/blog/errori-post-sostituzione-display"
+                title="I 5 errori più comuni dopo la sostituzione del display iPhone"
+                description="Scopri i 5 errori più comuni che gli utenti commettono dopo aver sostituito il display dell'iPhone."
+              />
             </div>
 
             <div className="mt-12">
