@@ -26,7 +26,7 @@ const Hero = () => {
             <img 
               src={giolabLogo} 
               alt="Giolab Assemini - Centro assistenza riparazione iPhone, smartphone, PC e console" 
-              className="h-20 md:h-28 lg:h-32 w-auto animate-zoom-in"
+              className="h-60 md:h-84 lg:h-96 w-auto animate-zoom-in"
               loading="eager"
             />
           </div>
