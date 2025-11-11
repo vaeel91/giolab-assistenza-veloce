@@ -147,3 +147,10 @@ All colors MUST be HSL.
     @apply text-base leading-relaxed;
   }
 }
+
+@layer utilities {
+  /* Pausa l'animazione al hover */
+  .hover\:pause:hover {
+    animation-play-state: paused;
+  }
+}
