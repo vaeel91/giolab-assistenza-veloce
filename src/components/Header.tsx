@@ -1,5 +1,5 @@
 import { Instagram, Facebook } from "lucide-react";
-import giolabIcon from "@/assets/giolab-icon.png";
+import giolabIcon from "@/assets/giolab-logo-new.png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -33,17 +33,14 @@ const Header = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center gap-2 group"
+            className="flex items-center group"
           >
             <img
               src={giolabIcon}
               alt="Giolab"
-              className="h-8 md:h-10 w-auto transition-transform group-hover:scale-110"
+              className="h-8 md:h-12 w-auto transition-transform group-hover:scale-110"
               loading="lazy"
             />
-            <span className="text-xl md:text-2xl font-bold text-foreground">
-              Giolab
-            </span>
           </Link>
 
           {/* Desktop Navigation - Solo Social Media */}
