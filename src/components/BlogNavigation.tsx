@@ -59,6 +59,7 @@ const BlogNavigation = () => {
       {/* Compact Floating Toggle Button */}
       <Button
         onClick={() => setIsOpen(!isOpen)}
+        onMouseEnter={() => setIsOpen(true)}
         className="fixed top-24 right-4 z-50 bg-giolab-blue hover:bg-giolab-blue-dark text-white shadow-lg rounded-full w-12 h-12 p-0 flex items-center justify-center transition-all duration-300 hover:scale-110"
         aria-label="Menu navigazione"
       >
@@ -67,6 +68,8 @@ const BlogNavigation = () => {
 
       {/* Compact Navigation Menu */}
       <nav
+        onMouseEnter={() => setIsOpen(true)}
+        onMouseLeave={() => setIsOpen(false)}
         className={`fixed top-24 right-4 z-40 bg-background/80 backdrop-blur-md border border-border rounded-xl shadow-xl transition-all duration-300 origin-top-right ${
           isOpen ? "scale-100 opacity-100 pointer-events-auto" : "scale-95 opacity-0 pointer-events-none"
         }`}
