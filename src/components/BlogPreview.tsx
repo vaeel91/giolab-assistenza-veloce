@@ -1,15 +1,35 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { blogArticles } from "@/data/blogArticles";
+import { useState, useEffect } from "react";
 
 const BlogPreview = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   
-  // Mostra i primi 8 articoli più recenti (il 9° posto sarà il bottone)
-  const displayedArticles = blogArticles.slice(0, 8);
+  const cardsPerPage = 3;
+  const totalPages = Math.ceil(blogArticles.length / cardsPerPage);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % totalPages);
+        setIsTransitioning(false);
+      }, 500); // Durata della transizione di dissolvenza
+    }, 4000); // Cambia ogni 4 secondi
+    
+    return () => clearInterval(interval);
+  }, [totalPages]);
+  
+  const currentArticles = blogArticles.slice(
+    currentIndex * cardsPerPage,
+    (currentIndex * cardsPerPage) + cardsPerPage
+  );
   
   return (
     <section id="blog" ref={ref} className="py-2 md:py-3 pt-20 md:pt-24 bg-background h-screen flex flex-col justify-center overflow-hidden">
@@ -19,21 +39,22 @@ const BlogPreview = () => {
             Articoli e Guide
           </h2>
           <p className="text-xs text-muted-foreground">
-            {displayedArticles.length} di {blogArticles.length} articoli
+            Mostrando {currentArticles.length} di {blogArticles.length} articoli
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-1.5 md:gap-2 max-w-6xl mx-auto flex-1 overflow-hidden">
-          {displayedArticles.map((article, index) => {
-            const delay = index * 100;
+        <div className="relative max-w-6xl mx-auto flex-1 overflow-hidden">
+          <div 
+            className={`grid grid-cols-1 md:grid-cols-3 gap-1.5 md:gap-2 transition-all duration-500 ${
+              isTransitioning ? 'opacity-0 translate-x-8' : 'opacity-100 translate-x-0'
+            }`}
+          >
+          {currentArticles.map((article, index) => {
             
             return (
               <Link key={article.slug} to={`/blog/${article.slug}`} className="group">
                 <Card 
-                  className={`h-full border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg ${
-                    isVisible ? 'animate-fade-in' : 'opacity-0'
-                  }`}
-                  style={{ animationDelay: `${delay}ms` }}
+                  className="h-full border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg"
                 >
                   <CardHeader className="p-2 md:p-3 pb-1 md:pb-2">
                     <div className="flex items-start gap-2 mb-1">
@@ -66,30 +87,38 @@ const BlogPreview = () => {
               </Link>
             );
           })}
+          </div>
           
-          {/* Card speciale con bottone per vedere tutti gli articoli */}
-          <Link to="/blog" className="group">
-            <Card 
-              className={`h-full border-2 border-giolab-blue bg-gradient-to-br from-giolab-blue/5 to-giolab-blue/10 hover:from-giolab-blue/10 hover:to-giolab-blue/20 transition-all duration-300 hover:shadow-xl flex items-center justify-center ${
-                isVisible ? 'animate-fade-in' : 'opacity-0'
-              }`}
-              style={{ animationDelay: `${800}ms` }}
-            >
-              <CardContent className="p-4 flex flex-col items-center justify-center text-center h-full">
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-giolab-blue flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                  <ArrowRight className="h-6 w-6 md:h-8 md:w-8 text-white" />
-                </div>
-                <h3 className="text-sm md:text-base font-bold text-giolab-blue mb-2">
-                  Scopri tutti gli articoli
-                </h3>
-                <p className="text-xs text-muted-foreground mb-3">
-                  {blogArticles.length} guide e tutorial disponibili
-                </p>
-                <div className="text-xs font-semibold text-giolab-blue group-hover:underline">
-                  Vai al blog completo →
-                </div>
-              </CardContent>
-            </Card>
+          {/* Indicatori di pagina */}
+          <div className="flex justify-center gap-2 mt-3">
+            {Array.from({ length: totalPages }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setIsTransitioning(true);
+                  setTimeout(() => {
+                    setCurrentIndex(index);
+                    setIsTransitioning(false);
+                  }, 500);
+                }}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  currentIndex === index 
+                    ? 'bg-giolab-blue w-6' 
+                    : 'bg-muted-foreground/40 hover:bg-giolab-blue/60'
+                }`}
+                aria-label={`Vai alla pagina ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+        
+        {/* Bottone per vedere tutti gli articoli */}
+        <div className="text-center mt-3">
+          <Link to="/blog">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-giolab-blue hover:bg-giolab-blue/90 text-white rounded-lg transition-all hover:shadow-lg text-xs md:text-sm font-semibold">
+              Scopri tutti i {blogArticles.length} articoli
+              <ArrowRight className="h-3 w-3 md:h-4 md:w-4" />
+            </div>
           </Link>
         </div>
       </div>
