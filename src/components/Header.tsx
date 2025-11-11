@@ -59,7 +59,7 @@ const Header = () => {
         window.location.href = `/${href}`;
       } else {
         const element = document.querySelector(href);
-        element?.scrollIntoView({ behavior: "smooth" });
+        element?.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
       }
     } else {
       setIsMobileMenuOpen(false);

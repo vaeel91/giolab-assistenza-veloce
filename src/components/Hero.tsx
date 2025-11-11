@@ -16,7 +16,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-giolab-gray to-background">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-giolab-gray to-background">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-giolab-blue opacity-10 rounded-full blur-3xl animate-pulse"></div>
@@ -98,9 +98,9 @@ const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-giolab-blue rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-giolab-blue rounded-full mt-2 animate-pulse"></div>
+      <div className="absolute bottom-8 right-8 animate-bounce">
+        <div className="w-10 h-6 border-2 border-giolab-blue rounded-full flex items-center justify-center rotate-90">
+          <div className="w-3 h-1 bg-giolab-blue rounded-full ml-2 animate-pulse"></div>
         </div>
       </div>
 
