@@ -170,15 +170,16 @@ const BlogNavigation = () => {
               <Link
                 key={item.id}
                 to={item.link}
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                }}
                 className={`flex items-center gap-2 px-2 py-1.5 rounded-lg transition-all duration-200 group text-xs relative ${
                   isActive
                     ? "bg-giolab-blue text-white font-semibold shadow-sm"
                     : "hover:bg-giolab-blue/10 hover:text-giolab-blue"
                 }`}
                 style={{
-                  animation: isOpen ? `fade-in 0.3s ease-out ${index * 50}ms forwards` : 'none',
-                  opacity: isOpen ? undefined : 0
+                  animation: isOpen ? `fade-in 0.3s ease-out ${index * 50}ms forwards` : 'none'
                 }}
               >
                 {/* Indicatore visivo compatto per la sezione attiva */}
@@ -191,17 +192,9 @@ const BlogNavigation = () => {
                 <span className="font-medium truncate">{item.label}</span>
               </Link>
             );
-          })}
+           })}
         </div>
       </nav>
-
-      {/* Overlay for closing menu when clicking outside */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 z-30"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
     </>
   );
 };
