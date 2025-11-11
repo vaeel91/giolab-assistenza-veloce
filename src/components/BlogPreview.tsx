@@ -30,15 +30,15 @@ const BlogPreview = () => {
     }
   };
 
-  // Auto-scroll solo su desktop
+  // Auto-scroll con pausa al tocco su mobile
   useEffect(() => {
-    if (!scrollContainerRef.current || isPaused || isMobile) return;
+    if (!scrollContainerRef.current || isPaused) return;
 
     const container = scrollContainerRef.current;
     let animationId: number;
     
     const scroll = () => {
-      if (container && !isPaused && !isMobile) {
+      if (container && !isPaused) {
         container.scrollLeft += 1;
         
         // Reset quando raggiunge metà (primo set di articoli completato)
@@ -52,7 +52,7 @@ const BlogPreview = () => {
     animationId = requestAnimationFrame(scroll);
     
     return () => cancelAnimationFrame(animationId);
-  }, [isPaused, isMobile]);
+  }, [isPaused]);
   
   return (
     <section id="blog" ref={ref} className="py-4 md:py-6 pt-20 md:pt-24 bg-background h-screen flex flex-col justify-center overflow-hidden">
@@ -91,13 +91,15 @@ const BlogPreview = () => {
               scrollbarWidth: 'none', 
               msOverflowStyle: 'none',
               WebkitOverflowScrolling: 'touch',
-              scrollSnapType: isMobile ? 'x mandatory' : 'x mandatory',
+              scrollSnapType: 'x mandatory',
               scrollBehavior: 'smooth',
               touchAction: 'pan-x',
               overscrollBehavior: 'contain'
             }}
             onMouseEnter={() => !isMobile && setIsPaused(true)}
             onMouseLeave={() => !isMobile && setIsPaused(false)}
+            onTouchStart={() => setIsPaused(true)}
+            onTouchEnd={() => setIsPaused(false)}
           >
             <div className="flex gap-3 md:gap-4 px-4 md:px-16 py-2">
             {duplicatedArticles.map((article, index) => {
