@@ -9,9 +9,22 @@ const BlogPreview = () => {
   const { ref, isVisible } = useScrollAnimation();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   
   // Duplica gli articoli per creare l'effetto infinito
   const duplicatedArticles = [...blogArticles, ...blogArticles];
+
+  // Rileva se siamo su mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleScroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
@@ -28,14 +41,15 @@ const BlogPreview = () => {
     }
   };
 
+  // Auto-scroll solo su desktop
   useEffect(() => {
-    if (!scrollContainerRef.current || isPaused) return;
+    if (!scrollContainerRef.current || isPaused || isMobile) return;
 
     const container = scrollContainerRef.current;
     let animationId: number;
     
     const scroll = () => {
-      if (container && !isPaused) {
+      if (container && !isPaused && !isMobile) {
         container.scrollLeft += 1;
         
         // Reset quando raggiunge metà (primo set di articoli completato)
@@ -49,7 +63,7 @@ const BlogPreview = () => {
     animationId = requestAnimationFrame(scroll);
     
     return () => cancelAnimationFrame(animationId);
-  }, [isPaused]);
+  }, [isPaused, isMobile]);
   
   return (
     <section id="blog" ref={ref} className="py-4 md:py-6 pt-20 md:pt-24 bg-background h-screen flex flex-col justify-center overflow-hidden">
@@ -71,29 +85,31 @@ const BlogPreview = () => {
           {/* Gradiente sfumato destro */}
           <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-20 pointer-events-none" />
           
-          {/* Freccia sinistra */}
+          {/* Freccia sinistra - solo desktop */}
           <button
             onClick={() => handleScroll('left')}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-30 bg-background/95 hover:bg-background border-2 border-giolab-blue text-giolab-blue rounded-full p-2 shadow-lg transition-all hover:scale-110"
+            className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-30 bg-background/95 hover:bg-background border-2 border-giolab-blue text-giolab-blue rounded-full p-2 shadow-lg transition-all hover:scale-110"
             aria-label="Scorri a sinistra"
           >
-            <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+            <ChevronLeft className="h-6 w-6" />
           </button>
 
           {/* Track dello scorrimento */}
           <div 
             ref={scrollContainerRef}
-            className="overflow-x-auto scrollbar-hide scroll-smooth"
+            className="overflow-x-auto scrollbar-hide"
             style={{ 
               scrollbarWidth: 'none', 
               msOverflowStyle: 'none',
               WebkitOverflowScrolling: 'touch',
-              scrollSnapType: 'x mandatory'
+              scrollSnapType: isMobile ? 'none' : 'x mandatory',
+              scrollBehavior: 'smooth',
+              touchAction: 'pan-x'
             }}
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
+            onMouseEnter={() => !isMobile && setIsPaused(true)}
+            onMouseLeave={() => !isMobile && setIsPaused(false)}
           >
-            <div className="flex gap-3 md:gap-4 px-12 md:px-16 py-2">
+            <div className="flex gap-3 md:gap-4 px-4 md:px-16 py-2">
             {duplicatedArticles.map((article, index) => {
             
             return (
@@ -101,7 +117,7 @@ const BlogPreview = () => {
                 key={`${article.slug}-${index}`} 
                 to={`/blog/${article.slug}`} 
                 className="group flex-shrink-0 w-[280px] md:w-80"
-                style={{ scrollSnapAlign: 'center' }}
+                style={{ scrollSnapAlign: isMobile ? 'start' : 'center' }}
               >
                 <Card className="h-full border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg bg-card">
                   <CardHeader className="p-2 md:p-3 pb-1 md:pb-2">
@@ -138,13 +154,13 @@ const BlogPreview = () => {
             </div>
           </div>
 
-          {/* Freccia destra */}
+          {/* Freccia destra - solo desktop */}
           <button
             onClick={() => handleScroll('right')}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-30 bg-background/95 hover:bg-background border-2 border-giolab-blue text-giolab-blue rounded-full p-2 shadow-lg transition-all hover:scale-110"
+            className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-30 bg-background/95 hover:bg-background border-2 border-giolab-blue text-giolab-blue rounded-full p-2 shadow-lg transition-all hover:scale-110"
             aria-label="Scorri a destra"
           >
-            <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+            <ChevronRight className="h-6 w-6" />
           </button>
         </div>
         
