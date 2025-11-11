@@ -8,6 +8,7 @@ import Location from "@/components/Location";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -39,6 +40,7 @@ const Index = () => {
       <FAQ />
       <Contact />
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 };
