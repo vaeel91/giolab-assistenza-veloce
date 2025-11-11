@@ -5,6 +5,8 @@ interface SEOHeadProps {
   description?: string;
   keywords?: string;
   ogImage?: string;
+  ogType?: string;
+  ogUrl?: string;
   structuredData?: object;
 }
 
@@ -13,6 +15,8 @@ const SEOHead = ({
   description = "Centro assistenza specializzato ad Assemini (CA). Riparazione smartphone, PC e console con garanzia 12 mesi. Riparazioni rapide anche in 1 ora. Preventivo gratuito.",
   keywords = "riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza PC Assemini, riparazione console Assemini",
   ogImage = "https://lovable.dev/opengraph-image-p98pqg.png",
+  ogType = "website",
+  ogUrl = typeof window !== 'undefined' ? window.location.href : '',
   structuredData
 }: SEOHeadProps) => {
   
@@ -33,12 +37,26 @@ const SEOHead = ({
     
     updateMetaTag('description', description);
     updateMetaTag('keywords', keywords);
+    
+    // Open Graph meta tags
     updateMetaTag('og:title', title, 'property');
     updateMetaTag('og:description', description, 'property');
     updateMetaTag('og:image', ogImage, 'property');
+    updateMetaTag('og:image:width', '1200', 'property');
+    updateMetaTag('og:image:height', '630', 'property');
+    updateMetaTag('og:type', ogType, 'property');
+    updateMetaTag('og:url', ogUrl, 'property');
+    updateMetaTag('og:site_name', 'Giolab Assemini', 'property');
+    updateMetaTag('og:locale', 'it_IT', 'property');
+    
+    // Twitter Card meta tags
+    updateMetaTag('twitter:card', 'summary_large_image');
+    updateMetaTag('twitter:site', '@giolab_iphonefix');
+    updateMetaTag('twitter:creator', '@giolab_iphonefix');
     updateMetaTag('twitter:title', title);
     updateMetaTag('twitter:description', description);
     updateMetaTag('twitter:image', ogImage);
+    updateMetaTag('twitter:image:alt', title);
     
     // Add structured data if provided
     if (structuredData) {
@@ -51,7 +69,7 @@ const SEOHead = ({
       }
       script.textContent = JSON.stringify(structuredData);
     }
-  }, [title, description, keywords, ogImage, structuredData]);
+  }, [title, description, keywords, ogImage, ogType, ogUrl, structuredData]);
   
   return null;
 };
