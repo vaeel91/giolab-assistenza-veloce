@@ -141,21 +141,21 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav className="lg:hidden py-4 border-t border-border">
-            <div className="flex flex-col gap-4">
+          <nav className="lg:hidden py-2 border-t border-border bg-background/98 backdrop-blur-lg shadow-lg">
+            <div className="flex flex-col gap-2">
               {menuItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-base font-medium text-muted-foreground hover:text-giolab-blue transition-colors px-4 py-2 hover:bg-accent rounded-md"
+                  className="text-sm font-medium text-muted-foreground hover:text-giolab-blue transition-colors px-3 py-1.5 hover:bg-accent rounded-md"
                 >
                   {item.label}
                 </a>
               ))}
               
               {/* Social Media Links in Mobile Menu */}
-              <div className="flex items-center gap-4 px-4 pt-4 mt-2 border-t border-border">
+              <div className="flex items-center gap-4 px-3 pt-2 mt-1 border-t border-border">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
