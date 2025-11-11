@@ -31,13 +31,30 @@ import { Button } from "@/components/ui/button";
 import { FileText } from "lucide-react";
 
 const formSchema = z.object({
-  name: z.string().trim().min(2, "Il nome deve contenere almeno 2 caratteri").max(100, "Il nome è troppo lungo"),
-  phone: z.string().trim().optional(),
+  name: z.string()
+    .trim()
+    .min(2, "Il nome deve contenere almeno 2 caratteri")
+    .max(100, "Il nome è troppo lungo")
+    .regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, "Il nome può contenere solo lettere, spazi, apostrofi e trattini"),
+  phone: z.string()
+    .trim()
+    .optional()
+    .refine(
+      (val) => !val || /^[\d\s+()-]{8,20}$/.test(val),
+      "Formato telefono non valido (es. 340 1234567)"
+    ),
   deviceType: z.string().min(1, "Seleziona il tipo di dispositivo"),
   brand: z.string().min(1, "Seleziona la marca"),
   model: z.string().min(1, "Seleziona il modello"),
   service: z.string().min(1, "Seleziona il servizio richiesto"),
-  message: z.string().trim().min(10, "Descrivi il problema (minimo 10 caratteri)").max(1000, "Il messaggio è troppo lungo"),
+  message: z.string()
+    .trim()
+    .min(10, "Descrivi il problema (minimo 10 caratteri)")
+    .max(1000, "Il messaggio è troppo lungo")
+    .refine(
+      (val) => !/[<>{}\\]/g.test(val),
+      "Il messaggio contiene caratteri non permessi"
+    ),
 });
 
 type FormData = z.infer<typeof formSchema>;
