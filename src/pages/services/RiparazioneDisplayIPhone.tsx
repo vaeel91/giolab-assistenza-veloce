@@ -1,9 +1,12 @@
 import ServiceTemplate from "@/components/ServiceTemplate";
+import BlogNavigation from "@/components/BlogNavigation";
 import { Clock, Shield, Award, Wrench } from "lucide-react";
 
 const RiparazioneDisplayIPhone = () => {
   return (
-    <ServiceTemplate
+    <>
+      <BlogNavigation />
+      <ServiceTemplate
       seoTitle="Riparazione Display iPhone Assemini | Sostituzione Vetro e Schermo in 1 Ora | Giolab"
       seoDescription="Riparazione display iPhone ad Assemini e Cagliari. Sostituzione vetro e schermo rotto in 1 ora. Ricambi certificati, garanzia 12 mesi. Preventivo gratuito ☎️ 340 69 70 686"
       seoKeywords="riparazione display iPhone Assemini, sostituzione schermo iPhone Assemini, riparazione vetro iPhone Cagliari, schermo iPhone rotto Assemini, display iPhone in 1 ora, sostituzione display iPhone 13 14 15 Assemini"
@@ -152,7 +155,8 @@ const RiparazioneDisplayIPhone = () => {
           answer: "La garanzia copre difetti di fabbricazione del display e problemi tecnici legati alla sostituzione. Non copre danni accidentali successivi alla riparazione."
         }
       ]}
-    />
+      />
+    </>
   );
 };
 

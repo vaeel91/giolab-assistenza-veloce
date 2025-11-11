@@ -9,6 +9,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import { useEffect, useRef, useState } from "react";
 
@@ -266,6 +267,7 @@ const Index = () => {
         </div>
       </div>
       <FloatingWhatsApp />
+      <BlogNavigation />
       
       {/* Navigation Indicators */}
       <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-40 flex gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-background/80 backdrop-blur-md rounded-full shadow-lg border border-border">
