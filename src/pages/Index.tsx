@@ -17,6 +17,8 @@ const Index = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef<number>(0);
   const touchEndX = useRef<number>(0);
+  const isDragging = useRef<boolean>(false);
+  const initialScrollLeft = useRef<number>(0);
 
   useEffect(() => {
     // Smooth horizontal scroll for anchor links
@@ -67,20 +69,38 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
-    // Touch gesture handlers
+    // Enhanced touch gesture handlers with visual feedback
     const handleTouchStart = (e: TouchEvent) => {
+      const container = containerRef.current;
+      if (!container) return;
+      
       touchStartX.current = e.touches[0].clientX;
+      initialScrollLeft.current = container.scrollLeft;
+      isDragging.current = true;
+      container.style.scrollSnapType = "none";
     };
 
     const handleTouchMove = (e: TouchEvent) => {
+      if (!isDragging.current) return;
+      const container = containerRef.current;
+      if (!container) return;
+
       touchEndX.current = e.touches[0].clientX;
+      const diff = touchStartX.current - touchEndX.current;
+      
+      // Apply smooth scrolling during drag with resistance
+      const resistance = 0.8; // Makes dragging feel more natural
+      container.scrollLeft = initialScrollLeft.current + (diff * resistance);
     };
 
     const handleTouchEnd = () => {
       const container = containerRef.current;
       if (!container) return;
 
-      const swipeThreshold = 50; // minimum distance for swipe
+      isDragging.current = false;
+      container.style.scrollSnapType = "x mandatory";
+
+      const swipeThreshold = 50;
       const diff = touchStartX.current - touchEndX.current;
 
       if (Math.abs(diff) > swipeThreshold) {
@@ -103,6 +123,16 @@ const Index = () => {
             block: "nearest",
           });
         }
+      } else {
+        // Snap back to current section if swipe wasn't strong enough
+        const currentSection = sectionsRef.current.find(
+          (section) => section?.id === visibleSection
+        );
+        currentSection?.scrollIntoView({
+          behavior: "smooth",
+          inline: "start",
+          block: "nearest",
+        });
       }
 
       touchStartX.current = 0;
