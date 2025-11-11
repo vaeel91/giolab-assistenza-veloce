@@ -14,6 +14,11 @@ const RiparazioneConsoleAssemini = () => {
         title="Riparazione Console PS5, Xbox e Nintendo ad Assemini | Giolab"
         description="Assistenza e riparazione professionale per PS5, Xbox Series X/S e Nintendo Switch ad Assemini. Giolab risolve problemi tecnici su tutte le console."
         keywords="riparazione console Cagliari, assistenza PS5 Assemini, riparazione Xbox Assemini, riparazione Nintendo Switch, centro assistenza console"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolab.lovable.app/" },
+          { name: "Blog", url: "https://giolab.lovable.app/blog" },
+          { name: "Riparazione console Assemini" }
+        ]}
       />
       <Header />
       

@@ -14,6 +14,11 @@ const ErroriPostSostituzioneDisplay = () => {
         title="I 5 Errori Più Comuni dopo la Sostituzione del Display iPhone | Giolab Assemini"
         description="Scopri i 5 errori più comuni che gli utenti commettono dopo aver sostituito il display dell'iPhone e come evitarli. Consigli pratici da Giolab."
         keywords="display iPhone problemi post riparazione, vetro nuovo non funziona, errori sostituzione schermo iPhone, consigli display iPhone Assemini"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolab.lovable.app/" },
+          { name: "Blog", url: "https://giolab.lovable.app/blog" },
+          { name: "Errori post sostituzione display" }
+        ]}
       />
       <Header />
       

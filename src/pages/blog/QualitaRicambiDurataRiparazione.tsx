@@ -14,6 +14,11 @@ const QualitaRicambiDurataRiparazione = () => {
         title="Qualità dei Ricambi e Durata della Riparazione iPhone | Giolab Assemini"
         description="Scopri quanto incide la qualità dei ricambi sulla durata della riparazione iPhone. Differenze tra ricambi originali, compatibili ed economici spiegati da Giolab."
         keywords="ricambi originali iPhone Assemini, qualità ricambi smartphone, ricambi certificati iPhone, display compatibile vs originale"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolab.lovable.app/" },
+          { name: "Blog", url: "https://giolab.lovable.app/blog" },
+          { name: "Qualità ricambi e durata riparazione" }
+        ]}
       />
       <Header />
       

@@ -14,6 +14,11 @@ const RigenerazioneVetroIPhone = () => {
         title="Rigenerazione Vetro iPhone: Risparmia Senza Compromessi | Giolab Assemini"
         description="Scopri la rigenerazione del vetro iPhone: ripariamo solo il vetro rotto senza sostituire l'intero display. Servizio rapido, economico e di qualità presso Giolab ad Assemini."
         keywords="rigenerazione vetro iPhone, riparazione vetro iPhone, cambio vetro iPhone Assemini, sostituzione solo vetro iPhone, vetro iPhone rotto Cagliari"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolab.lovable.app/" },
+          { name: "Blog", url: "https://giolab.lovable.app/blog" },
+          { name: "Rigenerazione vetro iPhone" }
+        ]}
       />
       <Header />
       

@@ -14,6 +14,11 @@ const ComeCabireBatteriaIPhone = () => {
         title="Come Capire se la Batteria dell'iPhone va Sostituita | Giolab Assemini"
         description="Scopri i segnali che indicano quando è il momento di sostituire la batteria del tuo iPhone. Guida completa con consigli pratici dal centro assistenza Giolab di Assemini."
         keywords="batteria iPhone da sostituire, segnali batteria iPhone, salute batteria iPhone, quando cambiare batteria iPhone, batteria iPhone scarica veloce"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolab.lovable.app/" },
+          { name: "Blog", url: "https://giolab.lovable.app/blog" },
+          { name: "Come capire se la batteria va sostituita" }
+        ]}
       />
       <Header />
       

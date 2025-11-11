@@ -14,6 +14,11 @@ const CosaFareIPhoneCadutoSchermoCrepato = () => {
         title="Cosa Fare se l'iPhone Cade e lo Schermo si Crepa | Giolab Assemini"
         description="iPhone caduto con schermo crepato? Scopri cosa fare immediatamente, come proteggere i dati e quando è necessaria la sostituzione display ad Assemini."
         keywords="vetro rotto iPhone Cagliari, sostituzione display iPhone Assemini, schermo iPhone crepato cosa fare, riparazione display iPhone veloce"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolab.lovable.app/" },
+          { name: "Blog", url: "https://giolab.lovable.app/blog" },
+          { name: "iPhone caduto con schermo crepato" }
+        ]}
       />
       <Header />
       

@@ -1,5 +1,10 @@
 import { useEffect } from 'react';
 
+interface BreadcrumbItem {
+  name: string;
+  url?: string;
+}
+
 interface SEOHeadProps {
   title?: string;
   description?: string;
@@ -8,6 +13,7 @@ interface SEOHeadProps {
   ogType?: string;
   ogUrl?: string;
   structuredData?: object;
+  breadcrumbs?: BreadcrumbItem[];
 }
 
 const SEOHead = ({ 
@@ -17,8 +23,21 @@ const SEOHead = ({
   ogImage = typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
   ogType = "website",
   ogUrl = typeof window !== 'undefined' ? window.location.href : '',
-  structuredData
+  structuredData,
+  breadcrumbs
 }: SEOHeadProps) => {
+  
+  // Generate breadcrumb structured data if breadcrumbs are provided
+  const breadcrumbSchema = breadcrumbs ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      ...(item.url && { "item": item.url })
+    }))
+  } : null;
   
   useEffect(() => {
     // Update title
@@ -58,7 +77,19 @@ const SEOHead = ({
     updateMetaTag('twitter:image', ogImage);
     updateMetaTag('twitter:image:alt', title);
     
-    // Add structured data if provided
+    // Add breadcrumb structured data
+    if (breadcrumbSchema) {
+      let breadcrumbScript = document.querySelector('script[type="application/ld+json"]#breadcrumb-schema');
+      if (!breadcrumbScript) {
+        breadcrumbScript = document.createElement('script');
+        breadcrumbScript.setAttribute('type', 'application/ld+json');
+        breadcrumbScript.setAttribute('id', 'breadcrumb-schema');
+        document.head.appendChild(breadcrumbScript);
+      }
+      breadcrumbScript.textContent = JSON.stringify(breadcrumbSchema);
+    }
+    
+    // Add additional structured data if provided
     if (structuredData) {
       let script = document.querySelector('script[type="application/ld+json"]#dynamic-schema');
       if (!script) {
@@ -69,7 +100,7 @@ const SEOHead = ({
       }
       script.textContent = JSON.stringify(structuredData);
     }
-  }, [title, description, keywords, ogImage, ogType, ogUrl, structuredData]);
+  }, [title, description, keywords, ogImage, ogType, ogUrl, structuredData, breadcrumbSchema]);
   
   return null;
 };

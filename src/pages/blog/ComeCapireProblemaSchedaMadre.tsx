@@ -14,6 +14,11 @@ const ComeCapireProblemaSchedaMadre = () => {
         title="Come Capire se il tuo iPhone ha un Problema alla Scheda Madre | Giolab"
         description="Scopri i sintomi di un problema alla scheda madre iPhone: segnali, cause e soluzioni. Diagnosi e riparazione professionale presso Giolab Assemini."
         keywords="sintomi scheda madre iPhone, iPhone non si accende Giolab, problema logica iPhone, riparazione motherboard iPhone Assemini"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolab.lovable.app/" },
+          { name: "Blog", url: "https://giolab.lovable.app/blog" },
+          { name: "Problema scheda madre iPhone" }
+        ]}
       />
       <Header />
       

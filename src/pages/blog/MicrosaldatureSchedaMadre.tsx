@@ -14,6 +14,11 @@ const MicrosaldatureSchedaMadre = () => {
         title="Micro-saldature su Scheda Madre iPhone: Quando Servono | Giolab"
         description="Scopri quando sono necessarie le micro-saldature sulla scheda madre iPhone e perché affidarsi a un professionista. Servizio specializzato ad Assemini."
         keywords="microsaldature iPhone Assemini, riparazione scheda madre iPhone, micro-saldature iPhone, riparazione logica iPhone Cagliari"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolab.lovable.app/" },
+          { name: "Blog", url: "https://giolab.lovable.app/blog" },
+          { name: "Micro-saldature scheda madre" }
+        ]}
       />
       <Header />
       

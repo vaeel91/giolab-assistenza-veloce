@@ -14,6 +14,11 @@ const ServizioTelefonoCortesia = () => {
         title="Come Funziona il Servizio di Telefono di Cortesia Giolab | Assemini"
         description="Scopri come funziona il servizio di telefono sostitutivo durante la riparazione del tuo iPhone. Giolab ti fornisce un dispositivo di cortesia gratuito."
         keywords="telefono sostitutivo riparazione iPhone, assistenza smartphone Assemini, telefono di cortesia Cagliari, servizio sostituzione temporanea"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolab.lovable.app/" },
+          { name: "Blog", url: "https://giolab.lovable.app/blog" },
+          { name: "Telefono di cortesia" }
+        ]}
       />
       <Header />
       
