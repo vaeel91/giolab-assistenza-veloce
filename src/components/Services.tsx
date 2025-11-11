@@ -83,7 +83,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-3 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-3 max-w-7xl mx-auto">
           {services.slice(0, 6).map((service, index) => {
             const card = (
               <Card className="h-full flex flex-col border hover:border-giolab-blue transition-all duration-300 group cursor-pointer">
@@ -112,7 +112,7 @@ const Services = () => {
         </div>
 
         {/* Additional features */}
-        <div className="mt-3 md:mt-4 grid grid-cols-3 gap-2 md:gap-3 max-w-4xl mx-auto">
+        <div className="mt-3 md:mt-4 grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-3 max-w-4xl mx-auto">
           <div className="text-center p-2 md:p-3 rounded-lg bg-white/50 backdrop-blur border border-border">
             <div className="text-giolab-blue font-bold text-xs md:text-sm">✓ Garanzia 12 mesi</div>
           </div>
