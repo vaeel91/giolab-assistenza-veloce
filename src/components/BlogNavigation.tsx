@@ -56,25 +56,23 @@ const BlogNavigation = () => {
 
   return (
     <>
-      {/* Mobile Toggle Button */}
+      {/* Compact Floating Toggle Button */}
       <Button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-20 right-4 z-50 lg:hidden bg-giolab-blue hover:bg-giolab-blue-dark text-white shadow-lg rounded-full w-12 h-12 p-0 flex items-center justify-center"
+        className="fixed top-24 right-4 z-50 bg-giolab-blue hover:bg-giolab-blue-dark text-white shadow-lg rounded-full w-12 h-12 p-0 flex items-center justify-center transition-all duration-300 hover:scale-110"
         aria-label="Menu navigazione"
       >
         {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </Button>
 
-      {/* Navigation Menu */}
+      {/* Compact Navigation Menu */}
       <nav
-        className={`fixed top-24 right-4 z-40 bg-background/80 backdrop-blur-md border border-border rounded-xl shadow-xl transition-all duration-300 ${
-          isOpen ? "translate-x-0 opacity-100" : "translate-x-[120%] opacity-0 lg:translate-x-0 lg:opacity-100"
+        className={`fixed top-24 right-4 z-40 bg-background/80 backdrop-blur-md border border-border rounded-xl shadow-xl transition-all duration-300 origin-top-right ${
+          isOpen ? "scale-100 opacity-100 pointer-events-auto" : "scale-95 opacity-0 pointer-events-none"
         }`}
+        style={{ marginTop: '60px' }}
       >
-        <div className="p-3 space-y-1">
-          <div className="text-xs font-semibold text-muted-foreground mb-2 px-2 hidden lg:block">
-            Navigazione Rapida
-          </div>
+        <div className="p-2 space-y-1 w-48">
           {navigationItems.map((item) => {
             const isActive = activeSection === item.id;
             const IconComponent = item.icon;
@@ -84,35 +82,30 @@ const BlogNavigation = () => {
                 key={item.id}
                 to={item.link}
                 onClick={() => setIsOpen(false)}
-                className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 group text-sm relative ${
+                className={`flex items-center gap-2 px-2 py-1.5 rounded-lg transition-all duration-200 group text-xs relative ${
                   isActive
-                    ? "bg-giolab-blue text-white font-semibold shadow-md scale-105"
+                    ? "bg-giolab-blue text-white font-semibold shadow-sm"
                     : "hover:bg-giolab-blue/10 hover:text-giolab-blue"
                 }`}
               >
-                {/* Indicatore visivo per la sezione attiva */}
+                {/* Indicatore visivo compatto per la sezione attiva */}
                 {isActive && (
-                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-white rounded-r-full" />
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-white rounded-r-full" />
                 )}
-                <IconComponent className={`h-4 w-4 flex-shrink-0 transition-transform ${
+                <IconComponent className={`h-3.5 w-3.5 flex-shrink-0 transition-transform ${
                   isActive ? "scale-110" : "group-hover:scale-110"
                 }`} />
-                <span className="font-medium">{item.label}</span>
-                {isActive && (
-                  <span className="ml-auto text-xs bg-white/20 px-2 py-0.5 rounded-full">
-                    Qui
-                  </span>
-                )}
+                <span className="font-medium truncate">{item.label}</span>
               </Link>
             );
           })}
         </div>
       </nav>
 
-      {/* Overlay for mobile */}
+      {/* Overlay for closing menu when clicking outside */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/20 z-30 lg:hidden"
+          className="fixed inset-0 z-30"
           onClick={() => setIsOpen(false)}
         />
       )}
