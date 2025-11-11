@@ -39,7 +39,7 @@ const services = [
   {
     emoji: "💎",
     title: "Rigenerazione Vetro",
-    description: "Rigenerazione professionale del vetro per iPhone e Apple Watch. Rimuoviamo graffi e imperfezioni per un risultato come nuovo.",
+    description: "Rigenerazione professionale del vetro per iPhone e Apple Watch. Sostituiamo solo il vetro del tuo display, consentendoti di mantere lo schermo originale e abbassando il prezzo finale della lavorazione.",
   },
   {
     emoji: "🧹",
