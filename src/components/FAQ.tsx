@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useEffect } from "react";
 
 const FAQ = () => {
   const faqs = [
@@ -60,6 +61,38 @@ const FAQ = () => {
       answer: "Alta probabilità di problemi: componenti di bassa qualità possono avere colori scadenti, touch irregolare, o incompatibilità con sensori. Tecnica inadeguata può danneggiare il modulo TrueDepth o la scheda madre.\n\nConsiglio: affidati a tecnici esperti e richiedi ricambi certificati; evita soluzioni \"fai da te\" per preservare tutte le funzionalità."
     }
   ];
+
+  // Add FAQPage structured data for SEO
+  useEffect(() => {
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer.replace(/\n/g, ' ')
+        }
+      }))
+    };
+
+    let script = document.querySelector('script[type="application/ld+json"]#faq-schema');
+    if (!script) {
+      script = document.createElement('script');
+      script.setAttribute('type', 'application/ld+json');
+      script.setAttribute('id', 'faq-schema');
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(faqSchema);
+
+    return () => {
+      const scriptToRemove = document.querySelector('script[type="application/ld+json"]#faq-schema');
+      if (scriptToRemove) {
+        scriptToRemove.remove();
+      }
+    };
+  }, []);
 
   return (
     <section id="faq" className="py-20 bg-background">
