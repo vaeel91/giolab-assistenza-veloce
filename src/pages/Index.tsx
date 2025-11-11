@@ -32,7 +32,7 @@ const Index = () => {
 
   const navigateToSection = (sectionId: string) => {
     const section = sectionsRef.current.find((s) => s?.id === sectionId);
-    section?.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+    section?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
   };
 
   useEffect(() => {
@@ -84,37 +84,24 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
-    // Enhanced touch gesture handlers with magnetic snap
+    // Simplified touch gesture handlers - let native snap handle positioning
     const handleTouchStart = (e: TouchEvent) => {
-      const container = containerRef.current;
-      if (!container) return;
-      
       touchStartX.current = e.touches[0].clientX;
-      initialScrollLeft.current = container.scrollLeft;
       isDragging.current = true;
     };
 
     const handleTouchMove = (e: TouchEvent) => {
       if (!isDragging.current) return;
-      const container = containerRef.current;
-      if (!container) return;
-
       touchEndX.current = e.touches[0].clientX;
-      const diff = touchStartX.current - touchEndX.current;
-      
-      // Let native scroll snap handle the scrolling
-      // Just track the movement for swipe detection
+      // Don't interfere with native scrolling - just track for swipe detection
     };
 
     const handleTouchEnd = () => {
-      const container = containerRef.current;
-      if (!container) return;
-
       isDragging.current = false;
-      const swipeThreshold = 75; // Increased for more deliberate swipes
+      const swipeThreshold = 50;
       const diff = touchStartX.current - touchEndX.current;
 
-      // Snap to nearest section after swipe
+      // Only navigate on deliberate swipes, otherwise let snap handle it
       if (Math.abs(diff) > swipeThreshold) {
         const currentIndex = sectionsRef.current.findIndex(
           (section) => section?.id === visibleSection
@@ -122,21 +109,24 @@ const Index = () => {
 
         if (diff > 0 && currentIndex < sectionsRef.current.length - 1) {
           // Swipe left - next section
-          sectionsRef.current[currentIndex + 1]?.scrollIntoView({
-            behavior: "smooth",
-            inline: "start",
-            block: "nearest",
-          });
+          setTimeout(() => {
+            sectionsRef.current[currentIndex + 1]?.scrollIntoView({
+              behavior: "smooth",
+              inline: "center",
+              block: "nearest",
+            });
+          }, 50);
         } else if (diff < 0 && currentIndex > 0) {
           // Swipe right - previous section
-          sectionsRef.current[currentIndex - 1]?.scrollIntoView({
-            behavior: "smooth",
-            inline: "start",
-            block: "nearest",
-          });
+          setTimeout(() => {
+            sectionsRef.current[currentIndex - 1]?.scrollIntoView({
+              behavior: "smooth",
+              inline: "center",
+              block: "nearest",
+            });
+          }, 50);
         }
       }
-      // If swipe wasn't strong enough, native snap will handle centering
 
       touchStartX.current = 0;
       touchEndX.current = 0;
@@ -262,17 +252,29 @@ const Index = () => {
           scroll-behavior: smooth;
         }
         
-        /* Magnetic snap effect */
+        /* Magnetic snap effect - force centering */
         .snap-always {
           scroll-snap-stop: always;
+          scroll-snap-align: start;
         }
         
-        /* Enhanced scroll snap */
+        /* Enhanced scroll snap with centering */
         @supports (scroll-snap-type: x mandatory) {
           .snap-x {
             -webkit-overflow-scrolling: touch;
             scroll-snap-type: x mandatory;
+            scroll-padding: 0;
           }
+          .snap-always {
+            scroll-margin: 0;
+          }
+        }
+        
+        /* Ensure sections are exactly viewport width */
+        .w-screen {
+          width: 100vw;
+          min-width: 100vw;
+          max-width: 100vw;
         }
         
         /* Parallax effect on scroll */
