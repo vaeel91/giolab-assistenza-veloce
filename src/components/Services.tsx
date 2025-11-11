@@ -1,10 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const services = [
   {
     emoji: "📱",
     title: "Riparazione iPhone e Smartphone Assemini",
     description: "Sostituzione display, batterie, fotocamere e componenti per iPhone, Samsung, Huawei, Xiaomi. Riparazioni rapide anche in 1 ora con ricambi certificati. Servizio disponibile ad Assemini e Cagliari.",
+    link: "/servizi/riparazione-display-iphone-assemini"
   },
   {
     emoji: "💻",
@@ -20,6 +22,7 @@ const services = [
     emoji: "🔋",
     title: "Batterie Maggiorate iPhone Assemini",
     description: "Sostituzione batteria iPhone con batterie di capacità superiore. Più autonomia e prestazioni per il tuo iPhone. Servizio specializzato disponibile ad Assemini e provincia di Cagliari.",
+    link: "/servizi/batteria-maggiorata-iphone"
   },
   {
     emoji: "💾",
@@ -93,22 +96,31 @@ const Services = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-0.5 md:gap-6 max-w-7xl mx-auto">
-          {services.map((service, index) => (
-            <Card
-              key={index}
-              className="border-2 hover:border-giolab-blue transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group"
-            >
-              <CardHeader className="p-4 md:p-6">
-                <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-giolab-blue/10 flex items-center justify-center mb-2 md:mb-4 group-hover:bg-giolab-blue group-hover:scale-110 transition-all duration-300">
-                  <span className="text-2xl md:text-3xl">{service.emoji}</span>
-                </div>
-                <CardTitle className="text-sm md:text-xl leading-tight">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="p-4 pt-0 md:p-6 md:pt-0">
-                <CardDescription className="text-xs md:text-base leading-snug">{service.description}</CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+          {services.map((service, index) => {
+            const card = (
+              <Card className="border-2 hover:border-giolab-blue transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group cursor-pointer">
+                <CardHeader className="p-4 md:p-6">
+                  <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-giolab-blue/10 flex items-center justify-center mb-2 md:mb-4 group-hover:bg-giolab-blue group-hover:scale-110 transition-all duration-300">
+                    <span className="text-2xl md:text-3xl">{service.emoji}</span>
+                  </div>
+                  <CardTitle className="text-sm md:text-xl leading-tight">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="p-4 pt-0 md:p-6 md:pt-0">
+                  <CardDescription className="text-xs md:text-base leading-snug">{service.description}</CardDescription>
+                </CardContent>
+              </Card>
+            );
+
+            return service.link ? (
+              <Link key={index} to={service.link}>
+                {card}
+              </Link>
+            ) : (
+              <div key={index}>
+                {card}
+              </div>
+            );
+          })}
         </div>
 
         {/* Additional features */}

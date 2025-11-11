@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import { Menu, X, Instagram, Facebook } from "lucide-react";
 import giolabIcon from "@/assets/giolab-icon.png";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,13 +19,14 @@ const Header = () => {
   }, []);
 
   const menuItems = [
-    { label: "Home", href: "#hero" },
-    { label: "Servizi", href: "#servizi" },
-    { label: "Chi Siamo", href: "#chi-siamo" },
-    { label: "Testimonianze", href: "#testimonianze" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Dove Siamo", href: "#dove-siamo" },
-    { label: "Contatti", href: "#contatti" },
+    { label: "Home", href: "#hero", isAnchor: true },
+    { label: "Servizi", href: "#servizi", isAnchor: true },
+    { label: "Chi Siamo", href: "#chi-siamo", isAnchor: true },
+    { label: "Testimonianze", href: "#testimonianze", isAnchor: true },
+    { label: "FAQ", href: "#faq", isAnchor: true },
+    { label: "Blog", href: "/blog", isAnchor: false },
+    { label: "Dove Siamo", href: "#dove-siamo", isAnchor: true },
+    { label: "Contatti", href: "#contatti", isAnchor: true },
   ];
 
   const socialLinks = [
@@ -46,11 +50,20 @@ const Header = () => {
     },
   ];
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setIsMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: "smooth" });
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isAnchor: boolean) => {
+    if (isAnchor) {
+      e.preventDefault();
+      setIsMobileMenuOpen(false);
+      
+      if (!isHomePage) {
+        window.location.href = `/${href}`;
+      } else {
+        const element = document.querySelector(href);
+        element?.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      setIsMobileMenuOpen(false);
+    }
   };
 
   return (
@@ -64,9 +77,8 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a
-            href="#hero"
-            onClick={(e) => handleNavClick(e, "#hero")}
+          <Link
+            to="/"
             className="flex items-center gap-2 group"
           >
             <img
@@ -77,21 +89,32 @@ const Header = () => {
             <span className="text-xl md:text-2xl font-bold text-foreground">
               Giolab
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
             <div className="flex items-center gap-8">
               {menuItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-sm font-medium text-muted-foreground hover:text-giolab-blue transition-colors relative group"
-                >
-                  {item.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-giolab-blue transition-all group-hover:w-full"></span>
-                </a>
+                item.isAnchor ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href, item.isAnchor)}
+                    className="text-sm font-medium text-muted-foreground hover:text-giolab-blue transition-colors relative group"
+                  >
+                    {item.label}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-giolab-blue transition-all group-hover:w-full"></span>
+                  </a>
+                ) : (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className="text-sm font-medium text-muted-foreground hover:text-giolab-blue transition-colors relative group"
+                  >
+                    {item.label}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-giolab-blue transition-all group-hover:w-full"></span>
+                  </Link>
+                )
               ))}
             </div>
             
@@ -144,14 +167,24 @@ const Header = () => {
           <nav className="lg:hidden py-2 border-t border-border bg-background/98 backdrop-blur-lg shadow-lg">
             <div className="flex flex-col gap-2">
               {menuItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-sm font-medium text-muted-foreground hover:text-giolab-blue transition-colors px-3 py-1.5 hover:bg-accent rounded-md"
-                >
-                  {item.label}
-                </a>
+                item.isAnchor ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href, item.isAnchor)}
+                    className="text-sm font-medium text-muted-foreground hover:text-giolab-blue transition-colors px-3 py-1.5 hover:bg-accent rounded-md"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className="text-sm font-medium text-muted-foreground hover:text-giolab-blue transition-colors px-3 py-1.5 hover:bg-accent rounded-md"
+                  >
+                    {item.label}
+                  </Link>
+                )
               ))}
               
               {/* Social Media Links in Mobile Menu */}
