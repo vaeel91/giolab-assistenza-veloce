@@ -64,7 +64,7 @@ const BlogPreview = () => {
         </div>
 
         {/* Contenitore con overflow nascosto */}
-        <div className="relative max-w-6xl mx-auto flex-1">
+        <div className="relative max-w-6xl mx-auto flex-1 flex items-center">
           {/* Gradiente sfumato sinistro */}
           <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-20 pointer-events-none" />
           
@@ -83,17 +83,17 @@ const BlogPreview = () => {
           {/* Track dello scorrimento */}
           <div 
             ref={scrollContainerRef}
-            className="overflow-x-auto scrollbar-hide"
+            className="overflow-x-scroll scrollbar-hide w-full"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            <div className="flex gap-2 md:gap-3 px-12">
+            <div className="flex gap-3 md:gap-4 px-16 py-4">
             {duplicatedArticles.map((article, index) => {
             
             return (
-              <Link key={`${article.slug}-${index}`} to={`/blog/${article.slug}`} className="group flex-shrink-0 w-64 md:w-80">
-                <Card className="h-full border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg">
+              <Link key={`${article.slug}-${index}`} to={`/blog/${article.slug}`} className="group flex-shrink-0" style={{ width: '280px' }}>
+                <Card className="h-full border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg w-full">
                   <CardHeader className="p-2 md:p-3 pb-1 md:pb-2">
                     <div className="flex items-start gap-2 mb-1">
                       <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue/5 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform text-base md:text-xl">
