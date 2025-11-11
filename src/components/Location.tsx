@@ -11,59 +11,57 @@ const Location = () => {
   };
 
   return (
-    <section id="dove-siamo" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Dove Siamo</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Vieni a trovarci nel nostro laboratorio ad Assemini. Ti aspettiamo!
+    <section id="dove-siamo" className="py-8 md:py-12">
+      <div className="h-full">
+        <div className="text-center mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Dove Siamo</h2>
+          <p className="text-sm md:text-base text-muted-foreground px-4">
+            Vieni a trovarci ad Assemini
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto">
-          <Card className="overflow-hidden border-2 shadow-xl">
-            <CardContent className="p-0">
-              {/* Google Maps iframe */}
-              <div className="relative w-full h-[400px] md:h-[500px]">
-                <iframe
-                  src={mapUrl}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Mappa Giolab"
-                  className="w-full h-full"
-                ></iframe>
-              </div>
+        <Card className="overflow-hidden border-2 shadow-xl">
+          <CardContent className="p-0">
+            {/* Google Maps iframe */}
+            <div className="relative w-full h-[250px] md:h-[300px]">
+              <iframe
+                src={mapUrl}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Mappa Giolab"
+                className="w-full h-full"
+              ></iframe>
+            </div>
 
-              {/* Address info overlay */}
-              <div className="p-6 md:p-8 bg-background">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                  <div className="flex items-start gap-4 text-left">
-                    <div className="w-12 h-12 rounded-xl bg-giolab-blue/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="h-6 w-6 text-giolab-blue" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-foreground text-lg mb-1">Il Nostro Laboratorio</h3>
-                      <p className="text-muted-foreground">{address}</p>
-                      <p className="text-sm text-muted-foreground mt-2">Lun-Sab: 9:00-13:00 / 16:00-19:30</p>
-                    </div>
+            {/* Address info */}
+            <div className="p-4 md:p-6 bg-background">
+              <div className="flex flex-col gap-3">
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-giolab-blue/10 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-5 w-5 text-giolab-blue" />
                   </div>
-                  <Button
-                    size="lg"
-                    onClick={handleGetDirections}
-                    className="bg-giolab-blue hover:bg-giolab-blue-dark text-white font-semibold whitespace-nowrap"
-                  >
-                    <Navigation className="mr-2 h-5 w-5" />
-                    Ottieni Indicazioni
-                  </Button>
+                  <div className="text-left flex-1">
+                    <h3 className="font-bold text-foreground text-base mb-1">Il Nostro Laboratorio</h3>
+                    <p className="text-sm text-muted-foreground">{address}</p>
+                    <p className="text-xs text-muted-foreground mt-1">Lun-Sab: 9:00-13:00 / 16:00-19:30</p>
+                  </div>
                 </div>
+                <Button
+                  size="default"
+                  onClick={handleGetDirections}
+                  className="bg-giolab-blue hover:bg-giolab-blue-dark text-white font-semibold w-full"
+                >
+                  <Navigation className="mr-2 h-4 w-4" />
+                  Ottieni Indicazioni
+                </Button>
               </div>
-            </CardContent>
-          </Card>
-        </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
