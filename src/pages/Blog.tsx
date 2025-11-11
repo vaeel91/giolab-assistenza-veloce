@@ -78,6 +78,60 @@ const blogPosts = [
     readTime: "5 min",
     category: "Servizi",
     image: "✨"
+  },
+  {
+    slug: "come-evitare-batteria-iphone-rovini",
+    title: "Come evitare che la batteria del tuo iPhone si rovini troppo in fretta",
+    description: "Scopri i consigli pratici per far durare più a lungo la batteria del tuo iPhone. Trucchi e buone abitudini per preservare la salute della batteria.",
+    date: "2025-01-23",
+    readTime: "7 min",
+    category: "Guide",
+    image: "🔋"
+  },
+  {
+    slug: "qualita-ricambi-durata-riparazione",
+    title: "Quanto incide la qualità del ricambio sulla durata della riparazione",
+    description: "Scopri perché la qualità dei ricambi è fondamentale per la durata della riparazione. Differenze tra ricambi originali e compatibili.",
+    date: "2025-01-22",
+    readTime: "6 min",
+    category: "Tecnologia",
+    image: "⚙️"
+  },
+  {
+    slug: "errori-post-sostituzione-display",
+    title: "I 5 errori più comuni dopo la sostituzione del display iPhone",
+    description: "Scopri i 5 errori più comuni che gli utenti commettono dopo aver sostituito il display dell'iPhone e come evitarli.",
+    date: "2025-01-24",
+    readTime: "6 min",
+    category: "Guide",
+    image: "⚠️"
+  },
+  {
+    slug: "servizio-telefono-cortesia",
+    title: "Come funziona il servizio di telefono di cortesia Giolab",
+    description: "Scopri come funziona il servizio di telefono sostitutivo durante la riparazione del tuo iPhone. Dispositivo di cortesia gratuito.",
+    date: "2025-01-24",
+    readTime: "5 min",
+    category: "Servizi",
+    image: "📱"
+  },
+  {
+    slug: "display-originali-vs-compatibili",
+    title: "Differenze tra display originali e compatibili: cosa cambia davvero",
+    description: "Scopri le differenze tra display originali e compatibili per iPhone. Qualità, prezzo, durata e quale scegliere per la tua riparazione.",
+    date: "2025-01-25",
+    readTime: "8 min",
+    category: "Tecnologia",
+    image: "🖥️"
+  },
+  {
+    slug: "trasferimento-dati-android-iphone",
+    title: "Trasferimento dati da Android a iPhone e viceversa: guida semplice e completa",
+    description: "Guida completa per trasferire contatti, foto, WhatsApp e dati da Android a iPhone e viceversa. Metodi semplici e sicuri.",
+    date: "2025-01-25",
+    readTime: "9 min",
+    category: "Guide",
+    image: "🔄"
   }
 ];
 

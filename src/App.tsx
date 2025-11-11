@@ -17,6 +17,15 @@ import CosaFareIPhoneCadutoSchermoCrepato from "./pages/blog/CosaFareIPhoneCadut
 import PercheFaceIDSmetteFunzionare from "./pages/blog/PercheFaceIDSmetteFunzionare";
 import RecuperoDatiIPhoneRotto from "./pages/blog/RecuperoDatiIPhoneRotto";
 import MicrosaldatureSchedaMadre from "./pages/blog/MicrosaldatureSchedaMadre";
+import ConvieneRiparareIPhoneVecchio from "./pages/blog/ConvieneRiparareIPhoneVecchio";
+import ComeCapireProblemaSchedaMadre from "./pages/blog/ComeCapireProblemaSchedaMadre";
+import RiparazioneConsoleAssemini from "./pages/blog/RiparazioneConsoleAssemini";
+import ComeEvitareBatteriaIPhoneRovini from "./pages/blog/ComeEvitareBatteriaIPhoneRovini";
+import QualitaRicambiDurataRiparazione from "./pages/blog/QualitaRicambiDurataRiparazione";
+import ErroriPostSostituzioneDisplay from "./pages/blog/ErroriPostSostituzioneDisplay";
+import ServizioTelefonoCortesia from "./pages/blog/ServizioTelefonoCortesia";
+import DisplayOriginaliVsCompatibili from "./pages/blog/DisplayOriginaliVsCompatibili";
+import TrasferimentoDatiAndroidIPhone from "./pages/blog/TrasferimentoDatiAndroidIPhone";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +47,15 @@ const App = () => (
           <Route path="/blog/perche-face-id-smette-funzionare" element={<PercheFaceIDSmetteFunzionare />} />
           <Route path="/blog/recupero-dati-iphone-rotto" element={<RecuperoDatiIPhoneRotto />} />
           <Route path="/blog/microsaldature-scheda-madre" element={<MicrosaldatureSchedaMadre />} />
+          <Route path="/blog/conviene-riparare-iphone-vecchio" element={<ConvieneRiparareIPhoneVecchio />} />
+          <Route path="/blog/come-capire-problema-scheda-madre" element={<ComeCapireProblemaSchedaMadre />} />
+          <Route path="/blog/riparazione-console-assemini" element={<RiparazioneConsoleAssemini />} />
+          <Route path="/blog/come-evitare-batteria-iphone-rovini" element={<ComeEvitareBatteriaIPhoneRovini />} />
+          <Route path="/blog/qualita-ricambi-durata-riparazione" element={<QualitaRicambiDurataRiparazione />} />
+          <Route path="/blog/errori-post-sostituzione-display" element={<ErroriPostSostituzioneDisplay />} />
+          <Route path="/blog/servizio-telefono-cortesia" element={<ServizioTelefonoCortesia />} />
+          <Route path="/blog/display-originali-vs-compatibili" element={<DisplayOriginaliVsCompatibili />} />
+          <Route path="/blog/trasferimento-dati-android-iphone" element={<TrasferimentoDatiAndroidIPhone />} />
           <Route path="/servizi/riparazione-display-iphone-assemini" element={<RiparazioneDisplayIPhone />} />
           <Route path="/servizi/batteria-maggiorata-iphone" element={<BatteriaMaggiorataIPhone />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
