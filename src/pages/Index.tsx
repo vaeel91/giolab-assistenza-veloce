@@ -9,9 +9,12 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import SEOHead from "@/components/SEOHead";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Index = () => {
+  const [visibleSection, setVisibleSection] = useState<string>("hero");
+  const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
+
   useEffect(() => {
     // Smooth horizontal scroll for anchor links
     const handleSmoothScroll = (e: MouseEvent) => {
@@ -30,6 +33,36 @@ const Index = () => {
     return () => document.removeEventListener("click", handleSmoothScroll);
   }, []);
 
+  useEffect(() => {
+    // Intersection Observer for animation triggers
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("section-visible");
+            setVisibleSection(entry.target.id);
+          } else {
+            entry.target.classList.remove("section-visible");
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+        root: null,
+      }
+    );
+
+    sectionsRef.current.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sectionsRef.current.forEach((section) => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
+
   return (
     <>
       <SEOHead 
@@ -38,31 +71,85 @@ const Index = () => {
         keywords="riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza iPhone Cagliari, batteria maggiorata iPhone Assemini, riparazione vetro iPhone Assemini, micro-saldature Assemini, riparazione PC Assemini, assistenza console Assemini, centro assistenza iPhone Cagliari, rigenerazione vetro iPhone"
       />
       <Header />
-      <div className="h-screen overflow-x-auto overflow-y-hidden snap-x snap-mandatory flex">
-        <div id="hero" className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto">
+      <div className="h-screen overflow-x-auto overflow-y-hidden snap-x snap-mandatory flex scroll-smooth">
+        <div 
+          id="hero" 
+          ref={(el) => (sectionsRef.current[0] = el)}
+          className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto section-animate"
+        >
           <Hero />
         </div>
-        <div id="servizi" className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto">
+        <div 
+          id="servizi" 
+          ref={(el) => (sectionsRef.current[1] = el)}
+          className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto section-animate"
+        >
           <Services />
         </div>
-        <div id="chi-siamo" className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto">
+        <div 
+          id="chi-siamo" 
+          ref={(el) => (sectionsRef.current[2] = el)}
+          className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto section-animate"
+        >
           <About />
         </div>
-        <div id="testimonianze" className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto">
+        <div 
+          id="testimonianze" 
+          ref={(el) => (sectionsRef.current[3] = el)}
+          className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto section-animate"
+        >
           <Testimonials />
         </div>
-        <div id="dove-siamo" className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto">
+        <div 
+          id="dove-siamo" 
+          ref={(el) => (sectionsRef.current[4] = el)}
+          className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto section-animate"
+        >
           <SocialAndLocation />
         </div>
-        <div id="faq" className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto">
+        <div 
+          id="faq" 
+          ref={(el) => (sectionsRef.current[5] = el)}
+          className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto section-animate"
+        >
           <FAQ />
         </div>
-        <div id="contatti" className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto">
+        <div 
+          id="contatti" 
+          ref={(el) => (sectionsRef.current[6] = el)}
+          className="w-screen h-screen flex-shrink-0 snap-start overflow-y-auto section-animate"
+        >
           <Contact />
           <Footer />
         </div>
       </div>
       <FloatingWhatsApp />
+      
+      <style>{`
+        .section-animate {
+          opacity: 0.3;
+          transform: translateX(50px) scale(0.95);
+          filter: blur(3px);
+          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .section-visible {
+          opacity: 1 !important;
+          transform: translateX(0) scale(1) !important;
+          filter: blur(0) !important;
+        }
+        
+        .scroll-smooth {
+          scroll-behavior: smooth;
+        }
+        
+        /* Parallax effect on scroll */
+        @media (prefers-reduced-motion: no-preference) {
+          .section-animate {
+            will-change: transform, opacity, filter;
+          }
+        }
+      `}</style>
     </>
   );
 };
