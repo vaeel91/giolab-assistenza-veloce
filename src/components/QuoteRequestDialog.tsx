@@ -202,7 +202,10 @@ ${data.phone ? `📞 *Telefono:* ${data.phone}\n` : ""}
 ${data.message}`;
 
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank", "noopener,noreferrer");
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    
+    // Usa location.href invece di window.open per evitare blocchi popup
+    window.location.href = whatsappUrl;
     
     setOpen(false);
     form.reset();
