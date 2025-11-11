@@ -236,15 +236,13 @@ const Index = () => {
       
       <style>{`
         .section-animate {
-          opacity: 0.3;
-          transform: translateX(50px) scale(0.95);
-          filter: blur(3px);
-          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          opacity: 0.5;
+          filter: blur(2px);
+          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .section-visible {
           opacity: 1 !important;
-          transform: translateX(0) scale(1) !important;
           filter: blur(0) !important;
         }
         
@@ -252,35 +250,35 @@ const Index = () => {
           scroll-behavior: smooth;
         }
         
-        /* Magnetic snap effect - force centering */
+        /* Force perfect centering with scroll-snap */
+        .snap-x {
+          -webkit-overflow-scrolling: touch;
+          scroll-snap-type: x mandatory;
+          scroll-padding: 0;
+        }
+        
         .snap-always {
           scroll-snap-stop: always;
-          scroll-snap-align: start;
+          scroll-snap-align: center;
         }
         
-        /* Enhanced scroll snap with centering */
-        @supports (scroll-snap-type: x mandatory) {
-          .snap-x {
-            -webkit-overflow-scrolling: touch;
-            scroll-snap-type: x mandatory;
-            scroll-padding: 0;
-          }
-          .snap-always {
-            scroll-margin: 0;
-          }
-        }
-        
-        /* Ensure sections are exactly viewport width */
+        /* Ensure sections are exactly viewport width - no transform that moves position */
         .w-screen {
-          width: 100vw;
-          min-width: 100vw;
-          max-width: 100vw;
+          width: 100vw !important;
+          min-width: 100vw !important;
+          max-width: 100vw !important;
+        }
+        
+        /* Remove any potential interference */
+        .section-animate,
+        .section-visible {
+          transform: none !important;
         }
         
         /* Parallax effect on scroll */
         @media (prefers-reduced-motion: no-preference) {
           .section-animate {
-            will-change: transform, opacity, filter;
+            will-change: opacity, filter;
           }
         }
       `}</style>
