@@ -175,10 +175,10 @@ const BlogNavigation = () => {
                   isActive
                     ? "bg-giolab-blue text-white font-semibold shadow-sm"
                     : "hover:bg-giolab-blue/10 hover:text-giolab-blue"
-                } ${isOpen ? "animate-fade-in" : "opacity-0"}`}
+                }`}
                 style={{
-                  animationDelay: isOpen ? `${index * 50}ms` : '0ms',
-                  animationFillMode: 'forwards'
+                  animation: isOpen ? `fade-in 0.3s ease-out ${index * 50}ms forwards` : 'none',
+                  opacity: isOpen ? undefined : 0
                 }}
               >
                 {/* Indicatore visivo compatto per la sezione attiva */}
