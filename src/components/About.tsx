@@ -50,17 +50,17 @@ const About = () => {
             </div>
 
             {/* Right side - Features grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-0.5 md:gap-6">
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="p-6 rounded-2xl bg-gradient-to-br from-giolab-gray to-white border border-border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg"
+                  className="p-3 md:p-6 rounded-2xl bg-gradient-to-br from-giolab-gray to-white border border-border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-giolab-blue/10 flex items-center justify-center mb-4">
-                    <span className="text-2xl">{feature.emoji}</span>
+                  <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl bg-giolab-blue/10 flex items-center justify-center mb-2 md:mb-4">
+                    <span className="text-xl md:text-2xl">{feature.emoji}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  <h3 className="text-sm md:text-lg font-bold text-foreground mb-1 md:mb-2">{feature.title}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-snug">{feature.description}</p>
                 </div>
               ))}
             </div>
