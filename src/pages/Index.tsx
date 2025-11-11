@@ -304,7 +304,7 @@ const Index = () => {
       <BlogNavigation />
       
       {/* Navigation Indicators */}
-      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-40 flex gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-background/80 backdrop-blur-md rounded-full shadow-lg border border-border">
+      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-background/80 backdrop-blur-md rounded-full shadow-lg border border-border">
         {sections.map((section) => (
           <button
             key={section.id}

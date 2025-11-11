@@ -160,7 +160,7 @@ const BlogNavigation = () => {
         onClick={() => setIsOpen(!isOpen)}
         onMouseEnter={handleMouseEnter}
         onWheel={handleWheel}
-        className={`fixed top-24 right-4 z-50 bg-giolab-blue hover:bg-giolab-blue-dark text-white shadow-lg rounded-full w-12 h-12 p-0 flex items-center justify-center transition-all duration-300 hover:scale-110 ${
+        className={`fixed top-24 right-4 z-30 bg-giolab-blue hover:bg-giolab-blue-dark text-white shadow-lg rounded-full w-12 h-12 p-0 flex items-center justify-center transition-all duration-300 hover:scale-110 ${
           isPulsing ? "animate-pulse" : ""
         }`}
         aria-label="Menu navigazione"
@@ -173,7 +173,7 @@ const BlogNavigation = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onWheel={handleWheel}
-        className={`fixed top-24 right-4 z-40 bg-background/70 backdrop-blur-lg border border-border rounded-xl transition-all duration-400 ${
+        className={`fixed top-24 right-4 z-25 bg-background/70 backdrop-blur-lg border border-border rounded-xl transition-all duration-400 ${
           isOpen || isTransitioning ? "translate-x-0 opacity-100 pointer-events-auto shadow-[0_0_30px_rgba(59,130,246,0.5)]" : "translate-x-[calc(100%+1rem)] opacity-0 pointer-events-none shadow-2xl"
         }`}
         style={{ 
