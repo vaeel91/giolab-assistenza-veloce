@@ -36,7 +36,7 @@ const BlogPreview = () => {
     
     const scroll = () => {
       if (container && !isPaused) {
-        container.scrollLeft += 1;
+        container.scrollLeft += 0.3; // Velocità ridotta (era 1)
         
         // Reset quando raggiunge metà (primo set di articoli completato)
         if (container.scrollLeft >= container.scrollWidth / 2) {
