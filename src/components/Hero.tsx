@@ -32,7 +32,6 @@ const Hero = () => {
               alt="Giolab Assemini - Centro assistenza riparazione iPhone, smartphone, PC e console" 
               className="h-20 md:h-28 lg:h-32 w-auto animate-zoom-in"
               loading="eager"
-              fetchPriority="high"
             />
           </div>
 

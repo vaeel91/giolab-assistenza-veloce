@@ -84,25 +84,29 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
-    // Simplified touch gesture handlers - let native snap handle positioning
+    // Improved touch gesture handlers - distinguish between tap and swipe
     const handleTouchStart = (e: TouchEvent) => {
       touchStartX.current = e.touches[0].clientX;
-      isDragging.current = true;
+      touchEndX.current = e.touches[0].clientX; // Initialize end position
+      isDragging.current = false; // Don't set dragging until movement detected
     };
 
     const handleTouchMove = (e: TouchEvent) => {
-      if (!isDragging.current) return;
       touchEndX.current = e.touches[0].clientX;
-      // Don't interfere with native scrolling - just track for swipe detection
+      const diff = Math.abs(touchStartX.current - touchEndX.current);
+      
+      // Only set dragging if there's significant movement (more than 10px)
+      if (diff > 10) {
+        isDragging.current = true;
+      }
     };
 
     const handleTouchEnd = () => {
-      isDragging.current = false;
-      const swipeThreshold = 50;
+      const swipeThreshold = 75; // Increased threshold for more deliberate swipes
       const diff = touchStartX.current - touchEndX.current;
 
-      // Only navigate on deliberate swipes, otherwise let snap handle it
-      if (Math.abs(diff) > swipeThreshold) {
+      // Only navigate if it was a deliberate swipe (dragging detected and movement > threshold)
+      if (isDragging.current && Math.abs(diff) > swipeThreshold) {
         const currentIndex = sectionsRef.current.findIndex(
           (section) => section?.id === visibleSection
         );
@@ -128,6 +132,8 @@ const Index = () => {
         }
       }
 
+      // Reset state
+      isDragging.current = false;
       touchStartX.current = 0;
       touchEndX.current = 0;
     };
