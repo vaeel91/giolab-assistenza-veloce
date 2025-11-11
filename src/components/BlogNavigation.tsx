@@ -16,7 +16,6 @@ const navigationItems = [
 
 const BlogNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const location = useLocation();
 
   // Determina quale sezione è attiva in base alla route corrente
@@ -55,33 +54,6 @@ const BlogNavigation = () => {
     setActiveSection(getActiveSection());
   }, [location.pathname, location.hash]);
 
-  // Calcola la percentuale di scroll della pagina
-  useEffect(() => {
-    const calculateScrollProgress = () => {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollTop = window.scrollY;
-      
-      // Calcola la percentuale: (scroll corrente / scroll totale possibile) * 100
-      const totalScrollable = documentHeight - windowHeight;
-      const progress = totalScrollable > 0 ? (scrollTop / totalScrollable) * 100 : 0;
-      
-      setScrollProgress(Math.min(100, Math.max(0, progress)));
-    };
-
-    // Calcola all'inizio
-    calculateScrollProgress();
-
-    // Aggiungi listener per lo scroll
-    window.addEventListener('scroll', calculateScrollProgress);
-    window.addEventListener('resize', calculateScrollProgress);
-
-    return () => {
-      window.removeEventListener('scroll', calculateScrollProgress);
-      window.removeEventListener('resize', calculateScrollProgress);
-    };
-  }, []);
-
   return (
     <>
       {/* Mobile Toggle Button */}
@@ -100,28 +72,8 @@ const BlogNavigation = () => {
         }`}
       >
         <div className="p-3 space-y-1">
-          {/* Scroll Progress Indicator */}
-          <div className="mb-3 px-2">
-            <div className="flex items-center justify-between mb-1.5">
-              <span className="text-xs font-semibold text-muted-foreground hidden lg:block">
-                Navigazione Rapida
-              </span>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-medium text-giolab-blue">
-                  {Math.round(scrollProgress)}%
-                </span>
-              </div>
-            </div>
-            {/* Progress Bar */}
-            <div className="relative h-1.5 w-full bg-muted rounded-full overflow-hidden">
-              <div 
-                className="absolute top-0 left-0 h-full bg-gradient-to-r from-giolab-blue to-giolab-blue-dark transition-all duration-300 ease-out rounded-full"
-                style={{ width: `${scrollProgress}%` }}
-              >
-                {/* Animated shimmer effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-[slide-in-right_2s_ease-in-out_infinite]" />
-              </div>
-            </div>
+          <div className="text-xs font-semibold text-muted-foreground mb-2 px-2 hidden lg:block">
+            Navigazione Rapida
           </div>
           {navigationItems.map((item) => {
             const isActive = activeSection === item.id;
