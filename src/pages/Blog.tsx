@@ -33,6 +33,15 @@ const blogPosts = [
     readTime: "4 min",
     category: "Servizi",
     image: "⏱️"
+  },
+  {
+    slug: "rigenerazione-vetro-iphone",
+    title: "Rigenerazione vetro iPhone: risparmia senza compromettere la qualità",
+    description: "Scopri come rigenerare solo il vetro del tuo iPhone mantenendo il display originale. Risparmio economico fino al 40% con qualità garantita.",
+    date: "2025-01-12",
+    readTime: "5 min",
+    category: "Servizi",
+    image: "✨"
   }
 ];
 
