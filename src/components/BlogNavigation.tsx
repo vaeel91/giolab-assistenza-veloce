@@ -97,12 +97,12 @@ const BlogNavigation = () => {
       <nav
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className={`fixed top-24 right-4 z-40 bg-background/80 backdrop-blur-md border border-border rounded-xl shadow-xl transition-all duration-300 ${
+        className={`fixed top-24 right-4 z-40 bg-background/70 backdrop-blur-lg border border-border rounded-xl shadow-2xl transition-all duration-400 ${
           isOpen ? "translate-x-0 opacity-100 pointer-events-auto" : "translate-x-[calc(100%+1rem)] opacity-0 pointer-events-none"
         }`}
         style={{ 
           marginTop: '60px',
-          transitionTimingFunction: isOpen ? 'cubic-bezier(0.68, -0.55, 0.265, 1.55)' : 'ease-out'
+          transitionTimingFunction: isOpen ? 'cubic-bezier(0.68, -0.8, 0.265, 1.8)' : 'ease-out'
         }}
       >
         <div className="p-2 space-y-1 w-48">
