@@ -25,6 +25,10 @@ interface SEOHeadProps {
   structuredData?: object;
   breadcrumbs?: BreadcrumbItem[];
   articleData?: ArticleData;
+  faqData?: Array<{
+    question: string;
+    answer: string;
+  }>;
 }
 
 const SEOHead = ({ 
@@ -36,7 +40,8 @@ const SEOHead = ({
   ogUrl = typeof window !== 'undefined' ? window.location.href.replace('giolab.lovable.app', 'giolabriparazioni.it') : 'https://giolabriparazioni.it',
   structuredData,
   breadcrumbs,
-  articleData
+  articleData,
+  faqData
 }: SEOHeadProps) => {
   
   // Generate breadcrumb structured data if breadcrumbs are provided
@@ -92,6 +97,20 @@ const SEOHead = ({
     ...(articleData.category && {
       "articleSection": articleData.category
     })
+  } : null;
+
+  // Generate FAQPage structured data if FAQ data is provided
+  const faqSchema = faqData && faqData.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
   } : null;
   
   useEffect(() => {
@@ -169,6 +188,18 @@ const SEOHead = ({
       articleScript.textContent = JSON.stringify(articleSchema);
     }
     
+    // Add FAQPage structured data if FAQ data is provided
+    if (faqSchema) {
+      let faqScript = document.querySelector('script[type="application/ld+json"]#faq-service-schema');
+      if (!faqScript) {
+        faqScript = document.createElement('script');
+        faqScript.setAttribute('type', 'application/ld+json');
+        faqScript.setAttribute('id', 'faq-service-schema');
+        document.head.appendChild(faqScript);
+      }
+      faqScript.textContent = JSON.stringify(faqSchema);
+    }
+    
     // Add additional structured data if provided
     if (structuredData) {
       let script = document.querySelector('script[type="application/ld+json"]#dynamic-schema');
@@ -180,7 +211,7 @@ const SEOHead = ({
       }
       script.textContent = JSON.stringify(structuredData);
     }
-  }, [title, description, keywords, ogImage, ogType, ogUrl, structuredData, breadcrumbSchema, articleSchema]);
+  }, [title, description, keywords, ogImage, ogType, ogUrl, structuredData, breadcrumbSchema, articleSchema, faqSchema]);
   
   return null;
 };

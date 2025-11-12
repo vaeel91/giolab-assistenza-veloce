@@ -58,12 +58,74 @@ const ServiceTemplate = ({
     window.location.href = "tel:+393406970686";
   };
 
+  // Generate Service Schema for better SEO
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": h1Title,
+    "name": seoTitle,
+    "description": seoDescription,
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://giolabriparazioni.it/#business",
+      "name": "Giolab",
+      "telephone": "+393406970686",
+      "email": "giolabassemini@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Carmine 20A",
+        "addressLocality": "Assemini",
+        "addressRegion": "CA",
+        "postalCode": "09032",
+        "addressCountry": "IT"
+      },
+      "url": "https://giolabriparazioni.it"
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Assemini"
+      },
+      {
+        "@type": "City",
+        "name": "Cagliari"
+      },
+      {
+        "@type": "State",
+        "name": "Sardegna"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": h1Title,
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": h1Title,
+            "description": subtitle
+          }
+        }
+      ]
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": priceRange || "Preventivo gratuito",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": typeof window !== 'undefined' ? window.location.href.replace('giolab.lovable.app', 'giolabriparazioni.it') : 'https://giolabriparazioni.it'
+    }
+  };
+
   return (
     <div className="min-h-screen">
       <SEOHead 
         title={seoTitle}
         description={seoDescription}
         keywords={seoKeywords}
+        structuredData={serviceSchema}
+        faqData={faqs}
       />
       <Header />
       
