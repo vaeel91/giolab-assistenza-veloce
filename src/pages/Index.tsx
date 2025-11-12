@@ -354,7 +354,7 @@ const Index = () => {
           className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
           <div className="section-content h-full w-full">
-            <TestimonialsShowcase />
+            <TestimonialsShowcase variant="scroll" />
           </div>
         </div>
         <div 

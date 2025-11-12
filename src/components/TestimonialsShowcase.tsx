@@ -21,7 +21,7 @@ interface TestimonialsShowcaseProps {
   limit?: number;
   title?: string;
   subtitle?: string;
-  variant?: "default" | "compact";
+  variant?: "default" | "compact" | "scroll";
 }
 
 const TestimonialsShowcase = ({ 
@@ -207,6 +207,113 @@ const TestimonialsShowcase = ({
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Scroll variant with infinite vertical scrolling
+  if (variant === "scroll") {
+    const duplicatedTestimonials = [...testimonials, ...testimonials];
+    
+    return (
+      <section className="py-12 md:py-20 bg-giolab-gray">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">{title}</h2>
+            <p className="text-lg text-muted-foreground mb-4">{subtitle}</p>
+            
+            <div className="flex flex-col items-center gap-4">
+              <RatingStars rating={aggregateRating} reviewCount={totalReviews} size="lg" />
+              
+              {/* Google Review Badge */}
+              <Button
+                onClick={handleGoogleReview}
+                variant="outline"
+                className="group relative overflow-hidden border-2 border-giolab-blue/30 hover:border-giolab-blue hover:bg-giolab-blue/10 transition-all duration-300"
+              >
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1">
+                    <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  </div>
+                  <span className="font-semibold">Recensito su Google</span>
+                  <ExternalLink className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Button>
+              
+              <p className="text-sm text-muted-foreground">
+                Clicca per lasciare una recensione e aiutaci a crescere!
+              </p>
+            </div>
+          </div>
+
+          {/* Scrolling container with fade effect */}
+          <div className="relative max-w-5xl mx-auto h-[600px] overflow-hidden">
+            {/* Fade overlay top */}
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-giolab-gray to-transparent z-10 pointer-events-none" />
+            
+            {/* Fade overlay bottom */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-giolab-gray to-transparent z-10 pointer-events-none" />
+            
+            {/* Scrolling content */}
+            <div className="animate-[scroll_40s_linear_infinite] hover:[animation-play-state:paused]">
+              <div className="flex flex-col gap-6 pb-6">
+                {duplicatedTestimonials.map((testimonial, index) => (
+                  <Card 
+                    key={`${testimonial.id}-${index}`}
+                    className="border-2 hover:border-giolab-blue hover:shadow-xl transition-all duration-300 max-w-2xl mx-auto w-full"
+                  >
+                    <CardContent className="p-6">
+                      {/* Quote Icon */}
+                      <div className="mb-4">
+                        <Quote className="h-8 w-8 text-giolab-blue/30" />
+                      </div>
+
+                      {/* Testimonial Text */}
+                      <p className="text-muted-foreground mb-6 leading-relaxed">
+                        "{testimonial.text}"
+                      </p>
+
+                      {/* Rating */}
+                      <div className="mb-4">
+                        <RatingStars rating={testimonial.rating} showText={false} size="md" />
+                      </div>
+
+                      {/* Author Info */}
+                      <div className="flex items-center gap-3 pt-4 border-t">
+                        <img 
+                          src={testimonial.avatar} 
+                          alt={testimonial.name}
+                          className="w-14 h-14 rounded-full ring-2 ring-giolab-blue/30 flex-shrink-0"
+                        />
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-bold text-foreground truncate">{testimonial.name}</h3>
+                          <p className="text-sm text-muted-foreground truncate">{testimonial.role}</p>
+                          <div className="flex items-center gap-1 text-xs text-muted-foreground mt-1">
+                            <span>📍 {testimonial.location}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Service Badge */}
+                      <div className="mt-4 pt-3 border-t">
+                        <span className="inline-block px-3 py-1 bg-giolab-blue/10 text-giolab-blue text-xs font-medium rounded-full">
+                          {testimonial.service}
+                        </span>
+                      </div>
+
+                      {/* Date */}
+                      <p className="text-xs text-muted-foreground mt-3">{testimonial.date}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

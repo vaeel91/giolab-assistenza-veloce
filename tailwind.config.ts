@@ -103,6 +103,14 @@ export default {
             height: "0",
           },
         },
+        "scroll": {
+          "0%": {
+            transform: "translateY(0)",
+          },
+          "100%": {
+            transform: "translateY(-50%)",
+          },
+        },
         "scroll-infinite": {
           from: {
             transform: "translateX(0)",
@@ -115,6 +123,7 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "scroll": "scroll 40s linear infinite",
         "scroll-infinite": "scroll-infinite 60s linear infinite",
       },
     },
