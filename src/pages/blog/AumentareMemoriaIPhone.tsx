@@ -1,5 +1,6 @@
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { Link } from "react-router-dom";
+import { BUSINESS_INFO } from "@/config/businessInfo";
 
 const AumentareMemoriaIPhone = () => {
   const articleContent = (
@@ -237,17 +238,17 @@ const AumentareMemoriaIPhone = () => {
         <div className="bg-background border border-border p-6 rounded-lg my-6">
           <h3 className="text-xl font-bold mb-4 text-foreground">📍 Indirizzo</h3>
           <p className="text-muted-foreground mb-4">
-            <strong>Giolab – Centro Assistenza iPhone e Smartphone</strong><br />
-            Via Carmine 20A<br />
-            09032 Assemini (CA)<br />
+            <strong>{BUSINESS_INFO.fullName}</strong><br />
+            {BUSINESS_INFO.address.streetFull}<br />
+            {BUSINESS_INFO.address.postalCode} {BUSINESS_INFO.address.city} ({BUSINESS_INFO.address.province})<br />
             Sardegna, Italia
           </p>
 
           <h3 className="text-xl font-bold mb-4 text-foreground">📞 Contatti</h3>
           <ul className="list-none space-y-2 text-muted-foreground mb-4">
-            <li><strong>Telefono/WhatsApp:</strong> <a href="https://wa.me/393406970686" className="text-giolab-blue hover:underline">340 69 70 686</a></li>
-            <li><strong>Email:</strong> <a href="mailto:giolabassemini@gmail.com" className="text-giolab-blue hover:underline">giolabassemini@gmail.com</a></li>
-            <li><strong>Instagram:</strong> <a href="https://instagram.com/giolab_iphonefix" target="_blank" rel="noopener noreferrer" className="text-giolab-blue hover:underline">@giolab_iphonefix</a></li>
+            <li><strong>Telefono/WhatsApp:</strong> <a href={`https://wa.me/${BUSINESS_INFO.contacts.whatsapp}`} className="text-giolab-blue hover:underline">{BUSINESS_INFO.contacts.phone}</a></li>
+            <li><strong>Email:</strong> <a href={`mailto:${BUSINESS_INFO.contacts.email}`} className="text-giolab-blue hover:underline">{BUSINESS_INFO.contacts.email}</a></li>
+            <li><strong>Instagram:</strong> <a href={BUSINESS_INFO.social.instagram.url} target="_blank" rel="noopener noreferrer" className="text-giolab-blue hover:underline">{BUSINESS_INFO.social.instagram.handle}</a></li>
           </ul>
 
           <h3 className="text-xl font-bold mb-4 text-foreground">🕒 Orari di Apertura</h3>

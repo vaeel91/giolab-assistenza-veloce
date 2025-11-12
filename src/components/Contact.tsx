@@ -1,38 +1,36 @@
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Mail, Clock, Instagram, Facebook, MessageCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { BUSINESS_INFO, getWhatsAppLink, getGoogleMapsLink, getPhoneLink, getEmailLink } from "@/config/businessInfo";
 
 const Contact = () => {
-  const whatsappNumber = "393406970686";
-  const whatsappMessage = encodeURIComponent("Ciao! Vorrei richiedere informazioni sui vostri servizi.");
-
   const handleWhatsApp = () => {
-    window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank", "noopener,noreferrer");
+    window.open(getWhatsAppLink(), "_blank", "noopener,noreferrer");
   };
 
   const contactInfo = [
     {
       icon: MapPin,
       title: "Dove Siamo",
-      content: "Via Carmine 20, Assemini (CA)",
-      action: () => window.open("https://maps.google.com/?q=Via+Carmine+20+Assemini+CA", "_blank", "noopener,noreferrer"),
+      content: BUSINESS_INFO.address.full,
+      action: () => window.open(getGoogleMapsLink(), "_blank", "noopener,noreferrer"),
     },
     {
       icon: Phone,
       title: "Telefono",
-      content: "340 69 70 686",
-      action: () => (window.location.href = "tel:+393406970686"),
+      content: BUSINESS_INFO.contacts.phone,
+      action: () => (window.location.href = getPhoneLink()),
     },
     {
       icon: Mail,
       title: "Email",
-      content: "giolabassemini@gmail.com",
-      action: () => (window.location.href = "mailto:giolabassemini@gmail.com"),
+      content: BUSINESS_INFO.contacts.email,
+      action: () => (window.location.href = getEmailLink()),
     },
     {
       icon: Clock,
       title: "Orari",
-      content: "Lun-Ven: 9:00-13:00 / 16:00-20:00 | Sab: 10:00-12:30",
+      content: BUSINESS_INFO.openingHours.display.full,
       action: null,
     },
   ];
@@ -86,7 +84,7 @@ const Contact = () => {
               variant="outline"
               size="sm"
               className="rounded-full border"
-              onClick={() => window.open("https://instagram.com/giolab_iphonefix", "_blank", "noopener,noreferrer")}
+              onClick={() => window.open(BUSINESS_INFO.social.instagram.url, "_blank", "noopener,noreferrer")}
             >
               <Instagram className="h-3 w-3 md:h-4 md:w-4" />
             </Button>
@@ -94,7 +92,7 @@ const Contact = () => {
               variant="outline"
               size="sm"
               className="rounded-full border"
-              onClick={() => window.open("https://facebook.com/giolab", "_blank", "noopener,noreferrer")}
+              onClick={() => window.open(BUSINESS_INFO.social.facebook.url, "_blank", "noopener,noreferrer")}
             >
               <Facebook className="h-3 w-3 md:h-4 md:w-4" />
             </Button>

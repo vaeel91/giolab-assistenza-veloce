@@ -8,6 +8,7 @@ import SocialShare from "@/components/SocialShare";
 import ReadingProgress from "@/components/ReadingProgress";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
+import { BUSINESS_INFO } from "@/config/businessInfo";
 import { Button } from "@/components/ui/button";
 import ps5CoolingSystem from "@/assets/blog/ps5-cooling-system.jpg";
 import ps5VerticalVsHorizontal from "@/assets/blog/ps5-vertical-vs-horizontal.jpg";
@@ -255,13 +256,13 @@ const PS5VerticaleOrizzontale = () => {
 
               <div className="bg-gradient-to-r from-giolab-blue/5 to-giolab-blue-light/5 border-2 border-giolab-blue/20 rounded-xl p-6 my-8">
                 <p className="leading-relaxed font-semibold text-foreground mb-2">
-                  📍 <strong>Via Carmine 20 – Assemini (Cagliari)</strong>
+                  📍 <strong>{BUSINESS_INFO.address.street} – {BUSINESS_INFO.address.city} ({BUSINESS_INFO.address.provinceCode})</strong>
                 </p>
                 <p className="leading-relaxed text-muted-foreground mb-2">
-                  💬 <strong>WhatsApp:</strong> 340 69 70 686
+                  💬 <strong>WhatsApp:</strong> {BUSINESS_INFO.contacts.phone}
                 </p>
                 <p className="leading-relaxed text-muted-foreground">
-                  ⏰ <strong>Orari:</strong> Lun-Ven 9:00-13:00 / 16:00-20:00 | Sab 10:00-12:30
+                  ⏰ <strong>Orari:</strong> {BUSINESS_INFO.openingHours.display.compact}
                 </p>
               </div>
 
