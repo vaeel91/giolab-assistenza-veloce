@@ -47,7 +47,8 @@ const Location = () => {
                   <div className="text-left flex-1">
                     <h3 className="font-bold text-foreground text-base mb-1">Il Nostro Laboratorio</h3>
                     <p className="text-sm text-muted-foreground">{address}</p>
-                    <p className="text-xs text-muted-foreground mt-1">Lun-Sab: 9:00-13:00 / 16:00-19:30</p>
+                    <p className="text-xs text-muted-foreground mt-1">Lun-Ven: 9:00-13:00 / 16:00-20:00</p>
+                    <p className="text-xs text-muted-foreground">Sab: 10:00-12:30</p>
                   </div>
                 </div>
                 <Button
