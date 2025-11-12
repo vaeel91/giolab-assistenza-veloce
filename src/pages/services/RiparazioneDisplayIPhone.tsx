@@ -14,6 +14,11 @@ const RiparazioneDisplayIPhone = () => {
       subtitle="Sostituzione professionale di display e vetro per iPhone. Riparazioni rapide anche in 1 ora con ricambi certificati e garanzia 12 mesi."
       timeRange="30 min - 1 ora"
       priceRange="A partire da €69"
+      breadcrumbs={[
+        { name: "Home", url: "https://giolabriparazioni.it/" },
+        { name: "Servizi", url: "https://giolabriparazioni.it/#servizi" },
+        { name: "Riparazione Display iPhone" }
+      ]}
       mainContent={
         <div className="space-y-6 text-muted-foreground">
           <p className="text-lg leading-relaxed">

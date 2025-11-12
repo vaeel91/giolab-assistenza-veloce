@@ -14,6 +14,11 @@ const BatteriaMaggiorataIPhone = () => {
       subtitle="Aumenta l'autonomia del tuo iPhone fino al 30% con le nostre batterie maggiorate di alta qualità. Riparazione rapida, garanzia 12 mesi."
       timeRange="30-45 minuti"
       priceRange="A partire da €49"
+      breadcrumbs={[
+        { name: "Home", url: "https://giolabriparazioni.it/" },
+        { name: "Servizi", url: "https://giolabriparazioni.it/#servizi" },
+        { name: "Batteria Maggiorata iPhone" }
+      ]}
       mainContent={
         <div className="space-y-6 text-muted-foreground">
           <p className="text-lg leading-relaxed">

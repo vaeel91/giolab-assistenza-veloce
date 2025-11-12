@@ -34,6 +34,10 @@ interface ServiceTemplateProps {
     answer: string;
   }>;
   showTestimonials?: boolean;
+  breadcrumbs?: Array<{
+    name: string;
+    url?: string;
+  }>;
 }
 
 const ServiceTemplate = ({
@@ -51,6 +55,7 @@ const ServiceTemplate = ({
   timeRange,
   faqs,
   showTestimonials = true,
+  breadcrumbs,
 }: ServiceTemplateProps) => {
   const handleWhatsApp = () => {
     const whatsappNumber = "393406970686";
@@ -144,6 +149,7 @@ const ServiceTemplate = ({
         keywords={seoKeywords}
         structuredData={serviceSchema}
         faqData={faqs}
+        breadcrumbs={breadcrumbs}
       />
       <Header />
       

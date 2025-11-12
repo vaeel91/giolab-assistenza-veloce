@@ -44,6 +44,10 @@ const Blog = () => {
         title="Blog Giolab | Guide e Consigli su Riparazione iPhone e Smartphone | Assemini"
         description="Articoli, guide e consigli su riparazione iPhone, batterie maggiorate, manutenzione smartphone e molto altro. Blog del centro assistenza Giolab di Assemini."
         keywords="blog riparazione iPhone, guide iPhone, consigli batteria iPhone, manutenzione smartphone, assistenza iPhone Assemini"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolabriparazioni.it/" },
+          { name: "Blog" }
+        ]}
       />
       <Header />
       
