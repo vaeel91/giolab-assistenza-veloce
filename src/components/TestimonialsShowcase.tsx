@@ -1,8 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import RatingStars from "@/components/RatingStars";
-import { Quote, Loader2 } from "lucide-react";
+import { Quote, Loader2, ExternalLink, Star } from "lucide-react";
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { Button } from "@/components/ui/button";
 
 interface Testimonial {
   id: string | number;
@@ -153,6 +154,11 @@ const TestimonialsShowcase = ({
 
   const displayedTestimonials = limit ? testimonials.slice(0, limit) : testimonials;
 
+  const handleGoogleReview = () => {
+    // Link al profilo Google My Business di Giolab
+    window.open('https://g.page/r/CfV8xY3z4JQHEBM/review', '_blank');
+  };
+
   if (loading) {
     return (
       <section className="py-12 md:py-20 bg-giolab-gray">
@@ -213,8 +219,32 @@ const TestimonialsShowcase = ({
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-3">{title}</h2>
           <p className="text-lg text-muted-foreground mb-4">{subtitle}</p>
-          <div className="flex justify-center">
+          
+          <div className="flex flex-col items-center gap-4">
             <RatingStars rating={aggregateRating} reviewCount={totalReviews} size="lg" />
+            
+            {/* Google Review Badge */}
+            <Button
+              onClick={handleGoogleReview}
+              variant="outline"
+              className="group relative overflow-hidden border-2 border-giolab-blue/30 hover:border-giolab-blue hover:bg-giolab-blue/10 transition-all duration-300"
+            >
+              <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1">
+                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                </div>
+                <span className="font-semibold">Recensito su Google</span>
+                <ExternalLink className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Button>
+            
+            <p className="text-sm text-muted-foreground">
+              Clicca per lasciare una recensione e aiutaci a crescere!
+            </p>
           </div>
         </div>
 
