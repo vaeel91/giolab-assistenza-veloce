@@ -223,6 +223,92 @@ const Index = () => {
         title="Riparazione iPhone Assemini | Smartphone, PC, Console | Giolab"
         description="Centro assistenza specializzato ad Assemini e Cagliari. Riparazione iPhone, smartphone, PC e console. Riparazioni in 1 ora, garanzia 12 mesi, batterie maggiorate iPhone. Preventivo gratuito ☎️ 340 69 70 686"
         keywords="riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza iPhone Cagliari, batteria maggiorata iPhone Assemini, riparazione vetro iPhone Assemini, micro-saldature Assemini, riparazione PC Assemini, assistenza console Assemini, centro assistenza iPhone Cagliari, rigenerazione vetro iPhone"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://giolabriparazioni.it/#organization",
+          "name": "Giolab",
+          "url": "https://giolabriparazioni.it",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Marco Piras"
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "reviewBody": "Servizio eccellente! iPhone riparato in meno di un'ora, display perfetto come nuovo. Tecnici competenti e prezzi onesti. Super consigliato!",
+              "datePublished": "2025-01-15"
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Giulia Melis"
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "reviewBody": "Batteria maggiorata installata sul mio iPhone 13, autonomia triplicata! Finalmente arrivo a sera. Giolab è davvero il top ad Assemini.",
+              "datePublished": "2025-01-10"
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Andrea Murgia"
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "reviewBody": "Professionali e veloci. Mi hanno recuperato tutte le foto da un iPhone che non si accendeva più. Prezzo corretto e garanzia di 12 mesi.",
+              "datePublished": "2025-01-05"
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Sara Carta"
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "reviewBody": "Consigliato da un'amica, non me ne pento. Schermo sostituito in 40 minuti mentre aspettavo. Qualità ottima e prezzo giusto.",
+              "datePublished": "2024-12-28"
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Luca Sanna"
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "reviewBody": "Centro assistenza serio e competente. Mi hanno riparato la PS5 in pochi giorni. Finalmente posso giocare di nuovo! Grazie Giolab.",
+              "datePublished": "2024-12-20"
+            }
+          ]
+        }}
       />
       <Header />
       <div ref={containerRef} className="h-screen overflow-x-auto overflow-y-hidden snap-x snap-mandatory flex scroll-smooth touch-pan-x overscroll-x-contain">

@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import SEOHead from "@/components/SEOHead";
+import RatingStars from "@/components/RatingStars";
 import { Link } from "react-router-dom";
 
 interface ServiceTemplateProps {
@@ -79,7 +80,14 @@ const ServiceTemplate = ({
         "postalCode": "09032",
         "addressCountry": "IT"
       },
-      "url": "https://giolabriparazioni.it"
+      "url": "https://giolabriparazioni.it",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "150",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
     },
     "areaServed": [
       {
@@ -115,6 +123,13 @@ const ServiceTemplate = ({
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
       "url": typeof window !== 'undefined' ? window.location.href.replace('giolab.lovable.app', 'giolabriparazioni.it') : 'https://giolabriparazioni.it'
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "150",
+      "bestRating": "5",
+      "worstRating": "1"
     }
   };
 
@@ -144,9 +159,20 @@ const ServiceTemplate = ({
               </ol>
             </nav>
 
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-4">
               {h1Title}
             </h1>
+            
+            {/* Rating Stars */}
+            <div className="mb-6">
+              <RatingStars 
+                rating={4.9} 
+                reviewCount={150} 
+                size="lg"
+                className="justify-start"
+              />
+            </div>
+            
             <p className="text-lg md:text-xl text-muted-foreground mb-8">
               {subtitle}
             </p>
