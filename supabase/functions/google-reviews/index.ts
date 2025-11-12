@@ -14,19 +14,31 @@ serve(async (req) => {
     const apiKey = Deno.env.get('GOOGLE_PLACES_API_KEY');
     const placeId = Deno.env.get('GOOGLE_PLACE_ID');
 
+    console.log('Starting Google Reviews fetch...');
+    console.log('API Key present:', !!apiKey);
+    console.log('Place ID present:', !!placeId);
+
     if (!apiKey || !placeId) {
       throw new Error('Missing Google API credentials');
     }
 
-    // Fetch place details including reviews
-    const response = await fetch(
-      `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews,rating,user_ratings_total&key=${apiKey}&language=it`
-    );
+    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews,rating,user_ratings_total&key=${apiKey}&language=it`;
+    console.log('Fetching from Google API...');
 
+    // Fetch place details including reviews
+    const response = await fetch(url);
     const data = await response.json();
 
+    console.log('Google API Response Status:', data.status);
+    console.log('Error message (if any):', data.error_message);
+
     if (data.status !== 'OK') {
-      throw new Error(`Google API error: ${data.status}`);
+      console.error('Google API Error:', {
+        status: data.status,
+        error_message: data.error_message,
+        placeId: placeId
+      });
+      throw new Error(`Google API error: ${data.status}${data.error_message ? ' - ' + data.error_message : ''}`);
     }
 
     // Transform Google reviews to our format
