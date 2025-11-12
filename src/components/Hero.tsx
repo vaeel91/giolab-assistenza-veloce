@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, FileText, BookOpen } from "lucide-react";
-import giolabLogo from "@/assets/giolab-banner-new.png";
+import giolabLogo from "@/assets/giolab-logo-new.png";
 import { QuoteRequestDialog } from "./QuoteRequestDialog";
 
 const Hero = () => {
@@ -22,11 +22,11 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-6 md:py-10 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-1 md:space-y-2">
           {/* Logo */}
-          <div className="flex justify-center -mb-6 md:-mb-8">
+          <div className="flex justify-center -mb-12 md:-mb-18">
             <img
               src={giolabLogo} 
               alt="Giolab Assemini - Centro assistenza riparazione iPhone, smartphone, PC e console" 
-              className="h-40 md:h-52 lg:h-64 w-auto max-w-full px-4 animate-zoom-in"
+              className="h-60 md:h-84 lg:h-96 w-auto animate-zoom-in"
               loading="eager"
             />
           </div>
