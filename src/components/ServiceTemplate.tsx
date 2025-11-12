@@ -130,7 +130,7 @@ const ServiceTemplate = ({
       "price": priceRange || "Preventivo gratuito",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
-      "url": typeof window !== 'undefined' ? window.location.href.replace('giolab.lovable.app', 'giolabriparazioni.it') : 'https://giolabriparazioni.it'
+      "url": typeof window !== 'undefined' ? window.location.href : 'https://giolabriparazioni.it'
     },
     "aggregateRating": {
       "@type": "AggregateRating",

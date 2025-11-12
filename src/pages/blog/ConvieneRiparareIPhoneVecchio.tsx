@@ -19,8 +19,8 @@ const ConvieneRiparareIPhoneVecchio = () => {
         description="Riparare o sostituire un iPhone vecchio? Scopri quando conviene riparare e quando è meglio comprare un iPhone ricondizionato. Guida completa da Giolab Assemini."
         keywords="iPhone ricondizionato Assemini, conviene riparare iPhone, iPhone usato vs riparazione, acquisto iPhone ricondizionato Cagliari"
         breadcrumbs={[
-          { name: "Home", url: "https://giolab.lovable.app/" },
-          { name: "Blog", url: "https://giolab.lovable.app/blog" },
+          { name: "Home", url: "https://giolabriparazioni.it/" },
+          { name: "Blog", url: "https://giolabriparazioni.it/blog" },
           { name: "Riparare o comprare iPhone ricondizionato" }
         ]}
         articleData={{

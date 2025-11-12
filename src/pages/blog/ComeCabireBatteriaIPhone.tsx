@@ -20,8 +20,8 @@ const ComeCabireBatteriaIPhone = () => {
         keywords="batteria iPhone da sostituire, segnali batteria iPhone, salute batteria iPhone, quando cambiare batteria iPhone, batteria iPhone scarica veloce"
         ogImage="https://giolabriparazioni.it/og-images/come-capire-batteria-iphone-da-sostituire.jpg"
         breadcrumbs={[
-          { name: "Home", url: "https://giolab.lovable.app/" },
-          { name: "Blog", url: "https://giolab.lovable.app/blog" },
+          { name: "Home", url: "https://giolabriparazioni.it/" },
+          { name: "Blog", url: "https://giolabriparazioni.it/blog" },
           { name: "Come capire se la batteria va sostituita" }
         ]}
         articleData={{

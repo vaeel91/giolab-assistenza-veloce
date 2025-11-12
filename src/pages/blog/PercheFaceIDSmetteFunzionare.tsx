@@ -19,8 +19,8 @@ const PercheFaceIDSmetteFunzionare = () => {
         description="Face ID non funziona più dopo una caduta dell'iPhone? Scopri le cause e come riparare il sensore Face ID presso Giolab ad Assemini."
         keywords="face id non funziona dopo caduta, riparazione sensore iPhone, face id rotto, sensore faciale iPhone Assemini, riparazione face id Cagliari"
         breadcrumbs={[
-          { name: "Home", url: "https://giolab.lovable.app/" },
-          { name: "Blog", url: "https://giolab.lovable.app/blog" },
+          { name: "Home", url: "https://giolabriparazioni.it/" },
+          { name: "Blog", url: "https://giolabriparazioni.it/blog" },
           { name: "Face ID non funziona dopo caduta" }
         ]}
         articleData={{

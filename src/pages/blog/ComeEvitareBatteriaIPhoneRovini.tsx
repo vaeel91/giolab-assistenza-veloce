@@ -19,8 +19,8 @@ const ComeEvitareBatteriaIPhoneRovini = () => {
         description="Scopri i consigli pratici per far durare più a lungo la batteria del tuo iPhone. Trucchi e buone abitudini per preservare la salute della batteria."
         keywords="consigli batteria iPhone, durare batteria più a lungo, preservare batteria iPhone, cicli ricarica iPhone, batteria iPhone durata"
         breadcrumbs={[
-          { name: "Home", url: "https://giolab.lovable.app/" },
-          { name: "Blog", url: "https://giolab.lovable.app/blog" },
+          { name: "Home", url: "https://giolabriparazioni.it/" },
+          { name: "Blog", url: "https://giolabriparazioni.it/blog" },
           { name: "Consigli batteria iPhone" }
         ]}
         articleData={{

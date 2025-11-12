@@ -19,8 +19,8 @@ const TrasferimentoDatiAndroidIPhone = () => {
         description="Guida completa per trasferire contatti, foto, WhatsApp e dati da Android a iPhone e viceversa. Metodi semplici e sicuri per non perdere nulla."
         keywords="trasferire dati Android iPhone, passaggio rubrica foto WhatsApp, cambio smartphone dati, migrare da Android a iPhone"
         breadcrumbs={[
-          { name: "Home", url: "https://giolab.lovable.app/" },
-          { name: "Blog", url: "https://giolab.lovable.app/blog" },
+          { name: "Home", url: "https://giolabriparazioni.it/" },
+          { name: "Blog", url: "https://giolabriparazioni.it/blog" },
           { name: "Trasferimento dati Android iPhone" }
         ]}
         articleData={{

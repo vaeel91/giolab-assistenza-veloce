@@ -19,8 +19,8 @@ const VantaggiBatteriaMaggiorataIPhone = () => {
         description="Scopri tutti i vantaggi delle batterie maggiorate per iPhone: più autonomia, meno stress e prestazioni migliorate. Installazione rapida presso Giolab ad Assemini."
         keywords="batteria maggiorata iPhone, batteria maggiore capacità iPhone, autonomia iPhone, batteria potenziata iPhone, batteria lunga durata iPhone Assemini"
         breadcrumbs={[
-          { name: "Home", url: "https://giolab.lovable.app/" },
-          { name: "Blog", url: "https://giolab.lovable.app/blog" },
+          { name: "Home", url: "https://giolabriparazioni.it/" },
+          { name: "Blog", url: "https://giolabriparazioni.it/blog" },
           { name: "Vantaggi batteria maggiorata" }
         ]}
         articleData={{

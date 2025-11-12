@@ -37,7 +37,7 @@ const SEOHead = ({
   keywords = "riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza PC Assemini, riparazione console Assemini",
   ogImage = "https://giolabriparazioni.it/og-image-giolab.jpg",
   ogType = "website",
-  ogUrl = typeof window !== 'undefined' ? window.location.href.replace('giolab.lovable.app', 'giolabriparazioni.it') : 'https://giolabriparazioni.it',
+  ogUrl = typeof window !== 'undefined' ? window.location.href : 'https://giolabriparazioni.it',
   structuredData,
   breadcrumbs,
   articleData,
@@ -155,7 +155,7 @@ const SEOHead = ({
     updateMetaTag('twitter:image:alt', title);
     
     // Canonical URL
-    const canonicalUrl = ogUrl.replace('giolab.lovable.app', 'giolabriparazioni.it');
+    const canonicalUrl = ogUrl;
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement('link');

@@ -19,8 +19,8 @@ const RecuperoDatiIPhoneRotto = () => {
         description="iPhone rotto e dati importanti da salvare? Scopri cosa è possibile recuperare da un iPhone danneggiato e come Giolab può aiutarti con il recupero dati ad Assemini."
         keywords="recupero dati iPhone Cagliari, iPhone non si accende recuperare foto, recupero dati iPhone rotto, salvataggio dati iPhone, backup iPhone danneggiato"
         breadcrumbs={[
-          { name: "Home", url: "https://giolab.lovable.app/" },
-          { name: "Blog", url: "https://giolab.lovable.app/blog" },
+          { name: "Home", url: "https://giolabriparazioni.it/" },
+          { name: "Blog", url: "https://giolabriparazioni.it/blog" },
           { name: "Recupero dati iPhone rotto" }
         ]}
         articleData={{
