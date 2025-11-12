@@ -82,7 +82,7 @@ const SEOHead = ({
         "url": "https://giolabriparazioni.it",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Via Carmine 20A",
+        "streetAddress": "Via Carmine 20",
         "addressLocality": "Assemini",
         "postalCode": "09032",
         "addressCountry": "IT"

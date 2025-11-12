@@ -235,7 +235,7 @@ const RiparazioneConsoleAssemini = () => {
                 Conclusione
               </h2>
               <p className="leading-relaxed">
-                Se la tua <strong className="text-foreground">PS5, Xbox o Nintendo Switch</strong> ha problemi, non rassegnarti a comprarne una nuova. Nella maggior parte dei casi, la riparazione è conveniente e veloce. <strong className="text-giolab-blue">Vieni da Giolab ad Assemini</strong> in Via Carmine 20A per una diagnosi gratuita: riporteremo la tua console al massimo delle prestazioni!
+                Se la tua <strong className="text-foreground">PS5, Xbox o Nintendo Switch</strong> ha problemi, non rassegnarti a comprarne una nuova. Nella maggior parte dei casi, la riparazione è conveniente e veloce. <strong className="text-giolab-blue">Vieni da Giolab ad Assemini</strong> in Via Carmine 20 per una diagnosi gratuita: riporteremo la tua console al massimo delle prestazioni!
               </p>
             </div>
 

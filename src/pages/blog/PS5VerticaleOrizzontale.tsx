@@ -255,7 +255,7 @@ const PS5VerticaleOrizzontale = () => {
 
               <div className="bg-gradient-to-r from-giolab-blue/5 to-giolab-blue-light/5 border-2 border-giolab-blue/20 rounded-xl p-6 my-8">
                 <p className="leading-relaxed font-semibold text-foreground mb-2">
-                  📍 <strong>Via Carmine 20A – Assemini (Cagliari)</strong>
+                  📍 <strong>Via Carmine 20 – Assemini (Cagliari)</strong>
                 </p>
                 <p className="leading-relaxed text-muted-foreground mb-2">
                   💬 <strong>WhatsApp:</strong> 340 69 70 686

@@ -14,8 +14,8 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Dove Siamo",
-      content: "Via Carmine 20A, Assemini (CA)",
-      action: () => window.open("https://maps.google.com/?q=Via+Carmine+20A+Assemini+CA", "_blank", "noopener,noreferrer"),
+      content: "Via Carmine 20, Assemini (CA)",
+      action: () => window.open("https://maps.google.com/?q=Via+Carmine+20+Assemini+CA", "_blank", "noopener,noreferrer"),
     },
     {
       icon: Phone,

@@ -78,7 +78,7 @@ const RiparazioneDisplayIPhone = () => {
             Serviamo Assemini, Cagliari e Provincia
           </h2>
           <p className="leading-relaxed">
-            Il nostro centro assistenza si trova in <strong className="text-foreground">Via Carmine 20A ad Assemini (CA)</strong>, facilmente raggiungibile da Cagliari e da tutta la provincia. Siamo aperti dal lunedì al sabato con orario continuato per venirti incontro.
+            Il nostro centro assistenza si trova in <strong className="text-foreground">Via Carmine 20 ad Assemini (CA)</strong>, facilmente raggiungibile da Cagliari e da tutta la provincia. Siamo aperti dal lunedì al sabato con orario continuato per venirti incontro.
           </p>
           <p className="leading-relaxed">
             <strong className="text-giolab-blue">Prenota ora il tuo intervento su WhatsApp o chiamaci!</strong> Ti aspettiamo per restituire al tuo iPhone lo schermo perfetto che merita.

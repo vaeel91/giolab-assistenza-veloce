@@ -202,7 +202,7 @@ const RiparazioneIPhone1OraGiolab = () => {
                 <li>Porta il tuo iPhone e in circa 1 ora sarà riparato!</li>
               </ol>
               <p className="leading-relaxed mt-6">
-                <strong className="text-giolab-blue">Ci trovi in Via Carmine 20A ad Assemini</strong>, a pochi minuti da Cagliari. Siamo aperti dal lunedì al sabato con orari flessibili per venire incontro alle tue esigenze.
+                <strong className="text-giolab-blue">Ci trovi in Via Carmine 20 ad Assemini</strong>, a pochi minuti da Cagliari. Siamo aperti dal lunedì al sabato con orari flessibili per venire incontro alle tue esigenze.
               </p>
 
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-12 mb-4">

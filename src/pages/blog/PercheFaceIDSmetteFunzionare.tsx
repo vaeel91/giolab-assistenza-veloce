@@ -170,7 +170,7 @@ const PercheFaceIDSmetteFunzionare = () => {
                 Riparazione Face ID ad Assemini: il Servizio Giolab
               </h2>
               <p className="leading-relaxed">
-                Da <strong className="text-giolab-blue">Giolab in Via Carmine 20A ad Assemini</strong>, i nostri tecnici specializzati possono diagnosticare e riparare i problemi Face ID con precisione. Il servizio include:
+                Da <strong className="text-giolab-blue">Giolab in Via Carmine 20 ad Assemini</strong>, i nostri tecnici specializzati possono diagnosticare e riparare i problemi Face ID con precisione. Il servizio include:
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>Diagnosi gratuita del sistema Face ID</li>

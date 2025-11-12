@@ -92,7 +92,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-8 text-center text-sm text-white/50">
           <p>© {currentYear} Giolab - Assistenza Smartphone, PC e Console. Tutti i diritti riservati.</p>
-          <p className="mt-2">P.IVA: 03896540925 - Via Carmine 20A, Assemini (CA)</p>
+          <p className="mt-2">P.IVA: 03896540925 - Via Carmine 20, Assemini (CA)</p>
         </div>
       </div>
     </footer>

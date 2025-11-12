@@ -77,7 +77,7 @@ const ServiceTemplate = ({
       "email": "giolabassemini@gmail.com",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Via Carmine 20A",
+        "streetAddress": "Via Carmine 20",
         "addressLocality": "Assemini",
         "addressRegion": "CA",
         "postalCode": "09032",

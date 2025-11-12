@@ -153,7 +153,7 @@ const ComeCabireBatteriaIPhone = () => {
                 Se riconosci uno o più di questi segnali nel tuo iPhone, è il momento di <strong className="text-giolab-blue">sostituire la batteria</strong>. Da Giolab ad Assemini offriamo un servizio di <strong className="text-foreground">sostituzione batteria rapido</strong>, con possibilità di installare anche batterie maggiorate per aumentare l'autonomia fino al 30%.
               </p>
               <p className="leading-relaxed">
-                Il servizio viene completato in <strong className="text-foreground">30-45 minuti</strong>, con garanzia di 12 mesi su tutte le batterie installate. <strong className="text-giolab-blue">Contattaci su WhatsApp o vieni a trovarci in Via Carmine 20A ad Assemini!</strong>
+                Il servizio viene completato in <strong className="text-foreground">30-45 minuti</strong>, con garanzia di 12 mesi su tutte le batterie installate. <strong className="text-giolab-blue">Contattaci su WhatsApp o vieni a trovarci in Via Carmine 20 ad Assemini!</strong>
               </p>
             </div>
 

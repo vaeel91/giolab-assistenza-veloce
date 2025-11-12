@@ -138,7 +138,7 @@ const RecuperoDatiIPhoneRotto = () => {
                 Come Funziona il Servizio di Recupero Dati Giolab
               </h2>
               <p className="leading-relaxed">
-                Da <strong className="text-giolab-blue">Giolab in Via Carmine 20A ad Assemini</strong>, offriamo un servizio professionale di recupero dati iPhone:
+                Da <strong className="text-giolab-blue">Giolab in Via Carmine 20 ad Assemini</strong>, offriamo un servizio professionale di recupero dati iPhone:
               </p>
               <ol className="list-decimal list-inside space-y-2 ml-4">
                 <li><strong>Diagnosi gratuita</strong>: analizziamo il tipo e l'entità del danno</li>

@@ -182,7 +182,7 @@ const ServizioTelefonoCortesia = () => {
                 Per assicurarti la disponibilità del telefono di cortesia, ti consigliamo di <strong className="text-giolab-blue">prenotarlo in anticipo</strong> quando fissi l'appuntamento per la riparazione.
               </p>
               <p className="leading-relaxed mt-4">
-                Puoi contattarci via <strong>WhatsApp al 340-69-70-686</strong> o venire direttamente in negozio in <strong>Via Carmine 20A, Assemini</strong>.
+                Puoi contattarci via <strong>WhatsApp al 340-69-70-686</strong> o venire direttamente in negozio in <strong>Via Carmine 20, Assemini</strong>.
               </p>
 
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-12 mb-4">

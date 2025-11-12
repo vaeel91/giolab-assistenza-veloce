@@ -140,7 +140,7 @@ const CosaFareIPhoneCadutoSchermoCrepato = () => {
                 Riparazione Display iPhone ad Assemini: il Servizio Giolab
               </h2>
               <p className="leading-relaxed">
-                Da <strong className="text-giolab-blue">Giolab in Via Carmine 20A ad Assemini</strong>, vicino Cagliari, offriamo un servizio di <strong className="text-foreground">sostituzione display iPhone rapido e di qualità</strong>. Ecco cosa ti offriamo:
+                Da <strong className="text-giolab-blue">Giolab in Via Carmine 20 ad Assemini</strong>, vicino Cagliari, offriamo un servizio di <strong className="text-foreground">sostituzione display iPhone rapido e di qualità</strong>. Ecco cosa ti offriamo:
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>Riparazione in 1 ora per la maggior parte dei modelli</li>

@@ -181,7 +181,7 @@ const ComeCapireProblemaSchedaMadre = () => {
                 Come Giolab Diagnostica i Problemi alla Scheda Madre
               </h2>
               <p className="leading-relaxed">
-                Presso <strong className="text-giolab-blue">Giolab in Via Carmine 20A ad Assemini</strong>, utilizziamo strumenti professionali per diagnosticare con precisione i guasti alla motherboard:
+                Presso <strong className="text-giolab-blue">Giolab in Via Carmine 20 ad Assemini</strong>, utilizziamo strumenti professionali per diagnosticare con precisione i guasti alla motherboard:
               </p>
               <ol className="list-decimal list-inside space-y-2 ml-4">
                 <li><strong>Test visivo al microscopio</strong>: identifichiamo componenti danneggiati, bruciati o ossidati</li>
