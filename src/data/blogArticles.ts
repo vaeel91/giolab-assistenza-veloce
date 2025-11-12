@@ -161,5 +161,14 @@ export const blogArticles: BlogArticle[] = [
     readTime: "9 min",
     category: "Guide",
     image: "🔄"
+  },
+  {
+    slug: "ps5-verticale-o-orizzontale",
+    title: "PS5: meglio in verticale o in orizzontale? Ecco cosa sapere sul metallo liquido",
+    description: "Scopri se è meglio tenere la PS5 in verticale o orizzontale. Ti spieghiamo i rischi del metallo liquido e come posizionarla nel modo più sicuro.",
+    date: "2025-01-26",
+    readTime: "9 min",
+    category: "Tecnologia",
+    image: "🎮"
   }
 ];

@@ -26,6 +26,7 @@ import ErroriPostSostituzioneDisplay from "./pages/blog/ErroriPostSostituzioneDi
 import ServizioTelefonoCortesia from "./pages/blog/ServizioTelefonoCortesia";
 import DisplayOriginaliVsCompatibili from "./pages/blog/DisplayOriginaliVsCompatibili";
 import TrasferimentoDatiAndroidIPhone from "./pages/blog/TrasferimentoDatiAndroidIPhone";
+import PS5VerticaleOrizzontale from "./pages/blog/PS5VerticaleOrizzontale";
 
 const queryClient = new QueryClient();
 
@@ -56,6 +57,7 @@ const App = () => (
           <Route path="/blog/servizio-telefono-cortesia" element={<ServizioTelefonoCortesia />} />
           <Route path="/blog/display-originali-vs-compatibili" element={<DisplayOriginaliVsCompatibili />} />
           <Route path="/blog/trasferimento-dati-android-iphone" element={<TrasferimentoDatiAndroidIPhone />} />
+          <Route path="/blog/ps5-verticale-o-orizzontale" element={<PS5VerticaleOrizzontale />} />
           <Route path="/servizi/riparazione-display-iphone-assemini" element={<RiparazioneDisplayIPhone />} />
           <Route path="/servizi/batteria-maggiorata-iphone" element={<BatteriaMaggiorataIPhone />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
