@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import SEOHead from "@/components/SEOHead";
 import RatingStars from "@/components/RatingStars";
+import TestimonialsShowcase from "@/components/TestimonialsShowcase";
 import { Link } from "react-router-dom";
 
 interface ServiceTemplateProps {
@@ -32,6 +33,7 @@ interface ServiceTemplateProps {
     question: string;
     answer: string;
   }>;
+  showTestimonials?: boolean;
 }
 
 const ServiceTemplate = ({
@@ -48,6 +50,7 @@ const ServiceTemplate = ({
   priceRange,
   timeRange,
   faqs,
+  showTestimonials = true,
 }: ServiceTemplateProps) => {
   const handleWhatsApp = () => {
     const whatsappNumber = "393406970686";
@@ -318,6 +321,16 @@ const ServiceTemplate = ({
             </div>
           </div>
         </section>
+      )}
+
+      {/* Testimonials Section */}
+      {showTestimonials && (
+        <TestimonialsShowcase 
+          limit={3}
+          title="I Nostri Clienti Soddisfatti"
+          subtitle="Leggi le recensioni di chi ha già scelto Giolab"
+          variant="compact"
+        />
       )}
 
       {/* Final CTA Section */}

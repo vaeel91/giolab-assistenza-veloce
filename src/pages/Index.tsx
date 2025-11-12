@@ -1,7 +1,7 @@
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import About from "@/components/About";
-import Testimonials from "@/components/Testimonials";
+import TestimonialsShowcase from "@/components/TestimonialsShowcase";
 import BlogPreview from "@/components/BlogPreview";
 import SocialAndLocation from "@/components/SocialAndLocation";
 import FAQ from "@/components/FAQ";
@@ -354,7 +354,7 @@ const Index = () => {
           className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
         >
           <div className="section-content h-full w-full">
-            <Testimonials />
+            <TestimonialsShowcase />
           </div>
         </div>
         <div 
