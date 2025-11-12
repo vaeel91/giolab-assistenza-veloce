@@ -11,12 +11,16 @@
     
     <!-- Preload Critical Assets -->
     <link rel="preload" href="/src/assets/giolab-logo-new.png" as="image" fetchpriority="high" />
+    <link rel="preload" href="/og-image-giolab.jpg" as="image" />
     
     <!-- Preconnect to Google Fonts for faster font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <!-- Preload Google Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
     
     <!-- Google Fonts - Inter with font-display swap for better performance -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -27,25 +31,30 @@
     <meta name="description" content="🔧 Centro assistenza specializzato ad Assemini (CA). Riparazione smartphone, PC e console con garanzia 12 mesi. ⚡ Riparazioni rapide anche in 1 ora. Preventivo gratuito 📞 340 69 70 686" />
     <meta name="keywords" content="riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza PC Assemini, riparazione console Assemini, riparazione smartphone Cagliari, assistenza iPhone Cagliari, batterie maggiorate iPhone, micro-saldature, recupero dati, rigenerazione vetro iPhone, Apple Watch riparazione" />
     <meta name="author" content="Giolab - Stefano Giordano" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="language" content="Italian" />
     <meta name="geo.region" content="IT-CA" />
     <meta name="geo.placename" content="Assemini" />
     <meta name="geo.position" content="39.2891;8.9947" />
     <meta name="ICBM" content="39.2891, 8.9947" />
+    <link rel="alternate" hreflang="it" href="https://giolabriparazioni.it/" />
+    <link rel="alternate" hreflang="x-default" href="https://giolabriparazioni.it/" />
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://giolab.lovable.app/" />
+    <link rel="canonical" href="https://giolabriparazioni.it/" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://giolab.lovable.app/" />
+    <meta property="og:url" content="https://giolabriparazioni.it/" />
     <meta property="og:site_name" content="Giolab Assemini" />
     <meta property="og:title" content="Giolab | Riparazione iPhone, Smartphone, PC e Console ad Assemini" />
     <meta property="og:description" content="Centro assistenza specializzato ad Assemini (CA). Riparazioni professionali con garanzia 12 mesi. Preventivo gratuito!" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:image" content="https://giolabriparazioni.it/og-image-giolab.jpg" />
+    <meta property="og:image:secure_url" content="https://giolabriparazioni.it/og-image-giolab.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Giolab - Centro Assistenza Riparazione iPhone e Smartphone ad Assemini" />
     <meta property="og:locale" content="it_IT" />
     <meta property="business:contact_data:street_address" content="Via Carmine 20A" />
     <meta property="business:contact_data:locality" content="Assemini" />
@@ -55,33 +64,35 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://giolab.lovable.app/" />
+    <meta name="twitter:url" content="https://giolabriparazioni.it/" />
     <meta name="twitter:site" content="@giolab_iphonefix" />
+    <meta name="twitter:creator" content="@giolab_iphonefix" />
     <meta name="twitter:title" content="Giolab | Riparazione iPhone e Smartphone ad Assemini" />
     <meta name="twitter:description" content="Centro assistenza specializzato. Riparazioni rapide con garanzia 12 mesi. Preventivo gratuito!" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:image" content="https://giolabriparazioni.it/og-image-giolab.jpg" />
+    <meta name="twitter:image:alt" content="Giolab - Centro Assistenza Riparazione iPhone" />
     
     <!-- Schema.org JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "@id": "https://giolab.lovable.app/#business",
+      "@id": "https://giolabriparazioni.it/#business",
       "name": "Giolab",
       "alternateName": "Giolab Assistenza Smartphone PC Console",
       "description": "Centro assistenza specializzato in riparazione smartphone, PC e console ad Assemini (CA)",
-      "url": "https://giolab.lovable.app",
+      "url": "https://giolabriparazioni.it",
       "telephone": "+393406970686",
       "email": "giolabassemini@gmail.com",
       "priceRange": "€€",
       "vatID": "IT03896540925",
       "foundingDate": "2014",
-      "image": "https://lovable.dev/opengraph-image-p98pqg.png",
+      "image": "https://giolabriparazioni.it/og-image-giolab.jpg",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://giolab.lovable.app/giolab-logo.png",
-        "width": "250",
-        "height": "250"
+        "url": "https://giolabriparazioni.it/favicon.png",
+        "width": "512",
+        "height": "512"
       },
       "address": {
         "@type": "PostalAddress",

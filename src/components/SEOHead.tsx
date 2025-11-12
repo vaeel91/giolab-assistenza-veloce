@@ -31,9 +31,9 @@ const SEOHead = ({
   title = "Giolab Assemini | Riparazione iPhone, Smartphone, PC e Console",
   description = "Centro assistenza specializzato ad Assemini (CA). Riparazione smartphone, PC e console con garanzia 12 mesi. Riparazioni rapide anche in 1 ora. Preventivo gratuito.",
   keywords = "riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza PC Assemini, riparazione console Assemini",
-  ogImage = typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
+  ogImage = "https://giolabriparazioni.it/og-image-giolab.jpg",
   ogType = "website",
-  ogUrl = typeof window !== 'undefined' ? window.location.href : '',
+  ogUrl = typeof window !== 'undefined' ? window.location.href.replace('giolab.lovable.app', 'giolabriparazioni.it') : 'https://giolabriparazioni.it',
   structuredData,
   breadcrumbs,
   articleData
@@ -65,14 +65,16 @@ const SEOHead = ({
       "name": articleData.author,
       "url": "https://www.giolab-assemini.it"
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Giolab Assemini",
-      "logo": {
-        "@type": "ImageObject",
-        "url": typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg'
-      },
-      "url": "https://www.giolab-assemini.it",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Giolab Assemini",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://giolabriparazioni.it/favicon.png",
+          "width": "512",
+          "height": "512"
+        },
+        "url": "https://giolabriparazioni.it",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Via Carmine 20A",
@@ -114,8 +116,11 @@ const SEOHead = ({
     updateMetaTag('og:title', title, 'property');
     updateMetaTag('og:description', description, 'property');
     updateMetaTag('og:image', ogImage, 'property');
+    updateMetaTag('og:image:secure_url', ogImage, 'property');
+    updateMetaTag('og:image:type', ogImage.endsWith('.jpg') || ogImage.endsWith('.jpeg') ? 'image/jpeg' : 'image/png', 'property');
     updateMetaTag('og:image:width', '1200', 'property');
     updateMetaTag('og:image:height', '630', 'property');
+    updateMetaTag('og:image:alt', title, 'property');
     updateMetaTag('og:type', ogType, 'property');
     updateMetaTag('og:url', ogUrl, 'property');
     updateMetaTag('og:site_name', 'Giolab Assemini', 'property');
@@ -129,6 +134,16 @@ const SEOHead = ({
     updateMetaTag('twitter:description', description);
     updateMetaTag('twitter:image', ogImage);
     updateMetaTag('twitter:image:alt', title);
+    
+    // Canonical URL
+    const canonicalUrl = ogUrl.replace('giolab.lovable.app', 'giolabriparazioni.it');
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', canonicalUrl);
     
     // Add breadcrumb structured data
     if (breadcrumbSchema) {
