@@ -22,11 +22,11 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-6 md:py-10 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-1 md:space-y-2">
           {/* Logo */}
-          <div className="flex justify-center -mb-8 md:-mb-10">
+          <div className="flex justify-center -mb-6 md:-mb-8">
             <img
               src={giolabLogo} 
               alt="Giolab Assemini - Centro assistenza riparazione iPhone, smartphone, PC e console" 
-              className="h-32 md:h-40 lg:h-48 w-auto max-w-full px-4 animate-zoom-in"
+              className="h-40 md:h-52 lg:h-64 w-auto max-w-full px-4 animate-zoom-in"
               loading="eager"
             />
           </div>
