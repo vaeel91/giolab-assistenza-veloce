@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "aumentare-memoria-iphone",
+    title: "Aumentare la Memoria dell'iPhone: Guida Completa e Soluzione Professionale",
+    description: "Aumenta la memoria interna del tuo iPhone in modo sicuro e garantito da Giolab ad Assemini. Upgrade da 64GB a 256GB, 512GB o 1TB con telefono di cortesia.",
+    date: "2025-01-27",
+    readTime: "8 min",
+    category: "Guide",
+    image: "💾"
+  },
+  {
     slug: "microsaldature-scheda-madre",
     title: "Micro-saldature su scheda madre: quando servono e perché rivolgersi a un professionista",
     description: "Scopri quando sono necessarie le micro-saldature sulla scheda madre iPhone e perché affidarsi a un professionista ad Assemini.",

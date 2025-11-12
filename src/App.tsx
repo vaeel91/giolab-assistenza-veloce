@@ -33,6 +33,7 @@ import ServizioTelefonoCortesia from "./pages/blog/ServizioTelefonoCortesia";
 import DisplayOriginaliVsCompatibili from "./pages/blog/DisplayOriginaliVsCompatibili";
 import TrasferimentoDatiAndroidIPhone from "./pages/blog/TrasferimentoDatiAndroidIPhone";
 import PS5VerticaleOrizzontale from "./pages/blog/PS5VerticaleOrizzontale";
+import AumentareMemoriaIPhone from "./pages/blog/AumentareMemoriaIPhone";
 import SEODocumentation from "./pages/SEODocumentation";
 
 const queryClient = new QueryClient();
@@ -75,6 +76,7 @@ const App = () => (
         <Route path="/blog/trasferimento-dati-android-iphone" element={<TrasferimentoDatiAndroidIPhone />} />
         <Route path="/blog/rigenerazione-vetro-iphone" element={<RigenerazioneVetroIPhone />} />
         <Route path="/blog/ps5-verticale-o-orizzontale" element={<PS5VerticaleOrizzontale />} />
+        <Route path="/blog/aumentare-memoria-iphone" element={<AumentareMemoriaIPhone />} />
         
         {/* Servizi specifici */}
         <Route path="/servizi/riparazione-display-iphone-assemini" element={<RiparazioneDisplayIPhone />} />
