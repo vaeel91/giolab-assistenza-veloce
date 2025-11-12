@@ -1,10 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import RatingStars from "@/components/RatingStars";
-import { Quote } from "lucide-react";
+import { Quote, Loader2 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 interface Testimonial {
-  id: number;
+  id: string | number;
   name: string;
   role: string;
   location: string;
@@ -25,90 +26,58 @@ interface TestimonialsShowcaseProps {
 const TestimonialsShowcase = ({ 
   limit, 
   title = "Cosa Dicono i Nostri Clienti",
-  subtitle = "Oltre 150 clienti soddisfatti ad Assemini e Cagliari",
+  subtitle = "Le recensioni reali dai nostri clienti Google",
   variant = "default"
 }: TestimonialsShowcaseProps) => {
   const [visibleTestimonials, setVisibleTestimonials] = useState<number[]>([]);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [aggregateRating, setAggregateRating] = useState<number>(4.9);
+  const [totalReviews, setTotalReviews] = useState<number>(0);
 
-  const testimonials: Testimonial[] = [
-    {
-      id: 1,
-      name: "Marco Piras",
-      role: "Imprenditore",
-      location: "Assemini",
-      rating: 5,
-      text: "Servizio eccellente! iPhone riparato in meno di un'ora, display perfetto come nuovo. Tecnici competenti e prezzi onesti. Super consigliato per chi cerca qualità e velocità!",
-      date: "15 Gennaio 2025",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Marco",
-      service: "Riparazione Display iPhone"
-    },
-    {
-      id: 2,
-      name: "Giulia Melis",
-      role: "Studentessa",
-      location: "Cagliari",
-      rating: 5,
-      text: "Batteria maggiorata installata sul mio iPhone 13, autonomia triplicata! Finalmente arrivo a sera senza problemi. Giolab è davvero il top ad Assemini, lo consiglio a tutti!",
-      date: "10 Gennaio 2025",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Giulia",
-      service: "Batteria Maggiorata iPhone"
-    },
-    {
-      id: 3,
-      name: "Andrea Murgia",
-      role: "Fotografo",
-      location: "Cagliari",
-      rating: 5,
-      text: "Professionali e veloci. Mi hanno recuperato tutte le foto da un iPhone che non si accendeva più. Servizio impeccabile, prezzo corretto e garanzia di 12 mesi. Grazie infinite!",
-      date: "5 Gennaio 2025",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Andrea",
-      service: "Recupero Dati"
-    },
-    {
-      id: 4,
-      name: "Sara Carta",
-      role: "Insegnante",
-      location: "Assemini",
-      rating: 5,
-      text: "Consigliato da un'amica, non me ne pento. Schermo sostituito in 40 minuti mentre aspettavo. Qualità ottima, telefono come nuovo e prezzo super competitivo. Tornerò sicuramente!",
-      date: "28 Dicembre 2024",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sara",
-      service: "Riparazione Display iPhone"
-    },
-    {
-      id: 5,
-      name: "Luca Sanna",
-      role: "Gamer",
-      location: "Cagliari",
-      rating: 5,
-      text: "Centro assistenza serio e competente. Mi hanno riparato la PS5 in pochi giorni e funziona perfettamente. Finalmente posso giocare di nuovo! Personale gentile e preparato. Grazie Giolab!",
-      date: "20 Dicembre 2024",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Luca",
-      service: "Riparazione Console"
-    },
-    {
-      id: 6,
-      name: "Francesca Pinna",
-      role: "Commerciante",
-      location: "Assemini",
-      rating: 5,
-      text: "Affidabilità e professionalità. Ho fatto sostituire la batteria del mio iPhone 12 e ora dura il doppio. Servizio rapido con telefono di cortesia. Prezzi trasparenti. Consigliatissimo!",
-      date: "15 Dicembre 2024",
-      avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Francesca",
-      service: "Sostituzione Batteria"
+  useEffect(() => {
+    fetchGoogleReviews();
+  }, []);
+
+  const fetchGoogleReviews = async () => {
+    try {
+      const { data, error } = await supabase.functions.invoke('google-reviews');
+      
+      if (error) throw error;
+      
+      if (data?.reviews) {
+        setTestimonials(data.reviews);
+        setAggregateRating(data.aggregateRating || 4.9);
+        setTotalReviews(data.totalReviews || data.reviews.length);
+        
+        // Animazione stagger per le cards
+        data.reviews.forEach((_: any, index: number) => {
+          setTimeout(() => {
+            setVisibleTestimonials(prev => [...prev, index]);
+          }, index * 100);
+        });
+      }
+    } catch (error) {
+      console.error('Error fetching Google reviews:', error);
+      setTestimonials([]);
+    } finally {
+      setLoading(false);
     }
-  ];
+  };
 
   const displayedTestimonials = limit ? testimonials.slice(0, limit) : testimonials;
 
-  useEffect(() => {
-    // Animazione stagger per le cards
-    displayedTestimonials.forEach((_, index) => {
-      setTimeout(() => {
-        setVisibleTestimonials(prev => [...prev, index]);
-      }, index * 100);
-    });
-  }, [limit]);
+  if (loading) {
+    return (
+      <section className="py-12 md:py-20 bg-giolab-gray">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center min-h-[400px]">
+            <Loader2 className="h-8 w-8 animate-spin text-giolab-blue" />
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   if (variant === "compact") {
     return (
@@ -159,7 +128,7 @@ const TestimonialsShowcase = ({
           <h2 className="text-3xl md:text-4xl font-bold mb-3">{title}</h2>
           <p className="text-lg text-muted-foreground mb-4">{subtitle}</p>
           <div className="flex justify-center">
-            <RatingStars rating={4.9} reviewCount={150} size="lg" />
+            <RatingStars rating={aggregateRating} reviewCount={totalReviews} size="lg" />
           </div>
         </div>
 
