@@ -1,0 +1,14 @@
+# Redirect 301 permanenti da giolab.lovable.app a giolabriparazioni.it
+# Ultimo aggiornamento: 27 Gennaio 2025
+# Obiettivo: Preservare SEO ranking e garantire continuità URL
+
+# Redirect da dominio Lovable a dominio custom (con e senza www)
+https://giolab.lovable.app/*  https://giolabriparazioni.it/:splat  301!
+http://giolab.lovable.app/*   https://giolabriparazioni.it/:splat  301!
+
+# Redirect www a non-www (se necessario)
+https://www.giolabriparazioni.it/*  https://giolabriparazioni.it/:splat  301!
+http://www.giolabriparazioni.it/*   https://giolabriparazioni.it/:splat  301!
+
+# Force HTTPS
+http://giolabriparazioni.it/*  https://giolabriparazioni.it/:splat  301!
