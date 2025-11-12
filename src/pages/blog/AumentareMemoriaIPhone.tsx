@@ -252,8 +252,8 @@ const AumentareMemoriaIPhone = () => {
 
           <h3 className="text-xl font-bold mb-4 text-foreground">🕒 Orari di Apertura</h3>
           <p className="text-muted-foreground">
-            <strong>Lunedì - Venerdì:</strong> 9:00 - 13:00 / 15:30 - 19:30<br />
-            <strong>Sabato:</strong> 9:00 - 13:00<br />
+            <strong>Lunedì - Venerdì:</strong> 9:00 - 13:00 / 16:00 - 20:00<br />
+            <strong>Sabato:</strong> 10:00 - 12:30<br />
             <strong>Domenica:</strong> Chiuso
           </p>
         </div>

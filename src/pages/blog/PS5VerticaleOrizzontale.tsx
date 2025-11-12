@@ -261,7 +261,7 @@ const PS5VerticaleOrizzontale = () => {
                   💬 <strong>WhatsApp:</strong> 340 69 70 686
                 </p>
                 <p className="leading-relaxed text-muted-foreground">
-                  ⏰ <strong>Orari:</strong> Lun-Ven 9:00-13:00 / 15:30-19:30 | Sab 9:00-13:00
+                  ⏰ <strong>Orari:</strong> Lun-Ven 9:00-13:00 / 16:00-20:00 | Sab 10:00-12:30
                 </p>
               </div>
 
