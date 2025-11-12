@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import RatingStars from "@/components/RatingStars";
 import { Quote, Loader2, ExternalLink, Star } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 
@@ -36,6 +36,10 @@ const TestimonialsShowcase = ({
   const [aggregateRating, setAggregateRating] = useState<number>(4.9);
   const [totalReviews, setTotalReviews] = useState<number>(0);
   const [expandedCards, setExpandedCards] = useState<Set<string | number>>(new Set());
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isUserInteracting, setIsUserInteracting] = useState(false);
+  const touchStartY = useRef<number>(0);
+  const scrollStartY = useRef<number>(0);
 
   useEffect(() => {
     fetchGoogleReviews();
@@ -172,6 +176,26 @@ const TestimonialsShowcase = ({
     });
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartY.current = e.touches[0].clientY;
+    scrollStartY.current = scrollContainerRef.current?.scrollTop || 0;
+    setIsUserInteracting(true);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!scrollContainerRef.current) return;
+    
+    const touchY = e.touches[0].clientY;
+    const deltaY = touchStartY.current - touchY;
+    scrollContainerRef.current.scrollTop = scrollStartY.current + deltaY;
+  };
+
+  const handleTouchEnd = () => {
+    setTimeout(() => {
+      setIsUserInteracting(false);
+    }, 2000); // Riprende l'auto-scroll dopo 2 secondi di inattività
+  };
+
   if (loading) {
     return (
       <section className="py-12 md:py-20 bg-giolab-gray">
@@ -266,7 +290,13 @@ const TestimonialsShowcase = ({
           </div>
 
           {/* Vertical Scrolling for both mobile and desktop */}
-          <div className="relative max-w-5xl mx-auto h-[500px] md:h-[600px] overflow-hidden">
+          <div 
+            ref={scrollContainerRef}
+            className="relative max-w-5xl mx-auto h-[500px] md:h-[600px] overflow-y-auto scrollbar-hide"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             {/* Fade overlay top */}
             <div className="absolute top-0 left-0 right-0 h-24 md:h-32 bg-gradient-to-b from-giolab-gray to-transparent z-10 pointer-events-none" />
             
@@ -274,7 +304,7 @@ const TestimonialsShowcase = ({
             <div className="absolute bottom-0 left-0 right-0 h-24 md:h-32 bg-gradient-to-t from-giolab-gray to-transparent z-10 pointer-events-none" />
             
             {/* Scrolling content */}
-            <div className="animate-[scroll_40s_linear_infinite] hover:[animation-play-state:paused]">
+            <div className={isUserInteracting ? '' : 'animate-[scroll_40s_linear_infinite]'}>
               <div className="flex flex-col gap-4 md:gap-6 pb-4 md:pb-6">
                 {duplicatedTestimonials.map((testimonial, index) => {
                   const isExpanded = expandedCards.has(`${testimonial.id}-${index}`);
