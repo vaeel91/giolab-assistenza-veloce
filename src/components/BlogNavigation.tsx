@@ -4,14 +4,14 @@ import { Home, Wrench, Users, Star, BookOpen, MapPin, HelpCircle, Phone, Menu, X
 import { Button } from "@/components/ui/button";
 
 const navigationItems = [
-  { id: "hero", label: "Home", icon: Home, link: "/#hero" },
-  { id: "servizi", label: "Servizi", icon: Wrench, link: "/#servizi" },
-  { id: "chi-siamo", label: "Chi Siamo", icon: Users, link: "/#chi-siamo" },
+  { id: "hero", label: "Home", icon: Home, link: "/" },
+  { id: "servizi", label: "Servizi", icon: Wrench, link: "/servizi" },
+  { id: "chi-siamo", label: "Chi Siamo", icon: Users, link: "/chi-siamo" },
   { id: "testimonianze", label: "Recensioni", icon: Star, link: "/#testimonianze" },
-  { id: "blog", label: "Blog", icon: BookOpen, link: "/#blog" },
-  { id: "dove-siamo", label: "Dove Siamo", icon: MapPin, link: "/#dove-siamo" },
-  { id: "faq", label: "FAQ", icon: HelpCircle, link: "/#faq" },
-  { id: "contatti", label: "Contatti", icon: Phone, link: "/#contatti" },
+  { id: "blog", label: "Blog", icon: BookOpen, link: "/blog" },
+  { id: "dove-siamo", label: "Dove Siamo", icon: MapPin, link: "/dove-siamo" },
+  { id: "faq", label: "FAQ", icon: HelpCircle, link: "/faq" },
+  { id: "contatti", label: "Contatti", icon: Phone, link: "/contatti" },
 ];
 
 const BlogNavigation = () => {
@@ -38,27 +38,21 @@ const BlogNavigation = () => {
     const path = location.pathname;
     const hash = location.hash;
 
+    // Mappa diretta path -> sezione
+    if (path === "/servizi" || path.startsWith("/servizi/")) return "servizi";
+    if (path === "/chi-siamo") return "chi-siamo";
+    if (path === "/faq") return "faq";
+    if (path === "/dove-siamo") return "dove-siamo";
+    if (path === "/contatti") return "contatti";
+    if (path.startsWith("/blog")) return "blog";
+    
     // Se siamo sulla homepage, guarda l'hash (che viene aggiornato dinamicamente)
     if (path === "/" && hash) {
       const sectionId = hash.replace("#", "");
       return sectionId;
     }
 
-    // Se siamo su una pagina blog, evidenzia "blog"
-    if (path.startsWith("/blog")) {
-      return "blog";
-    }
-
-    // Se siamo su una pagina servizi, evidenzia "servizi"
-    if (path.startsWith("/servizi")) {
-      return "servizi";
-    }
-
-    // Default: home se siamo sulla homepage senza hash
-    if (path === "/") {
-      return "hero";
-    }
-
+    // Default: home
     return "hero";
   };
 
@@ -206,13 +200,18 @@ const BlogNavigation = () => {
                 clearTimeout(closeTimeoutRef.current);
               }
               
-              // Estrai l'id dalla sezione (es. da "/#hero" estrai "hero")
-              const sectionId = item.link.replace("/#", "");
-              const element = document.getElementById(sectionId);
-              
-              if (element) {
-                // Scroll alla sezione usando scrollIntoView con smooth behavior
-                element.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+              // Se il link inizia con /#, è una sezione della homepage
+              if (item.link.startsWith("/#")) {
+                const sectionId = item.link.replace("/#", "");
+                const element = document.getElementById(sectionId);
+                
+                if (element) {
+                  // Scroll alla sezione usando scrollIntoView con smooth behavior
+                  element.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+                }
+              } else {
+                // Altrimenti naviga alla pagina dedicata
+                navigate(item.link);
               }
               
               setIsOpen(false);
