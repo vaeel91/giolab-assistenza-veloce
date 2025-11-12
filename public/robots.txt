@@ -1,5 +1,7 @@
-# Giolab - Centro Assistenza Smartphone, PC e Console - Robots.txt
-# Ottimizzato per SEO e indicizzazione motori di ricerca
+# robots.txt per Giolab Riparazioni Smartphone & PC
+# Ultimo aggiornamento: 27 Gennaio 2025
+# Proprietario: Giolab - Assemini (Cagliari)
+# Obiettivo: indicizzazione completa e corretta del sito
 
 # Regole generali per tutti i crawler
 User-agent: *
@@ -12,10 +14,15 @@ Allow: /servizi/*
 # Blocca file e cartelle non necessari
 Disallow: /api/
 Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
 Disallow: /*.json$
 Disallow: /*?*utm_source=
 Disallow: /*?*utm_medium=
 Disallow: /*?*utm_campaign=
+Disallow: /*?*sessionid=
+Disallow: /*?*sid=
 Disallow: /*__lovable_token=
 
 # Permetti esplicitamente risorse importanti
