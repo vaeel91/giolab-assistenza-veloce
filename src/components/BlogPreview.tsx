@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, Clock, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Clock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { blogArticles } from "@/data/blogArticles";
@@ -15,20 +15,6 @@ const BlogPreview = () => {
   // Duplica gli articoli per creare l'effetto infinito
   const duplicatedArticles = [...blogArticles, ...blogArticles];
 
-  const handleScroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 320; // Larghezza card + gap
-      const currentScroll = scrollContainerRef.current.scrollLeft;
-      const newScroll = direction === 'left' 
-        ? currentScroll - scrollAmount 
-        : currentScroll + scrollAmount;
-      
-      scrollContainerRef.current.scrollTo({
-        left: newScroll,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   // Auto-scroll con pausa al tocco su mobile
   useEffect(() => {
@@ -69,39 +55,28 @@ const BlogPreview = () => {
         {/* Contenitore con overflow nascosto */}
         <div className="relative flex-shrink-0 mb-4">
           {/* Gradiente sfumato sinistro */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-20 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-8 md:w-16 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
           
           {/* Gradiente sfumato destro */}
-          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-20 pointer-events-none" />
-          
-          {/* Freccia sinistra - solo desktop */}
-          <button
-            onClick={() => handleScroll('left')}
-            className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-30 bg-background/95 hover:bg-background border-2 border-giolab-blue text-giolab-blue rounded-full p-2 shadow-lg transition-all hover:scale-110"
-            aria-label="Scorri a sinistra"
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </button>
+          <div className="absolute right-0 top-0 bottom-0 w-8 md:w-16 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
           {/* Track dello scorrimento */}
           <div 
             ref={scrollContainerRef}
-            className="overflow-x-scroll scrollbar-hide relative z-10"
+            className="overflow-x-auto scrollbar-hide relative cursor-grab active:cursor-grabbing"
             style={{ 
               scrollbarWidth: 'none', 
               msOverflowStyle: 'none',
               WebkitOverflowScrolling: 'touch',
               scrollSnapType: 'x mandatory',
-              scrollBehavior: 'smooth',
-              touchAction: 'pan-x',
-              overscrollBehavior: 'contain'
+              touchAction: 'pan-x'
             }}
             onMouseEnter={() => !isMobile && setIsPaused(true)}
             onMouseLeave={() => !isMobile && setIsPaused(false)}
             onTouchStart={() => setIsPaused(true)}
             onTouchEnd={() => setIsPaused(false)}
           >
-            <div className="flex gap-3 md:gap-4 px-4 md:px-16 py-2">
+            <div className="flex gap-3 md:gap-4 px-4 md:px-8 py-2">
             {duplicatedArticles.map((article, index) => {
             
             return (
@@ -145,15 +120,6 @@ const BlogPreview = () => {
           })}
             </div>
           </div>
-
-          {/* Freccia destra - solo desktop */}
-          <button
-            onClick={() => handleScroll('right')}
-            className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-30 bg-background/95 hover:bg-background border-2 border-giolab-blue text-giolab-blue rounded-full p-2 shadow-lg transition-all hover:scale-110"
-            aria-label="Scorri a destra"
-          >
-            <ChevronRight className="h-6 w-6" />
-          </button>
         </div>
         
         {/* Bottone per vedere tutti gli articoli - posizionato subito sotto le cards */}
