@@ -1,34 +1,77 @@
-# Giolab - Robots.txt
+# Giolab - Centro Assistenza Smartphone, PC e Console - Robots.txt
+# Ottimizzato per SEO e indicizzazione motori di ricerca
+
+# Regole generali per tutti i crawler
 User-agent: *
 Allow: /
+Allow: /blog/
+Allow: /blog/*
+Allow: /servizi/
+Allow: /servizi/*
+
+# Blocca file e cartelle non necessari
 Disallow: /api/
 Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*?*utm_source=
+Disallow: /*?*utm_medium=
+Disallow: /*?*utm_campaign=
+Disallow: /*__lovable_token=
 
-# Sitemap
+# Permetti esplicitamente risorse importanti
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.gif$
+
+# Sitemap principale
 Sitemap: https://giolabriparazioni.it/sitemap.xml
 
-# Crawl Delay for politeness
-Crawl-delay: 1
-
-# Specific bot rules
+# Google Bot - massima priorità
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
+User-agent: Googlebot-Image
+Allow: /
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Bing Bot
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
+User-agent: BingPreview
+Allow: /
+
+# Altri motori di ricerca principali
 User-agent: Slurp
 Allow: /
+Crawl-delay: 1
 
 User-agent: DuckDuckBot
 Allow: /
 
 User-agent: Baiduspider
 Allow: /
+Crawl-delay: 2
 
 User-agent: YandexBot
 Allow: /
+Crawl-delay: 1
 
+# Social Media Crawlers (per Open Graph)
 User-agent: Twitterbot
 Allow: /
 
@@ -40,3 +83,31 @@ Allow: /
 
 User-agent: Pinterestbot
 Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Blocca crawler dannosi o non necessari
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+# Host (dominio principale)
+Host: https://giolabriparazioni.it
