@@ -68,7 +68,6 @@ const BlogPreview = () => {
               scrollbarWidth: 'none', 
               msOverflowStyle: 'none',
               WebkitOverflowScrolling: 'touch',
-              scrollSnapType: 'x mandatory',
               touchAction: 'pan-x'
             }}
             onMouseEnter={() => !isMobile && setIsPaused(true)}
@@ -84,7 +83,6 @@ const BlogPreview = () => {
                 key={`${article.slug}-${index}`} 
                 to={`/blog/${article.slug}`} 
                 className="group flex-shrink-0 w-[280px] md:w-80"
-                style={{ scrollSnapAlign: 'center' }}
               >
                 <Card className="h-full border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg bg-card">
                   <CardHeader className="p-2 md:p-3 pb-1 md:pb-2">
