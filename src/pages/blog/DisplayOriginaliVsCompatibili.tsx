@@ -1,19 +1,28 @@
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
+import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import BlogNavigation from "@/components/BlogNavigation";
-import SEOHead from "@/components/SEOHead";
+import { TableOfContents } from "@/components/TableOfContents";
 import RelatedArticles from "@/components/RelatedArticles";
 import SocialShare from "@/components/SocialShare";
 import ReadingProgress from "@/components/ReadingProgress";
-import { TableOfContents } from "@/components/TableOfContents";
-import { Link } from "react-router-dom";
-import { Calendar, Clock, ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import SEOHead from "@/components/SEOHead";
 
-export const DisplayOriginaliVsCompatibili = () => {
-  const currentUrl = `https://giolabriparazioni.it/blog/display-originali-vs-compatibili`;
-  const ogImageUrl = `https://giolabriparazioni.it/og-images/display-originali-vs-compatibili.jpg`;
+const DisplayOriginaliVsCompatibili = () => {
+  const articleData = {
+    headline: "Display iPhone: differenze tra Originali, Soft OLED, Hard OLED, TFT e importanza degli Hz | GioLab Assemini",
+    description: "Guida completa alla scelta del display iPhone: scopri le differenze tra originali, Soft OLED, Hard OLED e TFT. Analisi tecnica su qualità, Hz, consumi batteria e durata. Centro assistenza GioLab Assemini.",
+    author: "GioLab Assistenza",
+    datePublished: "2025-01-25T10:00:00+01:00",
+    dateModified: "2025-01-25T10:00:00+01:00",
+    image: "/og-images/display-originali-vs-compatibili.jpg",
+    category: "Guide"
+  };
+
+  const keywords = "riparazione iPhone Assemini, sostituzione display iPhone Cagliari, display compatibili iPhone Assemini, Soft OLED iPhone, centro assistenza iPhone Cagliari, display originale iPhone, Hard OLED iPhone, TFT iPhone, Hz display iPhone, refresh rate iPhone";
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -21,74 +30,42 @@ export const DisplayOriginaliVsCompatibili = () => {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Qual è la differenza tra un display originale e uno compatibile per iPhone?",
+        "name": "I display compatibili consumano più batteria?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Un display originale è prodotto dai fornitori certificati Apple (Samsung Display, LG Display, BOE), garantendo massima qualità, calibrazione perfetta e supporto completo alle funzionalità iOS. Un display compatibile è realizzato da produttori terzi, con qualità inferiore in termini di risoluzione, luminosità, precisione touch e durata."
+          "text": "Dipende dal tipo. I Soft OLED di qualità hanno consumi paragonabili agli originali. Gli Hard OLED consumano leggermente di più, mentre i TFT (LCD) hanno consumi significativamente superiori a causa della retroilluminazione costante. Da GioLab ad Assemini utilizziamo Soft OLED premium per minimizzare l'impatto sulla batteria."
         }
       },
       {
         "@type": "Question",
-        "name": "Cosa sono i display Soft OLED e Hard OLED?",
+        "name": "Il Face ID funziona dopo la sostituzione del display?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "I Soft OLED utilizzano un substrato plastico flessibile, sono più resistenti agli urti, durano di più e si adattano perfettamente alla curvatura iPhone. I Hard OLED usano un substrato in vetro rigido, sono più economici ma anche più fragili e richiedono cornici più spesse."
+          "text": "Sì, il Face ID continua a funzionare perfettamente dopo la sostituzione del display, sia con originali che con compatibili di qualità. Il sensore Face ID è indipendente dal display e non viene toccato durante la riparazione. Presso GioLab Assemini verifichiamo sempre il corretto funzionamento di Face ID prima della riconsegna."
         }
       },
       {
         "@type": "Question",
-        "name": "I display TFT/LCD sono uguali?",
+        "name": "Quale display è più resistente?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "I TFT sono una tipologia di LCD che utilizza retroilluminazione continua. Consumano più energia, generano più calore e hanno contrasto inferiore rispetto agli OLED. Sono indicati solo per budget molto limitati o iPhone datati."
+          "text": "I display originali e i Soft OLED di qualità offrono la migliore resistenza grazie alla loro flessibilità strutturale che assorbe meglio gli urti. Gli Hard OLED sono più rigidi e quindi più fragili alle cadute. I TFT hanno una resistenza intermedia ma sono meno performanti su altri aspetti."
         }
       },
       {
         "@type": "Question",
-        "name": "Cosa significa display originale 'pulled'?",
+        "name": "I colori dei display compatibili sono diversi dagli originali?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Un display pulled è un pannello originale Apple recuperato da un altro iPhone (es. con scheda madre danneggiata) e riutilizzato senza modifiche. Mantiene tutte le caratteristiche di fabbrica e rappresenta una scelta sostenibile ed economica rispetto al nuovo."
+          "text": "I Soft OLED premium replicano fedelmente i colori degli originali con profondità dei neri eccellente e gamma cromatica accurata. Gli Hard OLED hanno colori leggermente meno precisi, mentre i TFT mostrano differenze più evidenti con neri grigi e colori meno vividi. Da GioLab Assemini calibriamo ogni display per ottenere la massima fedeltà cromatica."
         }
       },
       {
         "@type": "Question",
-        "name": "Le frequenze 90 Hz e 120 Hz consumano più batteria?",
+        "name": "Vale la pena spendere di più per un Soft OLED?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sì, frequenze di aggiornamento superiori aumentano il consumo della batteria. Passare da 60 Hz a 90 Hz riduce l'autonomia di circa 200 minuti, mentre i 120 Hz comportano un calo del 9%. I display LTPO con refresh rate adattivo riducono questo impatto."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "I display compatibili possono danneggiare la batteria?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sì, alcuni display compatibili di bassa qualità hanno circuiti poco efficienti che richiedono più corrente, causando maggiore usura della batteria e, nei casi peggiori, danni al circuito retroilluminante. È fondamentale scegliere ricambi certificati."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Che display devo scegliere per il mio iPhone?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Per mantenere l'esperienza originale e massima durata, scegli un display originale nuovo o pulled. Per un buon compromesso qualità-prezzo, opta per un Soft OLED. I TFT e compatibili sono sconsigliati su iPhone recenti. Da Giolab ad Assemini consigliamo sempre Soft OLED o originali."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Il display influisce sulla durata complessiva dell'iPhone?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Assolutamente sì. Un display di scarsa qualità non solo compromette l'esperienza visiva, ma può causare consumi energetici anomali, surriscaldamento, problemi touch e perfino danni hardware permanenti. Investire in un display di qualità prolunga significativamente la vita del dispositivo."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Posso installare un display con refresh rate superiore sul mio iPhone?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No, il refresh rate è legato all'hardware e al software del dispositivo. Non è possibile installare un display 120 Hz su un iPhone che supporta solo 60 Hz. Il pannello deve essere compatibile con le specifiche originali del modello."
+          "text": "Assolutamente sì. Il Soft OLED rappresenta il miglior compromesso qualità-prezzo: offre qualità visiva vicina all'originale, consumi ridotti, ottima resistenza e durata nel tempo a un prezzo accessibile. È la scelta che consigliamo in oltre l'80% dei casi presso il nostro centro assistenza GioLab ad Assemini."
         }
       }
     ]
@@ -97,27 +74,19 @@ export const DisplayOriginaliVsCompatibili = () => {
   return (
     <>
       <SEOHead
-        title="Display iPhone: Originali vs Compatibili | Guida 2025 | Giolab Assemini"
-        description="Soft OLED, Hard OLED o TFT? Scopri quale display scegliere per il tuo iPhone ad Assemini. Guida tecnica completa su qualità, durata e impatto sulla batteria."
-        keywords="display iPhone originale Assemini, Soft OLED iPhone, Hard OLED iPhone, TFT iPhone, display compatibile iPhone Cagliari, sostituzione schermo iPhone Assemini, riparazione display iPhone Sardegna, display pulled iPhone, refresh rate iPhone, schermo OLED iPhone"
-        ogImage={ogImageUrl}
-        ogUrl={currentUrl}
-        ogType="article"
-        breadcrumbs={[
-          { name: "Home", url: "https://giolabriparazioni.it" },
-          { name: "Blog", url: "https://giolabriparazioni.it/blog" },
-          { name: "Display Originali vs Compatibili", url: currentUrl }
-        ]}
-        articleData={{
-          headline: "Display Originali vs Compatibili per iPhone: Guida Completa alla Scelta",
-          description: "Guida tecnica completa alle differenze tra display originali e compatibili per iPhone: Soft OLED, Hard OLED, TFT, pulled e copy screens.",
-          author: "Giolab Team",
-          datePublished: "2025-01-25",
-          image: ogImageUrl,
-          category: "Guide"
-        }}
-        structuredData={faqSchema}
+        title={articleData.headline}
+        description={articleData.description}
+        keywords={keywords}
+        ogImage={articleData.image}
+        articleData={articleData}
       />
+
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
+
       <ReadingProgress />
       <Header />
       <FloatingWhatsApp />
@@ -133,11 +102,10 @@ export const DisplayOriginaliVsCompatibili = () => {
         </div>
 
         <div className="flex gap-8 max-w-7xl mx-auto">
-          {/* Contenuto principale articolo */}
           <article className="flex-1 max-w-4xl">
             <header className="mb-8">
               <h1 className="text-4xl font-bold mb-4">
-                Display Originali vs Compatibili per iPhone: Guida Completa alla Scelta
+                Display iPhone: differenze tra Originali, Soft OLED, Hard OLED, TFT e importanza degli Hz
               </h1>
               
               <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
@@ -147,508 +115,628 @@ export const DisplayOriginaliVsCompatibili = () => {
                 </span>
                 <span className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
-                  8 min di lettura
+                  9 min di lettura
                 </span>
               </div>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Quando lo schermo del tuo iPhone si rompe, la scelta del display di ricambio non è una decisione da prendere alla leggera. 
-                La qualità visiva, la durata nel tempo e persino l'autonomia della batteria dipendono strettamente dal tipo di pannello montato. 
-                <strong> Ad Assemini, presso il nostro centro assistenza Giolab</strong>, analizziamo quotidianamente display originali, 
-                Soft OLED, Hard OLED, TFT e compatibili per aiutare i nostri clienti a scegliere consapevolmente. In questa guida tecnica 
-                approfondita, scoprirai le differenze reali tra le varie tecnologie, l'impatto sulla batteria e quale soluzione è più adatta alle tue esigenze.
+                La scelta del display giusto per il tuo iPhone non è solo una questione estetica: influisce direttamente sulla qualità visiva, 
+                sull'autonomia della batteria e sulla durata complessiva del dispositivo. <strong>Presso il nostro centro assistenza GioLab 
+                ad Assemini (Cagliari)</strong>, lavoriamo quotidianamente con display originali, Soft OLED, Hard OLED e TFT per aiutare 
+                i nostri clienti a scegliere la soluzione più adatta alle loro esigenze. In questa guida completa scoprirai le differenze 
+                tecniche tra le varie tipologie, l'importanza degli Hz e quale display offre il miglior rapporto qualità-prezzo.
               </p>
             </header>
 
-        <div className="prose prose-slate max-w-none">
-          <section className="mb-12">
-            <h2 id="tecnologie-display" className="text-2xl font-bold mt-8 mb-4 text-foreground scroll-mt-24">
-              Le Principali Tecnologie di Display per iPhone
-            </h2>
-            
-            <h3 id="display-tft" className="text-xl font-semibold mt-6 mb-3 text-foreground scroll-mt-24">
-              Display LCD/TFT: La Soluzione Economica
-            </h3>
-            
-            <p className="leading-relaxed">
-              I <strong>display TFT (Thin Film Transistor)</strong> rappresentano l'opzione più accessibile nel mercato aftermarket. 
-              Basati sulla tecnologia LCD, utilizzano una <strong>retroilluminazione continua</strong> per illuminare tutti i pixel dello schermo, 
-              indipendentemente dal contenuto visualizzato. Questo comporta un <strong>consumo energetico più elevato</strong> rispetto ai pannelli OLED 
-              e una temperatura di esercizio maggiore, specialmente durante l'uso prolungato.
-            </p>
-            
-            <p className="leading-relaxed">
-              I pannelli TFT hanno anche un <strong>contrasto inferiore</strong>: i neri appaiono grigi perché la retroilluminazione 
-              resta sempre accesa. Tuttavia, per chi utilizza lo smartphone principalmente per telefonate, messaggi e navigazione base, 
-              rappresentano una <strong>soluzione valida ed economica</strong>, specialmente se il budget è limitato. 
-              <strong> Da Giolab ad Assemini</strong>, consigliamo i TFT solo per modelli iPhone più datati o per utenti con esigenze basilari.
-            </p>
+            <div className="prose prose-slate max-w-none">
+              <section id="introduzione" className="mb-12">
+                <h2 className="text-3xl font-bold mb-6 scroll-mt-24">Perché la scelta del display è così importante</h2>
+                
+                <p className="text-foreground/90 leading-relaxed mb-4">
+                  Quando lo schermo del tuo iPhone si rompe, ti trovi davanti a diverse opzioni di riparazione. La differenza di prezzo 
+                  può essere significativa, ma è fondamentale capire cosa stai realmente comprando. Un display di bassa qualità può:
+                </p>
 
-            <h3 id="display-oled" className="text-xl font-semibold mt-6 mb-3 text-foreground scroll-mt-24">
-              Display OLED: Soft OLED vs Hard OLED
-            </h3>
-            
-            <p className="leading-relaxed">
-              Gli <strong>iPhone di fascia alta</strong> (dalla serie X in poi) montano schermi <strong>OLED (Organic Light-Emitting Diode)</strong>, 
-              tecnologia che garantisce <strong>neri perfetti, colori vividi e consumi ridotti</strong>. Ogni pixel emette luce propria, 
-              quindi quando un pixel è nero, è completamente spento e non consuma energia. Nel mercato aftermarket esistono due varianti principali:
-            </p>
+                <ul className="list-disc pl-6 space-y-2 mb-6 text-foreground/90">
+                  <li>Consumare più batteria, riducendo l'autonomia del telefono</li>
+                  <li>Mostrare colori meno fedeli e neri grigiastri invece che profondi</li>
+                  <li>Deteriorarsi più rapidamente con macchie, sfarfallii o perdita di luminosità</li>
+                  <li>Avere una risposta al tocco meno precisa e fluida</li>
+                  <li>Essere più fragile e soggetto a nuove rotture</li>
+                </ul>
 
-            <div className="bg-muted/30 p-6 rounded-lg my-6">
-              <h4 className="font-semibold text-lg mb-3">🔹 Soft OLED (Flexible OLED)</h4>
-              <p className="leading-relaxed mb-4">
-                I <strong>Soft OLED</strong> utilizzano un <strong>substrato plastico flessibile</strong> che li rende estremamente resistenti agli urti 
-                e alle torsioni. Questa tecnologia consente di <strong>adattarsi perfettamente alla curvatura originale</strong> del frame iPhone, 
-                garantendo un'esperienza visiva quasi identica all'originale. Sono i pannelli aftermarket <strong>di qualità superiore</strong>, 
-                con durata eccellente e fedeltà cromatica ottimale. Il costo è più elevato rispetto agli Hard OLED, ma l'investimento si ripaga 
-                in longevità e prestazioni.
-              </p>
+                <p className="text-foreground/90 leading-relaxed">
+                  <strong>Ad Assemini, presso GioLab</strong>, analizziamo ogni dispositivo per consigliare il display più adatto, 
+                  bilanciando qualità, budget e necessità specifiche del cliente. Vediamo ora nel dettaglio le caratteristiche di ogni 
+                  tipologia di display.
+                </p>
+              </section>
 
-              <h4 className="font-semibold text-lg mb-3">🔹 Hard OLED (Rigid OLED)</h4>
-              <p className="leading-relaxed">
-                Gli <strong>Hard OLED</strong> sono realizzati su un <strong>substrato di vetro rigido</strong>. Questo li rende <strong>più economici</strong>, 
-                ma anche <strong>più fragili</strong> in caso di cadute o pressioni. Non potendo flettersi, richiedono cornici leggermente più spesse 
-                e possono ridurre marginalmente l'area visualizzabile attiva. La qualità visiva è comunque buona, con neri profondi e colori saturi, 
-                ma la durata nel tempo è inferiore rispetto ai Soft OLED.
-              </p>
+              <section id="display-originali" className="mb-12">
+                <h2 className="text-3xl font-bold mb-6 scroll-mt-24">Display Originali: nuovi e pulled</h2>
+                
+                <p className="text-foreground/90 leading-relaxed mb-4">
+                  I display originali Apple rappresentano lo standard di riferimento per qualità e affidabilità. Esistono in due varianti:
+                </p>
+
+                <h3 className="text-2xl font-semibold mb-4 text-primary">Display Originali Nuovi</h3>
+                <p className="text-foreground/90 leading-relaxed mb-4">
+                  Sono pannelli prodotti direttamente da Apple o dai suoi fornitori certificati (Samsung Display, LG Display). 
+                  Offrono la massima fedeltà cromatica, luminosità fino a 1200 nits (2000 nits in HDR sui modelli Pro), 
+                  profondità dei neri assoluta e consumi energetici ottimizzati. La risposta al tocco è precisa al millisecondo 
+                  e la calibrazione dei colori è perfetta.
+                </p>
+
+                <h3 className="text-2xl font-semibold mb-4 text-primary">Display Originali Pulled</h3>
+                <p className="text-foreground/90 leading-relaxed mb-4">
+                  Sono display originali Apple recuperati da dispositivi dismessi o danneggiati in altre parti. Mantengono la qualità 
+                  originale ma possono mostrare segni di usura variabili: la luminosità massima potrebbe essere leggermente ridotta, 
+                  potrebbero esserci micro-difetti estetici sul vetro o una calibrazione non più perfetta. Il vantaggio è il costo 
+                  inferiore rispetto al nuovo, pur mantenendo la tecnologia Apple.
+                </p>
+
+                <div className="bg-muted/50 border-l-4 border-primary p-4 rounded-r-lg mb-6">
+                  <p className="text-sm font-semibold mb-2">✅ Vantaggi Display Originali</p>
+                  <ul className="text-sm space-y-1 text-foreground/80">
+                    <li>• Qualità visiva massima e colori perfettamente calibrati</li>
+                    <li>• Consumi batteria ottimizzati da Apple</li>
+                    <li>• Durata nel tempo eccellente</li>
+                    <li>• Compatibilità totale con tutte le funzioni iOS</li>
+                  </ul>
+                </div>
+
+                <div className="bg-muted/50 border-l-4 border-destructive p-4 rounded-r-lg">
+                  <p className="text-sm font-semibold mb-2">❌ Svantaggi Display Originali</p>
+                  <ul className="text-sm space-y-1 text-foreground/80">
+                    <li>• Costo elevato, soprattutto per i modelli nuovi</li>
+                    <li>• I pulled possono avere qualità variabile</li>
+                    <li>• Disponibilità limitata per alcuni modelli</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section id="soft-oled" className="mb-12">
+                <h2 className="text-3xl font-bold mb-6 scroll-mt-24">Soft OLED: la scelta consigliata</h2>
+                
+                <p className="text-foreground/90 leading-relaxed mb-4">
+                  I <strong>Soft OLED</strong> rappresentano attualmente la migliore alternativa ai display originali e sono la soluzione 
+                  che <strong>consigliamo in oltre l'80% dei casi presso GioLab Assemini</strong>. Ma cosa li rende così speciali?
+                </p>
+
+                <h3 className="text-2xl font-semibold mb-4 text-primary">Caratteristiche tecniche dei Soft OLED</h3>
+                
+                <p className="text-foreground/90 leading-relaxed mb-4">
+                  I Soft OLED utilizzano una tecnologia OLED flessibile di alta qualità, prodotta principalmente da produttori coreani 
+                  e cinesi certificati. Il termine "Soft" si riferisce alla maggiore flessibilità del pannello rispetto agli Hard OLED, 
+                  che gli conferisce una migliore resistenza agli urti e alle cadute.
+                </p>
+
+                <div className="bg-gradient-to-br from-primary/10 to-primary/5 border-2 border-primary p-6 rounded-lg mb-6">
+                  <h4 className="text-xl font-semibold mb-4 text-primary">Perché i Soft OLED sono il miglior compromesso</h4>
+                  
+                  <ul className="space-y-3 text-foreground/90">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold text-lg">•</span>
+                      <span><strong>Qualità visiva eccellente:</strong> Profondità dei neri molto vicina agli originali, 
+                      gamma cromatica accurata con copertura sRGB completa e colori vividi e naturali</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold text-lg">•</span>
+                      <span><strong>Consumi ridotti:</strong> Tecnologia OLED che illumina solo i pixel necessari, 
+                      con consumi paragonabili agli originali Apple</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold text-lg">•</span>
+                      <span><strong>Resistenza superiore:</strong> La flessibilità del pannello assorbe meglio gli urti, 
+                      riducendo il rischio di rotture in caso di nuove cadute</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold text-lg">•</span>
+                      <span><strong>Touch preciso e fluido:</strong> Risposta tattile rapida e accurata, 
+                      indistinguibile dall'esperienza originale</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold text-lg">•</span>
+                      <span><strong>Durata nel tempo:</strong> I Soft OLED premium mantengono qualità e luminosità 
+                      costanti per anni senza degrado significativo</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold text-lg">•</span>
+                      <span><strong>Prezzo accessibile:</strong> Costano significativamente meno degli originali 
+                      pur offrendo una qualità molto simile</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <p className="text-foreground/90 leading-relaxed mb-4">
+                  <strong>Nel nostro centro assistenza a Cagliari e Assemini</strong>, utilizziamo esclusivamente Soft OLED di fascia 
+                  premium, selezionati dopo test rigorosi su luminosità, fedeltà cromatica e consumi. Ogni display viene calibrato 
+                  e testato prima dell'installazione per garantire prestazioni ottimali.
+                </p>
+
+                <p className="text-foreground/90 leading-relaxed">
+                  È importante notare che sul mercato esistono Soft OLED di qualità molto variabile. I modelli economici possono 
+                  avere difetti come sfarfallio, colori sbiaditi o touch impreciso. <strong>Da GioLab</strong> garantiamo solo 
+                  Soft OLED premium con <strong>12 mesi di garanzia</strong> su materiale e installazione.
+                </p>
+              </section>
+
+              <section id="hard-oled" className="mb-12">
+                <h2 className="text-3xl font-bold mb-6 scroll-mt-24">Hard OLED: quando la rigidità è uno svantaggio</h2>
+                
+                <p className="text-foreground/90 leading-relaxed mb-4">
+                  Gli <strong>Hard OLED</strong> utilizzano la stessa tecnologia OLED per l'emissione di luce, ma con una struttura 
+                  più rigida e meno flessibile rispetto ai Soft OLED. Questa differenza strutturale ha impatti significativi 
+                  sulle prestazioni complessive.
+                </p>
+
+                <h3 className="text-2xl font-semibold mb-4 text-primary">Differenze chiave rispetto ai Soft OLED</h3>
+
+                <ul className="space-y-3 mb-6 text-foreground/90">
+                  <li className="flex items-start gap-2">
+                    <span className="text-destructive font-bold">•</span>
+                    <span><strong>Maggiore fragilità:</strong> La rigidità del pannello lo rende più soggetto a rotture 
+                    in caso di cadute o urti. Le crepe tendono a propagarsi più facilmente</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-destructive font-bold">•</span>
+                    <span><strong>Resa cromatica inferiore:</strong> I colori sono generalmente meno accurati, 
+                    con una tendenza a tonalità fredde o sovrassaturate. I neri non sono completamente profondi</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-destructive font-bold">•</span>
+                    <span><strong>Consumi energetici più alti:</strong> Gli Hard OLED richiedono più energia per raggiungere 
+                    la stessa luminosità dei Soft OLED, riducendo l'autonomia della batteria del 10-15%</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-destructive font-bold">•</span>
+                    <span><strong>Touch meno fluido:</strong> La risposta tattile può risultare meno precisa, 
+                    con occasionali ritardi o mancate registrazioni del tocco</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-destructive font-bold">•</span>
+                    <span><strong>Degrado più rapido:</strong> Tendenza a sviluppare burn-in (immagini fantasma) 
+                    più velocemente e perdita di luminosità nel tempo</span>
+                  </li>
+                </ul>
+
+                <p className="text-foreground/90 leading-relaxed">
+                  <strong>Presso GioLab ad Assemini</strong> sconsigliamo generalmente gli Hard OLED, preferendo sempre i Soft OLED 
+                  che offrono prestazioni superiori a un prezzo comparabile. Gli Hard OLED sono una soluzione da considerare solo 
+                  in casi molto specifici dove il budget è estremamente limitato.
+                </p>
+              </section>
+
+              <section id="tft-lcd" className="mb-12">
+                <h2 className="text-3xl font-bold mb-6 scroll-mt-24">Display TFT (LCD): tecnologia superata per iPhone</h2>
+                
+                <p className="text-foreground/90 leading-relaxed mb-4">
+                  I display <strong>TFT (Thin Film Transistor)</strong>, noti anche come LCD, rappresentano una tecnologia ormai 
+                  superata per gli iPhone moderni. Apple ha utilizzato display LCD solo fino all'iPhone 11, passando poi 
+                  completamente agli OLED per evidenti vantaggi qualitativi.
+                </p>
+
+                <h3 className="text-2xl font-semibold mb-4 text-primary">Come funzionano i display TFT</h3>
+                
+                <p className="text-foreground/90 leading-relaxed mb-4">
+                  A differenza degli OLED, i TFT richiedono una <strong>retroilluminazione costante</strong>: un pannello di LED 
+                  illumina uniformemente tutto lo schermo, indipendentemente dal contenuto visualizzato. Un secondo strato di cristalli 
+                  liquidi filtra poi questa luce per creare l'immagine. Questo sistema comporta diversi svantaggi:
+                </p>
+
+                <ul className="space-y-3 mb-6 text-foreground/90">
+                  <li className="flex items-start gap-2">
+                    <span className="text-destructive font-bold">•</span>
+                    <span><strong>Neri non profondi:</strong> Poiché la retroilluminazione è sempre accesa, 
+                    i neri appaiono grigi o bluastri invece che completamente scuri</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-destructive font-bold">•</span>
+                    <span><strong>Colori meno vividi:</strong> La gamma cromatica è più limitata, con colori meno saturi 
+                    e naturali rispetto agli OLED</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-destructive font-bold">•</span>
+                    <span><strong>Angoli di visione ridotti:</strong> I colori e il contrasto si deteriorano 
+                    sensibilmente quando si guarda lo schermo lateralmente</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-destructive font-bold">•</span>
+                    <span><strong>Consumi energetici elevati:</strong> La retroilluminazione costante consuma molta batteria, 
+                    anche visualizzando immagini prevalentemente scure. Riduzione autonomia fino al 20-30%</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-destructive font-bold">•</span>
+                    <span><strong>Spessore maggiore:</strong> La necessità di retroilluminazione rende il display più spesso</span>
+                  </li>
+                </ul>
+
+                <div className="bg-muted/50 border-l-4 border-destructive p-4 rounded-r-lg mb-6">
+                  <p className="text-sm font-semibold mb-2">⚠️ Quando considerare un TFT</p>
+                  <p className="text-sm text-foreground/80">
+                    I display TFT hanno senso solo per iPhone 11 o modelli precedenti che montavano originalmente un LCD. 
+                    Per iPhone 12 e successivi, che sono nati con OLED, montare un TFT significa un downgrade significativo 
+                    di qualità e autonomia. <strong>Da GioLab Assemini</strong> installiamo TFT solo quando esplicitamente 
+                    richiesto dal cliente per motivi di budget, sempre chiarendo le limitazioni.
+                  </p>
+                </div>
+              </section>
+
+              <section id="hz-refresh-rate" className="mb-12">
+                <h2 className="text-3xl font-bold mb-6 scroll-mt-24">L'importanza degli Hz (Hertz): cosa significa refresh rate</h2>
+                
+                <p className="text-foreground/90 leading-relaxed mb-4">
+                  Quando parliamo di display, gli <strong>Hz (Hertz)</strong> indicano il <strong>refresh rate</strong>, 
+                  cioè il numero di volte che l'immagine sullo schermo viene aggiornata in un secondo. Questo valore ha 
+                  un impatto diretto sulla fluidità visiva e sull'esperienza d'uso.
+                </p>
+
+                <h3 className="text-2xl font-semibold mb-4 text-primary">Cosa sono gli Hertz (Hz)</h3>
+                
+                <p className="text-foreground/90 leading-relaxed mb-4">
+                  1 Hz = 1 aggiornamento al secondo. Quindi:
+                </p>
+                <ul className="list-disc pl-6 space-y-2 mb-6 text-foreground/90">
+                  <li><strong>60 Hz</strong> = lo schermo si aggiorna 60 volte al secondo</li>
+                  <li><strong>120 Hz</strong> = lo schermo si aggiorna 120 volte al secondo</li>
+                </ul>
+
+                <p className="text-foreground/90 leading-relaxed mb-4">
+                  Più alto è il refresh rate, più fluide appaiono le animazioni, lo scrolling e i movimenti sullo schermo.
+                </p>
+
+                <h3 className="text-2xl font-semibold mb-4 text-primary">60 Hz vs 120 Hz: differenze percepibili</h3>
+                
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div className="bg-muted/30 p-4 rounded-lg border border-border">
+                    <h4 className="font-semibold mb-3 text-primary">Display 60 Hz</h4>
+                    <ul className="space-y-2 text-sm text-foreground/80">
+                      <li>• Standard per iPhone 11, 12, 13, 14 base</li>
+                      <li>• Scrolling fluido ma non ultra-smooth</li>
+                      <li>• Consumi batteria ottimizzati</li>
+                      <li>• Perfettamente adeguato per uso quotidiano</li>
+                      <li>• Animazioni iOS sono comunque fluide</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-primary/10 p-4 rounded-lg border-2 border-primary">
+                    <h4 className="font-semibold mb-3 text-primary">Display 120 Hz (ProMotion)</h4>
+                    <ul className="space-y-2 text-sm text-foreground/80">
+                      <li>• Tecnologia ProMotion (iPhone 13 Pro, 14 Pro, 15 Pro)</li>
+                      <li>• Scrolling ultra-fluido e naturale</li>
+                      <li>• Animazioni incredibilmente smooth</li>
+                      <li>• Migliore per gaming e video editing</li>
+                      <li>• Consuma più batteria se sempre attivo</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <h3 className="text-2xl font-semibold mb-4 text-primary">Come Apple gestisce dinamicamente il refresh rate</h3>
+                
+                <p className="text-foreground/90 leading-relaxed mb-4">
+                  Gli iPhone con display ProMotion (120 Hz) non mantengono sempre il refresh rate massimo. Apple utilizza 
+                  una tecnologia chiamata <strong>refresh rate variabile</strong> che adatta automaticamente gli Hz in base 
+                  al contenuto visualizzato:
+                </p>
+
+                <ul className="space-y-3 mb-6 text-foreground/90">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    <span><strong>Scrolling e interazioni:</strong> il display passa a 120 Hz per massima fluidità</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    <span><strong>Contenuto statico (lettura):</strong> il display scende a 10-24 Hz per risparmiare batteria</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    <span><strong>Video 30fps:</strong> il display si sincronizza a 30 Hz</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    <span><strong>Always-On Display:</strong> il display va a 1 Hz per minimizzare i consumi</span>
+                  </li>
+                </ul>
+
+                <p className="text-foreground/90 leading-relaxed mb-4">
+                  Questa gestione intelligente permette di godere della fluidità del 120 Hz quando serve, senza sacrificare 
+                  troppa autonomia.
+                </p>
+
+                <h3 className="text-2xl font-semibold mb-4 text-primary">Impatto del refresh rate sulla batteria</h3>
+                
+                <p className="text-foreground/90 leading-relaxed mb-4">
+                  Un refresh rate più alto richiede più energia per aggiornare l'immagine più frequentemente. Tuttavia, 
+                  l'impatto reale dipende da come viene gestito:
+                </p>
+
+                <ul className="space-y-2 mb-6 text-foreground/90">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">→</span>
+                    <span><strong>Display originali 120 Hz:</strong> Impatto minimo (5-10%) grazie al refresh rate variabile</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">→</span>
+                    <span><strong>Soft OLED 60 Hz:</strong> Consumi ottimizzati, autonomia comparabile agli originali</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-destructive">→</span>
+                    <span><strong>Hard OLED o TFT 60 Hz:</strong> Consumi più alti anche a 60 Hz per inefficienza tecnologica</span>
+                  </li>
+                </ul>
+
+                <div className="bg-muted/50 border-l-4 border-primary p-4 rounded-r-lg">
+                  <p className="text-sm font-semibold mb-2">💡 Consiglio GioLab</p>
+                  <p className="text-sm text-foreground/80">
+                    <strong>Presso il nostro centro assistenza ad Assemini</strong>, quando sostituiamo un display ProMotion (120 Hz), 
+                    utilizziamo sempre Soft OLED che supportano il refresh rate nativo del telefono. Questo garantisce che la fluidità 
+                    originale venga mantenuta senza compromessi. Per modelli 60 Hz, i nostri Soft OLED premium offrono la stessa 
+                    esperienza visiva degli originali con consumi identici.
+                  </p>
+                </div>
+              </section>
+
+              <section id="tabella-comparativa" className="mb-12">
+                <h2 className="text-3xl font-bold mb-6 scroll-mt-24">Tabella comparativa: quale display scegliere</h2>
+                
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse bg-card rounded-lg overflow-hidden shadow-sm">
+                    <thead>
+                      <tr className="bg-primary text-primary-foreground">
+                        <th className="p-3 text-left font-semibold">Caratteristica</th>
+                        <th className="p-3 text-center font-semibold">Originale</th>
+                        <th className="p-3 text-center font-semibold">Soft OLED</th>
+                        <th className="p-3 text-center font-semibold">Hard OLED</th>
+                        <th className="p-3 text-center font-semibold">TFT/LCD</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-sm">
+                      <tr className="border-b border-border">
+                        <td className="p-3 font-medium">Qualità visiva</td>
+                        <td className="p-3 text-center">⭐⭐⭐⭐⭐</td>
+                        <td className="p-3 text-center bg-primary/5">⭐⭐⭐⭐½</td>
+                        <td className="p-3 text-center">⭐⭐⭐½</td>
+                        <td className="p-3 text-center">⭐⭐½</td>
+                      </tr>
+                      <tr className="border-b border-border">
+                        <td className="p-3 font-medium">Profondità neri</td>
+                        <td className="p-3 text-center">Assoluta</td>
+                        <td className="p-3 text-center bg-primary/5">Eccellente</td>
+                        <td className="p-3 text-center">Buona</td>
+                        <td className="p-3 text-center">Scarsa (grigio)</td>
+                      </tr>
+                      <tr className="border-b border-border">
+                        <td className="p-3 font-medium">Fedeltà colori</td>
+                        <td className="p-3 text-center">100%</td>
+                        <td className="p-3 text-center bg-primary/5">95-98%</td>
+                        <td className="p-3 text-center">85-90%</td>
+                        <td className="p-3 text-center">70-80%</td>
+                      </tr>
+                      <tr className="border-b border-border">
+                        <td className="p-3 font-medium">Consumi batteria</td>
+                        <td className="p-3 text-center">Ottimizzati</td>
+                        <td className="p-3 text-center bg-primary/5">Molto bassi</td>
+                        <td className="p-3 text-center">Medi (+10-15%)</td>
+                        <td className="p-3 text-center">Alti (+20-30%)</td>
+                      </tr>
+                      <tr className="border-b border-border">
+                        <td className="p-3 font-medium">Resistenza urti</td>
+                        <td className="p-3 text-center">Eccellente</td>
+                        <td className="p-3 text-center bg-primary/5">Ottima</td>
+                        <td className="p-3 text-center">Media-bassa</td>
+                        <td className="p-3 text-center">Media</td>
+                      </tr>
+                      <tr className="border-b border-border">
+                        <td className="p-3 font-medium">Touch precisione</td>
+                        <td className="p-3 text-center">Perfetta</td>
+                        <td className="p-3 text-center bg-primary/5">Eccellente</td>
+                        <td className="p-3 text-center">Buona</td>
+                        <td className="p-3 text-center">Sufficiente</td>
+                      </tr>
+                      <tr className="border-b border-border">
+                        <td className="p-3 font-medium">Durata nel tempo</td>
+                        <td className="p-3 text-center">5+ anni</td>
+                        <td className="p-3 text-center bg-primary/5">4-5 anni</td>
+                        <td className="p-3 text-center">2-3 anni</td>
+                        <td className="p-3 text-center">3-4 anni</td>
+                      </tr>
+                      <tr className="border-b border-border">
+                        <td className="p-3 font-medium">Angoli visione</td>
+                        <td className="p-3 text-center">Perfetti</td>
+                        <td className="p-3 text-center bg-primary/5">Ottimi</td>
+                        <td className="p-3 text-center">Buoni</td>
+                        <td className="p-3 text-center">Limitati</td>
+                      </tr>
+                      <tr className="border-b border-border">
+                        <td className="p-3 font-medium">Prezzo fascia</td>
+                        <td className="p-3 text-center">€€€€</td>
+                        <td className="p-3 text-center bg-primary/5">€€</td>
+                        <td className="p-3 text-center">€</td>
+                        <td className="p-3 text-center">€</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 font-medium">Consigliato GioLab</td>
+                        <td className="p-3 text-center">Budget alto</td>
+                        <td className="p-3 text-center bg-primary/10 font-bold text-primary">✅ SCELTA TOP</td>
+                        <td className="p-3 text-center text-muted-foreground">Sconsigliato</td>
+                        <td className="p-3 text-center text-muted-foreground">Solo se necessario</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section id="conclusioni" className="mb-12">
+                <h2 className="text-3xl font-bold mb-6 scroll-mt-24">Conclusioni: la scelta intelligente per il tuo iPhone</h2>
+                
+                <p className="text-foreground/90 leading-relaxed mb-4">
+                  Dopo aver analizzato tutte le tipologie di display disponibili, possiamo trarre alcune conclusioni chiare 
+                  per aiutarti a scegliere consapevolmente:
+                </p>
+
+                <div className="bg-gradient-to-br from-primary/10 to-primary/5 border-2 border-primary p-6 rounded-lg mb-6">
+                  <h3 className="text-xl font-semibold mb-4 text-primary">La nostra raccomandazione GioLab</h3>
+                  
+                  <p className="text-foreground/90 leading-relaxed mb-4">
+                    <strong>Il Soft OLED premium rappresenta la scelta più equilibrata per oltre l'80% dei casi.</strong> 
+                    Offre una qualità visiva praticamente indistinguibile dall'originale, consumi energetici ottimizzati, 
+                    ottima resistenza strutturale e una durata nel tempo eccellente, il tutto a un prezzo significativamente 
+                    più accessibile.
+                  </p>
+
+                  <p className="text-foreground/90 leading-relaxed">
+                    <strong>Presso il nostro centro assistenza ad Assemini (Cagliari)</strong>, selezioniamo solo Soft OLED 
+                    di fascia premium, testati rigorosamente per garantire:
+                  </p>
+
+                  <ul className="space-y-2 mt-4 text-foreground/90">
+                    <li>✓ Luminosità stabile fino a 800 nits</li>
+                    <li>✓ Fedeltà cromatica superiore al 95%</li>
+                    <li>✓ Consumi batteria paragonabili agli originali</li>
+                    <li>✓ Touch responsivo e preciso</li>
+                    <li>✓ Supporto completo al refresh rate nativo (60/120 Hz)</li>
+                    <li>✓ Garanzia 12 mesi su materiale e installazione</li>
+                  </ul>
+                </div>
+
+                <h3 className="text-2xl font-semibold mb-4 text-primary">Quando scegliere altre opzioni</h3>
+                
+                <ul className="space-y-4 mb-6 text-foreground/90">
+                  <li className="flex items-start gap-3">
+                    <span className="text-2xl">🏆</span>
+                    <div>
+                      <strong>Display Originale:</strong> Se hai un budget elevato e desideri il massimo assoluto, 
+                      soprattutto per iPhone Pro o modelli di fascia alta. Ideale se prevedi di tenere il telefono 
+                      per molti anni ancora.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-2xl">💰</span>
+                    <div>
+                      <strong>Hard OLED:</strong> Generalmente sconsigliato. La differenza di prezzo rispetto 
+                      ai Soft OLED è minima ma le prestazioni sono significativamente inferiori.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-2xl">⚠️</span>
+                    <div>
+                      <strong>TFT/LCD:</strong> Solo per iPhone 11 o precedenti che montavano originalmente un LCD, 
+                      oppure in situazioni di budget estremamente limitato. Accetta i compromessi su qualità visiva 
+                      e autonomia.
+                    </div>
+                  </li>
+                </ul>
+
+                <div className="bg-muted/50 border-l-4 border-primary p-6 rounded-r-lg">
+                  <h4 className="font-semibold mb-3 text-primary">📍 Vieni a trovarci presso GioLab Assemini</h4>
+                  <p className="text-foreground/90 leading-relaxed mb-4">
+                    Se il tuo iPhone ha bisogno di un nuovo display, <strong>passa dal nostro centro assistenza 
+                    in Via Carmine 20 ad Assemini (Cagliari)</strong>. Il nostro team di tecnici specializzati 
+                    analizzerà il tuo dispositivo e ti consiglierà la soluzione più adatta alle tue esigenze, 
+                    spiegandoti in modo trasparente differenze di qualità e costi.
+                  </p>
+                  <p className="text-foreground/90 leading-relaxed">
+                    <strong>Offriamo:</strong> diagnosi gratuita, preventivo immediato, riparazione in giornata 
+                    per la maggior parte dei modelli, telefono di cortesia se necessario e garanzia 12 mesi 
+                    su tutti i nostri interventi.
+                  </p>
+                  <div className="mt-4">
+                    <a 
+                      href="https://wa.me/393406970686?text=Ciao!%20Vorrei%20informazioni%20sulla%20sostituzione%20del%20display%20del%20mio%20iPhone"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+                    >
+                      💬 Contattaci su WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </section>
+
+              <section id="faq" className="mb-12">
+                <h2 className="text-3xl font-bold mb-6 scroll-mt-24">Domande Frequenti (FAQ)</h2>
+                
+                <div className="space-y-6">
+                  <div className="bg-card border border-border rounded-lg p-5">
+                    <h3 className="text-lg font-semibold mb-2 text-primary">I display compatibili consumano più batteria?</h3>
+                    <p className="text-foreground/80 leading-relaxed">
+                      Dipende dal tipo. I <strong>Soft OLED di qualità</strong> hanno consumi paragonabili agli originali 
+                      grazie alla tecnologia OLED che illumina solo i pixel necessari. Gli <strong>Hard OLED</strong> consumano 
+                      leggermente di più (10-15% in più), mentre i <strong>TFT (LCD)</strong> hanno consumi significativamente 
+                      superiori (20-30%) a causa della retroilluminazione costante. <strong>Da GioLab ad Assemini</strong> 
+                      utilizziamo Soft OLED premium per minimizzare l'impatto sulla batteria.
+                    </p>
+                  </div>
+
+                  <div className="bg-card border border-border rounded-lg p-5">
+                    <h3 className="text-lg font-semibold mb-2 text-primary">Il Face ID funziona dopo la sostituzione del display?</h3>
+                    <p className="text-foreground/80 leading-relaxed">
+                      <strong>Sì, assolutamente.</strong> Il Face ID continua a funzionare perfettamente dopo la sostituzione 
+                      del display, sia con originali che con compatibili di qualità. Il sensore Face ID è un componente separato 
+                      dal display e non viene toccato durante la riparazione. <strong>Presso il nostro centro assistenza a 
+                      Cagliari e Assemini</strong> verifichiamo sempre il corretto funzionamento di Face ID, True Tone e 
+                      tutte le altre funzionalità prima della riconsegna del dispositivo.
+                    </p>
+                  </div>
+
+                  <div className="bg-card border border-border rounded-lg p-5">
+                    <h3 className="text-lg font-semibold mb-2 text-primary">Quale display è più resistente?</h3>
+                    <p className="text-foreground/80 leading-relaxed">
+                      I <strong>display originali</strong> e i <strong>Soft OLED di qualità</strong> offrono la migliore 
+                      resistenza grazie alla loro flessibilità strutturale che assorbe meglio gli urti. La tecnologia "Soft" 
+                      permette al pannello di flettersi leggermente in caso di impatto, distribuendo meglio la forza e 
+                      riducendo il rischio di rotture. Gli <strong>Hard OLED</strong> sono più rigidi e quindi più fragili 
+                      alle cadute: le crepe tendono a propagarsi più facilmente. I <strong>TFT</strong> hanno una resistenza 
+                      intermedia ma sono comunque meno performanti su altri aspetti.
+                    </p>
+                  </div>
+
+                  <div className="bg-card border border-border rounded-lg p-5">
+                    <h3 className="text-lg font-semibold mb-2 text-primary">I colori dei display compatibili sono diversi dagli originali?</h3>
+                    <p className="text-foreground/80 leading-relaxed">
+                      I <strong>Soft OLED premium</strong> replicano fedelmente i colori degli originali con una fedeltà 
+                      cromatica del 95-98%. La profondità dei neri è eccellente e la gamma cromatica è accurata, rendendo 
+                      la differenza praticamente impercettibile nell'uso quotidiano. Gli <strong>Hard OLED</strong> hanno 
+                      colori leggermente meno precisi (85-90%), con possibili dominanti fredde o sovrassaturazioni. 
+                      I <strong>TFT</strong> mostrano differenze più evidenti con neri grigiastri, colori meno vividi e 
+                      fedeltà cromatica del 70-80%. <strong>Da GioLab Assemini</strong> calibriamo ogni display per ottenere 
+                      la massima fedeltà cromatica possibile.
+                    </p>
+                  </div>
+
+                  <div className="bg-card border border-border rounded-lg p-5">
+                    <h3 className="text-lg font-semibold mb-2 text-primary">Vale la pena spendere di più per un Soft OLED?</h3>
+                    <p className="text-foreground/80 leading-relaxed">
+                      <strong>Assolutamente sì.</strong> Il Soft OLED rappresenta il miglior compromesso qualità-prezzo 
+                      disponibile sul mercato. Offre qualità visiva vicina all'originale (95-98% di fedeltà cromatica), 
+                      consumi energetici ridotti comparabili agli Apple, ottima resistenza strutturale grazie alla flessibilità 
+                      del pannello, e durata nel tempo di 4-5 anni senza degrado significativo. Il tutto a un prezzo 
+                      significativamente più accessibile rispetto agli originali. <strong>È la scelta che consigliamo in 
+                      oltre l'80% dei casi presso il nostro centro assistenza GioLab ad Assemini.</strong> La differenza 
+                      di prezzo rispetto a Hard OLED o TFT è minima ma i vantaggi sono enormi in termini di qualità, 
+                      autonomia e longevità.
+                    </p>
+                  </div>
+                </div>
+              </section>
             </div>
 
-            <p className="leading-relaxed">
-              Entrambe le versioni offrono un netto miglioramento rispetto ai TFT, ma <strong>la durabilità e la precisione di fabbricazione 
-              rendono i Soft OLED la scelta più affidabile</strong> per chi cerca qualità e longevità. <strong>Nel nostro laboratorio a Cagliari</strong>, 
-              installiamo prevalentemente Soft OLED per garantire ai clienti la massima soddisfazione.
-            </p>
-
-            <h3 id="display-originali" className="text-xl font-semibold mt-6 mb-3 text-foreground scroll-mt-24">
-              Display Originali Apple: Nuovi e "Pulled"
-            </h3>
-            
-            <p className="leading-relaxed">
-              I <strong>display originali nuovi</strong> sono pannelli prodotti direttamente dai <strong>fornitori ufficiali di Apple</strong> 
-              (come Samsung Display, LG Display o BOE). Offrono la <strong>massima fedeltà cromatica, luminosità superiore, 
-              calibrazione perfetta dei colori e il consumo energetico più basso</strong> in assoluto. Supportano tutte le funzionalità avanzate 
-              come True Tone, HDR, Dolby Vision e ProMotion (120 Hz) dove disponibile. Sono la scelta ideale per chi desidera mantenere 
-              l'esperienza originale Apple, ma hanno un <strong>costo elevato</strong>.
-            </p>
-
-            <p className="leading-relaxed">
-              I <strong>display originali "pulled"</strong> sono pannelli originali recuperati da altri iPhone (ad esempio device con scheda madre danneggiata) 
-              e <strong>rimontati senza modifiche</strong>. Mantengono tutte le caratteristiche di fabbrica: luminosità, densità di pixel, 
-              sensibilità al tocco e calibrazione cromatica sono identiche al nuovo. Rappresentano una <strong>scelta sostenibile</strong>, 
-              contribuendo a ridurre i rifiuti elettronici, e offrono un <strong>ottimo rapporto qualità-prezzo</strong>. 
-              L'unico aspetto da considerare è la possibilità di micrograffii estetici marginali, invisibili durante l'uso normale. 
-              <strong> Da Giolab</strong>, utilizziamo display pulled solo se in condizioni eccellenti.
-            </p>
-
-            <h3 id="display-compatibili" className="text-xl font-semibold mt-6 mb-3 text-foreground scroll-mt-24">
-              Display Compatibili (Copy Screens): Quando Convengono?
-            </h3>
-            
-            <p className="leading-relaxed">
-              I <strong>display compatibili</strong> sono pannelli prodotti interamente da <strong>produttori terzi</strong>, senza componenti originali Apple. 
-              Rappresentano l'opzione <strong>più economica</strong>, ma comportano compromessi significativi in termini di qualità:
-            </p>
-
-            <ul className="list-disc pl-6 mb-4 space-y-2">
-              <li><strong>Risoluzione e luminosità inferiori:</strong> i colori appaiono meno vividi e lo schermo è meno leggibile alla luce del sole</li>
-              <li><strong>Touch impreciso:</strong> la sensibilità al tocco può essere ridotta, con ritardi o mancate risposte</li>
-              <li><strong>Consumo energetico maggiore:</strong> circuiti meno efficienti richiedono più corrente, riducendo l'autonomia</li>
-              <li><strong>Durabilità ridotta:</strong> più soggetti a rotture e malfunzionamenti nel tempo</li>
-              <li><strong>Possibili danni al circuito retroilluminante:</strong> alcuni pannelli di scarsa qualità possono causare problemi hardware permanenti</li>
-            </ul>
-
-            <p className="leading-relaxed">
-              I copy screens sono indicati solo per <strong>dispositivi molto vecchi</strong> destinati a un uso limitato, 
-              oppure come <strong>soluzione temporanea</strong>. <strong>Nel nostro centro ad Assemini</strong>, sconsigliamo vivamente 
-              l'uso di compatibili su iPhone recenti o per clienti che fanno un uso intensivo del device.
-            </p>
-          </section>
-
-          <section className="mb-12">
-            <h2 id="refresh-rate" className="text-2xl font-bold mt-8 mb-4 text-foreground scroll-mt-24">
-              Frequenze di Aggiornamento: 60 Hz, 90 Hz e 120 Hz
-            </h2>
-            
-            <p className="leading-relaxed">
-              La <strong>frequenza di aggiornamento (refresh rate)</strong> indica quante volte al secondo il display viene "rinfrescato". 
-              Un pannello a <strong>60 Hz</strong> aggiorna l'immagine 60 volte al secondo, uno a <strong>90 Hz</strong> 90 volte, 
-              mentre un <strong>120 Hz</strong> arriva a 120 aggiornamenti al secondo. Una frequenza più alta rende l'interfaccia 
-              <strong>più fluida e reattiva</strong>, riducendo la latenza visiva e migliorando notevolmente l'esperienza nei videogiochi 
-              e durante lo scrolling.
-            </p>
-
-            <p className="leading-relaxed">
-              Tuttavia, la fluidità ha un prezzo in termini di <strong>consumo batteria</strong>. Secondo test di settore, 
-              passare da 60 Hz a 90 Hz può ridurre l'autonomia di circa <strong>200 minuti di navigazione web</strong>, 
-              mentre attivare i 120 Hz comporta un calo di batteria stimato attorno al <strong>9%</strong>. Gli schermi moderni 
-              con tecnologia <strong>LTPO (Low-Temperature Polycrystalline Oxide)</strong> compensano questo problema variando 
-              automaticamente la frequenza in base al contenuto: quando l'immagine è statica, il refresh scende a 1-10 Hz per 
-              risparmiare energia, mentre sale a 120 Hz quando serve fluidità.
-            </p>
-
-            <div className="bg-muted/20 p-6 rounded-lg my-6">
-              <p className="font-semibold mb-2">💡 Consiglio Giolab:</p>
-              <p className="leading-relaxed">
-                Se il tuo iPhone supporta ProMotion (120 Hz), è consigliabile mantenerlo attivo per la migliore esperienza d'uso. 
-                Se noti un calo eccessivo di autonomia, puoi limitare manualmente a 60 Hz dalle impostazioni di iOS. 
-                <strong> Nel nostro laboratorio ad Assemini</strong> possiamo verificare se il display montato supporta correttamente 
-                le frequenze native del tuo modello.
-              </p>
+            <div className="mt-12 pt-8 border-t border-border">
+              <SocialShare 
+                url="/blog/display-originali-vs-compatibili"
+                title="Display iPhone: differenze tra Originali, Soft OLED, Hard OLED, TFT e importanza degli Hz"
+                description="Scopri quale display scegliere per il tuo iPhone: analisi completa su qualità, consumi batteria e durata. Guida del centro assistenza GioLab Assemini."
+              />
             </div>
-          </section>
-
-          <section className="mb-12">
-            <h2 id="impatto-batteria" className="text-2xl font-bold mt-8 mb-4 text-foreground scroll-mt-24">
-              Impatto del Display sulla Durata della Batteria
-            </h2>
-            
-            <p className="leading-relaxed">
-              La scelta del tipo di display influisce direttamente sulla <strong>durata complessiva della batteria</strong> del tuo iPhone:
-            </p>
-
-            <ul className="list-disc pl-6 mb-4 space-y-3">
-              <li>
-                <strong>TFT/LCD:</strong> Consumano più energia e generano più calore rispetto agli OLED o agli originali. 
-                L'uso di LCD può incrementare il consumo della batteria fino al <strong>15%</strong> rispetto agli OLED.
-              </li>
-              <li>
-                <strong>Soft OLED e Hard OLED:</strong> Sono più efficienti energeticamente. Gli OLED emettono luce per ogni pixel, 
-                quindi i neri consumano pochissima energia. Tra le due varianti non ci sono differenze sostanziali di consumo; 
-                la scelta dipende da durabilità e prezzo.
-              </li>
-              <li>
-                <strong>Originali nuovi:</strong> Garantiscono i consumi più bassi e mantengono temperature più contenute, 
-                ottimizzati perfettamente per il chip di gestione energetica di iOS.
-              </li>
-              <li>
-                <strong>Display compatibili:</strong> Possono richiedere più potenza per funzionare correttamente. Alcuni modelli 
-                di bassa qualità causano problemi di alimentazione o surriscaldamento del dispositivo.
-              </li>
-              <li>
-                <strong>Frequenze superiori (90 Hz e 120 Hz):</strong> Migliorano la fluidità ma riducono l'autonomia del 9% circa. 
-                Se il telefono supporta refresh rate adattivo (LTPO), l'impatto sulla batteria si attenua significativamente.
-              </li>
-            </ul>
-
-            <p className="leading-relaxed">
-              <strong>Da Giolab, nel nostro laboratorio ad Assemini</strong>, effettuiamo sempre un test di consumo energetico 
-              post-riparazione per verificare che il display montato non causi anomalie di scarica. Un display di qualità non solo 
-              migliora l'esperienza visiva, ma <strong>preserva la longevità complessiva del dispositivo</strong>.
-            </p>
-          </section>
-
-          <section className="mb-12">
-            <h2 id="confronto" className="text-2xl font-bold mt-8 mb-4 text-foreground scroll-mt-24">
-              Tabella Comparativa: Pro e Contro
-            </h2>
-            
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse border border-border">
-                <thead>
-                  <tr className="bg-muted">
-                    <th className="border border-border p-3 text-left">Tipo di Display</th>
-                    <th className="border border-border p-3 text-left">Vantaggi Principali</th>
-                    <th className="border border-border p-3 text-left">Svantaggi Principali</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border border-border p-3 font-semibold">Originale Nuovo</td>
-                    <td className="border border-border p-3">
-                      Massima qualità visiva e luminosa; consumo energetico più basso; supporto True Tone e ProMotion
-                    </td>
-                    <td className="border border-border p-3">Prezzo elevato</td>
-                  </tr>
-                  <tr className="bg-muted/30">
-                    <td className="border border-border p-3 font-semibold">Originale Pulled</td>
-                    <td className="border border-border p-3">
-                      Qualità pari al nuovo; sostenibile; ottimo rapporto qualità-prezzo
-                    </td>
-                    <td className="border border-border p-3">Disponibilità limitata; possibili micrograffi estetici</td>
-                  </tr>
-                  <tr>
-                    <td className="border border-border p-3 font-semibold">Soft OLED</td>
-                    <td className="border border-border p-3">
-                      Colori vividi, neri perfetti; resistente agli urti; adattamento perfetto; durata eccellente
-                    </td>
-                    <td className="border border-border p-3">Costo elevato (ma inferiore all'originale)</td>
-                  </tr>
-                  <tr className="bg-muted/30">
-                    <td className="border border-border p-3 font-semibold">Hard OLED</td>
-                    <td className="border border-border p-3">
-                      Prezzo inferiore al Soft OLED; qualità visiva simile
-                    </td>
-                    <td className="border border-border p-3">Più fragile; cornici più spesse; durata inferiore</td>
-                  </tr>
-                  <tr>
-                    <td className="border border-border p-3 font-semibold">TFT/LCD</td>
-                    <td className="border border-border p-3">
-                      Costo molto basso; buona robustezza meccanica
-                    </td>
-                    <td className="border border-border p-3">
-                      Consumo energetico elevato; colore e contrasto inferiori; neri grigi
-                    </td>
-                  </tr>
-                  <tr className="bg-muted/30">
-                    <td className="border border-border p-3 font-semibold">Compatibile (Copy)</td>
-                    <td className="border border-border p-3">Prezzo molto basso</td>
-                    <td className="border border-border p-3">
-                      Bassa risoluzione, luminosità e durata; touch impreciso; possibili problemi di batteria e danni hardware
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          <section className="mb-12 bg-giolab-blue/5 p-8 rounded-lg border-l-4 border-giolab-blue">
-            <h2 id="giolab-scelta" className="text-2xl font-bold mb-4 text-foreground scroll-mt-24">
-              Perché da Giolab Consigliamo i Soft OLED
-            </h2>
-            
-            <p className="leading-relaxed mb-4">
-              <strong>Nel nostro centro assistenza di Assemini</strong>, dopo anni di esperienza e migliaia di riparazioni, 
-              abbiamo individuato nei <strong>Soft OLED</strong> il miglior compromesso tra <strong>qualità, durata e prezzo</strong> 
-              per la maggior parte dei clienti. Ecco perché:
-            </p>
-
-            <ul className="list-disc pl-6 space-y-3 mb-4">
-              <li>
-                <strong>Qualità vicina all'originale:</strong> I Soft OLED garantiscono una resa visiva eccellente, 
-                con colori fedeli, neri profondi e luminosità ottimale, mantenendo un costo accessibile.
-              </li>
-              <li>
-                <strong>Resistenza superiore:</strong> Il substrato flessibile li rende molto più resistenti agli urti rispetto 
-                agli Hard OLED, riducendo il rischio di danni futuri.
-              </li>
-              <li>
-                <strong>Durata nel tempo:</strong> Nei nostri test di laboratorio, i Soft OLED mantengono prestazioni 
-                costanti anche dopo 2-3 anni di utilizzo intensivo.
-              </li>
-              <li>
-                <strong>Consumo energetico ottimizzato:</strong> Non causano anomalie di scarica batteria e mantengono 
-                temperature di esercizio nella norma.
-              </li>
-              <li>
-                <strong>Rapporto qualità-prezzo:</strong> Offrono prestazioni vicine all'originale a un costo significativamente inferiore, 
-                rendendoli la scelta ideale per chi desidera qualità senza spendere una fortuna.
-              </li>
-            </ul>
-
-            <p className="leading-relaxed">
-              <strong>Importante:</strong> Non installiamo mai display compatibili di bassa qualità o TFT su iPhone recenti. 
-              La nostra priorità è garantire <strong>riparazioni durature e sicure</strong>, che preservino le prestazioni 
-              originali del tuo dispositivo. <Link to="/contatti" className="text-giolab-blue font-semibold hover:underline">
-              Contattaci per una consulenza personalizzata</Link> e scopri quale soluzione è più adatta al tuo iPhone.
-            </p>
-          </section>
-
-          <section className="mb-12">
-            <h2 id="faq" className="text-2xl font-bold mt-8 mb-4 text-foreground scroll-mt-24">
-              Domande Frequenti (FAQ)
-            </h2>
-
-            <div className="space-y-6">
-              <div className="bg-muted/30 p-6 rounded-lg">
-                <h3 className="font-semibold text-lg mb-2">
-                  Qual è la differenza tra un display originale e uno compatibile per iPhone?
-                </h3>
-                <p className="leading-relaxed">
-                  Un <strong>display originale</strong> è prodotto dai fornitori certificati Apple (Samsung Display, LG Display, BOE), 
-                  garantendo massima qualità, calibrazione perfetta e supporto completo alle funzionalità iOS come True Tone, 
-                  HDR e ProMotion. Un <strong>display compatibile</strong> è realizzato da produttori terzi, con qualità inferiore 
-                  in termini di risoluzione, luminosità, precisione touch e durata. I compatibili possono anche causare problemi 
-                  di consumo batteria.
-                </p>
-              </div>
-
-              <div className="bg-muted/30 p-6 rounded-lg">
-                <h3 className="font-semibold text-lg mb-2">
-                  Cosa sono i display Soft OLED e Hard OLED?
-                </h3>
-                <p className="leading-relaxed">
-                  Sono due varianti aftermarket degli schermi OLED. I <strong>Soft OLED</strong> utilizzano un substrato plastico flessibile, 
-                  sono più resistenti agli urti, durano di più e si adattano perfettamente alla curvatura iPhone. 
-                  I <strong>Hard OLED</strong> usano un substrato in vetro rigido, sono più economici ma anche più fragili 
-                  e richiedono cornici più spesse, riducendo leggermente l'area visualizzabile.
-                </p>
-              </div>
-
-              <div className="bg-muted/30 p-6 rounded-lg">
-                <h3 className="font-semibold text-lg mb-2">
-                  I display TFT/LCD sono uguali?
-                </h3>
-                <p className="leading-relaxed">
-                  I <strong>TFT sono una tipologia di LCD</strong>. Utilizzano una retroilluminazione continua, 
-                  consumano più energia e generano più calore rispetto agli OLED e agli schermi originali. 
-                  Hanno anche un contrasto inferiore (i neri appaiono grigi). Sono indicati solo per budget 
-                  molto limitati o iPhone datati con esigenze basilari.
-                </p>
-              </div>
-
-              <div className="bg-muted/30 p-6 rounded-lg">
-                <h3 className="font-semibold text-lg mb-2">
-                  Cosa significa display originale "pulled"? È affidabile?
-                </h3>
-                <p className="leading-relaxed">
-                  Un <strong>display pulled</strong> è un pannello originale Apple recuperato da un altro iPhone 
-                  (ad esempio con scheda madre danneggiata) e riutilizzato senza modifiche. Mantiene tutte le 
-                  caratteristiche di fabbrica: luminosità, densità di pixel, sensibilità al tocco e calibrazione 
-                  cromatica sono identiche al nuovo. Rappresenta una scelta <strong>sostenibile ed economica</strong>, 
-                  contribuendo a ridurre i rifiuti elettronici. Se installato correttamente da tecnici esperti, 
-                  è molto affidabile.
-                </p>
-              </div>
-
-              <div className="bg-muted/30 p-6 rounded-lg">
-                <h3 className="font-semibold text-lg mb-2">
-                  Le frequenze 90 Hz e 120 Hz consumano più batteria?
-                </h3>
-                <p className="leading-relaxed">
-                  Sì, l'aumento della frequenza di aggiornamento riduce l'autonomia. Passare da 60 Hz a 90 Hz 
-                  può ridurre il tempo di navigazione web di circa <strong>200 minuti</strong>, mentre l'attivazione 
-                  dei 120 Hz comporta circa il <strong>9% di consumo in più</strong>. Tuttavia, i telefoni più recenti 
-                  con display <strong>LTPO</strong> gestiscono dinamicamente il refresh rate (abbassandolo a 1-10 Hz 
-                  quando l'immagine è statica), riducendo significativamente l'impatto sulla batteria.
-                </p>
-              </div>
-
-              <div className="bg-muted/30 p-6 rounded-lg">
-                <h3 className="font-semibold text-lg mb-2">
-                  I display compatibili possono danneggiare la batteria?
-                </h3>
-                <p className="leading-relaxed">
-                  Sì, alcuni pannelli compatibili di bassa qualità hanno <strong>circuiti poco efficienti</strong> 
-                  che richiedono più corrente per funzionare, causando una maggiore usura della batteria e, 
-                  in casi estremi, <strong>danneggiando il circuito retroilluminante o il chip di gestione energetica</strong>. 
-                  Per evitare problemi, è fondamentale scegliere schermi originali o aftermarket di qualità certificata. 
-                  <strong>Da Giolab ad Assemini</strong> testiamo sempre il consumo energetico post-riparazione.
-                </p>
-              </div>
-
-              <div className="bg-muted/30 p-6 rounded-lg">
-                <h3 className="font-semibold text-lg mb-2">
-                  Che display devo scegliere per il mio iPhone?
-                </h3>
-                <p className="leading-relaxed">
-                  La scelta dipende dal <strong>budget e dalle esigenze</strong>. Se desideri mantenere l'esperienza 
-                  originale e la massima durata della batteria, opta per un <strong>display originale nuovo o pulled</strong>. 
-                  Se cerchi un'ottima soluzione qualità-prezzo, un <strong>Soft OLED</strong> offre prestazioni eccellenti 
-                  a un costo accessibile. I pannelli <strong>TFT/LCD e compatibili</strong> sono sconsigliati su iPhone recenti 
-                  o per chi fa un uso intensivo del dispositivo. <strong>Nel nostro centro a Cagliari</strong> consigliamo 
-                  sempre Soft OLED o originali per garantire longevità e soddisfazione.
-                </p>
-              </div>
-
-              <div className="bg-muted/30 p-6 rounded-lg">
-                <h3 className="font-semibold text-lg mb-2">
-                  Il display influisce sulla durata complessiva dell'iPhone?
-                </h3>
-                <p className="leading-relaxed">
-                  <strong>Assolutamente sì</strong>. Un display di scarsa qualità non solo compromette l'esperienza visiva, 
-                  ma può causare <strong>consumi energetici anomali, surriscaldamento, problemi touch e perfino danni hardware permanenti</strong>. 
-                  Investire in un display di qualità (originale o Soft OLED) prolunga significativamente la vita del dispositivo, 
-                  preservando le prestazioni e riducendo il rischio di guasti futuri. È un investimento che si ripaga nel tempo.
-                </p>
-              </div>
-
-              <div className="bg-muted/30 p-6 rounded-lg">
-                <h3 className="font-semibold text-lg mb-2">
-                  Posso installare un display con refresh rate superiore sul mio iPhone?
-                </h3>
-                <p className="leading-relaxed">
-                  <strong>No</strong>, il refresh rate è legato all'hardware e al software del dispositivo. Non è possibile 
-                  installare un display 120 Hz su un iPhone che supporta solo 60 Hz. Il pannello sostitutivo deve essere 
-                  <strong>compatibile con le specifiche originali del modello</strong>. Montare un display con caratteristiche 
-                  diverse può causare malfunzionamenti o non funzionare affatto. <strong>Da Giolab</strong> verifichiamo sempre 
-                  la compatibilità hardware prima di procedere con la riparazione.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold mt-8 mb-4 text-foreground">
-              Conclusione: Scegli Consapevolmente, Affidati ai Professionisti
-            </h2>
-            
-            <p className="leading-relaxed mb-4">
-              L'adozione del <strong>display corretto</strong> non solo restituisce al tuo iPhone le prestazioni visive originali, 
-              ma influisce sulla <strong>longevità del dispositivo e sul comfort d'uso quotidiano</strong>. Prima di scegliere 
-              un display compatibile per risparmiare, valuta attentamente i pro e i contro: un ricambio di scarsa qualità può 
-              causare problemi ben più costosi di una riparazione iniziale fatta bene.
-            </p>
-
-            <p className="leading-relaxed mb-6">
-              <strong>Affidati sempre a professionisti qualificati</strong> che possano consigliarti la soluzione più adatta 
-              alle tue esigenze e al tuo budget. <strong>Da Giolab, ad Assemini e zona Cagliari</strong>, selezioniamo solo 
-              display di qualità certificata, effettuiamo test post-riparazione e offriamo <strong>garanzia 12 mesi</strong> 
-              su tutti i nostri interventi. La tua soddisfazione e la sicurezza del tuo iPhone sono la nostra priorità.
-            </p>
-
-            <div className="bg-gradient-to-r from-giolab-blue/10 to-giolab-blue-light/10 p-8 rounded-lg text-center">
-              <p className="text-xl font-semibold mb-4">
-                🔧 Hai bisogno di sostituire il display del tuo iPhone?
-              </p>
-              <p className="mb-6 text-muted-foreground">
-                Richiedi una <strong>consulenza gratuita</strong> e un preventivo personalizzato presso il nostro laboratorio
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg">
-                  <a 
-                    href="https://wa.me/393406970686?text=Ciao!%20Ho%20bisogno%20di%20informazioni%20sulla%20sostituzione%20del%20display%20iPhone" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    Contattaci su WhatsApp
-                  </a>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link to="/contatti">Visita la pagina contatti</Link>
-                </Button>
-              </div>
-            </div>
-          </section>
-
-          <section className="mb-12">
-            <h3 className="text-xl font-semibold mb-4">📚 Approfondimenti Correlati</h3>
-            <p className="leading-relaxed mb-4">
-              Scopri anche gli altri articoli del nostro blog per conoscere meglio i nostri servizi e le migliori pratiche 
-              per la manutenzione del tuo iPhone:
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>
-                <Link to="/blog/qualita-ricambi-durata-riparazione" className="text-giolab-blue hover:underline font-medium">
-                  Come la qualità dei ricambi influisce sulla durata della riparazione
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog/errori-post-sostituzione-display" className="text-giolab-blue hover:underline font-medium">
-                  I 5 errori più comuni dopo la sostituzione del display iPhone
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog/batteria-maggiorata-iphone-giolab" className="text-giolab-blue hover:underline font-medium">
-                  Batteria maggiorata iPhone: più autonomia per il tuo dispositivo
-                </Link>
-              </li>
-            </ul>
-          </section>
-        </div>
-
-        <SocialShare 
-          url={currentUrl}
-          title="Display iPhone: Originali vs Compatibili | Guida Completa Giolab"
-          description="Soft OLED, Hard OLED o TFT? Scopri quale display scegliere per il tuo iPhone. Guida tecnica completa su qualità, durata e impatto sulla batteria."
-        />
-
-        <RelatedArticles currentSlug="display-originali-vs-compatibili" category="Guide" />
           </article>
           
-          {/* Table of Contents - Desktop Only */}
           <aside className="hidden lg:block sticky top-24 h-fit w-64 shrink-0">
             <TableOfContents />
           </aside>
+        </div>
+
+        <div className="mt-12 max-w-4xl">
+          <RelatedArticles currentSlug="display-originali-vs-compatibili" category="Guide" />
         </div>
       </div>
 

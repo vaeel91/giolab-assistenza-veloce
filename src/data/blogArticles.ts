@@ -11,12 +11,12 @@ export interface BlogArticle {
 export const blogArticles: BlogArticle[] = [
   {
     slug: "display-originali-vs-compatibili",
-    title: "Display Originali vs Compatibili per iPhone: Guida Completa",
-    description: "Scopri le differenze tra display originali, Soft OLED, Hard OLED, TFT e compatibili per iPhone. Guida completa per scegliere il ricambio giusto ad Assemini.",
-    date: "2025-01-28",
-    readTime: "8 min",
+    title: "Display iPhone: differenze tra Originali, Soft OLED, Hard OLED, TFT e importanza degli Hz",
+    description: "Guida completa alla scelta del display iPhone: scopri le differenze tra originali, Soft OLED, Hard OLED e TFT. Analisi tecnica su qualità, Hz, consumi batteria e durata.",
+    date: "25 Gennaio 2025",
+    readTime: "9 min",
     category: "Guide",
-    image: "📱"
+    image: "/og-images/display-originali-vs-compatibili.jpg"
   },
   {
     slug: "batteria-maggiorata-iphone-giolab",
