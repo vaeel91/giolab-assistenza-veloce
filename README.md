@@ -1,4 +1,78 @@
-# Welcome to your Lovable project
+# Giolab Riparazioni - Sito Web Ufficiale
+
+Centro assistenza professionale per smartphone, PC e console ad Assemini (Cagliari).  
+**Website**: https://giolabriparazioni.it
+
+---
+
+## 📝 Articoli Blog - Standard Obbligatorio
+
+**⚠️ TUTTI gli articoli blog devono utilizzare il componente `BlogArticleTemplate`** per garantire uniformità.
+
+### ✅ Cosa Include Automaticamente
+- **Breadcrumbs dinamici**: Home → Blog → Categoria → Articolo
+- **Table of Contents**: Desktop (laterale) + Mobile (floating button)
+- **SEO completo**: Meta tags, Open Graph, Twitter Card, Schema markup
+- **Componenti standard**: Header, Footer, BlogNavigation, ReadingProgress, SocialShare
+
+### 🚀 Quick Start - Creare un Nuovo Articolo
+
+```tsx
+// src/pages/blog/NuovoArticolo.tsx
+import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
+
+export default function NuovoArticolo() {
+  const articleContent = (
+    <div className="space-y-8">
+      <section>
+        <h2 className="text-3xl font-bold mb-6">Prima Sezione</h2>
+        <p className="text-muted-foreground leading-relaxed">
+          Contenuto della prima sezione...
+        </p>
+      </section>
+      
+      <section>
+        <h2 className="text-3xl font-bold mb-6">Seconda Sezione</h2>
+        <h3 className="text-2xl font-semibold mb-4">Sottosezione</h3>
+        <p className="text-muted-foreground leading-relaxed">
+          Contenuto della sottosezione...
+        </p>
+      </section>
+    </div>
+  );
+
+  return (
+    <BlogArticleTemplate
+      title="Titolo Articolo | Giolab Assemini"
+      description="Descrizione SEO 150-160 caratteri"
+      keywords="keyword1, keyword2, Assemini, Cagliari"
+      slug="nuovo-articolo"
+      ogImage="https://giolabriparazioni.it/og-images/nuovo-articolo.jpg"
+      author="Giolab Team"
+      datePublished="2025-01-27"
+      category="Guide"
+      content={articleContent}
+      readingTime={8}
+    />
+  );
+}
+```
+
+### 📚 Documentazione Completa
+- **[BLOG_ARTICLE_STANDARD.md](./BLOG_ARTICLE_STANDARD.md)** - Standard e linee guida complete
+- **[BLOG_SEO_GUIDE.md](./BLOG_SEO_GUIDE.md)** - Best practices SEO
+
+### 📂 Categorie Disponibili
+- `"Guide"` → /blog/guide
+- `"Assistenza"` → /blog/assistenza-smartphone  
+- `"Riparazione"` → /blog/riparazione-iphone
+- `"Tecnologia"` → /blog/riparazione-pc
+- `"Console"` → /blog/console
+- `"Sicurezza"` → /blog/sicurezza-digitale
+
+---
+
+## Welcome to your Lovable project
 
 ## Project info
 
