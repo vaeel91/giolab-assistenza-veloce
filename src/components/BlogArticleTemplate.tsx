@@ -41,6 +41,7 @@ import {
   BreadcrumbPage 
 } from "@/components/ui/breadcrumb";
 import { Link } from "react-router-dom";
+import { Calendar, Clock } from "lucide-react";
 import type { BlogArticleData } from "@/types/blogArticle";
 
 interface BlogArticleTemplateProps extends BlogArticleData {}
@@ -68,6 +69,25 @@ export const BlogArticleTemplate = ({
 
   // Estrai titolo pulito per display (rimuovi " | Giolab Assemini")
   const cleanTitle = title.split("|")[0].trim();
+
+  // Calcola tempo di lettura (assumendo 200 parole al minuto in italiano)
+  const calculateReadingTime = (content: React.ReactNode): number => {
+    const contentString = JSON.stringify(content);
+    const wordCount = contentString.split(/\s+/).length;
+    return Math.ceil(wordCount / 200);
+  };
+  
+  const readingTime = calculateReadingTime(content);
+  
+  // Formatta data in italiano
+  const formatDate = (dateString: string): string => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('it-IT', { 
+      day: 'numeric', 
+      month: 'long', 
+      year: 'numeric' 
+    });
+  };
 
   return (
     <>
@@ -114,6 +134,21 @@ export const BlogArticleTemplate = ({
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
+
+          {/* Metadati Articolo */}
+          <div className="flex flex-wrap items-center gap-4 mb-8 text-sm text-muted-foreground border-b border-border pb-4">
+            <div className="flex items-center gap-2">
+              <Calendar className="w-4 h-4" />
+              <span>Pubblicato il {formatDate(datePublished)}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="w-4 h-4" />
+              <span>{readingTime} min di lettura</span>
+            </div>
+            <div className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">
+              {category}
+            </div>
+          </div>
           
           {content}
         </article>
