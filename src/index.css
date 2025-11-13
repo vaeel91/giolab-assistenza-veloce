@@ -143,6 +143,16 @@ All colors MUST be HSL.
     @apply text-xl md:text-2xl;
   }
   
+  /* Nascondi scrollbar ma mantieni funzionalità scroll */
+  .overflow-x-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .overflow-x-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
   p {
     @apply text-base leading-relaxed;
   }
