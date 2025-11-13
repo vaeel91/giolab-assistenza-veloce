@@ -42,18 +42,45 @@ const BlogPreview = () => {
             {blogArticles.length} articoli disponibili
           </p>
           
-          {/* Filtri per categoria */}
+          {/* Filtri per categoria - Link alle pagine categoria */}
           <div className="flex flex-wrap justify-center gap-2 mb-3">
-            {categories.map((category) => (
-              <Badge
-                key={category}
-                variant={selectedCategory === category ? "default" : "outline"}
-                className="cursor-pointer transition-all hover:scale-105"
-                onClick={() => setSelectedCategory(category)}
-              >
-                {category}
+            <Badge
+              variant={selectedCategory === "Tutte" ? "default" : "outline"}
+              className="cursor-pointer transition-all hover:scale-105"
+              onClick={() => setSelectedCategory("Tutte")}
+            >
+              Tutte
+            </Badge>
+            <Link to="/blog/riparazione-iphone">
+              <Badge variant="outline" className="cursor-pointer transition-all hover:scale-105 hover:bg-giolab-blue hover:text-white">
+                Riparazione iPhone
               </Badge>
-            ))}
+            </Link>
+            <Link to="/blog/assistenza-smartphone">
+              <Badge variant="outline" className="cursor-pointer transition-all hover:scale-105 hover:bg-giolab-blue hover:text-white">
+                Assistenza Smartphone
+              </Badge>
+            </Link>
+            <Link to="/blog/riparazione-pc">
+              <Badge variant="outline" className="cursor-pointer transition-all hover:scale-105 hover:bg-giolab-blue hover:text-white">
+                Riparazione PC
+              </Badge>
+            </Link>
+            <Link to="/blog/console">
+              <Badge variant="outline" className="cursor-pointer transition-all hover:scale-105 hover:bg-giolab-blue hover:text-white">
+                Console
+              </Badge>
+            </Link>
+            <Link to="/blog/sicurezza-digitale">
+              <Badge variant="outline" className="cursor-pointer transition-all hover:scale-105 hover:bg-giolab-blue hover:text-white">
+                Sicurezza Digitale
+              </Badge>
+            </Link>
+            <Link to="/blog/guide">
+              <Badge variant="outline" className="cursor-pointer transition-all hover:scale-105 hover:bg-giolab-blue hover:text-white">
+                Guide e Consigli
+              </Badge>
+            </Link>
           </div>
           
           {/* Barra di ricerca */}

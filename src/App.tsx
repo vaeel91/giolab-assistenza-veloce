@@ -39,6 +39,14 @@ import BatteriaMaggiorataIPhoneGiolab from "./pages/blog/BatteriaMaggiorataIPhon
 import RigenerazioneVetroAppleWatch from "./pages/blog/RigenerazioneVetroAppleWatch";
 import SEODocumentation from "./pages/SEODocumentation";
 
+// Blog Category Pages
+import RiparazioneIPhone from "./pages/blog/categories/RiparazioneIPhone";
+import AssistenzaSmartphone from "./pages/blog/categories/AssistenzaSmartphone";
+import RiparazionePC from "./pages/blog/categories/RiparazionePC";
+import ConsoleCategory from "./pages/blog/categories/Console";
+import SicurezzaDigitale from "./pages/blog/categories/SicurezzaDigitale";
+import Guide from "./pages/blog/categories/Guide";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -60,24 +68,39 @@ const App = () => (
         <Route path="/contatti" element={<Contatti />} />
         
         {/* Blog */}
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/come-capire-batteria-iphone-da-sostituire" element={<ComeCabireBatteriaIPhone />} />
-        <Route path="/blog/vantaggi-batteria-maggiorata-iphone" element={<VantaggiBatteriaMaggiorataIPhone />} />
-        <Route path="/blog/riparazione-iphone-1-ora-giolab" element={<RiparazioneIPhone1OraGiolab />} />
-        <Route path="/blog/cosa-fare-iphone-caduto-schermo-crepato" element={<CosaFareIPhoneCadutoSchermoCrepato />} />
-        <Route path="/blog/perche-face-id-smette-funzionare" element={<PercheFaceIDSmetteFunzionare />} />
-        <Route path="/blog/recupero-dati-iphone-rotto" element={<RecuperoDatiIPhoneRotto />} />
-        <Route path="/blog/microsaldature-scheda-madre" element={<MicrosaldatureSchedaMadre />} />
-        <Route path="/blog/conviene-riparare-iphone-vecchio" element={<ConvieneRiparareIPhoneVecchio />} />
-        <Route path="/blog/come-capire-problema-scheda-madre" element={<ComeCapireProblemaSchedaMadre />} />
-        <Route path="/blog/riparazione-console-assemini" element={<RiparazioneConsoleAssemini />} />
-        <Route path="/blog/come-evitare-batteria-iphone-rovini" element={<ComeEvitareBatteriaIPhoneRovini />} />
-        <Route path="/blog/qualita-ricambi-durata-riparazione" element={<QualitaRicambiDurataRiparazione />} />
-        <Route path="/blog/errori-post-sostituzione-display" element={<ErroriPostSostituzioneDisplay />} />
-        <Route path="/blog/servizio-telefono-cortesia" element={<ServizioTelefonoCortesia />} />
-        <Route path="/blog/display-originali-vs-compatibili" element={<DisplayOriginaliVsCompatibili />} />
-        <Route path="/blog/trasferimento-dati-android-iphone" element={<TrasferimentoDatiAndroidIPhone />} />
-        <Route path="/blog/rigenerazione-vetro-iphone" element={<RigenerazioneVetroIPhone />} />
+            <Route path="/blog" element={<Blog />} />
+            
+            {/* Blog Category Routes */}
+            <Route path="/blog/riparazione-iphone" element={<RiparazioneIPhone />} />
+            <Route path="/blog/assistenza-smartphone" element={<AssistenzaSmartphone />} />
+            <Route path="/blog/riparazione-pc" element={<RiparazionePC />} />
+            <Route path="/blog/console" element={<ConsoleCategory />} />
+            <Route path="/blog/sicurezza-digitale" element={<SicurezzaDigitale />} />
+            <Route path="/blog/guide" element={<Guide />} />
+            
+            {/* Blog Article Routes */}
+            <Route path="/blog/display-originali-vs-compatibili" element={<DisplayOriginaliVsCompatibili />} />
+            <Route path="/blog/batteria-maggiorata-iphone-giolab" element={<BatteriaMaggiorataIPhoneGiolab />} />
+            <Route path="/blog/riparazione-webcam-hp-victus" element={<RiparazioneWebcamHPVictus />} />
+            <Route path="/blog/aumentare-memoria-iphone" element={<AumentareMemoriaIPhone />} />
+            <Route path="/blog/microsaldature-scheda-madre" element={<MicrosaldatureSchedaMadre />} />
+            <Route path="/blog/recupero-dati-iphone-rotto" element={<RecuperoDatiIPhoneRotto />} />
+            <Route path="/blog/perche-face-id-smette-funzionare" element={<PercheFaceIDSmetteFunzionare />} />
+            <Route path="/blog/cosa-fare-iphone-caduto-schermo-crepato" element={<CosaFareIPhoneCadutoSchermoCrepato />} />
+            <Route path="/blog/come-capire-batteria-iphone-da-sostituire" element={<ComeCabireBatteriaIPhone />} />
+            <Route path="/blog/come-evitare-batteria-iphone-rovini" element={<ComeEvitareBatteriaIPhoneRovini />} />
+            <Route path="/blog/conviene-riparare-iphone-vecchio" element={<ConvieneRiparareIPhoneVecchio />} />
+            <Route path="/blog/qualita-ricambi-durata-riparazione" element={<QualitaRicambiDurataRiparazione />} />
+            <Route path="/blog/errori-post-sostituzione-display" element={<ErroriPostSostituzioneDisplay />} />
+            <Route path="/blog/vantaggi-batteria-maggiorata-iphone" element={<VantaggiBatteriaMaggiorataIPhone />} />
+            <Route path="/blog/servizio-telefono-cortesia" element={<ServizioTelefonoCortesia />} />
+            <Route path="/blog/trasferimento-dati-android-iphone" element={<TrasferimentoDatiAndroidIPhone />} />
+            <Route path="/blog/riparazione-iphone-1-ora-giolab" element={<RiparazioneIPhone1OraGiolab />} />
+            <Route path="/blog/come-capire-problema-scheda-madre" element={<ComeCapireProblemaSchedaMadre />} />
+            <Route path="/blog/riparazione-console-assemini" element={<RiparazioneConsoleAssemini />} />
+            <Route path="/blog/ps5-verticale-o-orizzontale" element={<PS5VerticaleOrizzontale />} />
+            <Route path="/blog/rigenerazione-vetro-apple-watch" element={<RigenerazioneVetroAppleWatch />} />
+            <Route path="/blog/rigenerazione-vetro-iphone" element={<RigenerazioneVetroIPhone />} />
         <Route path="/blog/ps5-verticale-o-orizzontale" element={<PS5VerticaleOrizzontale />} />
         <Route path="/blog/aumentare-memoria-iphone" element={<AumentareMemoriaIPhone />} />
         <Route path="/blog/riparazione-webcam-hp-victus" element={<RiparazioneWebcamHPVictus />} />
