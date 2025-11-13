@@ -74,10 +74,22 @@ export const BlogArticleTemplate = ({
   // Costruisci URL completo
   const fullUrl = `https://giolabriparazioni.it/blog/${slug}`;
   
-  // Genera breadcrumbs automaticamente
+  // Mappa categorie agli URL delle pagine categoria
+  const categoryUrls: Record<string, { name: string; url: string }> = {
+    "Guide": { name: "Guide e Consigli", url: "https://giolabriparazioni.it/blog/guide" },
+    "Assistenza": { name: "Assistenza Smartphone", url: "https://giolabriparazioni.it/blog/assistenza-smartphone" },
+    "Riparazione": { name: "Riparazione iPhone", url: "https://giolabriparazioni.it/blog/riparazione-iphone" },
+    "Tecnologia": { name: "Riparazione PC", url: "https://giolabriparazioni.it/blog/riparazione-pc" },
+    "Console": { name: "Console", url: "https://giolabriparazioni.it/blog/console" },
+    "Sicurezza": { name: "Sicurezza Digitale", url: "https://giolabriparazioni.it/blog/sicurezza-digitale" },
+  };
+  
+  // Genera breadcrumbs dinamicamente con categoria
+  const categoryInfo = categoryUrls[category] || { name: category, url: "https://giolabriparazioni.it/blog" };
   const breadcrumbs = [
     { name: "Home", url: "https://giolabriparazioni.it/" },
     { name: "Blog", url: "https://giolabriparazioni.it/blog" },
+    { name: categoryInfo.name, url: categoryInfo.url },
     { name: title.split("|")[0].trim(), url: fullUrl },
   ];
 
@@ -134,6 +146,12 @@ export const BlogArticleTemplate = ({
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
                   <Link to="/blog">Blog</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to={categoryInfo.url.replace('https://giolabriparazioni.it', '')}>{categoryInfo.name}</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
