@@ -35,6 +35,7 @@ import TrasferimentoDatiAndroidIPhone from "./pages/blog/TrasferimentoDatiAndroi
 import PS5VerticaleOrizzontale from "./pages/blog/PS5VerticaleOrizzontale";
 import AumentareMemoriaIPhone from "./pages/blog/AumentareMemoriaIPhone";
 import RiparazioneWebcamHPVictus from "./pages/blog/RiparazioneWebcamHPVictus";
+import BatteriaMaggiorataIPhoneGiolab from "./pages/blog/BatteriaMaggiorataIPhoneGiolab";
 import SEODocumentation from "./pages/SEODocumentation";
 
 const queryClient = new QueryClient();
@@ -79,6 +80,7 @@ const App = () => (
         <Route path="/blog/ps5-verticale-o-orizzontale" element={<PS5VerticaleOrizzontale />} />
         <Route path="/blog/aumentare-memoria-iphone" element={<AumentareMemoriaIPhone />} />
         <Route path="/blog/riparazione-webcam-hp-victus" element={<RiparazioneWebcamHPVictus />} />
+        <Route path="/blog/batteria-maggiorata-iphone-giolab" element={<BatteriaMaggiorataIPhoneGiolab />} />
         
         {/* Servizi specifici */}
         <Route path="/servizi/riparazione-display-iphone-assemini" element={<RiparazioneDisplayIPhone />} />

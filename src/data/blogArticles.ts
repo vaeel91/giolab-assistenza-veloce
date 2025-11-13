@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "batteria-maggiorata-iphone-giolab",
+    title: "Batteria Maggiorata iPhone: +40% Autonomia Senza Avvisi",
+    description: "Batteria iPhone scarica? Scopri le batterie maggiorate premium: fino al 40% di autonomia in più, nessun avviso 'non originale', garanzia 12 mesi.",
+    date: "2025-01-13",
+    readTime: "12 min",
+    category: "Guide",
+    image: "🔋"
+  },
+  {
     slug: "riparazione-webcam-hp-victus",
     title: "Riparazione Webcam HP Victus 16: Webcam Non Rilevata",
     description: "La webcam del tuo HP Victus non funziona? Scopri come abbiamo risolto il problema con sostituzione modulo originale HP presso Giolab Assemini.",
