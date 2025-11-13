@@ -98,8 +98,13 @@ const Index = () => {
       const container = containerRef.current;
       if (!container) return;
       
+      // Verifica se l'evento proviene dal container principale o dai suoi figli
+      const target = e.target as HTMLElement;
+      if (!container.contains(target)) return;
+      
       // Previeni lo scroll verticale predefinito
       e.preventDefault();
+      e.stopPropagation();
       
       // Converti deltaY in scroll orizzontale
       container.scrollBy({
@@ -108,15 +113,11 @@ const Index = () => {
       });
     };
 
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener("wheel", handleWheel, { passive: false });
-    }
+    // Aggiungi event listener a window con capture per intercettare prima di altri listener
+    window.addEventListener("wheel", handleWheel, { passive: false, capture: true });
 
     return () => {
-      if (container) {
-        container.removeEventListener("wheel", handleWheel);
-      }
+      window.removeEventListener("wheel", handleWheel, { capture: true });
     };
   }, []);
 
