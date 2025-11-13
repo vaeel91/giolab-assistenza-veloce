@@ -93,26 +93,22 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
     const handleWheel = (e: WheelEvent) => {
-      const container = containerRef.current;
-      if (!container) return;
-      
-      // Se non siamo sulla homepage, non fare nulla
-      if (window.location.pathname !== '/') return;
-      
-      // Sempre previeni lo scroll verticale di default e converti in orizzontale
+      // Previeni sempre lo scroll di default
       e.preventDefault();
-      e.stopPropagation();
       
-      // Converti qualsiasi movimento verticale della rotella in scroll orizzontale
+      // Scroll orizzontale diretto
       container.scrollLeft += e.deltaY;
     };
 
-    // Aggiungi listener globale con massima priorità
-    window.addEventListener("wheel", handleWheel, { passive: false });
+    // Aggiungi listener direttamente al container
+    container.addEventListener("wheel", handleWheel, { passive: false });
 
     return () => {
-      window.removeEventListener("wheel", handleWheel);
+      container.removeEventListener("wheel", handleWheel);
     };
   }, []);
 
@@ -310,7 +306,11 @@ const Index = () => {
         }}
       />
       <Header />
-      <div ref={containerRef} className="h-screen overflow-x-auto overflow-y-hidden snap-x snap-mandatory flex touch-pan-x overscroll-x-contain" style={{ scrollBehavior: 'auto' }}>
+      <div 
+        ref={containerRef} 
+        className="h-screen overflow-x-scroll overflow-y-hidden snap-x snap-mandatory flex touch-pan-x"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
         <div 
           id="hero" 
           ref={(el) => (sectionsRef.current[0] = el)}
