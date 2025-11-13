@@ -97,45 +97,22 @@ const Index = () => {
       const container = containerRef.current;
       if (!container) return;
       
-      // Verifica se l'evento è sul container principale
-      const target = e.target as HTMLElement;
-      if (!container.contains(target)) return;
+      // Se non siamo sulla homepage, non fare nulla
+      if (window.location.pathname !== '/') return;
       
-      // Controlla se stiamo scrollando in un elemento con overflow-y
-      let element: HTMLElement | null = target;
-      while (element && element !== container) {
-        const computedStyle = window.getComputedStyle(element);
-        const overflowY = computedStyle.overflowY;
-        
-        if ((overflowY === 'auto' || overflowY === 'scroll')) {
-          const isScrollable = element.scrollHeight > element.clientHeight;
-          
-          if (isScrollable) {
-            const isAtTop = element.scrollTop <= 0;
-            const isAtBottom = element.scrollTop + element.clientHeight >= element.scrollHeight;
-            
-            // Se possiamo ancora scrollare verticalmente, non convertire
-            if ((e.deltaY < 0 && !isAtTop) || (e.deltaY > 0 && !isAtBottom)) {
-              return;
-            }
-          }
-        }
-        
-        element = element.parentElement;
-      }
-      
-      // Converti scroll verticale in orizzontale
+      // Sempre previeni lo scroll verticale di default e converti in orizzontale
       e.preventDefault();
       e.stopPropagation();
       
+      // Converti qualsiasi movimento verticale della rotella in scroll orizzontale
       container.scrollLeft += e.deltaY;
     };
 
-    // Usa capture phase per catturare l'evento prima di altri listener
-    document.addEventListener("wheel", handleWheel, { passive: false, capture: true });
+    // Aggiungi listener globale con massima priorità
+    window.addEventListener("wheel", handleWheel, { passive: false });
 
     return () => {
-      document.removeEventListener("wheel", handleWheel, { capture: true });
+      window.removeEventListener("wheel", handleWheel);
     };
   }, []);
 
@@ -337,72 +314,72 @@ const Index = () => {
         <div 
           id="hero" 
           ref={(el) => (sectionsRef.current[0] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
+          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-hidden section-animate"
         >
-          <div className="section-content h-full w-full">
+          <div className="section-content h-full w-full overflow-y-auto">
             <Hero />
           </div>
         </div>
         <div 
           id="blog" 
           ref={(el) => (sectionsRef.current[1] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
+          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-hidden section-animate"
         >
-          <div className="section-content h-full w-full">
+          <div className="section-content h-full w-full overflow-y-auto">
             <BlogPreview />
           </div>
         </div>
         <div 
           id="servizi" 
           ref={(el) => (sectionsRef.current[2] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
+          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-hidden section-animate"
         >
-          <div className="section-content h-full w-full">
+          <div className="section-content h-full w-full overflow-y-auto">
             <Services />
           </div>
         </div>
         <div 
           id="chi-siamo" 
           ref={(el) => (sectionsRef.current[3] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
+          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-hidden section-animate"
         >
-          <div className="section-content h-full w-full">
+          <div className="section-content h-full w-full overflow-y-auto">
             <About />
           </div>
         </div>
         <div 
           id="testimonianze" 
           ref={(el) => (sectionsRef.current[4] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
+          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-hidden section-animate"
         >
-          <div className="section-content h-full w-full">
+          <div className="section-content h-full w-full overflow-y-auto">
             <TestimonialsShowcase variant="scroll" />
           </div>
         </div>
         <div 
           id="dove-siamo" 
           ref={(el) => (sectionsRef.current[5] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
+          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-hidden section-animate"
         >
-          <div className="section-content h-full w-full">
+          <div className="section-content h-full w-full overflow-y-auto">
             <SocialAndLocation />
           </div>
         </div>
         <div 
           id="faq" 
           ref={(el) => (sectionsRef.current[6] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
+          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-hidden section-animate"
         >
-          <div className="section-content h-full w-full">
+          <div className="section-content h-full w-full overflow-y-auto">
             <FAQ />
           </div>
         </div>
         <div 
           id="contatti" 
           ref={(el) => (sectionsRef.current[7] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-y-auto section-animate"
+          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-hidden section-animate"
         >
-          <div className="section-content h-full w-full">
+          <div className="section-content h-full w-full overflow-y-auto">
             <Contact />
             <Footer />
           </div>
