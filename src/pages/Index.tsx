@@ -98,26 +98,47 @@ const Index = () => {
       const container = containerRef.current;
       if (!container) return;
       
-      // Verifica se l'evento proviene dal container principale o dai suoi figli
       const target = e.target as HTMLElement;
-      if (!container.contains(target)) return;
       
-      // Previeni lo scroll verticale predefinito
+      // Verifica se il target o un suo genitore ha overflow-y e può scrollare verticalmente
+      let element: HTMLElement | null = target;
+      while (element && element !== container) {
+        const style = window.getComputedStyle(element);
+        const overflowY = style.overflowY;
+        
+        // Se l'elemento ha scroll verticale e può scrollare
+        if ((overflowY === 'auto' || overflowY === 'scroll') && element.scrollHeight > element.clientHeight) {
+          // Verifica se siamo all'inizio o alla fine dello scroll verticale
+          const atTop = element.scrollTop === 0;
+          const atBottom = element.scrollTop + element.clientHeight >= element.scrollHeight - 1;
+          
+          // Permetti scroll verticale se non siamo ai limiti
+          if ((e.deltaY < 0 && !atTop) || (e.deltaY > 0 && !atBottom)) {
+            return; // Non intercettare lo scroll verticale
+          }
+        }
+        element = element.parentElement;
+      }
+      
+      // Se arriviamo qui, convertiamo lo scroll verticale in orizzontale
       e.preventDefault();
       e.stopPropagation();
       
-      // Converti deltaY in scroll orizzontale
       container.scrollBy({
         left: e.deltaY,
-        behavior: 'auto' // Usa 'auto' per movimento fluido senza smooth (che creerebbe lag)
+        behavior: 'auto'
       });
     };
 
-    // Aggiungi event listener a window con capture per intercettare prima di altri listener
-    window.addEventListener("wheel", handleWheel, { passive: false, capture: true });
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener("wheel", handleWheel, { passive: false });
+    }
 
     return () => {
-      window.removeEventListener("wheel", handleWheel, { capture: true });
+      if (container) {
+        container.removeEventListener("wheel", handleWheel);
+      }
     };
   }, []);
 
