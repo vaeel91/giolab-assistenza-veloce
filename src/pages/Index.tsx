@@ -93,41 +93,38 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
-    // Converti scroll verticale della rotellina in scroll orizzontale
     const handleWheel = (e: WheelEvent) => {
       const container = containerRef.current;
       if (!container) return;
       
       const target = e.target as HTMLElement;
       
-      // Verifica se il target o un suo genitore ha overflow-y e può scrollare verticalmente
-      let element: HTMLElement | null = target;
-      while (element && element !== container) {
-        const style = window.getComputedStyle(element);
-        const overflowY = style.overflowY;
+      // Trova la sezione corrente scrollabile verticalmente
+      let scrollableParent: HTMLElement | null = target;
+      while (scrollableParent && scrollableParent !== document.body) {
+        const style = window.getComputedStyle(scrollableParent);
+        const hasVerticalScroll = (style.overflowY === 'auto' || style.overflowY === 'scroll') && 
+                                 scrollableParent.scrollHeight > scrollableParent.clientHeight;
         
-        // Se l'elemento ha scroll verticale e può scrollare
-        if ((overflowY === 'auto' || overflowY === 'scroll') && element.scrollHeight > element.clientHeight) {
-          // Verifica se siamo all'inizio o alla fine dello scroll verticale
-          const atTop = element.scrollTop === 0;
-          const atBottom = element.scrollTop + element.clientHeight >= element.scrollHeight - 1;
+        if (hasVerticalScroll) {
+          const scrollTop = scrollableParent.scrollTop;
+          const scrollHeight = scrollableParent.scrollHeight;
+          const clientHeight = scrollableParent.clientHeight;
           
-          // Permetti scroll verticale se non siamo ai limiti
-          if ((e.deltaY < 0 && !atTop) || (e.deltaY > 0 && !atBottom)) {
-            return; // Non intercettare lo scroll verticale
+          // Se siamo nel mezzo dello scroll verticale, permetti lo scroll verticale
+          if ((e.deltaY > 0 && scrollTop < scrollHeight - clientHeight - 1) ||
+              (e.deltaY < 0 && scrollTop > 1)) {
+            return; // Non bloccare lo scroll verticale
           }
         }
-        element = element.parentElement;
+        scrollableParent = scrollableParent.parentElement;
       }
       
-      // Se arriviamo qui, convertiamo lo scroll verticale in orizzontale
+      // Solo se non c'è scroll verticale attivo, converti in scroll orizzontale
       e.preventDefault();
-      e.stopPropagation();
       
-      container.scrollBy({
-        left: e.deltaY,
-        behavior: 'auto'
-      });
+      const scrollAmount = e.deltaY;
+      container.scrollLeft += scrollAmount;
     };
 
     const container = containerRef.current;
@@ -336,7 +333,7 @@ const Index = () => {
         }}
       />
       <Header />
-      <div ref={containerRef} className="h-screen overflow-x-auto overflow-y-hidden snap-x snap-mandatory flex scroll-smooth touch-pan-x overscroll-x-contain">
+      <div ref={containerRef} className="h-screen overflow-x-auto overflow-y-hidden snap-x snap-mandatory flex touch-pan-x overscroll-x-contain" style={{ scrollBehavior: 'auto' }}>
         <div 
           id="hero" 
           ref={(el) => (sectionsRef.current[0] = el)}
