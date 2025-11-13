@@ -10,6 +10,16 @@ import hpVictusGestioneDispositiviDopo from "@/assets/blog/hp-victus-webcam-gest
 export default function RiparazioneWebcamHPVictus() {
   const articleContent = (
     <div className="space-y-8">
+      {/* Titolo principale */}
+      <header className="mb-8">
+        <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
+          Riparazione Webcam HP Victus 16: Webcam Non Rilevata da Windows
+        </h1>
+        <p className="text-lg text-muted-foreground">
+          Come abbiamo diagnosticato e risolto il problema di una webcam completamente invisibile al sistema presso Giolab Assemini
+        </p>
+      </header>
+
       {/* Introduzione */}
       <section>
         <p className="text-lg text-foreground/90 leading-relaxed">
