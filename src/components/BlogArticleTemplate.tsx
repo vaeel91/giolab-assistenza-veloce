@@ -1,28 +1,66 @@
 /**
  * Blog Article Template Component
  * 
- * Template automatico per articoli del blog con SEO pre-configurato.
- * Gestisce automaticamente:
- * - Meta tags (title, description, keywords)
- * - Open Graph tags
- * - Schema markup (Breadcrumb + Article)
- * - Componenti comuni (Header, Footer, Navigation, Social Share, etc.)
+ * ⚠️ IMPORTANTE: TUTTI GLI ARTICOLI BLOG DEVONO USARE QUESTO TEMPLATE
  * 
- * Usage:
+ * Questo template automatico garantisce uniformità e coerenza in tutti gli articoli del blog.
+ * 
+ * ✅ COSA INCLUDE AUTOMATICAMENTE:
+ * - Breadcrumbs dinamici con categoria (Home → Blog → Categoria → Articolo)
+ * - Table of Contents (TOC) automatico da titoli H2/H3
+ * - Meta tags SEO completi (title, description, keywords, OG, Twitter Card)
+ * - Schema markup (Article + Breadcrumbs)
+ * - Header, Footer, BlogNavigation
+ * - ReadingProgress bar
+ * - SocialShare buttons
+ * - RelatedArticles
+ * - FloatingWhatsApp
+ * 
+ * 📋 USAGE OBBLIGATORIO:
  * ```tsx
- * <BlogArticleTemplate
- *   title="Come Capire se la Batteria iPhone va Sostituita | Giolab Assemini"
- *   description="Scopri i segnali che indicano quando sostituire la batteria..."
- *   keywords="batteria iPhone, sostituzione batteria, Assemini"
- *   slug="come-capire-batteria-iphone-sostituire"
- *   ogImage="https://giolabriparazioni.it/og-images/nome-file.jpg"
- *   author="Giolab Team"
- *   datePublished="2025-01-15"
- *   category="Guide"
- * >
- *   {contenuto articolo}
- * </BlogArticleTemplate>
+ * import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
+ * 
+ * export default function NomeArticolo() {
+ *   const articleContent = (
+ *     <div className="space-y-8">
+ *       <section>
+ *         <h2>Prima Sezione</h2>
+ *         <p>Contenuto...</p>
+ *       </section>
+ *       <section>
+ *         <h2>Seconda Sezione</h2>
+ *         <h3>Sottosezione</h3>
+ *         <p>Contenuto...</p>
+ *       </section>
+ *     </div>
+ *   );
+ * 
+ *   return (
+ *     <BlogArticleTemplate
+ *       title="Titolo Completo | Giolab Assemini"
+ *       description="Descrizione SEO 150-160 caratteri"
+ *       keywords="keyword1, keyword2, Assemini, Cagliari"
+ *       slug="titolo-articolo"
+ *       ogImage="https://giolabriparazioni.it/og-images/nome.jpg"
+ *       author="Giolab Team"
+ *       datePublished="2025-01-27"
+ *       category="Guide"
+ *       content={articleContent}
+ *       readingTime={8}
+ *     />
+ *   );
+ * }
  * ```
+ * 
+ * 📂 CATEGORIE DISPONIBILI:
+ * - "Guide" → /blog/guide
+ * - "Assistenza" → /blog/assistenza-smartphone
+ * - "Riparazione" → /blog/riparazione-iphone
+ * - "Tecnologia" → /blog/riparazione-pc
+ * - "Console" → /blog/console
+ * - "Sicurezza" → /blog/sicurezza-digitale
+ * 
+ * 📖 DOCUMENTAZIONE COMPLETA: /BLOG_ARTICLE_STANDARD.md
  */
 
 import SEOHead from "@/components/SEOHead";
@@ -75,6 +113,7 @@ export const BlogArticleTemplate = ({
   const fullUrl = `https://giolabriparazioni.it/blog/${slug}`;
   
   // Mappa categorie agli URL delle pagine categoria
+  // ⚠️ IMPORTANTE: Queste mappature devono corrispondere alle route in App.tsx
   const categoryUrls: Record<string, { name: string; url: string }> = {
     "Guide": { name: "Guide e Consigli", url: "https://giolabriparazioni.it/blog/guide" },
     "Assistenza": { name: "Assistenza Smartphone", url: "https://giolabriparazioni.it/blog/assistenza-smartphone" },
@@ -82,6 +121,7 @@ export const BlogArticleTemplate = ({
     "Tecnologia": { name: "Riparazione PC", url: "https://giolabriparazioni.it/blog/riparazione-pc" },
     "Console": { name: "Console", url: "https://giolabriparazioni.it/blog/console" },
     "Sicurezza": { name: "Sicurezza Digitale", url: "https://giolabriparazioni.it/blog/sicurezza-digitale" },
+    "Consigli": { name: "Guide e Consigli", url: "https://giolabriparazioni.it/blog/guide" },
   };
   
   // Genera breadcrumbs dinamicamente con categoria
@@ -163,6 +203,12 @@ export const BlogArticleTemplate = ({
 
           {/* Metadati Articolo */}
           <div className="flex flex-wrap items-center gap-4 mb-8 text-sm text-muted-foreground border-b border-border pb-4">
+            <Link 
+              to={categoryInfo.url.replace('https://giolabriparazioni.it', '')}
+              className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium hover:bg-primary/20 transition-colors"
+            >
+              {categoryInfo.name}
+            </Link>
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
               <span>Pubblicato il {formatDate(datePublished)}</span>
@@ -170,9 +216,6 @@ export const BlogArticleTemplate = ({
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4" />
               <span>{readingTime} min di lettura</span>
-            </div>
-            <div className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">
-              {category}
             </div>
           </div>
           
@@ -186,14 +229,15 @@ export const BlogArticleTemplate = ({
           </div>
         </div>
 
-        {/* Pulsante floating mobile per TOC */}
+        {/* Pulsante floating mobile per TOC con label */}
         <Sheet open={isTOCOpen} onOpenChange={setIsTOCOpen}>
           <SheetTrigger asChild>
             <button 
-              className="xl:hidden fixed bottom-20 right-4 z-40 bg-primary text-primary-foreground p-3 rounded-full shadow-lg hover:bg-primary/90 transition-colors"
+              className="xl:hidden fixed bottom-20 right-4 z-40 bg-primary text-primary-foreground px-4 py-3 rounded-full shadow-lg hover:bg-primary/90 transition-all group flex items-center gap-2"
               aria-label="Apri indice articolo"
             >
               <List className="w-5 h-5" />
+              <span className="text-sm font-medium">Indice</span>
             </button>
           </SheetTrigger>
           <SheetContent side="right" className="w-80 overflow-y-auto">
