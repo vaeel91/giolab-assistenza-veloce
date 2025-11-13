@@ -48,7 +48,8 @@ const Index = () => {
 
   return (
     <>
-      <SEOHead 
+      <h1 className="sr-only">Giolab Assemini - Riparazione iPhone, Smartphone, PC e Console in 1 Ora con Garanzia 12 Mesi</h1>
+      <SEOHead
         title="Riparazione iPhone Assemini | Smartphone, PC, Console | Giolab"
         description="Centro assistenza specializzato ad Assemini e Cagliari. Riparazione iPhone, smartphone, PC e console. Riparazioni in 1 ora, garanzia 12 mesi, batterie maggiorate iPhone. Preventivo gratuito ☎️ 340 69 70 686"
         keywords="riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza iPhone Cagliari, batteria maggiorata iPhone Assemini, riparazione vetro iPhone Assemini, micro-saldature Assemini, riparazione PC Assemini, assistenza console Assemini, centro assistenza iPhone Cagliari, rigenerazione vetro iPhone"

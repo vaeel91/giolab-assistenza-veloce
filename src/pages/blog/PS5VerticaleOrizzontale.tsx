@@ -74,6 +74,7 @@ const PS5VerticaleOrizzontale = () => {
               src={ps5VerticalVsHorizontal}
               alt="PlayStation 5 in posizione verticale e orizzontale a confronto"
               className="w-full rounded-2xl shadow-lg mb-12"
+              loading="eager"
             />
 
             <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground">
@@ -92,6 +93,7 @@ const PS5VerticaleOrizzontale = () => {
                 src={ps5CoolingSystem}
                 alt="Sistema di raffreddamento PS5 con camera di vapore e metallo liquido"
                 className="w-full rounded-2xl shadow-lg my-8"
+                loading="lazy"
               />
 
               <p className="leading-relaxed">
@@ -144,6 +146,7 @@ const PS5VerticaleOrizzontale = () => {
                 src={ps5VerticalPosition}
                 alt="PlayStation 5 in posizione verticale su scrivania moderna"
                 className="w-full rounded-2xl shadow-lg my-8"
+                loading="lazy"
               />
 
               <div className="overflow-x-auto my-8">
@@ -183,6 +186,7 @@ const PS5VerticaleOrizzontale = () => {
                 src={ps5HorizontalPosition}
                 alt="PlayStation 5 in posizione orizzontale su scrivania con buona ventilazione"
                 className="w-full rounded-2xl shadow-lg my-8"
+                loading="lazy"
               />
 
               <div className="overflow-x-auto my-8">

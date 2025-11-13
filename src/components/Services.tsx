@@ -5,7 +5,6 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const services = [
   {
-    emoji: "📱",
     icon: Smartphone,
     iconColor: "text-blue-500",
     title: "Riparazione iPhone e Smartphone Assemini",
@@ -13,21 +12,18 @@ const services = [
     link: "/servizi/riparazione-display-iphone-assemini"
   },
   {
-    emoji: "💻",
     icon: Laptop,
     iconColor: "text-purple-500",
     title: "Assistenza PC e Notebook",
     description: "Riparazioni hardware e software, upgrade SSD o RAM, pulizia interna e ottimizzazione completa.",
   },
   {
-    emoji: "🎮",
     icon: Gamepad2,
     iconColor: "text-pink-500",
     title: "Riparazione Console",
     description: "PlayStation, Xbox e Nintendo Switch. Risolviamo problemi hardware e software con ricambi originali.",
   },
   {
-    emoji: "🔋",
     icon: BatteryCharging,
     iconColor: "text-green-500",
     title: "Batterie Maggiorate iPhone Assemini",
@@ -35,14 +31,12 @@ const services = [
     link: "/servizi/batteria-maggiorata-iphone"
   },
   {
-    emoji: "🧠",
     icon: Cpu,
     iconColor: "text-red-500",
     title: "Micro-saldature e Riparazioni Avanzate",
     description: "Interventi su schede madri e circuiti elettronici. Riparazioni di corti, danni da liquidi e chip guasti.",
   },
   {
-    emoji: "💎",
     icon: Sparkles,
     iconColor: "text-cyan-500",
     title: "Rigenerazione Vetro",
@@ -50,49 +44,42 @@ const services = [
     link: "/blog/rigenerazione-vetro-iphone"
   },
   {
-    emoji: "⚙️",
     icon: Wrench,
     iconColor: "text-orange-500",
     title: "Sostituzione Vetro Posteriore iPhone",
     description: "Ripariamo il retro in vetro del tuo iPhone con risultati perfetti, senza cambiare la scocca completa.",
   },
   {
-    emoji: "🧹",
     icon: Wind,
     iconColor: "text-amber-500",
     title: "Pulizia e Manutenzione Interna",
     description: "Rimuoviamo polvere e ossidazioni da smartphone e PC per migliorare prestazioni e raffreddamento.",
   },
   {
-    emoji: "📦",
     icon: Package,
     iconColor: "text-indigo-500",
     title: "Telefono di Cortesia",
     description: "Non restare mai senza telefono: dispositivi di cortesia disponibili durante la riparazione.",
   },
   {
-    emoji: "🛡️",
     icon: Shield,
     iconColor: "text-emerald-500",
     title: "Protezione Schermo e Accessori",
     description: "Pellicole in vetro, cover, cavi e caricabatterie di qualità per proteggere e completare il tuo dispositivo.",
   },
   {
-    emoji: "☁️",
     icon: Cloud,
     iconColor: "text-sky-500",
     title: "Configurazione e Trasferimento Dati",
     description: "Impostiamo il tuo nuovo smartphone o PC e trasferiamo tutti i tuoi dati in modo sicuro.",
   },
   {
-    emoji: "🔍",
     icon: Search,
     iconColor: "text-violet-500",
     title: "Diagnosi e Preventivo Rapido",
     description: "Controllo tecnico immediato e preventivo chiaro prima di qualsiasi intervento.",
   },
   {
-    emoji: "🔧",
     icon: Building2,
     iconColor: "text-slate-500",
     title: "Servizi per Centri Assistenza (B2B)",
