@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "rigenerazione-vetro-apple-watch",
+    title: "Rigenerazione Vetro Apple Watch: Meglio del Display Completo",
+    description: "Scopri perché sostituire solo il vetro del tuo Apple Watch conviene più del cambio display. Processo tecnico OCA, vantaggi e garanzia Giolab Assemini.",
+    date: "15 Gennaio 2025",
+    readTime: "12 min",
+    category: "Guide",
+    image: "/og-images/rigenerazione-vetro-apple-watch.jpg"
+  },
+  {
     slug: "display-originali-vs-compatibili",
     title: "Display iPhone: differenze tra Originali, Soft OLED, Hard OLED, TFT e importanza degli Hz",
     description: "Guida completa alla scelta del display iPhone: scopri le differenze tra originali, Soft OLED, Hard OLED e TFT. Analisi tecnica su qualità, Hz, consumi batteria e durata.",

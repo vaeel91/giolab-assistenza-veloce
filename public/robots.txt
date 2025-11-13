@@ -35,8 +35,9 @@ Allow: /*.webp$
 Allow: /*.svg$
 Allow: /*.gif$
 
-# Sitemap principale
+# Sitemaps
 Sitemap: https://giolabriparazioni.it/sitemap.xml
+Sitemap: https://giolabriparazioni.it/sitemap-images.xml
 
 # Google Bot - massima priorità
 User-agent: Googlebot

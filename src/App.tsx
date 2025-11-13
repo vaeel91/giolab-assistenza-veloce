@@ -36,6 +36,7 @@ import PS5VerticaleOrizzontale from "./pages/blog/PS5VerticaleOrizzontale";
 import AumentareMemoriaIPhone from "./pages/blog/AumentareMemoriaIPhone";
 import RiparazioneWebcamHPVictus from "./pages/blog/RiparazioneWebcamHPVictus";
 import BatteriaMaggiorataIPhoneGiolab from "./pages/blog/BatteriaMaggiorataIPhoneGiolab";
+import RigenerazioneVetroAppleWatch from "./pages/blog/RigenerazioneVetroAppleWatch";
 import SEODocumentation from "./pages/SEODocumentation";
 
 const queryClient = new QueryClient();
@@ -81,6 +82,7 @@ const App = () => (
         <Route path="/blog/aumentare-memoria-iphone" element={<AumentareMemoriaIPhone />} />
         <Route path="/blog/riparazione-webcam-hp-victus" element={<RiparazioneWebcamHPVictus />} />
         <Route path="/blog/batteria-maggiorata-iphone-giolab" element={<BatteriaMaggiorataIPhoneGiolab />} />
+        <Route path="/blog/rigenerazione-vetro-apple-watch" element={<RigenerazioneVetroAppleWatch />} />
         
         {/* Servizi specifici */}
         <Route path="/servizi/riparazione-display-iphone-assemini" element={<RiparazioneDisplayIPhone />} />
