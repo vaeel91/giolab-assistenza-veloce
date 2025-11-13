@@ -93,18 +93,32 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
+    // Navigazione con tastiera
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const currentIndex = sections.findIndex(s => s.id === visibleSection);
+      
+      if (e.key === 'ArrowRight' && currentIndex < sections.length - 1) {
+        e.preventDefault();
+        navigateToSection(sections[currentIndex + 1].id);
+      } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+        e.preventDefault();
+        navigateToSection(sections[currentIndex - 1].id);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [visibleSection]);
+
+  useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
     const handleWheel = (e: WheelEvent) => {
-      // Previeni sempre lo scroll di default
       e.preventDefault();
-      
-      // Scroll orizzontale diretto
       container.scrollLeft += e.deltaY;
     };
 
-    // Aggiungi listener direttamente al container
     container.addEventListener("wheel", handleWheel, { passive: false });
 
     return () => {
@@ -306,7 +320,51 @@ const Index = () => {
         }}
       />
       <Header />
-      <div 
+      
+      {/* Navigation Arrows */}
+      <button
+        onClick={() => {
+          const currentIndex = sections.findIndex(s => s.id === visibleSection);
+          if (currentIndex > 0) navigateToSection(sections[currentIndex - 1].id);
+        }}
+        className={`fixed left-4 top-1/2 -translate-y-1/2 z-30 bg-background/90 backdrop-blur-sm border-2 border-primary p-3 rounded-full shadow-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 ${
+          sections.findIndex(s => s.id === visibleSection) === 0 ? 'opacity-0 pointer-events-none' : 'opacity-100'
+        }`}
+        aria-label="Sezione precedente"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <button
+        onClick={() => {
+          const currentIndex = sections.findIndex(s => s.id === visibleSection);
+          if (currentIndex < sections.length - 1) navigateToSection(sections[currentIndex + 1].id);
+        }}
+        className={`fixed right-4 top-1/2 -translate-y-1/2 z-30 bg-background/90 backdrop-blur-sm border-2 border-primary p-3 rounded-full shadow-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 ${
+          sections.findIndex(s => s.id === visibleSection) === sections.length - 1 ? 'opacity-0 pointer-events-none' : 'opacity-100'
+        }`}
+        aria-label="Sezione successiva"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      {/* Hint iniziale per scroll */}
+      {visibleSection === 'hero' && (
+        <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+          <div className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium shadow-lg flex items-center gap-2">
+            <span>Scorri orizzontalmente</span>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </div>
+        </div>
+      )}
+      
+      <div
         ref={containerRef} 
         className="h-screen overflow-x-scroll overflow-y-hidden snap-x snap-mandatory flex touch-pan-x"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
@@ -390,7 +448,7 @@ const Index = () => {
       
       {/* Navigation Indicators */}
       <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-background/80 backdrop-blur-md rounded-full shadow-lg border border-border">
-        {sections.map((section) => (
+        {sections.map((section, index) => (
           <button
             key={section.id}
             onClick={() => navigateToSection(section.id)}
@@ -410,6 +468,16 @@ const Index = () => {
             </span>
           </button>
         ))}
+      </div>
+      
+      {/* Keyboard navigation hint */}
+      <div className="hidden md:block fixed top-24 right-4 z-20 bg-background/90 backdrop-blur-sm border border-border p-3 rounded-lg shadow-sm text-xs text-muted-foreground">
+        <div className="flex items-center gap-2 mb-1">
+          <kbd className="px-2 py-1 bg-muted rounded text-foreground font-mono">←</kbd>
+          <kbd className="px-2 py-1 bg-muted rounded text-foreground font-mono">→</kbd>
+          <span>per navigare</span>
+        </div>
+        <div className="text-center opacity-75">oppure usa le frecce laterali</div>
       </div>
       
       <style>{`
