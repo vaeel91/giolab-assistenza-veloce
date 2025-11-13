@@ -401,6 +401,7 @@ export default function RiparazioneWebcamHPVictus() {
       datePublished="2025-01-13"
       category="Assistenza"
       content={articleContent}
+      readingTime={9}
     />
   );
 }

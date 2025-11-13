@@ -44,7 +44,9 @@ import { Link } from "react-router-dom";
 import { Calendar, Clock } from "lucide-react";
 import type { BlogArticleData } from "@/types/blogArticle";
 
-interface BlogArticleTemplateProps extends BlogArticleData {}
+interface BlogArticleTemplateProps extends BlogArticleData {
+  readingTime?: number; // tempo di lettura in minuti
+}
 
 export const BlogArticleTemplate = ({
   title,
@@ -56,6 +58,7 @@ export const BlogArticleTemplate = ({
   datePublished,
   category,
   content,
+  readingTime = 5,
 }: BlogArticleTemplateProps) => {
   // Costruisci URL completo
   const fullUrl = `https://giolabriparazioni.it/blog/${slug}`;
@@ -69,15 +72,6 @@ export const BlogArticleTemplate = ({
 
   // Estrai titolo pulito per display (rimuovi " | Giolab Assemini")
   const cleanTitle = title.split("|")[0].trim();
-
-  // Calcola tempo di lettura (assumendo 200 parole al minuto in italiano)
-  const calculateReadingTime = (content: React.ReactNode): number => {
-    const contentString = JSON.stringify(content);
-    const wordCount = contentString.split(/\s+/).length;
-    return Math.ceil(wordCount / 200);
-  };
-  
-  const readingTime = calculateReadingTime(content);
   
   // Formatta data in italiano
   const formatDate = (dateString: string): string => {

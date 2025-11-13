@@ -22,6 +22,7 @@ export interface BlogArticleData {
   
   // Contenuto
   content: React.ReactNode; // Contenuto JSX dell'articolo
+  readingTime?: number; // Tempo di lettura in minuti (opzionale, default: 5)
 }
 
 export interface BlogArticleSEO {
