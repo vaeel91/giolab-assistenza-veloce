@@ -32,6 +32,15 @@ import BlogNavigation from "@/components/BlogNavigation";
 import SocialShare from "@/components/SocialShare";
 import RelatedArticles from "@/components/RelatedArticles";
 import ReadingProgress from "@/components/ReadingProgress";
+import { 
+  Breadcrumb, 
+  BreadcrumbList, 
+  BreadcrumbItem, 
+  BreadcrumbLink, 
+  BreadcrumbSeparator, 
+  BreadcrumbPage 
+} from "@/components/ui/breadcrumb";
+import { Link } from "react-router-dom";
 import type { BlogArticleData } from "@/types/blogArticle";
 
 interface BlogArticleTemplateProps extends BlogArticleData {}
@@ -85,6 +94,27 @@ export const BlogArticleTemplate = ({
         <BlogNavigation />
         
         <article className="container mx-auto px-4 pt-24 pb-8 max-w-4xl">
+          {/* Breadcrumb Navigation */}
+          <Breadcrumb className="mb-6">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/blog">Blog</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>{cleanTitle}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+          
           {content}
         </article>
 
