@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Linkedin, MessageCircle, Share2 } from "lucide-react";
+import { Facebook, Twitter, Linkedin, MessageCircle, Share2, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
@@ -24,6 +24,17 @@ const SocialShare = ({ url, title, description }: SocialShareProps) => {
   const handleShare = (platform: string, shareUrl: string) => {
     window.open(shareUrl, '_blank', 'width=600,height=400');
     toast.success(`Apertura condivisione su ${platform}...`);
+  };
+
+  const handleInstagramShare = async () => {
+    try {
+      await navigator.clipboard.writeText(fullUrl);
+      toast.success("Link copiato! Incollalo in una Storia o Post di Instagram", {
+        duration: 4000,
+      });
+    } catch (err) {
+      toast.error("Impossibile copiare il link");
+    }
   };
 
   const handleCopyLink = async () => {
@@ -57,6 +68,14 @@ const SocialShare = ({ url, title, description }: SocialShareProps) => {
         >
           <Facebook className="h-4 w-4" />
           Facebook
+        </Button>
+
+        <Button
+          onClick={handleInstagramShare}
+          className="flex items-center gap-2 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] hover:opacity-90 text-white"
+        >
+          <Instagram className="h-4 w-4" />
+          Instagram
         </Button>
 
         <Button
