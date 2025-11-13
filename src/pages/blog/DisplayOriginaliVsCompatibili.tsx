@@ -94,32 +94,32 @@ const DisplayOriginaliVsCompatibili = () => {
       <div className="container mx-auto px-4 py-8">
         <BlogNavigation />
         
-        <div className="mb-8 max-w-4xl">
-          <Link to="/blog" className="inline-flex items-center text-primary hover:underline mb-4">
-            <ArrowLeft className="mr-2 h-4 w-4" />
+        <div className="mb-4 md:mb-8">
+          <Link to="/blog" className="inline-flex items-center text-primary hover:underline mb-4 text-sm md:text-base">
+            <ArrowLeft className="mr-2 h-3 w-3 md:h-4 md:w-4" />
             Torna al Blog
           </Link>
         </div>
 
-        <div className="flex gap-8 max-w-7xl mx-auto">
-          <article className="flex-1 max-w-4xl">
-            <header className="mb-8">
-              <h1 className="text-4xl font-bold mb-4">
-                Display iPhone: differenze tra Originali, Soft OLED, Hard OLED, TFT e importanza degli Hz
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 max-w-7xl mx-auto">
+          <article className="flex-1 w-full lg:max-w-4xl">
+            <header className="mb-6 md:mb-8">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight">
+                Display iPhone: differenze tra Originali, Soft OLED, Hard OLED, TFT e Hz
               </h1>
               
-              <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
+              <div className="flex flex-wrap items-center gap-3 md:gap-4 text-xs md:text-sm text-muted-foreground mb-4 md:mb-6">
                 <span className="flex items-center gap-1">
-                  <Calendar className="h-4 w-4" />
+                  <Calendar className="h-3 w-3 md:h-4 md:w-4" />
                   25 Gennaio 2025
                 </span>
                 <span className="flex items-center gap-1">
-                  <Clock className="h-4 w-4" />
+                  <Clock className="h-3 w-3 md:h-4 md:w-4" />
                   9 min di lettura
                 </span>
               </div>
 
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-sm md:text-base lg:text-lg text-muted-foreground leading-relaxed">
                 La scelta del display giusto per il tuo iPhone non è solo una questione estetica: influisce direttamente sulla qualità visiva, 
                 sull'autonomia della batteria e sulla durata complessiva del dispositivo. <strong>Presso il nostro centro assistenza GioLab 
                 ad Assemini (Cagliari)</strong>, lavoriamo quotidianamente con display originali, Soft OLED, Hard OLED e TFT per aiutare 
@@ -128,9 +128,9 @@ const DisplayOriginaliVsCompatibili = () => {
               </p>
             </header>
 
-            <div className="prose prose-slate max-w-none">
-              <section id="introduzione" className="mb-12">
-                <h2 className="text-3xl font-bold mb-6 scroll-mt-24">Perché la scelta del display è così importante</h2>
+            <div className="prose prose-slate max-w-none text-sm md:text-base">
+              <section id="introduzione" className="mb-8 md:mb-12">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 scroll-mt-24">Perché la scelta del display è così importante</h2>
                 
                 <p className="text-foreground/90 leading-relaxed mb-4">
                   Quando lo schermo del tuo iPhone si rompe, ti trovi davanti a diverse opzioni di riparazione. La differenza di prezzo 
@@ -476,28 +476,29 @@ const DisplayOriginaliVsCompatibili = () => {
                 </div>
               </section>
 
-              <section id="tabella-comparativa" className="mb-12">
-                <h2 className="text-3xl font-bold mb-6 scroll-mt-24">Tabella comparativa: quale display scegliere</h2>
+              <section id="tabella-comparativa" className="mb-8 md:mb-12">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 scroll-mt-24">Tabella comparativa: quale display scegliere</h2>
                 
-                <div className="overflow-x-auto">
-                  <table className="w-full border-collapse bg-card rounded-lg overflow-hidden shadow-sm">
-                    <thead>
-                      <tr className="bg-primary text-primary-foreground">
-                        <th className="p-3 text-left font-semibold">Caratteristica</th>
-                        <th className="p-3 text-center font-semibold">Originale</th>
-                        <th className="p-3 text-center font-semibold">Soft OLED</th>
-                        <th className="p-3 text-center font-semibold">Hard OLED</th>
-                        <th className="p-3 text-center font-semibold">TFT/LCD</th>
-                      </tr>
-                    </thead>
-                    <tbody className="text-sm">
-                      <tr className="border-b border-border">
-                        <td className="p-3 font-medium">Qualità visiva</td>
-                        <td className="p-3 text-center">⭐⭐⭐⭐⭐</td>
-                        <td className="p-3 text-center bg-primary/5">⭐⭐⭐⭐½</td>
-                        <td className="p-3 text-center">⭐⭐⭐½</td>
-                        <td className="p-3 text-center">⭐⭐½</td>
-                      </tr>
+                <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
+                  <div className="min-w-[600px] md:min-w-0">
+                    <table className="w-full border-collapse bg-card rounded-lg overflow-hidden shadow-sm text-xs md:text-sm">
+                      <thead>
+                        <tr className="bg-primary text-primary-foreground">
+                          <th className="p-2 md:p-3 text-left font-semibold">Caratteristica</th>
+                          <th className="p-2 md:p-3 text-center font-semibold">Originale</th>
+                          <th className="p-2 md:p-3 text-center font-semibold">Soft OLED</th>
+                          <th className="p-2 md:p-3 text-center font-semibold">Hard OLED</th>
+                          <th className="p-2 md:p-3 text-center font-semibold">TFT/LCD</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="border-b border-border">
+                          <td className="p-2 md:p-3 font-medium">Qualità visiva</td>
+                          <td className="p-2 md:p-3 text-center">⭐⭐⭐⭐⭐</td>
+                          <td className="p-2 md:p-3 text-center bg-primary/5">⭐⭐⭐⭐½</td>
+                          <td className="p-2 md:p-3 text-center">⭐⭐⭐½</td>
+                          <td className="p-2 md:p-3 text-center">⭐⭐½</td>
+                        </tr>
                       <tr className="border-b border-border">
                         <td className="p-3 font-medium">Profondità neri</td>
                         <td className="p-3 text-center">Assoluta</td>
@@ -563,6 +564,7 @@ const DisplayOriginaliVsCompatibili = () => {
                       </tr>
                     </tbody>
                   </table>
+                  </div>
                 </div>
               </section>
 
@@ -735,7 +737,7 @@ const DisplayOriginaliVsCompatibili = () => {
           </aside>
         </div>
 
-        <div className="mt-12 max-w-4xl">
+        <div className="mt-8 md:mt-12">
           <RelatedArticles currentSlug="display-originali-vs-compatibili" category="Guide" />
         </div>
       </div>
