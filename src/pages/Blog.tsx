@@ -83,31 +83,32 @@ const Blog = () => {
                 )}
               </div>
 
-              {/* Category Filters */}
+              {/* Category Filters - Link to Category Pages */}
               <div className="flex flex-wrap gap-2 mt-4 justify-center">
-                <button
-                  onClick={() => setSelectedCategory(null)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                    selectedCategory === null
-                      ? "bg-giolab-blue text-white"
-                      : "bg-background text-muted-foreground hover:bg-giolab-blue/10 hover:text-giolab-blue border-2"
-                  }`}
+                <Link
+                  to="/blog"
+                  className="px-4 py-2 rounded-full text-sm font-medium transition-all bg-giolab-blue text-white hover:bg-giolab-blue/90"
                 >
-                  Tutti
-                </button>
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                      selectedCategory === category
-                        ? "bg-giolab-blue text-white"
-                        : "bg-background text-muted-foreground hover:bg-giolab-blue/10 hover:text-giolab-blue border-2"
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
+                  Tutti gli Articoli
+                </Link>
+                <Link to="/blog/riparazione-iphone" className="px-4 py-2 rounded-full text-sm font-medium transition-all bg-background text-muted-foreground hover:bg-giolab-blue/10 hover:text-giolab-blue border-2">
+                  iPhone
+                </Link>
+                <Link to="/blog/assistenza-smartphone" className="px-4 py-2 rounded-full text-sm font-medium transition-all bg-background text-muted-foreground hover:bg-giolab-blue/10 hover:text-giolab-blue border-2">
+                  Smartphone
+                </Link>
+                <Link to="/blog/riparazione-pc" className="px-4 py-2 rounded-full text-sm font-medium transition-all bg-background text-muted-foreground hover:bg-giolab-blue/10 hover:text-giolab-blue border-2">
+                  PC
+                </Link>
+                <Link to="/blog/console" className="px-4 py-2 rounded-full text-sm font-medium transition-all bg-background text-muted-foreground hover:bg-giolab-blue/10 hover:text-giolab-blue border-2">
+                  Console
+                </Link>
+                <Link to="/blog/sicurezza-digitale" className="px-4 py-2 rounded-full text-sm font-medium transition-all bg-background text-muted-foreground hover:bg-giolab-blue/10 hover:text-giolab-blue border-2">
+                  Sicurezza
+                </Link>
+                <Link to="/blog/guide" className="px-4 py-2 rounded-full text-sm font-medium transition-all bg-background text-muted-foreground hover:bg-giolab-blue/10 hover:text-giolab-blue border-2">
+                  Guide
+                </Link>
               </div>
             </div>
           </div>
