@@ -1,20 +1,35 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Clock, ArrowRight, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { blogArticles } from "@/data/blogArticles";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Input } from "@/components/ui/input";
 
 const BlogPreview = () => {
   const { ref, isVisible } = useScrollAnimation();
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("Tutte");
   
-  const filteredArticles = blogArticles.filter((article) =>
-    article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    article.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    article.category.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  // Estrai tutte le categorie uniche dagli articoli
+  const categories = useMemo(() => {
+    const uniqueCategories = Array.from(new Set(blogArticles.map(article => article.category)));
+    return ["Tutte", ...uniqueCategories];
+  }, []);
+  
+  const filteredArticles = useMemo(() => {
+    return blogArticles.filter((article) => {
+      const matchesSearch = 
+        article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        article.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        article.category.toLowerCase().includes(searchQuery.toLowerCase());
+      
+      const matchesCategory = selectedCategory === "Tutte" || article.category === selectedCategory;
+      
+      return matchesSearch && matchesCategory;
+    });
+  }, [searchQuery, selectedCategory]);
   
   return (
     <section id="blog" ref={ref} className="py-4 md:py-6 pt-20 md:pt-24 bg-background h-screen flex flex-col justify-center">
@@ -23,12 +38,26 @@ const BlogPreview = () => {
           <h2 className="text-xl md:text-2xl font-bold text-foreground mb-1">
             Articoli e Guide
           </h2>
-          <p className="text-xs md:text-sm text-muted-foreground mb-3">
+          <p className="text-xs md:text-sm text-muted-foreground mb-2">
             {blogArticles.length} articoli disponibili
           </p>
           
+          {/* Filtri per categoria */}
+          <div className="flex flex-wrap justify-center gap-2 mb-3">
+            {categories.map((category) => (
+              <Badge
+                key={category}
+                variant={selectedCategory === category ? "default" : "outline"}
+                className="cursor-pointer transition-all hover:scale-105"
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </Badge>
+            ))}
+          </div>
+          
           {/* Barra di ricerca */}
-          <div className="max-w-md mx-auto mb-4">
+          <div className="max-w-md mx-auto mb-3">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
