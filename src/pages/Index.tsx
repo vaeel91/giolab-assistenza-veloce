@@ -97,45 +97,45 @@ const Index = () => {
       const container = containerRef.current;
       if (!container) return;
       
+      // Verifica se l'evento è sul container principale
       const target = e.target as HTMLElement;
+      if (!container.contains(target)) return;
       
-      // Trova la sezione corrente scrollabile verticalmente
-      let scrollableParent: HTMLElement | null = target;
-      while (scrollableParent && scrollableParent !== document.body) {
-        const style = window.getComputedStyle(scrollableParent);
-        const hasVerticalScroll = (style.overflowY === 'auto' || style.overflowY === 'scroll') && 
-                                 scrollableParent.scrollHeight > scrollableParent.clientHeight;
+      // Controlla se stiamo scrollando in un elemento con overflow-y
+      let element: HTMLElement | null = target;
+      while (element && element !== container) {
+        const computedStyle = window.getComputedStyle(element);
+        const overflowY = computedStyle.overflowY;
         
-        if (hasVerticalScroll) {
-          const scrollTop = scrollableParent.scrollTop;
-          const scrollHeight = scrollableParent.scrollHeight;
-          const clientHeight = scrollableParent.clientHeight;
+        if ((overflowY === 'auto' || overflowY === 'scroll')) {
+          const isScrollable = element.scrollHeight > element.clientHeight;
           
-          // Se siamo nel mezzo dello scroll verticale, permetti lo scroll verticale
-          if ((e.deltaY > 0 && scrollTop < scrollHeight - clientHeight - 1) ||
-              (e.deltaY < 0 && scrollTop > 1)) {
-            return; // Non bloccare lo scroll verticale
+          if (isScrollable) {
+            const isAtTop = element.scrollTop <= 0;
+            const isAtBottom = element.scrollTop + element.clientHeight >= element.scrollHeight;
+            
+            // Se possiamo ancora scrollare verticalmente, non convertire
+            if ((e.deltaY < 0 && !isAtTop) || (e.deltaY > 0 && !isAtBottom)) {
+              return;
+            }
           }
         }
-        scrollableParent = scrollableParent.parentElement;
+        
+        element = element.parentElement;
       }
       
-      // Solo se non c'è scroll verticale attivo, converti in scroll orizzontale
+      // Converti scroll verticale in orizzontale
       e.preventDefault();
+      e.stopPropagation();
       
-      const scrollAmount = e.deltaY;
-      container.scrollLeft += scrollAmount;
+      container.scrollLeft += e.deltaY;
     };
 
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener("wheel", handleWheel, { passive: false });
-    }
+    // Usa capture phase per catturare l'evento prima di altri listener
+    document.addEventListener("wheel", handleWheel, { passive: false, capture: true });
 
     return () => {
-      if (container) {
-        container.removeEventListener("wheel", handleWheel);
-      }
+      document.removeEventListener("wheel", handleWheel, { capture: true });
     };
   }, []);
 
