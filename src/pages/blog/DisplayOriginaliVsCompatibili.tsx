@@ -122,42 +122,43 @@ export const DisplayOriginaliVsCompatibili = () => {
       <Header />
       <FloatingWhatsApp />
 
-      <article className="container mx-auto px-4 py-8 max-w-4xl">
+      <div className="container mx-auto px-4 py-8">
         <BlogNavigation />
         
-        <div className="mb-8">
+        <div className="mb-8 max-w-4xl">
           <Link to="/blog" className="inline-flex items-center text-primary hover:underline mb-4">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Torna al Blog
           </Link>
         </div>
 
-        <header className="mb-8">
-          <h1 className="text-4xl font-bold mb-4">
-            Display Originali vs Compatibili per iPhone: Guida Completa alla Scelta
-          </h1>
-          
-          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
-            <span className="flex items-center gap-1">
-              <Calendar className="h-4 w-4" />
-              25 Gennaio 2025
-            </span>
-            <span className="flex items-center gap-1">
-              <Clock className="h-4 w-4" />
-              8 min di lettura
-            </span>
-          </div>
+        <div className="flex gap-8 max-w-7xl mx-auto">
+          {/* Contenuto principale articolo */}
+          <article className="flex-1 max-w-4xl">
+            <header className="mb-8">
+              <h1 className="text-4xl font-bold mb-4">
+                Display Originali vs Compatibili per iPhone: Guida Completa alla Scelta
+              </h1>
+              
+              <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
+                <span className="flex items-center gap-1">
+                  <Calendar className="h-4 w-4" />
+                  25 Gennaio 2025
+                </span>
+                <span className="flex items-center gap-1">
+                  <Clock className="h-4 w-4" />
+                  8 min di lettura
+                </span>
+              </div>
 
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Quando lo schermo del tuo iPhone si rompe, la scelta del display di ricambio non è una decisione da prendere alla leggera. 
-            La qualità visiva, la durata nel tempo e persino l'autonomia della batteria dipendono strettamente dal tipo di pannello montato. 
-            <strong> Ad Assemini, presso il nostro centro assistenza Giolab</strong>, analizziamo quotidianamente display originali, 
-            Soft OLED, Hard OLED, TFT e compatibili per aiutare i nostri clienti a scegliere consapevolmente. In questa guida tecnica 
-            approfondita, scoprirai le differenze reali tra le varie tecnologie, l'impatto sulla batteria e quale soluzione è più adatta alle tue esigenze.
-          </p>
-        </header>
-
-        <TableOfContents />
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Quando lo schermo del tuo iPhone si rompe, la scelta del display di ricambio non è una decisione da prendere alla leggera. 
+                La qualità visiva, la durata nel tempo e persino l'autonomia della batteria dipendono strettamente dal tipo di pannello montato. 
+                <strong> Ad Assemini, presso il nostro centro assistenza Giolab</strong>, analizziamo quotidianamente display originali, 
+                Soft OLED, Hard OLED, TFT e compatibili per aiutare i nostri clienti a scegliere consapevolmente. In questa guida tecnica 
+                approfondita, scoprirai le differenze reali tra le varie tecnologie, l'impatto sulla batteria e quale soluzione è più adatta alle tue esigenze.
+              </p>
+            </header>
 
         <div className="prose prose-slate max-w-none">
           <section className="mb-12">
@@ -642,7 +643,14 @@ export const DisplayOriginaliVsCompatibili = () => {
         />
 
         <RelatedArticles currentSlug="display-originali-vs-compatibili" category="Guide" />
-      </article>
+          </article>
+          
+          {/* Table of Contents - Desktop Only */}
+          <aside className="hidden lg:block sticky top-24 h-fit w-64 shrink-0">
+            <TableOfContents />
+          </aside>
+        </div>
+      </div>
 
       <Footer />
     </>
