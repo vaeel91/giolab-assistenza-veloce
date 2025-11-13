@@ -67,7 +67,7 @@ const ServiceTemplate = ({
     window.location.href = "tel:+393406970686";
   };
 
-  // Generate Service Schema for better SEO
+  // Generate Service and Product Schema for better SEO
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -130,7 +130,8 @@ const ServiceTemplate = ({
       "price": priceRange || "Preventivo gratuito",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
-      "url": typeof window !== 'undefined' ? window.location.href : 'https://giolabriparazioni.it'
+      "url": typeof window !== 'undefined' ? window.location.href : 'https://giolabriparazioni.it',
+      "priceValidUntil": new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -141,13 +142,45 @@ const ServiceTemplate = ({
     }
   };
 
+  // Product schema for services with specific pricing
+  const productSchema = priceRange ? {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": h1Title,
+    "description": seoDescription,
+    "brand": {
+      "@type": "Brand",
+      "name": "Giolab"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": priceRange,
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": typeof window !== 'undefined' ? window.location.href : 'https://giolabriparazioni.it',
+      "seller": {
+        "@type": "LocalBusiness",
+        "@id": "https://giolabriparazioni.it/#business"
+      },
+      "priceValidUntil": new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+      "itemCondition": "https://schema.org/NewCondition"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "150",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  } : null;
+
   return (
     <div className="min-h-screen">
       <SEOHead 
         title={seoTitle}
         description={seoDescription}
         keywords={seoKeywords}
-        structuredData={serviceSchema}
+        structuredData={productSchema ? [serviceSchema, productSchema] : serviceSchema}
         faqData={faqs}
         breadcrumbs={breadcrumbs}
       />
