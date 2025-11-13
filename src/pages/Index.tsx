@@ -14,69 +14,22 @@ import SEOHead from "@/components/SEOHead";
 import { useEffect, useRef, useState } from "react";
 
 const Index = () => {
-  const [visibleSection, setVisibleSection] = useState<string>("hero");
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const touchStartX = useRef<number>(0);
-  const touchEndX = useRef<number>(0);
-  const isDragging = useRef<boolean>(false);
-  const initialScrollLeft = useRef<number>(0);
 
-  const sections = [
-    { id: "hero", label: "Home" },
-    { id: "blog", label: "Blog" },
-    { id: "servizi", label: "Servizi" },
-    { id: "chi-siamo", label: "Chi Siamo" },
-    { id: "testimonianze", label: "Testimonianze" },
-    { id: "dove-siamo", label: "Dove Siamo" },
-    { id: "faq", label: "FAQ" },
-    { id: "contatti", label: "Contatti" },
-  ];
-
-  const navigateToSection = (sectionId: string) => {
-    const section = sectionsRef.current.find((s) => s?.id === sectionId);
-    section?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-  };
 
   useEffect(() => {
-    // Smooth horizontal scroll for anchor links
-    const handleSmoothScroll = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.tagName === "A" && target.getAttribute("href")?.startsWith("#")) {
-        e.preventDefault();
-        const id = target.getAttribute("href")?.slice(1);
-        const element = id ? document.getElementById(id) : null;
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
-        }
-      }
-    };
-
-    document.addEventListener("click", handleSmoothScroll);
-    return () => document.removeEventListener("click", handleSmoothScroll);
-  }, []);
-
-  useEffect(() => {
-    // Intersection Observer for animation triggers
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("section-visible");
-            const sectionId = entry.target.id;
-            setVisibleSection(sectionId);
-            
-            // Aggiorna l'hash dell'URL per sincronizzare con il menu sticky
-            if (window.location.hash !== `#${sectionId}`) {
-              window.history.replaceState(null, '', `#${sectionId}`);
-            }
           } else {
             entry.target.classList.remove("section-visible");
           }
         });
       },
       {
-        threshold: 0.5,
+        threshold: 0.3,
         root: null,
       }
     );
@@ -92,136 +45,6 @@ const Index = () => {
     };
   }, []);
 
-  useEffect(() => {
-    // Navigazione con tastiera
-    const handleKeyDown = (e: KeyboardEvent) => {
-      const currentIndex = sections.findIndex(s => s.id === visibleSection);
-      
-      if (e.key === 'ArrowRight' && currentIndex < sections.length - 1) {
-        e.preventDefault();
-        navigateToSection(sections[currentIndex + 1].id);
-      } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
-        e.preventDefault();
-        navigateToSection(sections[currentIndex - 1].id);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [visibleSection]);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const handleWheel = (e: WheelEvent) => {
-      e.preventDefault();
-      container.scrollLeft += e.deltaY;
-    };
-
-    container.addEventListener("wheel", handleWheel, { passive: false });
-
-    return () => {
-      container.removeEventListener("wheel", handleWheel);
-    };
-  }, []);
-
-  useEffect(() => {
-    // Improved touch gesture handlers with dead zones on screen edges
-    const DEAD_ZONE_WIDTH = 50; // pixels from edge to ignore touches
-    
-    const handleTouchStart = (e: TouchEvent) => {
-      const touchX = e.touches[0].clientX;
-      const touchY = e.touches[0].clientY;
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight;
-      
-      // Ignore touches in dead zones (near edges)
-      if (
-        touchX < DEAD_ZONE_WIDTH || // Left edge
-        touchX > screenWidth - DEAD_ZONE_WIDTH || // Right edge
-        touchY < DEAD_ZONE_WIDTH || // Top edge
-        touchY > screenHeight - DEAD_ZONE_WIDTH // Bottom edge
-      ) {
-        isDragging.current = false;
-        return;
-      }
-      
-      touchStartX.current = touchX;
-      touchEndX.current = touchX; // Initialize end position
-      isDragging.current = false; // Don't set dragging until movement detected
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (touchStartX.current === 0) return; // Touch started in dead zone
-      
-      touchEndX.current = e.touches[0].clientX;
-      const diff = Math.abs(touchStartX.current - touchEndX.current);
-      
-      // Only set dragging if there's significant movement (more than 10px)
-      if (diff > 10) {
-        isDragging.current = true;
-      }
-    };
-
-    const handleTouchEnd = () => {
-      if (touchStartX.current === 0) {
-        // Touch was in dead zone, do nothing
-        isDragging.current = false;
-        return;
-      }
-      
-      const swipeThreshold = 75; // Increased threshold for more deliberate swipes
-      const diff = touchStartX.current - touchEndX.current;
-
-      // Only navigate if it was a deliberate swipe (dragging detected and movement > threshold)
-      if (isDragging.current && Math.abs(diff) > swipeThreshold) {
-        const currentIndex = sectionsRef.current.findIndex(
-          (section) => section?.id === visibleSection
-        );
-
-        if (diff > 0 && currentIndex < sectionsRef.current.length - 1) {
-          // Swipe left - next section
-          setTimeout(() => {
-            sectionsRef.current[currentIndex + 1]?.scrollIntoView({
-              behavior: "smooth",
-              inline: "center",
-              block: "nearest",
-            });
-          }, 50);
-        } else if (diff < 0 && currentIndex > 0) {
-          // Swipe right - previous section
-          setTimeout(() => {
-            sectionsRef.current[currentIndex - 1]?.scrollIntoView({
-              behavior: "smooth",
-              inline: "center",
-              block: "nearest",
-            });
-          }, 50);
-        }
-      }
-
-      // Reset state
-      isDragging.current = false;
-      touchStartX.current = 0;
-      touchEndX.current = 0;
-    };
-
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener("touchstart", handleTouchStart, { passive: true });
-      container.addEventListener("touchmove", handleTouchMove, { passive: true });
-      container.addEventListener("touchend", handleTouchEnd);
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener("touchstart", handleTouchStart);
-        container.removeEventListener("touchmove", handleTouchMove);
-        container.removeEventListener("touchend", handleTouchEnd);
-      }
-    };
-  }, [visibleSection]);
 
   return (
     <>
@@ -321,224 +144,94 @@ const Index = () => {
       />
       <Header />
       
-      {/* Navigation Arrows */}
-      <button
-        onClick={() => {
-          const currentIndex = sections.findIndex(s => s.id === visibleSection);
-          if (currentIndex > 0) navigateToSection(sections[currentIndex - 1].id);
-        }}
-        className={`fixed left-4 top-1/2 -translate-y-1/2 z-30 bg-background/90 backdrop-blur-sm border-2 border-primary p-3 rounded-full shadow-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 ${
-          sections.findIndex(s => s.id === visibleSection) === 0 ? 'opacity-0 pointer-events-none' : 'opacity-100'
-        }`}
-        aria-label="Sezione precedente"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-
-      <button
-        onClick={() => {
-          const currentIndex = sections.findIndex(s => s.id === visibleSection);
-          if (currentIndex < sections.length - 1) navigateToSection(sections[currentIndex + 1].id);
-        }}
-        className={`fixed right-4 top-1/2 -translate-y-1/2 z-30 bg-background/90 backdrop-blur-sm border-2 border-primary p-3 rounded-full shadow-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 ${
-          sections.findIndex(s => s.id === visibleSection) === sections.length - 1 ? 'opacity-0 pointer-events-none' : 'opacity-100'
-        }`}
-        aria-label="Sezione successiva"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-
-      {/* Hint iniziale per scroll */}
-      {visibleSection === 'hero' && (
-        <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-20 animate-bounce">
-          <div className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium shadow-lg flex items-center gap-2">
-            <span>Scorri orizzontalmente</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </div>
-        </div>
-      )}
-      
-      <div
-        ref={containerRef} 
-        className="h-screen overflow-x-scroll overflow-y-hidden snap-x snap-mandatory flex touch-pan-x"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-      >
-        <div 
+      <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+        <section 
           id="hero" 
-          ref={(el) => (sectionsRef.current[0] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-hidden section-animate"
+          ref={(el) => (sectionsRef.current[0] = el as HTMLDivElement)}
+          className="min-h-screen snap-start snap-always section-animate"
         >
-          <div className="section-content h-full w-full overflow-y-auto">
-            <Hero />
-          </div>
-        </div>
-        <div 
+          <Hero />
+        </section>
+        <section 
           id="blog" 
-          ref={(el) => (sectionsRef.current[1] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-hidden section-animate"
+          ref={(el) => (sectionsRef.current[1] = el as HTMLDivElement)}
+          className="min-h-screen snap-start snap-always section-animate"
         >
-          <div className="section-content h-full w-full overflow-y-auto">
-            <BlogPreview />
-          </div>
-        </div>
-        <div 
+          <BlogPreview />
+        </section>
+        <section 
           id="servizi" 
-          ref={(el) => (sectionsRef.current[2] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-hidden section-animate"
+          ref={(el) => (sectionsRef.current[2] = el as HTMLDivElement)}
+          className="min-h-screen snap-start snap-always section-animate"
         >
-          <div className="section-content h-full w-full overflow-y-auto">
-            <Services />
-          </div>
-        </div>
-        <div 
+          <Services />
+        </section>
+        <section 
           id="chi-siamo" 
-          ref={(el) => (sectionsRef.current[3] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-hidden section-animate"
+          ref={(el) => (sectionsRef.current[3] = el as HTMLDivElement)}
+          className="min-h-screen snap-start snap-always section-animate"
         >
-          <div className="section-content h-full w-full overflow-y-auto">
-            <About />
-          </div>
-        </div>
-        <div 
+          <About />
+        </section>
+        <section 
           id="testimonianze" 
-          ref={(el) => (sectionsRef.current[4] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-hidden section-animate"
+          ref={(el) => (sectionsRef.current[4] = el as HTMLDivElement)}
+          className="min-h-screen snap-start snap-always section-animate"
         >
-          <div className="section-content h-full w-full overflow-y-auto">
-            <TestimonialsShowcase variant="scroll" />
-          </div>
-        </div>
-        <div 
+          <TestimonialsShowcase variant="scroll" />
+        </section>
+        <section 
           id="dove-siamo" 
-          ref={(el) => (sectionsRef.current[5] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-hidden section-animate"
+          ref={(el) => (sectionsRef.current[5] = el as HTMLDivElement)}
+          className="min-h-screen snap-start snap-always section-animate"
         >
-          <div className="section-content h-full w-full overflow-y-auto">
-            <SocialAndLocation />
-          </div>
-        </div>
-        <div 
+          <SocialAndLocation />
+        </section>
+        <section 
           id="faq" 
-          ref={(el) => (sectionsRef.current[6] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-hidden section-animate"
+          ref={(el) => (sectionsRef.current[6] = el as HTMLDivElement)}
+          className="min-h-screen snap-start snap-always section-animate"
         >
-          <div className="section-content h-full w-full overflow-y-auto">
-            <FAQ />
-          </div>
-        </div>
-        <div 
+          <FAQ />
+        </section>
+        <section 
           id="contatti" 
-          ref={(el) => (sectionsRef.current[7] = el)}
-          className="w-screen h-screen flex-shrink-0 snap-start snap-always overflow-hidden section-animate"
+          ref={(el) => (sectionsRef.current[7] = el as HTMLDivElement)}
+          className="min-h-screen snap-start snap-always section-animate"
         >
-          <div className="section-content h-full w-full overflow-y-auto">
-            <Contact />
-            <Footer />
-          </div>
-        </div>
+          <Contact />
+          <Footer />
+        </section>
       </div>
       <FloatingWhatsApp />
       <BlogNavigation />
       
-      {/* Navigation Indicators */}
-      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-background/80 backdrop-blur-md rounded-full shadow-lg border border-border">
-        {sections.map((section, index) => (
-          <button
-            key={section.id}
-            onClick={() => navigateToSection(section.id)}
-            className="group relative flex items-center justify-center"
-            aria-label={`Vai a ${section.label}`}
-          >
-            <div
-              className={`transition-all duration-300 rounded-full ${
-                visibleSection === section.id
-                  ? "w-2.5 h-2.5 md:w-3 md:h-3 bg-giolab-blue shadow-lg shadow-giolab-blue/50"
-                  : "w-1.5 h-1.5 md:w-2 md:h-2 bg-muted-foreground/40 hover:bg-giolab-blue/60 hover:w-2 hover:h-2 md:hover:w-2.5 md:hover:h-2.5"
-              }`}
-            />
-            {/* Tooltip - only on desktop */}
-            <span className="hidden md:block absolute bottom-full mb-2 px-2 py-1 text-xs font-medium text-foreground bg-background border border-border rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-              {section.label}
-            </span>
-          </button>
-        ))}
-      </div>
-      
-      {/* Keyboard navigation hint */}
-      <div className="hidden md:block fixed top-24 right-4 z-20 bg-background/90 backdrop-blur-sm border border-border p-3 rounded-lg shadow-sm text-xs text-muted-foreground">
-        <div className="flex items-center gap-2 mb-1">
-          <kbd className="px-2 py-1 bg-muted rounded text-foreground font-mono">←</kbd>
-          <kbd className="px-2 py-1 bg-muted rounded text-foreground font-mono">→</kbd>
-          <span>per navigare</span>
-        </div>
-        <div className="text-center opacity-75">oppure usa le frecce laterali</div>
-      </div>
-      
       <style>{`
-        /* Sezioni: completamente statiche - zero transform per garantire scroll-snap perfetto */
-        .section-animate,
+        .section-animate {
+          opacity: 0.6;
+          transform: translateY(30px);
+          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
         .section-visible {
-          transform: none !important;
-        }
-        
-        /* Content wrapper per animazioni interne - applica effetti solo agli elementi dentro */
-        .section-content {
-          height: 100%;
-          width: 100%;
-          transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
-          will-change: transform, opacity, filter;
-        }
-        
-        /* Stato non visibile - elementi interni sfocati, trasparenti e rimpiccioliti */
-        .section-animate .section-content {
-          opacity: 0.3;
-          filter: blur(4px);
-          transform: scale(0.92);
-        }
-        
-        /* Stato visibile - elementi interni nitidi, opachi e a scala normale con effetto elastico */
-        .section-visible .section-content {
           opacity: 1 !important;
-          filter: blur(0) !important;
-          transform: scale(1) !important;
+          transform: translateY(0) !important;
         }
         
-        .scroll-smooth {
-          scroll-behavior: smooth;
-        }
-        
-        /* Force perfect centering with scroll-snap */
-        .snap-x {
+        .snap-y {
+          scroll-snap-type: y mandatory;
           -webkit-overflow-scrolling: touch;
-          scroll-snap-type: x mandatory;
-          scroll-padding: 0;
         }
         
-        .snap-always {
+        .snap-start {
+          scroll-snap-align: start;
           scroll-snap-stop: always;
-          scroll-snap-align: center;
-          scroll-margin: 0;
         }
         
-        /* Ensure sections are exactly viewport width */
-        .w-screen {
-          width: 100vw !important;
-          min-width: 100vw !important;
-          max-width: 100vw !important;
-        }
-        
-        /* Parallax effect - disable on reduced motion preference */
         @media (prefers-reduced-motion: reduce) {
-          .section-content {
+          .section-animate {
             transition: none !important;
             transform: none !important;
-            filter: none !important;
             opacity: 1 !important;
           }
         }
