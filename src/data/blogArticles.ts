@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "display-originali-vs-compatibili",
+    title: "Display Originali vs Compatibili per iPhone: Guida Completa",
+    description: "Scopri le differenze tra display originali, Soft OLED, Hard OLED, TFT e compatibili per iPhone. Guida completa per scegliere il ricambio giusto ad Assemini.",
+    date: "2025-01-28",
+    readTime: "8 min",
+    category: "Guide",
+    image: "📱"
+  },
+  {
     slug: "batteria-maggiorata-iphone-giolab",
     title: "Batteria Maggiorata iPhone: +40% Autonomia Senza Avvisi",
     description: "Batteria iPhone scarica? Scopri le batterie maggiorate premium: fino al 40% di autonomia in più, nessun avviso 'non originale', garanzia 12 mesi.",
