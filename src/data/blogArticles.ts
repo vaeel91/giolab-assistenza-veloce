@@ -42,7 +42,7 @@ export const blogArticles: BlogArticle[] = [
     description: "La webcam del tuo HP Victus non funziona? Scopri come abbiamo risolto il problema con sostituzione modulo originale HP presso Giolab Assemini.",
     date: "2025-01-13",
     readTime: "9 min",
-    category: "Assistenza",
+    category: "Tecnologia",
     image: "📷"
   },
   {
