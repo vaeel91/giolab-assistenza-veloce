@@ -32,6 +32,7 @@ import BlogNavigation from "@/components/BlogNavigation";
 import SocialShare from "@/components/SocialShare";
 import RelatedArticles from "@/components/RelatedArticles";
 import ReadingProgress from "@/components/ReadingProgress";
+import { TableOfContents } from "@/components/TableOfContents";
 import { 
   Breadcrumb, 
   BreadcrumbList, 
@@ -107,7 +108,10 @@ export const BlogArticleTemplate = ({
         <Header />
         <BlogNavigation />
         
-        <article className="container mx-auto px-4 pt-24 pb-8 max-w-4xl">
+        <div className="container mx-auto px-4 pt-24 pb-8">
+          <div className="flex gap-8 max-w-7xl mx-auto">
+            {/* Contenuto principale articolo */}
+            <article className="flex-1 max-w-4xl">
           {/* Breadcrumb Navigation */}
           <Breadcrumb className="mb-6">
             <BreadcrumbList>
@@ -144,8 +148,15 @@ export const BlogArticleTemplate = ({
             </div>
           </div>
           
-          {content}
-        </article>
+              {content}
+            </article>
+
+            {/* Table of Contents - visibile solo su desktop XL */}
+            <aside className="w-64 flex-shrink-0">
+              <TableOfContents />
+            </aside>
+          </div>
+        </div>
 
         <SocialShare title={cleanTitle} url={fullUrl} />
 
