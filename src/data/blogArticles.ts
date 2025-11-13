@@ -181,15 +181,6 @@ export const blogArticles: BlogArticle[] = [
     image: "📱"
   },
   {
-    slug: "display-originali-vs-compatibili",
-    title: "Differenze tra display originali e compatibili: cosa cambia davvero",
-    description: "Scopri le differenze tra display originali e compatibili per iPhone. Qualità, prezzo, durata e quale scegliere per la tua riparazione.",
-    date: "2025-01-25",
-    readTime: "8 min",
-    category: "Tecnologia",
-    image: "🖥️"
-  },
-  {
     slug: "trasferimento-dati-android-iphone",
     title: "Trasferimento dati da Android a iPhone e viceversa: guida semplice e completa",
     description: "Guida completa per trasferire contatti, foto, WhatsApp e dati da Android a iPhone e viceversa. Metodi semplici e sicuri.",
