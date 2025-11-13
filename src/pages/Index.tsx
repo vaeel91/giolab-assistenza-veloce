@@ -11,8 +11,7 @@ import Header from "@/components/Header";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
-import ReviewStats from "@/components/ReviewStats";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { calculateAggregateRating, getReviewsForSchema } from "@/data/reviews";
 
 const Index = () => {
@@ -113,7 +112,6 @@ const Index = () => {
           ref={(el) => (sectionsRef.current[4] = el as HTMLDivElement)}
           className="min-h-screen snap-start snap-always section-animate"
         >
-          <ReviewStats />
           <TestimonialsShowcase variant="scroll" />
         </section>
         <section 
