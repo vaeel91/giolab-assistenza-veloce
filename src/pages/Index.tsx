@@ -12,10 +12,14 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import { useEffect, useRef, useState } from "react";
+import { calculateAggregateRating, getReviewsForSchema } from "@/data/reviews";
 
 const Index = () => {
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
-
+  
+  // 📊 Calcola aggregate rating unificato da tutte le recensioni
+  const aggregateRating = calculateAggregateRating();
+  const reviews = getReviewsForSchema(10);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -64,83 +68,12 @@ const Index = () => {
           "url": "https://giolabriparazioni.it",
           "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "150",
-            "bestRating": "5",
-            "worstRating": "1"
+            "ratingValue": aggregateRating.ratingValue,
+            "reviewCount": aggregateRating.reviewCount,
+            "bestRating": aggregateRating.bestRating,
+            "worstRating": aggregateRating.worstRating
           },
-          "review": [
-            {
-              "@type": "Review",
-              "author": {
-                "@type": "Person",
-                "name": "Marco Piras"
-              },
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "reviewBody": "Servizio eccellente! iPhone riparato in meno di un'ora, display perfetto come nuovo. Tecnici competenti e prezzi onesti. Super consigliato!",
-              "datePublished": "2025-01-15"
-            },
-            {
-              "@type": "Review",
-              "author": {
-                "@type": "Person",
-                "name": "Giulia Melis"
-              },
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "reviewBody": "Batteria maggiorata installata sul mio iPhone 13, autonomia triplicata! Finalmente arrivo a sera. Giolab è davvero il top ad Assemini.",
-              "datePublished": "2025-01-10"
-            },
-            {
-              "@type": "Review",
-              "author": {
-                "@type": "Person",
-                "name": "Andrea Murgia"
-              },
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "reviewBody": "Professionali e veloci. Mi hanno recuperato tutte le foto da un iPhone che non si accendeva più. Prezzo corretto e garanzia di 12 mesi.",
-              "datePublished": "2025-01-05"
-            },
-            {
-              "@type": "Review",
-              "author": {
-                "@type": "Person",
-                "name": "Sara Carta"
-              },
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "reviewBody": "Consigliato da un'amica, non me ne pento. Schermo sostituito in 40 minuti mentre aspettavo. Qualità ottima e prezzo giusto.",
-              "datePublished": "2024-12-28"
-            },
-            {
-              "@type": "Review",
-              "author": {
-                "@type": "Person",
-                "name": "Luca Sanna"
-              },
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5"
-              },
-              "reviewBody": "Centro assistenza serio e competente. Mi hanno riparato la PS5 in pochi giorni. Finalmente posso giocare di nuovo! Grazie Giolab.",
-              "datePublished": "2024-12-20"
-            }
-          ]
+          "review": reviews
         }}
       />
       <Header />
