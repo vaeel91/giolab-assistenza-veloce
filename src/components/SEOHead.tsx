@@ -214,7 +214,46 @@ const SEOHead = ({
     }
   }, [title, description, keywords, ogImage, ogType, ogUrl, structuredData, breadcrumbSchema, articleSchema, faqSchema]);
   
-  return null;
+  return (
+    <Helmet>
+      {/* Title */}
+      <title>{title}</title>
+      
+      {/* Primary Meta Tags */}
+      <meta name="title" content={title} />
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+      
+      {/* Canonical URL */}
+      <link rel="canonical" href={ogUrl} />
+      
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content={ogType} />
+      <meta property="og:url" content={ogUrl} />
+      <meta property="og:site_name" content="Giolab Assemini" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:image:secure_url" content={ogImage} />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={title} />
+      <meta property="og:locale" content="it_IT" />
+      
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@giolab_iphonefix" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image:alt" content={title} />
+      
+      {/* Additional Meta Tags */}
+      <meta name="robots" content="index, follow, max-image-preview:large" />
+      <meta name="author" content="Giolab - Stefano Giordano" />
+    </Helmet>
+  );
 };
 
 export default SEOHead;
