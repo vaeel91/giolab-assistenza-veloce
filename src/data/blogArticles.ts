@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "riparazione-webcam-hp-victus",
+    title: "Riparazione Webcam HP Victus 16: Webcam Non Rilevata",
+    description: "La webcam del tuo HP Victus non funziona? Scopri come abbiamo risolto il problema con sostituzione modulo originale HP presso Giolab Assemini.",
+    date: "2025-01-13",
+    readTime: "9 min",
+    category: "Assistenza",
+    image: "📷"
+  },
+  {
     slug: "aumentare-memoria-iphone",
     title: "Aumentare la Memoria dell'iPhone: Guida Completa e Soluzione Professionale",
     description: "Aumenta la memoria interna del tuo iPhone in modo sicuro e garantito da Giolab ad Assemini. Upgrade da 64GB a 256GB, 512GB o 1TB con telefono di cortesia.",
