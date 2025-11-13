@@ -41,8 +41,16 @@ import {
   BreadcrumbSeparator, 
   BreadcrumbPage 
 } from "@/components/ui/breadcrumb";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Link } from "react-router-dom";
-import { Calendar, Clock } from "lucide-react";
+import { Calendar, Clock, List } from "lucide-react";
+import { useState } from "react";
 import type { BlogArticleData } from "@/types/blogArticle";
 
 interface BlogArticleTemplateProps extends BlogArticleData {
@@ -61,6 +69,8 @@ export const BlogArticleTemplate = ({
   content,
   readingTime = 5,
 }: BlogArticleTemplateProps) => {
+  const [isTOCOpen, setIsTOCOpen] = useState(false);
+  
   // Costruisci URL completo
   const fullUrl = `https://giolabriparazioni.it/blog/${slug}`;
   
@@ -151,12 +161,30 @@ export const BlogArticleTemplate = ({
               {content}
             </article>
 
-            {/* Table of Contents - visibile solo su desktop XL */}
-            <aside className="w-64 flex-shrink-0">
+            {/* Table of Contents Desktop - visibile solo su schermi XL */}
+            <aside className="hidden xl:block w-64 flex-shrink-0">
               <TableOfContents />
             </aside>
           </div>
         </div>
+
+        {/* Pulsante floating mobile per TOC */}
+        <Sheet open={isTOCOpen} onOpenChange={setIsTOCOpen}>
+          <SheetTrigger asChild>
+            <button 
+              className="xl:hidden fixed bottom-20 right-4 z-40 bg-primary text-primary-foreground p-3 rounded-full shadow-lg hover:bg-primary/90 transition-colors"
+              aria-label="Apri indice articolo"
+            >
+              <List className="w-5 h-5" />
+            </button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-80 overflow-y-auto">
+            <SheetHeader>
+              <SheetTitle>Indice dell'articolo</SheetTitle>
+            </SheetHeader>
+            <TableOfContents isMobile onItemClick={() => setIsTOCOpen(false)} />
+          </SheetContent>
+        </Sheet>
 
         <SocialShare title={cleanTitle} url={fullUrl} />
 

@@ -6,7 +6,12 @@ interface TOCItem {
   text: string;
 }
 
-export const TableOfContents = () => {
+interface TableOfContentsProps {
+  isMobile?: boolean;
+  onItemClick?: () => void;
+}
+
+export const TableOfContents = ({ isMobile = false, onItemClick }: TableOfContentsProps) => {
   const [headings, setHeadings] = useState<TOCItem[]>([]);
   const [activeId, setActiveId] = useState<string>("");
 
@@ -59,7 +64,7 @@ export const TableOfContents = () => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      const offset = 100; // Offset per header sticky
+      const offset = isMobile ? 80 : 100; // Offset diverso per mobile
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -67,35 +72,52 @@ export const TableOfContents = () => {
         top: offsetPosition,
         behavior: "smooth",
       });
+      
+      // Chiudi il drawer dopo il click su mobile
+      if (onItemClick) {
+        setTimeout(onItemClick, 300);
+      }
     }
   };
 
-  return (
-    <nav className="hidden xl:block sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
-      <div className="bg-muted/30 backdrop-blur-sm rounded-lg border border-border p-4">
-        <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
-          <span>📑</span>
-          Indice dell'articolo
-        </h3>
-        <ul className="space-y-2">
-          {headings.map((heading) => (
-            <li key={heading.id}>
-              <a
-                href={`#${heading.id}`}
-                onClick={(e) => handleClick(e, heading.id)}
-                className={cn(
-                  "block text-sm py-1 px-2 rounded transition-all duration-200 hover:bg-primary/10 hover:text-primary border-l-2",
-                  activeId === heading.id
-                    ? "border-primary bg-primary/10 text-primary font-medium"
-                    : "border-transparent text-muted-foreground hover:border-primary/50"
-                )}
-              >
-                {heading.text}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
+  const content = (
+    <>
+      <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+        <span>📑</span>
+        Indice dell'articolo
+      </h3>
+      <ul className="space-y-2">
+        {headings.map((heading) => (
+          <li key={heading.id}>
+            <a
+              href={`#${heading.id}`}
+              onClick={(e) => handleClick(e, heading.id)}
+              className={cn(
+                "block text-sm py-1 px-2 rounded transition-all duration-200 hover:bg-primary/10 hover:text-primary border-l-2",
+                activeId === heading.id
+                  ? "border-primary bg-primary/10 text-primary font-medium"
+                  : "border-transparent text-muted-foreground hover:border-primary/50"
+              )}
+            >
+              {heading.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </>
   );
+
+  // Versione desktop: sticky sidebar
+  if (!isMobile) {
+    return (
+      <nav className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
+        <div className="bg-muted/30 backdrop-blur-sm rounded-lg border border-border p-4">
+          {content}
+        </div>
+      </nav>
+    );
+  }
+
+  // Versione mobile: solo il contenuto (sarà wrappato in un Sheet)
+  return <div className="p-4">{content}</div>;
 };
