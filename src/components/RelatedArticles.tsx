@@ -49,8 +49,12 @@ const RelatedArticles = ({ currentSlug, category, maxArticles = 3 }: RelatedArti
           >
             <Card className="h-full border-2 hover:border-giolab-blue transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in">
               <CardHeader>
-                <div className="w-full h-32 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue-light/10 flex items-center justify-center mb-4 group-hover:from-giolab-blue/20 group-hover:to-giolab-blue-light/20 transition-all">
-                  <span className="text-5xl">{article.image}</span>
+                <div className="w-full h-48 rounded-lg overflow-hidden mb-4">
+                  <img 
+                    src={article.image} 
+                    alt={article.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
                 <div className="flex items-center gap-3 text-xs text-muted-foreground mb-2">
                   <span className="px-2 py-1 bg-giolab-blue/10 text-giolab-blue rounded-full font-medium">
