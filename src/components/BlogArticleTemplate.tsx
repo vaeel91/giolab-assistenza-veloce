@@ -71,6 +71,8 @@ import SocialShare from "@/components/SocialShare";
 import RelatedArticles from "@/components/RelatedArticles";
 import ReadingProgress from "@/components/ReadingProgress";
 import { TableOfContents } from "@/components/TableOfContents";
+import { BackToBlog } from "@/components/blog/BackToBlog";
+import "@/styles/blog.css";
 import { 
   Breadcrumb, 
   BreadcrumbList, 

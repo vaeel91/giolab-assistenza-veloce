@@ -1,0 +1,208 @@
+/**
+ * Blog Styles - Sistema di Classi Uniformi
+ * 
+ * ⚠️ IMPORTANTE: Tutte le classi qui definite devono essere utilizzate
+ * in modo coerente in TUTTI gli articoli del blog per garantire uniformità.
+ * 
+ * Uso: Importa questo file in BlogArticleTemplate.tsx
+ */
+
+/* ========================================
+   CONTENITORE PRINCIPALE ARTICOLO
+   ======================================== */
+.blog-content {
+  @apply space-y-6 sm:space-y-8;
+}
+
+.blog-content section {
+  @apply space-y-4;
+}
+
+/* ========================================
+   TIPOGRAFIA - TITOLI
+   ======================================== */
+.blog-h2 {
+  @apply text-2xl sm:text-3xl font-bold text-foreground mt-12 mb-6 pb-3 border-b-2 border-primary/30;
+  scroll-margin-top: 100px; /* Offset per sticky header */
+}
+
+.blog-h3 {
+  @apply text-xl sm:text-2xl font-semibold text-foreground mt-8 mb-4;
+  scroll-margin-top: 100px;
+}
+
+.blog-h4 {
+  @apply text-lg sm:text-xl font-semibold text-foreground mt-6 mb-3;
+}
+
+/* ========================================
+   TIPOGRAFIA - PARAGRAFI E TESTO
+   ======================================== */
+.blog-paragraph {
+  @apply text-base sm:text-lg text-muted-foreground leading-relaxed mb-4;
+}
+
+.blog-paragraph strong {
+  @apply text-foreground font-semibold;
+}
+
+.blog-paragraph em {
+  @apply text-foreground/90 italic;
+}
+
+/* ========================================
+   LISTE
+   ======================================== */
+.blog-list-numbered {
+  @apply list-none counter-reset-item space-y-4 my-6 ml-0;
+}
+
+.blog-list-numbered li {
+  @apply counter-increment-item relative pl-12 text-base sm:text-lg text-muted-foreground leading-relaxed;
+}
+
+.blog-list-numbered li::before {
+  @apply absolute left-0 top-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm;
+  content: counter(item);
+}
+
+.blog-list-bulleted {
+  @apply list-none space-y-3 my-6 ml-0;
+}
+
+.blog-list-bulleted li {
+  @apply relative pl-8 text-base sm:text-lg text-muted-foreground leading-relaxed;
+}
+
+.blog-list-bulleted li::before {
+  @apply absolute left-0 top-2 w-4 h-4 rounded-full bg-primary;
+  content: "";
+}
+
+/* ========================================
+   IMMAGINI
+   ======================================== */
+.blog-image-container {
+  @apply my-8 rounded-xl overflow-hidden shadow-lg border border-border;
+}
+
+.blog-image-container img {
+  @apply w-full h-auto object-cover;
+  max-width: 100%;
+}
+
+.blog-image-caption {
+  @apply text-sm text-muted-foreground text-center mt-3 italic;
+}
+
+/* ========================================
+   BOX EVIDENZIATI
+   ======================================== */
+.blog-highlight-box {
+  @apply p-6 rounded-xl border-2 border-primary/30 bg-primary/5 my-6 shadow-sm;
+}
+
+.blog-highlight-box.warning {
+  @apply border-amber-500/30 bg-amber-500/5;
+}
+
+.blog-highlight-box.success {
+  @apply border-green-500/30 bg-green-500/5;
+}
+
+.blog-highlight-box.info {
+  @apply border-blue-500/30 bg-blue-500/5;
+}
+
+.blog-highlight-box p {
+  @apply text-foreground text-base sm:text-lg leading-relaxed mb-0;
+}
+
+.blog-highlight-box strong {
+  @apply text-foreground font-bold;
+}
+
+/* ========================================
+   CITAZIONI / BLOCKQUOTE
+   ======================================== */
+.blog-quote {
+  @apply border-l-4 border-primary pl-6 py-4 my-6 italic text-lg text-muted-foreground bg-muted/30 rounded-r-lg;
+}
+
+.blog-quote cite {
+  @apply block mt-3 text-sm not-italic text-muted-foreground font-semibold;
+}
+
+/* ========================================
+   CTA INLINE (mini call-to-action nel testo)
+   ======================================== */
+.blog-cta-inline {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer border border-primary/30;
+}
+
+/* ========================================
+   TABELLE
+   ======================================== */
+.blog-table {
+  @apply w-full border-collapse my-8 overflow-x-auto block sm:table;
+}
+
+.blog-table thead {
+  @apply bg-muted;
+}
+
+.blog-table th {
+  @apply px-4 py-3 text-left font-semibold text-foreground border border-border;
+}
+
+.blog-table td {
+  @apply px-4 py-3 text-muted-foreground border border-border;
+}
+
+.blog-table tr:hover {
+  @apply bg-muted/50 transition-colors;
+}
+
+/* ========================================
+   CODE BLOCKS (opzionale per articoli tecnici)
+   ======================================== */
+.blog-code-inline {
+  @apply px-2 py-1 rounded bg-muted text-foreground font-mono text-sm;
+}
+
+.blog-code-block {
+  @apply p-4 rounded-lg bg-muted text-foreground font-mono text-sm overflow-x-auto my-6 border border-border;
+}
+
+/* ========================================
+   RESPONSIVE UTILITIES
+   ======================================== */
+@media (max-width: 640px) {
+  .blog-h2 {
+    @apply text-xl;
+  }
+  
+  .blog-h3 {
+    @apply text-lg;
+  }
+  
+  .blog-paragraph {
+    @apply text-base;
+  }
+  
+  .blog-list-numbered li,
+  .blog-list-bulleted li {
+    @apply text-base;
+  }
+}
+
+/* ========================================
+   COUNTER RESET PER LISTE NUMERATE
+   ======================================== */
+.counter-reset-item {
+  counter-reset: item;
+}
+
+.counter-increment-item {
+  counter-increment: item;
+}
