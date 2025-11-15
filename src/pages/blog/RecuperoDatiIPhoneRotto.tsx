@@ -209,7 +209,8 @@ export default function RecuperoDatiIPhoneRotto() {
             2. NON provare a caricarlo<br />
             3. Asciuga esternamente con un panno<br />
             4. Portalo subito da GioLab per pulizia professionale<br />
-            5. NON usare phon o fonti di calore dirette
+            5. NON usare phon o fonti di calore dirette<br />
+            6. Mantieni il telefono in verticale con la porta di ricarica verso il basso per evitare che l'acqua raggiunga i componenti critici della scheda madre
           </p>
         </div>
       </section>
