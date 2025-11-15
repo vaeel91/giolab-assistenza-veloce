@@ -59,7 +59,7 @@ const Blog = () => {
               Blog Giolab
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Guide, consigli e approfondimenti su riparazione iPhone, batterie maggiorate, manutenzione e assistenza smartphone ad Assemini e Cagliari.
+              Il blog è attualmente in fase di manutenzione. Torna presto per leggere i nostri articoli su riparazione iPhone, batterie maggiorate e assistenza smartphone ad Assemini e Cagliari.
             </p>
 
             {/* Search Bar */}

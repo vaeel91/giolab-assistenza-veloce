@@ -3,6 +3,16 @@
  * Utilizzati dal sistema di template automatico per articoli blog
  */
 
+export interface BlogArticle {
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
+  readTime: string;
+  category: string;
+  image: string;
+}
+
 export interface BlogArticleData {
   // SEO Meta Tags
   title: string; // Title tag completo (es: "Titolo | Giolab Assemini")

@@ -31,6 +31,11 @@ const BlogPreview = () => {
     });
   }, [searchQuery, selectedCategory]);
   
+  // Se non ci sono articoli, non mostrare la sezione
+  if (blogArticles.length === 0) {
+    return null;
+  }
+
   return (
     <section id="blog" ref={ref} className="py-4 md:py-6 pt-20 md:pt-24 bg-background h-screen flex flex-col justify-center">
       <div className="container mx-auto px-4 h-full flex flex-col max-w-6xl py-4">
