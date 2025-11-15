@@ -88,8 +88,7 @@ export default function RecuperoDatiIPhoneRotto() {
 
         <h3 className="blog-h3">3. Microsaldature e Riparazione Scheda Madre</h3>
         <p className="blog-paragraph">
-          Nei casi più complessi, dove la scheda madre è danneggiata, i nostri tecnici specializzati in 
-          <strong>microsaldature</strong> possono:
+          Nei casi più complessi, dove la scheda madre è danneggiata, i nostri tecnici specializzati in <strong>microsaldature</strong> possono:
         </p>
         <ul className="blog-list-bulleted">
           <li>Riparare tracciati interrotti sulla scheda madre</li>
