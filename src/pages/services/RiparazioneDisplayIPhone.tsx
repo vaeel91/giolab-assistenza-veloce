@@ -1,11 +1,9 @@
 import ServiceTemplate from "@/components/ServiceTemplate";
-import BlogNavigation from "@/components/BlogNavigation";
 import { Clock, Shield, Award, Wrench } from "lucide-react";
 
 const RiparazioneDisplayIPhone = () => {
   return (
     <>
-      <BlogNavigation />
       <ServiceTemplate
       seoTitle="Riparazione Display iPhone Assemini | Sostituzione Vetro e Schermo in 1 Ora | Giolab"
       seoDescription="Riparazione display iPhone ad Assemini e Cagliari. Sostituzione vetro e schermo rotto in 1 ora. Ricambi certificati, garanzia 12 mesi. Preventivo gratuito ☎️ 340 69 70 686"

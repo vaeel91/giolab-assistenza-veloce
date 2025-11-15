@@ -66,7 +66,6 @@
 import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import BlogNavigation from "@/components/BlogNavigation";
 import SocialShare from "@/components/SocialShare";
 import RelatedArticles from "@/components/RelatedArticles";
 import ReadingProgress from "@/components/ReadingProgress";
@@ -171,7 +170,6 @@ export const BlogArticleTemplate = ({
       <div className="min-h-screen bg-background">
         <Header />
         <BackToBlog variant="top" />
-        <BlogNavigation />
         
         <div className="container mx-auto px-4 pt-24 pb-8">
           <div className="flex gap-8 max-w-7xl mx-auto">
