@@ -12,200 +12,219 @@ export default function BatteriaMaggiorataIPhone() {
     <div className="blog-content">
       {/* INTRODUZIONE */}
       <section>
-        <h2 className="blog-h2">Introduzione: Il Problema dell'Autonomia iPhone</h2>
+        <h2 className="blog-h2">Introduzione: Perché l'iPhone Dura Sempre Meno?</h2>
         <p className="blog-paragraph">
-          Uno dei problemi più comuni che affliggono gli utenti iPhone dopo 2-3 anni di utilizzo è la <strong>batteria scarica</strong>. 
-          Se ti ritrovi a ricaricare il tuo iPhone più volte al giorno, probabilmente la tua batteria ha perso gran parte 
-          della sua capacità originale. Ma c'è una soluzione ancora migliore della semplice sostituzione: 
-          la <strong>batteria maggiorata</strong>.
+          Dopo 2–3 anni di utilizzo la batteria dell'iPhone perde capacità e inizia a durare sempre meno. 
+          Se sei costretto a ricaricare il telefono più volte al giorno, oppure noti spegnimenti improvvisi, 
+          significa che la batteria è degradata.
         </p>
         <p className="blog-paragraph">
-          <strong>GioLab ad Assemini</strong> offre un servizio esclusivo di installazione di batterie maggiorate 
-          per iPhone, permettendoti di ottenere <strong>fino al 30% di autonomia in più</strong> rispetto alla batteria originale, 
-          con la stessa sicurezza e affidabilità.
-        </p>
-      </section>
-
-      {/* IL PROBLEMA */}
-      <section>
-        <h2 className="blog-h2">Il Problema: Quando la Batteria Non Basta Più</h2>
-        <p className="blog-paragraph">
-          I sintomi di una batteria degradata sono inequivocabili:
+          A <strong>GioLab – Centro assistenza iPhone ad Assemini (Cagliari)</strong> installiamo <strong>batterie maggiorate</strong> ad alta qualità, 
+          progettate per offrire:
         </p>
         <ul className="blog-list-bulleted">
-          <li>Il tuo iPhone <strong>si scarica rapidamente</strong> anche senza un uso intensivo</li>
-          <li>La percentuale di batteria <strong>scende improvvisamente</strong> dal 30% allo 0%</li>
-          <li>Il telefono <strong>si spegne da solo</strong> anche quando indica ancora batteria residua</li>
-          <li>La <strong>ricarica è lenta</strong> e il dispositivo si surriscalda durante l'uso</li>
-          <li>Le Impostazioni iOS mostrano una <strong>capacità massima inferiore all'80%</strong></li>
+          <li><strong>+10/12% di autonomia</strong> sui modelli standard</li>
+          <li>fino al <strong>+30% sui modelli Pro Max</strong></li>
+          <li>mantenendo sicurezza, compatibilità iOS e prestazioni elevate</li>
         </ul>
+      </section>
 
+      {/* I SEGNALI */}
+      <section>
+        <h2 className="blog-h2">🔍 I Segnali di una Batteria Degradata</h2>
+        <p className="blog-paragraph">
+          Ecco i campanelli d'allarme più frequenti:
+        </p>
+        <ul className="blog-list-bulleted">
+          <li>L'iPhone <strong>si scarica rapidamente</strong> anche con utilizzo normale</li>
+          <li><strong>Calo improvviso della percentuale</strong></li>
+          <li><strong>Spegnimenti sopra il 20–30%</strong></li>
+          <li><strong>Ricarica lenta</strong></li>
+          <li><strong>Surriscaldamento</strong> durante l'uso</li>
+          <li>Capacità massima sotto l'<strong>80%</strong> nelle impostazioni iOS</li>
+        </ul>
         <div className="blog-highlight-box warning">
           <p>
-            <strong>⚠️ Attenzione:</strong> Una batteria degradata non è solo un fastidio, può causare danni permanenti 
-            al dispositivo se continua a essere utilizzata. I rigonfiamenti della batteria possono danneggiare lo schermo 
-            e la scheda madre dell'iPhone.
+            <strong>Nota:</strong> una batteria gonfia può danneggiare display, flat interni e scheda logica.
           </p>
         </div>
       </section>
 
-      {/* ANALISI PROFESSIONALE */}
+      {/* COS'È UNA BATTERIA MAGGIORATA */}
       <section>
-        <h2 className="blog-h2">Analisi Professionale: Cos'è una Batteria Maggiorata</h2>
+        <h2 className="blog-h2">🔧 Cos'è una Batteria Maggiorata?</h2>
         <p className="blog-paragraph">
-          Una <strong>batteria maggiorata</strong> è una batteria di ricambio con una capacità (misurata in mAh - milliampere/ora) 
-          <strong>superiore a quella della batteria originale Apple</strong>, mantenendo le stesse dimensioni fisiche 
-          e rispettando tutti i protocolli di sicurezza.
+          Una <strong>batteria maggiorata</strong> è una batteria compatibile con <strong>capacità superiore</strong> rispetto 
+          a quella originale Apple, ma con <strong>dimensioni identiche</strong> e totale conformità agli standard di sicurezza.
         </p>
+        <p className="blog-paragraph">
+          In pratica, mantieni tutto originale… ma con più autonomia.
+        </p>
+      </section>
 
-        <h3 className="blog-h3">Vantaggi della Batteria Maggiorata</h3>
+      {/* VANTAGGI */}
+      <section>
+        <h2 className="blog-h2">⭐ Vantaggi della Batteria Maggiorata installata da GioLab</h2>
         <ul className="blog-list-bulleted">
-          <li><strong>Autonomia aumentata del 20-30%</strong>: più ore di utilizzo tra una ricarica e l'altra</li>
-          <li><strong>Stessa sicurezza delle batterie originali</strong>: certificazioni CE e test di qualità rigorosi</li>
-          <li><strong>Compatibilità totale</strong>: funziona perfettamente con iOS e tutti i sensori</li>
-          <li><strong>Nessuna modifica hardware</strong>: installazione identica a una batteria standard</li>
-          <li><strong>Garanzia di 12 mesi</strong> su batteria e installazione</li>
+          <li><strong>+10/12% di autonomia</strong> sui modelli "standard" (Mini, base, Plus)</li>
+          <li>Fino al <strong>+30% di autonomia</strong> sui modelli Pro Max</li>
+          <li>Certificazioni CE e test rigorosi</li>
+          <li>Compatibilità totale con iOS</li>
+          <li>Nessuna modifica hardware</li>
+          <li>Installazione rapida (45–60 minuti)</li>
+          <li><strong>Garanzia 12 mesi</strong> su batteria e manodopera</li>
         </ul>
 
-        <h3 className="blog-h3">Differenze con la Batteria Originale Apple</h3>
-        <p className="blog-paragraph">
-          Ecco un confronto diretto tra batteria originale e maggiorata:
-        </p>
+        <h3 className="blog-h3">Esempio reale – iPhone 13 (Standard)</h3>
         <div className="blog-highlight-box info">
           <p>
-            <strong>Esempio iPhone 13:</strong><br />
             • Batteria originale Apple: <strong>3.227 mAh</strong><br />
-            • Batteria maggiorata GioLab: <strong>4.200 mAh</strong><br />
-            • Aumento di autonomia: <strong>+30% circa</strong>
+            • Batteria maggiorata GioLab: <strong>3.500 mAh</strong><br />
+            • Aumento stimato: <strong>+10% circa</strong>
           </p>
         </div>
 
-        <h3 className="blog-h3">È Sicuro? Qualità e Certificazioni</h3>
+        <h3 className="blog-h3">Sui modelli Pro Max</h3>
         <p className="blog-paragraph">
-          Le batterie maggiorate utilizzate da <strong>GioLab ad Assemini</strong> sono sottoposte a rigidi test di sicurezza 
-          e possiedono tutte le certificazioni necessarie:
+          Grazie al design della maggiore superficie interna e all'ottimizzazione energetica di iOS, 
+          i modelli <strong>Pro Max</strong> beneficiano di un aumento anche superiore, arrivando fino a <strong>+30% di autonomia reale</strong>.
         </p>
-        <ul className="blog-list-bulleted">
-          <li><strong>Certificazione CE</strong>: conformità agli standard europei di sicurezza</li>
-          <li><strong>Test di cicli di carica</strong>: oltre 800 cicli garantiti</li>
-          <li><strong>Protezioni integrate</strong>: sovraccarico, cortocircuito, surriscaldamento</li>
-          <li><strong>Celle di qualità premium</strong>: produttori certificati con standard Apple-equivalent</li>
-        </ul>
       </section>
 
-      {/* SOLUZIONE PASSO PASSO */}
+      {/* SICUREZZA */}
       <section>
-        <h2 className="blog-h2">Soluzione: Come Installare una Batteria Maggiorata</h2>
+        <h2 className="blog-h2">🔒 Sicurezza e Qualità Certificate</h2>
         <p className="blog-paragraph">
-          Il processo di installazione presso GioLab ad Assemini è rapido e professionale:
+          Le batterie maggiorate installate da GioLab rispettano tutti gli standard europei e vengono testate singolarmente.
         </p>
+        
+        <h3 className="blog-h3">Certificazioni e caratteristiche principali:</h3>
+        <ul className="blog-list-bulleted">
+          <li><strong>Certificazione CE</strong></li>
+          <li>Oltre <strong>800 cicli di carica</strong> garantiti</li>
+          <li>Protezioni contro surriscaldamento, sovraccarico e corto circuito</li>
+          <li>Celle premium equivalenti agli standard Apple</li>
+        </ul>
+
+        <div className="blog-highlight-box info">
+          <p>
+            📌 Le nostre batterie mantengono la dicitura <strong>"Ricambio Originale"</strong> nelle impostazioni iOS, 
+            a differenza dei ricambi economici.
+          </p>
+        </div>
+      </section>
+
+      {/* INSTALLAZIONE */}
+      <section>
+        <h2 className="blog-h2">⚙️ Installazione Professionale – GioLab Assemini (Cagliari)</h2>
+        <p className="blog-paragraph">
+          Un processo rapido, sicuro e trasparente:
+        </p>
+        
         <ol className="blog-list-numbered">
           <li>
-            <strong>Verifica Compatibilità</strong><br />
-            Contattaci al <a href="tel:+393406970686" className="text-primary hover:underline">+39 340 69 70 686</a> o vieni 
-            nel nostro negozio in <strong>Via Carmine 20, Assemini (Cagliari)</strong>. Verifichiamo la disponibilità 
-            della batteria maggiorata per il tuo modello di iPhone.
+            <strong>Verifica disponibilità</strong><br />
+            📞 340 69 70 686<br />
+            📍 Via Carmine 20, Assemini (Cagliari)
           </li>
           <li>
-            <strong>Diagnosi Gratuita</strong><br />
-            I nostri tecnici eseguono un test completo della batteria attuale e del sistema di ricarica per escludere 
-            altri problemi hardware che potrebbero influire sull'autonomia.
+            <strong>Diagnosi gratuita</strong><br />
+            Test batteria + analisi del circuito di ricarica
           </li>
           <li>
-            <strong>Preventivo Trasparente</strong><br />
-            Ricevi un preventivo chiaro che include: costo della batteria maggiorata, manodopera, test post-installazione 
-            e garanzia di 12 mesi.
+            <strong>Preventivo chiaro</strong><br />
+            Nessuna sorpresa: prezzo finale trasparente
           </li>
           <li>
-            <strong>Installazione Professionale (45-60 minuti)</strong><br />
-            I nostri tecnici certificati sostituiscono la batteria utilizzando attrezzature professionali, garantendo 
-            che tutti i componenti (schermo, Face ID, fotocamera) rimangano perfettamente funzionanti.
+            <strong>Installazione tecnica (45–60 minuti)</strong><br />
+            Con attrezzatura professionale e procedure certificate
           </li>
           <li>
-            <strong>Test Completo e Calibrazione</strong><br />
-            Dopo l'installazione, eseguiamo test di carica/scarica per verificare le prestazioni e calibrare correttamente 
-            il sistema iOS con la nuova batteria.
+            <strong>Test e calibrazione iOS</strong><br />
+            Verifica consumi e ottimizzazione lettura della nuova capacità
           </li>
           <li>
-            <strong>Consegna e Istruzioni</strong><br />
-            Ti restituiamo il tuo iPhone con la batteria maggiorata installata, fornendoti consigli per massimizzare 
-            la durata e le prestazioni.
+            <strong>Consegna con consigli personalizzati</strong><br />
+            Per sfruttare al massimo la batteria maggiorata
           </li>
         </ol>
-
-        <div className="blog-highlight-box success">
-          <p>
-            <strong>✅ Garanzia Estesa:</strong> Tutte le batterie maggiorate installate da GioLab sono coperte da 
-            <strong>12 mesi di garanzia completa</strong>. In caso di difetti o problemi, la sostituiamo gratuitamente.
-          </p>
-        </div>
       </section>
 
-      {/* CONSIGLI TECNICI */}
+      {/* OTTIMIZZAZIONE */}
       <section>
-        <h2 className="blog-h2">Consigli Tecnici: Come Massimizzare la Durata della Batteria</h2>
+        <h2 className="blog-h2">💡 Come Ottenere la Massima Autonomia</h2>
+        <ul className="blog-list-bulleted">
+          <li>Effettua <strong>2–3 cicli completi</strong> dopo l'installazione</li>
+          <li>Attiva <strong>"Ottimizza ricarica batteria"</strong> su iOS</li>
+          <li>Evita <strong>temperature estreme</strong></li>
+          <li>Usa <strong>caricatori certificati MFi</strong></li>
+          <li>Controlla app e servizi che consumano troppo</li>
+        </ul>
+      </section>
+
+      {/* SEO LOCALE */}
+      <section>
+        <h2 className="blog-h2">📍 Perché Scegliere GioLab</h2>
         <p className="blog-paragraph">
-          Dopo l'installazione della batteria maggiorata, segui questi consigli per ottenere il massimo:
+          <strong>GioLab</strong> è un punto di riferimento per:
         </p>
         <ul className="blog-list-bulleted">
-          <li><strong>Primi 3 cicli di carica completi</strong>: carica al 100% e scarica fino al 10-15% per calibrare iOS</li>
-          <li><strong>Evita temperature estreme</strong>: non lasciare l'iPhone in auto sotto il sole o al freddo intenso</li>
-          <li><strong>Attiva la modalità "Ottimizza ricarica batteria"</strong> nelle impostazioni iOS</li>
-          <li><strong>Riduci la luminosità automatica</strong> quando non necessaria</li>
-          <li><strong>Disattiva app in background</strong> che consumano batteria inutilmente</li>
+          <li>Sostituzione batteria iPhone ad <strong>Assemini</strong></li>
+          <li>Riparazione iPhone <strong>Cagliari</strong> e provincia</li>
+          <li>Installazione batterie maggiorate per iPhone</li>
+          <li>Assistenza smartphone certificata in <strong>Sardegna</strong></li>
         </ul>
+        <p className="blog-paragraph">
+          Ricambi certificati, garanzia inclusa e interventi rapidi.
+        </p>
+      </section>
 
-        <div className="blog-highlight-box info">
-          <p>
-            <strong>💡 Consiglio Pro:</strong> Usa caricatori certificati MFi (Made for iPhone) per preservare 
-            la salute della batteria nel lungo periodo. I caricatori economici non certificati possono danneggiare 
-            la batteria e ridurne la durata.
-          </p>
-        </div>
+      {/* QUANDO CONVIENE */}
+      <section>
+        <h2 className="blog-h2">Quando Conviene una Batteria Maggiorata?</h2>
+        <p className="blog-paragraph">
+          Ideale se:
+        </p>
+        <ul className="blog-list-bulleted">
+          <li>usi l'iPhone tutto il giorno per lavoro o studio</li>
+          <li>fai molte videochiamate o streaming</li>
+          <li>viaggi spesso</li>
+          <li>giochi o usi app ad alto consumo</li>
+          <li>vuoi allungare la vita del tuo iPhone</li>
+          <li>la tua batteria è sotto l'80%</li>
+        </ul>
+        <p className="blog-paragraph">
+          Sui modelli <strong>Pro Max</strong>, il salto di autonomia è particolarmente evidente.
+        </p>
       </section>
 
       {/* CTA ARTICOLO */}
       <ArticleCTA />
 
-      {/* QUANDO RIVOLGERSI A UN TECNICO */}
-      <section>
-        <h2 className="blog-h2">Quando Scegliere la Batteria Maggiorata?</h2>
-        <p className="blog-paragraph">
-          La batteria maggiorata è la scelta ideale se:
-        </p>
-        <ul className="blog-list-bulleted">
-          <li>Usi il tuo iPhone <strong>in modo intensivo</strong> per lavoro o studio</li>
-          <li>Viaggi spesso e non hai sempre accesso a una presa di corrente</li>
-          <li>Giochi o usi app che consumano molta batteria (streaming video, GPS, gaming)</li>
-          <li>Vuoi <strong>prolungare la vita del tuo iPhone</strong> senza cambiarlo</li>
-          <li>La tua batteria attuale è già sotto l'80% di capacità massima</li>
-        </ul>
-
-        <p className="blog-paragraph">
-          <strong>GioLab ad Assemini</strong> è il centro di riferimento in <strong>provincia di Cagliari</strong> per 
-          l'installazione di batterie maggiorate per iPhone. I nostri tecnici certificati garantiscono interventi 
-          rapidi, sicuri e con garanzia estesa.
-        </p>
-      </section>
-
       {/* CONCLUSIONE */}
       <section>
-        <h2 className="blog-h2">Conclusione: Più Autonomia, Meno Preoccupazioni</h2>
+        <h2 className="blog-h2">🏁 Conclusione: Più Autonomia, Meno Limitazioni</h2>
         <p className="blog-paragraph">
-          Installare una <strong>batteria maggiorata</strong> sul tuo iPhone è la soluzione definitiva per chi cerca 
-          <strong>più autonomia senza compromessi sulla sicurezza</strong>. Con GioLab ad Assemini, ottieni:
+          Scegliere una batteria maggiorata significa migliorare la giornata tipo, ridurre le ricariche 
+          e far durare il tuo iPhone molto più a lungo.
+        </p>
+        <p className="blog-paragraph">
+          Con <strong>GioLab ad Assemini (Cagliari)</strong> ottieni:
         </p>
         <ul className="blog-list-bulleted">
-          <li>Fino al <strong>30% di autonomia in più</strong></li>
-          <li>Installazione professionale in <strong>meno di 1 ora</strong></li>
-          <li><strong>Garanzia di 12 mesi</strong> su batteria e manodopera</li>
-          <li>Ricambi certificati e sicuri</li>
-          <li>Supporto tecnico continuo</li>
+          <li><strong>+10/12%</strong> sui modelli standard</li>
+          <li>Fino a <strong>+30%</strong> sui Pro Max</li>
+          <li>Installazione professionale in <strong>1 ora</strong></li>
+          <li><strong>Garanzia 12 mesi</strong></li>
+          <li>Ricambi certificati e testati</li>
+          <li>Assistenza continua</li>
         </ul>
-        <p className="blog-paragraph">
-          Non lasciare che una batteria scarica limiti le tue giornate. Contatta GioLab e scopri come la batteria 
-          maggiorata può trasformare l'esperienza d'uso del tuo iPhone.
-        </p>
+        <div className="blog-highlight-box info">
+          <p>
+            📞 <strong>Richiedi un preventivo gratuito: 340 69 70 686</strong><br />
+            📍 Via Carmine 20, Assemini (Cagliari)
+          </p>
+        </div>
       </section>
     </div>
   );
