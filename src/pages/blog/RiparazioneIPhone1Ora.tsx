@@ -11,137 +11,230 @@ export default function RiparazioneIPhone1Ora() {
       <section>
         <h2 className="blog-h2">Introduzione: iPhone Rotto? Riparazione Rapida e Garantita ad Assemini</h2>
         <p className="blog-paragraph">
-          Quando l'iPhone si rompe, il tempo diventa immediatamente un problema. Viviamo con lo smartphone in mano: 
-          lavoro, pagamenti, foto, messaggi, mappe… rimanere senza telefono anche solo per un giorno può creare enormi difficoltà.
+          Quando l'iPhone si rompe, restare senza smartphone anche solo per poche ore può diventare un problema serio: 
+          lavoro, pagamenti, foto, WhatsApp, navigazione… tutto si ferma.
         </p>
         <p className="blog-paragraph">
-          Per questo <strong>GioLab ad Assemini (Cagliari)</strong> ha sviluppato un servizio Express che ti permette 
-          di avere il tuo iPhone riparato in soli <strong>60 minuti</strong>, utilizzando ricambi certificati e 
-          attrezzature professionali.
+          Per questo <strong>GioLab ad Assemini (provincia di Cagliari)</strong> offre un servizio di <strong>riparazione 
+          iPhone in 1 ora</strong>, utilizzando solo ricambi certificati e attrezzature professionali.
         </p>
         <p className="blog-paragraph">
-          Siamo nel cuore di <strong>Assemini</strong>, facilmente raggiungibili da tutta la provincia di Cagliari.
+          Siamo situati nel centro di <strong>Assemini</strong> e facilmente raggiungibili da tutta la provincia di 
+          Cagliari, Elmas, Decimomannu, Selargius, Quartu e hinterland.
         </p>
       </section>
 
       <section>
-        <h2 className="blog-h2">Perché Serve una Riparazione Rapida?</h2>
-        <p className="blog-paragraph">I problemi più comuni sugli iPhone includono:</p>
+        <h2 className="blog-h2">🔍 Perché una Riparazione Rapida è Fondamentale</h2>
+        <p className="blog-paragraph">
+          I problemi più frequenti per cui i nostri clienti richiedono una riparazione iPhone veloce includono:
+        </p>
         <ul className="blog-list-bulleted">
           <li><strong>Schermo rotto</strong> o completamente nero</li>
-          <li><strong>Batteria degradata</strong> che dura pochissimo</li>
-          <li><strong>Fotocamera</strong> che non mette più a fuoco</li>
-          <li><strong>Connettore Lightning</strong> che non carica bene</li>
-          <li><strong>Altoparlanti o microfono</strong> muti</li>
-          <li><strong>iPhone che scalda</strong> o si riavvia da solo</li>
+          <li><strong>Batteria degradata</strong> che non arriva a fine giornata</li>
+          <li><strong>Fotocamera</strong> non funzionante o sfocata</li>
+          <li><strong>Connettore Lightning</strong> difettoso (non carica)</li>
+          <li><strong>Altoparlante o microfono</strong> non funzionanti</li>
+          <li><strong>iPhone che si surriscalda</strong> o si riavvia da solo</li>
         </ul>
         <p className="blog-paragraph">
-          La maggior parte dei centri di riparazione impiega giorni o settimane per un intervento.
-          Con <strong>GioLab</strong> non devi aspettare: la stragrande maggioranza delle riparazioni viene 
-          completata in meno di un'ora.
+          Molti centri richiedono giorni o settimane per la riparazione.
+          <br />Da <strong>GioLab</strong> no: la maggior parte degli interventi viene completata in meno di 60 minuti.
         </p>
       </section>
 
       <section>
-        <h2 className="blog-h2">Riparazione iPhone in 1 Ora: Come Funziona il Servizio Express</h2>
-        <p className="blog-paragraph">Il nostro metodo si basa su tre pilastri fondamentali.</p>
-
-        <h3 className="blog-h3">1. Diagnosi Immediata e Gratuita</h3>
+        <h2 className="blog-h2">⚙️ Come Funziona la Riparazione iPhone in 1 Ora – Servizio Express GioLab</h2>
         <p className="blog-paragraph">
-          Quando arrivi nel nostro laboratorio, eseguiamo una <strong>diagnosi completa in 10 minuti</strong>.
-          Individuiamo subito il problema e ti forniamo un preventivo chiaro e trasparente.
+          Il nostro metodo si basa su <strong>qualità, velocità e trasparenza</strong>.
         </p>
 
-        <h3 className="blog-h3">2. Ricambi Certificati e Disponibili in Sede</h3>
-        <p className="blog-paragraph">Manteniamo un magazzino sempre rifornito con:</p>
+        <h3 className="blog-h3">1. Diagnosi Immediata e Gratuita</h3>
+        <p className="blog-paragraph">Appena arrivi nel nostro laboratorio:</p>
+        <ul className="blog-list-bulleted">
+          <li>eseguiamo una <strong>diagnosi completa in 10 minuti</strong></li>
+          <li>individuiamo il guasto</li>
+          <li>ti forniamo un <strong>preventivo chiaro e senza sorprese</strong></li>
+        </ul>
+
+        <h3 className="blog-h3">2. Ricambi Certificati Sempre Disponibili</h3>
+        <p className="blog-paragraph">Manteniamo un magazzino completo di:</p>
         <ul className="blog-list-bulleted">
           <li>schermi certificati</li>
           <li>batterie nuove e sicure</li>
-          <li>ricambi per fotocamere, sensori, altoparlanti</li>
-          <li>connettori di ricarica e componenti original-equivalent</li>
+          <li>moduli fotocamera</li>
+          <li>altoparlanti e microfoni</li>
+          <li>connettori Lightning</li>
+          <li>componenti original-equivalent</li>
         </ul>
         <p className="blog-paragraph">
-          Copriamo tutti i modelli: da <strong>iPhone 6 fino a iPhone 15 Pro Max</strong>.
+          Disponibili per tutti i modelli, da <strong>iPhone 6 a iPhone 15 Pro Max</strong>.
         </p>
 
-        <h3 className="blog-h3">3. Tecnici Certificati e Attrezzature Professionali</h3>
-        <p className="blog-paragraph">Il nostro laboratorio è dotato di:</p>
+        <h3 className="blog-h3">3. Tecnici Certificati + Attrezzature Professionali</h3>
+        <p className="blog-paragraph">Il laboratorio GioLab dispone di:</p>
         <ul className="blog-list-bulleted">
-          <li>attrezzatura professionale Apple-level</li>
+          <li>strumentazione professionale stile Apple-level</li>
+          <li>microscopi di precisione</li>
           <li>strumenti di diagnostica avanzata</li>
-          <li>macchinari di precisione per interventi complessi</li>
+          <li>attrezzatura dedicata per interventi complessi</li>
         </ul>
+        <p className="blog-paragraph">
+          Il personale è altamente formato e costantemente aggiornato.
+        </p>
       </section>
 
       <section>
-        <h2 className="blog-h2">Come Ripariamo il Tuo iPhone in Meno di 60 Minuti</h2>
-        <ol className="blog-list-numbered">
-          <li><strong>Prenota o passa direttamente</strong><br />📞 340 69 70 686<br />📍 Via Carmine 20, Assemini</li>
-          <li><strong>Diagnosi gratuita (10 minuti)</strong><br />Verifichiamo il tipo di guasto e ti forniamo il preventivo.</li>
-          <li><strong>Riparazione Express (30–50 minuti)</strong><br />Schermo, batteria, fotocamera, connettore, audio: la maggior parte degli interventi è immediata.</li>
-          <li><strong>Test completo + riconsegna</strong><br />Verifichiamo funzionalità, sensori, ricarica e display.<br />Garanzia 12 mesi su ricambi e manodopera.</li>
-        </ol>
-        <div className="blog-highlight-box">
+        <h2 className="blog-h2">🔧 Ripariamo il Tuo iPhone in Meno di 60 Minuti</h2>
+        
+        <div className="blog-box-tip">
+          <h4 className="blog-box-title">✔️ 1. Vieni direttamente o prenota</h4>
           <p className="blog-paragraph">
-            <strong>💡 Telefono di cortesia gratuito</strong><br />
-            Se il tuo intervento dovesse richiedere più tempo, ti forniamo uno smartphone sostitutivo.
+            📞 <strong>340 69 70 686</strong><br />
+            📍 Via Carmine 20, Assemini
+          </p>
+        </div>
+
+        <div className="blog-box-tip">
+          <h4 className="blog-box-title">✔️ 2. Diagnosi gratuita (10 minuti)</h4>
+          <p className="blog-paragraph">
+            Identificazione immediata del problema e preventivo trasparente.
+          </p>
+        </div>
+
+        <div className="blog-box-tip">
+          <h4 className="blog-box-title">✔️ 3. Riparazione Express (30–50 minuti)</h4>
+          <p className="blog-paragraph">Ripariamo in 1 ora:</p>
+          <ul className="blog-list-bulleted">
+            <li>schermo</li>
+            <li>batteria</li>
+            <li>fotocamera</li>
+            <li>connettore di ricarica</li>
+            <li>audio / speaker / microfono</li>
+          </ul>
+        </div>
+
+        <div className="blog-box-tip">
+          <h4 className="blog-box-title">✔️ 4. Test finale + garanzia 12 mesi</h4>
+          <p className="blog-paragraph">Prima della consegna controlliamo:</p>
+          <ul className="blog-list-bulleted">
+            <li>sensori</li>
+            <li>ricarica</li>
+            <li>Face ID / Touch ID</li>
+            <li>display</li>
+            <li>componenti interni</li>
+          </ul>
+        </div>
+
+        <div className="blog-box-warning">
+          <p className="blog-paragraph">
+            💡 <strong>Telefono di cortesia disponibile gratuitamente</strong> se l'intervento richiede più tempo.
           </p>
         </div>
       </section>
 
       <section>
-        <h2 className="blog-h2">Cosa Fare Prima di Portare il Tuo iPhone</h2>
+        <h2 className="blog-h2">🛠️ Cosa Fare Prima di Portare il Tuo iPhone</h2>
+        <p className="blog-paragraph">Per velocizzare il servizio:</p>
         <ul className="blog-list-bulleted">
-          <li>Effettua un <strong>backup su iCloud o iTunes</strong></li>
-          <li>Disattiva <strong>"Trova il mio iPhone"</strong> se possibile</li>
+          <li>Effettua un <strong>backup</strong> su iCloud o iTunes</li>
+          <li>Disattiva <strong>"Trova il mio iPhone"</strong> (se possibile)</li>
           <li>Porta il <strong>caricatore originale</strong> per i test</li>
-          <li>Indica eventuali anomalie precise</li>
+          <li>Segnala eventuali problemi specifici</li>
         </ul>
       </section>
 
       <ArticleCTA />
 
       <section>
-        <h2 className="blog-h2">Perché Scegliere GioLab per la Riparazione iPhone ad Assemini (Cagliari)</h2>
-        <ul className="blog-list-bulleted">
-          <li><strong>Riparazione in 1 ora</strong></li>
-          <li><strong>Ricambi certificati</strong> e sicuri</li>
-          <li><strong>Tecnici esperti</strong> e costantemente aggiornati</li>
-          <li><strong>Laboratorio attrezzato</strong> per riparazioni avanzate</li>
-          <li><strong>Garanzia 12 mesi</strong> su tutti gli interventi</li>
-          <li><strong>Trasparenza e professionalità</strong></li>
+        <h2 className="blog-h2">📍 Perché Scegliere GioLab per la Riparazione iPhone ad Assemini (Cagliari)</h2>
+        <ul className="blog-list-checkmark">
+          <li>Riparazione in 1 ora</li>
+          <li>Ricambi certificati e garantiti</li>
+          <li>Tecnici esperti e aggiornati</li>
+          <li>Laboratorio professionale per interventi avanzati</li>
+          <li>Garanzia 12 mesi su ricambi e manodopera</li>
+          <li>Trasparenza e massima professionalità</li>
         </ul>
+        <p className="blog-paragraph">
+          Clienti da <strong>Cagliari, Elmas, Decimomannu, Selargius, Quartu, Monserrato</strong> e tutta la 
+          Sardegna ci scelgono ogni giorno.
+        </p>
       </section>
 
       <section>
-        <h2 className="blog-h2">FAQ – Riparazione iPhone ad Assemini</h2>
+        <h2 className="blog-h2">📞 Richiedi la Tua Riparazione iPhone in 1 Ora – Assemini (Cagliari)</h2>
+        <p className="blog-paragraph">
+          Hai lo schermo rotto? La batteria dura poco? Il tuo iPhone non si accende?
+        </p>
+        <div className="blog-box-tip">
+          <p className="blog-paragraph">
+            📞 <strong>Chiama subito GioLab: 340 69 70 686</strong><br />
+            📍 Via Carmine 20, Assemini (CA)<br />
+            🕘 Lun–Sab: 9:00–13:00 / 16:00–20:00
+          </p>
+        </div>
+        <p className="blog-paragraph">
+          Ripariamo il tuo iPhone in meno di 1 ora con ricambi certificati e garanzia 12 mesi.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="blog-h2">❓ FAQ – Riparazione iPhone ad Assemini</h2>
         
         <h3 className="blog-h3">▶️ Quanto tempo richiede la riparazione di un iPhone?</h3>
-        <p className="blog-paragraph">Da 30 a 50 minuti per la maggior parte degli interventi.</p>
+        <p className="blog-paragraph">
+          Generalmente <strong>30–50 minuti</strong> per schermo, batteria, connettore o fotocamera.
+        </p>
 
-        <h3 className="blog-h3">▶️ È possibile riparare un iPhone senza prenotazione?</h3>
-        <p className="blog-paragraph">Sì. Puoi venire direttamente in negozio.</p>
+        <h3 className="blog-h3">▶️ Posso venire senza appuntamento?</h3>
+        <p className="blog-paragraph">
+          Sì. Con il servizio express accettiamo anche ingressi senza prenotazione.
+        </p>
 
-        <h3 className="blog-h3">▶️ Riparate anche gli iPhone recenti (iPhone 14 e 15)?</h3>
-        <p className="blog-paragraph">Sì. Abbiamo ricambi certificati per tutti i modelli.</p>
+        <h3 className="blog-h3">▶️ Riparate anche iPhone recenti come iPhone 14 o iPhone 15?</h3>
+        <p className="blog-paragraph">
+          Assolutamente sì. Abbiamo ricambi certificati per tutti i modelli, inclusi <strong>14, 14 Pro, 15 e 15 Pro Max</strong>.
+        </p>
 
-        <h3 className="blog-h3">▶️ Quali ricambi utilizzate?</h3>
-        <p className="blog-paragraph">Ricambi certificati, testati e compatibili al 100% con iOS.</p>
+        <h3 className="blog-h3">▶️ Utilizzate ricambi originali Apple?</h3>
+        <p className="blog-paragraph">
+          Utilizziamo <strong>ricambi certificati e testati</strong>, equivalenti per qualità, compatibilità e sicurezza.
+        </p>
 
-        <h3 className="blog-h3">▶️ Offrite un telefono di cortesia?</h3>
-        <p className="blog-paragraph">Sì, se la riparazione richiede più tempo del previsto.</p>
+        <h3 className="blog-h3">▶️ La riparazione è garantita?</h3>
+        <p className="blog-paragraph">
+          Sì, ogni intervento è coperto da <strong>12 mesi di garanzia</strong> su ricambi e manodopera.
+        </p>
+
+        <h3 className="blog-h3">▶️ Avete un telefono sostitutivo?</h3>
+        <p className="blog-paragraph">
+          Sì, offriamo <strong>telefono di cortesia gratuito</strong> quando necessario.
+        </p>
+
+        <h3 className="blog-h3">▶️ Dove si trova il vostro centro assistenza?</h3>
+        <p className="blog-paragraph">
+          📍 <strong>Via Carmine 20, Assemini (CA)</strong>, facilmente raggiungibile da Cagliari e dintorni.
+        </p>
+
+        <h3 className="blog-h3">▶️ Posso far riparare un iPhone bagnato?</h3>
+        <p className="blog-paragraph">
+          Sì. Effettuiamo <strong>diagnostica professionale e interventi avanzati</strong> per danni da liquidi.
+        </p>
 
         <h3 className="blog-h3">▶️ Servite solo Assemini?</h3>
-        <p className="blog-paragraph">No, arrivano clienti da Cagliari, Elmas, Selargius, Decimomannu, Quartu e tutta la Sardegna.</p>
+        <p className="blog-paragraph">
+          No: molti clienti arrivano da <strong>Cagliari, Selargius, Elmas, Decimomannu, Monserrato, Quartu, Pirri</strong> e tutta la Sardegna.
+        </p>
       </section>
     </div>
   );
 
   return (
     <BlogArticleTemplate
-      title="Riparazione iPhone in 1 Ora ad Assemini – Servizio Express GioLab"
-      description="Riparazione iPhone rapida e professionale ad Assemini (Cagliari). Servizio express in 60 minuti con ricambi certificati e garanzia 12 mesi."
-      keywords="riparazione iphone assemini, riparazione iphone 1 ora, assistenza iphone cagliari"
+      title="🔧 Riparazione iPhone in 1 Ora ad Assemini (Cagliari) – Servizio Express Garantito da GioLab"
+      description="Riparazione iPhone rapida e professionale ad Assemini (Cagliari). Servizio express in 60 minuti, ricambi certificati, garanzia 12 mesi e telefono di cortesia."
+      keywords="riparazione iphone assemini, riparazione iphone 1 ora, assistenza iphone cagliari, riparazione iphone cagliari, giolab assemini"
       slug="riparazione-iphone-1-ora-giolab-assemini"
       ogImage="https://giolabriparazioni.it/og-images/riparazione-iphone-1-ora-assemini.jpg"
       author="GioLab Team"
