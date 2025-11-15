@@ -2,6 +2,7 @@ import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import About from "@/components/About";
+import LabGallery from "@/components/LabGallery";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -24,6 +25,9 @@ const ChiSiamo = () => {
         <main className="container mx-auto px-4 pt-32 pb-16">
           <About />
         </main>
+
+        {/* Galleria Laboratorio */}
+        <LabGallery />
         
         <Footer />
       </div>
