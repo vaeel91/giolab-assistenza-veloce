@@ -2,7 +2,6 @@ import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
-import BlogNavigation from "@/components/BlogNavigation";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const Contatti = () => {
@@ -20,7 +19,6 @@ const Contatti = () => {
       
       <div className="min-h-screen bg-background">
         <Header />
-        <BlogNavigation />
         
         <main className="container mx-auto px-4 pt-32 pb-16">
           <Contact />

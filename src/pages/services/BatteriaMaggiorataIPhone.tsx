@@ -1,11 +1,9 @@
 import ServiceTemplate from "@/components/ServiceTemplate";
-import BlogNavigation from "@/components/BlogNavigation";
 import { Battery, Clock, Shield, Zap } from "lucide-react";
 
 const BatteriaMaggiorataIPhone = () => {
   return (
     <>
-      <BlogNavigation />
       <ServiceTemplate
       seoTitle="Batteria Maggiorata iPhone Assemini | Più Autonomia e Prestazioni | Giolab Cagliari"
       seoDescription="Sostituzione batteria maggiorata iPhone ad Assemini e Cagliari. Aumenta l'autonomia del tuo iPhone fino al 30% in più. Servizio rapido, ricambi certificati, garanzia 12 mesi ☎️ 340 69 70 686"

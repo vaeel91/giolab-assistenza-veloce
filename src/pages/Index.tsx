@@ -9,7 +9,6 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import BlogNavigation from "@/components/BlogNavigation";
 import SEOHead from "@/components/SEOHead";
 import { useEffect, useRef, useState } from "react";
 import { calculateAggregateRating, getReviewsForSchema } from "@/data/reviews";
@@ -138,7 +137,6 @@ const Index = () => {
         </section>
       </div>
       <FloatingWhatsApp />
-      <BlogNavigation />
       
       <style>{`
         .section-animate {
