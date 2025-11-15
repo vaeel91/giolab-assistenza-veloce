@@ -40,8 +40,9 @@ blogArticles.forEach(article => {
   // Handle different image types
   if (typeof article.image === 'string') {
     if (article.image.startsWith('/og-images/') || article.image.startsWith('/')) {
-      // Absolute path
-      imageUrl = `https://giolabriparazioni.it${article.image}`;
+      // Absolute path - add cache busting parameter
+      const cacheBuster = `?v=${Date.now()}`;
+      imageUrl = `https://giolabriparazioni.it${article.image}${cacheBuster}`;
     } else if (article.image.startsWith('http')) {
       // Full URL
       imageUrl = article.image;
