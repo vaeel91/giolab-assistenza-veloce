@@ -1,260 +1,161 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import BlogNavigation from "@/components/BlogNavigation";
-import SEOHead from "@/components/SEOHead";
-import RelatedArticles from "@/components/RelatedArticles";
-import SocialShare from "@/components/SocialShare";
-import ReadingProgress from "@/components/ReadingProgress";
+import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { Link } from "react-router-dom";
-import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const PercheFaceIDSmetteFunzionare = () => {
-  return (
-    <div className="min-h-screen">
-      <ReadingProgress />
-      <SEOHead
-        title="Face ID Non Funziona Dopo una Caduta? Ecco Come Risolvere | Giolab"
-        description="Face ID non funziona più dopo una caduta dell'iPhone? Scopri le cause e come riparare il sensore Face ID presso Giolab ad Assemini."
-        keywords="face id non funziona dopo caduta, riparazione sensore iPhone, face id rotto, sensore faciale iPhone Assemini, riparazione face id Cagliari"
-        breadcrumbs={[
-          { name: "Home", url: "https://giolabriparazioni.it/" },
-          { name: "Blog", url: "https://giolabriparazioni.it/blog" },
-          { name: "Face ID non funziona dopo caduta" }
-        ]}
-        articleData={{
-          headline: "Perché il Face ID smette di funzionare dopo una caduta",
-          description: "Face ID non funziona più dopo una caduta? Scopri le cause e come riparare il sensore Face ID ad Assemini.",
-          author: "Giolab Team",
-          datePublished: "2025-01-17",
-          image: typeof window !== 'undefined' ? `${window.location.origin}/og-image-giolab.jpg` : '/og-image-giolab.jpg',
-          category: "Tecnologia"
-        }}
-      />
-      <Header />
-      
-      <article className="pt-24 md:pt-32 pb-12 md:pb-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <nav className="mb-6 text-sm">
-              <ol className="flex items-center gap-2 text-muted-foreground">
-                <li><Link to="/" className="hover:text-giolab-blue">Home</Link></li>
-                <li>/</li>
-                <li><Link to="/blog" className="hover:text-giolab-blue">Blog</Link></li>
-                <li>/</li>
-                <li className="text-foreground font-medium">Face ID non funziona dopo caduta</li>
-              </ol>
-            </nav>
+export default function PercheFaceIDSmetteFunzionare() {
+  const articleContent = (
+    <div className="space-y-8">
+      <section>
+        <p className="text-lg leading-relaxed text-muted-foreground">
+          Hai fatto cadere il tuo iPhone e ora <strong className="text-giolab-blue">il Face ID non funziona più</strong>? È un problema più comune di quanto pensi. Quando l'iPhone subisce un urto violento, i delicati sensori del sistema Face ID possono danneggiarsi o disallinearsi. In questa guida ti spiegheremo le cause e come <strong className="text-foreground">risolvere il problema presso Giolab ad Assemini</strong>.
+        </p>
+      </section>
 
-            <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
-              <span className="px-3 py-1 bg-giolab-blue/10 text-giolab-blue rounded-full font-medium">
-                Tecnologia
-              </span>
-              <span className="flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
-                17 Gennaio 2025
-              </span>
-              <span className="flex items-center gap-2">
-                <Clock className="h-4 w-4" />
-                7 minuti di lettura
-              </span>
-            </div>
+      <section>
+        <h2 id="come-funziona-face-id" className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+          Come Funziona il Face ID e Perché è Così Delicato
+        </h2>
+        <p className="text-muted-foreground mb-4">
+          Il sistema <strong className="text-foreground">Face ID</strong> degli iPhone utilizza una tecnologia sofisticata chiamata <strong className="text-foreground">TrueDepth</strong>, composta da diversi sensori situati nella parte superiore dello schermo (notch):
+        </p>
+        <ul className="space-y-2 text-muted-foreground mb-6 list-disc list-inside ml-4">
+          <li><strong>Fotocamera a infrarossi</strong>: scansiona il tuo volto in 3D</li>
+          <li><strong>Proiettore di punti</strong>: proietta 30.000 punti invisibili sul viso</li>
+          <li><strong>Sensore di prossimità</strong>: rileva quando avvicini il telefono al viso</li>
+          <li><strong>Illuminatore</strong>: permette il funzionamento anche al buio</li>
+        </ul>
+        <p className="text-muted-foreground">
+          Questi componenti sono estremamente <strong className="text-foreground">sensibili agli urti</strong> e anche una caduta apparentemente innocua può causarne il malfunzionamento.
+        </p>
+      </section>
 
-            <h1 className="text-3xl md:text-5xl font-bold text-foreground leading-tight mb-8">
-              Perché il Face ID smette di funzionare dopo una caduta (e come risolvere)
-            </h1>
+      <section>
+        <h2 id="cause-principali-malfunzionamento" className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+          Le Cause Principali del Malfunzionamento Face ID
+        </h2>
 
-            <div className="w-full h-64 md:h-96 rounded-2xl bg-gradient-to-br from-giolab-blue/20 to-giolab-blue-light/20 flex items-center justify-center mb-12">
-              <span className="text-8xl">🔐</span>
-            </div>
+        <h3 id="disallineamento-sensori" className="text-xl md:text-2xl font-bold text-foreground mb-3 mt-6">
+          1. Disallineamento dei Sensori
+        </h3>
+        <p className="text-muted-foreground mb-4">
+          Anche se il display sembra intatto, l'impatto può causare un <strong className="text-foreground">leggero spostamento</strong> dei sensori Face ID. Anche millimetri di differenza sono sufficienti per compromettere il riconoscimento facciale.
+        </p>
 
-            <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground">
-              <p className="text-lg leading-relaxed">
-                Hai fatto cadere il tuo iPhone e ora <strong className="text-giolab-blue">il Face ID non funziona più</strong>? È un problema più comune di quanto pensi. Quando l'iPhone subisce un urto violento, i delicati sensori del sistema Face ID possono danneggiarsi o disallinearsi. In questa guida ti spiegheremo le cause e come <strong className="text-foreground">risolvere il problema presso Giolab ad Assemini</strong>.
-              </p>
+        <h3 id="danneggiamento-flex-cable" className="text-xl md:text-2xl font-bold text-foreground mb-3 mt-6">
+          2. Danneggiamento del Flex Cable
+        </h3>
+        <p className="text-muted-foreground mb-4">
+          Il cavo flat che collega i sensori Face ID alla scheda madre può <strong className="text-foreground">rompersi o danneggiarsi</strong> in seguito a una caduta, interrompendo la comunicazione tra i componenti.
+        </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-12 mb-4">
-                Come Funziona il Face ID e Perché è Così Delicato
-              </h2>
-              <p className="leading-relaxed">
-                Il sistema <strong className="text-foreground">Face ID</strong> degli iPhone utilizza una tecnologia sofisticata chiamata <strong className="text-foreground">TrueDepth</strong>, composta da diversi sensori situati nella parte superiore dello schermo (notch):
-              </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong>Fotocamera a infrarossi</strong>: scansiona il tuo volto in 3D</li>
-                <li><strong>Proiettore di punti</strong>: proietta 30.000 punti invisibili sul viso</li>
-                <li><strong>Sensore di prossimità</strong>: rileva quando avvicini il telefono al viso</li>
-                <li><strong>Illuminatore</strong>: permette il funzionamento anche al buio</li>
-              </ul>
-              <p className="leading-relaxed mt-4">
-                Questi componenti sono estremamente <strong className="text-foreground">sensibili agli urti</strong> e anche una caduta apparentemente innocua può causarne il malfunzionamento.
-              </p>
+        <h3 id="rottura-proiettore-punti" className="text-xl md:text-2xl font-bold text-foreground mb-3 mt-6">
+          3. Rottura del Proiettore di Punti
+        </h3>
+        <p className="text-muted-foreground mb-4">
+          Il proiettore di punti infrarossi è uno dei componenti più fragili. Se danneggiato, il Face ID non sarà più in grado di mappare correttamente il tuo volto.
+        </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-12 mb-4">
-                Le Cause Principali del Malfunzionamento Face ID
-              </h2>
+        <h3 id="danni-scheda-madre" className="text-xl md:text-2xl font-bold text-foreground mb-3 mt-6">
+          4. Danni alla Scheda Madre
+        </h3>
+        <p className="text-muted-foreground mb-4">
+          In casi più gravi, la caduta può causare <strong className="text-foreground">micro-rotture sulla scheda madre</strong> nel punto in cui sono collegati i sensori Face ID. Questo richiede una riparazione specializzata con <Link to="/blog/microsaldature-scheda-madre" className="text-giolab-blue hover:underline">micro-saldature</Link>.
+        </p>
+      </section>
 
-              <h3 className="text-xl font-bold text-foreground mt-8 mb-3">
-                1. Disallineamento dei Sensori
-              </h3>
-              <p className="leading-relaxed">
-                Anche se il display sembra intatto, l'impatto può causare un <strong className="text-foreground">leggero spostamento</strong> dei sensori Face ID. Anche millimetri di differenza sono sufficienti per compromettere il riconoscimento facciale.
-              </p>
+      <section>
+        <h2 id="messaggi-errore-comuni" className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+          Messaggi di Errore Comuni del Face ID
+        </h2>
+        <p className="text-muted-foreground mb-4">
+          Quando il Face ID smette di funzionare, potresti vedere uno di questi messaggi:
+        </p>
+        <ul className="space-y-2 text-muted-foreground mb-6 list-disc list-inside ml-4">
+          <li><strong>"Face ID non disponibile"</strong></li>
+          <li><strong>"Impossibile attivare Face ID su questo iPhone"</strong></li>
+          <li><strong>"Problema rilevato con Face ID"</strong></li>
+          <li><strong>"Face ID non configurato"</strong> (anche se lo era prima)</li>
+        </ul>
+      </section>
 
-              <h3 className="text-xl font-bold text-foreground mt-8 mb-3">
-                2. Danneggiamento del Flex Cable
-              </h3>
-              <p className="leading-relaxed">
-                Il cavo flat che collega i sensori Face ID alla scheda madre può <strong className="text-foreground">rompersi o danneggiarsi</strong> in seguito a una caduta, interrompendo la comunicazione tra i componenti.
-              </p>
+      <section>
+        <h2 id="cosa-provare-prima" className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+          Cosa Provare Prima di Portare l'iPhone in Assistenza
+        </h2>
+        <p className="text-muted-foreground mb-4">
+          Prima di recarti da un tecnico, puoi tentare alcune soluzioni software:
+        </p>
 
-              <h3 className="text-xl font-bold text-foreground mt-8 mb-3">
-                3. Rottura del Proiettore di Punti
-              </h3>
-              <p className="leading-relaxed">
-                Il proiettore di punti infrarossi è uno dei componenti più fragili. Se danneggiato, il Face ID non sarà più in grado di mappare correttamente il tuo volto.
-              </p>
+        <h3 id="riavvia-iphone" className="text-xl md:text-2xl font-bold text-foreground mb-3 mt-6">
+          1. Riavvia l'iPhone
+        </h3>
+        <p className="text-muted-foreground mb-4">
+          Un semplice riavvio può risolvere problemi temporanei. Premi e rilascia velocemente il tasto Volume Su, poi Volume Giù, poi tieni premuto il tasto laterale finché non appare il logo Apple.
+        </p>
 
-              <h3 className="text-xl font-bold text-foreground mt-8 mb-3">
-                4. Danni alla Scheda Madre
-              </h3>
-              <p className="leading-relaxed">
-                In casi più gravi, la caduta può causare <strong className="text-foreground">micro-rotture sulla scheda madre</strong> nel punto in cui sono collegati i sensori Face ID. Questo richiede una riparazione specializzata con micro-saldature.
-              </p>
+        <h3 id="resetta-face-id" className="text-xl md:text-2xl font-bold text-foreground mb-3 mt-6">
+          2. Resetta il Face ID
+        </h3>
+        <p className="text-muted-foreground mb-4">
+          Vai in <strong>Impostazioni → Face ID e codice → Inizializza Face ID</strong>, poi prova a riconfigurarlo da zero.
+        </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-12 mb-4">
-                Messaggi di Errore Comuni del Face ID
-              </h2>
-              <p className="leading-relaxed">
-                Quando il Face ID smette di funzionare, potresti vedere uno di questi messaggi:
-              </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong>"Face ID non disponibile"</strong></li>
-                <li><strong>"Impossibile attivare Face ID su questo iPhone"</strong></li>
-                <li><strong>"Problema rilevato con Face ID"</strong></li>
-                <li><strong>"Face ID non configurato"</strong> (anche se lo era prima)</li>
-              </ul>
+        <h3 id="aggiorna-ios" className="text-xl md:text-2xl font-bold text-foreground mb-3 mt-6">
+          3. Aggiorna iOS all'Ultima Versione
+        </h3>
+        <p className="text-muted-foreground mb-4">
+          Alcuni problemi di Face ID possono essere risolti con aggiornamenti software. Vai in <strong>Impostazioni → Generali → Aggiornamento Software</strong>.
+        </p>
+      </section>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-12 mb-4">
-                Cosa Provare Prima di Portare l'iPhone in Assistenza
-              </h2>
-              <p className="leading-relaxed">
-                Prima di recarti da un tecnico, puoi tentare alcune soluzioni software:
-              </p>
-              <h3 className="text-xl font-bold text-foreground mt-8 mb-3">
-                1. Riavvia l'iPhone
-              </h3>
-              <p className="leading-relaxed">
-                A volte un semplice riavvio può risolvere problemi temporanei del Face ID.
-              </p>
-
-              <h3 className="text-xl font-bold text-foreground mt-8 mb-3">
-                2. Ripristina le Impostazioni di Face ID
-              </h3>
-              <p className="leading-relaxed">
-                Vai su <strong>Impostazioni → Face ID e codice</strong> e prova a eliminare e riconfigurare il Face ID.
-              </p>
-
-              <h3 className="text-xl font-bold text-foreground mt-8 mb-3">
-                3. Aggiorna iOS
-              </h3>
-              <p className="leading-relaxed">
-                Assicurati di avere l'<strong className="text-foreground">ultima versione di iOS</strong> installata, in quanto alcuni bug possono essere risolti con gli aggiornamenti.
-              </p>
-
-              <p className="leading-relaxed mt-4">
-                Se nessuna di queste soluzioni funziona, il problema è <strong className="text-giolab-blue">hardware e richiede una riparazione professionale</strong>.
-              </p>
-
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-12 mb-4">
-                Riparazione Face ID ad Assemini: il Servizio Giolab
-              </h2>
-              <p className="leading-relaxed">
-                Da <strong className="text-giolab-blue">Giolab in Via Carmine 20 ad Assemini</strong>, i nostri tecnici specializzati possono diagnosticare e riparare i problemi Face ID con precisione. Il servizio include:
-              </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Diagnosi gratuita del sistema Face ID</li>
-                <li>Sostituzione sensori danneggiati con componenti certificati</li>
-                <li>Micro-saldature su scheda madre se necessario</li>
-                <li>Test completo del funzionamento Face ID</li>
-                <li>Garanzia 12 mesi sulla riparazione</li>
-              </ul>
-              <p className="leading-relaxed mt-4">
-                <Link to="/blog/riparazione-iphone-1-ora-giolab" className="text-giolab-blue hover:underline">Scopri come funziona il nostro servizio di riparazione rapida</Link>.
-              </p>
-
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-12 mb-4">
-                Quanto Costa Riparare il Face ID?
-              </h2>
-              <p className="leading-relaxed">
-                Il costo della riparazione Face ID varia in base alla causa del problema. Se si tratta di una semplice sostituzione del flex cable, il costo è contenuto. Se invece sono necessarie <strong className="text-foreground">micro-saldature sulla scheda madre</strong>, il prezzo sarà leggermente più alto.
-              </p>
-              <p className="leading-relaxed">
-                Vieni da Giolab per una <strong className="text-giolab-blue">diagnosi gratuita e un preventivo trasparente</strong>!
-              </p>
-
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-12 mb-4">
-                Conclusione
-              </h2>
-              <p className="leading-relaxed">
-                Se il tuo <strong className="text-foreground">Face ID ha smesso di funzionare dopo una caduta</strong>, non rassegnarti a usare solo il codice di sblocco. La maggior parte dei problemi Face ID può essere risolta con una riparazione professionale. Contatta Giolab ad Assemini per riportare il tuo iPhone alla piena funzionalità!
-              </p>
-            </div>
-
-            <div className="mt-16 p-8 rounded-2xl bg-gradient-to-br from-giolab-blue/10 to-giolab-blue-light/10 border-2 border-giolab-blue/20">
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                Face ID non funziona? Risolvilo da Giolab!
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                Diagnosi gratuita e riparazione professionale con garanzia 12 mesi.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button
-                  size="lg"
-                  onClick={() => {
-                    const whatsappNumber = "393406970686";
-                    const message = encodeURIComponent("Ciao! Il Face ID del mio iPhone non funziona più");
-                    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank", "noopener,noreferrer");
-                  }}
-                  className="bg-giolab-blue hover:bg-giolab-blue/90"
-                >
-                  Richiedi Diagnosi Gratuita
-                </Button>
-              </div>
-            </div>
-
-            {/* Social Share */}
-            <div className="mt-12">
-              <SocialShare
-                url="/blog/perche-face-id-smette-funzionare"
-                title="Perché il Face ID smette di funzionare dopo una caduta"
-                description="Face ID non funziona più dopo una caduta? Scopri le cause e come riparare il sensore."
-              />
-            </div>
-
-            <div className="mt-12">
-              <Link to="/blog">
-                <Button variant="ghost" className="gap-2">
-                  <ArrowLeft className="h-4 w-4" />
-                  Torna al Blog
-                </Button>
-              </Link>
-            </div>
-
-            <RelatedArticles 
-              currentSlug="perche-face-id-smette-funzionare"
-              category="Tecnologia"
-              maxArticles={3}
-            />
-          </div>
+      <section className="bg-giolab-blue/5 p-6 md:p-8 rounded-2xl border-l-4 border-giolab-blue">
+        <h2 id="riparazione-face-id-giolab" className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+          Riparazione Face ID da Giolab Assemini
+        </h2>
+        <p className="text-muted-foreground mb-4">
+          Se le soluzioni software non hanno funzionato, il problema è <strong className="text-foreground">hardware</strong>. Da <strong className="text-giolab-blue">Giolab ad Assemini</strong> possiamo:
+        </p>
+        <ul className="space-y-2 text-muted-foreground mb-6 list-disc list-inside ml-4">
+          <li><strong>Diagnosi gratuita</strong> del sistema Face ID</li>
+          <li><strong>Sostituzione sensori danneggiati</strong></li>
+          <li><strong>Riallineamento preciso</strong> dei componenti TrueDepth</li>
+          <li><strong>Riparazione flex cable</strong> se danneggiato</li>
+          <li><strong>Micro-saldature sulla scheda madre</strong> se necessario</li>
+        </ul>
+        <div className="flex flex-col sm:flex-row gap-4 mt-6">
+          <Button 
+            size="lg" 
+            className="bg-giolab-blue hover:bg-giolab-blue/90"
+            onClick={() => window.open('https://wa.me/393406970686?text=Ciao, il Face ID del mio iPhone non funziona più', '_blank')}
+          >
+            💬 Richiedi Diagnosi Gratuita
+          </Button>
         </div>
-      </article>
+      </section>
 
-      <Footer />
-      <FloatingWhatsApp />
-      <BlogNavigation />
+      <section>
+        <h2 id="conclusione" className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+          Conclusione
+        </h2>
+        <p className="text-muted-foreground">
+          Il <strong className="text-foreground">malfunzionamento del Face ID</strong> dopo una caduta è un problema comune ma risolvibile nella maggior parte dei casi. Se hai provato tutte le soluzioni software senza successo, <strong className="text-giolab-blue">contatta Giolab ad Assemini</strong> per una diagnosi professionale. I nostri tecnici hanno l'esperienza e gli strumenti necessari per ripristinare il Face ID del tuo iPhone!
+        </p>
+      </section>
     </div>
   );
-};
 
-export default PercheFaceIDSmetteFunzionare;
+  return (
+    <BlogArticleTemplate
+      title="Face ID Non Funziona Dopo una Caduta? Ecco Come Risolvere | Giolab"
+      description="Face ID non funziona più dopo una caduta dell'iPhone? Scopri le cause e come riparare il sensore Face ID presso Giolab ad Assemini."
+      keywords="face id non funziona dopo caduta, riparazione sensore iPhone, face id rotto, sensore faciale iPhone Assemini, riparazione face id Cagliari"
+      slug="perche-face-id-smette-funzionare"
+      ogImage="https://giolabriparazioni.it/og-images/perche-face-id-smette-funzionare.jpg"
+      author="Giolab Team"
+      datePublished="2025-01-17"
+      category="Riparazione"
+      content={articleContent}
+      readingTime={7}
+    />
+  );
+}
