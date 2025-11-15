@@ -35,14 +35,29 @@ const pages: Record<string, PreviewData> = {
 
 // Add blog articles to pages
 blogArticles.forEach(article => {
-  if (article.image.startsWith('/og-images/')) {
-    pages[`blog-${article.slug}`] = {
-      title: article.title,
-      description: article.description,
-      image: `https://giolabriparazioni.it${article.image}`,
-      url: `https://giolabriparazioni.it/blog/${article.slug}`
-    };
+  let imageUrl = "https://giolabriparazioni.it/og-image-giolab.jpg"; // default fallback
+  
+  // Handle different image types
+  if (typeof article.image === 'string') {
+    if (article.image.startsWith('/og-images/') || article.image.startsWith('/')) {
+      // Absolute path
+      imageUrl = `https://giolabriparazioni.it${article.image}`;
+    } else if (article.image.startsWith('http')) {
+      // Full URL
+      imageUrl = article.image;
+    }
+    // Skip emoji strings - use default fallback
+  } else {
+    // Imported image - use the import directly (Vite resolves this)
+    imageUrl = article.image as string;
   }
+  
+  pages[`blog-${article.slug}`] = {
+    title: article.title,
+    description: article.description,
+    image: imageUrl,
+    url: `https://giolabriparazioni.it/blog/${article.slug}`
+  };
 });
 
 export const SocialPreview = () => {
@@ -73,13 +88,11 @@ export const SocialPreview = () => {
                 <SelectItem value="homepage">🏠 Homepage</SelectItem>
                 <SelectItem value="servizi">⚙️ Servizi</SelectItem>
                 <SelectItem value="blog">📝 Blog Index</SelectItem>
-                {blogArticles
-                  .filter(article => article.image.startsWith('/og-images/'))
-                  .map(article => (
-                    <SelectItem key={article.slug} value={`blog-${article.slug}`}>
-                      📄 {article.title.substring(0, 50)}...
-                    </SelectItem>
-                  ))}
+                {blogArticles.map(article => (
+                  <SelectItem key={article.slug} value={`blog-${article.slug}`}>
+                    📄 {article.title.length > 50 ? `${article.title.substring(0, 50)}...` : article.title}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </div>
