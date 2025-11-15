@@ -206,8 +206,15 @@ const BlogNavigation = () => {
                 const element = document.getElementById(sectionId);
                 
                 if (element) {
-                  // Scroll alla sezione usando scrollIntoView con smooth behavior
-                  element.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+                  // Trova il container con scroll e fai scroll alla sezione
+                  const container = document.querySelector('.h-screen.overflow-y-scroll');
+                  if (container) {
+                    const offsetTop = element.offsetTop;
+                    container.scrollTo({
+                      top: offsetTop,
+                      behavior: 'smooth'
+                    });
+                  }
                 }
               } else {
                 // Altrimenti naviga alla pagina dedicata
