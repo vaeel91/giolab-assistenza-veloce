@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import SEOHead from "@/components/SEOHead";
+import ScrollToTop from "@/components/ScrollToTop";
 import { useEffect, useRef, useState } from "react";
 import { calculateAggregateRating, getReviewsForSchema } from "@/data/reviews";
 
@@ -137,6 +138,7 @@ const Index = () => {
         </section>
       </div>
       <FloatingWhatsApp />
+      <ScrollToTop />
       
       <style>{`
         .section-animate {

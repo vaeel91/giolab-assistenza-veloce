@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import SEOHead from "@/components/SEOHead";
+import ScrollToTop from "@/components/ScrollToTop";
 import RatingStars from "@/components/RatingStars";
 import TestimonialsShowcase from "@/components/TestimonialsShowcase";
 import { Link } from "react-router-dom";
@@ -405,6 +406,7 @@ const ServiceTemplate = ({
 
       <Footer />
       <FloatingWhatsApp />
+      <ScrollToTop />
     </div>
   );
 };

@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import SEOHead from "@/components/SEOHead";
+import ScrollToTop from "@/components/ScrollToTop";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
@@ -181,6 +182,7 @@ const Blog = () => {
 
       <Footer />
       <FloatingWhatsApp />
+      <ScrollToTop />
     </div>
   );
 };

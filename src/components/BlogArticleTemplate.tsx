@@ -67,6 +67,7 @@ import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SocialShare from "@/components/SocialShare";
+import ScrollToTop from "@/components/ScrollToTop";
 import RelatedArticles from "@/components/RelatedArticles";
 import ReadingProgress from "@/components/ReadingProgress";
 import { TableOfContents } from "@/components/TableOfContents";
@@ -261,6 +262,7 @@ export const BlogArticleTemplate = ({
         </div>
         
         <Footer />
+        <ScrollToTop />
       </div>
     </>
   );
