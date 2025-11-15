@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Contatti = () => {
   return (
@@ -28,6 +29,7 @@ const Contatti = () => {
       </div>
       
       <FloatingWhatsApp />
+      <ScrollToTop />
     </>
   );
 };

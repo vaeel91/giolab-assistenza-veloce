@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SocialAndLocation from "@/components/SocialAndLocation";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const DoveSiamo = () => {
   return (
@@ -28,6 +29,7 @@ const DoveSiamo = () => {
       </div>
       
       <FloatingWhatsApp />
+      <ScrollToTop />
     </>
   );
 };
