@@ -13,7 +13,9 @@ import { useLocation } from 'react-router-dom';
  * Features:
  * - Appare dopo 300px di scroll
  * - Animazione smooth fade-in/out
- * - Posizionamento in basso a sinistra (per non sovrapporsi al WhatsApp)
+ * - Posizionamento responsive:
+ *   * Mobile: centrato in basso per migliore accessibilità touch
+ *   * Desktop: in basso a sinistra (per non sovrapporsi al WhatsApp)
  * - Scroll animato verso l'alto
  */
 const ScrollToTop = () => {
@@ -53,13 +55,13 @@ const ScrollToTop = () => {
   return (
     <Button
       onClick={scrollToTop}
-      className={`fixed bottom-24 left-4 z-40 bg-giolab-blue hover:bg-giolab-blue-dark text-white shadow-lg rounded-full w-12 h-12 p-0 flex items-center justify-center transition-all duration-300 hover:scale-110 ${
+      className={`fixed bottom-24 left-1/2 -translate-x-1/2 md:left-4 md:translate-x-0 z-40 bg-giolab-blue hover:bg-giolab-blue-dark text-white shadow-lg rounded-full w-14 h-14 md:w-12 md:h-12 p-0 flex items-center justify-center transition-all duration-300 hover:scale-110 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
       }`}
       aria-label="Torna su"
       title="Torna su"
     >
-      <ArrowUp className="h-5 w-5" />
+      <ArrowUp className="h-6 w-6 md:h-5 md:w-5" />
     </Button>
   );
 };
