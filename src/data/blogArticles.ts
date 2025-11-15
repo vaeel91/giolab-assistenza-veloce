@@ -1,5 +1,6 @@
 import { BlogArticle } from "@/types/blogArticle";
 import recuperoDatiIPhoneRottoAssemini from "@/assets/recupero-dati-iphone-rotto-assemini.jpg";
+import batteriaMaggiorataIPhoneAssemini from "@/assets/batteria-maggiorata-iphone-assemini.jpg";
 
 export const blogArticles: BlogArticle[] = [
   {
@@ -18,7 +19,7 @@ export const blogArticles: BlogArticle[] = [
     date: "2025-01-27",
     readTime: "8 min",
     category: "Assistenza",
-    image: "🔋"
+    image: batteriaMaggiorataIPhoneAssemini
   },
   {
     slug: "recupero-dati-iphone-rotto-assemini",
