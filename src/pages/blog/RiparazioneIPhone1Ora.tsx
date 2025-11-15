@@ -143,7 +143,7 @@ export default function RiparazioneIPhone1Ora() {
       description="Riparazione iPhone rapida e professionale ad Assemini (Cagliari). Servizio express in 60 minuti con ricambi certificati e garanzia 12 mesi."
       keywords="riparazione iphone assemini, riparazione iphone 1 ora, assistenza iphone cagliari"
       slug="riparazione-iphone-1-ora-giolab-assemini"
-      ogImage="riparazione-iphone-1-ora.jpg"
+      ogImage="https://giolabriparazioni.it/og-images/riparazione-iphone-1-ora-assemini.jpg"
       author="GioLab Team"
       datePublished="2024-01-15"
       category="Riparazione"
