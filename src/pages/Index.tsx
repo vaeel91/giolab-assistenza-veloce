@@ -11,6 +11,7 @@ import Header from "@/components/Header";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import SEOHead from "@/components/SEOHead";
 import ScrollToTop from "@/components/ScrollToTop";
+import LabCarousel from "@/components/LabCarousel";
 import { useEffect, useRef, useState } from "react";
 import { calculateAggregateRating, getReviewsForSchema } from "@/data/reviews";
 
@@ -108,29 +109,36 @@ const Index = () => {
           <About />
         </section>
         <section 
-          id="testimonianze" 
+          id="laboratorio" 
           ref={(el) => (sectionsRef.current[4] = el as HTMLDivElement)}
+          className="min-h-screen snap-start snap-always section-animate"
+        >
+          <LabCarousel />
+        </section>
+        <section 
+          id="testimonianze" 
+          ref={(el) => (sectionsRef.current[5] = el as HTMLDivElement)}
           className="min-h-screen snap-start snap-always section-animate"
         >
           <TestimonialsShowcase variant="scroll" />
         </section>
         <section 
           id="dove-siamo" 
-          ref={(el) => (sectionsRef.current[5] = el as HTMLDivElement)}
+          ref={(el) => (sectionsRef.current[6] = el as HTMLDivElement)}
           className="min-h-screen snap-start snap-always section-animate"
         >
           <SocialAndLocation />
         </section>
         <section 
           id="faq" 
-          ref={(el) => (sectionsRef.current[6] = el as HTMLDivElement)}
+          ref={(el) => (sectionsRef.current[7] = el as HTMLDivElement)}
           className="min-h-screen snap-start snap-always section-animate"
         >
           <FAQ />
         </section>
         <section 
           id="contatti" 
-          ref={(el) => (sectionsRef.current[7] = el as HTMLDivElement)}
+          ref={(el) => (sectionsRef.current[8] = el as HTMLDivElement)}
           className="min-h-screen snap-start snap-always section-animate"
         >
           <Contact />
