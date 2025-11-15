@@ -146,8 +146,7 @@ export default function RiparazioneIPhone1Ora() {
       ogImage="riparazione-iphone-1-ora.jpg"
       author="GioLab Team"
       datePublished="2024-01-15"
-      dateModified="2024-01-15"
-      category="riparazioni"
+      category="Riparazione"
       content={articleContent}
       readingTime={7}
     />
