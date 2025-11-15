@@ -1,4 +1,5 @@
 import { BlogArticle } from "@/types/blogArticle";
+import riparazioneIPhoneSchermoRottoAssemini from "@/assets/riparazione-iphone-schermo-rotto-assemini.jpg";
 
 export const blogArticles: BlogArticle[] = [
   {
@@ -8,7 +9,7 @@ export const blogArticles: BlogArticle[] = [
     date: "2025-01-27",
     readTime: "7 min",
     category: "Riparazione",
-    image: "📱"
+    image: riparazioneIPhoneSchermoRottoAssemini
   },
   {
     slug: "batteria-maggiorata-iphone-giolab-assemini",
