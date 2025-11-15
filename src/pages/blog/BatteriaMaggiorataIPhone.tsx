@@ -89,15 +89,6 @@ export default function BatteriaMaggiorataIPhone() {
           Grazie al design della maggiore superficie interna e all'ottimizzazione energetica di iOS, 
           i modelli <strong>Pro Max</strong> beneficiano di un aumento anche superiore, arrivando fino a <strong>+30% di autonomia reale</strong>.
         </p>
-
-        <div className="blog-image-container">
-          <img 
-            src="/images/batteria-maggiorata-capacita.jpg" 
-            alt="Batteria maggiorata iPhone con capacità superiore - GioLab Assemini" 
-            className="w-full rounded-lg shadow-lg"
-            loading="lazy"
-          />
-        </div>
       </section>
 
       {/* SICUREZZA */}
@@ -120,15 +111,6 @@ export default function BatteriaMaggiorataIPhone() {
             📌 Le nostre batterie mantengono la dicitura <strong>"Ricambio Originale"</strong> nelle impostazioni iOS, 
             a differenza dei ricambi economici.
           </p>
-        </div>
-
-        <div className="blog-image-container">
-          <img 
-            src="/images/certificazioni-batteria-qualita.jpg" 
-            alt="Certificazioni qualità batterie iPhone CE - GioLab Assemini" 
-            className="w-full rounded-lg shadow-lg"
-            loading="lazy"
-          />
         </div>
       </section>
 
@@ -166,15 +148,6 @@ export default function BatteriaMaggiorataIPhone() {
             Per sfruttare al massimo la batteria maggiorata
           </li>
         </ol>
-
-        <div className="blog-image-container">
-          <img 
-            src="/images/installazione-batteria-professionale.jpg" 
-            alt="Installazione professionale batteria iPhone - Tecnico GioLab Assemini" 
-            className="w-full rounded-lg shadow-lg"
-            loading="lazy"
-          />
-        </div>
       </section>
 
       {/* OTTIMIZZAZIONE */}
