@@ -11,15 +11,8 @@ import { blogArticles } from "@/data/blogArticles";
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  // Estrai categorie uniche
-  const categories = useMemo(() => {
-    const uniqueCategories = Array.from(new Set(blogArticles.map(article => article.category)));
-    return uniqueCategories.sort();
-  }, []);
-
-  // Filtra articoli basandosi sulla ricerca e categoria
+  // Filtra articoli basandosi sulla ricerca
   const filteredArticles = useMemo(() => {
     return blogArticles.filter(article => {
       const matchesSearch = searchQuery.trim() === "" || 
@@ -27,15 +20,12 @@ const Blog = () => {
         article.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         article.category.toLowerCase().includes(searchQuery.toLowerCase());
       
-      const matchesCategory = selectedCategory === null || article.category === selectedCategory;
-      
-      return matchesSearch && matchesCategory;
+      return matchesSearch;
     });
-  }, [searchQuery, selectedCategory]);
+  }, [searchQuery]);
 
   const handleClearSearch = () => {
     setSearchQuery("");
-    setSelectedCategory(null);
   };
 
   return (
@@ -73,7 +63,7 @@ const Blog = () => {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-12 pr-12 h-14 text-lg border-2 focus:border-giolab-blue"
                 />
-                {(searchQuery || selectedCategory) && (
+                {searchQuery && (
                   <button
                     onClick={handleClearSearch}
                     className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
@@ -83,34 +73,7 @@ const Blog = () => {
                 )}
               </div>
 
-              {/* Category Filters - Link to Category Pages */}
-              <div className="flex flex-wrap gap-2 mt-4 justify-center">
-                <Link
-                  to="/blog"
-                  className="px-4 py-2 rounded-full text-sm font-medium transition-all bg-giolab-blue text-white hover:bg-giolab-blue/90"
-                >
-                  Tutti gli Articoli
-                </Link>
-                <Link to="/blog/riparazione-iphone" className="px-4 py-2 rounded-full text-sm font-medium transition-all bg-background text-muted-foreground hover:bg-giolab-blue/10 hover:text-giolab-blue border-2">
-                  iPhone
-                </Link>
-                <Link to="/blog/assistenza-smartphone" className="px-4 py-2 rounded-full text-sm font-medium transition-all bg-background text-muted-foreground hover:bg-giolab-blue/10 hover:text-giolab-blue border-2">
-                  Smartphone
-                </Link>
-                <Link to="/blog/riparazione-pc" className="px-4 py-2 rounded-full text-sm font-medium transition-all bg-background text-muted-foreground hover:bg-giolab-blue/10 hover:text-giolab-blue border-2">
-                  PC
-                </Link>
-                <Link to="/blog/console" className="px-4 py-2 rounded-full text-sm font-medium transition-all bg-background text-muted-foreground hover:bg-giolab-blue/10 hover:text-giolab-blue border-2">
-                  Console
-                </Link>
-                <Link to="/blog/sicurezza-digitale" className="px-4 py-2 rounded-full text-sm font-medium transition-all bg-background text-muted-foreground hover:bg-giolab-blue/10 hover:text-giolab-blue border-2">
-                  Sicurezza
-                </Link>
-                <Link to="/blog/guide" className="px-4 py-2 rounded-full text-sm font-medium transition-all bg-background text-muted-foreground hover:bg-giolab-blue/10 hover:text-giolab-blue border-2">
-                  Guide
-                </Link>
               </div>
-            </div>
           </div>
         </div>
       </section>

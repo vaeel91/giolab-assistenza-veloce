@@ -10,13 +10,6 @@ import { Input } from "@/components/ui/input";
 const BlogPreview = () => {
   const { ref, isVisible } = useScrollAnimation();
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<string>("Tutte");
-  
-  // Estrai tutte le categorie uniche dagli articoli
-  const categories = useMemo(() => {
-    const uniqueCategories = Array.from(new Set(blogArticles.map(article => article.category)));
-    return ["Tutte", ...uniqueCategories];
-  }, []);
   
   const filteredArticles = useMemo(() => {
     return blogArticles.filter((article) => {
@@ -25,11 +18,9 @@ const BlogPreview = () => {
         article.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         article.category.toLowerCase().includes(searchQuery.toLowerCase());
       
-      const matchesCategory = selectedCategory === "Tutte" || article.category === selectedCategory;
-      
-      return matchesSearch && matchesCategory;
+      return matchesSearch;
     });
-  }, [searchQuery, selectedCategory]);
+  }, [searchQuery]);
   
   // Se non ci sono articoli, non mostrare la sezione
   if (blogArticles.length === 0) {
@@ -46,47 +37,6 @@ const BlogPreview = () => {
           <p className="text-xs md:text-sm text-muted-foreground mb-2">
             {blogArticles.length} articoli disponibili
           </p>
-          
-          {/* Filtri per categoria - Link alle pagine categoria */}
-          <div className="flex flex-wrap justify-center gap-2 mb-3">
-            <Badge
-              variant={selectedCategory === "Tutte" ? "default" : "outline"}
-              className="cursor-pointer transition-all hover:scale-105"
-              onClick={() => setSelectedCategory("Tutte")}
-            >
-              Tutte
-            </Badge>
-            <Link to="/blog/riparazione-iphone">
-              <Badge variant="outline" className="cursor-pointer transition-all hover:scale-105 hover:bg-giolab-blue hover:text-white">
-                Riparazione iPhone
-              </Badge>
-            </Link>
-            <Link to="/blog/assistenza-smartphone">
-              <Badge variant="outline" className="cursor-pointer transition-all hover:scale-105 hover:bg-giolab-blue hover:text-white">
-                Assistenza Smartphone
-              </Badge>
-            </Link>
-            <Link to="/blog/riparazione-pc">
-              <Badge variant="outline" className="cursor-pointer transition-all hover:scale-105 hover:bg-giolab-blue hover:text-white">
-                Riparazione PC
-              </Badge>
-            </Link>
-            <Link to="/blog/console">
-              <Badge variant="outline" className="cursor-pointer transition-all hover:scale-105 hover:bg-giolab-blue hover:text-white">
-                Console
-              </Badge>
-            </Link>
-            <Link to="/blog/sicurezza-digitale">
-              <Badge variant="outline" className="cursor-pointer transition-all hover:scale-105 hover:bg-giolab-blue hover:text-white">
-                Sicurezza Digitale
-              </Badge>
-            </Link>
-            <Link to="/blog/guide">
-              <Badge variant="outline" className="cursor-pointer transition-all hover:scale-105 hover:bg-giolab-blue hover:text-white">
-                Guide e Consigli
-              </Badge>
-            </Link>
-          </div>
           
           {/* Barra di ricerca */}
           <div className="max-w-md mx-auto mb-3">
