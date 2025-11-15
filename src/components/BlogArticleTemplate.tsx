@@ -170,6 +170,7 @@ export const BlogArticleTemplate = ({
       
       <div className="min-h-screen bg-background">
         <Header />
+        <BackToBlog variant="top" />
         <BlogNavigation />
         
         <div className="container mx-auto px-4 pt-24 pb-8">
@@ -221,7 +222,10 @@ export const BlogArticleTemplate = ({
             </div>
           </div>
           
-              {content}
+              {/* Main Article Content */}
+              <article className="prose prose-lg max-w-none dark:prose-invert blog-content">
+                {content}
+              </article>
             </article>
 
             {/* Table of Contents Desktop - visibile solo su schermi XL */}
@@ -253,6 +257,10 @@ export const BlogArticleTemplate = ({
         <SocialShare title={cleanTitle} url={fullUrl} />
 
         <RelatedArticles currentSlug={slug} category={category} />
+        
+        <div className="container mx-auto px-4">
+          <BackToBlog variant="bottom" />
+        </div>
         
         <Footer />
       </div>
