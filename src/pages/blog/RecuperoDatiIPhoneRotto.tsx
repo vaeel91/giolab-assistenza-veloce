@@ -9,260 +9,272 @@ import { ArticleCTA } from "@/components/blog/ArticleCTA";
 
 export default function RecuperoDatiIPhoneRotto() {
   const articleContent = (
-    <div className="blog-content">
-      {/* INTRODUZIONE */}
-      <section>
-        <h2 className="blog-h2">Introduzione: Quando i Tuoi Dati Sembrano Persi</h2>
+    <>
+      <section className="blog-section">
+        <h2 className="blog-h2">📱 Introduzione: Quando il Tuo iPhone Sembra Irrimediabilmente Perso</h2>
         <p className="blog-paragraph">
-          Un iPhone rotto, caduto in acqua o con schermo completamente nero può sembrare una tragedia, 
-          soprattutto se contiene <strong>foto insostituibili, messaggi importanti, documenti di lavoro 
-          o contatti essenziali</strong>. La buona notizia è che nella maggior parte dei casi, 
-          <strong>i dati possono essere recuperati</strong>, anche quando il telefono sembra completamente morto.
+          Un iPhone che non si accende, con schermo nero, caduto in acqua o danneggiato gravemente può sembrare una tragedia, soprattutto se contiene foto, video, documenti di lavoro, contatti e messaggi importanti.
         </p>
         <p className="blog-paragraph">
-          <strong>GioLab ad Assemini</strong>, in provincia di Cagliari, offre un servizio professionale di 
-          <strong>recupero dati da iPhone danneggiati</strong>, utilizzando tecnologie avanzate e tecniche 
-          di microsaldatura per accedere ai chip di memoria anche nei casi più critici.
+          <strong>La verità?</strong><br />
+          Nella maggior parte dei casi i dati possono essere recuperati, anche quando il dispositivo sembra completamente morto.
+        </p>
+        <p className="blog-paragraph">
+          <strong>GioLab</strong>, ad Assemini (Cagliari), è specializzato nel recupero dati da iPhone danneggiati, grazie a tecniche avanzate di diagnostica elettronica, microsaldatura e interventi diretti su scheda madre e chip NAND.
         </p>
       </section>
 
-      {/* IL PROBLEMA */}
-      <section>
-        <h2 className="blog-h2">Il Problema: Cause Comuni di Perdita di Dati su iPhone</h2>
+      <section className="blog-section">
+        <h2 className="blog-h2">🔍 Le Cause più Comuni di Perdita o Inaccessibilità dei Dati</h2>
         <p className="blog-paragraph">
-          I dati su iPhone possono diventare inaccessibili per diverse ragioni:
+          I dati possono diventare irraggiungibili per tre categorie di problemi.
         </p>
+
+        <h3 className="blog-h3">1. Danni fisici</h3>
+        <ul className="blog-list-bulleted">
+          <li>Schermo completamente nero</li>
+          <li>Caduta con danni alla motherboard</li>
+          <li>Danni da liquidi (mare, acqua dolce, bevande, condensa)</li>
+          <li>Schiacciamento del dispositivo</li>
+          <li>Surriscaldamento prolungato</li>
+        </ul>
+
+        <h3 className="blog-h3">2. Problemi software</h3>
+        <ul className="blog-list-bulleted">
+          <li>Aggiornamento iOS fallito</li>
+          <li>iPhone bloccato in bootloop</li>
+          <li>Modalità recovery forzata</li>
+          <li>Codice errato con telefono disabilitato</li>
+          <li>Corruzione del file system</li>
+        </ul>
+
+        <h3 className="blog-h3">3. Guasti hardware</h3>
+        <ul className="blog-list-bulleted">
+          <li>Scheda madre in corto</li>
+          <li>Chip NAND compromesso</li>
+          <li>Connettore batteria o power danneggiato</li>
+          <li>Circuiti di alimentazione bruciati</li>
+        </ul>
+
+        <div className="blog-highlight-box">
+          <p className="blog-paragraph">
+            <strong>⚠️ IMPORTANTE – iPhone bagnato:</strong><br />
+            Non accenderlo, non caricarlo, non asciugarlo con il phon. Porta il telefono subito da un centro specializzato.
+          </p>
+        </div>
+      </section>
+
+      <section className="blog-section">
+        <h2 className="blog-h2">🔧 Tecniche Professionali di Recupero Dati – GioLab Assemini</h2>
+        <p className="blog-paragraph">
+          Ogni caso viene gestito con la miglior strategia possibile.
+        </p>
+
+        <h3 className="blog-h3">1. Riparazione funzionale</h3>
+        <p className="blog-paragraph">
+          Se il problema riguarda solo schermo, batteria o connettori, ripristiniamo il dispositivo e i dati tornano subito accessibili.
+        </p>
+
+        <h3 className="blog-h3">2. Recupero tramite DFU / Recovery</h3>
+        <p className="blog-paragraph">
+          Ideale per problemi software. Accediamo ai dati tramite:
+        </p>
+        <ul className="blog-list-bulleted">
+          <li>DFU mode</li>
+          <li>Recovery mode</li>
+          <li>Tool diagnostici professionali</li>
+        </ul>
+
+        <h3 className="blog-h3">3. Microsaldature e interventi su scheda madre</h3>
+        <p className="blog-paragraph">
+          Per danni complessi interveniamo su:
+        </p>
+        <ul className="blog-list-bulleted">
+          <li>linee interrotte</li>
+          <li>alimentazioni mancanti</li>
+          <li>componenti bruciati</li>
+          <li>ossidazioni da liquido</li>
+          <li>cortocircuiti sulla motherboard</li>
+        </ul>
+
+        <h3 className="blog-h3">4. Estrazione diretta del chip NAND (casi estremi)</h3>
+        <p className="blog-paragraph">
+          Quando l'iPhone è irrecuperabile:
+        </p>
+        <ul className="blog-list-bulleted">
+          <li>rimozione fisica del chip NAND</li>
+          <li>lettura con programmatori professionali</li>
+          <li>decrittazione e recupero dati (compatibilmente con Secure Enclave)</li>
+        </ul>
+
+        <div className="blog-highlight-box">
+          <p className="blog-paragraph">
+            <strong>💡 Nota tecnica:</strong> Se il Secure Enclave è danneggiato (Face ID/Touch ID), la decrittazione potrebbe non essere possibile.
+          </p>
+        </div>
+      </section>
+
+      <section className="blog-section">
+        <h2 className="blog-h2">📊 Competenza e Affidabilità: Perché il Recupero Dati va Affidato a GioLab</h2>
+        <p className="blog-paragraph">
+          Il recupero dati da iPhone è un'operazione delicatissima: richiede elettronica avanzata, esperienza reale e strumenti altamente specializzati.
+        </p>
+        <p className="blog-paragraph">
+          <strong>GioLab</strong> unisce competenza tecnica profonda e massima attenzione ai dati personali.
+        </p>
+
+        <p className="blog-paragraph">
+          <strong>Perché molti clienti ci scelgono:</strong>
+        </p>
+        <ul className="blog-list-bulleted">
+          <li>attrezzatura da laboratorio professionale (microscopi HD, stazioni BGA, programmatori NAND)</li>
+          <li>esperienza pratica su centinaia di dispositivi Apple danneggiati</li>
+          <li>procedure di diagnostica approfondita, prima di ogni intervento</li>
+          <li>approccio conservativo, per preservare i dati prima di tutto</li>
+          <li>comunicazione trasparente, chiara e comprensibile</li>
+        </ul>
+
+        <p className="blog-paragraph">
+          Questo ci permette di affrontare anche casi considerati "impossibili" da altri centri assistenza.
+        </p>
+      </section>
+
+      <section className="blog-section">
+        <h2 className="blog-h2">📞 Come Funziona il Servizio di Recupero Dati</h2>
+        <p className="blog-paragraph">
+          Un percorso semplice e trasparente.
+        </p>
+
+        <ol className="blog-list-numbered">
+          <li>
+            <strong>Contatta subito GioLab</strong><br />
+            📞 340 69 70 686<br />
+            📍 Via Carmine 20, Assemini (Cagliari)
+          </li>
+          <li>
+            <strong>Diagnosi professionale gratuita</strong><br />
+            Analizziamo il dispositivo con strumenti professionali.
+          </li>
+          <li>
+            <strong>Preventivo dettagliato</strong><br />
+            Chiaro, senza sorprese. Ti spieghiamo:
+            <ul className="blog-list-bulleted">
+              <li>tipo di intervento necessario</li>
+              <li>difficoltà tecnica</li>
+              <li>tempi stimati</li>
+              <li>modalità di recupero dati</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Intervento (da poche ore a 7 giorni)</strong><br />
+            Dipende dal danno e dalla complessità del caso.
+          </li>
+          <li>
+            <strong>Verifica dei dati recuperati</strong><br />
+            Ti mostriamo in anteprima i file estratti.
+          </li>
+          <li>
+            <strong>Trasferimento sicuro su:</strong>
+            <ul className="blog-list-bulleted">
+              <li>nuovo iPhone</li>
+              <li>PC/Mac</li>
+              <li>USB o hard disk</li>
+              <li>cloud (iCloud, Google Drive, ecc.)</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <section className="blog-section">
+        <h2 className="blog-h2">🔒 Come Proteggere i Tuoi Dati in Futuro</h2>
         
-        <h3 className="blog-h3">Danni Fisici</h3>
+        <h3 className="blog-h3">Backup automatici consigliati</h3>
         <ul className="blog-list-bulleted">
-          <li><strong>Caduta accidentale</strong> con danni allo schermo o alla scheda madre</li>
-          <li><strong>Danni da liquidi</strong>: acqua, caffè, bevande che provocano cortocircuiti</li>
-          <li><strong>Schiacciamento</strong> del dispositivo (es. sedendosi sul telefono)</li>
-          <li><strong>Surriscaldamento eccessivo</strong> che danneggia i componenti interni</li>
+          <li>iCloud attivo</li>
+          <li>Backup locale su PC/Mac</li>
+          <li>Google Foto per le immagini</li>
         </ul>
 
-        <h3 className="blog-h3">Problemi Software</h3>
+        <h3 className="blog-h3">Protezione fisica</h3>
         <ul className="blog-list-bulleted">
-          <li><strong>Aggiornamento iOS fallito</strong> che lascia il telefono bloccato</li>
-          <li><strong>Loop di riavvio</strong> continuo (bootloop)</li>
-          <li><strong>iPhone disabilitato</strong> dopo troppi tentativi di sblocco errati</li>
-          <li><strong>Corruzione del file system</strong> che impedisce l'avvio</li>
+          <li>Custodia antiurto</li>
+          <li>Pellicola display e fotocamera</li>
+          <li>Evitare tasca posteriore</li>
         </ul>
 
-        <h3 className="blog-h3">Guasti Hardware</h3>
-        <ul className="blog-list-bulleted">
-          <li><strong>Scheda madre danneggiata</strong> da cortocircuito o componente bruciato</li>
-          <li><strong>Chip di memoria NAND difettoso</strong> o danneggiato</li>
-          <li><strong>Connettore batteria rotto</strong> che impedisce l'accensione</li>
-        </ul>
-
-        <div className="blog-highlight-box warning">
-          <p>
-            <strong>⚠️ Cosa NON fare:</strong> Se il tuo iPhone è caduto in acqua, NON provare ad accenderlo 
-            o a caricarlo immediatamente. Questo può causare cortocircuiti e rendere il recupero dati 
-            molto più difficile o impossibile. Portalo subito da un tecnico specializzato.
-          </p>
-        </div>
-      </section>
-
-      {/* ANALISI PROFESSIONALE */}
-      <section>
-        <h2 className="blog-h2">Analisi Professionale: Tecniche di Recupero Dati</h2>
-        <p className="blog-paragraph">
-          <strong>GioLab</strong> utilizza diverse tecniche avanzate per il recupero dati, a seconda del tipo di danno:
-        </p>
-
-        <h3 className="blog-h3">1. Recupero Tramite Riparazione Funzionale</h3>
-        <p className="blog-paragraph">
-          In molti casi, il problema è limitato a un <strong>componente specifico</strong> (schermo, batteria, connettore). 
-          Sostituendo il componente danneggiato, il dispositivo torna funzionante e i dati sono immediatamente accessibili. 
-          Questo è il metodo più semplice e veloce.
-        </p>
-
-        <h3 className="blog-h3">2. Recupero Tramite Modalità DFU/Recovery</h3>
-        <p className="blog-paragraph">
-          Se l'iPhone ha problemi software ma l'hardware è integro, possiamo utilizzare strumenti professionali 
-          per accedere al dispositivo in <strong>modalità DFU (Device Firmware Update)</strong> o Recovery Mode, 
-          recuperando i dati prima di ripristinare il sistema operativo.
-        </p>
-
-        <h3 className="blog-h3">3. Microsaldature e Riparazione Scheda Madre</h3>
-        <p className="blog-paragraph">
-          Nei casi più complessi, dove la scheda madre è danneggiata, i nostri tecnici specializzati in <strong>microsaldature</strong> possono:
-        </p>
-        <ul className="blog-list-bulleted">
-          <li>Riparare tracciati interrotti sulla scheda madre</li>
-          <li>Sostituire chip danneggiati (ad eccezione del chip NAND che contiene i dati)</li>
-          <li>Pulire e ripristinare circuiti danneggiati da liquidi</li>
-          <li>Ripristinare alimentazione ai componenti critici</li>
-        </ul>
-
-        <h3 className="blog-h3">4. Estrazione Diretta Chip NAND (Casi Estremi)</h3>
-        <p className="blog-paragraph">
-          Quando il dispositivo è irrimediabilmente danneggiato, l'ultima risorsa è l'<strong>estrazione fisica 
-          del chip di memoria NAND</strong>. Questa procedura avanzata richiede attrezzature specializzate e competenze 
-          di livello professionale:
-        </p>
+        <h3 className="blog-h3">In caso di danno da liquidi</h3>
         <ol className="blog-list-numbered">
-          <li>Rimozione del chip NAND dalla scheda madre danneggiata</li>
-          <li>Lettura diretta del chip tramite programmatori NAND professionali</li>
-          <li>Decrittazione dei dati (se possibile, dipende da Face ID/Touch ID)</li>
-          <li>Recupero di foto, video, messaggi e contatti</li>
+          <li>Spegni</li>
+          <li>Non ricaricare</li>
+          <li>Non usare il phon</li>
+          <li>Porta subito l'iPhone da GioLab</li>
         </ol>
-
-        <div className="blog-highlight-box info">
-          <p>
-            <strong>💡 Limitazione Tecnica:</strong> A causa della crittografia hardware di Apple, se l'iPhone ha 
-            Face ID o Touch ID attivati e il chip Secure Enclave è danneggiato, il recupero completo dei dati 
-            può essere impossibile. Per questo è fondamentale effettuare backup regolari su iCloud o iTunes.
-          </p>
-        </div>
       </section>
 
-      {/* SOLUZIONE PASSO PASSO */}
-      <section>
-        <h2 className="blog-h2">Soluzione: Come Procedere per il Recupero Dati</h2>
+      <section className="blog-section">
+        <h2 className="blog-h2">📍 Perché Scegliere GioLab ad Assemini (Cagliari)</h2>
         <p className="blog-paragraph">
-          Ecco i passaggi da seguire se hai bisogno di recuperare dati da un iPhone danneggiato:
+          Siamo specializzati in:
         </p>
-        <ol className="blog-list-numbered">
-          <li>
-            <strong>Contatta Immediatamente GioLab</strong><br />
-            Chiama il <a href="tel:+393406970686" className="text-primary hover:underline">+39 340 69 70 686</a> o 
-            recati in <strong>Via Carmine 20, Assemini (Cagliari)</strong>. Più rapidamente interveniamo, 
-            maggiori sono le possibilità di successo, specialmente in caso di danni da liquidi.
-          </li>
-          <li>
-            <strong>Diagnosi Professionale Gratuita</strong><br />
-            I nostri tecnici esaminano il dispositivo con attrezzature professionali per identificare 
-            l'esatta natura del danno e valutare le probabilità di recupero dati.
-          </li>
-          <li>
-            <strong>Preventivo Trasparente</strong><br />
-            Ricevi un preventivo dettagliato con indicazione di:
-            <ul className="blog-list-bulleted">
-              <li>Tipo di intervento necessario</li>
-              <li>Probabilità di successo (alta, media, bassa)</li>
-              <li>Tempi di lavorazione stimati</li>
-              <li>Costo dell'intervento</li>
-            </ul>
-          </li>
-          <li>
-            <strong>Intervento di Recupero (1-7 giorni)</strong><br />
-            A seconda della complessità, l'intervento può richiedere da poche ore (riparazione semplice) 
-            fino a una settimana (microsaldature complesse o estrazione chip NAND).
-          </li>
-          <li>
-            <strong>Verifica Dati Recuperati</strong><br />
-            Una volta completato il recupero, ti mostriamo i dati estratti per verificare che tutto 
-            sia stato recuperato correttamente.
-          </li>
-          <li>
-            <strong>Trasferimento Dati</strong><br />
-            I dati recuperati vengono trasferiti su:
-            <ul className="blog-list-bulleted">
-              <li>Un nuovo iPhone (se disponibile)</li>
-              <li>Backup iTunes su PC/Mac</li>
-              <li>Disco esterno o chiavetta USB</li>
-              <li>Cloud storage (iCloud, Google Drive, ecc.)</li>
-            </ul>
-          </li>
-        </ol>
-
-        <div className="blog-highlight-box success">
-          <p>
-            <strong>✅ Tasso di Successo:</strong> GioLab ha un tasso di successo nel recupero dati superiore 
-            al 85% anche nei casi di danni gravi. La nostra esperienza e le attrezzature professionali 
-            fanno la differenza.
-          </p>
-        </div>
-      </section>
-
-      {/* CONSIGLI TECNICI */}
-      <section>
-        <h2 className="blog-h2">Consigli Tecnici: Come Proteggere i Tuoi Dati</h2>
+        <ul className="blog-list-bulleted">
+          <li>recupero dati iPhone non funzionanti</li>
+          <li>microsaldature professionali</li>
+          <li>danni da liquidi</li>
+          <li>schede madri in corto</li>
+          <li>estrazione NAND</li>
+          <li>ripristino accesso ai dati da dispositivi completamente morti</li>
+        </ul>
         <p className="blog-paragraph">
-          La migliore strategia è la <strong>prevenzione</strong>. Ecco come proteggere i tuoi dati:
+          Competenza tecnica, trasparenza e strumentazione da laboratorio.
         </p>
-
-        <h3 className="blog-h3">Backup Automatici</h3>
-        <ul className="blog-list-bulleted">
-          <li>Attiva <strong>backup automatico iCloud</strong> nelle impostazioni iPhone</li>
-          <li>Collega l'iPhone a iTunes/Finder almeno una volta al mese per backup locale</li>
-          <li>Usa app di terze parti come Google Foto per backup foto automatico</li>
-          <li>Verifica regolarmente che i backup siano completi e aggiornati</li>
-        </ul>
-
-        <h3 className="blog-h3">Protezione Fisica</h3>
-        <ul className="blog-list-bulleted">
-          <li>Usa <strong>custodie protettive</strong> con assorbimento urti</li>
-          <li>Applica <strong>pellicole protettive</strong> su schermo e fotocamera</li>
-          <li>Evita di portare l'iPhone in tasca posteriore dei pantaloni</li>
-          <li>Non usare l'iPhone vicino a liquidi (bagno, piscina, cucina)</li>
-        </ul>
-
-        <h3 className="blog-h3">Cosa Fare in Emergenza</h3>
-        <div className="blog-highlight-box warning">
-          <p>
-            <strong>Se l'iPhone cade in acqua:</strong><br />
-            1. Spegnilo immediatamente (se ancora acceso)<br />
-            2. NON provare a caricarlo<br />
-            3. Asciuga esternamente con un panno<br />
-            4. Portalo subito da GioLab per pulizia professionale<br />
-            5. NON usare phon o fonti di calore dirette<br />
-            6. Mantieni il telefono in verticale con la porta di ricarica verso il basso per evitare che l'acqua raggiunga i componenti critici della scheda madre
-          </p>
-        </div>
       </section>
 
-      {/* CTA ARTICOLO */}
       <ArticleCTA />
 
-      {/* QUANDO RIVOLGERSI A UN TECNICO */}
-      <section>
-        <h2 className="blog-h2">Quando Rivolgersi a un Tecnico per Recupero Dati?</h2>
+      <section className="blog-section">
+        <h2 className="blog-h2">❓ FAQ SEO – Domande Frequenti sul Recupero Dati iPhone</h2>
+        
+        <h3 className="blog-h3">▶️ Come recuperare dati da un iPhone che non si accende?</h3>
         <p className="blog-paragraph">
-          È fondamentale rivolgersi a un <strong>centro specializzato</strong> come GioLab ad Assemini se:
+          Serve un intervento tecnico. Tentativi fai-da-te possono peggiorare il danno. A GioLab eseguiamo diagnosi e ripristino delle linee di alimentazione o accesso diretto alla memoria.
         </p>
-        <ul className="blog-list-bulleted">
-          <li>Il tuo iPhone <strong>non si accende più</strong> dopo un danno fisico</li>
-          <li>Il dispositivo è stato <strong>a contatto con liquidi</strong></li>
-          <li>Lo schermo è nero ma senti ancora suoni o vibrazioni</li>
-          <li>Il telefono è bloccato in loop di riavvio continuo</li>
-          <li>Hai dimenticato il codice di sblocco e hai superato i tentativi massimi</li>
-          <li>L'iPhone è stato <strong>danneggiato gravemente</strong> (schiacciato, caduto da grande altezza)</li>
-        </ul>
 
+        <h3 className="blog-h3">▶️ Si possono recuperare i dati da un iPhone caduto in acqua?</h3>
         <p className="blog-paragraph">
-          <strong>Non tentare riparazioni fai-da-te</strong> se hai dati importanti: rischi di danneggiare 
-          ulteriormente il dispositivo e rendere il recupero impossibile. I tecnici di GioLab hanno 
-          l'esperienza e gli strumenti necessari per massimizzare le possibilità di successo.
+          Sì, purché non venga acceso o caricato subito dopo il contatto con liquidi. Intervenendo rapidamente è spesso possibile ripristinare l'accesso ai dati.
+        </p>
+
+        <h3 className="blog-h3">▶️ Posso recuperare foto da un iPhone con schermo nero?</h3>
+        <p className="blog-paragraph">
+          Sì, se il telefono risponde ai comandi interni possiamo accedere ai dati tramite riparazione funzionale o DFU. In caso contrario interveniamo sulla scheda madre.
+        </p>
+
+        <h3 className="blog-h3">▶️ Cosa fare se l'iPhone resta bloccato sul logo Apple?</h3>
+        <p className="blog-paragraph">
+          È un tipico bootloop: i dati sono spesso recuperabili tramite modalità DFU o riparazione del circuito principale.
+        </p>
+
+        <h3 className="blog-h3">▶️ È possibile recuperare i dati se il chip NAND è danneggiato?</h3>
+        <p className="blog-paragraph">
+          Dipende dal danno e dallo stato del Secure Enclave. In molti casi l'intervento è possibile tramite estrazione e lettura diretta del chip.
+        </p>
+
+        <h3 className="blog-h3">▶️ Quanto tempo richiede il recupero dati da iPhone?</h3>
+        <p className="blog-paragraph">
+          Da poche ore a circa 7 giorni, in base al tipo di danno (software, hardware o scheda madre).
+        </p>
+
+        <h3 className="blog-h3">▶️ Quali dati possono essere recuperati?</h3>
+        <p className="blog-paragraph">
+          Foto, video, chat WhatsApp, SMS, note, contatti, documenti, file app e molto altro, a seconda dello stato della memoria.
+        </p>
+
+        <h3 className="blog-h3">▶️ Servite tutta la provincia di Cagliari?</h3>
+        <p className="blog-paragraph">
+          Sì. Molti clienti arrivano da Quartu, Selargius, Decimomannu, Elmas, Iglesias, Carbonia e tutta la Sardegna.
         </p>
       </section>
-
-      {/* CONCLUSIONE */}
-      <section>
-        <h2 className="blog-h2">Conclusione: I Tuoi Dati Sono al Sicuro con GioLab</h2>
-        <p className="blog-paragraph">
-          Il <strong>recupero dati da iPhone danneggiati</strong> è un'operazione delicata che richiede 
-          competenze tecniche avanzate e attrezzature professionali. <strong>GioLab ad Assemini</strong>, 
-          in provincia di Cagliari, è il centro di riferimento per:
-        </p>
-        <ul className="blog-list-bulleted">
-          <li>Recupero dati da iPhone con <strong>danni fisici gravi</strong></li>
-          <li><strong>Microsaldature</strong> su scheda madre</li>
-          <li>Recupero da dispositivi <strong>danneggiati da liquidi</strong></li>
-          <li>Estrazione dati da chip NAND in casi estremi</li>
-          <li><strong>Tasso di successo superiore all'85%</strong></li>
-        </ul>
-
-        <p className="blog-paragraph">
-          Non perdere la speranza se il tuo iPhone sembra irrecuperabile. Contatta GioLab per una 
-          <strong>diagnosi gratuita</strong> e scopri se i tuoi dati possono essere salvati. Anni di ricordi, 
-          documenti importanti e contatti essenziali meritano un tentativo professionale di recupero.
-        </p>
-      </section>
-    </div>
+    </>
   );
 
   return (
