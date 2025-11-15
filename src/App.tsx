@@ -38,6 +38,7 @@ import RiparazioneWebcamHPVictus from "./pages/blog/RiparazioneWebcamHPVictus";
 import BatteriaMaggiorataIPhoneGiolab from "./pages/blog/BatteriaMaggiorataIPhoneGiolab";
 import RigenerazioneVetroAppleWatch from "./pages/blog/RigenerazioneVetroAppleWatch";
 import SEODocumentation from "./pages/SEODocumentation";
+import SocialPreview from "./pages/SocialPreview";
 
 // Blog Category Pages
 import RiparazioneIPhone from "./pages/blog/categories/RiparazioneIPhone";
@@ -66,6 +67,7 @@ const App = () => (
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/dove-siamo" element={<DoveSiamo />} />
         <Route path="/contatti" element={<Contatti />} />
+        <Route path="/social-preview" element={<SocialPreview />} />
         
         {/* Blog */}
             <Route path="/blog" element={<Blog />} />
