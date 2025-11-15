@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, Search, X } from "lucide-react";
 import { blogArticles } from "@/data/blogArticles";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -117,9 +118,11 @@ const Blog = () => {
                     <CardHeader>
                       {post.image.startsWith('http') || post.image.startsWith('/') ? (
                         <div className="w-full h-48 rounded-lg overflow-hidden mb-4 group-hover:shadow-lg transition-all">
-                          <img 
+                          <OptimizedImage
                             src={post.image} 
                             alt={post.title}
+                            width={400}
+                            height={192}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
                         </div>

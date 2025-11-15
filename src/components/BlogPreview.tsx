@@ -6,6 +6,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { blogArticles } from "@/data/blogArticles";
 import { useState, useMemo } from "react";
 import { Input } from "@/components/ui/input";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 const BlogPreview = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -73,9 +74,11 @@ const BlogPreview = () => {
                   <CardHeader className="p-2 pb-1">
                     <div className="flex items-start gap-2 mb-1">
                       {article.image.startsWith('http') || article.image.startsWith('/') ? (
-                        <img 
+                        <OptimizedImage
                           src={article.image} 
                           alt={article.title}
+                          width={32}
+                          height={32}
                           className="w-7 h-7 md:w-8 md:h-8 rounded-lg object-cover flex-shrink-0 group-hover:scale-110 transition-transform"
                         />
                       ) : (
