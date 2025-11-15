@@ -232,7 +232,7 @@ export default function RecuperoDatiIPhoneRotto() {
       <ArticleCTA />
 
       <section className="blog-section">
-        <h2 className="blog-h2">❓ FAQ SEO – Domande Frequenti sul Recupero Dati iPhone</h2>
+        <h2 className="blog-h2">❓ FAQ – Domande Frequenti sul Recupero Dati iPhone</h2>
         
         <h3 className="blog-h3">▶️ Come recuperare dati da un iPhone che non si accende?</h3>
         <p className="blog-paragraph">
