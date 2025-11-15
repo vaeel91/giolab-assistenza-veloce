@@ -1,5 +1,6 @@
 import { BlogArticle } from "@/types/blogArticle";
 import riparazioneIPhoneSchermoRottoAssemini from "@/assets/riparazione-iphone-schermo-rotto-assemini.jpg";
+import recuperoDatiIPhoneRottoAssemini from "@/assets/recupero-dati-iphone-rotto-assemini.jpg";
 
 export const blogArticles: BlogArticle[] = [
   {
@@ -27,6 +28,6 @@ export const blogArticles: BlogArticle[] = [
     date: "2025-01-27",
     readTime: "9 min",
     category: "Guide",
-    image: "💾"
+    image: recuperoDatiIPhoneRottoAssemini
   }
 ];
