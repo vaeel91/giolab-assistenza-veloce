@@ -18,6 +18,7 @@ import BatteriaMaggiorataIPhoneService from "./pages/services/BatteriaMaggiorata
 import RiparazioneIPhone1Ora from "./pages/blog/RiparazioneIPhone1Ora";
 import BatteriaMaggiorataIPhoneBlog from "./pages/blog/BatteriaMaggiorataIPhone";
 import RecuperoDatiIPhoneRotto from "./pages/blog/RecuperoDatiIPhoneRotto";
+import ComeCabireBatteriaIPhone from "./pages/blog/ComeCabireBatteriaIPhone";
 import SEODocumentation from "./pages/SEODocumentation";
 import SocialPreview from "./pages/SocialPreview";
 
@@ -47,6 +48,7 @@ const App = () => (
         <Route path="/blog/riparazione-iphone-1-ora-giolab-assemini" element={<RiparazioneIPhone1Ora />} />
         <Route path="/blog/batteria-maggiorata-iphone-giolab-assemini" element={<BatteriaMaggiorataIPhoneBlog />} />
         <Route path="/blog/recupero-dati-iphone-rotto-assemini" element={<RecuperoDatiIPhoneRotto />} />
+        <Route path="/blog/come-capire-batteria-iphone-sostituita" element={<ComeCabireBatteriaIPhone />} />
         
         {/* Servizi specifici */}
         <Route path="/servizi/riparazione-display-iphone-assemini" element={<RiparazioneDisplayIPhone />} />
