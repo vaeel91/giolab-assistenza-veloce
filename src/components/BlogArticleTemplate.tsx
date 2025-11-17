@@ -72,6 +72,7 @@ import RelatedArticles from "@/components/RelatedArticles";
 import ReadingProgress from "@/components/ReadingProgress";
 import { TableOfContents } from "@/components/TableOfContents";
 import { BackToBlog } from "@/components/blog/BackToBlog";
+import { getCanonicalUrl, extractPath } from "@/config/seoConfig";
 import "@/styles/blog.css";
 import { 
   Breadcrumb, 
@@ -193,7 +194,7 @@ export const BlogArticleTemplate = ({
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to={categoryInfo.url.replace('https://giolabriparazioni.it', '')}>{categoryInfo.name}</Link>
+                  <Link to={extractPath(categoryInfo.url)}>{categoryInfo.name}</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
@@ -206,7 +207,7 @@ export const BlogArticleTemplate = ({
           {/* Metadati Articolo */}
           <div className="flex flex-wrap items-center gap-4 mb-8 text-sm text-muted-foreground border-b border-border pb-4">
             <Link 
-              to={categoryInfo.url.replace('https://giolabriparazioni.it', '')}
+              to={extractPath(categoryInfo.url)}
               className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium hover:bg-primary/20 transition-colors"
             >
               {categoryInfo.name}

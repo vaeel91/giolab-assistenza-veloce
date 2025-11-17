@@ -10,7 +10,7 @@ export const blogArticles: BlogArticle[] = [
     date: "2025-01-27",
     readTime: "7 min",
     category: "Riparazione",
-    image: "/og-images/riparazione-iphone-1-ora-assemini.jpg"
+    image: "https://giolabriparazioni.it/og-images/riparazione-iphone-1-ora-assemini.jpg"
   },
   {
     slug: "batteria-maggiorata-iphone-giolab-assemini",
