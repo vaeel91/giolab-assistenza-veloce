@@ -9,6 +9,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import RatingStars from "@/components/RatingStars";
 import TestimonialsShowcase from "@/components/TestimonialsShowcase";
 import { Link } from "react-router-dom";
+import { getCanonicalUrl, extractPath } from "@/config/seoConfig";
 
 interface ServiceTemplateProps {
   seoTitle: string;
@@ -67,6 +68,12 @@ const ServiceTemplate = ({
   const handleCall = () => {
     window.location.href = "tel:+393406970686";
   };
+
+  // Genera URL canonico corretto per lo schema markup
+  const currentPath = typeof window !== 'undefined' 
+    ? extractPath(window.location.href)
+    : '/';
+  const absoluteUrl = getCanonicalUrl(currentPath);
 
   // Generate Service and Product Schema for better SEO
   const serviceSchema = {
@@ -131,7 +138,7 @@ const ServiceTemplate = ({
       "price": priceRange || "Preventivo gratuito",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
-      "url": typeof window !== 'undefined' ? window.location.href : 'https://giolabriparazioni.it',
+      "url": absoluteUrl,
       "priceValidUntil": new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
     },
     "aggregateRating": {
@@ -158,7 +165,7 @@ const ServiceTemplate = ({
       "price": priceRange,
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
-      "url": typeof window !== 'undefined' ? window.location.href : 'https://giolabriparazioni.it',
+      "url": absoluteUrl,
       "seller": {
         "@type": "LocalBusiness",
         "@id": "https://giolabriparazioni.it/#business"

@@ -1,6 +1,7 @@
 import { Facebook, Twitter, Linkedin, MessageCircle, Share2, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { getCanonicalUrl } from "@/config/seoConfig";
 
 interface SocialShareProps {
   url: string;
@@ -9,7 +10,7 @@ interface SocialShareProps {
 }
 
 const SocialShare = ({ url, title, description }: SocialShareProps) => {
-  const fullUrl = url.startsWith('http') ? url : `${window.location.origin}${url}`;
+  const fullUrl = url.startsWith('http') ? url : getCanonicalUrl(url);
   const encodedUrl = encodeURIComponent(fullUrl);
   const encodedTitle = encodeURIComponent(title);
   const encodedDescription = encodeURIComponent(description || title);
