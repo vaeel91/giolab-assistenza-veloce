@@ -21,7 +21,7 @@ const Servizi = () => {
       <div className="min-h-screen bg-white">
         <Header />
         
-        <main className="container mx-auto px-4 pt-32 pb-16">
+        <main className="container mx-auto px-4 pt-40 pb-16">
           <div className="text-center mb-12 max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Riparazione iPhone, Smartphone, PC e Console ad Assemini — I Servizi Professionali di Giolab
