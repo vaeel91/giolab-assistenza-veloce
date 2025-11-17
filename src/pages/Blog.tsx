@@ -36,6 +36,7 @@ const Blog = () => {
         title="Blog Giolab | Guide e Consigli su Riparazione iPhone e Smartphone | Assemini"
         description="Articoli, guide e consigli su riparazione iPhone, batterie maggiorate, manutenzione smartphone e molto altro. Blog del centro assistenza Giolab di Assemini."
         keywords="blog riparazione iPhone, guide iPhone, consigli batteria iPhone, manutenzione smartphone, assistenza iPhone Assemini"
+        ogImage="https://giolabriparazioni.it/og-image-giolab.jpg"
         breadcrumbs={[
           { name: "Home", url: "https://giolabriparazioni.it/" },
           { name: "Blog" }
@@ -50,8 +51,9 @@ const Blog = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
               Blog Giolab
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Il blog è attualmente in fase di manutenzione. Torna presto per leggere i nostri articoli su riparazione iPhone, batterie maggiorate e assistenza smartphone ad Assemini e Cagliari.
+            <p className="text-lg text-muted-foreground">
+              Scopri guide tecniche, consigli utili e articoli dedicati al mondo delle riparazioni:
+              iPhone, smartphone, PC e console. Contenuti chiari, utili e aggiornati.
             </p>
 
             {/* Search Bar */}
