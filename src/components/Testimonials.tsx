@@ -52,7 +52,7 @@ const Testimonials = () => {
               <Card 
                 key={index} 
                 className={`border hover:border-giolab-blue transition-all duration-300 ${
-                  isVisible ? 'animate-fade-in' : 'opacity-0'
+                  isVisible ? 'animate-fade-in' : ''
                 }`}
                 style={{ animationDelay: `${delay}ms` }}
               >

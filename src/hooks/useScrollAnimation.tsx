@@ -1,31 +1,34 @@
 import { useState, useEffect, useRef } from "react";
 
 export const useSafeScrollAnimation = (delayPerItem = 120) => {
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [hasTriggered, setHasTriggered] = useState(false);
 
   useEffect(() => {
-    if (!ref.current) return;
+    if (!ref.current) {
+      setIsVisible(true);
+      return;
+    }
 
-    // Fallback: se entro 400ms non si attiva, mostriamo tutto
+    let triggered = false;
+
     const fallback = setTimeout(() => {
-      if (!hasTriggered) {
+      if (!triggered) {
+        triggered = true;
         setIsVisible(true);
-        setHasTriggered(true);
       }
-    }, 400);
+    }, 300);
 
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        if (entry.isIntersecting && !hasTriggered) {
+        if (entry.isIntersecting && !triggered) {
+          triggered = true;
           setIsVisible(true);
-          setHasTriggered(true);
           clearTimeout(fallback);
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.05 }
     );
 
     observer.observe(ref.current);
@@ -34,7 +37,7 @@ export const useSafeScrollAnimation = (delayPerItem = 120) => {
       observer.disconnect();
       clearTimeout(fallback);
     };
-  }, [hasTriggered]);
+  }, []);
 
   return { ref, isVisible };
 };
