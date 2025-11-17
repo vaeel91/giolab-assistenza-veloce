@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { CANONICAL_DOMAIN, getCanonicalUrl, normalizeUrl, ORGANIZATION_SCHEMA } from '@/config/seoConfig';
+import { CANONICAL_DOMAIN, getCanonicalUrl, normalizeUrl, extractPath, ORGANIZATION_SCHEMA } from '@/config/seoConfig';
 
 interface BreadcrumbItem {
   name: string;
@@ -46,10 +46,17 @@ const SEOHead = ({
   faqData
 }: SEOHeadProps) => {
   
-  // Normalizza e genera URL canonico corretto
-  const currentUrl = typeof window !== 'undefined' ? window.location.href : CANONICAL_DOMAIN;
-  const canonicalUrl = ogUrl ? normalizeUrl(ogUrl) : normalizeUrl(currentUrl);
-  const cleanCanonicalUrl = getCanonicalUrl(canonicalUrl.replace(CANONICAL_DOMAIN, ''));
+  // Genera URL canonico corretto
+  // URL di base: se è passato ogUrl lo usiamo, altrimenti usiamo l'URL corrente normalizzato
+  const rawUrl = ogUrl 
+    ? normalizeUrl(ogUrl) 
+    : (typeof window !== 'undefined' ? normalizeUrl(window.location.href) : CANONICAL_DOMAIN);
+  
+  // Estraggo solo il path (es: /blog/articolo-1)
+  const path = extractPath(rawUrl);
+  
+  // Genero l'URL canonico assoluto a partire dal path
+  const cleanCanonicalUrl = getCanonicalUrl(path);
   
   // Generate breadcrumb structured data if breadcrumbs are provided
   const breadcrumbSchema = breadcrumbs ? {
@@ -129,7 +136,7 @@ const SEOHead = ({
     updateMetaTag('og:image:height', '630', 'property');
     updateMetaTag('og:image:alt', title, 'property');
     updateMetaTag('og:type', ogType, 'property');
-    updateMetaTag('og:url', ogUrl, 'property');
+    updateMetaTag('og:url', cleanCanonicalUrl, 'property');
     updateMetaTag('og:site_name', 'Giolab Assemini', 'property');
     updateMetaTag('og:locale', 'it_IT', 'property');
     
@@ -141,15 +148,6 @@ const SEOHead = ({
     updateMetaTag('twitter:description', description);
     updateMetaTag('twitter:image', ogImage);
     updateMetaTag('twitter:image:alt', title);
-    
-    // Manage canonical URL - sempre corretto e normalizzato
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonical);
-    }
-    canonical.setAttribute('href', cleanCanonicalUrl);
     
     // Add breadcrumb structured data
     if (breadcrumbSchema) {
