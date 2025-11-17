@@ -1,43 +1,30 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from 'react';
 
-export const useSafeScrollAnimation = (delayPerItem = 120) => {
-  const ref = useRef(null);
+export const useScrollAnimation = (threshold = 0.1) => {
   const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!ref.current) {
-      setIsVisible(true);
-      return;
-    }
-
-    let triggered = false;
-
-    const fallback = setTimeout(() => {
-      if (!triggered) {
-        triggered = true;
-        setIsVisible(true);
-      }
-    }, 300);
-
     const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting && !triggered) {
-          triggered = true;
+      ([entry]) => {
+        if (entry.isIntersecting) {
           setIsVisible(true);
-          clearTimeout(fallback);
         }
       },
-      { threshold: 0.05 }
+      { threshold }
     );
 
-    observer.observe(ref.current);
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
 
     return () => {
-      observer.disconnect();
-      clearTimeout(fallback);
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
     };
-  }, []);
+  }, [threshold]);
 
   return { ref, isVisible };
 };

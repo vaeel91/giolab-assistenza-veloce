@@ -2,14 +2,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock, ArrowRight, Search } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useSafeScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { blogArticles } from "@/data/blogArticles";
 import { useState, useMemo } from "react";
 import { Input } from "@/components/ui/input";
 import { OptimizedImage } from "@/components/OptimizedImage";
 
 const BlogPreview = () => {
-  const { ref, isVisible } = useSafeScrollAnimation();
+  const { ref, isVisible } = useScrollAnimation();
   const [searchQuery, setSearchQuery] = useState("");
   
   const filteredArticles = useMemo(() => {
@@ -68,7 +68,7 @@ const BlogPreview = () => {
               <Link 
                 key={article.slug} 
                 to={`/blog/${article.slug}`} 
-                className={`group ${isVisible ? 'animate-fade-in' : ''} ${delayClass}`}
+                className={`group ${isVisible ? 'animate-fade-in' : 'opacity-0'} ${delayClass}`}
               >
                 <Card className="border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg bg-card">
                   <CardHeader className="p-2 pb-1">

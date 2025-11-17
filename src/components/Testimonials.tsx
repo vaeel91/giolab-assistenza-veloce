@@ -1,6 +1,6 @@
 import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { useSafeScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const testimonials = [
   {
@@ -36,7 +36,7 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
-  const { ref, isVisible } = useSafeScrollAnimation();
+  const { ref, isVisible } = useScrollAnimation();
   
   return (
     <section id="testimonianze" ref={ref} className="py-4 md:py-6 pt-20 md:pt-24 bg-gradient-to-b from-giolab-gray to-background h-full flex flex-col justify-center">
@@ -52,7 +52,7 @@ const Testimonials = () => {
               <Card 
                 key={index} 
                 className={`border hover:border-giolab-blue transition-all duration-300 ${
-                  isVisible ? 'animate-fade-in' : ''
+                  isVisible ? 'animate-fade-in' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${delay}ms` }}
               >
