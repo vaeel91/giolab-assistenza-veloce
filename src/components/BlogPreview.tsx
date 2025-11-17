@@ -68,7 +68,7 @@ const BlogPreview = () => {
               <Link 
                 key={article.slug} 
                 to={`/blog/${article.slug}`} 
-                className={`group ${isVisible ? 'animate-fade-in' : 'opacity-0'} ${delayClass}`}
+                className={`group ${isVisible ? 'animate-fade-in' : ''} ${delayClass}`}
               >
                 <Card className="border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg bg-card">
                   <CardHeader className="p-2 pb-1">
