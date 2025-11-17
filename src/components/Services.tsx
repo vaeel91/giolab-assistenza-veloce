@@ -263,7 +263,7 @@ const Services = () => {
                   
                   {/* CTA a larghezza piena ogni 2 servizi */}
                   {shouldShowCTA && (
-                    <Card className="md:col-span-2 lg:col-span-3 bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 hover:border-primary/40 transition-all rounded-[18px]">
+                    <Card className="md:col-span-2 lg:col-span-3 bg-secondary border-border hover:border-primary transition-all rounded-[18px]">
                       <CardContent className="flex flex-col md:flex-row items-center justify-between gap-4 p-6 md:p-8">
                         <div className="text-center md:text-left">
                           <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2">
