@@ -263,7 +263,7 @@ const Services = () => {
                   
                   {/* CTA a larghezza piena ogni 2 servizi */}
                   {shouldShowCTA && (
-                    <Card className="md:col-span-2 lg:col-span-3 bg-secondary border border-border/30 rounded-xl shadow-sm">
+                    <Card className="md:col-span-2 lg:col-span-3 bg-white border border-border/30 rounded-xl shadow-sm">
                       <CardContent className="flex flex-col md:flex-row items-center justify-between p-6 gap-4">
                         <div className="text-center md:text-left">
                           <h3 className="text-xl font-semibold">Vuoi un preventivo immediato?</h3>
