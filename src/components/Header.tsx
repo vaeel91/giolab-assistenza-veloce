@@ -49,43 +49,43 @@ const Header = () => {
             {/* Navigation Links */}
             <NavLink 
               to="/"
-              className="text-foreground/80 hover:text-foreground transition-colors font-medium"
-              activeClassName="text-foreground"
+              className="text-foreground/80 hover:text-foreground transition-all duration-300 font-medium pb-1 border-b-2 border-transparent"
+              activeClassName="text-foreground border-primary"
             >
               Home
             </NavLink>
             <NavLink 
               to="/servizi"
-              className="text-foreground/80 hover:text-foreground transition-colors font-medium"
-              activeClassName="text-foreground"
+              className="text-foreground/80 hover:text-foreground transition-all duration-300 font-medium pb-1 border-b-2 border-transparent"
+              activeClassName="text-foreground border-primary"
             >
               Servizi
             </NavLink>
             <NavLink 
               to="/chi-siamo"
-              className="text-foreground/80 hover:text-foreground transition-colors font-medium"
-              activeClassName="text-foreground"
+              className="text-foreground/80 hover:text-foreground transition-all duration-300 font-medium pb-1 border-b-2 border-transparent"
+              activeClassName="text-foreground border-primary"
             >
               Chi Siamo
             </NavLink>
             <NavLink 
               to="/blog"
-              className="text-foreground/80 hover:text-foreground transition-colors font-medium"
-              activeClassName="text-foreground"
+              className="text-foreground/80 hover:text-foreground transition-all duration-300 font-medium pb-1 border-b-2 border-transparent"
+              activeClassName="text-foreground border-primary"
             >
               Blog
             </NavLink>
             <NavLink 
               to="/faq"
-              className="text-foreground/80 hover:text-foreground transition-colors font-medium"
-              activeClassName="text-foreground"
+              className="text-foreground/80 hover:text-foreground transition-all duration-300 font-medium pb-1 border-b-2 border-transparent"
+              activeClassName="text-foreground border-primary"
             >
               FAQ
             </NavLink>
             <NavLink 
               to="/contatti"
-              className="text-foreground/80 hover:text-foreground transition-colors font-medium"
-              activeClassName="text-foreground"
+              className="text-foreground/80 hover:text-foreground transition-all duration-300 font-medium pb-1 border-b-2 border-transparent"
+              activeClassName="text-foreground border-primary"
             >
               Contatti
             </NavLink>
