@@ -69,6 +69,13 @@ const Header = () => {
               Chi Siamo
             </NavLink>
             <NavLink 
+              to="/#testimonials"
+              className="text-foreground/80 hover:text-foreground transition-all duration-300 font-medium pb-1 border-b-2 border-transparent"
+              activeClassName="text-foreground border-primary"
+            >
+              Dicono di Noi
+            </NavLink>
+            <NavLink 
               to="/blog"
               className="text-foreground/80 hover:text-foreground transition-all duration-300 font-medium pb-1 border-b-2 border-transparent"
               activeClassName="text-foreground border-primary"
