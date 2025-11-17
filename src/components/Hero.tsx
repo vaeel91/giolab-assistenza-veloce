@@ -12,9 +12,20 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative h-screen max-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-giolab-gray to-background pt-16 md:pt-20">
+    <section className="relative h-screen max-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
+      {/* Background image with gradient overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=80&w=2070&auto=format&fit=crop"
+          alt="Laboratorio Giolab Assemini"
+          className="w-full h-full object-cover"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85"></div>
+      </div>
+      
       {/* Decorative background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
         <div className="absolute top-20 left-10 w-72 h-72 bg-giolab-blue opacity-10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-giolab-blue-light opacity-10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
