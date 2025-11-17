@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { CANONICAL_DOMAIN, getCanonicalUrl, normalizeUrl, ORGANIZATION_SCHEMA } from '@/config/seoConfig';
 
 interface BreadcrumbItem {
   name: string;
@@ -36,14 +37,19 @@ const SEOHead = ({
   title = "Giolab Assemini | Riparazione iPhone, Smartphone, PC e Console",
   description = "Centro assistenza specializzato ad Assemini (CA). Riparazione smartphone, PC e console con garanzia 12 mesi. Riparazioni rapide anche in 1 ora. Preventivo gratuito.",
   keywords = "riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza PC Assemini, riparazione console Assemini",
-  ogImage = "https://giolabriparazioni.it/og-image-giolab.jpg",
+  ogImage = `${CANONICAL_DOMAIN}/og-image-giolab.jpg`,
   ogType = "website",
-  ogUrl = typeof window !== 'undefined' ? window.location.href : 'https://giolabriparazioni.it',
+  ogUrl,
   structuredData,
   breadcrumbs,
   articleData,
   faqData
 }: SEOHeadProps) => {
+  
+  // Normalizza e genera URL canonico corretto
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : CANONICAL_DOMAIN;
+  const canonicalUrl = ogUrl ? normalizeUrl(ogUrl) : normalizeUrl(currentUrl);
+  const cleanCanonicalUrl = getCanonicalUrl(canonicalUrl.replace(CANONICAL_DOMAIN, ''));
   
   // Generate breadcrumb structured data if breadcrumbs are provided
   const breadcrumbSchema = breadcrumbs ? {
@@ -69,31 +75,12 @@ const SEOHead = ({
     "author": {
       "@type": "Person",
       "name": articleData.author,
-      "url": "https://www.giolab-assemini.it"
+      "url": CANONICAL_DOMAIN
     },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Giolab Assemini",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://giolabriparazioni.it/favicon.png",
-          "width": "512",
-          "height": "512"
-        },
-        "url": "https://giolabriparazioni.it",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Via Carmine 20",
-        "addressLocality": "Assemini",
-        "postalCode": "09032",
-        "addressCountry": "IT"
-      },
-      "telephone": "+39 340 69 70 686",
-      "email": "giolabassemini@gmail.com"
-    },
+    "publisher": ORGANIZATION_SCHEMA,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": ogUrl
+      "@id": cleanCanonicalUrl
     },
     ...(articleData.category && {
       "articleSection": articleData.category
@@ -155,15 +142,14 @@ const SEOHead = ({
     updateMetaTag('twitter:image', ogImage);
     updateMetaTag('twitter:image:alt', title);
     
-    // Canonical URL
-    const canonicalUrl = ogUrl;
+    // Manage canonical URL - sempre corretto e normalizzato
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement('link');
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', canonicalUrl);
+    canonical.setAttribute('href', cleanCanonicalUrl);
     
     // Add breadcrumb structured data
     if (breadcrumbSchema) {
@@ -216,21 +202,23 @@ const SEOHead = ({
   
   return (
     <Helmet>
-      {/* Title */}
-      <title>{title}</title>
-      
       {/* Primary Meta Tags */}
-      <meta name="title" content={title} />
+      <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
+      {keywords && <meta name="keywords" content={keywords} />}
+      <meta name="author" content="Giolab - Stefano Giordano" />
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       
-      {/* Canonical URL */}
-      <link rel="canonical" href={ogUrl} />
+      {/* Canonical URL - Sempre normalizzato */}
+      <link rel="canonical" href={cleanCanonicalUrl} />
+      
+      {/* Alternate hreflang */}
+      <link rel="alternate" hrefLang="it" href={cleanCanonicalUrl} />
+      <link rel="alternate" hrefLang="x-default" href={cleanCanonicalUrl} />
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={ogUrl} />
-      <meta property="og:site_name" content="Giolab Assemini" />
+      <meta property="og:url" content={cleanCanonicalUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
@@ -239,6 +227,7 @@ const SEOHead = ({
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={title} />
+      <meta property="og:site_name" content="Giolab Assemini" />
       <meta property="og:locale" content="it_IT" />
       
       {/* Twitter Card */}
@@ -248,10 +237,6 @@ const SEOHead = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
       <meta name="twitter:image:alt" content={title} />
-      
-      {/* Additional Meta Tags */}
-      <meta name="robots" content="index, follow, max-image-preview:large" />
-      <meta name="author" content="Giolab - Stefano Giordano" />
     </Helmet>
   );
 };
