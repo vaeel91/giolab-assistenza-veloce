@@ -263,20 +263,15 @@ const Services = () => {
                   
                   {/* CTA a larghezza piena ogni 2 servizi */}
                   {shouldShowCTA && (
-                    <Card className="md:col-span-2 lg:col-span-3 bg-white border-border hover:border-primary transition-all rounded-[18px]">
-                      <CardContent className="flex flex-col md:flex-row items-center justify-between gap-4 p-6 md:p-8">
+                    <Card className="md:col-span-2 lg:col-span-3 bg-secondary border border-border/30 rounded-xl shadow-sm">
+                      <CardContent className="flex flex-col md:flex-row items-center justify-between p-6 gap-4">
                         <div className="text-center md:text-left">
-                          <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-2">
-                            Vuoi un preventivo immediato?
-                          </h3>
-                          <p className="text-muted-foreground">
-                            Contattaci ora per una diagnosi gratuita e un preventivo trasparente.
-                          </p>
+                          <h3 className="text-xl font-semibold">Vuoi un preventivo immediato?</h3>
+                          <p className="text-muted-foreground">Diagnosi gratuita, trasparente e professionale.</p>
                         </div>
-                        <Button size="lg" asChild className="flex-shrink-0">
-                          <Link to="/contatti">
-                            Contattaci ora <ArrowRight className="ml-2 h-5 w-5" />
-                          </Link>
+
+                        <Button size="lg" asChild>
+                          <Link to="/contatti">Contattaci ora →</Link>
                         </Button>
                       </CardContent>
                     </Card>
