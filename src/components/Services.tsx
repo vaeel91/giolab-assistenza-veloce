@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Smartphone, Laptop, Gamepad2, BatteryCharging, Cpu, Sparkles, Package, Wind, Shield, Wrench, Cloud, Search, Building2, ArrowRight, Check } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useSafeScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const services = [
   {
@@ -155,7 +155,7 @@ const services = [
 ];
 
 const Services = () => {
-  const { ref, isVisible } = useScrollAnimation();
+  const { ref, isVisible } = useSafeScrollAnimation();
   
   // Genera structured data ItemList
   const itemListSchema = {
@@ -199,9 +199,9 @@ const Services = () => {
                       h-full flex flex-col bg-white border-[0.5px] border-black/[0.08] rounded-[18px] 
                       shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_6px_22px_rgba(0,0,0,0.10)] 
                       hover:scale-[1.02] hover:border-black/[0.12] transition-all duration-300
-                      ${isVisible ? 'animate-fade-in opacity-100' : 'opacity-[0.01] pointer-events-none'}
+                      ${isVisible ? 'animate-fadeUp' : ''}
                     `}
-                    style={{ animationDelay: `${index * 100}ms` }}
+                    style={{ animationDelay: `${index * 80}ms` }}
                   >
                     <CardHeader className="p-6 md:p-7">
                       <div className={`w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br ${

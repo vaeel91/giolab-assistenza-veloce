@@ -2,14 +2,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock, ArrowRight, Search } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useSafeScrollAnimation } from "@/hooks/useScrollAnimation";
 import { blogArticles } from "@/data/blogArticles";
 import { useState, useMemo } from "react";
 import { Input } from "@/components/ui/input";
 import { OptimizedImage } from "@/components/OptimizedImage";
 
 const BlogPreview = () => {
-  const { ref, isVisible } = useScrollAnimation();
+  const { ref, isVisible } = useSafeScrollAnimation();
   const [searchQuery, setSearchQuery] = useState("");
   
   const filteredArticles = useMemo(() => {
