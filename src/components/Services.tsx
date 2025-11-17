@@ -199,7 +199,7 @@ const Services = () => {
                       h-full flex flex-col bg-white border-[0.5px] border-black/[0.08] rounded-[18px] 
                       shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_6px_22px_rgba(0,0,0,0.10)] 
                       hover:scale-[1.02] hover:border-black/[0.12] transition-all duration-300
-                      ${isVisible ? 'animate-fade-in' : 'opacity-0'}
+                      ${isVisible ? 'animate-fade-in opacity-100' : 'opacity-[0.01] pointer-events-none'}
                     `}
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
