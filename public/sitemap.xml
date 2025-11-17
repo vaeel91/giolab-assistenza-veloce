@@ -1,163 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
-                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
-                            http://www.google.com/schemas/sitemap-image/1.1
-                            http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
-  
-  <!-- 
-    Sitemap Giolab Riparazioni - Dominio Canonico: https://giolabriparazioni.it
-    Ultimo aggiornamento: 27 Gennaio 2025
-    Tutti gli URL utilizzano esclusivamente il dominio principale
-  -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- HOMEPAGE -->
   <url>
     <loc>https://giolabriparazioni.it/</loc>
-    <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  
-  <!-- Pagine Principali -->
-  <url>
-    <loc>https://giolabriparazioni.it/servizi/</loc>
     <lastmod>2025-01-27</lastmod>
+  </url>
+
+  <!-- PAGINE STATICHE -->
+  <url>
+    <loc>https://giolabriparazioni.it/servizi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-  </url>
-  
-  <!-- Blog Category Pages -->
-  <url>
-    <loc>https://giolabriparazioni.it/blog/riparazione-iphone</loc>
     <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://giolabriparazioni.it/blog/assistenza-smartphone</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://giolabriparazioni.it/blog/riparazione-pc</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://giolabriparazioni.it/blog/console</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://giolabriparazioni.it/blog/sicurezza-digitale</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://giolabriparazioni.it/blog/guide</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/chi-siamo/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://giolabriparazioni.it/chi-siamo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/faq/</loc>
     <lastmod>2025-01-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://giolabriparazioni.it/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/dove-siamo/</loc>
     <lastmod>2025-01-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://giolabriparazioni.it/dove-siamo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/contatti/</loc>
     <lastmod>2025-01-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://giolabriparazioni.it/contatti</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
-  
-  <!-- Blog Index -->
+
   <url>
     <loc>https://giolabriparazioni.it/blog</loc>
-    <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url>
-  
-  <!-- ARTICOLI BLOG -->
-  <url>
-    <loc>https://giolabriparazioni.it/blog/riparazione-iphone-1-ora-giolab-assemini</loc>
     <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/riparazione-iphone-1-ora.jpg</image:loc>
-      <image:title>Riparazione iPhone in 1 Ora - Giolab Assemini</image:title>
-      <image:caption>Servizio rapido di riparazione iPhone ad Assemini con garanzia</image:caption>
-    </image:image>
   </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/batteria-maggiorata-iphone-giolab-assemini</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/batteria-maggiorata-iphone.jpg</image:loc>
-      <image:title>Batteria Maggiorata iPhone - Più Autonomia con Giolab</image:title>
-      <image:caption>Installazione batterie maggiorate iPhone ad Assemini con +30% autonomia</image:caption>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/recupero-dati-iphone-rotto-assemini</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/recupero-dati-iphone.jpg</image:loc>
-      <image:title>Recupero Dati iPhone Rotto - Giolab Assemini</image:title>
-      <image:caption>Servizio professionale di recupero dati da iPhone danneggiato</image:caption>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/come-capire-batteria-iphone-sostituita</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- PAGINE SERVIZI DEDICATE -->
+
+  <!-- SERVIZI -->
   <url>
     <loc>https://giolabriparazioni.it/servizi/riparazione-display-iphone-assemini</loc>
-    <lastmod>2025-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
-  
+
   <url>
     <loc>https://giolabriparazioni.it/servizi/batteria-maggiorata-iphone</loc>
-    <lastmod>2025-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <lastmod>2025-01-27</lastmod>
+  </url>
+
+  <!-- BLOG -->
+  <url>
+    <loc>https://giolabriparazioni.it/blog/riparazione-iphone-1-ora-giolab-assemini</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-01-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://giolabriparazioni.it/blog/batteria-maggiorata-iphone-giolab-assemini</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-01-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://giolabriparazioni.it/blog/recupero-dati-iphone-rotto-assemini</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-01-27</lastmod>
+  </url>
+
+  <url>
+    <loc>https://giolabriparazioni.it/blog/come-capire-batteria-iphone-sostituita</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
 
 </urlset>
