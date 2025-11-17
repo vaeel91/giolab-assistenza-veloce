@@ -143,10 +143,16 @@ export const ORGANIZATION_SCHEMA = {
 /**
  * Genera l'URL canonico completo per una pagina
  */
-export const getCanonicalUrl = (path: string = ''): string => {
-  // Rimuovi slash iniziali duplicati
-  const cleanPath = path.replace(/^\/+/, '');
-  // Assicurati che ci sia uno slash tra dominio e path se il path non è vuoto
+export const getCanonicalUrl = (urlOrPath: string = ''): string => {
+  if (!urlOrPath) return CANONICAL_DOMAIN;
+
+  // Se già contiene http, normalizzo e restituisco
+  if (urlOrPath.startsWith('http://') || urlOrPath.startsWith('https://')) {
+    return normalizeUrl(urlOrPath);
+  }
+
+  // Altrimenti considero il valore come path relativo
+  const cleanPath = urlOrPath.replace(/^\/+/, '');
   return cleanPath ? `${CANONICAL_DOMAIN}/${cleanPath}` : CANONICAL_DOMAIN;
 };
 
@@ -154,11 +160,21 @@ export const getCanonicalUrl = (path: string = ''): string => {
  * Normalizza un URL rimuovendo riferimenti a domini vecchi
  */
 export const normalizeUrl = (url: string): string => {
-  // Sostituisci qualsiasi riferimento al vecchio dominio
-  return url
-    .replace(/https?:\/\/giolab\.lovable\.app/gi, CANONICAL_DOMAIN)
-    .replace(/https?:\/\/www\.giolab-assemini\.it/gi, CANONICAL_DOMAIN)
-    .replace(/http:\/\//g, 'https://');
+  if (!url) return CANONICAL_DOMAIN;
+
+  let cleaned = url.trim();
+
+  // Rimpiazza vecchi domini con quello canonico
+  cleaned = cleaned.replace(/https?:\/\/giolab\.lovable\.app/gi, CANONICAL_DOMAIN);
+  cleaned = cleaned.replace(/https?:\/\/www\.giolab-assemini\.it/gi, CANONICAL_DOMAIN);
+
+  // Forza HTTPS
+  cleaned = cleaned.replace(/^http:\/\//i, 'https://');
+
+  // Rimuove slash duplicati dopo il dominio
+  cleaned = cleaned.replace(`${CANONICAL_DOMAIN}//`, `${CANONICAL_DOMAIN}/`);
+
+  return cleaned;
 };
 
 /**
