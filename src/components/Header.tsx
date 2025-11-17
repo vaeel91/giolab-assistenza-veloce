@@ -1,6 +1,7 @@
 import { Instagram, Facebook } from "lucide-react";
 import giolabIcon from "@/assets/giolab-logo-new.png";
 import { Link } from "react-router-dom";
+import { NavLink } from "./NavLink";
 
 const Header = () => {
   const socialLinks = [
@@ -43,8 +44,55 @@ const Header = () => {
             />
           </Link>
 
-          {/* Desktop Navigation - Solo Social Media */}
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
+            {/* Navigation Links */}
+            <NavLink 
+              to="/"
+              className="text-foreground/80 hover:text-foreground transition-colors font-medium"
+              activeClassName="text-foreground"
+            >
+              Home
+            </NavLink>
+            <NavLink 
+              to="/servizi"
+              className="text-foreground/80 hover:text-foreground transition-colors font-medium"
+              activeClassName="text-foreground"
+            >
+              Servizi
+            </NavLink>
+            <NavLink 
+              to="/chi-siamo"
+              className="text-foreground/80 hover:text-foreground transition-colors font-medium"
+              activeClassName="text-foreground"
+            >
+              Chi Siamo
+            </NavLink>
+            <NavLink 
+              to="/blog"
+              className="text-foreground/80 hover:text-foreground transition-colors font-medium"
+              activeClassName="text-foreground"
+            >
+              Blog
+            </NavLink>
+            <NavLink 
+              to="/faq"
+              className="text-foreground/80 hover:text-foreground transition-colors font-medium"
+              activeClassName="text-foreground"
+            >
+              FAQ
+            </NavLink>
+            <NavLink 
+              to="/contatti"
+              className="text-foreground/80 hover:text-foreground transition-colors font-medium"
+              activeClassName="text-foreground"
+            >
+              Contatti
+            </NavLink>
+            
+            {/* Divider */}
+            <div className="h-6 w-px bg-border"></div>
+            
             {/* Social Media Icons */}
             <div className="flex items-center gap-3">
               {socialLinks.map((social) => (
