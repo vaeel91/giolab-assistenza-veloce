@@ -72,21 +72,15 @@ const BlogPreview = () => {
               >
                 <Card className="border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg bg-card">
                   <CardHeader className="p-2 pb-1">
-                    <div className="flex items-start gap-2 mb-1">
-                      {article.image.startsWith('http') || article.image.startsWith('/') ? (
-                        <OptimizedImage
-                          src={article.image} 
-                          alt={article.title}
-                          width={32}
-                          height={32}
-                          className="w-7 h-7 md:w-8 md:h-8 rounded-lg object-cover flex-shrink-0 group-hover:scale-110 transition-transform"
-                        />
-                      ) : (
-                        <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue/5 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform text-sm md:text-base">
-                          {article.image}
-                        </div>
-                      )}
-                      <div className="flex-1 min-w-0">
+                  <div className="flex items-start gap-2 mb-1">
+                    <OptimizedImage
+                      src={article.image} 
+                      alt={article.title}
+                      width={32}
+                      height={32}
+                      className="w-7 h-7 md:w-8 md:h-8 rounded-lg object-cover flex-shrink-0 group-hover:scale-110 transition-transform"
+                    />
+                    <div className="flex-1 min-w-0">
                         <div className="inline-block px-1.5 py-0.5 rounded-full bg-giolab-blue/10 mb-1">
                           <span className="text-[10px] md:text-xs font-medium text-giolab-blue">
                             {article.category}
