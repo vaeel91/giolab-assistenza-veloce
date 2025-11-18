@@ -1,6 +1,7 @@
 import { BlogArticle } from "@/types/blogArticle";
 import recuperoDatiIPhoneRottoAssemini from "@/assets/recupero-dati-iphone-rotto-assemini.jpg";
 import batteriaMaggiorataIPhoneAssemini from "@/assets/batteria-maggiorata-iphone-assemini.jpg";
+import riparazioneIPhone1OraAssemini from "@/assets/riparazione-iphone-1-ora-assemini.jpg";
 
 export const blogArticles: BlogArticle[] = [
   {
@@ -10,7 +11,7 @@ export const blogArticles: BlogArticle[] = [
     date: "2025-01-27",
     readTime: "7 min",
     category: "Riparazione",
-    image: "https://giolabriparazioni.it/og-images/riparazione-iphone-1-ora-assemini.jpg"
+    image: riparazioneIPhone1OraAssemini
   },
   {
     slug: "batteria-maggiorata-iphone-giolab-assemini",
