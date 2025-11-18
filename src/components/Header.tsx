@@ -1,7 +1,6 @@
 import { Instagram, Facebook } from "lucide-react";
 import giolabIcon from "@/assets/giolab-logo-new.png";
 import { Link } from "react-router-dom";
-import { NavLink } from "./NavLink";
 
 const Header = () => {
   const socialLinks = [
@@ -44,62 +43,8 @@ const Header = () => {
             />
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Solo Social Media */}
           <nav className="hidden lg:flex items-center gap-6">
-            {/* Navigation Links */}
-            <NavLink 
-              to="/"
-              className="text-foreground/80 hover:text-foreground transition-all duration-300 font-medium pb-1 border-b-2 border-transparent"
-              activeClassName="text-foreground border-primary"
-            >
-              Home
-            </NavLink>
-            <NavLink 
-              to="/servizi"
-              className="text-foreground/80 hover:text-foreground transition-all duration-300 font-medium pb-1 border-b-2 border-transparent"
-              activeClassName="text-foreground border-primary"
-            >
-              Servizi
-            </NavLink>
-            <NavLink 
-              to="/chi-siamo"
-              className="text-foreground/80 hover:text-foreground transition-all duration-300 font-medium pb-1 border-b-2 border-transparent"
-              activeClassName="text-foreground border-primary"
-            >
-              Chi Siamo
-            </NavLink>
-            <NavLink 
-              to="/#testimonials"
-              className="text-foreground/80 hover:text-foreground transition-all duration-300 font-medium pb-1 border-b-2 border-transparent"
-              activeClassName="text-foreground border-primary"
-            >
-              Dicono di Noi
-            </NavLink>
-            <NavLink 
-              to="/blog"
-              className="text-foreground/80 hover:text-foreground transition-all duration-300 font-medium pb-1 border-b-2 border-transparent"
-              activeClassName="text-foreground border-primary"
-            >
-              Blog
-            </NavLink>
-            <NavLink 
-              to="/faq"
-              className="text-foreground/80 hover:text-foreground transition-all duration-300 font-medium pb-1 border-b-2 border-transparent"
-              activeClassName="text-foreground border-primary"
-            >
-              FAQ
-            </NavLink>
-            <NavLink 
-              to="/contatti"
-              className="text-foreground/80 hover:text-foreground transition-all duration-300 font-medium pb-1 border-b-2 border-transparent"
-              activeClassName="text-foreground border-primary"
-            >
-              Contatti
-            </NavLink>
-            
-            {/* Divider */}
-            <div className="h-6 w-px bg-border"></div>
-            
             {/* Social Media Icons */}
             <div className="flex items-center gap-3">
               {socialLinks.map((social) => (
