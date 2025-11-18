@@ -21,6 +21,7 @@ import RecuperoDatiIPhoneRotto from "./pages/blog/RecuperoDatiIPhoneRotto";
 import ComeCabireBatteriaIPhone from "./pages/blog/ComeCabireBatteriaIPhone";
 import SEODocumentation from "./pages/SEODocumentation";
 import SocialPreview from "./pages/SocialPreview";
+import IPhoneRicondizionati from "./pages/IPhoneRicondizionati";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ const App = () => (
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/dove-siamo" element={<DoveSiamo />} />
         <Route path="/contatti" element={<Contatti />} />
+        <Route path="/iphone-ricondizionati-assemini" element={<IPhoneRicondizionati />} />
         <Route path="/social-preview" element={<SocialPreview />} />
         
         {/* Blog */}
