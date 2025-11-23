@@ -128,7 +128,7 @@ export default function BatteriaMaggiorataIPhone() {
           <li>
             <strong>Verifica disponibilità</strong><br />
             📞 340 69 70 686<br />
-            📍 Via Carmine 20, Assemini (Cagliari)
+            📍 Via Carmine 20, 09032 Assemini (CA)
           </li>
           <li>
             <strong>Diagnosi gratuita</strong><br />
@@ -227,7 +227,7 @@ export default function BatteriaMaggiorataIPhone() {
         <div className="blog-highlight-box info">
           <p>
             📞 <strong>Richiedi un preventivo gratuito: 340 69 70 686</strong><br />
-            📍 Via Carmine 20, Assemini (Cagliari)
+            📍 Via Carmine 20, 09032 Assemini (CA)
           </p>
         </div>
       </section>

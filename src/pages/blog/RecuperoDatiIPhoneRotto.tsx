@@ -149,7 +149,7 @@ export default function RecuperoDatiIPhoneRotto() {
           <li>
             <strong>Contatta subito GioLab</strong><br />
             📞 340 69 70 686<br />
-            📍 Via Carmine 20, Assemini (Cagliari)
+            📍 Via Carmine 20, 09032 Assemini (CA)
           </li>
           <li>
             <strong>Diagnosi professionale gratuita</strong><br />

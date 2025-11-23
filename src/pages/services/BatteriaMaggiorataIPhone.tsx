@@ -112,7 +112,7 @@ const BatteriaMaggiorataIPhone = () => {
             Con oltre 10 anni di esperienza nelle riparazioni iPhone, Giolab è il centro assistenza di riferimento per la sostituzione batterie ad Assemini e in tutta la provincia di Cagliari. Utilizziamo esclusivamente <strong className="text-foreground">batterie certificate e di qualità premium</strong>, con garanzia di 12 mesi.
           </p>
           <p className="leading-relaxed">
-            Vieni a trovarci in <strong className="text-foreground">Via Carmine 20 ad Assemini</strong> oppure <strong className="text-giolab-blue">contattaci su WhatsApp per prenotare il tuo intervento</strong>. Restituiamo al tuo iPhone l'autonomia che merita!
+            Vieni a trovarci in <strong className="text-foreground">Via Carmine 20, 09032 Assemini (CA)</strong> oppure <strong className="text-giolab-blue">contattaci su WhatsApp per prenotare il tuo intervento</strong>. Restituiamo al tuo iPhone l'autonomia che merita!
           </p>
         </div>
       }

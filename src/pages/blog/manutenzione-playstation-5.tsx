@@ -183,7 +183,7 @@ export default function ManutenzionePlayStation5() {
       <section>
         <h2 className="blog-h2">🛠️ Servizi professionali GioLab per la tua PS5</h2>
         <p className="blog-paragraph">
-          Da <strong>GioLab</strong> (Via Carmine 20 – Assemini, Cagliari) offriamo:
+          Da <strong>GioLab</strong> (Via Carmine 20, 09032 Assemini (CA)) offriamo:
         </p>
 
         <h3 className="blog-h3">🔧 1. Manutenzione completa PS5</h3>
@@ -239,7 +239,7 @@ export default function ManutenzionePlayStation5() {
 
         <h3 className="blog-h3">▶️ Dove si trova GioLab?</h3>
         <p className="blog-paragraph">
-          📍 <strong>Via Carmine 20A, Assemini (CA)</strong>, facilmente raggiungibile da Cagliari, Elmas, Decimomannu, Selargius e tutta la provincia.
+          📍 <strong>Via Carmine 20, 09032 Assemini (CA)</strong>, facilmente raggiungibile da Cagliari, Elmas, Decimomannu, Selargius e tutta la provincia.
         </p>
 
         <h3 className="blog-h3">▶️ Quanto costa una manutenzione completa?</h3>
