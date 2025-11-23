@@ -30,5 +30,14 @@ export const blogArticles: BlogArticle[] = [
     readTime: "9 min",
     category: "Guide",
     image: recuperoDatiIPhoneRottoAssemini
+  },
+  {
+    slug: "display-originali-vs-compatibili",
+    title: "Display Originali vs Compatibili per iPhone",
+    description: "Guida completa alla scelta tra display originale e compatibile per iPhone. Differenze reali, pro e contro.",
+    date: "2025-01-01",
+    readTime: "9 min",
+    category: "Guide",
+    image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800&h=600&fit=crop"
   }
 ];
