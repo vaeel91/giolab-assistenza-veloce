@@ -1,214 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
-  <!-- Homepage -->
+
+  <!-- HOMEPAGE -->
   <url>
     <loc>https://giolabriparazioni.it/</loc>
     <image:image>
       <image:loc>https://giolabriparazioni.it/og-image-giolab.jpg</image:loc>
-      <image:caption>Giolab - Centro assistenza specializzato iPhone, Smartphone, PC e Console ad Assemini</image:caption>
-      <image:title>Giolab Assemini - Riparazione iPhone e Smartphone</image:title>
+      <image:caption>Giolab Riparazioni - Centro Assistenza Assemini</image:caption>
+      <image:title>Riparazione iPhone, Smartphone, PC e Console ad Assemini</image:title>
     </image:image>
   </url>
-  
-  <!-- Blog Articles -->
+
+  <!-- BLOG ARTICLES -->
   <url>
-    <loc>https://giolabriparazioni.it/blog/rigenerazione-vetro-apple-watch</loc>
+    <loc>https://giolabriparazioni.it/blog/riparazione-iphone-1-ora-giolab-assemini</loc>
     <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/rigenerazione-vetro-apple-watch.jpg</image:loc>
-      <image:caption>Rigenerazione vetro Apple Watch - sostituzione solo vetro con processo OCA presso Giolab Assemini</image:caption>
-      <image:title>Rigenerazione Vetro Apple Watch Giolab Assemini</image:title>
+      <image:loc>https://giolabriparazioni.it/og-images/riparazione-iphone-1-ora.jpg</image:loc>
+      <image:caption>Riparazione iPhone in 1 ora ad Assemini - Servizio rapido GioLab</image:caption>
+      <image:title>Riparazione iPhone rapida in 1 ora - GioLab Assemini</image:title>
     </image:image>
   </url>
-  
+
+  <url>
+    <loc>https://giolabriparazioni.it/blog/batteria-maggiorata-iphone-giolab-assemini</loc>
+    <image:image>
+      <image:loc>https://giolabriparazioni.it/og-images/batteria-maggiorata-iphone.jpg</image:loc>
+      <image:caption>Batteria maggiorata iPhone - Fino al 30% di autonomia in più</image:caption>
+      <image:title>Batteria maggiorata per iPhone - GioLab Assemini</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://giolabriparazioni.it/blog/recupero-dati-iphone-rotto-assemini</loc>
+    <image:image>
+      <image:loc>https://giolabriparazioni.it/og-images/recupero-dati-iphone.jpg</image:loc>
+      <image:caption>Recupero dati da iPhone rotto - Servizio professionale GioLab</image:caption>
+      <image:title>Recupero dati iPhone danneggiato - GioLab Assemini</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://giolabriparazioni.it/blog/rigenerazione-vetro-iphone-ipad-apple-watch</loc>
+    <image:image>
+      <image:loc>https://giolabriparazioni.it/og-images/rigenerazione-vetro.jpg</image:loc>
+      <image:caption>Rigenerazione vetro iPhone, iPad e Apple Watch - GioLab Assemini</image:caption>
+      <image:title>Rigenerazione vetro dispositivi Apple - GioLab</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://giolabriparazioni.it/blog/manutenzione-playstation-5</loc>
+    <image:image>
+      <image:loc>https://giolabriparazioni.it/og-images/manutenzione-playstation-5.jpg</image:loc>
+      <image:caption>Manutenzione professionale PlayStation 5 - GioLab Assemini</image:caption>
+      <image:title>Manutenzione PS5 metallo liquido - GioLab</image:title>
+    </image:image>
+  </url>
+
   <url>
     <loc>https://giolabriparazioni.it/blog/display-originali-vs-compatibili</loc>
     <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/display-originali-vs-compatibili.jpg</image:loc>
-      <image:caption>Differenze tra display iPhone originali e compatibili - Soft OLED vs Hard OLED vs TFT</image:caption>
-      <image:title>Display iPhone: Originali vs Compatibili</image:title>
+      <image:loc>https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800&amp;h=600&amp;fit=crop</image:loc>
+      <image:caption>Confronto display originali e compatibili per iPhone</image:caption>
+      <image:title>Display originale vs compatibile iPhone - GioLab</image:title>
     </image:image>
   </url>
-  
+
+  <!-- SERVIZI -->
   <url>
-    <loc>https://giolabriparazioni.it/blog/batteria-maggiorata-iphone-giolab</loc>
+    <loc>https://giolabriparazioni.it/servizi/riparazione-display-iphone-assemini</loc>
     <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/batteria-maggiorata-iphone-giolab.jpg</image:loc>
-      <image:caption>Batteria maggiorata iPhone fino al 40% di autonomia in più presso Giolab Assemini</image:caption>
-      <image:title>Batteria Maggiorata iPhone Giolab</image:title>
+      <image:loc>https://giolabriparazioni.it/og-images/riparazione-iphone-1-ora-assemini.jpg</image:loc>
+      <image:caption>Servizio riparazione display iPhone ad Assemini</image:caption>
+      <image:title>Riparazione display iPhone certificata - GioLab</image:title>
     </image:image>
   </url>
-  
+
   <url>
-    <loc>https://giolabriparazioni.it/blog/aumentare-memoria-iphone</loc>
+    <loc>https://giolabriparazioni.it/servizi/batteria-maggiorata-iphone</loc>
     <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/aumentare-memoria-iphone.jpg</image:loc>
-      <image:caption>Aumentare memoria interna iPhone da 64GB a 512GB presso Giolab Assemini</image:caption>
-      <image:title>Aumentare Memoria iPhone Giolab Assemini</image:title>
+      <image:loc>https://giolabriparazioni.it/og-images/batteria-maggiorata-iphone.jpg</image:loc>
+      <image:caption>Servizio installazione batteria maggiorata iPhone</image:caption>
+      <image:title>Batteria maggiorata iPhone +30% autonomia - GioLab</image:title>
     </image:image>
   </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/come-capire-batteria-iphone-da-sostituire</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/come-capire-batteria-iphone-da-sostituire.jpg</image:loc>
-      <image:caption>Come capire se la batteria del tuo iPhone va sostituita - Guida Giolab Assemini</image:caption>
-      <image:title>Quando Sostituire Batteria iPhone</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/vantaggi-batteria-maggiorata-iphone</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/vantaggi-batteria-maggiorata-iphone.jpg</image:loc>
-      <image:caption>Vantaggi batteria maggiorata iPhone - più autonomia e meno stress</image:caption>
-      <image:title>Vantaggi Batteria Maggiorata iPhone</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/riparazione-iphone-1-ora-giolab</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/riparazione-iphone-1-ora-giolab.jpg</image:loc>
-      <image:caption>Riparazione iPhone in 1 ora presso Giolab Assemini - servizio rapido garantito</image:caption>
-      <image:title>Riparazione iPhone 1 Ora Giolab</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/cosa-fare-iphone-caduto-schermo-crepato</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/cosa-fare-iphone-caduto-schermo-crepato.jpg</image:loc>
-      <image:caption>Cosa fare se l'iPhone cade e lo schermo si crepa - Guida Giolab Assemini</image:caption>
-      <image:title>iPhone Caduto Schermo Crepato Cosa Fare</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/perche-face-id-smette-funzionare</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/perche-face-id-smette-funzionare.jpg</image:loc>
-      <image:caption>Perché il Face ID smette di funzionare dopo una caduta - Riparazione Giolab</image:caption>
-      <image:title>Face ID Non Funziona Dopo Caduta</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/recupero-dati-iphone-rotto</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/recupero-dati-iphone-rotto.jpg</image:loc>
-      <image:caption>Recupero dati da iPhone rotto - Servizio professionale Giolab Assemini</image:caption>
-      <image:title>Recupero Dati iPhone Rotto Giolab</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/microsaldature-scheda-madre</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/microsaldature-scheda-madre.jpg</image:loc>
-      <image:caption>Micro-saldature scheda madre iPhone - Riparazione professionale Giolab Assemini</image:caption>
-      <image:title>Microsaldature Scheda Madre iPhone</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/conviene-riparare-iphone-vecchio</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/conviene-riparare-iphone-vecchio.jpg</image:loc>
-      <image:caption>Conviene riparare un iPhone vecchio o comprarne uno ricondizionato - Guida Giolab</image:caption>
-      <image:title>Conviene Riparare iPhone Vecchio</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/come-capire-problema-scheda-madre</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/come-capire-problema-scheda-madre.jpg</image:loc>
-      <image:caption>Come capire se il tuo iPhone ha un problema alla scheda madre - Diagnostica Giolab</image:caption>
-      <image:title>Problema Scheda Madre iPhone Sintomi</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/riparazione-console-assemini</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/riparazione-console-assemini.jpg</image:loc>
-      <image:caption>Riparazione console PS5, Xbox e Nintendo presso Giolab Assemini</image:caption>
-      <image:title>Riparazione Console Giolab Assemini</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/come-evitare-batteria-iphone-rovini</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/come-evitare-batteria-iphone-rovini.jpg</image:loc>
-      <image:caption>Come evitare che la batteria del tuo iPhone si rovini - Consigli Giolab</image:caption>
-      <image:title>Preservare Batteria iPhone Consigli</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/qualita-ricambi-durata-riparazione</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/qualita-ricambi-durata-riparazione.jpg</image:loc>
-      <image:caption>Quanto incide la qualità del ricambio sulla durata della riparazione iPhone</image:caption>
-      <image:title>Qualità Ricambi iPhone Importanza</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/errori-post-sostituzione-display</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/errori-post-sostituzione-display.jpg</image:loc>
-      <image:caption>I 5 errori più comuni dopo la sostituzione del display iPhone</image:caption>
-      <image:title>Errori Dopo Sostituzione Display iPhone</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/servizio-telefono-cortesia</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/servizio-telefono-cortesia.jpg</image:loc>
-      <image:caption>Come funziona il servizio di telefono di cortesia Giolab Assemini</image:caption>
-      <image:title>Servizio Telefono Cortesia Giolab</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/rigenerazione-vetro-iphone</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/rigenerazione-vetro-iphone.jpg</image:loc>
-      <image:caption>Rigenerazione vetro iPhone - sostituzione solo vetro con processo OCA</image:caption>
-      <image:title>Rigenerazione Vetro iPhone Giolab</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/trasferimento-dati-android-iphone</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/trasferimento-dati-android-iphone.jpg</image:loc>
-      <image:caption>Trasferimento dati da Android a iPhone - Guida completa Giolab</image:caption>
-      <image:title>Trasferire Dati Android iPhone</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/ps5-verticale-o-orizzontale</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/ps5-verticale-o-orizzontale.jpg</image:loc>
-      <image:caption>PS5 in verticale o orizzontale: quale posizione scegliere per le prestazioni migliori</image:caption>
-      <image:title>PS5 Verticale o Orizzontale</image:title>
-    </image:image>
-  </url>
-  
-  <url>
-    <loc>https://giolabriparazioni.it/blog/riparazione-webcam-hp-victus</loc>
-    <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/riparazione-webcam-hp-victus.jpg</image:loc>
-      <image:caption>Riparazione webcam HP Victus 16 non rilevata - Sostituzione modulo presso Giolab</image:caption>
-      <image:title>Riparazione Webcam HP Victus Giolab</image:title>
-    </image:image>
-  </url>
-  
+
 </urlset>
