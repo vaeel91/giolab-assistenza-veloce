@@ -190,7 +190,66 @@
 }
 
 /* ========================================
-   TABELLE
+   TABELLE RESPONSIVE
+   ======================================== */
+.table-responsive {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  display: block;
+  margin: 1.5rem 0;
+  padding: 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.table-responsive table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.table-responsive th,
+.table-responsive td {
+  padding: 0.75rem;
+  white-space: nowrap;
+  text-align: left;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.table-responsive th {
+  font-weight: 600;
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.table-responsive td {
+  color: hsl(var(--muted-foreground));
+}
+
+.table-responsive tr:hover td {
+  background-color: hsl(var(--muted) / 0.5);
+}
+
+/* Indicatore scroll mobile */
+@media (max-width: 768px) {
+  .table-responsive::after {
+    content: "⬅️ Scorri per vedere tutto →";
+    display: block;
+    font-size: 0.75rem;
+    color: hsl(var(--muted-foreground));
+    text-align: center;
+    padding: 0.5rem 0;
+    background: hsl(var(--muted) / 0.3);
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+}
+
+/* ========================================
+   TABELLE (stili legacy - da mantenere per compatibilità)
    ======================================== */
 .blog-table {
   @apply w-full border-collapse my-8 overflow-x-auto block sm:table;

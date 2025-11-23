@@ -139,16 +139,16 @@ export default function DisplayOriginaliVsCompatibili() {
 
       <section>
         <h2 className="blog-h2">📊 Tabella Comparativa: Display a Confronto</h2>
-        <div className="overflow-x-auto my-6 -mx-4 px-4 sm:mx-0 sm:px-0" style={{ maxWidth: '100%' }}>
-          <table className="w-full border-collapse bg-white shadow-md rounded-lg overflow-hidden" style={{ minWidth: '600px' }}>
+        <div className="table-responsive my-6">
+          <table className="border-collapse bg-white shadow-md rounded-lg overflow-hidden">
             <thead className="bg-giolab-blue text-white">
               <tr>
-                <th className="p-3 text-left" style={{ minWidth: '120px' }}>Caratteristica</th>
-                <th className="p-3 text-left" style={{ minWidth: '100px' }}>TFT (LCD)</th>
-                <th className="p-3 text-left" style={{ minWidth: '100px' }}>Hard OLED</th>
-                <th className="p-3 text-left" style={{ minWidth: '100px' }}>Soft OLED</th>
-                <th className="p-3 text-left" style={{ minWidth: '100px' }}>Pulled</th>
-                <th className="p-3 text-left" style={{ minWidth: '120px' }}>Originale Nuovo</th>
+                <th className="p-3 text-left">Caratteristica</th>
+                <th className="p-3 text-left">TFT (LCD)</th>
+                <th className="p-3 text-left">Hard OLED</th>
+                <th className="p-3 text-left">Soft OLED</th>
+                <th className="p-3 text-left">Pulled</th>
+                <th className="p-3 text-left">Originale Nuovo</th>
               </tr>
             </thead>
             <tbody>
