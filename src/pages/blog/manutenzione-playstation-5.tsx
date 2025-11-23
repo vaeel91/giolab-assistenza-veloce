@@ -18,7 +18,7 @@ export default function ManutenzionePlayStation5() {
       </section>
 
       <img 
-        src="https://giolabriparazioni.it/blog-media/ps5-console-gaming.jpg" 
+        src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=1200&h=600&fit=crop" 
         alt="PlayStation 5 console con sistema di ventilazione visibile"
         className="w-full h-auto rounded-lg mb-8"
         style={{ maxWidth: '100%', height: 'auto' }}
@@ -40,7 +40,7 @@ export default function ManutenzionePlayStation5() {
       </section>
 
       <img 
-        src="https://giolabriparazioni.it/blog-media/ps5-dissipatore-interno.jpg" 
+        src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=1200&h=600&fit=crop" 
         alt="Sistema di dissipazione interno della PlayStation 5 con dissipatore e ventola"
         className="w-full h-auto rounded-lg mb-8"
         style={{ maxWidth: '100%', height: 'auto' }}
@@ -90,7 +90,7 @@ export default function ManutenzionePlayStation5() {
       </section>
 
       <img 
-        src="https://giolabriparazioni.it/blog-media/ps5-metallo-liquido.jpg" 
+        src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=1200&h=600&fit=crop" 
         alt="Metallo liquido applicato sul processore della PlayStation 5"
         className="w-full h-auto rounded-lg mb-8"
         style={{ maxWidth: '100%', height: 'auto' }}
@@ -144,7 +144,7 @@ export default function ManutenzionePlayStation5() {
       </section>
 
       <img 
-        src="https://giolabriparazioni.it/blog-media/ps5-posizione-orizzontale.jpg" 
+        src="https://images.unsplash.com/photo-1622297845775-5ff3fef71d13?w=1200&h=600&fit=crop" 
         alt="PlayStation 5 posizionata in orizzontale per una migliore dissipazione"
         className="w-full h-auto rounded-lg mb-8"
         style={{ maxWidth: '100%', height: 'auto' }}
@@ -190,7 +190,7 @@ export default function ManutenzionePlayStation5() {
       </section>
 
       <img 
-        src="https://giolabriparazioni.it/blog-media/manutenzione-ps5-laboratorio.jpg" 
+        src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=1200&h=600&fit=crop" 
         alt="Tecnico GioLab esegue manutenzione professionale su PlayStation 5 ad Assemini"
         className="w-full h-auto rounded-lg mb-8"
         style={{ maxWidth: '100%', height: 'auto' }}
