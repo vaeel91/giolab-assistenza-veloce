@@ -4,10 +4,8 @@
 
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
-
 export default function ManutenzionePlayStation5() {
-  const articleContent = (
-    <div className="blog-content">
+  const articleContent = <div className="blog-content">
       <section>
         <p className="blog-paragraph text-lg">
           La PlayStation 5 è una delle console più potenti mai prodotte, ma come ogni dispositivo ad alte prestazioni è soggetta a un nemico silenzioso che può comprometterne la durata: il calore.
@@ -17,13 +15,10 @@ export default function ManutenzionePlayStation5() {
         </p>
       </section>
 
-      <img 
-        src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=1200&h=600&fit=crop" 
-        alt="PlayStation 5 console con sistema di ventilazione visibile"
-        className="w-full h-auto rounded-lg mb-8"
-        style={{ maxWidth: '100%', height: 'auto' }}
-        loading="lazy"
-      />
+      <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=1200&h=600&fit=crop" alt="PlayStation 5 console con sistema di ventilazione visibile" className="w-full h-auto rounded-lg mb-8" style={{
+      maxWidth: '100%',
+      height: 'auto'
+    }} loading="lazy" />
 
       <section>
         <h2 className="blog-h2">🔍 Perché la PS5 si surriscalda?</h2>
@@ -39,13 +34,10 @@ export default function ManutenzionePlayStation5() {
         </ul>
       </section>
 
-      <img 
-        src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=1200&h=600&fit=crop" 
-        alt="Sistema di dissipazione interno della PlayStation 5 con dissipatore e ventola"
-        className="w-full h-auto rounded-lg mb-8"
-        style={{ maxWidth: '100%', height: 'auto' }}
-        loading="lazy"
-      />
+      <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=1200&h=600&fit=crop" alt="Sistema di dissipazione interno della PlayStation 5 con dissipatore e ventola" className="w-full h-auto rounded-lg mb-8" style={{
+      maxWidth: '100%',
+      height: 'auto'
+    }} loading="lazy" />
 
       <section>
         <h2 className="blog-h2">⚙️ Cos'è il metallo liquido della PS5 e che funzione svolge?</h2>
@@ -89,13 +81,10 @@ export default function ManutenzionePlayStation5() {
         </ul>
       </section>
 
-      <img 
-        src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=1200&h=600&fit=crop" 
-        alt="Metallo liquido applicato sul processore della PlayStation 5"
-        className="w-full h-auto rounded-lg mb-8"
-        style={{ maxWidth: '100%', height: 'auto' }}
-        loading="lazy"
-      />
+      <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=1200&h=600&fit=crop" alt="Metallo liquido applicato sul processore della PlayStation 5" className="w-full h-auto rounded-lg mb-8" style={{
+      maxWidth: '100%',
+      height: 'auto'
+    }} loading="lazy" />
 
       <section>
         <h2 className="blog-h2">🧨 PS5 in verticale? Ecco perché può essere rischioso</h2>
@@ -143,13 +132,10 @@ export default function ManutenzionePlayStation5() {
         </div>
       </section>
 
-      <img 
-        src="https://images.unsplash.com/photo-1622297845775-5ff3fef71d13?w=1200&h=600&fit=crop" 
-        alt="PlayStation 5 posizionata in orizzontale per una migliore dissipazione"
-        className="w-full h-auto rounded-lg mb-8"
-        style={{ maxWidth: '100%', height: 'auto' }}
-        loading="lazy"
-      />
+      <img src="https://images.unsplash.com/photo-1622297845775-5ff3fef71d13?w=1200&h=600&fit=crop" alt="PlayStation 5 posizionata in orizzontale per una migliore dissipazione" className="w-full h-auto rounded-lg mb-8" style={{
+      maxWidth: '100%',
+      height: 'auto'
+    }} loading="lazy" />
 
       <section>
         <h2 className="blog-h2">🧽 Perché la manutenzione è fondamentale</h2>
@@ -189,18 +175,15 @@ export default function ManutenzionePlayStation5() {
         </ul>
       </section>
 
-      <img 
-        src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=1200&h=600&fit=crop" 
-        alt="Tecnico GioLab esegue manutenzione professionale su PlayStation 5 ad Assemini"
-        className="w-full h-auto rounded-lg mb-8"
-        style={{ maxWidth: '100%', height: 'auto' }}
-        loading="lazy"
-      />
+      <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=1200&h=600&fit=crop" alt="Tecnico GioLab esegue manutenzione professionale su PlayStation 5 ad Assemini" className="w-full h-auto rounded-lg mb-8" style={{
+      maxWidth: '100%',
+      height: 'auto'
+    }} loading="lazy" />
 
       <section>
         <h2 className="blog-h2">🛠️ Servizi professionali GioLab per la tua PS5</h2>
         <p className="blog-paragraph">
-          Da <strong>GioLab</strong> (Via Carmine 20A – Assemini, Cagliari) offriamo:
+          Da <strong>GioLab</strong> (Via Carmine 20 – Assemini, Cagliari) offriamo:
         </p>
 
         <h3 className="blog-h3">🔧 1. Manutenzione completa PS5</h3>
@@ -275,21 +258,6 @@ export default function ManutenzionePlayStation5() {
           Con una <strong>manutenzione professionale</strong> e una corretta disposizione della console, puoi evitare danni e prolungare la vita del tuo investimento.
         </p>
       </section>
-    </div>
-  );
-
-  return (
-    <BlogArticleTemplate
-      title="Manutenzione PlayStation 5: Guida Completa Surriscaldamento e Metallo Liquido | GioLab Assemini"
-      description="Guida definitiva alla manutenzione PS5: surriscaldamento, metallo liquido, posizione orizzontale vs verticale. Servizi professionali ad Assemini (Cagliari)."
-      keywords="manutenzione PS5, surriscaldamento PlayStation 5, metallo liquido PS5, pulizia PS5 Assemini, riparazione console Cagliari, ventola PS5 rumorosa, PS5 si spegne, assistenza PlayStation Assemini"
-      slug="manutenzione-playstation-5"
-      ogImage="https://giolabriparazioni.it/og-images/manutenzione-playstation-5.jpg"
-      author="GioLab Team"
-      datePublished="2025-01-15"
-      category="Guide"
-      content={articleContent}
-      readingTime={8}
-    />
-  );
+    </div>;
+  return <BlogArticleTemplate title="Manutenzione PlayStation 5: Guida Completa Surriscaldamento e Metallo Liquido | GioLab Assemini" description="Guida definitiva alla manutenzione PS5: surriscaldamento, metallo liquido, posizione orizzontale vs verticale. Servizi professionali ad Assemini (Cagliari)." keywords="manutenzione PS5, surriscaldamento PlayStation 5, metallo liquido PS5, pulizia PS5 Assemini, riparazione console Cagliari, ventola PS5 rumorosa, PS5 si spegne, assistenza PlayStation Assemini" slug="manutenzione-playstation-5" ogImage="https://giolabriparazioni.it/og-images/manutenzione-playstation-5.jpg" author="GioLab Team" datePublished="2025-01-15" category="Guide" content={articleContent} readingTime={8} />;
 }
