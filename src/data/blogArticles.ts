@@ -2,6 +2,8 @@ import { BlogArticle } from "@/types/blogArticle";
 import recuperoDatiIPhoneRottoAssemini from "@/assets/recupero-dati-iphone-rotto-assemini.jpg";
 import batteriaMaggiorataIPhoneAssemini from "@/assets/batteria-maggiorata-iphone-assemini.jpg";
 import riparazioneIPhone1OraAssemini from "@/assets/riparazione-iphone-1-ora-assemini.jpg";
+import rigenerazioneVetro from "/og-images/rigenerazione-vetro.jpg";
+import manutenzionePS5 from "/og-images/manutenzione-playstation-5.jpg";
 
 export const blogArticles: BlogArticle[] = [
   {
@@ -47,7 +49,7 @@ export const blogArticles: BlogArticle[] = [
     date: "2025-01-01",
     readTime: "8 min",
     category: "Guide",
-    image: "https://giolabriparazioni.it/og-images/rigenerazione-vetro.jpg"
+    image: rigenerazioneVetro
   },
   {
     slug: "manutenzione-playstation-5",
@@ -56,6 +58,6 @@ export const blogArticles: BlogArticle[] = [
     date: "2025-01-15",
     readTime: "8 min",
     category: "Guide",
-    image: "https://giolabriparazioni.it/og-images/manutenzione-playstation-5.jpg"
+    image: manutenzionePS5
   }
 ];
