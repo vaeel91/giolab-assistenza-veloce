@@ -18,10 +18,14 @@ interface BackToBlogProps {
 }
 
 export const BackToBlog = ({ variant = "top", currentSlug }: BackToBlogProps) => {
-  // Trova l'articolo corrente e il prossimo
+  // Trova l'articolo corrente, il precedente e il prossimo
   const currentIndex = currentSlug 
     ? blogArticles.findIndex(article => article.slug === currentSlug)
     : -1;
+  
+  const prevArticle = currentIndex > 0
+    ? blogArticles[currentIndex - 1]
+    : null;
   
   const nextArticle = currentIndex >= 0 && currentIndex < blogArticles.length - 1
     ? blogArticles[currentIndex + 1]
@@ -29,28 +33,42 @@ export const BackToBlog = ({ variant = "top", currentSlug }: BackToBlogProps) =>
   if (variant === "top") {
     return (
       <div className="sticky top-20 z-40 bg-background/95 backdrop-blur-sm border-b border-border py-3">
-        <div className="container mx-auto px-4 flex items-center justify-between gap-4">
-          <Link to="/blog">
-            <Button 
-              variant="outline" 
-              size="sm"
-              className="gap-2 hover:bg-primary hover:text-primary-foreground transition-all"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">Torna al Blog</span>
-              <span className="sm:hidden">Blog</span>
-            </Button>
-          </Link>
-          
-          {nextArticle && (
-            <Link to={`/blog/${nextArticle.slug}`}>
+        <div className="container mx-auto px-4 flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <Link to="/blog">
               <Button 
                 variant="outline" 
                 size="sm"
                 className="gap-2 hover:bg-primary hover:text-primary-foreground transition-all"
               >
-                <span className="hidden sm:inline">Prossimo Articolo</span>
-                <span className="sm:hidden">Prossimo</span>
+                <ArrowLeft className="w-4 h-4" />
+                <span className="hidden sm:inline">Torna al Blog</span>
+                <span className="sm:hidden">Blog</span>
+              </Button>
+            </Link>
+            
+            {prevArticle && (
+              <Link to={`/blog/${prevArticle.slug}`}>
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  className="gap-2 hover:bg-muted transition-all"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  <span className="hidden md:inline">Precedente</span>
+                </Button>
+              </Link>
+            )}
+          </div>
+          
+          {nextArticle && (
+            <Link to={`/blog/${nextArticle.slug}`}>
+              <Button 
+                variant="ghost" 
+                size="sm"
+                className="gap-2 hover:bg-muted transition-all"
+              >
+                <span className="hidden md:inline">Prossimo</span>
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
@@ -62,30 +80,65 @@ export const BackToBlog = ({ variant = "top", currentSlug }: BackToBlogProps) =>
 
   // variant === "bottom"
   return (
-    <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
-      <Link to="/blog" className="flex-1 sm:flex-initial">
-        <Button 
-          variant="outline" 
-          size="lg"
-          className="w-full sm:w-auto gap-2 hover:bg-primary hover:text-primary-foreground transition-all"
-        >
-          <ArrowLeft className="w-5 h-5" />
-          Torna agli Articoli del Blog
-        </Button>
-      </Link>
-      
-      {nextArticle && (
-        <Link to={`/blog/${nextArticle.slug}`} className="flex-1 sm:flex-initial">
+    <div className="mt-12 pt-8 border-t border-border">
+      <div className="flex flex-col gap-6">
+        {/* Navigazione articoli precedente/prossimo */}
+        {(prevArticle || nextArticle) && (
+          <div className="flex flex-col sm:flex-row items-stretch gap-4">
+            {prevArticle ? (
+              <Link to={`/blog/${prevArticle.slug}`} className="flex-1">
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="w-full gap-2 hover:bg-muted transition-all h-auto py-4 flex-col items-start"
+                >
+                  <div className="flex items-center gap-2 text-muted-foreground text-xs">
+                    <ArrowLeft className="w-4 h-4" />
+                    Articolo Precedente
+                  </div>
+                  <span className="text-left font-semibold line-clamp-2">
+                    {prevArticle.title}
+                  </span>
+                </Button>
+              </Link>
+            ) : (
+              <div className="flex-1" />
+            )}
+            
+            {nextArticle ? (
+              <Link to={`/blog/${nextArticle.slug}`} className="flex-1">
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="w-full gap-2 hover:bg-muted transition-all h-auto py-4 flex-col items-end"
+                >
+                  <div className="flex items-center gap-2 text-muted-foreground text-xs">
+                    Prossimo Articolo
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                  <span className="text-right font-semibold line-clamp-2">
+                    {nextArticle.title}
+                  </span>
+                </Button>
+              </Link>
+            ) : (
+              <div className="flex-1" />
+            )}
+          </div>
+        )}
+        
+        {/* Bottone torna al blog */}
+        <Link to="/blog">
           <Button 
             variant="default" 
             size="lg"
             className="w-full sm:w-auto gap-2"
           >
-            Prossimo Articolo
-            <ArrowRight className="w-5 h-5" />
+            <ArrowLeft className="w-5 h-5" />
+            Torna agli Articoli del Blog
           </Button>
         </Link>
-      )}
+      </div>
     </div>
   );
 };
