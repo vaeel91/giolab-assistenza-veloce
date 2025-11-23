@@ -173,10 +173,10 @@ export const BlogArticleTemplate = ({
         <Header />
         <BackToBlog variant="top" />
         
-        <div className="container mx-auto px-4 pt-24 pb-8">
+        <div className="container mx-auto px-4 pt-24 pb-8 overflow-x-hidden">
           <div className="flex gap-8 max-w-7xl mx-auto">
             {/* Contenuto principale articolo */}
-            <article className="flex-1 max-w-4xl">
+            <article className="flex-1 max-w-4xl min-w-0 overflow-x-hidden">
           {/* Breadcrumb Navigation */}
           <Breadcrumb className="mb-6">
             <BreadcrumbList>
@@ -223,7 +223,7 @@ export const BlogArticleTemplate = ({
           </div>
           
               {/* Main Article Content */}
-              <article className="prose prose-lg max-w-none dark:prose-invert blog-content">
+              <article className="prose prose-lg max-w-none dark:prose-invert blog-content overflow-x-hidden">
                 {content}
               </article>
             </article>

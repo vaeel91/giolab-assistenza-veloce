@@ -31,7 +31,8 @@ export default function DisplayOriginaliVsCompatibili() {
         <img 
           src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=1200&h=600&fit=crop" 
           alt="Confronto display iPhone originale vs compatibile - GioLab Assemini"
-          className="w-full rounded-lg shadow-lg"
+          className="w-full h-auto rounded-lg shadow-lg"
+          style={{ maxWidth: '100%', height: 'auto' }}
           loading="lazy"
         />
       </div>
@@ -99,7 +100,8 @@ export default function DisplayOriginaliVsCompatibili() {
         <img 
           src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=1200&h=600&fit=crop" 
           alt="Differenze tra display TFT, OLED e originale iPhone"
-          className="w-full rounded-lg shadow-lg"
+          className="w-full h-auto rounded-lg shadow-lg"
+          style={{ maxWidth: '100%', height: 'auto' }}
           loading="lazy"
         />
       </div>
@@ -137,16 +139,16 @@ export default function DisplayOriginaliVsCompatibili() {
 
       <section>
         <h2 className="blog-h2">📊 Tabella Comparativa: Display a Confronto</h2>
-        <div className="overflow-x-auto my-6">
-          <table className="w-full border-collapse bg-white shadow-md rounded-lg overflow-hidden">
+        <div className="overflow-x-auto my-6 -mx-4 px-4 sm:mx-0 sm:px-0" style={{ maxWidth: '100%' }}>
+          <table className="w-full border-collapse bg-white shadow-md rounded-lg overflow-hidden" style={{ minWidth: '600px' }}>
             <thead className="bg-giolab-blue text-white">
               <tr>
-                <th className="p-3 text-left">Caratteristica</th>
-                <th className="p-3 text-left">TFT (LCD)</th>
-                <th className="p-3 text-left">Hard OLED</th>
-                <th className="p-3 text-left">Soft OLED</th>
-                <th className="p-3 text-left">Pulled</th>
-                <th className="p-3 text-left">Originale Nuovo</th>
+                <th className="p-3 text-left" style={{ minWidth: '120px' }}>Caratteristica</th>
+                <th className="p-3 text-left" style={{ minWidth: '100px' }}>TFT (LCD)</th>
+                <th className="p-3 text-left" style={{ minWidth: '100px' }}>Hard OLED</th>
+                <th className="p-3 text-left" style={{ minWidth: '100px' }}>Soft OLED</th>
+                <th className="p-3 text-left" style={{ minWidth: '100px' }}>Pulled</th>
+                <th className="p-3 text-left" style={{ minWidth: '120px' }}>Originale Nuovo</th>
               </tr>
             </thead>
             <tbody>
@@ -260,7 +262,8 @@ export default function DisplayOriginaliVsCompatibili() {
         <img 
           src="https://images.unsplash.com/photo-1574920162762-8fd7821e4d1f?w=1200&h=600&fit=crop" 
           alt="Confronto qualità display iPhone - tecnologia OLED vs LCD"
-          className="w-full rounded-lg shadow-lg"
+          className="w-full h-auto rounded-lg shadow-lg"
+          style={{ maxWidth: '100%', height: 'auto' }}
           loading="lazy"
         />
       </div>
@@ -370,7 +373,8 @@ export default function DisplayOriginaliVsCompatibili() {
         <img 
           src="https://images.unsplash.com/photo-1621768216002-5ac171876625?w=1200&h=600&fit=crop" 
           alt="Laboratorio GioLab Assemini - riparazione display iPhone professionale"
-          className="w-full rounded-lg shadow-lg"
+          className="w-full h-auto rounded-lg shadow-lg"
+          style={{ maxWidth: '100%', height: 'auto' }}
           loading="lazy"
         />
       </div>
