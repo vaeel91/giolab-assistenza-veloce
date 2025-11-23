@@ -16,17 +16,20 @@ export default function BatteriaMaggiorataIPhone() {
         <p className="blog-paragraph">
           Dopo 2–3 anni di utilizzo la batteria dell'iPhone perde capacità e inizia a durare sempre meno. 
           Se sei costretto a ricaricare il telefono più volte al giorno, oppure noti spegnimenti improvvisi, 
-          significa che la batteria è degradata.
+          significa che la batteria è degradata. Presso il nostro <strong>laboratorio riparazioni professionali Assemini</strong> interveniamo su questo problema ogni giorno con <strong>servizio tecnico certificato</strong>.
         </p>
         <p className="blog-paragraph">
-          A <strong>GioLab – Centro assistenza iPhone ad Assemini (Cagliari)</strong> installiamo <strong>batterie maggiorate</strong> ad alta qualità, 
-          progettate per offrire:
+          A <strong>GioLab – Centro assistenza iPhone Cagliari</strong> ad Assemini installiamo <strong>batterie maggiorate</strong> ad alta qualità, 
+          progettate per offrire la migliore <strong>assistenza smartphone Assemini</strong> e <strong>riparazione iPhone Assemini</strong>:
         </p>
         <ul className="blog-list-bulleted">
           <li><strong>+10/12% di autonomia</strong> sui modelli standard</li>
           <li>fino al <strong>+30% sui modelli Pro Max</strong></li>
           <li>mantenendo sicurezza, compatibilità iOS e prestazioni elevate</li>
         </ul>
+        <p className="blog-paragraph">
+          Come <strong>tecnico iPhone Assemini</strong> specializzato in <strong>riparazioni Apple Sardegna</strong>, offriamo la soluzione ideale per chi cerca <strong>sostituzione batteria iPhone Assemini</strong> di qualità superiore nel <strong>negozio riparazioni telefoni</strong> più affidabile della zona.
+        </p>
       </section>
 
       {/* I SEGNALI */}
@@ -166,16 +169,18 @@ export default function BatteriaMaggiorataIPhone() {
       <section>
         <h2 className="blog-h2">📍 Perché Scegliere GioLab</h2>
         <p className="blog-paragraph">
-          <strong>GioLab</strong> è un punto di riferimento per:
+          <strong>GioLab</strong> è il <strong>centro specializzato iPhone Cagliari</strong> e punto di riferimento per:
         </p>
         <ul className="blog-list-bulleted">
-          <li>Sostituzione batteria iPhone ad <strong>Assemini</strong></li>
-          <li>Riparazione iPhone <strong>Cagliari</strong> e provincia</li>
-          <li>Installazione batterie maggiorate per iPhone</li>
-          <li>Assistenza smartphone certificata in <strong>Sardegna</strong></li>
+          <li><strong>Sostituzione batteria iPhone Assemini</strong> con ricambi certificati</li>
+          <li><strong>Riparazione smartphone Cagliari</strong> e provincia con <strong>servizio riparazione iPhone urgente</strong></li>
+          <li>Installazione batterie maggiorate per iPhone da <strong>esperto riparazioni Apple Assemini</strong></li>
+          <li><strong>Assistenza tecnica smartphone Cagliari</strong> certificata in <strong>Sardegna</strong></li>
+          <li><strong>Laboratorio riparazioni professionali Assemini</strong> con tecnici specializzati</li>
+          <li><strong>Negozio riparazioni telefoni</strong> di fiducia per Cagliari, Elmas, Quartu, Decimomannu</li>
         </ul>
         <p className="blog-paragraph">
-          Ricambi certificati, garanzia inclusa e interventi rapidi.
+          Ricambi certificati, garanzia inclusa e interventi rapidi da <strong>tecnico iPhone Assemini</strong> qualificato nel tuo <strong>centro assistenza iPhone Cagliari</strong> di riferimento per tutte le <strong>riparazioni Apple Sardegna</strong>.
         </p>
       </section>
 
