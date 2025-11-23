@@ -21,6 +21,7 @@ import RecuperoDatiIPhoneRotto from "./pages/blog/RecuperoDatiIPhoneRotto";
 import ComeCabireBatteriaIPhone from "./pages/blog/ComeCabireBatteriaIPhone";
 import DisplayOriginaliVsCompatibili from "./pages/blog/DisplayOriginaliVsCompatibili";
 import RigenerazioneVetroIphoneIpadAppleWatch from "./pages/blog/rigenerazione-vetro-iphone-ipad-apple-watch";
+import ManutenzionePlayStation5 from "./pages/blog/manutenzione-playstation-5";
 import SEODocumentation from "./pages/SEODocumentation";
 import SocialPreview from "./pages/SocialPreview";
 import IPhoneRicondizionati from "./pages/IPhoneRicondizionati";
@@ -54,7 +55,8 @@ const App = () => (
         <Route path="/blog/recupero-dati-iphone-rotto-assemini" element={<RecuperoDatiIPhoneRotto />} />
         <Route path="/blog/come-capire-batteria-iphone-sostituita" element={<ComeCabireBatteriaIPhone />} />
         <Route path="/blog/display-originali-vs-compatibili" element={<DisplayOriginaliVsCompatibili />} />
-        <Route path="/blog/rigenerazione-vetro-iphone-ipad-apple-watch" element={<RigenerazioneVetroIphoneIpadAppleWatch />} />
+            <Route path="/blog/rigenerazione-vetro-iphone-ipad-apple-watch" element={<RigenerazioneVetroIphoneIpadAppleWatch />} />
+            <Route path="/blog/manutenzione-playstation-5" element={<ManutenzionePlayStation5 />} />
         
         {/* Servizi specifici */}
         <Route path="/servizi/riparazione-display-iphone-assemini" element={<RiparazioneDisplayIPhone />} />

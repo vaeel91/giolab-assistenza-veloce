@@ -48,5 +48,14 @@ export const blogArticles: BlogArticle[] = [
     readTime: "8 min",
     category: "Guide",
     image: "https://giolabriparazioni.it/og-images/rigenerazione-vetro.jpg"
+  },
+  {
+    slug: "manutenzione-playstation-5",
+    title: "La guida definitiva alla manutenzione della tua PlayStation 5",
+    description: "Surriscaldamento PS5, metallo liquido e manutenzione professionale: tutto quello che devi sapere ad Assemini (Cagliari).",
+    date: "2025-01-15",
+    readTime: "8 min",
+    category: "Guide",
+    image: "https://giolabriparazioni.it/og-images/manutenzione-playstation-5.jpg"
   }
 ];
