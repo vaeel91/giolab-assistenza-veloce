@@ -171,7 +171,7 @@ export const BlogArticleTemplate = ({
       
       <div className="min-h-screen bg-background">
         <Header />
-        <BackToBlog variant="top" />
+        <BackToBlog variant="top" currentSlug={slug} />
         
         <div className="container mx-auto px-4 pt-24 pb-8 overflow-x-hidden">
           <div className="flex gap-8 max-w-7xl mx-auto">
@@ -259,7 +259,7 @@ export const BlogArticleTemplate = ({
         <RelatedArticles currentSlug={slug} category={category} />
         
         <div className="container mx-auto px-4">
-          <BackToBlog variant="bottom" />
+          <BackToBlog variant="bottom" currentSlug={slug} />
         </div>
         
         <Footer />
