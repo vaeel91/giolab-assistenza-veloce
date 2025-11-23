@@ -39,5 +39,14 @@ export const blogArticles: BlogArticle[] = [
     readTime: "9 min",
     category: "Guide",
     image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800&h=600&fit=crop"
+  },
+  {
+    slug: "rigenerazione-vetro-iphone-ipad-apple-watch",
+    title: "Rigenerazione vetro su iPhone, iPad e Apple Watch",
+    description: "Guida completa al processo di rigenerazione del solo vetro per iPhone, iPad e Apple Watch ad Assemini (Cagliari). Risparmio, qualità e vantaggi tecnici spiegati in modo semplice.",
+    date: "2025-01-01",
+    readTime: "8 min",
+    category: "Guide",
+    image: "https://giolabriparazioni.it/og-images/rigenerazione-vetro.jpg"
   }
 ];
