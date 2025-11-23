@@ -58,10 +58,15 @@
 .blog-content h1,
 .blog-content h2,
 .blog-content h3,
-.blog-content h4 {
+.blog-content h4,
+.blog-content span,
+.blog-content div {
   word-wrap: break-word;
   overflow-wrap: break-word;
-  hyphens: auto;
+  word-break: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
 }
 
 /* ========================================
