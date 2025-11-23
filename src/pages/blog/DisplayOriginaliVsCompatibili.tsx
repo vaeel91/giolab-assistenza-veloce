@@ -504,7 +504,7 @@ export default function DisplayOriginaliVsCompatibili() {
           <h4 className="blog-box-title">💬 Contatta GioLab Assemini</h4>
           <p className="blog-paragraph">
             📞 <strong>Chiama o scrivi su WhatsApp: 340 69 70 686</strong><br />
-            📍 Via Carmine 20, Assemini (CA)<br />
+            📍 Via Carmine 20, 09032 Assemini (CA)<br />
             📧 info@giolabriparazioni.it<br />
             📷 Instagram: <strong>@giolabriparazioni</strong><br />
             🕘 Lun–Sab: 9:00–13:00 / 16:00–20:00

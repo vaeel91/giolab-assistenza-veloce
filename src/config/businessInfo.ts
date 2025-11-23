@@ -13,15 +13,15 @@ export const BUSINESS_INFO = {
   // Indirizzo
   address: {
     street: "Via Carmine 20",
-    streetFull: "Via Carmine 20A",
+    streetFull: "Via Carmine 20",
     city: "Assemini",
     province: "CA",
     provinceCode: "Cagliari",
     postalCode: "09032",
     country: "Italia",
     countryCode: "IT",
-    full: "Via Carmine 20, Assemini (CA)",
-    fullWithPostalCode: "Via Carmine 20A, 09032 Assemini (CA)",
+    full: "Via Carmine 20, 09032 Assemini (CA)",
+    fullWithPostalCode: "Via Carmine 20, 09032 Assemini (CA)",
   },
   
   // Coordinate GPS

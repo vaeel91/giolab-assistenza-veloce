@@ -18,7 +18,7 @@ export const BUSINESS_INFO = {
   founder: 'Stefano Giordano',
   foundingDate: '2014',
   address: {
-    street: 'Via Carmine 20A',
+    street: 'Via Carmine 20',
     city: 'Assemini',
     province: 'CA',
     postalCode: '09032',

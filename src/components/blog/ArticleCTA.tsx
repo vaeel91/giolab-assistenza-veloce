@@ -59,7 +59,7 @@ export const ArticleCTA = () => {
 
         {/* Info aggiuntive */}
         <div className="pt-4 text-sm text-muted-foreground">
-          <p>📍 Via Carmine 20, Assemini (CA) • ⏰ Lun-Sab 9:00-13:00 / 16:00-20:00</p>
+          <p>📍 Via Carmine 20, 09032 Assemini (CA) • ⏰ Lun-Sab 9:00-13:00 / 16:00-20:00</p>
         </div>
       </div>
     </div>

@@ -91,7 +91,7 @@ export default function RiparazioneIPhone1Ora() {
           <h4 className="blog-box-title">✔️ 1. Vieni direttamente o prenota</h4>
           <p className="blog-paragraph">
             📞 <strong>340 69 70 686</strong><br />
-            📍 Via Carmine 20, Assemini
+            📍 Via Carmine 20, 09032 Assemini (CA)
           </p>
         </div>
 
@@ -172,7 +172,7 @@ export default function RiparazioneIPhone1Ora() {
         <div className="blog-box-tip">
           <p className="blog-paragraph">
             📞 <strong>Chiama subito GioLab: 340 69 70 686</strong><br />
-            📍 Via Carmine 20, Assemini (CA)<br />
+            📍 Via Carmine 20, 09032 Assemini (CA)<br />
             🕘 Lun–Sab: 9:00–13:00 / 16:00–20:00
           </p>
         </div>
@@ -216,7 +216,7 @@ export default function RiparazioneIPhone1Ora() {
 
         <h3 className="blog-h3">▶️ Dove si trova il vostro centro assistenza?</h3>
         <p className="blog-paragraph">
-          📍 <strong>Via Carmine 20, Assemini (CA)</strong>, facilmente raggiungibile da Cagliari e dintorni.
+          📍 <strong>Via Carmine 20, 09032 Assemini (CA)</strong>, facilmente raggiungibile da Cagliari e dintorni.
         </p>
 
         <h3 className="blog-h3">▶️ Posso far riparare un iPhone bagnato?</h3>

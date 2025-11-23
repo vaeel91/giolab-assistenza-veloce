@@ -318,7 +318,7 @@ export default function RigenerazioneVetroIphoneIpadAppleWatch() {
 
         <h3 className="blog-h3">▶️ Dove si trova GioLab?</h3>
         <p className="blog-paragraph">
-          Siamo in <strong>Via Carmine 20A, Assemini (CA)</strong>, facilmente raggiungibili da 
+          Siamo in <strong>Via Carmine 20, 09032 Assemini (CA)</strong>, facilmente raggiungibili da 
           Cagliari, Elmas, Decimomannu e tutta la provincia.
         </p>
 
