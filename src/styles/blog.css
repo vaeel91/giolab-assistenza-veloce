@@ -12,10 +12,56 @@
    ======================================== */
 .blog-content {
   @apply space-y-6 sm:space-y-8;
+  max-width: 100%;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .blog-content section {
   @apply space-y-4;
+  max-width: 100%;
+}
+
+/* Fix overflow per tutti gli elementi */
+.blog-content * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Fix immagini responsive */
+.blog-content img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  display: block;
+}
+
+/* Fix tabelle responsive */
+.blog-content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.blog-content pre,
+.blog-content code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Fix per elementi inline che potrebbero causare overflow */
+.blog-content p,
+.blog-content li,
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 /* ========================================
@@ -84,11 +130,14 @@
    ======================================== */
 .blog-image-container {
   @apply my-8 rounded-xl overflow-hidden shadow-lg border border-border;
+  max-width: 100%;
 }
 
 .blog-image-container img {
   @apply w-full h-auto object-cover;
-  max-width: 100%;
+  max-width: 100% !important;
+  width: 100% !important;
+  height: auto !important;
 }
 
 .blog-image-caption {
@@ -153,14 +202,24 @@
 
 .blog-table th {
   @apply px-4 py-3 text-left font-semibold text-foreground border border-border;
+  white-space: nowrap;
 }
 
 .blog-table td {
   @apply px-4 py-3 text-muted-foreground border border-border;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .blog-table tr:hover {
   @apply bg-muted/50 transition-colors;
+}
+
+/* Wrapper responsive per tabelle */
+.blog-content .overflow-x-auto {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ========================================
