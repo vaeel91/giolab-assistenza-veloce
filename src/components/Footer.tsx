@@ -97,7 +97,12 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-8 text-center text-sm text-white/50">
           <p>© {currentYear} Giolab - Assistenza Smartphone, PC e Console. Tutti i diritti riservati.</p>
-          <p className="mt-2">P.IVA: 03896540925 - Via Carmine 20, Assemini (CA)</p>
+          <p className="mt-2">
+            <strong>Via Carmine 20A, 09032 Assemini (CA)</strong> | 
+            P.IVA: 03896540925 | 
+            Tel: <a href="tel:+393406970686" className="hover:text-white transition-colors">340 69 70 686</a>
+          </p>
+          <p className="mt-2">Lun-Ven: 9:00-13:00, 16:00-20:00 | Sab: 10:00-12:30</p>
         </div>
       </div>
     </footer>

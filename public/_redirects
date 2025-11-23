@@ -12,3 +12,26 @@ http://www.giolabriparazioni.it/*   https://giolabriparazioni.it/:splat  301!
 
 # Force HTTPS
 http://giolabriparazioni.it/*  https://giolabriparazioni.it/:splat  301!
+
+# ============= REDIRECT VECCHI SLUG BLOG =============
+# Redirect da vecchi slug articoli blog ai nuovi slug canonici
+
+# Vecchio slug riparazione iPhone → Nuovo slug
+/blog/riparazione-iphone-in-1-ora-ad-assemini  /blog/riparazione-iphone-1-ora-giolab-assemini  301!
+/blog/riparazione-iphone-1-ora  /blog/riparazione-iphone-1-ora-giolab-assemini  301!
+
+# Vecchio slug batteria iPhone → Nuovo slug  
+/blog/come-capire-se-batteria-iphone-da-cambiare  /blog/come-capire-batteria-iphone-sostituita  301!
+/blog/batteria-iphone-da-cambiare  /blog/come-capire-batteria-iphone-sostituita  301!
+
+# Vecchio slug batteria maggiorata → Nuovo slug
+/blog/batteria-maggiorata-iphone  /blog/batteria-maggiorata-iphone-giolab-assemini  301!
+/servizi/batteria-maggiorata  /servizi/batteria-maggiorata-iphone  301!
+
+# Vecchio slug recupero dati → Nuovo slug
+/blog/recupero-dati-iphone  /blog/recupero-dati-iphone-rotto-assemini  301!
+/blog/recupero-dati-iphone-rotto  /blog/recupero-dati-iphone-rotto-assemini  301!
+
+# Vecchio slug display → Nuovo slug servizio
+/blog/riparazione-display-iphone  /servizi/riparazione-display-iphone-assemini  301!
+/servizi/display-iphone  /servizi/riparazione-display-iphone-assemini  301!
