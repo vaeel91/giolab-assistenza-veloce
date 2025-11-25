@@ -107,7 +107,7 @@ export default function CodiceModelloDispositivo() {
         <div className="blog-box-tip">
           <h4 className="blog-box-title">🔍 Metodo 3: Incisione sul retro (solo modelli vecchi)</h4>
           <p className="blog-paragraph">
-            Su iPhone 6, 7, 8 e SE, il <strong>codice modello</strong> è inciso sul retro in piccolo (necessaria luce intensa).
+            Su iPhone 6, 7, 8 e SE, il <strong>🔍 Metodo 3: Incisione sul retro (Non sempre c'è)       </strong> è inciso sul retro in piccolo (necessaria luce intensa).
           </p>
         </div>
 
