@@ -605,7 +605,7 @@ export default function CodiceModelloDispositivo() {
         
         <h3 className="blog-h3">▶️ Come faccio a sapere che iPhone ho se non si accende?</h3>
         <p className="blog-paragraph">
-          Controlla lo <strong>slot della SIM</strong> estraendo il carrellino (spesso il codice è inciso), verifica la <strong>confezione originale</strong> 
+          Controlla lo slot della SIM estraendo il carrellino (spesso il codice è inciso), verifica la confezione originale se disponibile, oppure porta il dispositivo da GioLab ad Assemini in Via Carmine 20: identifichiamo il modello anche da iPhone completamente non funzionanti tramite analisi componenti interni. <strong>slot della SIM</strong> estraendo il carrellino (spesso il codice è inciso), verifica la <strong>confezione originale</strong> 
           se disponibile, oppure porta il dispositivo da <strong>GioLab ad Assemini in Via Carmine 20</strong>: identifichiamo il modello anche da 
           iPhone completamente non funzionanti tramite <strong>analisi componenti interni</strong>.
         </p>
@@ -626,7 +626,7 @@ export default function CodiceModelloDispositivo() {
 
         <h3 className="blog-h3">▶️ Quanto costa far identificare il modello da GioLab?</h3>
         <p className="blog-paragraph">
-          L'<strong>identificazione del modello è sempre gratuita</strong>. Porta il tuo dispositivo nel nostro <strong>laboratorio ad Assemini</strong> 
+          L'<strong>laboratorio ad Assemini </strong>. Porta il tuo dispositivo nel nostro <strong>laboratorio ad Assemini</strong> 
           e ti diremo esattamente che modello è, senza impegno. Forniamo anche un <strong>preventivo trasparente</strong> per eventuali riparazioni.
         </p>
 
