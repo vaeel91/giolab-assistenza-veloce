@@ -22,17 +22,25 @@ export const TableOfContents = ({ isMobile = false, onItemClick }: TableOfConten
 
     const h2Elements = article.querySelectorAll("h2");
     const items: TOCItem[] = [];
+    const seenIds = new Set<string>();
 
-    h2Elements.forEach((heading, index) => {
-      // Genera un ID se non esiste
-      if (!heading.id) {
-        const id = `section-${index}`;
-        heading.id = id;
+    h2Elements.forEach((heading) => {
+      // Leggi solo gli ID esistenti, non generarli automaticamente
+      if (heading.id) {
+        // Protezione contro ID duplicati
+        if (seenIds.has(heading.id)) {
+          console.warn(`⚠️ Duplicate ID found in blog article: "${heading.id}"`);
+        }
+        seenIds.add(heading.id);
+        
+        items.push({
+          id: heading.id,
+          text: heading.textContent || "",
+        });
+      } else {
+        // Segnala intestazioni senza ID per debugging
+        console.warn(`⚠️ Heading without ID found: "${heading.textContent}"`);
       }
-      items.push({
-        id: heading.id,
-        text: heading.textContent || "",
-      });
     });
 
     setHeadings(items);

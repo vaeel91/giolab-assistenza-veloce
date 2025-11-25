@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export default function CodiceModelloDispositivo() {
   const articleContent = <div className="blog-content">
       <section>
-        <h2 className="blog-h2">Introduzione</h2>
+        <h2 id="introduzione" className="blog-h2">Introduzione</h2>
         <p className="blog-paragraph">
           Conoscere il codice modello esatto del tuo dispositivo è fondamentale per riparazioni, vendita, permuta e verifica della garanzia. Che tu abbia un iPhone, Samsung, Xiaomi, iPad o MacBook, identificare correttamente il modello ti permette di ottenere preventivi accurati e componenti compatibili. <strong>codice modello esatto</strong> del tuo dispositivo è fondamentale per riparazioni, vendita, permuta e verifica della garanzia. 
           Che tu abbia un iPhone, Samsung, Xiaomi, iPad o MacBook, identificare correttamente il modello ti permette di ottenere <strong>preventivi accurati</strong> e 
@@ -26,7 +26,7 @@ export default function CodiceModelloDispositivo() {
       </section>
 
       <section>
-        <h2 className="blog-h2">Perché è Importante Conoscere il Codice Modello</h2>
+        <h2 id="perche-importante-codice-modello" className="blog-h2">Perché è Importante Conoscere il Codice Modello</h2>
         <p className="blog-paragraph">
           Il <strong>codice modello esatto</strong> del tuo smartphone o dispositivo Apple è essenziale per diverse ragioni:
         </p>
@@ -71,9 +71,9 @@ export default function CodiceModelloDispositivo() {
       </section>
 
       <section>
-        <h2 className="blog-h2">Come Trovare il Codice Modello: iPhone</h2>
+        <h2 id="codice-modello-iphone" className="blog-h2">Come Trovare il Codice Modello: iPhone</h2>
         
-        <h3 className="blog-h3">iPhone Funzionante</h3>
+        <h3 id="iphone-funzionante" className="blog-h3">iPhone Funzionante</h3>
         
         <div className="blog-box-tip">
           <h4 className="blog-box-title">📱 Metodo 1: Impostazioni</h4>
@@ -111,7 +111,7 @@ export default function CodiceModelloDispositivo() {
           </p>
         </div>
 
-        <h3 className="blog-h3">iPhone Non Funzionante o Rotto</h3>
+        <h3 id="iphone-non-funzionante" className="blog-h3">iPhone Non Funzionante o Rotto</h3>
         <p className="blog-paragraph">
           Se il tuo iPhone non si accende o lo schermo è completamente rotto, ecco come <strong>verificare modello iPhone</strong>:
         </p>
@@ -152,7 +152,7 @@ export default function CodiceModelloDispositivo() {
           </p>
         </div>
 
-        <h3 className="blog-h3">Tabella Modelli iPhone Popolari</h3>
+        <h3 id="tabella-modelli-iphone" className="blog-h3">Tabella Modelli iPhone Popolari</h3>
         <div className="table-responsive">
           <div className="mobile-scroll-indicator">⬅️ Scorri per vedere tutto →</div>
           <table>
@@ -225,9 +225,9 @@ export default function CodiceModelloDispositivo() {
       </section>
 
       <section>
-        <h2 className="blog-h2">Come Trovare il Codice Modello: Samsung</h2>
+        <h2 id="codice-modello-samsung" className="blog-h2">Come Trovare il Codice Modello: Samsung</h2>
         
-        <h3 className="blog-h3">Samsung Funzionante</h3>
+        <h3 id="samsung-funzionante" className="blog-h3">Samsung Funzionante</h3>
         
         <div className="blog-box-tip">
           <h4 className="blog-box-title">📱 Metodo 1: Impostazioni</h4>
@@ -261,7 +261,7 @@ export default function CodiceModelloDispositivo() {
           </p>
         </div>
 
-        <h3 className="blog-h3">Samsung Non Funzionante</h3>
+        <h3 id="samsung-non-funzionante" className="blog-h3">Samsung Non Funzionante</h3>
         
         <div className="blog-box-tip">
           <h4 className="blog-box-title">🔋 Batteria rimovibile (modelli vecchi)</h4>
@@ -298,7 +298,7 @@ export default function CodiceModelloDispositivo() {
           </p>
         </div>
 
-        <h3 className="blog-h3">Tabella Modelli Samsung Popolari</h3>
+        <h3 id="tabella-modelli-samsung" className="blog-h3">Tabella Modelli Samsung Popolari</h3>
         <div className="table-responsive">
           <div className="mobile-scroll-indicator">⬅️ Scorri per vedere tutto →</div>
           <table>
@@ -356,9 +356,9 @@ export default function CodiceModelloDispositivo() {
       </section>
 
       <section>
-        <h2 className="blog-h2">Come Trovare il Codice Modello: Xiaomi</h2>
+        <h2 id="codice-modello-xiaomi" className="blog-h2">Come Trovare il Codice Modello: Xiaomi</h2>
         
-        <h3 className="blog-h3">Xiaomi Funzionante</h3>
+        <h3 id="xiaomi-funzionante" className="blog-h3">Xiaomi Funzionante</h3>
         
         <div className="blog-box-tip">
           <h4 className="blog-box-title">📱 Metodo 1: Impostazioni</h4>
@@ -381,7 +381,7 @@ export default function CodiceModelloDispositivo() {
           </ol>
         </div>
 
-        <h3 className="blog-h3">Xiaomi Non Funzionante</h3>
+        <h3 id="xiaomi-non-funzionante" className="blog-h3">Xiaomi Non Funzionante</h3>
         
         <div className="blog-box-tip">
           <h4 className="blog-box-title">🔍 Sul retro</h4>
@@ -421,9 +421,9 @@ export default function CodiceModelloDispositivo() {
       </section>
 
       <section>
-        <h2 className="blog-h2">Come Trovare il Codice Modello: iPad</h2>
+        <h2 id="codice-modello-ipad" className="blog-h2">Come Trovare il Codice Modello: iPad</h2>
         
-        <h3 className="blog-h3">iPad Funzionante</h3>
+        <h3 id="ipad-funzionante" className="blog-h3">iPad Funzionante</h3>
         
         <div className="blog-box-tip">
           <h4 className="blog-box-title">📱 Metodo: Impostazioni</h4>
@@ -435,7 +435,7 @@ export default function CodiceModelloDispositivo() {
           </ol>
         </div>
 
-        <h3 className="blog-h3">iPad Non Funzionante</h3>
+        <h3 id="ipad-non-funzionante" className="blog-h3">iPad Non Funzionante</h3>
         
         <div className="blog-box-tip">
           <h4 className="blog-box-title">🔍 Sul retro</h4>
@@ -474,9 +474,9 @@ export default function CodiceModelloDispositivo() {
       </section>
 
       <section>
-        <h2 className="blog-h2">Come Trovare il Codice Modello: MacBook</h2>
+        <h2 id="codice-modello-macbook" className="blog-h2">Come Trovare il Codice Modello: MacBook</h2>
         
-        <h3 className="blog-h3">MacBook Funzionante</h3>
+        <h3 id="macbook-funzionante" className="blog-h3">MacBook Funzionante</h3>
         
         <div className="blog-box-tip">
           <h4 className="blog-box-title">🍎 Metodo: Menu Apple</h4>
@@ -490,7 +490,7 @@ export default function CodiceModelloDispositivo() {
           </p>
         </div>
 
-        <h3 className="blog-h3">MacBook Non Funzionante</h3>
+        <h3 id="macbook-non-funzionante" className="blog-h3">MacBook Non Funzionante</h3>
         
         <div className="blog-box-tip">
           <h4 className="blog-box-title">🔍 Scocca inferiore</h4>
@@ -525,7 +525,7 @@ export default function CodiceModelloDispositivo() {
       </section>
 
       <section>
-        <h2 className="blog-h2">Tabella Riepilogativa: Dove Trovare il Codice</h2>
+        <h2 id="tabella-riepilogativa" className="blog-h2">Tabella Riepilogativa: Dove Trovare il Codice</h2>
         <div className="table-responsive">
           <div className="mobile-scroll-indicator">⬅️ Scorri per vedere tutto →</div>
           <table>
@@ -570,7 +570,7 @@ export default function CodiceModelloDispositivo() {
       <ArticleCTA />
 
       <section>
-        <h2 className="blog-h2">Quando Rivolgersi a GioLab Assemini</h2>
+        <h2 id="quando-contattare-giolab" className="blog-h2">Quando Rivolgersi a GioLab Assemini</h2>
         
         <div className="blog-box-warning">
           <h4 className="blog-box-title">💡 GioLab ti aiuta a identificare il modello anche nei casi più difficili:</h4>
@@ -601,7 +601,7 @@ export default function CodiceModelloDispositivo() {
       </section>
 
       <section>
-        <h2 className="blog-h2">FAQ – Domande Frequenti sul Codice Modello</h2>
+        <h2 id="faq" className="blog-h2">FAQ – Domande Frequenti sul Codice Modello</h2>
         
         <h3 className="blog-h3">▶️ Come faccio a sapere che iPhone ho se non si accende?</h3>
         <p className="blog-paragraph">
