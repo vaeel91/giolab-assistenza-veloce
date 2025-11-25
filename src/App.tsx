@@ -26,6 +26,9 @@ import CodiceModelloDispositivo from "./pages/blog/CodiceModelloDispositivo";
 import SEODocumentation from "./pages/SEODocumentation";
 import SocialPreview from "./pages/SocialPreview";
 import IPhoneRicondizionati from "./pages/IPhoneRicondizionati";
+import TrovaModelloDispositivo from "./pages/TrovaModelloDispositivo";
+import TrovaModelloIPhone from "./pages/guide-modelli/TrovaModelloIPhone";
+import TrovaModelloSamsung from "./pages/guide-modelli/TrovaModelloSamsung";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +51,11 @@ const App = () => (
         <Route path="/contatti" element={<Contatti />} />
         <Route path="/iphone-ricondizionati-assemini" element={<IPhoneRicondizionati />} />
         <Route path="/social-preview" element={<SocialPreview />} />
+        
+        {/* Guide Modelli Dispositivi */}
+        <Route path="/trova-modello-dispositivo" element={<TrovaModelloDispositivo />} />
+        <Route path="/trova-modello-dispositivo/iphone" element={<TrovaModelloIPhone />} />
+        <Route path="/trova-modello-dispositivo/samsung" element={<TrovaModelloSamsung />} />
         
         {/* Blog */}
         <Route path="/blog" element={<Blog />} />
