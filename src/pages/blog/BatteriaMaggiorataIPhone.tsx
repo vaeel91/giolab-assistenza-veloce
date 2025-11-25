@@ -6,10 +6,8 @@
 
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
-
 export default function BatteriaMaggiorataIPhone() {
-  const articleContent = (
-    <div className="blog-content">
+  const articleContent = <div className="blog-content">
       {/* INTRODUZIONE */}
       <section>
         <h2 className="blog-h2">Introduzione: Perché l'iPhone Dura Sempre Meno?</h2>
@@ -74,7 +72,7 @@ export default function BatteriaMaggiorataIPhone() {
           <li>Certificazioni CE e test rigorosi</li>
           <li>Compatibilità totale con iOS</li>
           <li>Nessuna modifica hardware</li>
-          <li>Installazione rapida (45–60 minuti)</li>
+          <li>Installazione rapida (20-40 minuti)</li>
           <li><strong>Garanzia 12 mesi</strong> su batteria e manodopera</li>
         </ul>
 
@@ -231,21 +229,6 @@ export default function BatteriaMaggiorataIPhone() {
           </p>
         </div>
       </section>
-    </div>
-  );
-
-  return (
-    <BlogArticleTemplate
-      title="Batteria Maggiorata iPhone: +30% Autonomia | GioLab Assemini"
-      description="Installa una batteria maggiorata sul tuo iPhone ad Assemini. Fino al 30% di autonomia in più, certificazioni di sicurezza e 12 mesi di garanzia con GioLab."
-      keywords="batteria maggiorata iPhone, batteria iPhone alta capacità, sostituzione batteria iPhone, aumentare autonomia iPhone, batteria iPhone Assemini, GioLab Cagliari"
-      slug="batteria-maggiorata-iphone-giolab-assemini"
-      ogImage="https://giolabriparazioni.it/og-images/batteria-maggiorata-iphone.jpg"
-      author="Giolab Team"
-      datePublished="2025-01-27"
-      category="Assistenza"
-      content={articleContent}
-      readingTime={8}
-    />
-  );
+    </div>;
+  return <BlogArticleTemplate title="Batteria Maggiorata iPhone: +30% Autonomia | GioLab Assemini" description="Installa una batteria maggiorata sul tuo iPhone ad Assemini. Fino al 30% di autonomia in più, certificazioni di sicurezza e 12 mesi di garanzia con GioLab." keywords="batteria maggiorata iPhone, batteria iPhone alta capacità, sostituzione batteria iPhone, aumentare autonomia iPhone, batteria iPhone Assemini, GioLab Cagliari" slug="batteria-maggiorata-iphone-giolab-assemini" ogImage="https://giolabriparazioni.it/og-images/batteria-maggiorata-iphone.jpg" author="Giolab Team" datePublished="2025-01-27" category="Assistenza" content={articleContent} readingTime={8} />;
 }
