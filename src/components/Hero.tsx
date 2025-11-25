@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Phone, FileText, BookOpen } from "lucide-react";
+import { Phone, FileText, BookOpen, Search } from "lucide-react";
+import { Link } from "react-router-dom";
 import giolabLogo from "@/assets/giolab-logo-new.png";
 import { QuoteRequestDialog } from "./QuoteRequestDialog";
 
@@ -54,7 +55,7 @@ const Hero = () => {
           </p>
 
           {/* CTA buttons */}
-          <div className="flex flex-row gap-2 sm:gap-4 justify-center items-center pt-3 md:pt-4 px-2 sm:px-0 animate-fade-in-up delay-300">
+          <div className="flex flex-row flex-wrap gap-2 sm:gap-4 justify-center items-center pt-3 md:pt-4 px-2 sm:px-0 animate-fade-in-up delay-300">
             <Button
               variant="hero"
               size="lg"
@@ -74,6 +75,16 @@ const Hero = () => {
                 <span className="hidden xs:inline sm:inline">Richiedi </span>Preventivo
               </Button>
             </QuoteRequestDialog>
+            <Link to="/trova-modello-dispositivo">
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-xs sm:text-sm md:text-base lg:text-lg px-3 py-3 sm:px-4 sm:py-4 md:px-8 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue flex items-center justify-center"
+              >
+                <Search className="mr-1.5 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
+                <span className="hidden xs:inline sm:inline">Trova </span>Modello
+              </Button>
+            </Link>
             <Button
               variant="outline"
               size="lg"
