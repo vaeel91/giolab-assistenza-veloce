@@ -64,19 +64,22 @@ export const TableOfContents = ({ isMobile = false, onItemClick }: TableOfConten
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      const offset = isMobile ? 80 : 100; // Offset diverso per mobile
+      const offset = isMobile ? 100 : 100;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-      
-      // Chiudi il drawer dopo il click su mobile
+      // Chiudi immediatamente il drawer su mobile per non bloccare lo scroll
       if (onItemClick) {
-        setTimeout(onItemClick, 300);
+        onItemClick();
       }
+      
+      // Avvia lo scroll dopo una breve pausa per permettere al drawer di chiudersi
+      setTimeout(() => {
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }, 100);
     }
   };
 
