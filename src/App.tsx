@@ -29,6 +29,11 @@ import IPhoneRicondizionati from "./pages/IPhoneRicondizionati";
 import TrovaModelloDispositivo from "./pages/TrovaModelloDispositivo";
 import TrovaModelloIPhone from "./pages/guide-modelli/TrovaModelloIPhone";
 import TrovaModelloSamsung from "./pages/guide-modelli/TrovaModelloSamsung";
+import TrovaModelloXiaomi from "./pages/guide-modelli/TrovaModelloXiaomi";
+import TrovaModelloOPPO from "./pages/guide-modelli/TrovaModelloOPPO";
+import TrovaModelloHuawei from "./pages/guide-modelli/TrovaModelloHuawei";
+import TrovaModelloiPad from "./pages/guide-modelli/TrovaModelloiPad";
+import TrovaModelloMacBook from "./pages/guide-modelli/TrovaModelloMacBook";
 
 const queryClient = new QueryClient();
 
@@ -67,6 +72,13 @@ const App = () => (
             <Route path="/blog/rigenerazione-vetro-iphone-ipad-apple-watch" element={<RigenerazioneVetroIphoneIpadAppleWatch />} />
             <Route path="/blog/manutenzione-playstation-5" element={<ManutenzionePlayStation5 />} />
             <Route path="/blog/come-trovare-codice-modello-dispositivo-giolab-assemini" element={<CodiceModelloDispositivo />} />
+        
+        {/* Guide Modelli */}
+        <Route path="/trova-modello-dispositivo/xiaomi" element={<TrovaModelloXiaomi />} />
+        <Route path="/trova-modello-dispositivo/oppo" element={<TrovaModelloOPPO />} />
+        <Route path="/trova-modello-dispositivo/huawei" element={<TrovaModelloHuawei />} />
+        <Route path="/trova-modello-dispositivo/ipad" element={<TrovaModelloiPad />} />
+        <Route path="/trova-modello-dispositivo/macbook" element={<TrovaModelloMacBook />} />
         
         {/* Servizi specifici */}
         <Route path="/servizi/riparazione-display-iphone-assemini" element={<RiparazioneDisplayIPhone />} />
