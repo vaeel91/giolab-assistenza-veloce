@@ -4,6 +4,7 @@ import batteriaMaggiorataIPhoneAssemini from "@/assets/batteria-maggiorata-iphon
 import riparazioneIPhone1OraAssemini from "@/assets/riparazione-iphone-1-ora-assemini.jpg";
 import rigenerazioneVetro from "/og-images/rigenerazione-vetro.jpg";
 import manutenzionePS5 from "/og-images/manutenzione-playstation-5.jpg";
+import codiceModelloDispositivo from "/og-images/codice-modello-dispositivo.jpg";
 
 export const blogArticles: BlogArticle[] = [
   {
@@ -59,5 +60,14 @@ export const blogArticles: BlogArticle[] = [
     readTime: "8 min",
     category: "Guide",
     image: manutenzionePS5
+  },
+  {
+    slug: "come-trovare-codice-modello-dispositivo-giolab-assemini",
+    title: "Come Trovare il Codice Modello del Tuo Dispositivo",
+    description: "Guida completa per identificare il codice modello di iPhone, Samsung, Xiaomi, iPad e MacBook anche se non si accendono",
+    date: "2025-11-25",
+    readTime: "7 min",
+    category: "Guide",
+    image: codiceModelloDispositivo
   }
 ];
