@@ -5,14 +5,12 @@
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
 import { Link } from "react-router-dom";
-
 export default function CodiceModelloDispositivo() {
-  const articleContent = (
-    <div className="blog-content">
+  const articleContent = <div className="blog-content">
       <section>
         <h2 className="blog-h2">Introduzione</h2>
         <p className="blog-paragraph">
-          Conoscere il <strong>codice modello esatto</strong> del tuo dispositivo è fondamentale per riparazioni, vendita, permuta e verifica della garanzia. 
+          Conoscere il codice modello esatto del tuo dispositivo è fondamentale per riparazioni, vendita, permuta e verifica della garanzia. Che tu abbia un iPhone, Samsung, Xiaomi, iPad o MacBook, identificare correttamente il modello ti permette di ottenere preventivi accurati e componenti compatibili. <strong>codice modello esatto</strong> del tuo dispositivo è fondamentale per riparazioni, vendita, permuta e verifica della garanzia. 
           Che tu abbia un iPhone, Samsung, Xiaomi, iPad o MacBook, identificare correttamente il modello ti permette di ottenere <strong>preventivi accurati</strong> e 
           <strong>componenti compatibili</strong>.
         </p>
@@ -541,17 +539,17 @@ export default function CodiceModelloDispositivo() {
             <tbody>
               <tr>
                 <td><strong>iPhone</strong></td>
-                <td>Impostazioni → Info<br/>Confezione</td>
+                <td>Impostazioni → Info<br />Confezione</td>
                 <td>Slot SIM, Confezione, iTunes, iCloud, <strong>GioLab</strong></td>
               </tr>
               <tr>
                 <td><strong>Samsung</strong></td>
-                <td>Impostazioni → Info telefono<br/>Codice *#1234#</td>
+                <td>Impostazioni → Info telefono<br />Codice *#1234#</td>
                 <td>Slot SIM, Batteria (se rimovibile), Confezione, <strong>GioLab</strong></td>
               </tr>
               <tr>
                 <td><strong>Xiaomi</strong></td>
-                <td>Impostazioni → Info sistema<br/>→ Tutte le specifiche</td>
+                <td>Impostazioni → Info sistema<br />→ Tutte le specifiche</td>
                 <td>Sul retro, Slot SIM, Confezione, Mi Account, <strong>GioLab</strong></td>
               </tr>
               <tr>
@@ -583,14 +581,18 @@ export default function CodiceModelloDispositivo() {
             <li>⚡ <strong>Identificazione rapida in laboratorio</strong></li>
           </ul>
           
-          <p className="blog-paragraph" style={{ marginTop: '1rem' }}>
-            <strong>📍 Dove siamo:</strong> Via Carmine 20, 09032 Assemini (CA)<br/>
-            <strong>🕒 Orari:</strong> Lunedì-Sabato 9:00-13:00 / 16:00-20:00<br/>
-            <strong>📱 WhatsApp:</strong> 340 69 70 686<br/>
+          <p className="blog-paragraph" style={{
+          marginTop: '1rem'
+        }}>
+            <strong>📍 Dove siamo:</strong> Via Carmine 20, 09032 Assemini (CA)<br />
+            <strong>🕒 Orari:</strong> Lunedì-Sabato 9:00-13:00 / 16:00-20:00<br />
+            <strong>📱 WhatsApp:</strong> 340 69 70 686<br />
             <strong>📷 Instagram:</strong> @giolab_iphonefix
           </p>
           
-          <p className="blog-paragraph" style={{ marginTop: '1rem' }}>
+          <p className="blog-paragraph" style={{
+          marginTop: '1rem'
+        }}>
             Siamo facilmente raggiungibili da <strong>Cagliari, Elmas, Decimomannu, Selargius, Quartu Sant'Elena, Monserrato</strong> e 
             tutta la provincia. Il nostro <strong>laboratorio di diagnostica smartphone</strong> offre <strong>identificazione modello gratuita</strong> 
             e <strong>preventivo immediato</strong>.
@@ -647,21 +649,6 @@ export default function CodiceModelloDispositivo() {
           <Link to="/servizi/riparazione-display-iphone-assemini" className="text-primary hover:underline">riparazione display</Link>.
         </p>
       </section>
-    </div>
-  );
-
-  return (
-    <BlogArticleTemplate
-      title="Come Trovare il Codice Modello del Tuo Dispositivo | Giolab"
-      description="Scopri come identificare il codice modello di iPhone, Samsung, Xiaomi, iPad e MacBook anche se il dispositivo non si accende. Guida completa GioLab Assemini."
-      keywords="codice modello iPhone, identificare modello Samsung, numero modello Xiaomi, codice dispositivo rotto, identificare iPhone non funzionante, numero modello iPad, codice MacBook, verificare modello smartphone, Assemini, Cagliari"
-      slug="come-trovare-codice-modello-dispositivo-giolab-assemini"
-      ogImage="https://giolabriparazioni.it/og-images/codice-modello-dispositivo.jpg"
-      author="GioLab Team"
-      datePublished="2025-11-25"
-      category="Guide"
-      content={articleContent}
-      readingTime={7}
-    />
-  );
+    </div>;
+  return <BlogArticleTemplate title="Come Trovare il Codice Modello del Tuo Dispositivo | Giolab" description="Scopri come identificare il codice modello di iPhone, Samsung, Xiaomi, iPad e MacBook anche se il dispositivo non si accende. Guida completa GioLab Assemini." keywords="codice modello iPhone, identificare modello Samsung, numero modello Xiaomi, codice dispositivo rotto, identificare iPhone non funzionante, numero modello iPad, codice MacBook, verificare modello smartphone, Assemini, Cagliari" slug="come-trovare-codice-modello-dispositivo-giolab-assemini" ogImage="https://giolabriparazioni.it/og-images/codice-modello-dispositivo.jpg" author="GioLab Team" datePublished="2025-11-25" category="Guide" content={articleContent} readingTime={7} />;
 }
