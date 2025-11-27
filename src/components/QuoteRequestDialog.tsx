@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { Link } from "react-router-dom";
 import {
   Dialog,
   DialogContent,
@@ -28,7 +29,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { FileText } from "lucide-react";
+import { FileText, HelpCircle } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string()
@@ -360,6 +361,17 @@ ${data.message}`;
                       </SelectContent>
                     </Select>
                     <FormMessage />
+                    <div className="flex items-center gap-1.5 mt-2 text-sm text-muted-foreground">
+                      <HelpCircle className="h-4 w-4" />
+                      <span>Non sei sicuro sul modello?</span>
+                      <Link 
+                        to="/trova-modello-dispositivo" 
+                        target="_blank"
+                        className="text-primary hover:underline font-medium"
+                      >
+                        Scopri come trovarlo
+                      </Link>
+                    </div>
                   </FormItem>
                 )}
               />
