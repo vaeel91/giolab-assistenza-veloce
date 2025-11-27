@@ -68,8 +68,8 @@ const TrovaModelloDispositivo = () => {
   return (
     <>
       <SEOHead
-        title="Come Trovare il Codice Modello del Tuo Dispositivo | GioLab Assemini"
-        description="Guida completa per identificare il modello esatto di iPhone, Samsung, Xiaomi, iPad, MacBook e altri dispositivi. Centro assistenza GioLab ad Assemini (Cagliari)."
+        title="Trova Modello Dispositivo - Giolab Assemini"
+        description="Guida per identificare modello iPhone, Samsung, Xiaomi, iPad, MacBook. GioLab assistenza Assemini. ☎️ 340 69 70 686."
         ogUrl="https://giolabriparazioni.it/trova-modello-dispositivo"
         ogImage="https://giolabriparazioni.it/og-images/codice-modello-dispositivo.jpg"
       />

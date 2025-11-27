@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 
 const TrovaModelloHuawei = () => {
   const pageUrl = "https://giolabriparazioni.it/trova-modello-dispositivo/huawei";
-  const pageTitle = "Come Trovare il Modello Huawei | Guida Completa - GioLab Assemini";
-  const pageDescription = "Scopri come identificare il modello esatto del tuo Huawei. Guida completa per trovare il codice modello quando il dispositivo è acceso, spento o danneggiato. GioLab Assemini.";
+  const pageTitle = "Trova Modello Huawei - Giolab Assemini";
+  const pageDescription = "Guida per identificare modello Huawei. Codice modello acceso o spento. GioLab Assemini. ☎️ 340 69 70 686.";
 
   return (
     <>

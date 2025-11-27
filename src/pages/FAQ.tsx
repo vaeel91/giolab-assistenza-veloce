@@ -8,9 +8,9 @@ import ScrollToTop from "@/components/ScrollToTop";
 const FAQPage = () => {
   return (
     <>
-      <SEOHead
-        title="Domande Frequenti (FAQ) | Giolab Assemini"
-        description="Trova le risposte alle domande più frequenti sulla riparazione iPhone e smartphone: tempi, costi, garanzia, sicurezza dati e molto altro. Giolab ti aiuta!"
+      <SEOHead 
+        title="FAQ Riparazione iPhone - Giolab Assemini"
+        description="Risposte su riparazione iPhone e smartphone: tempi, costi, garanzia, sicurezza dati. Giolab Assemini ti aiuta. ☎️ 340 69 70 686."
         keywords="faq riparazione iPhone, domande frequenti assistenza smartphone, costi riparazione iPhone Assemini, garanzia riparazione, tempi riparazione iPhone"
         breadcrumbs={[
           { name: "Home", url: "https://giolabriparazioni.it/" },

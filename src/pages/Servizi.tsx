@@ -9,8 +9,8 @@ const Servizi = () => {
   return (
     <>
       <SEOHead
-        title="Servizi di Riparazione iPhone e Smartphone | Giolab Assemini"
-        description="Scopri tutti i servizi di riparazione iPhone, smartphone, PC e console di Giolab ad Assemini. Riparazioni in 1 ora, batterie maggiorate, micro-saldature, recupero dati e molto altro."
+        title="Servizi Riparazione - Giolab Assemini"
+        description="Riparazione display, batterie maggiorate, recupero dati, micro-saldature. Garanzia 12 mesi. Giolab Assemini. ☎️ 340 69 70 686."
         keywords="servizi riparazione iPhone Assemini, riparazione smartphone Cagliari, assistenza iPhone, batteria maggiorata, micro-saldature, recupero dati, riparazione display"
         breadcrumbs={[
           { name: "Home", url: "https://giolabriparazioni.it/" },

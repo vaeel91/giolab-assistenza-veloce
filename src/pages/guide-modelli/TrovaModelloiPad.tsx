@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 
 const TrovaModelloiPad = () => {
   const pageUrl = "https://giolabriparazioni.it/trova-modello-dispositivo/ipad";
-  const pageTitle = "Come Trovare il Modello iPad | Guida Completa - GioLab Assemini";
-  const pageDescription = "Scopri come identificare il modello esatto del tuo iPad. Guida completa per trovare il codice modello quando il dispositivo è acceso, spento o danneggiato. GioLab Assemini.";
+  const pageTitle = "Trova Modello iPad - Giolab Assemini";
+  const pageDescription = "Guida per identificare modello iPad. Codice modello acceso o spento. GioLab Assemini. ☎️ 340 69 70 686.";
 
   return (
     <>

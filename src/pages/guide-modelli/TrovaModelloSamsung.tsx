@@ -14,8 +14,8 @@ const TrovaModelloSamsung = () => {
   return (
     <>
       <SEOHead
-        title="Come Trovare il Modello del Tuo Samsung | Guida Completa GioLab Assemini"
-        description="Guida dettagliata per identificare il modello esatto del tuo smartphone Samsung Galaxy, anche se non si accende. Centro assistenza GioLab ad Assemini (Cagliari)."
+        title="Trova Modello Samsung - Giolab Assemini"
+        description="Guida per identificare modello Samsung Galaxy. Codice anche se spento. GioLab Assemini. ☎️ 340 69 70 686."
         ogUrl={shareUrl}
         ogImage="https://giolabriparazioni.it/og-images/codice-modello-dispositivo.jpg"
         ogType="article"

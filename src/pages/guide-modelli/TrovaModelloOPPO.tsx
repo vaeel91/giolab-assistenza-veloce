@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 
 const TrovaModelloOPPO = () => {
   const pageUrl = "https://giolabriparazioni.it/trova-modello-dispositivo/oppo";
-  const pageTitle = "Come Trovare il Modello OPPO | Guida Completa - GioLab Assemini";
-  const pageDescription = "Scopri come identificare il modello esatto del tuo OPPO. Guida completa per trovare il codice modello quando il dispositivo è acceso, spento o danneggiato. GioLab Assemini.";
+  const pageTitle = "Trova Modello OPPO - Giolab Assemini";
+  const pageDescription = "Guida per identificare modello OPPO. Codice modello acceso o spento. GioLab Assemini. ☎️ 340 69 70 686.";
 
   return (
     <>
