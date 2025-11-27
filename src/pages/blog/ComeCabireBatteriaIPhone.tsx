@@ -134,8 +134,8 @@ export default function ComeCabireBatteriaIPhone() {
 
   return (
     <BlogArticleTemplate
-      title="Come Capire se la Batteria dell'iPhone va Sostituita | Giolab Assemini"
-      description="Scopri i segnali che indicano quando è il momento di sostituire la batteria del tuo iPhone. Guida completa con consigli pratici dal centro assistenza Giolab di Assemini."
+      title="Batteria iPhone da Sostituire - Giolab Assemini"
+      description="Segnali batteria iPhone da sostituire. Guida completa per riconoscerli. Centro Giolab Assemini. ☎️ 340 69 70 686."
       keywords="batteria iPhone da sostituire, segnali batteria iPhone, salute batteria iPhone, quando cambiare batteria iPhone, batteria iPhone scarica veloce"
       slug="come-capire-batteria-iphone-da-sostituire"
       ogImage="https://giolabriparazioni.it/og-images/come-capire-batteria-iphone-da-sostituire.jpg"

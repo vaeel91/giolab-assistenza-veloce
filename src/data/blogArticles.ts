@@ -9,8 +9,8 @@ import codiceModelloDispositivo from "/og-images/codice-modello-dispositivo.jpg"
 export const blogArticles: BlogArticle[] = [
   {
     slug: "riparazione-iphone-1-ora-giolab-assemini",
-    title: "Riparazione iPhone in 1 Ora ad Assemini",
-    description: "Servizio rapido di riparazione iPhone. Display, batteria, fotocamera in solo 1 ora con garanzia 12 mesi.",
+    title: "Riparazione iPhone 1 Ora - Giolab Assemini",
+    description: "Riparazione iPhone rapida in 1 ora. Ricambi certificati, garanzia 12 mesi. ☎️ 340 69 70 686.",
     date: "2025-01-27",
     readTime: "7 min",
     category: "Riparazione",
@@ -18,8 +18,8 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: "batteria-maggiorata-iphone-giolab-assemini",
-    title: "Batteria Maggiorata iPhone: +30% Autonomia",
-    description: "Installa batteria maggiorata su iPhone. Fino al 30% di autonomia in più con certificazioni di sicurezza.",
+    title: "Batteria Maggiorata iPhone - Giolab Assemini",
+    description: "Batteria maggiorata iPhone. +30% autonomia, certificata. Garanzia 12 mesi. ☎️ 340 69 70 686.",
     date: "2025-01-27",
     readTime: "8 min",
     category: "Assistenza",
@@ -27,8 +27,8 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: "recupero-dati-iphone-rotto-assemini",
-    title: "Recupero Dati da iPhone Rotto",
-    description: "Recupero professionale dati da iPhone danneggiati. Microsaldature e estrazione chip NAND.",
+    title: "Recupero Dati iPhone Rotto - Giolab Assemini",
+    description: "Recupero professionale dati da iPhone danneggiati. Microsaldature. ☎️ 340 69 70 686.",
     date: "2025-01-27",
     readTime: "9 min",
     category: "Guide",
@@ -36,8 +36,8 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: "display-originali-vs-compatibili",
-    title: "Display Originali vs Compatibili per iPhone",
-    description: "Guida completa alla scelta tra display originale e compatibile per iPhone. Differenze reali, pro e contro.",
+    title: "Display iPhone Originali vs Compatibili - Giolab",
+    description: "Differenze display iPhone: originali, OLED, TFT. Guida completa. ☎️ 340 69 70 686.",
     date: "2025-01-01",
     readTime: "9 min",
     category: "Guide",
@@ -45,8 +45,8 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: "rigenerazione-vetro-iphone-ipad-apple-watch",
-    title: "Rigenerazione vetro su iPhone, iPad e Apple Watch",
-    description: "Guida completa al processo di rigenerazione del solo vetro per iPhone, iPad e Apple Watch ad Assemini (Cagliari). Risparmio, qualità e vantaggi tecnici spiegati in modo semplice.",
+    title: "Rigenerazione Vetro iPhone iPad - Giolab",
+    description: "Rigenerazione vetro iPhone, iPad e Apple Watch. Risparmio 50%. ☎️ 340 69 70 686.",
     date: "2025-01-01",
     readTime: "8 min",
     category: "Guide",
@@ -54,8 +54,8 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: "manutenzione-playstation-5",
-    title: "La guida definitiva alla manutenzione della tua PlayStation 5",
-    description: "Surriscaldamento PS5, metallo liquido e manutenzione professionale: tutto quello che devi sapere ad Assemini (Cagliari).",
+    title: "Manutenzione PlayStation 5 - Giolab Assemini",
+    description: "Guida PS5: surriscaldamento, metallo liquido. Manutenzione Assemini. ☎️ 340 69 70 686.",
     date: "2025-01-15",
     readTime: "8 min",
     category: "Guide",
@@ -63,8 +63,8 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: "come-trovare-codice-modello-dispositivo-giolab-assemini",
-    title: "Come Trovare il Codice Modello del Tuo Dispositivo",
-    description: "Guida completa per identificare il codice modello di iPhone, Samsung, Xiaomi, iPad e MacBook anche se non si accendono",
+    title: "Codice Modello Dispositivo - Giolab Assemini",
+    description: "Guida per trovare codice modello iPhone, Samsung, Xiaomi, iPad, MacBook. ☎️ 340 69 70 686.",
     date: "2025-11-25",
     readTime: "7 min",
     category: "Guide",

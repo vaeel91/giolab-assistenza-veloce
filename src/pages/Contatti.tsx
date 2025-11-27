@@ -8,9 +8,9 @@ import ScrollToTop from "@/components/ScrollToTop";
 const Contatti = () => {
   return (
     <>
-      <SEOHead
-        title="Contatti | Giolab Assemini - ☎️ 340 69 70 686"
-        description="Contatta Giolab per riparazioni iPhone e smartphone ad Assemini. Telefono: 340 69 70 686 | Email: giolabassemini@gmail.com | Via Carmine 20, 09032 Assemini (CA). Preventivo gratuito!"
+      <SEOHead 
+        title="Contatti - Giolab Assemini ☎️ 340 69 70 686"
+        description="Contatta Giolab per riparazioni iPhone ad Assemini. Via Carmine 20, 09032. Preventivo gratuito. Chiama ora al 340 69 70 686!"
         keywords="contatti Giolab, telefono Giolab Assemini, email Giolab, preventivo riparazione iPhone, assistenza clienti smartphone Cagliari"
         breadcrumbs={[
           { name: "Home", url: "https://giolabriparazioni.it/" },

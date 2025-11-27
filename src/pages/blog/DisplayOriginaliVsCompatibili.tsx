@@ -523,8 +523,8 @@ export default function DisplayOriginaliVsCompatibili() {
 
   return (
     <BlogArticleTemplate
-      title="Display Originali vs Compatibili iPhone: Guida Completa alla Scelta | GioLab Assemini"
-      description="Guida tecnica completa: differenze reali tra display originali, pulled, OLED e TFT per iPhone. Consigli professionali da GioLab Assemini (Cagliari)."
+      title="Display iPhone Originali vs Compatibili - Giolab"
+      description="Differenze display iPhone: originali, pulled, OLED, TFT. Guida completa per scegliere. GioLab Assemini. ☎️ 340 69 70 686."
       keywords="display originale iphone, display compatibile iphone, schermo iphone originale, oled vs tft iphone, riparazione display iphone assemini, display iphone cagliari, true tone iphone, giolab assemini"
       slug="display-originali-vs-compatibili"
       ogImage="https://giolabriparazioni.it/og-images/display-originali-vs-compatibili.jpg"

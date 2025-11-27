@@ -8,9 +8,9 @@ import ScrollToTop from "@/components/ScrollToTop";
 const DoveSiamo = () => {
   return (
     <>
-      <SEOHead
-        title="Dove Siamo | Giolab - Via Carmine 20, 09032 Assemini (CA)"
-        description="Vieni a trovarci! Giolab si trova in Via Carmine 20, 09032 Assemini (CA). Aperto dal lunedì al sabato. Vicino a Cagliari e facilmente raggiungibile. Seguici su Instagram e Facebook!"
+      <SEOHead 
+        title="Dove Siamo - Giolab Assemini"
+        description="Giolab in Via Carmine 20, 09032 Assemini (CA). Aperti lun-sab, vicino Cagliari. Instagram, Facebook. Vieni a trovarci!"
         keywords="dove siamo Giolab, indirizzo Giolab Assemini, Via Carmine 20, 09032 Assemini, centro assistenza iPhone Cagliari posizione, come raggiungere Giolab"
         breadcrumbs={[
           { name: "Home", url: "https://giolabriparazioni.it/" },

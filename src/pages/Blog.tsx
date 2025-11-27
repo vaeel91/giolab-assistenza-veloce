@@ -33,8 +33,8 @@ const Blog = () => {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="Blog Giolab | Guide e Consigli su Riparazione iPhone e Smartphone | Assemini"
-        description="Articoli, guide e consigli su riparazione iPhone, batterie maggiorate, manutenzione smartphone e molto altro. Blog del centro assistenza Giolab di Assemini."
+        title="Blog Riparazione iPhone - Giolab Assemini"
+        description="Guide e consigli su riparazione iPhone, smartphone e PC ad Assemini. Articoli tecnici e tutorial. Contattaci al 340 69 70 686."
         keywords="blog riparazione iPhone, guide iPhone, consigli batteria iPhone, manutenzione smartphone, assistenza iPhone Assemini"
         breadcrumbs={[
           { name: "Home", url: "https://giolabriparazioni.it/" },

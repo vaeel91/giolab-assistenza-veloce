@@ -8,9 +8,9 @@ import ScrollToTop from "@/components/ScrollToTop";
 const ChiSiamo = () => {
   return (
     <>
-      <SEOHead
-        title="Chi Siamo | Giolab - Centro Assistenza iPhone Assemini"
-        description="Scopri Giolab: oltre 10 anni di esperienza nella riparazione iPhone e smartphone ad Assemini e Cagliari. Tecnici certificati, formazione continua e passione per la tecnologia."
+      <SEOHead 
+        title="Chi Siamo - Giolab Assemini"
+        description="Centro assistenza iPhone e smartphone ad Assemini. 10 anni di esperienza, tecnici certificati. Preventivo gratuito ☎️ 340 69 70 686."
         keywords="chi siamo Giolab, centro assistenza iPhone Assemini, tecnici certificati Cagliari, riparazione iPhone esperienza, assistenza smartphone professionale"
         breadcrumbs={[
           { name: "Home", url: "https://giolabriparazioni.it/" },

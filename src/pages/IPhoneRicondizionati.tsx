@@ -32,8 +32,8 @@ const IPhoneRicondizionati = () => {
   const [showIndex, setShowIndex] = useState(true);
   
   const pageUrl = getCanonicalUrl("/iphone-ricondizionati-assemini");
-  const pageTitle = "iPhone Ricondizionati Garantiti ad Assemini | GioLab Riparazioni";
-  const pageDescription = "Acquista iPhone ricondizionati certificati ad Assemini e Cagliari. Garanzia reale, batterie nuove, gradi estetici certificati. Risparmio fino al 40%. Ritiro in negozio.";
+  const pageTitle = "iPhone Ricondizionati - Giolab Assemini";
+  const pageDescription = "iPhone ricondizionati certificati ad Assemini. Garanzia reale, batterie nuove. Risparmio fino al 40%. ☎️ 340 69 70 686.";
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);

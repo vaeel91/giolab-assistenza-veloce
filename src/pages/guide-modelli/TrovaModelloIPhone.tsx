@@ -14,8 +14,8 @@ const TrovaModelloIPhone = () => {
   return (
     <>
       <SEOHead
-        title="Come Trovare il Modello del Tuo iPhone | Guida Completa GioLab Assemini"
-        description="Guida dettagliata per identificare il modello esatto del tuo iPhone, anche se non si accende. Scopri dove trovare il codice modello su impostazioni, scocca e confezione."
+        title="Trova Modello iPhone - Giolab Assemini"
+        description="Guida per identificare modello iPhone. Codice su impostazioni, scocca e confezione. GioLab Assemini. ☎️ 340 69 70 686."
         ogUrl={shareUrl}
         ogImage="https://giolabriparazioni.it/og-images/codice-modello-dispositivo.jpg"
         ogType="article"

@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 
 const TrovaModelloXiaomi = () => {
   const pageUrl = "https://giolabriparazioni.it/trova-modello-dispositivo/xiaomi";
-  const pageTitle = "Come Trovare il Modello Xiaomi | Guida Completa - GioLab Assemini";
-  const pageDescription = "Scopri come identificare il modello esatto del tuo Xiaomi. Guida completa per trovare il codice modello quando il dispositivo è acceso, spento o danneggiato. GioLab Assemini.";
+  const pageTitle = "Trova Modello Xiaomi - Giolab Assemini";
+  const pageDescription = "Guida per identificare modello Xiaomi. Codice modello acceso o spento. GioLab Assemini. ☎️ 340 69 70 686.";
 
   return (
     <>
