@@ -5,6 +5,7 @@ import riparazioneIPhone1OraAssemini from "@/assets/riparazione-iphone-1-ora-ass
 import rigenerazioneVetro from "/og-images/rigenerazione-vetro.jpg";
 import manutenzionePS5 from "/og-images/manutenzione-playstation-5.jpg";
 import codiceModelloDispositivo from "/og-images/codice-modello-dispositivo.jpg";
+import riparazioneFaceID from "/og-images/riparazione-face-id-iphone.jpg";
 
 export const blogArticles: BlogArticle[] = [
   {
@@ -69,5 +70,14 @@ export const blogArticles: BlogArticle[] = [
     readTime: "7 min",
     category: "Guide",
     image: codiceModelloDispositivo
+  },
+  {
+    slug: "riparazione-face-id-iphone-giolab-assemini",
+    title: "Riparazione Face ID iPhone - Giolab Assemini",
+    description: "Face ID non funziona? Riparazione sistema TrueDepth. Diagnosi gratuita. ☎️ 340 69 70 686.",
+    date: "2025-01-27",
+    readTime: "8 min",
+    category: "Riparazione",
+    image: riparazioneFaceID
   }
 ];
