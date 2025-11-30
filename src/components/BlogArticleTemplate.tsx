@@ -74,7 +74,7 @@ import { TableOfContents } from "@/components/TableOfContents";
 import { BackToBlog } from "@/components/blog/BackToBlog";
 import { AutoLinkedContent } from "@/components/blog/AutoLinkedContent";
 import { BlogSidebarCTA } from "@/components/blog/BlogSidebarCTA";
-import { getCanonicalUrl, extractPath } from "@/config/seoConfig";
+import { getCanonicalUrl, extractPath, BUSINESS_INFO } from "@/config/seoConfig";
 import "@/styles/blog.css";
 import { 
   Breadcrumb, 
@@ -151,6 +151,60 @@ export const BlogArticleTemplate = ({
     });
   };
 
+  // Schema Service condizionale per articoli di vendita (Assistenza e Riparazione)
+  const isServiceArticle = category === "Assistenza" || category === "Riparazione";
+  const serviceSchema = isServiceArticle ? {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": cleanTitle,
+    "name": cleanTitle,
+    "description": description,
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://giolabriparazioni.it/#business",
+      "name": BUSINESS_INFO.name,
+      "telephone": BUSINESS_INFO.contact.phone,
+      "email": BUSINESS_INFO.contact.email,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": BUSINESS_INFO.address.street,
+        "addressLocality": BUSINESS_INFO.address.city,
+        "addressRegion": BUSINESS_INFO.address.province,
+        "postalCode": BUSINESS_INFO.address.postalCode,
+        "addressCountry": BUSINESS_INFO.address.countryCode
+      },
+      "url": "https://giolabriparazioni.it",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "150",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Assemini"
+      },
+      {
+        "@type": "City",
+        "name": "Cagliari"
+      },
+      {
+        "@type": "State",
+        "name": "Sardegna"
+      }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "Preventivo gratuito",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": fullUrl
+    }
+  } : null;
+
   return (
     <>
       <SEOHead
@@ -167,6 +221,7 @@ export const BlogArticleTemplate = ({
           image: ogImage,
           category: category,
         }}
+        structuredData={serviceSchema ? [serviceSchema] : undefined}
       />
       
       <ReadingProgress />
