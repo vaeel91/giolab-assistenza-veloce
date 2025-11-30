@@ -6,6 +6,7 @@ import rigenerazioneVetro from "/og-images/rigenerazione-vetro.jpg";
 import manutenzionePS5 from "/og-images/manutenzione-playstation-5.jpg";
 import codiceModelloDispositivo from "/og-images/codice-modello-dispositivo.jpg";
 import riparazioneFaceID from "/og-images/riparazione-face-id-iphone.png";
+import pcLentoVelocizzare from "/og-images/pc-lento-velocizzare-ssd-pulizia-giolab-assemini.jpg";
 
 export const blogArticles: BlogArticle[] = [
   {
@@ -79,5 +80,14 @@ export const blogArticles: BlogArticle[] = [
     readTime: "8 min",
     category: "Riparazione",
     image: riparazioneFaceID
+  },
+  {
+    slug: "pc-lento-velocizzare-ssd-pulizia-giolab-assemini",
+    title: "PC Lento? Velocizzalo con SSD e Pulizia | Giolab Assemini",
+    description: "Scopri come rendere veloce un PC lento: installazione SSD, pulizia interna, pasta termica e ottimizzazione software. Assistenza PC Assemini ☎️ 340 69 70 686",
+    date: "2025-01-15",
+    readTime: "8 min",
+    category: "Guide",
+    image: pcLentoVelocizzare
   }
 ];
