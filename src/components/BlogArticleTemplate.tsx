@@ -177,8 +177,10 @@ export const BlogArticleTemplate = ({
         
         <div className="container mx-auto px-4 pt-24 pb-8 overflow-x-hidden">
           <div className="flex gap-8 max-w-7xl mx-auto">
-            {/* Sidebar CTA - visibile solo su schermi LG+ */}
-            <BlogSidebarCTA />
+            {/* Sidebar CTA - visibile solo su schermi LG+, sticky durante lo scroll */}
+            <aside className="hidden lg:block w-64 flex-shrink-0 sticky top-24 self-start">
+              <BlogSidebarCTA />
+            </aside>
             
             {/* Contenuto principale articolo */}
             <article className="flex-1 max-w-4xl min-w-0 overflow-x-hidden">
@@ -235,8 +237,8 @@ export const BlogArticleTemplate = ({
               </article>
             </article>
 
-            {/* Table of Contents Desktop - visibile solo su schermi XL */}
-            <aside className="hidden xl:block w-64 flex-shrink-0">
+            {/* Table of Contents Desktop - visibile solo su schermi XL, sticky durante lo scroll */}
+            <aside className="hidden xl:block w-64 flex-shrink-0 sticky top-24 self-start max-h-[calc(100vh-6rem)] overflow-y-auto">
               <TableOfContents />
             </aside>
           </div>
