@@ -72,6 +72,7 @@ import RelatedArticles from "@/components/RelatedArticles";
 import ReadingProgress from "@/components/ReadingProgress";
 import { TableOfContents } from "@/components/TableOfContents";
 import { BackToBlog } from "@/components/blog/BackToBlog";
+import { AutoLinkedContent } from "@/components/blog/AutoLinkedContent";
 import { getCanonicalUrl, extractPath } from "@/config/seoConfig";
 import "@/styles/blog.css";
 import { 
@@ -222,9 +223,11 @@ export const BlogArticleTemplate = ({
             </div>
           </div>
           
-              {/* Main Article Content */}
+              {/* Main Article Content with Auto-Linking */}
               <article className="prose prose-lg max-w-none dark:prose-invert blog-content overflow-x-hidden">
-                {content}
+                <AutoLinkedContent currentSlug={slug}>
+                  {content}
+                </AutoLinkedContent>
               </article>
             </article>
 
