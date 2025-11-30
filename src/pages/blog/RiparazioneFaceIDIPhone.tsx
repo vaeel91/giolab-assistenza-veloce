@@ -3,10 +3,8 @@ import { ArticleCTA } from "@/components/blog/ArticleCTA";
 import faceIdComponents from "@/assets/face-id-truedepth-components.jpg";
 import laboratorioRepair from "@/assets/riparazione-face-id-laboratorio.jpg";
 import strumentiMicrosaldatura from "@/assets/strumenti-microsaldatura-face-id.jpg";
-
 export default function RiparazioneFaceIDIPhone() {
-  const articleContent = (
-    <>
+  const articleContent = <>
       <section className="blog-section">
         <h2 id="introduzione" className="blog-h2">Introduzione: il Face ID e la sua importanza</h2>
         
@@ -22,12 +20,7 @@ export default function RiparazioneFaceIDIPhone() {
           Quando il Face ID smette di funzionare, però, tutto diventa più complicato: il telefono ci richiede il codice ogni volta, i pagamenti diventano più lenti e la sicurezza del dispositivo può essere compromessa. Per fortuna, nella maggior parte dei casi è possibile ripararlo.
         </p>
 
-        <img 
-          src={faceIdComponents} 
-          alt="Sistema Face ID iPhone con componenti TrueDepth: Dot Projector, sensore IR, Flood Illuminator"
-          className="w-full h-auto rounded-lg shadow-md my-8"
-          loading="lazy"
-        />
+        <img src={faceIdComponents} alt="Sistema Face ID iPhone con componenti TrueDepth: Dot Projector, sensore IR, Flood Illuminator" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
       </section>
 
       <section className="blog-section">
@@ -55,12 +48,7 @@ export default function RiparazioneFaceIDIPhone() {
           <strong>💡 Curiosità:</strong> Il Face ID utilizza la luce infrarossa, invisibile all'occhio umano. Ecco perché funziona perfettamente anche di notte o in condizioni di scarsa illuminazione.
         </div>
 
-        <img 
-          src={laboratorioRepair} 
-          alt="Messaggio di errore Face ID non disponibile su iPhone"
-          className="w-full h-auto rounded-lg shadow-md my-8"
-          loading="lazy"
-        />
+        <img src={laboratorioRepair} alt="Messaggio di errore Face ID non disponibile su iPhone" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
       </section>
 
       <section className="blog-section">
@@ -105,12 +93,7 @@ export default function RiparazioneFaceIDIPhone() {
           </ul>
         </div>
 
-        <img 
-          src={strumentiMicrosaldatura} 
-          alt="Modulo TrueDepth danneggiato che causa malfunzionamento Face ID iPhone"
-          className="w-full h-auto rounded-lg shadow-md my-8"
-          loading="lazy"
-        />
+        <img src={strumentiMicrosaldatura} alt="Modulo TrueDepth danneggiato che causa malfunzionamento Face ID iPhone" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
       </section>
 
       <section className="blog-section">
@@ -121,8 +104,11 @@ export default function RiparazioneFaceIDIPhone() {
         </p>
 
         <h3 id="microscopia-diagnosi" className="blog-h3">🔬 Microscopia e diagnosi professionale</h3>
-        <p className="blog-paragraph">
-          Nel nostro <strong>laboratorio ad Assemini</strong>, ogni riparazione Face ID inizia con una diagnosi accurata sotto microscopio. Analizziamo i componenti uno per uno per individuare con precisione quale elemento è danneggiato: Dot Projector, sensore IR, Flood Illuminator o flessibili di collegamento.
+        <p className="blog-paragraph">Nel nostro laboratorio ad Assemini, ogni riparazione Face ID inizia con una diagnosi accurata sotto microscopio. Analizziamo i componenti uno per uno per individuare con precisione quale elemento è danneggiato: Dot Projector, sensore IR, Flood Illuminator o flessibili di collegamento. 
+Se questa prima ispezione visiva non trova evidenze di danneggiamento, procediamo con verifiche più approfondite impiegando misurazioni e strumenti appositamente creati per fare un check del face id ed individuare il componente malfunzionante.<strong>laboratorio ad Assemini</strong>, ogni riparazione Face ID inizia con una diagnosi accurata sotto microscopio. Analizziamo i componenti uno per uno per individuare con precisione quale elemento è danneggiato: Dot Projector, sensore IR, Flood Illuminator o flessibili di collegamento. 
+
+Se questa prima ispezione visiva non trova evidenze di danneggiamento, procediamo con verifiche più approfondite impiegando misurazioni e strumenti appositamente creati per fare un check del face id ed individuare il componente malfunzionante.                                                
+ 
         </p>
 
         <h3 id="micro-saldature" className="blog-h3">⚡ Micro-saldature e recupero componenti</h3>
@@ -131,20 +117,14 @@ export default function RiparazioneFaceIDIPhone() {
         </p>
 
         <h3 id="esperienza-avanzata" className="blog-h3">🛠️ Esperienza avanzata su microelettronica</h3>
-        <p className="blog-paragraph">
-          La riparazione del Face ID è uno degli interventi più complessi che si possano eseguire su un iPhone. Richiede conoscenza approfondita dell'elettronica, esperienza con i sensori TrueDepth e strumenti specifici come microscopi ad alta risoluzione e stazioni di micro-saldatura.
-        </p>
+        <p className="blog-paragraph">La riparazione del Face ID è uno degli interventi più complessi che si possano eseguire su un iPhone. 
+Richiede conoscenza approfondita dell'elettronica, esperienza con i sensori TrueDepth e strumenti specifici come microscopi ad alta risoluzione e stazioni di micro-saldatura.</p>
 
         <p className="blog-paragraph">
           Da Giolab, possiamo recuperare <strong>Dot Projector danneggiati</strong>, riparare <strong>sensori IR</strong>, sostituire <strong>Flood Illuminator</strong> e ripristinare <strong>flex danneggiati</strong>. Interveniamo dove altri centri non riescono, con risultati professionali e duraturi.
         </p>
 
-        <img 
-          src={faceIdComponents} 
-          alt="Face ID iPhone perfettamente funzionante dopo riparazione professionale Giolab"
-          className="w-full h-auto rounded-lg shadow-md my-8"
-          loading="lazy"
-        />
+        <img src={faceIdComponents} alt="Face ID iPhone perfettamente funzionante dopo riparazione professionale Giolab" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
       </section>
 
       <section className="blog-section">
@@ -165,13 +145,11 @@ export default function RiparazioneFaceIDIPhone() {
         </p>
 
         <h3 id="risultati-professionali" className="blog-h3">🏆 Risultati professionali anche dove altri centri non riescono</h3>
-        <p className="blog-paragraph">
-          Molti clienti arrivano da noi dopo che altri centri hanno dichiarato il Face ID "irreparabile". In realtà, con le competenze giuste e gli strumenti adeguati, la maggior parte dei problemi può essere risolta.
-        </p>
+        <p className="blog-paragraph">Molti clienti arrivano da noi dopo che altri centri hanno dichiarato il Face ID "irreparabile".
+In realtà, con le competenze giuste e gli strumenti adeguati, la maggior parte dei problemi può essere risolta.</p>
 
         <h3 id="local-seo" className="blog-h3">📍 Facilmente raggiungibili da tutta la provincia</h3>
-        <p className="blog-paragraph">
-          Il nostro laboratorio si trova in <strong>Via Carmine 20, 09032 Assemini (CA)</strong>, facilmente raggiungibile da <strong>Cagliari, Elmas, Uta, Decimomannu, Monserrato, Quartu Sant'Elena, Selargius, Capoterra</strong> e tutta la provincia. Siamo aperti dal lunedì al sabato, con orari continuati per venire incontro alle tue esigenze.
+        <p className="blog-paragraph">Il nostro laboratorio si trova in Via Carmine 20, 09032 Assemini (CA), facilmente raggiungibile da Cagliari, Elmas, Uta, Decimomannu, Monserrato, Quartu Sant'Elena, Selargius, Capoterra e tutta la provincia. Siamo aperti dal lunedì al sabato per venire incontro alle tue esigenze.<strong>Via Carmine 20, 09032 Assemini (CA)</strong>, facilmente raggiungibile da <strong>Cagliari, Elmas, Uta, Decimomannu, Monserrato, Quartu Sant'Elena, Selargius, Capoterra</strong> e tutta la provincia. Siamo aperti dal lunedì al sabato, con orari continuati per venire incontro alle tue esigenze.
         </p>
 
         <div className="blog-box-tip">
@@ -214,21 +192,6 @@ export default function RiparazioneFaceIDIPhone() {
           Sì, in molti casi riusciamo a risolvere problemi che altri centri hanno dichiarato "irreparabili". La differenza sta nelle competenze tecniche, nell'esperienza e negli strumenti professionali di cui disponiamo. Ti consigliamo di portarci il dispositivo per una diagnosi gratuita.
         </p>
       </section>
-    </>
-  );
-
-  return (
-    <BlogArticleTemplate
-      title="Riparazione Face ID iPhone - Giolab Assemini"
-      description="Face ID non funziona? Riparazione professionale del sistema TrueDepth iPhone. Diagnosi gratuita, micro-saldature, ripristino sensori. Assemini."
-      keywords="riparazione face id, face id non funziona, truedepth iphone, riparazione sensori iphone, dot projector, face id assemini, riparazione iphone assemini"
-      slug="riparazione-face-id-iphone-giolab-assemini"
-      ogImage="https://giolabriparazioni.it/og-images/riparazione-face-id-iphone.jpg"
-      author="Giolab Team"
-      datePublished="2025-01-27"
-      category="Guide"
-      content={articleContent}
-      readingTime={8}
-    />
-  );
+    </>;
+  return <BlogArticleTemplate title="Riparazione Face ID iPhone - Giolab Assemini" description="Face ID non funziona? Riparazione professionale del sistema TrueDepth iPhone. Diagnosi gratuita, micro-saldature, ripristino sensori. Assemini." keywords="riparazione face id, face id non funziona, truedepth iphone, riparazione sensori iphone, dot projector, face id assemini, riparazione iphone assemini" slug="riparazione-face-id-iphone-giolab-assemini" ogImage="https://giolabriparazioni.it/og-images/riparazione-face-id-iphone.jpg" author="Giolab Team" datePublished="2025-01-27" category="Guide" content={articleContent} readingTime={8} />;
 }
