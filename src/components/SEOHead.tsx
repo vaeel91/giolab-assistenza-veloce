@@ -46,6 +46,33 @@ const SEOHead = ({
   faqData
 }: SEOHeadProps) => {
   
+  // SEO Best Practices: Limit title to 60 characters and description to 160 characters
+  const MAX_TITLE_LENGTH = 60;
+  const MAX_DESCRIPTION_LENGTH = 160;
+  
+  // Validate and warn in development mode
+  if (import.meta.env.DEV) {
+    if (title.length > MAX_TITLE_LENGTH) {
+      console.warn(
+        `⚠️ SEO Warning: Title is ${title.length} characters (max recommended: ${MAX_TITLE_LENGTH}).\nTitle: "${title}"\nConsider shortening it for better search appearance.`
+      );
+    }
+    if (description.length > MAX_DESCRIPTION_LENGTH) {
+      console.warn(
+        `⚠️ SEO Warning: Description is ${description.length} characters (max recommended: ${MAX_DESCRIPTION_LENGTH}).\nDescription: "${description}"\nConsider shortening it for better search appearance.`
+      );
+    }
+  }
+  
+  // Truncate if exceeding limits (fallback safety)
+  const sanitizedTitle = title.length > MAX_TITLE_LENGTH 
+    ? title.substring(0, MAX_TITLE_LENGTH - 3) + '...' 
+    : title;
+  
+  const sanitizedDescription = description.length > MAX_DESCRIPTION_LENGTH 
+    ? description.substring(0, MAX_DESCRIPTION_LENGTH - 3) + '...' 
+    : description;
+  
   // Genera URL canonico corretto
   // URL di base: se è passato ogUrl lo usiamo, altrimenti usiamo l'URL corrente normalizzato
   const rawUrl = ogUrl 
@@ -110,7 +137,7 @@ const SEOHead = ({
   
   useEffect(() => {
     // Update title
-    document.title = title;
+    document.title = sanitizedTitle;
     
     // Update meta tags
     const updateMetaTag = (name: string, content: string, attribute = 'name') => {
@@ -123,18 +150,18 @@ const SEOHead = ({
       meta.setAttribute('content', content);
     };
     
-    updateMetaTag('description', description);
+    updateMetaTag('description', sanitizedDescription);
     updateMetaTag('keywords', keywords);
     
     // Open Graph meta tags
-    updateMetaTag('og:title', title, 'property');
-    updateMetaTag('og:description', description, 'property');
+    updateMetaTag('og:title', sanitizedTitle, 'property');
+    updateMetaTag('og:description', sanitizedDescription, 'property');
     updateMetaTag('og:image', ogImage, 'property');
     updateMetaTag('og:image:secure_url', ogImage, 'property');
     updateMetaTag('og:image:type', ogImage.endsWith('.jpg') || ogImage.endsWith('.jpeg') ? 'image/jpeg' : 'image/png', 'property');
     updateMetaTag('og:image:width', '1200', 'property');
     updateMetaTag('og:image:height', '630', 'property');
-    updateMetaTag('og:image:alt', title, 'property');
+    updateMetaTag('og:image:alt', sanitizedTitle, 'property');
     updateMetaTag('og:type', ogType, 'property');
     updateMetaTag('og:url', cleanCanonicalUrl, 'property');
     updateMetaTag('og:site_name', 'Giolab Assemini', 'property');
@@ -144,10 +171,10 @@ const SEOHead = ({
     updateMetaTag('twitter:card', 'summary_large_image');
     updateMetaTag('twitter:site', '@giolab_iphonefix');
     updateMetaTag('twitter:creator', '@giolab_iphonefix');
-    updateMetaTag('twitter:title', title);
-    updateMetaTag('twitter:description', description);
+    updateMetaTag('twitter:title', sanitizedTitle);
+    updateMetaTag('twitter:description', sanitizedDescription);
     updateMetaTag('twitter:image', ogImage);
-    updateMetaTag('twitter:image:alt', title);
+    updateMetaTag('twitter:image:alt', sanitizedTitle);
     
     // Helper function to safely update or create schema script
     const updateSchemaScript = (id: string, schemaData: object | null) => {
@@ -219,13 +246,13 @@ const SEOHead = ({
       const dynamicSchemas = document.querySelectorAll('script[id^="dynamic-schema"]');
       dynamicSchemas.forEach((script) => script.remove());
     }
-  }, [title, description, keywords, ogImage, ogType, cleanCanonicalUrl, structuredData, breadcrumbSchema, articleSchema, faqSchema]);
+  }, [sanitizedTitle, sanitizedDescription, keywords, ogImage, ogType, cleanCanonicalUrl, structuredData, breadcrumbSchema, articleSchema, faqSchema]);
   
   return (
     <Helmet>
       {/* Primary Meta Tags */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
+      <title>{sanitizedTitle}</title>
+      <meta name="description" content={sanitizedDescription} />
       {keywords && <meta name="keywords" content={keywords} />}
       <meta name="author" content="Giolab - Stefano Giordano" />
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -240,23 +267,23 @@ const SEOHead = ({
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={cleanCanonicalUrl} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={sanitizedTitle} />
+      <meta property="og:description" content={sanitizedDescription} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:secure_url" content={ogImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content={title} />
+      <meta property="og:image:alt" content={sanitizedTitle} />
       <meta property="og:site_name" content="Giolab Assemini" />
       <meta property="og:locale" content="it_IT" />
       
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@giolab_iphonefix" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={sanitizedTitle} />
+      <meta name="twitter:description" content={sanitizedDescription} />
       <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:image:alt" content={title} />
+      <meta name="twitter:image:alt" content={sanitizedTitle} />
     </Helmet>
   );
 };
