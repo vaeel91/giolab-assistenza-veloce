@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { CANONICAL_DOMAIN, getCanonicalUrl, normalizeUrl, extractPath, ORGANIZATION_SCHEMA } from '@/config/seoConfig';
+import { CANONICAL_DOMAIN, getCanonicalUrl, normalizeUrl, extractPath, ORGANIZATION_SCHEMA, LOCAL_BUSINESS_SCHEMA } from '@/config/seoConfig';
 
 interface BreadcrumbItem {
   name: string;
@@ -207,6 +207,9 @@ const SEOHead = ({
         existingScript.textContent = JSON.stringify(schemaData);
       }
     };
+    
+    // Add/update LocalBusiness schema globally (critical for Local SEO)
+    updateSchemaScript('localbusiness-schema', LOCAL_BUSINESS_SCHEMA);
     
     // Add/update breadcrumb structured data
     updateSchemaScript('breadcrumb-schema', breadcrumbSchema);

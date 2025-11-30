@@ -71,8 +71,20 @@ export const SEO_IMAGES = {
 // ============= STRUCTURED DATA =============
 export const ORGANIZATION_SCHEMA = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': 'Organization',
   '@id': `${CANONICAL_DOMAIN}/#organization`,
+  name: BUSINESS_INFO.name,
+  legalName: BUSINESS_INFO.legalName,
+  description: BUSINESS_INFO.description,
+  url: CANONICAL_DOMAIN,
+  logo: SEO_IMAGES.logo,
+};
+
+// Schema LocalBusiness/RepairShop globale per Local SEO
+export const LOCAL_BUSINESS_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'RepairShop',
+  '@id': `${CANONICAL_DOMAIN}/#business`,
   name: BUSINESS_INFO.name,
   legalName: BUSINESS_INFO.legalName,
   description: BUSINESS_INFO.description,
@@ -136,6 +148,13 @@ export const ORGANIZATION_SCHEMA = {
       '@id': 'https://www.wikidata.org/wiki/Q1462',
     },
   ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    reviewCount: '150',
+    bestRating: '5',
+    worstRating: '1',
+  },
 };
 
 // ============= UTILITY FUNCTIONS =============
