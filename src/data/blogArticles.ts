@@ -2,7 +2,7 @@ import { BlogArticle } from "@/types/blogArticle";
 import recuperoDatiIPhoneRottoAssemini from "@/assets/recupero-dati-iphone-rotto-assemini.jpg";
 import batteriaMaggiorataIPhoneAssemini from "@/assets/batteria-maggiorata-iphone-assemini.jpg";
 import riparazioneIPhone1OraAssemini from "@/assets/riparazione-iphone-1-ora-assemini.jpg";
-import rigenerazioneVetro from "/og-images/rigenerazione-vetro.jpg";
+import rigenerazioneVetro from "@/assets/rigenerazione-vetro.jpg";
 import manutenzionePS5 from "/og-images/manutenzione-playstation-5.jpg";
 import codiceModelloDispositivo from "/og-images/codice-modello-dispositivo.jpg";
 import riparazioneFaceID from "/og-images/riparazione-face-id-iphone.png";
