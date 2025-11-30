@@ -8,13 +8,14 @@ import React, { ReactNode, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { blogArticles } from '@/data/blogArticles';
 import { extractKeywords } from '@/utils/articleKeywordMatcher';
-import { ExternalLink, Clock, Tag } from 'lucide-react';
+import { ExternalLink, Clock, Tag, Link2 } from 'lucide-react';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { Badge } from "@/components/ui/badge";
 
 interface AutoLinkedContentProps {
   children: ReactNode;
@@ -129,37 +130,46 @@ const linkifyText = (
     // Trova i dati completi dell'articolo per il tooltip
     const linkedArticle = blogArticles.find(a => a.slug === match.articleSlug);
 
-    // Aggiungi il link con tooltip
+    // Aggiungi il link con tooltip e badge
     result.push(
-      <Tooltip key={`tooltip-${idx}-${match.keyword}`}>
-        <TooltipTrigger asChild>
-          <Link
-            to={`/blog/${match.articleSlug}`}
-            className="text-giolab-blue hover:text-giolab-blue/80 underline decoration-giolab-blue/30 hover:decoration-giolab-blue transition-colors font-medium inline-flex items-center gap-1"
-            title={match.articleTitle}
-          >
-            {text.substring(startIndex, endIndex)}
-            <ExternalLink className="h-3 w-3 inline" />
-          </Link>
-        </TooltipTrigger>
-        {linkedArticle && (
-          <TooltipContent className="max-w-xs p-3">
-            <div className="space-y-2">
-              <p className="font-semibold text-sm leading-tight">{linkedArticle.title}</p>
-              <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                <span className="inline-flex items-center gap-1">
-                  <Tag className="h-3 w-3" />
-                  {linkedArticle.category}
-                </span>
-                <span className="inline-flex items-center gap-1">
-                  <Clock className="h-3 w-3" />
-                  {linkedArticle.readTime}
-                </span>
+      <span key={`wrapper-${idx}-${match.keyword}`} className="inline-flex items-center gap-1.5 align-baseline">
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Link
+              to={`/blog/${match.articleSlug}`}
+              className="text-giolab-blue hover:text-giolab-blue/80 underline decoration-giolab-blue/30 hover:decoration-giolab-blue transition-colors font-medium inline-flex items-center gap-1"
+              title={match.articleTitle}
+            >
+              {text.substring(startIndex, endIndex)}
+              <ExternalLink className="h-3 w-3 inline" />
+            </Link>
+          </TooltipTrigger>
+          {linkedArticle && (
+            <TooltipContent className="max-w-xs p-3">
+              <div className="space-y-2">
+                <p className="font-semibold text-sm leading-tight">{linkedArticle.title}</p>
+                <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                  <span className="inline-flex items-center gap-1">
+                    <Tag className="h-3 w-3" />
+                    {linkedArticle.category}
+                  </span>
+                  <span className="inline-flex items-center gap-1">
+                    <Clock className="h-3 w-3" />
+                    {linkedArticle.readTime}
+                  </span>
+                </div>
               </div>
-            </div>
-          </TooltipContent>
-        )}
-      </Tooltip>
+            </TooltipContent>
+          )}
+        </Tooltip>
+        <Badge 
+          variant="secondary" 
+          className="text-[9px] px-1.5 py-0 h-4 font-normal inline-flex items-center gap-0.5 bg-giolab-blue/10 text-giolab-blue border-giolab-blue/20 hover:bg-giolab-blue/20"
+        >
+          <Link2 className="h-2.5 w-2.5" />
+          Correlato
+        </Badge>
+      </span>
     );
 
     usedKeywords.add(matchKey);
