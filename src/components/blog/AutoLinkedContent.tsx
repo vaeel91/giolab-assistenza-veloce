@@ -8,7 +8,13 @@ import React, { ReactNode, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { blogArticles } from '@/data/blogArticles';
 import { extractKeywords } from '@/utils/articleKeywordMatcher';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Clock, Tag } from 'lucide-react';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface AutoLinkedContentProps {
   children: ReactNode;
@@ -120,17 +126,40 @@ const linkifyText = (
       result.push(text.substring(lastIndex, startIndex));
     }
 
-    // Aggiungi il link
+    // Trova i dati completi dell'articolo per il tooltip
+    const linkedArticle = blogArticles.find(a => a.slug === match.articleSlug);
+
+    // Aggiungi il link con tooltip
     result.push(
-      <Link
-        key={`link-${idx}-${match.keyword}`}
-        to={`/blog/${match.articleSlug}`}
-        className="text-giolab-blue hover:text-giolab-blue/80 underline decoration-giolab-blue/30 hover:decoration-giolab-blue transition-colors font-medium inline-flex items-center gap-1"
-        title={match.articleTitle}
-      >
-        {text.substring(startIndex, endIndex)}
-        <ExternalLink className="h-3 w-3 inline" />
-      </Link>
+      <Tooltip key={`tooltip-${idx}-${match.keyword}`}>
+        <TooltipTrigger asChild>
+          <Link
+            to={`/blog/${match.articleSlug}`}
+            className="text-giolab-blue hover:text-giolab-blue/80 underline decoration-giolab-blue/30 hover:decoration-giolab-blue transition-colors font-medium inline-flex items-center gap-1"
+            title={match.articleTitle}
+          >
+            {text.substring(startIndex, endIndex)}
+            <ExternalLink className="h-3 w-3 inline" />
+          </Link>
+        </TooltipTrigger>
+        {linkedArticle && (
+          <TooltipContent className="max-w-xs p-3">
+            <div className="space-y-2">
+              <p className="font-semibold text-sm leading-tight">{linkedArticle.title}</p>
+              <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                <span className="inline-flex items-center gap-1">
+                  <Tag className="h-3 w-3" />
+                  {linkedArticle.category}
+                </span>
+                <span className="inline-flex items-center gap-1">
+                  <Clock className="h-3 w-3" />
+                  {linkedArticle.readTime}
+                </span>
+              </div>
+            </div>
+          </TooltipContent>
+        )}
+      </Tooltip>
     );
 
     usedKeywords.add(matchKey);
@@ -209,5 +238,9 @@ export const AutoLinkedContent: React.FC<AutoLinkedContentProps> = ({
 
   const processedContent = processChildren(children, currentSlug, usedKeywords);
 
-  return <>{processedContent}</>;
+  return (
+    <TooltipProvider delayDuration={300}>
+      {processedContent}
+    </TooltipProvider>
+  );
 };
