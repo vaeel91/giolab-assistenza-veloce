@@ -6,7 +6,7 @@ import rigenerazioneVetro from "@/assets/rigenerazione-vetro.jpg";
 import manutenzionePS5 from "/og-images/manutenzione-playstation-5.jpg";
 import codiceModelloDispositivo from "@/assets/codice-modello-dispositivo.jpg";
 import riparazioneFaceID from "/og-images/riparazione-face-id-iphone.png";
-import pcLentoVelocizzare from "/og-images/pc-lento-velocizzare-ssd-pulizia-giolab-assemini.jpg";
+import pcLentoVelocizzare from "@/assets/pc-lento-velocizzare-ssd-pulizia-giolab-assemini.jpg";
 import displayOriginaliCompatibili from "@/assets/display-originali-compatibili.jpg";
 
 export const blogArticles: BlogArticle[] = [
