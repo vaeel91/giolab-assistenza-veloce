@@ -2,12 +2,12 @@ import { BlogArticle } from "@/types/blogArticle";
 import recuperoDatiIPhoneRottoAssemini from "@/assets/recupero-dati-iphone-rotto-assemini.jpg";
 import batteriaMaggiorataIPhoneAssemini from "@/assets/batteria-maggiorata-iphone-assemini.jpg";
 import riparazioneIPhone1OraAssemini from "@/assets/riparazione-iphone-1-ora-assemini.jpg";
-import rigenerazioneVetro from "@/assets/rigenerazione-vetro.jpg";
-import manutenzionePS5 from "/og-images/manutenzione-playstation-5.jpg";
-import codiceModelloDispositivo from "@/assets/codice-modello-dispositivo.jpg";
-import riparazioneFaceID from "/og-images/riparazione-face-id-iphone.png";
+import rigenerazioneVetro from "@/assets/rigenerazione-vetro-apple-watch-iphone-ipad-giolab-assemini.jpg";
+import manutenzionePS5 from "/og-images/manutenzione-playstation-5-ps5-pulizia-surriscaldamento-giolab-assemini.jpg";
+import codiceModelloDispositivo from "@/assets/trova-codice-modello-ipad-iphone-samsung-xiaomi-giolab.jpg";
+import riparazioneFaceID from "/og-images/riparazione-face-id-iphone-truedepth-sensore-giolab-assemini.jpg";
 import pcLentoVelocizzare from "@/assets/pc-lento-velocizzare-ssd-pulizia-giolab-assemini.jpg";
-import displayOriginaliCompatibili from "@/assets/display-originali-compatibili.jpg";
+import displayOriginaliCompatibili from "@/assets/display-iphone-originale-oem-oled-compatibile-tft-confronto-giolab.jpg";
 
 export const blogArticles: BlogArticle[] = [
   {
