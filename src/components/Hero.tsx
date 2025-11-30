@@ -43,61 +43,68 @@ const Hero = () => {
             />
           </div>
 
-          {/* Main heading */}
+          {/* Main heading - Mobile First UX */}
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight animate-fade-in-up">
-            Riparazione iPhone e Smartphone ad Assemini
-            <span className="block text-giolab-blue mt-1 md:mt-2">Assistenza PC, Notebook e Console</span>
+            Riparazione iPhone e Smartphone ad Assemini e Cagliari in 1 Ora
+            <span className="block text-giolab-blue mt-2 md:mt-3 text-xl md:text-3xl lg:text-4xl">Assistenza PC, Notebook e Console</span>
           </h1>
 
-          {/* Subheading */}
-          <p className="text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in-up delay-200">
+          {/* Subheading - Ottimizzato per leggibilità mobile */}
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in-up delay-200 leading-relaxed">
             Centro assistenza specializzato ad Assemini (CA) e Cagliari. Riparazioni rapide anche in 1 ora con garanzia 12 mesi. Ricambi certificati e preventivo gratuito.
           </p>
 
-          {/* CTA buttons */}
-          <div className="flex flex-row flex-wrap gap-2 sm:gap-4 justify-center items-center pt-3 md:pt-4 px-2 sm:px-0 animate-fade-in-up delay-300">
-            <Button
-              variant="hero"
-              size="lg"
-              onClick={handleWhatsApp}
-              className="text-xs sm:text-sm md:text-base lg:text-lg px-3 py-3 sm:px-4 sm:py-4 md:px-8 md:py-6 h-auto flex items-center justify-center"
-            >
-              <Phone className="mr-1.5 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
-              <span className="hidden xs:inline sm:inline">Prenota su </span>WhatsApp
-            </Button>
+          {/* CTA buttons - Mobile First con CTA principale in evidenza */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center pt-4 md:pt-6 px-4 sm:px-0 animate-fade-in-up delay-300 max-w-xl mx-auto">
+            {/* CTA PRINCIPALE - Richiedi Preventivo */}
             <QuoteRequestDialog>
               <Button
-                variant="outline"
+                variant="hero"
                 size="lg"
-                className="text-xs sm:text-sm md:text-base lg:text-lg px-3 py-3 sm:px-4 sm:py-4 md:px-8 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue flex items-center justify-center"
+                className="text-base sm:text-sm md:text-base lg:text-lg px-6 py-6 sm:px-6 sm:py-4 md:px-8 md:py-6 h-auto flex items-center justify-center w-full sm:w-auto font-semibold shadow-xl"
               >
-                <FileText className="mr-1.5 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
-                <span className="hidden xs:inline sm:inline">Richiedi </span>Preventivo
+                <FileText className="mr-2 h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
+                Richiedi Preventivo
               </Button>
             </QuoteRequestDialog>
-            <Link to="/trova-modello-dispositivo">
-              <Button
-                variant="outline"
-                size="lg"
-                className="text-xs sm:text-sm md:text-base lg:text-lg px-3 py-3 sm:px-4 sm:py-4 md:px-8 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue flex items-center justify-center"
-              >
-                <Search className="mr-1.5 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
-                <span className="hidden xs:inline sm:inline">Trova </span>Modello
-              </Button>
-            </Link>
+            
+            {/* CTA secondari */}
             <Button
               variant="outline"
               size="lg"
+              onClick={handleWhatsApp}
+              className="text-base sm:text-sm md:text-base lg:text-lg px-6 py-6 sm:px-4 sm:py-4 md:px-6 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue flex items-center justify-center w-full sm:w-auto"
+            >
+              <Phone className="mr-2 h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
+              <span className="sm:hidden">Contattaci su </span>WhatsApp
+            </Button>
+          </div>
+          
+          {/* Link secondari - visibili solo su desktop */}
+          <div className="hidden md:flex flex-row gap-3 justify-center items-center pt-3 animate-fade-in-up delay-400">
+            <Link to="/trova-modello-dispositivo">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-sm px-4 py-2 hover:text-giolab-blue"
+              >
+                <Search className="mr-2 h-4 w-4" />
+                Trova Modello
+              </Button>
+            </Link>
+            <Button
+              variant="ghost"
+              size="sm"
               onClick={() => {
                 const element = document.getElementById('blog');
                 if (element) {
                   element.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
                 }
               }}
-              className="text-xs sm:text-sm md:text-base lg:text-lg px-3 py-3 sm:px-4 sm:py-4 md:px-8 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue flex items-center justify-center"
+              className="text-sm px-4 py-2 hover:text-giolab-blue"
             >
-              <BookOpen className="mr-1.5 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
-              <span className="hidden xs:inline sm:inline">Leggi </span>Articoli
+              <BookOpen className="mr-2 h-4 w-4" />
+              Leggi Articoli
             </Button>
           </div>
 

@@ -112,14 +112,14 @@ const Services = () => {
                 }`}
                 style={{ animationDelay: `${delay}ms` }}
               >
-                <CardHeader className="p-2 md:p-3">
-                  <div className={`w-8 h-8 md:w-10 md:h-10 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue/5 flex items-center justify-center mb-1 md:mb-2 group-hover:scale-110 transition-transform`}>
-                    <IconComponent className={`h-4 w-4 md:h-5 md:w-5 ${service.iconColor}`} />
+                <CardHeader className="p-3 md:p-4">
+                  <div className={`w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue/5 flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform`}>
+                    <IconComponent className={`h-5 w-5 md:h-6 md:w-6 ${service.iconColor}`} />
                   </div>
-                  <CardTitle className="text-xs md:text-sm leading-tight line-clamp-2">{service.title}</CardTitle>
+                  <CardTitle className="text-sm md:text-base leading-tight line-clamp-2 font-semibold">{service.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="flex-1 p-2 pt-0 md:p-3 md:pt-0">
-                  <CardDescription className="text-xs leading-snug line-clamp-2 hidden md:block">{service.description}</CardDescription>
+                <CardContent className="flex-1 p-3 pt-0 md:p-4 md:pt-0">
+                  <CardDescription className="text-sm md:text-sm leading-relaxed line-clamp-3 hidden sm:block">{service.description}</CardDescription>
                 </CardContent>
               </Card>
             );
@@ -136,16 +136,16 @@ const Services = () => {
           })}
         </div>
 
-        {/* Additional features */}
-        <div className="mt-3 md:mt-4 grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-3 max-w-4xl mx-auto">
-          <div className="text-center p-2 md:p-3 rounded-lg bg-white/50 backdrop-blur border border-border">
-            <div className="text-giolab-blue font-bold text-xs md:text-sm">✓ Garanzia 12 mesi</div>
+        {/* Additional features - Mobile optimized */}
+        <div className="mt-4 md:mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 max-w-4xl mx-auto">
+          <div className="text-center p-4 md:p-4 rounded-lg bg-white/50 backdrop-blur border border-border">
+            <div className="text-giolab-blue font-bold text-base md:text-base">✓ Garanzia 12 mesi</div>
           </div>
-          <div className="text-center p-2 md:p-3 rounded-lg bg-white/50 backdrop-blur border border-border">
-            <div className="text-giolab-blue font-bold text-xs md:text-sm">✓ Ricambi Certificati</div>
+          <div className="text-center p-4 md:p-4 rounded-lg bg-white/50 backdrop-blur border border-border">
+            <div className="text-giolab-blue font-bold text-base md:text-base">✓ Ricambi Certificati</div>
           </div>
-          <div className="text-center p-2 md:p-3 rounded-lg bg-white/50 backdrop-blur border border-border">
-            <div className="text-giolab-blue font-bold text-xs md:text-sm">✓ Preventivo Gratuito</div>
+          <div className="text-center p-4 md:p-4 rounded-lg bg-white/50 backdrop-blur border border-border">
+            <div className="text-giolab-blue font-bold text-base md:text-base">✓ Preventivo Gratuito</div>
           </div>
         </div>
       </div>
