@@ -13,14 +13,19 @@ const Footer = () => {
             <div className="flex items-center gap-3">
               <img 
                 src={giolabIcon} 
-                alt="Giolab" 
+                alt="Giolab Riparazioni" 
                 className="h-16 w-16"
                 loading="lazy"
               />
-              <span className="text-2xl font-bold">Giolab</span>
+              <span className="text-2xl font-bold">Giolab Riparazioni</span>
             </div>
+            <address className="text-white/70 text-sm not-italic">
+              <strong className="text-white">Giolab Riparazioni</strong><br />
+              Via Carmine 20<br />
+              09032 Assemini (CA)
+            </address>
             <p className="text-white/70 text-sm">
-              Centro assistenza specializzato in riparazione smartphone, PC e console ad Assemini (CA).
+              Centro assistenza iPhone, smartphone, PC e console
             </p>
           </div>
 
@@ -39,13 +44,23 @@ const Footer = () => {
                 </a>
               </li>
               <li>
+                <a href="/servizi/riparazione-display-iphone" className="hover:text-giolab-blue-light transition-colors">
+                  Riparazione Display iPhone
+                </a>
+              </li>
+              <li>
+                <a href="/servizi/batteria-maggiorata-iphone" className="hover:text-giolab-blue-light transition-colors">
+                  Batteria Maggiorata
+                </a>
+              </li>
+              <li>
                 <a href="#chi-siamo" className="hover:text-giolab-blue-light transition-colors">
                   Chi Siamo
                 </a>
               </li>
               <li>
-                <a href="#recensioni" className="hover:text-giolab-blue-light transition-colors">
-                  Recensioni
+                <a href="/blog" className="hover:text-giolab-blue-light transition-colors">
+                  Blog
                 </a>
               </li>
               <li>
@@ -96,13 +111,17 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-8 text-center text-sm text-white/50">
-          <p>© {currentYear} Giolab - Assistenza Smartphone, PC e Console. Tutti i diritti riservati.</p>
+          <p className="font-semibold text-white/70">
+            © {currentYear} Giolab Riparazioni - Via Carmine 20, Assemini. Tutti i diritti riservati.
+          </p>
           <p className="mt-2">
-            <strong>Via Carmine 20, 09032 Assemini (CA)</strong> | 
+            <strong className="text-white/70">Via Carmine 20, 09032 Assemini (CA)</strong> | 
             P.IVA: 03896540925 | 
             Tel: <a href="tel:+393406970686" className="hover:text-white transition-colors">340 69 70 686</a>
           </p>
-          <p className="mt-2">Lun-Ven: 9:00-13:00, 16:00-20:00 | Sab: 10:00-12:30</p>
+          <p className="mt-2">
+            <strong>Orari:</strong> Lun-Ven 9:00-13:00, 16:00-20:00 | Sab 10:00-12:30
+          </p>
         </div>
       </div>
     </footer>
