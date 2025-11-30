@@ -4,6 +4,7 @@ import faceIdHero from "@/assets/face-id-riconoscimento-3d.png";
 import faceIdComponents from "@/assets/face-id-truedepth-components.jpg";
 import laboratorioRepair from "@/assets/riparazione-face-id-laboratorio.jpg";
 import strumentiMicrosaldatura from "@/assets/strumenti-microsaldatura-face-id.jpg";
+import faceIdFunzionante from "@/assets/face-id-funzionante-riparato.jpg";
 export default function RiparazioneFaceIDIPhone() {
   const articleContent = <>
       <section className="blog-section">
@@ -127,7 +128,7 @@ Richiede conoscenza approfondita dell'elettronica, esperienza con i sensori True
           Da Giolab, possiamo recuperare <strong>Dot Projector danneggiati</strong>, riparare <strong>sensori IR</strong>, sostituire <strong>Flood Illuminator</strong> e ripristinare <strong>flex danneggiati</strong>. Interveniamo dove altri centri non riescono, con risultati professionali e duraturi.
         </p>
 
-        <img src={faceIdComponents} alt="Face ID iPhone perfettamente funzionante dopo riparazione professionale Giolab" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
+        <img src={faceIdFunzionante} alt="Face ID iPhone perfettamente funzionante dopo riparazione professionale Giolab" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
       </section>
 
       <section className="blog-section">
