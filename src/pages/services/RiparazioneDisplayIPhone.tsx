@@ -5,8 +5,8 @@ const RiparazioneDisplayIPhone = () => {
   return (
     <>
       <ServiceTemplate
-      seoTitle="Riparazione Display iPhone Assemini | Sostituzione Vetro e Schermo in 1 Ora | Giolab"
-      seoDescription="Riparazione display iPhone ad Assemini e Cagliari. Sostituzione vetro e schermo rotto in 1 ora. Ricambi certificati, garanzia 12 mesi. Preventivo gratuito ☎️ 340 69 70 686"
+      seoTitle="Riparazione Display iPhone Assemini | Giolab"
+      seoDescription="Riparazione display iPhone ad Assemini. Schermo nuovo in 1 ora con ricambi certificati e garanzia 12 mesi. Preventivo gratuito."
       seoKeywords="riparazione display iPhone Assemini, sostituzione schermo iPhone Assemini, riparazione vetro iPhone Cagliari, schermo iPhone rotto Assemini, display iPhone in 1 ora, sostituzione display iPhone 13 14 15 Assemini"
       h1Title="Riparazione Display iPhone ad Assemini"
       subtitle="Sostituzione professionale di display e vetro per iPhone. Riparazioni rapide anche in 1 ora con ricambi certificati e garanzia 12 mesi."
