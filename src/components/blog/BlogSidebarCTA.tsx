@@ -20,7 +20,7 @@ export const BlogSidebarCTA = () => {
 
   return (
     <aside className="hidden lg:block w-80 flex-shrink-0">
-      <div className="sticky top-24 z-40 space-y-6">
+      <div className="sticky top-24 space-y-6">
         {/* CTA Card */}
         <Card className="border-2 border-giolab-blue/20 bg-gradient-to-br from-giolab-blue/5 to-giolab-blue-light/5">
           <CardHeader className="pb-3">
