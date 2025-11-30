@@ -1,5 +1,6 @@
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
+import faceIdHero from "@/assets/face-id-riconoscimento-3d.png";
 import faceIdComponents from "@/assets/face-id-truedepth-components.jpg";
 import laboratorioRepair from "@/assets/riparazione-face-id-laboratorio.jpg";
 import strumentiMicrosaldatura from "@/assets/strumenti-microsaldatura-face-id.jpg";
@@ -19,6 +20,8 @@ export default function RiparazioneFaceIDIPhone() {
         <p className="blog-paragraph">
           Quando il Face ID smette di funzionare, però, tutto diventa più complicato: il telefono ci richiede il codice ogni volta, i pagamenti diventano più lenti e la sicurezza del dispositivo può essere compromessa. Per fortuna, nella maggior parte dei casi è possibile ripararlo.
         </p>
+
+        <img src={faceIdHero} alt="Riparazione Face ID iPhone - sistema di riconoscimento facciale 3D" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
 
         <img src={faceIdComponents} alt="Sistema Face ID iPhone con componenti TrueDepth: Dot Projector, sensore IR, Flood Illuminator" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
       </section>
