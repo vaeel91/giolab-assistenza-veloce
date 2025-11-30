@@ -149,54 +149,77 @@ const SEOHead = ({
     updateMetaTag('twitter:image', ogImage);
     updateMetaTag('twitter:image:alt', title);
     
-    // Add breadcrumb structured data
-    if (breadcrumbSchema) {
-      let breadcrumbScript = document.querySelector('script[type="application/ld+json"]#breadcrumb-schema');
-      if (!breadcrumbScript) {
-        breadcrumbScript = document.createElement('script');
-        breadcrumbScript.setAttribute('type', 'application/ld+json');
-        breadcrumbScript.setAttribute('id', 'breadcrumb-schema');
-        document.head.appendChild(breadcrumbScript);
+    // Helper function to safely update or create schema script
+    const updateSchemaScript = (id: string, schemaData: object | null) => {
+      const existingScript = document.querySelector(`script[type="application/ld+json"]#${id}`);
+      
+      if (!schemaData) {
+        // Remove script if schema data is null/undefined
+        if (existingScript) {
+          existingScript.remove();
+        }
+        return;
       }
-      breadcrumbScript.textContent = JSON.stringify(breadcrumbSchema);
-    }
-    
-    // Add Article structured data
-    if (articleSchema) {
-      let articleScript = document.querySelector('script[type="application/ld+json"]#article-schema');
-      if (!articleScript) {
-        articleScript = document.createElement('script');
-        articleScript.setAttribute('type', 'application/ld+json');
-        articleScript.setAttribute('id', 'article-schema');
-        document.head.appendChild(articleScript);
+      
+      // Ensure schema has @context and @type
+      if (!schemaData['@context'] || !schemaData['@type']) {
+        console.warn(`Schema ${id} missing @context or @type`, schemaData);
+        if (existingScript) {
+          existingScript.remove();
+        }
+        return;
       }
-      articleScript.textContent = JSON.stringify(articleSchema);
-    }
-    
-    // Add FAQPage structured data if FAQ data is provided
-    if (faqSchema) {
-      let faqScript = document.querySelector('script[type="application/ld+json"]#faq-service-schema');
-      if (!faqScript) {
-        faqScript = document.createElement('script');
-        faqScript.setAttribute('type', 'application/ld+json');
-        faqScript.setAttribute('id', 'faq-service-schema');
-        document.head.appendChild(faqScript);
-      }
-      faqScript.textContent = JSON.stringify(faqSchema);
-    }
-    
-    // Add additional structured data if provided
-    if (structuredData) {
-      let script = document.querySelector('script[type="application/ld+json"]#dynamic-schema');
-      if (!script) {
-        script = document.createElement('script');
+      
+      if (!existingScript) {
+        const script = document.createElement('script');
         script.setAttribute('type', 'application/ld+json');
-        script.setAttribute('id', 'dynamic-schema');
+        script.setAttribute('id', id);
+        script.textContent = JSON.stringify(schemaData);
         document.head.appendChild(script);
+      } else {
+        existingScript.textContent = JSON.stringify(schemaData);
       }
-      script.textContent = JSON.stringify(structuredData);
+    };
+    
+    // Add/update breadcrumb structured data
+    updateSchemaScript('breadcrumb-schema', breadcrumbSchema);
+    
+    // Add/update Article structured data
+    updateSchemaScript('article-schema', articleSchema);
+    
+    // Add/update FAQPage structured data
+    updateSchemaScript('faq-service-schema', faqSchema);
+    
+    // Handle additional structured data (can be single object or array)
+    if (structuredData) {
+      const schemas = Array.isArray(structuredData) ? structuredData : [structuredData];
+      
+      schemas.forEach((schema, index) => {
+        // Skip empty or invalid schemas
+        if (!schema || !schema['@context'] || !schema['@type']) {
+          console.warn(`Invalid schema at index ${index}`, schema);
+          return;
+        }
+        
+        const schemaId = `dynamic-schema-${index}`;
+        updateSchemaScript(schemaId, schema);
+      });
+      
+      // Clean up any extra dynamic schemas that are no longer needed
+      const dynamicSchemas = document.querySelectorAll('script[id^="dynamic-schema-"]');
+      dynamicSchemas.forEach((script) => {
+        const scriptId = script.getAttribute('id');
+        const index = parseInt(scriptId?.replace('dynamic-schema-', '') || '0');
+        if (index >= schemas.length) {
+          script.remove();
+        }
+      });
+    } else {
+      // Remove all dynamic schemas if no structuredData provided
+      const dynamicSchemas = document.querySelectorAll('script[id^="dynamic-schema"]');
+      dynamicSchemas.forEach((script) => script.remove());
     }
-  }, [title, description, keywords, ogImage, ogType, ogUrl, structuredData, breadcrumbSchema, articleSchema, faqSchema]);
+  }, [title, description, keywords, ogImage, ogType, cleanCanonicalUrl, structuredData, breadcrumbSchema, articleSchema, faqSchema]);
   
   return (
     <Helmet>
