@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Calendar, Clock, ArrowRight, Sparkles } from "lucide-react";
 import { blogArticles } from "@/data/blogArticles";
+import { findRelatedArticles } from "@/utils/articleKeywordMatcher";
+import { BlogArticle } from "@/types/blogArticle";
 
 interface RelatedArticlesProps {
   currentSlug: string;
@@ -10,18 +12,18 @@ interface RelatedArticlesProps {
 }
 
 const RelatedArticles = ({ currentSlug, category, maxArticles = 3 }: RelatedArticlesProps) => {
-  // Filter articles by same category, excluding current article
-  const relatedArticles = blogArticles
-    .filter(article => article.category === category && article.slug !== currentSlug)
-    .slice(0, maxArticles);
-
-  // If not enough articles in same category, add articles from other categories
-  if (relatedArticles.length < maxArticles) {
-    const additionalArticles = blogArticles
-      .filter(article => article.slug !== currentSlug && !relatedArticles.includes(article))
-      .slice(0, maxArticles - relatedArticles.length);
-    relatedArticles.push(...additionalArticles);
+  // Trova l'articolo corrente
+  const currentArticle = blogArticles.find(article => article.slug === currentSlug);
+  
+  if (!currentArticle) {
+    return null;
   }
+
+  // Usa il sistema intelligente di matching
+  const matches = findRelatedArticles(currentArticle, blogArticles, maxArticles);
+  
+  // Estrai solo gli articoli dai match
+  const relatedArticles = matches.map(match => match.article);
 
   // Don't render if no related articles found
   if (relatedArticles.length === 0) {
@@ -31,11 +33,14 @@ const RelatedArticles = ({ currentSlug, category, maxArticles = 3 }: RelatedArti
   return (
     <section className="mt-16 py-12 border-t-2 border-giolab-blue/20">
       <div className="mb-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-          Articoli Correlati
-        </h2>
+        <div className="flex items-center gap-2 mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+            Articoli Correlati
+          </h2>
+          <Sparkles className="h-6 w-6 text-giolab-blue" />
+        </div>
         <p className="text-muted-foreground">
-          Continua a leggere altri articoli che potrebbero interessarti
+          Selezionati automaticamente in base a categoria e keywords comuni
         </p>
       </div>
 
