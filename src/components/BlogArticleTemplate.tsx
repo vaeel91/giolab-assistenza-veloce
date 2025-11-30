@@ -73,6 +73,7 @@ import ReadingProgress from "@/components/ReadingProgress";
 import { TableOfContents } from "@/components/TableOfContents";
 import { BackToBlog } from "@/components/blog/BackToBlog";
 import { AutoLinkedContent } from "@/components/blog/AutoLinkedContent";
+import { BlogSidebarCTA } from "@/components/blog/BlogSidebarCTA";
 import { getCanonicalUrl, extractPath } from "@/config/seoConfig";
 import "@/styles/blog.css";
 import { 
@@ -176,6 +177,9 @@ export const BlogArticleTemplate = ({
         
         <div className="container mx-auto px-4 pt-24 pb-8 overflow-x-hidden">
           <div className="flex gap-8 max-w-7xl mx-auto">
+            {/* Sidebar CTA - visibile solo su schermi LG+ */}
+            <BlogSidebarCTA />
+            
             {/* Contenuto principale articolo */}
             <article className="flex-1 max-w-4xl min-w-0 overflow-x-hidden">
           {/* Breadcrumb Navigation */}

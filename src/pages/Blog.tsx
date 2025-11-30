@@ -6,15 +6,20 @@ import SEOHead from "@/components/SEOHead";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Calendar, Clock, Search, X } from "lucide-react";
+import { Calendar, Clock, Search, X, Filter } from "lucide-react";
 import { blogArticles } from "@/data/blogArticles";
 import { OptimizedImage } from "@/components/OptimizedImage";
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("Tutte");
+  
+  // Estrai categorie uniche dagli articoli
+  const categories = ["Tutte", ...Array.from(new Set(blogArticles.map(article => article.category)))];
 
-  // Filtra articoli basandosi sulla ricerca
+  // Filtra articoli basandosi su ricerca e categoria
   const filteredArticles = useMemo(() => {
     return blogArticles.filter(article => {
       const matchesSearch = searchQuery.trim() === "" || 
@@ -22,9 +27,11 @@ const Blog = () => {
         article.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         article.category.toLowerCase().includes(searchQuery.toLowerCase());
       
-      return matchesSearch;
+      const matchesCategory = selectedCategory === "Tutte" || article.category === selectedCategory;
+      
+      return matchesSearch && matchesCategory;
     });
-  }, [searchQuery]);
+  }, [searchQuery, selectedCategory]);
 
   const handleClearSearch = () => {
     setSearchQuery("");
@@ -51,11 +58,11 @@ const Blog = () => {
               Blog Giolab
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Il blog è attualmente in fase di manutenzione. Torna presto per leggere i nostri articoli su riparazione iPhone, batterie maggiorate e assistenza smartphone ad Assemini e Cagliari.
+              Scopri guide tecniche, consigli utili e articoli dedicati al mondo delle riparazioni: iPhone, smartphone, PC e console. Contenuti chiari, utili e aggiornati.
             </p>
 
             {/* Search Bar */}
-            <div className="max-w-2xl mx-auto">
+            <div className="max-w-2xl mx-auto mb-6">
               <div className="relative">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                 <Input
@@ -74,8 +81,26 @@ const Blog = () => {
                   </button>
                 )}
               </div>
-
+            </div>
+            
+            {/* Filtri Categoria */}
+            <div className="flex flex-wrap justify-center items-center gap-3">
+              <div className="flex items-center gap-2 text-sm font-medium text-foreground">
+                <Filter className="h-4 w-4" />
+                <span>Categoria:</span>
               </div>
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  variant={selectedCategory === category ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSelectedCategory(category)}
+                  className={selectedCategory === category ? "bg-giolab-blue hover:bg-giolab-blue-dark" : ""}
+                >
+                  {category}
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -114,49 +139,49 @@ const Blog = () => {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredArticles.map((post) => (
-                <Link key={post.slug} to={`/blog/${post.slug}`}>
-                  <Card className="h-full border-2 hover:border-giolab-blue transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group cursor-pointer">
-                    <CardHeader>
-                      {post.image.startsWith('http') || post.image.startsWith('/') ? (
-                        <div className="w-full h-48 rounded-lg overflow-hidden mb-4 group-hover:shadow-lg transition-all">
-                          <OptimizedImage
-                            src={post.image} 
-                            alt={post.title}
-                            width={400}
-                            height={192}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                          />
+                  <Link key={post.slug} to={`/blog/${post.slug}`}>
+                    <Card className="h-full border-2 hover:border-giolab-blue transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group cursor-pointer">
+                      <CardHeader>
+                        {post.image.startsWith('http') || post.image.startsWith('/') ? (
+                          <div className="w-full h-48 rounded-lg overflow-hidden mb-4 group-hover:shadow-lg transition-all">
+                            <OptimizedImage
+                              src={post.image} 
+                              alt={post.title}
+                              width={400}
+                              height={192}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                        ) : (
+                          <div className="w-full h-48 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue-light/10 flex items-center justify-center mb-4 group-hover:from-giolab-blue/20 group-hover:to-giolab-blue-light/20 transition-all">
+                            <span className="text-6xl">{post.image}</span>
+                          </div>
+                        )}
+                        <div className="flex items-center gap-4 text-xs text-muted-foreground mb-2">
+                          <span className="px-2 py-1 bg-giolab-blue/10 text-giolab-blue rounded-full font-medium">
+                            {post.category}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <Calendar className="h-3 w-3" />
+                            {new Date(post.date).toLocaleDateString('it-IT')}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <Clock className="h-3 w-3" />
+                            {post.readTime}
+                          </span>
                         </div>
-                      ) : (
-                        <div className="w-full h-48 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue-light/10 flex items-center justify-center mb-4 group-hover:from-giolab-blue/20 group-hover:to-giolab-blue-light/20 transition-all">
-                          <span className="text-6xl">{post.image}</span>
-                        </div>
-                      )}
-                      <div className="flex items-center gap-4 text-xs text-muted-foreground mb-2">
-                        <span className="px-2 py-1 bg-giolab-blue/10 text-giolab-blue rounded-full font-medium">
-                          {post.category}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Calendar className="h-3 w-3" />
-                          {new Date(post.date).toLocaleDateString('it-IT')}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Clock className="h-3 w-3" />
-                          {post.readTime}
-                        </span>
-                      </div>
-                      <CardTitle className="text-xl leading-tight group-hover:text-giolab-blue transition-colors">
-                        {post.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-base">
-                        {post.description}
-                      </CardDescription>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
+                        <CardTitle className="text-xl leading-tight group-hover:text-giolab-blue transition-colors">
+                          {post.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription className="text-base">
+                          {post.description}
+                        </CardDescription>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                ))}
               </div>
             )}
           </div>
