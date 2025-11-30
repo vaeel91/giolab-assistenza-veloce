@@ -7,9 +7,9 @@ import strumentiMicrosaldatura from "@/assets/strumenti-microsaldatura-face-id.j
 export default function RiparazioneFaceIDIPhone() {
   const articleContent = <>
       <section className="blog-section">
-        <h2 id="introduzione" className="blog-h2">Introduzione: il Face ID e la sua importanza</h2>
-        
         <img src={faceIdHero} alt="Riparazione Face ID iPhone - sistema di riconoscimento facciale 3D" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
+        
+        <h2 id="introduzione" className="blog-h2">Introduzione: il Face ID e la sua importanza</h2>
         
         <p className="blog-paragraph text-lg">
           Il Face ID è uno dei moduli più avanzati mai integrati in uno smartphone. Sviluppato da Apple, questo sistema di riconoscimento facciale ha rivoluzionato il modo in cui accediamo al nostro iPhone: basta uno sguardo per sbloccare il telefono, autorizzare pagamenti, accedere alle app bancarie e confermare password.
