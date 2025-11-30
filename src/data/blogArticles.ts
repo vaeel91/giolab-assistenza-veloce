@@ -7,6 +7,7 @@ import manutenzionePS5 from "/og-images/manutenzione-playstation-5.jpg";
 import codiceModelloDispositivo from "/og-images/codice-modello-dispositivo.jpg";
 import riparazioneFaceID from "/og-images/riparazione-face-id-iphone.png";
 import pcLentoVelocizzare from "/og-images/pc-lento-velocizzare-ssd-pulizia-giolab-assemini.jpg";
+import displayOriginaliCompatibili from "@/assets/display-originali-compatibili.jpg";
 
 export const blogArticles: BlogArticle[] = [
   {
@@ -43,7 +44,7 @@ export const blogArticles: BlogArticle[] = [
     date: "2025-01-01",
     readTime: "9 min",
     category: "Guide",
-    image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800&h=600&fit=crop"
+    image: displayOriginaliCompatibili
   },
   {
     slug: "rigenerazione-vetro-iphone-ipad-apple-watch",
