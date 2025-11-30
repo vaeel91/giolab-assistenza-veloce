@@ -15,6 +15,9 @@ interface OptimizedImageProps {
  * - Placeholder durante il caricamento
  * - Fallback in caso di errore
  * - Dimensioni specificate per evitare layout shift
+ * - ⚠️ REMINDER SEO: Verifica sempre che l'alt text sia descrittivo e pertinente!
+ *   Esempi corretti: "riparazione-face-id-iphone-13-assemini", "batteria-maggiorata-iphone-xs-giolab"
+ *   Evitare: "img1", "foto", "immagine"
  */
 export const OptimizedImage = ({
   src,
@@ -26,6 +29,11 @@ export const OptimizedImage = ({
 }: OptimizedImageProps) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  
+  // ⚠️ SEO WARNING: Controlla che l'alt text sia descrittivo
+  if (process.env.NODE_ENV === 'development' && (!alt || alt.length < 10)) {
+    console.warn('⚠️ SEO WARNING: Alt text troppo breve o mancante per immagine:', src, '- Alt:', alt);
+  }
 
   const handleLoad = () => {
     setIsLoading(false);
