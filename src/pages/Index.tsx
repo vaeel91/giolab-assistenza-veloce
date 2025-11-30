@@ -9,6 +9,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import StickyMobileActionBar from "@/components/StickyMobileActionBar";
 import SEOHead from "@/components/SEOHead";
 import ScrollToTop from "@/components/ScrollToTop";
 import { useEffect, useRef, useState } from "react";
@@ -114,7 +115,7 @@ const Index = () => {
       />
       <Header />
       
-      <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+      <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth pb-20 md:pb-0">
         <section 
           id="hero" 
           ref={(el) => (sectionsRef.current[0] = el as HTMLDivElement)}
@@ -173,6 +174,7 @@ const Index = () => {
           <Footer />
         </section>
       </main>
+      <StickyMobileActionBar />
       <FloatingWhatsApp />
       <ScrollToTop />
       

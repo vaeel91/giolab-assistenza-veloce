@@ -28,28 +28,28 @@ const About = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-4 md:gap-6 items-center">
             {/* Left side - Content */}
-            <div className="space-y-2 md:space-y-3">
-              <h2 className="text-lg md:text-3xl font-bold text-foreground">
+            <div className="space-y-3 md:space-y-4">
+              <h2 className="text-xl md:text-3xl font-bold text-foreground">
                 Centro Assistenza iPhone ad Assemini
               </h2>
-              <p className="text-xs md:text-sm text-muted-foreground leading-snug">
+              <p className="text-base md:text-base text-muted-foreground leading-relaxed">
                 <strong className="text-foreground">Giolab Assemini</strong> è guidato da{" "}
                 <strong className="text-giolab-blue">Stefano Giordano</strong>, con oltre 10 anni di esperienza nella riparazione iPhone, smartphone, PC e console. Utilizziamo ricambi certificati e tecniche professionali.
               </p>
             </div>
 
             {/* Right side - Features grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 gap-2 md:gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 md:gap-4">
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="p-2 md:p-3 rounded-lg bg-gradient-to-br from-giolab-gray to-white border border-border hover:border-giolab-blue transition-all duration-300"
+                  className="p-3 md:p-4 rounded-lg bg-gradient-to-br from-giolab-gray to-white border border-border hover:border-giolab-blue transition-all duration-300"
                 >
-                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-lg bg-giolab-blue/10 flex items-center justify-center mb-1 md:mb-2">
-                    <span className="text-base md:text-xl">{feature.emoji}</span>
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-giolab-blue/10 flex items-center justify-center mb-2 md:mb-3">
+                    <span className="text-xl md:text-2xl">{feature.emoji}</span>
                   </div>
-                  <h3 className="text-xs md:text-sm font-bold text-foreground mb-1">{feature.title}</h3>
-                  <p className="text-xs text-muted-foreground leading-snug line-clamp-2">{feature.description}</p>
+                  <h3 className="text-sm md:text-base font-bold text-foreground mb-1.5">{feature.title}</h3>
+                  <p className="text-sm md:text-sm text-muted-foreground leading-relaxed line-clamp-3">{feature.description}</p>
                 </div>
               ))}
             </div>
