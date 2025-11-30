@@ -30,7 +30,7 @@ export default function DisplayOriginaliVsCompatibili() {
       <div className="my-8">
         <img 
           src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=1200&h=600&fit=crop" 
-          alt="Confronto display iPhone originale vs compatibile - GioLab Assemini"
+          alt="Confronto display iPhone originale Apple OEM vs compatibile OLED TFT qualità schermo riparazione GioLab Assemini"
           className="w-full h-auto rounded-lg shadow-lg"
           style={{ maxWidth: '100%', height: 'auto' }}
           loading="lazy"
@@ -99,7 +99,7 @@ export default function DisplayOriginaliVsCompatibili() {
       <div className="my-8">
         <img 
           src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=1200&h=600&fit=crop" 
-          alt="Differenze tra display TFT, OLED e originale iPhone"
+          alt="Differenze display iPhone TFT LCD OLED Hard Soft Pulled originale qualità colori contrasto GioLab"
           className="w-full h-auto rounded-lg shadow-lg"
           style={{ maxWidth: '100%', height: 'auto' }}
           loading="lazy"
@@ -261,7 +261,7 @@ export default function DisplayOriginaliVsCompatibili() {
       <div className="my-8">
         <img 
           src="https://images.unsplash.com/photo-1574920162762-8fd7821e4d1f?w=1200&h=600&fit=crop" 
-          alt="Confronto qualità display iPhone - tecnologia OLED vs LCD"
+          alt="Qualità display iPhone OLED vs LCD confronto tecnologia angolo visione colori contrasto nero GioLab"
           className="w-full h-auto rounded-lg shadow-lg"
           style={{ maxWidth: '100%', height: 'auto' }}
           loading="lazy"
@@ -372,7 +372,7 @@ export default function DisplayOriginaliVsCompatibili() {
       <div className="my-8">
         <img 
           src="https://images.unsplash.com/photo-1621768216002-5ac171876625?w=1200&h=600&fit=crop" 
-          alt="Laboratorio GioLab Assemini - riparazione display iPhone professionale"
+          alt="Laboratorio tecnico GioLab Assemini riparazione display iPhone originale compatibile professionale Cagliari"
           className="w-full h-auto rounded-lg shadow-lg"
           style={{ maxWidth: '100%', height: 'auto' }}
           loading="lazy"
