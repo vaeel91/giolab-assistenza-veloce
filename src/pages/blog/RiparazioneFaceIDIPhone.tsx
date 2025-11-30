@@ -17,7 +17,7 @@ export default function RiparazioneFaceIDIPhone() {
         </p>
 
         <p className="blog-paragraph">
-          Nella vita quotidiana, il Face ID rappresenta una comodità straordinaria: permette di pagare nei negozi senza inserire codici, di accedere alle app in modo istantaneo e di mantenere i dati personali al sicuro. Tutto questo avviene in una frazione di secondo, grazie a una tecnologia basata su sensori a infrarossi e intelligenza artificiale.
+          Nella vita quotidiana, il Face ID rappresenta una comodità straordinaria: permette di pagare nei negozi senza inserire codici, di accedere alle app in modo istantaneo e di mantenere i dati personali al sicuro. Tutto questo avviene in una frazione di secondo, grazie a una tecnologia basata su sensori a infrarossi e intelligenza artificiale. Per sapere quale modello di iPhone possiedi, consulta la nostra <a href="/blog/come-trovare-codice-modello-dispositivo-giolab-assemini" className="text-primary hover:underline">guida per trovare il codice modello</a>.
         </p>
 
         <p className="blog-paragraph">
@@ -74,7 +74,7 @@ export default function RiparazioneFaceIDIPhone() {
 
         <h3 id="cause-sostituzioni-display" className="blog-h3">🔴 Sostituzioni display non eseguite correttamente</h3>
         <p className="blog-paragraph">
-          Durante la sostituzione dello schermo, i sensori Face ID devono essere trasferiti con estrema cura. Se il tecnico non segue le procedure corrette o non ha l'esperienza necessaria, può danneggiare i componenti o disallineare il modulo, rendendo il Face ID inutilizzabile.
+          Durante la <a href="/servizi/riparazione-display-iphone-assemini" className="text-primary hover:underline">sostituzione dello schermo</a>, i sensori Face ID devono essere trasferiti con estrema cura. Se il tecnico non segue le procedure corrette o non ha l'esperienza necessaria, può danneggiare i componenti o disallineare il modulo, rendendo il Face ID inutilizzabile.
         </p>
 
         <h3 id="cause-manodopera" className="blog-h3">🔴 Errori di manodopera o mancato rispetto delle linee guida Apple</h3>
@@ -108,11 +108,12 @@ export default function RiparazioneFaceIDIPhone() {
         </p>
 
         <h3 id="microscopia-diagnosi" className="blog-h3">🔬 Microscopia e diagnosi professionale</h3>
-        <p className="blog-paragraph">Nel nostro laboratorio ad Assemini, ogni riparazione Face ID inizia con una diagnosi accurata sotto microscopio. Analizziamo i componenti uno per uno per individuare con precisione quale elemento è danneggiato: Dot Projector, sensore IR, Flood Illuminator o flessibili di collegamento. 
-Se questa prima ispezione visiva non trova evidenze di danneggiamento, procediamo con verifiche più approfondite impiegando misurazioni e strumenti appositamente creati per fare un check del face id ed individuare il componente malfunzionante.<strong>laboratorio ad Assemini</strong>, ogni riparazione Face ID inizia con una diagnosi accurata sotto microscopio. Analizziamo i componenti uno per uno per individuare con precisione quale elemento è danneggiato: Dot Projector, sensore IR, Flood Illuminator o flessibili di collegamento. 
-
-Se questa prima ispezione visiva non trova evidenze di danneggiamento, procediamo con verifiche più approfondite impiegando misurazioni e strumenti appositamente creati per fare un check del face id ed individuare il componente malfunzionante.                                                
- 
+        <p className="blog-paragraph">
+          Nel nostro laboratorio ad Assemini, ogni riparazione Face ID inizia con una diagnosi accurata sotto microscopio. Analizziamo i componenti uno per uno per individuare con precisione quale elemento è danneggiato: Dot Projector, sensore IR, Flood Illuminator o flessibili di collegamento.
+        </p>
+        
+        <p className="blog-paragraph">
+          Se questa prima ispezione visiva non trova evidenze di danneggiamento, procediamo con verifiche più approfondite impiegando misurazioni e strumenti appositamente creati per fare un check del sistema TrueDepth ed individuare il componente malfunzionante.
         </p>
 
         <h3 id="micro-saldature" className="blog-h3">⚡ Micro-saldature e recupero componenti</h3>
@@ -145,7 +146,7 @@ Richiede conoscenza approfondita dell'elettronica, esperienza con i sensori True
 
         <h3 id="riparazioni-rapide" className="blog-h3">⏱️ Riparazioni rapide</h3>
         <p className="blog-paragraph">
-          Nella maggior parte dei casi, completiamo la riparazione in <strong>1-3 giorni lavorativi</strong>. Per interventi più semplici, riusciamo a risolvere il problema anche in giornata.
+          Nella maggior parte dei casi, completiamo la riparazione in <strong>1-3 giorni lavorativi</strong>. Per interventi più semplici, riusciamo a risolvere il problema anche in giornata. Se hai bisogno di una <a href="/blog/riparazione-iphone-1-ora-giolab-assemini" className="text-primary hover:underline">riparazione iPhone rapida</a>, contattaci per verificare la disponibilità immediata.
         </p>
 
         <h3 id="risultati-professionali" className="blog-h3">🏆 Risultati professionali anche dove altri centri non riescono</h3>
@@ -153,7 +154,8 @@ Richiede conoscenza approfondita dell'elettronica, esperienza con i sensori True
 In realtà, con le competenze giuste e gli strumenti adeguati, la maggior parte dei problemi può essere risolta.</p>
 
         <h3 id="local-seo" className="blog-h3">📍 Facilmente raggiungibili da tutta la provincia</h3>
-        <p className="blog-paragraph">Il nostro laboratorio si trova in Via Carmine 20, 09032 Assemini (CA), facilmente raggiungibile da Cagliari, Elmas, Uta, Decimomannu, Monserrato, Quartu Sant'Elena, Selargius, Capoterra e tutta la provincia. Siamo aperti dal lunedì al sabato per venire incontro alle tue esigenze.<strong>Via Carmine 20, 09032 Assemini (CA)</strong>, facilmente raggiungibile da <strong>Cagliari, Elmas, Uta, Decimomannu, Monserrato, Quartu Sant'Elena, Selargius, Capoterra</strong> e tutta la provincia. Siamo aperti dal lunedì al sabato, con orari continuati per venire incontro alle tue esigenze.
+        <p className="blog-paragraph">
+          Il nostro laboratorio si trova in <strong>Via Carmine 20, 09032 Assemini (CA)</strong>, facilmente raggiungibile da <strong>Cagliari, Elmas, Uta, Decimomannu, Monserrato, Quartu Sant'Elena, Selargius, Capoterra</strong> e tutta la provincia. Siamo aperti dal lunedì al sabato, con orari continuati per venire incontro alle tue esigenze.
         </p>
 
         <div className="blog-box-tip">
@@ -168,7 +170,7 @@ In realtà, con le competenze giuste e gli strumenti adeguati, la maggior parte 
 
         <h3 id="faq-dopo-display" className="blog-h3">▶️ Dopo la sostituzione del display posso perdere il Face ID?</h3>
         <p className="blog-paragraph">
-          Sì, se la sostituzione del display non viene eseguita correttamente. I sensori TrueDepth sono estremamente delicati e devono essere trasferiti con attenzione. Un tecnico esperto sa come gestirli senza danneggiarli.
+          Sì, se la <a href="/servizi/riparazione-display-iphone-assemini" className="text-primary hover:underline">sostituzione del display</a> non viene eseguita correttamente. I sensori TrueDepth sono estremamente delicati e devono essere trasferiti con attenzione durante l'intervento. Un tecnico esperto sa come gestirli senza danneggiarli, preservando la funzionalità del Face ID.
         </p>
 
         <h3 id="faq-tempo-riparazione" className="blog-h3">▶️ Quanto tempo richiede la riparazione?</h3>
@@ -186,9 +188,9 @@ In realtà, con le competenze giuste e gli strumenti adeguati, la maggior parte 
           La diagnosi è <strong>sempre gratuita</strong>. Analizziamo il dispositivo e ti forniamo un preventivo chiaro prima di procedere con qualsiasi intervento.
         </p>
 
-        <h3 id="faq-schermo-rotto" className="blog-h3">▶️ Il Face ID smette di funzionare se lo schermo si rompe?</h3>
+        <h3 id="faq-schermo-rotto" className="blog-h3">▶️ Una caduta che rompe lo schermo può danneggiare il Face ID?</h3>
         <p className="blog-paragraph">
-          Non necessariamente. Lo schermo e il Face ID sono componenti separati. Tuttavia, se l'urto che ha rotto il display è stato molto forte, potrebbe aver danneggiato anche i sensori TrueDepth.
+          Dipende dall'intensità dell'urto. Lo schermo e il Face ID sono componenti fisicamente separati, ma un impatto molto violento può danneggiare entrambi contemporaneamente. Se dopo la caduta noti sia il vetro rotto che problemi di riconoscimento facciale, è probabile che anche i sensori TrueDepth abbiano subito danni e richiedano un controllo approfondito.
         </p>
 
         <h3 id="faq-altri-centri" className="blog-h3">▶️ Se altri centri non sono riusciti, potete farlo voi?</h3>

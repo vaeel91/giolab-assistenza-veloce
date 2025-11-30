@@ -11,7 +11,7 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { PhoneCall, MessageSquare } from "lucide-react";
+import { PhoneCall, MessageSquare, MessageCircle } from "lucide-react";
 
 export const ArticleCTA = () => {
   return (
@@ -53,6 +53,17 @@ export const ArticleCTA = () => {
             >
               <PhoneCall className="w-5 h-5" />
               Chiamaci Ora
+            </Button>
+          </a>
+
+          <a href="https://wa.me/393406970686" target="_blank" rel="noopener noreferrer">
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="w-full sm:w-auto gap-2 border-2 hover:bg-green-600 hover:text-white hover:border-green-600 transition-all"
+            >
+              <MessageCircle className="w-5 h-5" />
+              WhatsApp
             </Button>
           </a>
         </div>
