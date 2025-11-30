@@ -9,6 +9,8 @@ export default function RiparazioneFaceIDIPhone() {
       <section className="blog-section">
         <h2 id="introduzione" className="blog-h2">Introduzione: il Face ID e la sua importanza</h2>
         
+        <img src={faceIdHero} alt="Riparazione Face ID iPhone - sistema di riconoscimento facciale 3D" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
+        
         <p className="blog-paragraph text-lg">
           Il Face ID è uno dei moduli più avanzati mai integrati in uno smartphone. Sviluppato da Apple, questo sistema di riconoscimento facciale ha rivoluzionato il modo in cui accediamo al nostro iPhone: basta uno sguardo per sbloccare il telefono, autorizzare pagamenti, accedere alle app bancarie e confermare password.
         </p>
@@ -20,14 +22,12 @@ export default function RiparazioneFaceIDIPhone() {
         <p className="blog-paragraph">
           Quando il Face ID smette di funzionare, però, tutto diventa più complicato: il telefono ci richiede il codice ogni volta, i pagamenti diventano più lenti e la sicurezza del dispositivo può essere compromessa. Per fortuna, nella maggior parte dei casi è possibile ripararlo.
         </p>
-
-        <img src={faceIdHero} alt="Riparazione Face ID iPhone - sistema di riconoscimento facciale 3D" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
-
-        <img src={faceIdComponents} alt="Sistema Face ID iPhone con componenti TrueDepth: Dot Projector, sensore IR, Flood Illuminator" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
       </section>
 
       <section className="blog-section">
         <h2 id="come-funziona-truedepth" className="blog-h2">Come funziona il sistema TrueDepth</h2>
+        
+        <img src={faceIdComponents} alt="Sistema Face ID iPhone con componenti TrueDepth: Dot Projector, sensore IR, Flood Illuminator" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
 
         <p className="blog-paragraph">
           Il Face ID non utilizza una semplice fotocamera: si basa sul <strong>modulo TrueDepth</strong>, un insieme di componenti estremamente sofisticati posizionati nella parte superiore dello schermo. Questi sensori lavorano in combinazione per creare una mappa tridimensionale dettagliata del tuo volto.
