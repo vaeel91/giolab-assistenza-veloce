@@ -143,13 +143,13 @@ const Blog = () => {
                     <Card className="h-full border-2 hover:border-giolab-blue transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group cursor-pointer">
                       <CardHeader>
                         {post.image.startsWith('http') || post.image.startsWith('/') ? (
-                          <div className="w-full h-48 rounded-lg overflow-hidden mb-4 group-hover:shadow-lg transition-all">
+                          <div className="w-full h-48 rounded-lg overflow-hidden mb-4 group-hover:shadow-lg transition-all bg-gray-50">
                             <OptimizedImage
                               src={post.image} 
                               alt={post.title}
                               width={400}
                               height={192}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              className="w-full h-full object-contain object-center group-hover:scale-105 transition-transform duration-300"
                             />
                           </div>
                         ) : (
