@@ -15,13 +15,16 @@ export interface ArticleMatch {
  * Estrae keywords significative dal titolo e descrizione
  */
 export const extractKeywords = (text: string): string[] => {
-  // Rimuovi parole comuni (stopwords italiane)
+  // Rimuovi parole comuni (stopwords italiane estese)
   const stopwords = [
     'il', 'lo', 'la', 'i', 'gli', 'le', 'un', 'uno', 'una',
     'di', 'a', 'da', 'in', 'con', 'su', 'per', 'tra', 'fra',
     'e', 'o', 'ma', 'se', 'come', 'più', 'anche', 'del', 'della',
     'dei', 'delle', 'al', 'alla', 'ai', 'alle', 'dal', 'dalla',
-    'nei', 'nel', 'sulla', 'giolab', 'assemini', 'cagliari'
+    'nei', 'nel', 'sulla', 'giolab', 'assemini', 'cagliari',
+    'guida', 'come', 'quando', 'dove', 'cosa', 'perché', 'questo',
+    'quello', 'questi', 'quelle', 'ora', 'oggi', 'anno', 'anni',
+    'tutto', 'tutti', 'ogni', 'tutto', 'molto', 'tanto', 'poco'
   ];
 
   // Normalizza e splitta il testo
