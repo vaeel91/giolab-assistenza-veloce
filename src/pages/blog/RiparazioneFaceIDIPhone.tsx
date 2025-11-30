@@ -8,7 +8,7 @@ import faceIdFunzionante from "@/assets/face-id-funzionante-riparato.jpg";
 export default function RiparazioneFaceIDIPhone() {
   const articleContent = <>
       <section className="blog-section">
-        <img src={faceIdHero} alt="Riparazione Face ID iPhone - sistema di riconoscimento facciale 3D" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
+        <img src={faceIdHero} alt="Riparazione Face ID iPhone sistema riconoscimento facciale 3D TrueDepth camera GioLab Assemini" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
         
         <h2 id="introduzione" className="blog-h2">Introduzione: il Face ID e la sua importanza</h2>
         
@@ -28,7 +28,7 @@ export default function RiparazioneFaceIDIPhone() {
       <section className="blog-section">
         <h2 id="come-funziona-truedepth" className="blog-h2">Come funziona il sistema TrueDepth</h2>
         
-        <img src={faceIdComponents} alt="Sistema Face ID iPhone con componenti TrueDepth: Dot Projector, sensore IR, Flood Illuminator" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
+        <img src={faceIdComponents} alt="Sistema Face ID iPhone componenti TrueDepth Dot Projector sensore IR Flood Illuminator fotocamera frontale" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
 
         <p className="blog-paragraph">
           Il Face ID non utilizza una semplice fotocamera: si basa sul <strong>modulo TrueDepth</strong>, un insieme di componenti estremamente sofisticati posizionati nella parte superiore dello schermo. Questi sensori lavorano in combinazione per creare una mappa tridimensionale dettagliata del tuo volto.
@@ -52,7 +52,7 @@ export default function RiparazioneFaceIDIPhone() {
           <strong>💡 Curiosità:</strong> Il Face ID utilizza la luce infrarossa, invisibile all'occhio umano. Ecco perché funziona perfettamente anche di notte o in condizioni di scarsa illuminazione.
         </div>
 
-        <img src={laboratorioRepair} alt="Messaggio di errore Face ID non disponibile su iPhone" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
+        <img src={laboratorioRepair} alt="Errore Face ID non disponibile iPhone messaggio schermo diagnosi riparazione GioLab Assemini" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
       </section>
 
       <section className="blog-section">
@@ -97,7 +97,7 @@ export default function RiparazioneFaceIDIPhone() {
           </ul>
         </div>
 
-        <img src={strumentiMicrosaldatura} alt="Modulo TrueDepth danneggiato che causa malfunzionamento Face ID iPhone" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
+        <img src={strumentiMicrosaldatura} alt="Modulo TrueDepth danneggiato Face ID iPhone riparazione microsaldatura laboratorio GioLab Assemini" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
       </section>
 
       <section className="blog-section">
@@ -129,7 +129,7 @@ Richiede conoscenza approfondita dell'elettronica, esperienza con i sensori True
           Da Giolab, possiamo recuperare <strong>Dot Projector danneggiati</strong>, riparare <strong>sensori IR</strong>, sostituire <strong>Flood Illuminator</strong> e ripristinare <strong>flex danneggiati</strong>. Interveniamo dove altri centri non riescono, con risultati professionali e duraturi.
         </p>
 
-        <img src={faceIdFunzionante} alt="Face ID iPhone perfettamente funzionante dopo riparazione professionale Giolab" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
+        <img src={faceIdFunzionante} alt="Face ID iPhone funzionante perfettamente riparato riconoscimento facciale test GioLab Assemini Cagliari" className="w-full h-auto rounded-lg shadow-md my-8" loading="lazy" />
       </section>
 
       <section className="blog-section">

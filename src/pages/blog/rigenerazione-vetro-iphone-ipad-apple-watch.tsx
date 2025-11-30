@@ -33,7 +33,7 @@ export default function RigenerazioneVetroIphoneIpadAppleWatch() {
 
         <img 
           src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&h=500&fit=crop" 
-          alt="Processo di rigenerazione vetro iPhone con macchinari professionali"
+          alt="Processo rigenerazione vetro iPhone display OLED separazione LCD macchinari professionali GioLab Assemini"
           className="w-full h-auto rounded-lg my-8 shadow-md"
           style={{ maxWidth: '100%', height: 'auto' }}
           loading="lazy"
@@ -81,7 +81,7 @@ export default function RigenerazioneVetroIphoneIpadAppleWatch() {
 
         <img 
           src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=500&fit=crop" 
-          alt="Macchinario professionale per rigenerazione vetro display"
+          alt="Macchinario professionale rigenerazione vetro display iPhone iPad Apple Watch laminazione OCA GioLab"
           className="w-full h-auto rounded-lg my-8 shadow-md"
           style={{ maxWidth: '100%', height: 'auto' }}
           loading="lazy"
@@ -155,7 +155,7 @@ export default function RigenerazioneVetroIphoneIpadAppleWatch() {
 
         <img 
           src="https://images.unsplash.com/photo-1592286927505-f0e6ff706c5c?w=800&h=500&fit=crop" 
-          alt="iPhone con vetro rotto pronto per rigenerazione"
+          alt="iPhone schermo rotto vetro danneggiato riparazione rigenerazione display risparmio GioLab Assemini"
           className="w-full h-auto rounded-lg my-8 shadow-md"
           style={{ maxWidth: '100%', height: 'auto' }}
           loading="lazy"
@@ -243,7 +243,7 @@ export default function RigenerazioneVetroIphoneIpadAppleWatch() {
 
         <img 
           src="https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=800&h=500&fit=crop" 
-          alt="Apple Watch con vetro danneggiato"
+          alt="Apple Watch vetro rotto danneggiato schermo rigenerazione riparazione Assemini Cagliari GioLab"
           className="w-full h-auto rounded-lg my-8 shadow-md"
           style={{ maxWidth: '100%', height: 'auto' }}
           loading="lazy"
