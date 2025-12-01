@@ -14,13 +14,15 @@ const Hero = () => {
 
   return (
     <header className="relative h-screen max-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
-      {/* Background image with gradient overlay */}
+      {/* Background image with gradient overlay - LCP optimized */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=80&w=2070&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=80&w=1920&auto=format&fit=crop"
           alt="Laboratorio Giolab Assemini"
           className="w-full h-full object-cover"
+          fetchPriority="high"
           loading="eager"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85"></div>
       </div>
@@ -39,7 +41,10 @@ const Hero = () => {
               src={giolabLogo} 
               alt="Giolab Assemini - Centro assistenza riparazione iPhone, smartphone, PC e console" 
               className="h-40 md:h-52 lg:h-64 w-auto animate-zoom-in"
+              width="256"
+              height="256"
               loading="eager"
+              decoding="async"
             />
           </div>
 
