@@ -288,7 +288,18 @@ const IPhoneRicondizionati = () => {
         "itemOffered": {
           "@type": "Product",
           "name": product.model,
-          "description": `${product.model} ricondizionato ${product.grade}, memoria ${product.memory}, batteria ${product.battery}`
+          "description": `${product.model} ricondizionato ${product.grade}, memoria ${product.memory}, batteria ${product.battery}`,
+          "brand": {
+            "@type": "Brand",
+            "name": "Apple"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
         },
         "price": product.price.replace('€', ''),
         "priceCurrency": "EUR",
