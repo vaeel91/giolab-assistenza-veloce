@@ -1,35 +1,49 @@
-/*
+# Static assets with hashing - cache for 1 year
+/assets/*
   Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
 
-/*.css
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.js
-  Cache-Control: public, max-age=31536000, immutable
-
+# Images - cache for 1 year
 /*.jpg
   Cache-Control: public, max-age=31536000, immutable
-
 /*.jpeg
   Cache-Control: public, max-age=31536000, immutable
-
 /*.png
   Cache-Control: public, max-age=31536000, immutable
-
 /*.webp
   Cache-Control: public, max-age=31536000, immutable
-
 /*.svg
   Cache-Control: public, max-age=31536000, immutable
+/*.gif
+  Cache-Control: public, max-age=31536000, immutable
 
+# OG Images - cache for 1 year
+/og-images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts - cache for 1 year
 /*.woff2
   Cache-Control: public, max-age=31536000, immutable
-
 /*.woff
   Cache-Control: public, max-age=31536000, immutable
+/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+/*.eot
+  Cache-Control: public, max-age=31536000, immutable
 
+# HTML files - no cache, always revalidate
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
 /index.html
   Cache-Control: public, max-age=0, must-revalidate
 
+# Root - no cache
 /
   Cache-Control: public, max-age=0, must-revalidate
+
+# Security headers for all pages
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
