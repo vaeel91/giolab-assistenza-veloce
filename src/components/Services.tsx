@@ -114,7 +114,7 @@ const Services = () => {
               >
                 <CardHeader className="p-3 md:p-4">
                   <div className={`w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue/5 flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform`}>
-                    <IconComponent className={`h-5 w-5 md:h-6 md:w-6 ${service.iconColor}`} />
+                    <IconComponent className={`h-5 w-5 md:h-6 md:w-6 ${service.iconColor}`} width="24" height="24" />
                   </div>
                   <CardTitle className="text-sm md:text-base leading-tight line-clamp-2 font-semibold">{service.title}</CardTitle>
                 </CardHeader>
