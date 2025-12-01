@@ -3,39 +3,57 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
 import SEOMonitor from "@/components/SEOMonitor";
+
+// Eager load - Pagine critiche (sempre caricate subito)
 import Index from "./pages/Index";
 import Servizi from "./pages/Servizi";
-import ChiSiamo from "./pages/ChiSiamo";
-import FAQPage from "./pages/FAQ";
-import DoveSiamo from "./pages/DoveSiamo";
-import Contatti from "./pages/Contatti";
-import NotFound from "./pages/NotFound";
 import Blog from "./pages/Blog";
-import RiparazioneDisplayIPhone from "./pages/services/RiparazioneDisplayIPhone";
-import BatteriaMaggiorataIPhoneService from "./pages/services/BatteriaMaggiorataIPhone";
-import RiparazioneIPhone1Ora from "./pages/blog/RiparazioneIPhone1Ora";
-import BatteriaMaggiorataIPhoneBlog from "./pages/blog/BatteriaMaggiorataIPhone";
-import RecuperoDatiIPhoneRotto from "./pages/blog/RecuperoDatiIPhoneRotto";
-import ComeCabireBatteriaIPhone from "./pages/blog/ComeCabireBatteriaIPhone";
-import DisplayOriginaliVsCompatibili from "./pages/blog/DisplayOriginaliVsCompatibili";
-import RigenerazioneVetroIphoneIpadAppleWatch from "./pages/blog/rigenerazione-vetro-iphone-ipad-apple-watch";
-import ManutenzionePlayStation5 from "./pages/blog/manutenzione-playstation-5";
-import CodiceModelloDispositivo from "./pages/blog/CodiceModelloDispositivo";
-import RiparazioneFaceIDIPhone from "./pages/blog/RiparazioneFaceIDIPhone";
-import PCLentoVelocizzare from "./pages/blog/PCLentoVelocizzare";
-import SEODocumentation from "./pages/SEODocumentation";
-import SocialPreview from "./pages/SocialPreview";
-import IPhoneRicondizionati from "./pages/IPhoneRicondizionati";
-import TrovaModelloDispositivo from "./pages/TrovaModelloDispositivo";
-import TrovaModelloIPhone from "./pages/guide-modelli/TrovaModelloIPhone";
-import TrovaModelloSamsung from "./pages/guide-modelli/TrovaModelloSamsung";
-import TrovaModelloXiaomi from "./pages/guide-modelli/TrovaModelloXiaomi";
-import TrovaModelloOPPO from "./pages/guide-modelli/TrovaModelloOPPO";
-import TrovaModelloHuawei from "./pages/guide-modelli/TrovaModelloHuawei";
-import TrovaModelloiPad from "./pages/guide-modelli/TrovaModelloiPad";
-import TrovaModelloMacBook from "./pages/guide-modelli/TrovaModelloMacBook";
+
+// Lazy load - Pagine secondarie
+const ChiSiamo = lazy(() => import("./pages/ChiSiamo"));
+const FAQPage = lazy(() => import("./pages/FAQ"));
+const DoveSiamo = lazy(() => import("./pages/DoveSiamo"));
+const Contatti = lazy(() => import("./pages/Contatti"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const SEODocumentation = lazy(() => import("./pages/SEODocumentation"));
+const SocialPreview = lazy(() => import("./pages/SocialPreview"));
+const IPhoneRicondizionati = lazy(() => import("./pages/IPhoneRicondizionati"));
+const TrovaModelloDispositivo = lazy(() => import("./pages/TrovaModelloDispositivo"));
+
+// Lazy load - Servizi
+const RiparazioneDisplayIPhone = lazy(() => import("./pages/services/RiparazioneDisplayIPhone"));
+const BatteriaMaggiorataIPhoneService = lazy(() => import("./pages/services/BatteriaMaggiorataIPhone"));
+
+// Lazy load - Articoli Blog
+const RiparazioneIPhone1Ora = lazy(() => import("./pages/blog/RiparazioneIPhone1Ora"));
+const BatteriaMaggiorataIPhoneBlog = lazy(() => import("./pages/blog/BatteriaMaggiorataIPhone"));
+const RecuperoDatiIPhoneRotto = lazy(() => import("./pages/blog/RecuperoDatiIPhoneRotto"));
+const ComeCabireBatteriaIPhone = lazy(() => import("./pages/blog/ComeCabireBatteriaIPhone"));
+const DisplayOriginaliVsCompatibili = lazy(() => import("./pages/blog/DisplayOriginaliVsCompatibili"));
+const RigenerazioneVetroIphoneIpadAppleWatch = lazy(() => import("./pages/blog/rigenerazione-vetro-iphone-ipad-apple-watch"));
+const ManutenzionePlayStation5 = lazy(() => import("./pages/blog/manutenzione-playstation-5"));
+const CodiceModelloDispositivo = lazy(() => import("./pages/blog/CodiceModelloDispositivo"));
+const RiparazioneFaceIDIPhone = lazy(() => import("./pages/blog/RiparazioneFaceIDIPhone"));
+const PCLentoVelocizzare = lazy(() => import("./pages/blog/PCLentoVelocizzare"));
+
+// Lazy load - Guide Modelli
+const TrovaModelloIPhone = lazy(() => import("./pages/guide-modelli/TrovaModelloIPhone"));
+const TrovaModelloSamsung = lazy(() => import("./pages/guide-modelli/TrovaModelloSamsung"));
+const TrovaModelloXiaomi = lazy(() => import("./pages/guide-modelli/TrovaModelloXiaomi"));
+const TrovaModelloOPPO = lazy(() => import("./pages/guide-modelli/TrovaModelloOPPO"));
+const TrovaModelloHuawei = lazy(() => import("./pages/guide-modelli/TrovaModelloHuawei"));
+const TrovaModelloiPad = lazy(() => import("./pages/guide-modelli/TrovaModelloiPad"));
+const TrovaModelloMacBook = lazy(() => import("./pages/guide-modelli/TrovaModelloMacBook"));
+
+// Suspense fallback - Leggero e non invasivo
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-background">
+    <div className="animate-pulse text-giolab-blue">Caricamento...</div>
+  </div>
+);
 
 const queryClient = new QueryClient();
 
@@ -47,8 +65,9 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         {import.meta.env.DEV && <SEOMonitor />}
-      <Routes>
-        <Route path="/" element={<Index />} />
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Index />} />
         
         {/* Pagine principali */}
         <Route path="/servizi" element={<Servizi />} />
@@ -93,7 +112,8 @@ const App = () => (
         
         {/* 404 */}
         <Route path="*" element={<NotFound />} />
-      </Routes>
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

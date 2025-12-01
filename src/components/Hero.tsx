@@ -14,16 +14,30 @@ const Hero = () => {
 
   return (
     <header className="relative h-screen max-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
-      {/* Background image with gradient overlay - LCP optimized */}
+      {/* Background image with gradient overlay - LCP optimized with picture element */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=80&w=1920&auto=format&fit=crop"
-          alt="Laboratorio Giolab Assemini"
-          className="w-full h-full object-cover"
-          fetchPriority="high"
-          loading="eager"
-          decoding="async"
-        />
+        <picture>
+          <source
+            srcSet="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=80&w=1280&auto=format&fit=crop"
+            media="(max-width: 768px)"
+            type="image/jpeg"
+          />
+          <source
+            srcSet="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=80&w=1920&auto=format&fit=crop"
+            media="(min-width: 769px)"
+            type="image/jpeg"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=80&w=1920&auto=format&fit=crop"
+            alt="Laboratorio Giolab Assemini - Centro assistenza riparazione smartphone"
+            className="w-full h-full object-cover"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            width="1920"
+            height="1080"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85"></div>
       </div>
       
@@ -137,58 +151,6 @@ const Hero = () => {
           <div className="w-3 h-1 bg-giolab-blue rounded-full ml-2 animate-pulse"></div>
         </div>
       </div>
-
-      <style>{`
-        @keyframes fade-in {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes zoom-in {
-          from {
-            opacity: 0;
-            transform: scale(0.5);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-        .animate-fade-in {
-          animation: fade-in 0.8s ease-out;
-        }
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out;
-        }
-        .animate-zoom-in {
-          animation: zoom-in 1s cubic-bezier(0.34, 1.56, 0.64, 1);
-          animation-fill-mode: both;
-        }
-        .delay-200 {
-          animation-delay: 0.2s;
-          opacity: 0;
-          animation-fill-mode: forwards;
-        }
-        .delay-300 {
-          animation-delay: 0.3s;
-          opacity: 0;
-          animation-fill-mode: forwards;
-        }
-        .delay-400 {
-          animation-delay: 0.4s;
-          opacity: 0;
-          animation-fill-mode: forwards;
-        }
-      `}</style>
     </header>
   );
 };
