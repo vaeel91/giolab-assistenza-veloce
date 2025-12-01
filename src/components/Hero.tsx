@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone, FileText, BookOpen, Search } from "lucide-react";
 import { Link } from "react-router-dom";
-import giolabLogo from "@/assets/giolab-logo-new.webp";
+import giolabLogo from "@/assets/giolab-logo-new.png";
 import { QuoteRequestDialog } from "./QuoteRequestDialog";
 
 const Hero = () => {
