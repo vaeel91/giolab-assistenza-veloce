@@ -177,37 +177,6 @@ const Index = () => {
       <StickyMobileActionBar />
       <FloatingWhatsApp />
       <ScrollToTop />
-      
-      <style>{`
-        .section-animate {
-          opacity: 0.6;
-          transform: translateY(30px);
-          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .section-visible {
-          opacity: 1 !important;
-          transform: translateY(0) !important;
-        }
-        
-        .snap-y {
-          scroll-snap-type: y mandatory;
-          -webkit-overflow-scrolling: touch;
-        }
-        
-        .snap-start {
-          scroll-snap-align: start;
-          scroll-snap-stop: always;
-        }
-        
-        @media (prefers-reduced-motion: reduce) {
-          .section-animate {
-            transition: none !important;
-            transform: none !important;
-            opacity: 1 !important;
-          }
-        }
-      `}</style>
     </>
   );
 };
