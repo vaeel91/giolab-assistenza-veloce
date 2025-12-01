@@ -1,12 +1,8 @@
-/*
+# Cache per asset con hash nel nome (immutable)
+/assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-/*.css
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.js
-  Cache-Control: public, max-age=31536000, immutable
-
+# Cache per immagini statiche
 /*.jpg
   Cache-Control: public, max-age=31536000, immutable
 
@@ -22,14 +18,22 @@
 /*.svg
   Cache-Control: public, max-age=31536000, immutable
 
+# Cache per font
 /*.woff2
   Cache-Control: public, max-age=31536000, immutable
 
 /*.woff
   Cache-Control: public, max-age=31536000, immutable
 
+# No cache per HTML
 /index.html
   Cache-Control: public, max-age=0, must-revalidate
 
 /
   Cache-Control: public, max-age=0, must-revalidate
+
+# Sicurezza headers
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

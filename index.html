@@ -11,33 +11,61 @@
     <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-60QZT0Q9EN"></script>
     
     <meta charset="UTF-8" />
-    <!-- Favicon - Multiple sizes for better compatibility -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
-    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Preconnect to Critical Domains (LCP optimization) -->
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-    <link rel="dns-prefetch" href="https://images.unsplash.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Critical CSS Inline (First Paint) -->
+    <style>
+      :root {
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+        --giolab-blue: 210 100% 50%;
+        --giolab-blue-light: 200 100% 60%;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: hsl(var(--background));
+        color: hsl(var(--foreground));
+        -webkit-font-smoothing: antialiased;
+      }
+      #root { min-height: 100vh; }
+      .hero-bg { 
+        position: absolute; 
+        inset: 0; 
+        object-fit: cover; 
+        width: 100%; 
+        height: 100%;
+      }
+    </style>
     
-    <!-- Preload LCP Image (Hero background) -->
+    <!-- Favicon - Minimal -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    
+    <!-- Preconnect to Critical Domains ONLY -->
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    
+    <!-- Preload LCP Image as WebP with JPEG fallback -->
+    <link rel="preload" 
+          href="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=80&w=1920&auto=format&fit=crop&fm=webp" 
+          as="image" 
+          type="image/webp"
+          fetchpriority="high">
     <link rel="preload" 
           href="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=80&w=1920&auto=format&fit=crop" 
           as="image" 
-          fetchpriority="high"
-          type="image/jpeg">
+          type="image/jpeg"
+          fetchpriority="high">
     
-    <!-- Google Fonts - Inter with font-display swap (non-blocking) -->
-    <link rel="preload" 
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" 
-          as="style" 
-          onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Google Fonts - Async Load (Non-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=optional" 
+      rel="stylesheet" 
+      media="print" 
+      onload="this.media='all'">
     <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=optional" rel="stylesheet">
     </noscript>
     
     <!-- Primary Meta Tags -->
@@ -286,6 +314,6 @@
 
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx" defer></script>
   </body>
 </html>
