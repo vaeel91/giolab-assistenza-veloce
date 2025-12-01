@@ -46,7 +46,7 @@ const About = () => {
                   className="p-3 md:p-4 rounded-lg bg-gradient-to-br from-giolab-gray to-white border border-border hover:border-giolab-blue transition-all duration-300"
                 >
                   <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-giolab-blue/10 flex items-center justify-center mb-2 md:mb-3">
-                    <span className="text-xl md:text-2xl">{feature.emoji}</span>
+                    <span className="text-xl md:text-2xl" role="img" aria-label={feature.title}>{feature.emoji}</span>
                   </div>
                   <h3 className="text-sm md:text-base font-bold text-foreground mb-1.5">{feature.title}</h3>
                   <p className="text-sm md:text-sm text-muted-foreground leading-relaxed line-clamp-3">{feature.description}</p>

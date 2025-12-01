@@ -17,25 +17,39 @@ const Hero = () => {
       {/* Background image with gradient overlay - LCP optimized with picture element */}
       <div className="absolute inset-0 z-0">
         <picture>
+          {/* WebP for modern browsers - Mobile */}
           <source
-            srcSet="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=80&w=1280&auto=format&fit=crop"
+            srcSet="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=80&w=800&auto=format&fit=crop&fm=webp"
+            media="(max-width: 768px)"
+            type="image/webp"
+          />
+          {/* JPEG fallback - Mobile */}
+          <source
+            srcSet="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=80&w=800&auto=format&fit=crop"
             media="(max-width: 768px)"
             type="image/jpeg"
           />
+          {/* WebP for modern browsers - Desktop */}
           <source
-            srcSet="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=80&w=1920&auto=format&fit=crop"
+            srcSet="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=75&w=1440&auto=format&fit=crop&fm=webp"
+            media="(min-width: 769px)"
+            type="image/webp"
+          />
+          {/* JPEG fallback - Desktop */}
+          <source
+            srcSet="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=75&w=1440&auto=format&fit=crop"
             media="(min-width: 769px)"
             type="image/jpeg"
           />
           <img
-            src="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=80&w=1920&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=75&w=1440&auto=format&fit=crop"
             alt="Laboratorio Giolab Assemini - Centro assistenza riparazione smartphone"
             className="w-full h-full object-cover"
             fetchPriority="high"
             loading="eager"
             decoding="async"
-            width="1920"
-            height="1080"
+            width="1440"
+            height="810"
           />
         </picture>
         <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85"></div>
