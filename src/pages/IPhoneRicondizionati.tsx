@@ -299,7 +299,51 @@ const IPhoneRicondizionati = () => {
             "reviewCount": "150",
             "bestRating": "5",
             "worstRating": "1"
-          }
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Marco Piras"
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "reviewBody": "iPhone ricondizionato perfetto, come nuovo. Batteria al 100%, nessun graffio. Ottimo rapporto qualità-prezzo!",
+              "datePublished": "2025-01-20"
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Giulia Melis"
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "reviewBody": "Acquistato iPhone 13 grado A+, condizioni eccellenti. Garanzia 12 mesi e assistenza impeccabile.",
+              "datePublished": "2025-01-18"
+            },
+            {
+              "@type": "Review",
+              "author": {
+                "@type": "Person",
+                "name": "Andrea Murgia"
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "reviewBody": "Finalmente ho trovato iPhone ricondizionati certificati ad Assemini. Qualità top e prezzo onesto.",
+              "datePublished": "2025-01-15"
+            }
+          ]
         },
         "price": product.price.replace('€', ''),
         "priceCurrency": "EUR",
