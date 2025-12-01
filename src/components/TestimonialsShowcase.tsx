@@ -227,9 +227,13 @@ const TestimonialsShowcase = ({
               >
                 <CardContent className="p-4">
                   <div className="flex items-start gap-3 mb-3">
-                    <img 
+                     <img 
                       src={testimonial.avatar} 
-                      alt={testimonial.name}
+                      alt={`Recensione cliente ${testimonial.name} - ${testimonial.location}`}
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                      decoding="async"
                       className="w-12 h-12 rounded-full ring-2 ring-giolab-blue/20"
                     />
                     <div className="flex-1 min-w-0">
@@ -336,7 +340,11 @@ const TestimonialsShowcase = ({
                         <div className="flex items-center gap-2 md:gap-3 pt-3 md:pt-4 border-t">
                           <img 
                             src={testimonial.avatar} 
-                            alt={testimonial.name}
+                            alt={`Recensione cliente ${testimonial.name} - ${testimonial.location}`}
+                            width="56"
+                            height="56"
+                            loading="lazy"
+                            decoding="async"
                             className="w-10 h-10 md:w-14 md:h-14 rounded-full ring-2 ring-giolab-blue/30 flex-shrink-0"
                           />
                           <div className="flex-1 min-w-0">

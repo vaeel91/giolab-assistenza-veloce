@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, Search, X, Filter } from "lucide-react";
 import { blogArticles } from "@/data/blogArticles";
-import { OptimizedImage } from "@/components/OptimizedImage";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
