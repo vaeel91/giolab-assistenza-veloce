@@ -1,5 +1,5 @@
 import { Instagram, Facebook } from "lucide-react";
-import giolabIcon from "@/assets/giolab-logo-new.png";
+import giolabIcon from "@/assets/giolab-logo-optimized.webp";
 import { Link } from "react-router-dom";
 
 const Header = () => {
