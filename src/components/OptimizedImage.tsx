@@ -8,7 +8,6 @@ interface OptimizedImageProps {
   className?: string;
   priority?: boolean;
   fetchPriority?: "high" | "low" | "auto";
-  webpSrc?: string; // Optional WebP source
 }
 
 const OptimizedImage = ({ 
@@ -18,15 +17,8 @@ const OptimizedImage = ({
   height, 
   className = "", 
   priority = false,
-  fetchPriority = "auto",
-  webpSrc
+  fetchPriority = "auto"
 }: OptimizedImageProps) => {
-  // Auto-generate WebP URL if not provided and source is external image service
-  const generatedWebpSrc = webpSrc || (
-    src.includes('unsplash.com') || src.includes('images.') 
-      ? `${src}${src.includes('?') ? '&' : '?'}fm=webp`
-      : undefined
-  );
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
 
@@ -65,42 +57,21 @@ const OptimizedImage = ({
           style={{ width: width || '100%', height: height || 'auto' }}
         />
       )}
-      {generatedWebpSrc ? (
-        <picture>
-          <source srcSet={generatedWebpSrc} type="image/webp" />
-          <img
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-            loading={priority ? "eager" : "lazy"}
-            decoding="async"
-            fetchPriority={fetchPriority}
-            onLoad={handleLoad}
-            onError={handleError}
-            className={`w-full h-auto transition-opacity duration-300 ${
-              isLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
-            style={{ maxWidth: '100%', height: 'auto' }}
-          />
-        </picture>
-      ) : (
-        <img
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          loading={priority ? "eager" : "lazy"}
-          decoding="async"
-          fetchPriority={fetchPriority}
-          onLoad={handleLoad}
-          onError={handleError}
-          className={`w-full h-auto transition-opacity duration-300 ${
-            isLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
-          style={{ maxWidth: '100%', height: 'auto' }}
-        />
-      )}
+      <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        loading={priority ? "eager" : "lazy"}
+        decoding="async"
+        fetchPriority={fetchPriority}
+        onLoad={handleLoad}
+        onError={handleError}
+        className={`w-full h-auto transition-opacity duration-300 ${
+          isLoaded ? 'opacity-100' : 'opacity-0'
+        }`}
+        style={{ maxWidth: '100%', height: 'auto' }}
+      />
     </div>
   );
 };
