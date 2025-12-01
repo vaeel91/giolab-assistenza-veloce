@@ -22,17 +22,26 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'ui-vendor': ['lucide-react', '@radix-ui/react-dialog', '@radix-ui/react-accordion'],
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+              return 'react-vendor';
+            }
+            if (id.includes('lucide') || id.includes('@radix-ui')) {
+              return 'ui-vendor';
+            }
+            return 'vendor';
+          }
         },
         assetFileNames: (assetInfo) => {
           const info = assetInfo.name?.split('.');
           const ext = info?.[info.length - 1];
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext || '')) {
-            return `assets/images/[name]-[hash][extname]`;
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp/i.test(ext || '')) {
+            return `assets/img/[name]-[hash][extname]`;
           } else if (/css/i.test(ext || '')) {
             return `assets/css/[name]-[hash][extname]`;
+          } else if (/woff2?/i.test(ext || '')) {
+            return `assets/fonts/[name]-[hash][extname]`;
           }
           return `assets/[name]-[hash][extname]`;
         },
@@ -42,6 +51,7 @@ export default defineConfig(({ mode }) => ({
     },
     chunkSizeWarningLimit: 1000,
     reportCompressedSize: false,
+    assetsInlineLimit: 4096,
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
