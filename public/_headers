@@ -1,5 +1,13 @@
 # Static assets with hashing - cache for 1 year
-/assets/*
+/assets/images/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/assets/js/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/assets/css/*
   Cache-Control: public, max-age=31536000, immutable
   X-Content-Type-Options: nosniff
 
