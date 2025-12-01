@@ -160,14 +160,16 @@ const ServiceTemplate = ({
       "@type": "Brand",
       "name": "Giolab"
     },
+    "sku": `GIOLAB-${h1Title.substring(0, 20).replace(/\s+/g, '-').toUpperCase()}`,
     "offers": {
       "@type": "Offer",
-      "price": priceRange,
+      "price": priceRange.replace(/[^\d.,]/g, ''),
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
       "url": absoluteUrl,
       "seller": {
-        "@type": "LocalBusiness",
+        "@type": "Organization",
+        "name": "Giolab",
         "@id": "https://giolabriparazioni.it/#business"
       },
       "priceValidUntil": new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
