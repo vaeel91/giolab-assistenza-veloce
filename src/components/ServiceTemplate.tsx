@@ -10,6 +10,7 @@ import RatingStars from "@/components/RatingStars";
 import TestimonialsShowcase from "@/components/TestimonialsShowcase";
 import { Link } from "react-router-dom";
 import { getCanonicalUrl, extractPath } from "@/config/seoConfig";
+import { allReviews } from "@/data/reviews";
 
 interface ServiceTemplateProps {
   seoTitle: string;
@@ -74,6 +75,35 @@ const ServiceTemplate = ({
     ? extractPath(window.location.href)
     : '/';
   const absoluteUrl = getCanonicalUrl(currentPath);
+
+  // Filtra review pertinenti al servizio corrente (top 5 per rating e data)
+  const relevantReviews = allReviews
+    .filter(review => 
+      !h1Title || 
+      review.serviceType?.toLowerCase().includes(h1Title.toLowerCase().substring(0, 15)) ||
+      review.text.toLowerCase().includes(h1Title.toLowerCase().substring(0, 15))
+    )
+    .sort((a, b) => {
+      if (b.rating !== a.rating) return b.rating - a.rating;
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    })
+    .slice(0, 5)
+    .map(review => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": review.author
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": review.rating.toString(),
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": review.text,
+      "datePublished": review.date,
+      ...(review.verified && { "publisher": { "@type": "Organization", "name": "Giolab" } })
+    }));
 
   // Generate Service and Product Schema for better SEO
   const serviceSchema = {
@@ -181,7 +211,8 @@ const ServiceTemplate = ({
       "reviewCount": "150",
       "bestRating": "5",
       "worstRating": "1"
-    }
+    },
+    ...(relevantReviews.length > 0 && { "review": relevantReviews })
   } : null;
 
   return (
