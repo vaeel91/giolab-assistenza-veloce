@@ -1,5 +1,5 @@
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
-import { OptimizedImage } from "@/components/OptimizedImage";
+import OptimizedImage from "@/components/OptimizedImage";
 import { AlertCircle, Cpu, HardDrive, Wind, Zap, Settings, CheckCircle, Wrench } from "lucide-react";
 import pcLentoImage from "@/assets/pc-lento-bloccato.jpg";
 import installazioneSSDImage from "@/assets/installazione-ssd-pc.jpg";
