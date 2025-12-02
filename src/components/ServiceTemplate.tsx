@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, Clock, Shield, Award } from "lucide-react";
+import { Phone, Clock, Shield, Award, Instagram } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -278,6 +278,15 @@ const ServiceTemplate = ({
               >
                 <Phone className="mr-2 h-5 w-5" />
                 Chiama Ora
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => window.open("https://instagram.com/giolab_iphonefix", "_blank", "noopener,noreferrer")}
+                className="border-2 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white border-0 hover:opacity-90"
+              >
+                <Instagram className="mr-2 h-5 w-5" />
+                Seguici su Instagram
               </Button>
             </div>
 
