@@ -161,26 +161,7 @@ export const BlogArticleTemplate = ({
     "description": description,
     "provider": {
       "@type": "LocalBusiness",
-      "@id": "https://giolabriparazioni.it/#business",
-      "name": BUSINESS_INFO.name,
-      "telephone": BUSINESS_INFO.contact.phone,
-      "email": BUSINESS_INFO.contact.email,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": BUSINESS_INFO.address.street,
-        "addressLocality": BUSINESS_INFO.address.city,
-        "addressRegion": BUSINESS_INFO.address.province,
-        "postalCode": BUSINESS_INFO.address.postalCode,
-        "addressCountry": BUSINESS_INFO.address.countryCode
-      },
-      "url": "https://giolabriparazioni.it",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "150",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
+      "@id": "https://giolabriparazioni.it/#business"
     },
     "areaServed": [
       {
