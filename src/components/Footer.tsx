@@ -39,6 +39,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
+                <a href="/dispositivi" className="hover:text-giolab-blue-light transition-colors">
+                  Dispositivi in Vendita
+                </a>
+              </li>
+              <li>
                 <a href="/iphone-ricondizionati-assemini" className="hover:text-giolab-blue-light transition-colors">
                   iPhone Ricondizionati
                 </a>

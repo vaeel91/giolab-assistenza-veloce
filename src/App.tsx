@@ -48,6 +48,14 @@ const TrovaModelloHuawei = lazy(() => import("./pages/guide-modelli/TrovaModello
 const TrovaModelloiPad = lazy(() => import("./pages/guide-modelli/TrovaModelloiPad"));
 const TrovaModelloMacBook = lazy(() => import("./pages/guide-modelli/TrovaModelloMacBook"));
 
+// Lazy load - Dispositivi in Vendita
+const DispositiviHub = lazy(() => import("./pages/DispositiviHub"));
+const DispositiviApple = lazy(() => import("./pages/dispositivi/DispositiviApple"));
+const DispositiviSamsung = lazy(() => import("./pages/dispositivi/DispositiviSamsung"));
+const DispositiviXiaomi = lazy(() => import("./pages/dispositivi/DispositiviXiaomi"));
+const DispositiviOPPO = lazy(() => import("./pages/dispositivi/DispositiviOPPO"));
+const DispositiviHuawei = lazy(() => import("./pages/dispositivi/DispositiviHuawei"));
+
 // Suspense fallback - Leggero e non invasivo
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
@@ -106,6 +114,14 @@ const App = () => (
         {/* Servizi specifici */}
         <Route path="/servizi/riparazione-display-iphone-assemini" element={<RiparazioneDisplayIPhone />} />
         <Route path="/servizi/batteria-maggiorata-iphone" element={<BatteriaMaggiorataIPhoneService />} />
+        
+        {/* Dispositivi in Vendita */}
+        <Route path="/dispositivi" element={<DispositiviHub />} />
+        <Route path="/dispositivi/iphone" element={<DispositiviApple />} />
+        <Route path="/dispositivi/samsung" element={<DispositiviSamsung />} />
+        <Route path="/dispositivi/xiaomi" element={<DispositiviXiaomi />} />
+        <Route path="/dispositivi/oppo" element={<DispositiviOPPO />} />
+        <Route path="/dispositivi/huawei" element={<DispositiviHuawei />} />
         
         {/* Documentazione */}
         <Route path="/seo-docs" element={<SEODocumentation />} />
