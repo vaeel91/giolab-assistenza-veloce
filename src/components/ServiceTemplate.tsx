@@ -8,6 +8,7 @@ import SEOHead from "@/components/SEOHead";
 import ScrollToTop from "@/components/ScrollToTop";
 import RatingStars from "@/components/RatingStars";
 import TestimonialsShowcase from "@/components/TestimonialsShowcase";
+import ServiceGallery from "@/components/ServiceGallery";
 import { Link } from "react-router-dom";
 import { getCanonicalUrl, extractPath } from "@/config/seoConfig";
 import { allReviews } from "@/data/reviews";
@@ -412,9 +413,12 @@ const ServiceTemplate = ({
         </section>
       )}
 
+      {/* Gallery Section */}
+      <ServiceGallery />
+
       {/* Testimonials Section */}
       {showTestimonials && (
-        <TestimonialsShowcase 
+        <TestimonialsShowcase
           limit={3}
           title="I Nostri Clienti Soddisfatti"
           subtitle="Leggi le recensioni di chi ha già scelto Giolab"
