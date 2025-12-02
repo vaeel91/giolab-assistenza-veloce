@@ -14,6 +14,9 @@ import SEOHead from "@/components/SEOHead";
 import ScrollToTop from "@/components/ScrollToTop";
 import { useEffect, useRef, useState } from "react";
 import { calculateAggregateRating, getReviewsForSchema } from "@/data/reviews";
+import { Link } from "react-router-dom";
+import { Smartphone, ShoppingBag } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -130,44 +133,112 @@ const Index = () => {
         >
           <BlogPreview />
         </section>
+        
+        {/* Nuova sezione CTA Dispositivi */}
+        <section 
+          id="dispositivi-cta" 
+          ref={(el) => (sectionsRef.current[2] = el as HTMLDivElement)}
+          className="min-h-screen snap-start snap-always section-animate flex items-center justify-center bg-gradient-to-br from-background via-background to-secondary/20"
+        >
+          <div className="container mx-auto px-4 py-20">
+            <div className="max-w-4xl mx-auto text-center space-y-8">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-giolab-blue/10 mb-6">
+                <Smartphone className="w-10 h-10 text-giolab-blue" />
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+                Dispositivi Nuovi, Usati e Ricondizionati
+              </h2>
+              
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                iPhone, Samsung, Xiaomi, OPPO e Huawei. Certificati, garantiti e pronti alla vendita. 
+                Acquista con sicurezza ad <strong>Assemini</strong>.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-6">
+                <Button 
+                  asChild 
+                  size="lg" 
+                  className="bg-giolab-blue hover:bg-giolab-blue/90 text-white px-8 py-6 text-lg"
+                >
+                  <Link to="/dispositivi">
+                    <ShoppingBag className="mr-2 h-5 w-5" />
+                    Scopri il Catalogo
+                  </Link>
+                </Button>
+                
+                <Button 
+                  asChild 
+                  variant="outline" 
+                  size="lg"
+                  className="border-giolab-blue text-giolab-blue hover:bg-giolab-blue/10 px-8 py-6 text-lg"
+                >
+                  <a href="https://wa.me/393406970686?text=Ciao,%20vorrei%20informazioni%20sui%20dispositivi%20in%20vendita">
+                    Contattaci su WhatsApp
+                  </a>
+                </Button>
+              </div>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 max-w-3xl mx-auto">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-giolab-blue mb-2">12 mesi</div>
+                  <div className="text-sm text-muted-foreground">Garanzia</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-giolab-blue mb-2">100%</div>
+                  <div className="text-sm text-muted-foreground">Certificati</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-giolab-blue mb-2">5 Brand</div>
+                  <div className="text-sm text-muted-foreground">Disponibili</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-giolab-blue mb-2">3 Stati</div>
+                  <div className="text-sm text-muted-foreground">Nuovo/Usato/Ricondizionato</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
         <section 
           id="servizi" 
-          ref={(el) => (sectionsRef.current[2] = el as HTMLDivElement)}
+          ref={(el) => (sectionsRef.current[3] = el as HTMLDivElement)}
           className="min-h-screen snap-start snap-always section-animate"
         >
           <Services />
         </section>
         <section 
           id="chi-siamo" 
-          ref={(el) => (sectionsRef.current[3] = el as HTMLDivElement)}
+          ref={(el) => (sectionsRef.current[4] = el as HTMLDivElement)}
           className="min-h-screen snap-start snap-always section-animate"
         >
           <About />
         </section>
         <section 
           id="testimonianze" 
-          ref={(el) => (sectionsRef.current[4] = el as HTMLDivElement)}
+          ref={(el) => (sectionsRef.current[5] = el as HTMLDivElement)}
           className="min-h-screen snap-start snap-always section-animate"
         >
           <TestimonialsShowcase variant="scroll" />
         </section>
         <section 
           id="dove-siamo" 
-          ref={(el) => (sectionsRef.current[5] = el as HTMLDivElement)}
+          ref={(el) => (sectionsRef.current[6] = el as HTMLDivElement)}
           className="min-h-screen snap-start snap-always section-animate"
         >
           <SocialAndLocation />
         </section>
         <section 
           id="faq" 
-          ref={(el) => (sectionsRef.current[6] = el as HTMLDivElement)}
+          ref={(el) => (sectionsRef.current[7] = el as HTMLDivElement)}
           className="min-h-screen snap-start snap-always section-animate"
         >
           <FAQ />
         </section>
         <section 
           id="contatti" 
-          ref={(el) => (sectionsRef.current[7] = el as HTMLDivElement)}
+          ref={(el) => (sectionsRef.current[8] = el as HTMLDivElement)}
           className="min-h-screen snap-start snap-always section-animate"
         >
           <Contact />
