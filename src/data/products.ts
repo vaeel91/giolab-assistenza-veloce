@@ -1,6 +1,6 @@
 export interface Product {
   id: string;
-  brand: 'apple' | 'samsung' | 'xiaomi' | 'oppo' | 'huawei';
+  brand: 'apple' | 'samsung' | 'xiaomi' | 'oppo' | 'huawei' | 'console';
   model: string;
   memory: string;
   condition: 'nuovo' | 'usato' | 'ricondizionato';
@@ -204,6 +204,120 @@ export const products: Product[] = [
     available: false,
     featured: false,
     description: 'Huawei Nova 9 nuovo - momentaneamente esaurito'
+  },
+  
+  // Console
+  {
+    id: 'ps5-825-ric',
+    brand: 'console',
+    model: 'PlayStation 5',
+    memory: '825GB SSD',
+    condition: 'ricondizionato',
+    aestheticGrade: 'A+',
+    price: 449,
+    originalPrice: 549,
+    warranty: '12 mesi',
+    available: true,
+    featured: true,
+    description: 'PS5 ricondizionata certificata, pulita e testata'
+  },
+  {
+    id: 'ps5-digital-ric',
+    brand: 'console',
+    model: 'PlayStation 5 Digital',
+    memory: '825GB SSD',
+    condition: 'ricondizionato',
+    aestheticGrade: 'A',
+    price: 379,
+    originalPrice: 449,
+    warranty: '12 mesi',
+    available: true,
+    featured: true,
+    description: 'PS5 Digital ricondizionata, senza lettore disco'
+  },
+  {
+    id: 'ps4-pro-1tb-usato',
+    brand: 'console',
+    model: 'PlayStation 4 Pro',
+    memory: '1TB',
+    condition: 'usato',
+    aestheticGrade: 'A',
+    price: 249,
+    originalPrice: 349,
+    warranty: '6 mesi',
+    available: true,
+    featured: false,
+    description: 'PS4 Pro usata in ottime condizioni, pulita internamente'
+  },
+  {
+    id: 'ps4-slim-500-usato',
+    brand: 'console',
+    model: 'PlayStation 4 Slim',
+    memory: '500GB',
+    condition: 'usato',
+    aestheticGrade: 'B',
+    price: 179,
+    originalPrice: 249,
+    warranty: '6 mesi',
+    available: true,
+    featured: false,
+    description: 'PS4 Slim usata, segni di usura leggeri ma perfettamente funzionante'
+  },
+  {
+    id: 'switch-oled-ric',
+    brand: 'console',
+    model: 'Nintendo Switch OLED',
+    memory: '64GB',
+    condition: 'ricondizionato',
+    aestheticGrade: 'A+',
+    price: 299,
+    originalPrice: 349,
+    warranty: '12 mesi',
+    available: true,
+    featured: true,
+    description: 'Nintendo Switch OLED ricondizionata, schermo perfetto'
+  },
+  {
+    id: 'switch-v2-usato',
+    brand: 'console',
+    model: 'Nintendo Switch V2',
+    memory: '32GB',
+    condition: 'usato',
+    aestheticGrade: 'A',
+    price: 219,
+    originalPrice: 279,
+    warranty: '6 mesi',
+    available: true,
+    featured: false,
+    description: 'Nintendo Switch V2 usata con batteria migliorata'
+  },
+  {
+    id: 'xbox-series-x-ric',
+    brand: 'console',
+    model: 'Xbox Series X',
+    memory: '1TB SSD',
+    condition: 'ricondizionato',
+    aestheticGrade: 'A+',
+    price: 429,
+    originalPrice: 499,
+    warranty: '12 mesi',
+    available: true,
+    featured: true,
+    description: 'Xbox Series X ricondizionata certificata'
+  },
+  {
+    id: 'xbox-series-s-usato',
+    brand: 'console',
+    model: 'Xbox Series S',
+    memory: '512GB SSD',
+    condition: 'usato',
+    aestheticGrade: 'A',
+    price: 229,
+    originalPrice: 299,
+    warranty: '6 mesi',
+    available: true,
+    featured: false,
+    description: 'Xbox Series S usata in ottime condizioni'
   }
 ];
 
@@ -237,5 +351,11 @@ export const brandInfo = {
     slug: 'huawei',
     description: 'Huawei P e Nova ricondizionati certificati',
     color: 'from-red-600 to-red-800'
+  },
+  console: {
+    name: 'Console',
+    slug: 'console',
+    description: 'PlayStation, Nintendo e Xbox ricondizionate e usate con garanzia',
+    color: 'from-purple-600 to-indigo-800'
   }
 };
