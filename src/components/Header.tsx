@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Wrench } from "lucide-react";
+import { Instagram, Facebook, Wrench, Users, Phone, BookOpen, FileText } from "lucide-react";
 import giolabIcon from "@/assets/giolab-logo-new.png";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -45,12 +45,44 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-4">
             {/* Link Servizi */}
             <Link to="/servizi">
               <Button variant="ghost" className="text-foreground hover:text-giolab-blue flex items-center gap-2">
                 <Wrench className="h-4 w-4" />
                 Servizi
+              </Button>
+            </Link>
+
+            {/* Link Chi Siamo */}
+            <Link to="/chi-siamo">
+              <Button variant="ghost" className="text-foreground hover:text-giolab-blue flex items-center gap-2">
+                <Users className="h-4 w-4" />
+                Chi Siamo
+              </Button>
+            </Link>
+
+            {/* Link Contatti */}
+            <Link to="/contatti">
+              <Button variant="ghost" className="text-foreground hover:text-giolab-blue flex items-center gap-2">
+                <Phone className="h-4 w-4" />
+                Contatti
+              </Button>
+            </Link>
+
+            {/* Link Blog */}
+            <Link to="/blog">
+              <Button variant="ghost" className="text-foreground hover:text-giolab-blue flex items-center gap-2">
+                <BookOpen className="h-4 w-4" />
+                Blog
+              </Button>
+            </Link>
+
+            {/* Link Leggi Articoli */}
+            <Link to="/blog">
+              <Button variant="ghost" className="text-foreground hover:text-giolab-blue flex items-center gap-2">
+                <FileText className="h-4 w-4" />
+                Leggi Articoli
               </Button>
             </Link>
 
