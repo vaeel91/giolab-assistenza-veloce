@@ -55,6 +55,7 @@ const DispositiviSamsung = lazy(() => import("./pages/dispositivi/DispositiviSam
 const DispositiviXiaomi = lazy(() => import("./pages/dispositivi/DispositiviXiaomi"));
 const DispositiviOPPO = lazy(() => import("./pages/dispositivi/DispositiviOPPO"));
 const DispositiviHuawei = lazy(() => import("./pages/dispositivi/DispositiviHuawei"));
+const DispositiviConsole = lazy(() => import("./pages/dispositivi/DispositiviConsole"));
 
 // Suspense fallback - Leggero e non invasivo
 const PageLoader = () => (
@@ -122,6 +123,7 @@ const App = () => (
         <Route path="/dispositivi/xiaomi" element={<DispositiviXiaomi />} />
         <Route path="/dispositivi/oppo" element={<DispositiviOPPO />} />
         <Route path="/dispositivi/huawei" element={<DispositiviHuawei />} />
+        <Route path="/dispositivi/console" element={<DispositiviConsole />} />
         
         {/* Documentazione */}
         <Route path="/seo-docs" element={<SEODocumentation />} />
