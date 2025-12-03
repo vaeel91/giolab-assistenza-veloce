@@ -9,14 +9,15 @@ const FloatingWhatsApp = () => {
     window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank", "noopener,noreferrer");
   };
 
+  // Nascosto su mobile perché c'è già StickyMobileActionBar
   return (
     <Button
       onClick={handleWhatsApp}
       size="lg"
-      className="fixed bottom-6 right-6 z-35 w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#25D366] hover:bg-[#20BA5A] shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 p-0"
+      className="hidden md:flex fixed bottom-6 right-6 z-35 w-16 h-16 rounded-full bg-[#25D366] hover:bg-[#20BA5A] shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 p-0 items-center justify-center"
       aria-label="Contattaci su WhatsApp"
     >
-      <MessageCircle className="h-7 w-7 md:h-8 md:w-8 text-white" />
+      <MessageCircle className="h-8 w-8 text-white" />
     </Button>
   );
 };
