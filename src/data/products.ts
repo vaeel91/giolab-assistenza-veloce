@@ -4,7 +4,7 @@ export interface Product {
   model: string;
   memory: string;
   condition: 'nuovo' | 'usato' | 'ricondizionato';
-  aestheticGrade?: 'A+' | 'A' | 'B';
+  aestheticGrade?: 'A+' | 'A' | 'A-' | 'B';
   batteryHealth?: string;
   price: number;
   originalPrice?: number;
@@ -17,6 +17,7 @@ export interface Product {
 
 // Immagini prodotti
 import nintendoSwitchOled from '@/assets/products/nintendo-switch-oled-giolab.png';
+import nintendoSwitchOledAMinus from '@/assets/products/nintendo-switch-oled-grado-a-minus-giolab.png';
 
 export const products: Product[] = [
   // Console
@@ -34,6 +35,21 @@ export const products: Product[] = [
     featured: true,
     description: 'Grado A Certificato - Condizioni impeccabili, nessun graffio, joy-con perfetti. Dotazione completa: scatola originale, cavi, dock e accessori. Pellicola protettiva già applicata sul display.',
     image: nintendoSwitchOled
+  },
+  {
+    id: 'switch-oled-usato-002',
+    brand: 'console',
+    model: 'Nintendo Switch OLED',
+    memory: '64GB',
+    condition: 'usato',
+    aestheticGrade: 'A-',
+    price: 200,
+    originalPrice: 349,
+    warranty: 'Garanzia negozio',
+    available: true,
+    featured: true,
+    description: 'Grado A- - Qualche piccolo segno estetico sulla scocca, ma tecnicamente perfetta al 100%. Joy-Con senza drift, display OLED impeccabile. Dotazione completa: scatola originale, dock, cavi e alimentatore. Pellicola protettiva professionale già applicata.',
+    image: nintendoSwitchOledAMinus
   },
 ];
 
