@@ -18,7 +18,8 @@ const conditionLabels = {
 };
 const gradeLabels = {
   'A+': 'Eccellente',
-  'A': 'Buono',
+  'A': 'Ottimo',
+  'A-': 'Buono',
   'B': 'Accettabile'
 };
 export const ProductCard = ({
