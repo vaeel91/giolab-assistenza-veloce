@@ -45,7 +45,7 @@ const Header = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center group"
+            className="flex items-center group relative z-10 cursor-pointer"
             onClick={() => setIsMenuOpen(false)}
           >
             <Home className="h-8 md:h-10 w-8 md:w-10 text-giolab-blue transition-transform group-hover:scale-110" />
