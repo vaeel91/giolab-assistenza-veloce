@@ -9,7 +9,7 @@ const Hero = () => {
   const handleWhatsApp = () => {
     window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank", "noopener,noreferrer");
   };
-  return <header className="relative h-screen max-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
+  return <header className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-12 md:pt-16">
       {/* Background image with gradient overlay - LCP optimized with picture element */}
       <div className="absolute inset-0 z-0">
         <picture>
@@ -32,11 +32,11 @@ const Hero = () => {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-giolab-blue-light opacity-10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="container mx-auto px-4 py-6 md:py-10 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-1 md:space-y-2">
+      <div className="container mx-auto px-4 py-4 md:py-6 relative z-10">
+        <div className="max-w-4xl mx-auto text-center space-y-0 md:space-y-1">
           {/* Logo */}
-          <div className="flex justify-center -mb-8 md:-mb-24">
-            <img src={giolabLogo} alt="Giolab Assemini - Centro assistenza riparazione iPhone, smartphone, PC e console" width="256" height="256" loading="eager" decoding="async" className="h-40 md:h-52 lg:h-64 w-auto animate-zoom-in object-scale-down" />
+          <div className="flex justify-center -mb-10 md:-mb-28">
+            <img src={giolabLogo} alt="Giolab Assemini - Centro assistenza riparazione iPhone, smartphone, PC e console" width="256" height="256" loading="eager" decoding="async" className="h-32 md:h-44 lg:h-52 w-auto animate-zoom-in object-scale-down" />
           </div>
 
           {/* Main heading - Mobile First UX */}
@@ -99,7 +99,7 @@ const Hero = () => {
           </div>
 
           {/* Trust badges */}
-          <div className="grid grid-cols-3 gap-2 md:gap-6 pt-4 md:pt-8 max-w-3xl mx-auto animate-fade-in-up delay-400">
+          <div className="grid grid-cols-3 gap-2 md:gap-6 pt-3 md:pt-6 max-w-3xl mx-auto animate-fade-in-up delay-400">
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-bold text-giolab-blue">10+</div>
               <div className="text-xs md:text-sm text-muted-foreground mt-0.5 md:mt-1">Anni di esperienza</div>
