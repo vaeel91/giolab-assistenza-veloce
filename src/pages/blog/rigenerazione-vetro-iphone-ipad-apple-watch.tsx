@@ -5,6 +5,8 @@
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
 import { Card } from "@/components/ui/card";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 export default function RigenerazioneVetroIphoneIpadAppleWatch() {
   const articleContent = (
@@ -134,6 +136,18 @@ export default function RigenerazioneVetroIphoneIpadAppleWatch() {
         <div className="blog-box-tip">
           <strong>✅ Garanzia GioLab:</strong> Tutti gli interventi di rigenerazione vetro 
           includono 12 mesi di garanzia contro difetti di lavorazione.
+        </div>
+
+        <div className="my-8 p-6 bg-primary/5 border border-primary/20 rounded-xl">
+          <p className="text-lg font-medium mb-3">
+            🎯 Vuoi scoprire tutti i dettagli sul nostro servizio di Restauro Vetri Certificato?
+          </p>
+          <Link 
+            to="/servizi/restauro-vetri-certificato" 
+            className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+          >
+            Scopri il Restauro Vetri Certificato GioLab <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </section>
 
@@ -344,8 +358,21 @@ export default function RigenerazioneVetroIphoneIpadAppleWatch() {
         <p className="blog-paragraph">
           Se il tuo dispositivo ha solo il vetro rotto ma il display funziona perfettamente, 
           contatta <strong>GioLab ad Assemini</strong>, il tuo <strong>centro assistenza iPhone Cagliari</strong> e <strong>centro specializzato iPhone Cagliari</strong>, per una diagnosi gratuita e un preventivo 
-          personalizzato. Come <strong>tecnico iPhone Assemini</strong> esperto in <strong>riparazione display iPhone Cagliari</strong>, offriamo <strong>assistenza tecnica smartphone Cagliari</strong> certificata e <strong>riparazione smartphone Cagliari</strong> per tutta la Sardegna. Il nostro <strong>esperto riparazioni Apple Assemini</strong> con <strong>servizio tecnico certificato</strong> è a tua disposizione nel migliore <strong>negozio riparazioni telefoni</strong> della zona per tutte le <strong>riparazioni Apple Sardegna</strong>, <strong>riparazione iPhone Assemini</strong> e <strong>sostituzione batteria iPhone Assemini</strong>.
+          personalizzato.
         </p>
+
+        <div className="my-8 p-6 bg-gradient-to-r from-primary/10 to-primary/5 border-l-4 border-primary rounded-r-xl">
+          <h3 className="text-xl font-bold mb-2">📋 Richiedi il Restauro Vetri Certificato</h3>
+          <p className="mb-4">
+            Scopri la nostra pagina dedicata con tutti i dettagli su garanzie, prezzi e confronto qualità.
+          </p>
+          <Link 
+            to="/servizi/restauro-vetri-certificato" 
+            className="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+          >
+            Vai al Restauro Vetri Certificato <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </section>
     </div>
   );
