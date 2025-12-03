@@ -9,7 +9,7 @@ const Hero = () => {
   const handleWhatsApp = () => {
     window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank", "noopener,noreferrer");
   };
-  return <header className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-12 md:pt-16">
+  return <header className="relative min-h-[75vh] md:min-h-[85vh] flex items-start justify-center overflow-hidden pt-20 md:pt-24">
       {/* Background image with gradient overlay - LCP optimized with picture element */}
       <div className="absolute inset-0 z-0">
         <picture>
@@ -32,7 +32,7 @@ const Hero = () => {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-giolab-blue-light opacity-10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="container mx-auto px-4 py-4 md:py-6 relative z-10">
+      <div className="container mx-auto px-4 py-0 md:py-2 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-0 md:space-y-1">
           {/* Logo */}
           <div className="flex justify-center -mb-10 md:-mb-28">
