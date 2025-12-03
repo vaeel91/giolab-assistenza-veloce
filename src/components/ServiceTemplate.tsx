@@ -115,26 +115,7 @@ const ServiceTemplate = ({
     "description": seoDescription,
     "provider": {
       "@type": "LocalBusiness",
-      "@id": "https://giolabriparazioni.it/#business",
-      "name": "Giolab",
-      "telephone": "+393406970686",
-      "email": "giolabassemini@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Via Carmine 20",
-        "addressLocality": "Assemini",
-        "addressRegion": "CA",
-        "postalCode": "09032",
-        "addressCountry": "IT"
-      },
-      "url": "https://giolabriparazioni.it",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "150",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
+      "@id": "https://giolabriparazioni.it/#business"
     },
     "areaServed": [
       {

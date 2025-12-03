@@ -117,16 +117,16 @@ export const BlogArticleTemplate = ({
   // Costruisci URL completo
   const fullUrl = `https://giolabriparazioni.it/blog/${slug}`;
   
-  // Mappa categorie agli URL delle pagine categoria
-  // ⚠️ IMPORTANTE: Queste mappature devono corrispondere alle route in App.tsx
+  // Mappa categorie alle etichette - link tutti puntano al blog principale
+  // Le pagine categoria non esistono, quindi linkiamo al blog con filtro
   const categoryUrls: Record<string, { name: string; url: string }> = {
-    "Guide": { name: "Guide e Consigli", url: "https://giolabriparazioni.it/blog/guide" },
-    "Assistenza": { name: "Assistenza Smartphone", url: "https://giolabriparazioni.it/blog/assistenza-smartphone" },
-    "Riparazione": { name: "Riparazione iPhone", url: "https://giolabriparazioni.it/blog/riparazione-iphone" },
-    "Tecnologia": { name: "Riparazione PC", url: "https://giolabriparazioni.it/blog/riparazione-pc" },
-    "Console": { name: "Console", url: "https://giolabriparazioni.it/blog/console" },
-    "Sicurezza": { name: "Sicurezza Digitale", url: "https://giolabriparazioni.it/blog/sicurezza-digitale" },
-    "Consigli": { name: "Guide e Consigli", url: "https://giolabriparazioni.it/blog/guide" },
+    "Guide": { name: "Guide e Consigli", url: "https://giolabriparazioni.it/blog" },
+    "Assistenza": { name: "Assistenza Smartphone", url: "https://giolabriparazioni.it/blog" },
+    "Riparazione": { name: "Riparazione iPhone", url: "https://giolabriparazioni.it/blog" },
+    "Tecnologia": { name: "Riparazione PC", url: "https://giolabriparazioni.it/blog" },
+    "Console": { name: "Console", url: "https://giolabriparazioni.it/blog" },
+    "Sicurezza": { name: "Sicurezza Digitale", url: "https://giolabriparazioni.it/blog" },
+    "Consigli": { name: "Guide e Consigli", url: "https://giolabriparazioni.it/blog" },
   };
   
   // Genera breadcrumbs dinamicamente con categoria

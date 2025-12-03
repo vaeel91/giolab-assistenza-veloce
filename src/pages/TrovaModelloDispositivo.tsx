@@ -71,7 +71,7 @@ const TrovaModelloDispositivo = () => {
         title="Trova Modello Dispositivo - Giolab Assemini"
         description="Guida per identificare modello iPhone, Samsung, Xiaomi, iPad, MacBook. GioLab assistenza Assemini. ☎️ 340 69 70 686."
         ogUrl="https://giolabriparazioni.it/trova-modello-dispositivo"
-        ogImage="https://giolabriparazioni.it/og-images/codice-modello-dispositivo.jpg"
+        ogImage="https://giolabriparazioni.it/og-images/trova-codice-modello-ipad-iphone-samsung-xiaomi-giolab.jpg"
       />
       <div className="min-h-screen bg-white flex flex-col">
         <Header />

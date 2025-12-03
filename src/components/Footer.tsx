@@ -49,7 +49,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/servizi/riparazione-display-iphone" className="hover:text-giolab-blue-light transition-colors">
+                <a href="/servizi/riparazione-display-iphone-assemini" className="hover:text-giolab-blue-light transition-colors">
                   Riparazione Display iPhone
                 </a>
               </li>
@@ -102,7 +102,7 @@ const Footer = () => {
                   <Instagram className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://facebook.com/giolab"
+                  href="https://facebook.com/giolabassemini"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 rounded-full bg-white/10 hover:bg-giolab-blue flex items-center justify-center transition-colors"
