@@ -87,40 +87,40 @@ const Hero = () => {
             Centro assistenza specializzato ad Assemini (CA) e Cagliari. Riparazioni rapide anche in 1 ora con garanzia 12 mesi. Ricambi certificati e preventivo gratuito.
           </p>
 
-          {/* CTA buttons - Mobile First con CTA principale in evidenza */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center pt-4 md:pt-6 px-4 sm:px-0 animate-fade-in-up delay-300 max-w-2xl mx-auto flex-wrap">
+          {/* CTA buttons - Mobile compatto affiancato */}
+          <div className="grid grid-cols-3 gap-2 sm:flex sm:flex-row sm:gap-4 justify-center items-center pt-4 md:pt-6 px-2 sm:px-0 animate-fade-in-up delay-300 max-w-2xl mx-auto">
             {/* CTA PRINCIPALE - Richiedi Preventivo */}
             <QuoteRequestDialog>
               <Button
                 variant="hero"
-                size="lg"
-                className="text-base sm:text-sm md:text-base lg:text-lg px-6 py-6 sm:px-6 sm:py-4 md:px-8 md:py-6 h-auto flex items-center justify-center w-full sm:w-auto font-semibold shadow-xl"
+                size="sm"
+                className="text-xs sm:text-sm md:text-base lg:text-lg px-2 py-2 sm:px-6 sm:py-4 md:px-8 md:py-6 h-auto flex items-center justify-center w-full font-semibold shadow-xl"
               >
-                <FileText className="mr-2 h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
-                Richiedi Preventivo
+                <FileText className="mr-1 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
+                <span className="hidden sm:inline">Richiedi </span>Preventivo
               </Button>
             </QuoteRequestDialog>
             
             {/* CTA secondari */}
             <Button
               variant="outline"
-              size="lg"
+              size="sm"
               onClick={handleWhatsApp}
-              className="text-base sm:text-sm md:text-base lg:text-lg px-6 py-6 sm:px-4 sm:py-4 md:px-6 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue flex items-center justify-center w-full sm:w-auto"
+              className="text-xs sm:text-sm md:text-base lg:text-lg px-2 py-2 sm:px-4 sm:py-4 md:px-6 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue flex items-center justify-center w-full"
             >
-              <Phone className="mr-2 h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
-              <span className="sm:hidden">Contattaci su </span>WhatsApp
+              <Phone className="mr-1 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
+              WhatsApp
             </Button>
 
             {/* Bottone Servizi */}
-            <Link to="/servizi" className="w-full sm:w-auto">
+            <Link to="/servizi" className="w-full">
               <Button
                 variant="outline"
-                size="lg"
-                className="text-base sm:text-sm md:text-base lg:text-lg px-6 py-6 sm:px-4 sm:py-4 md:px-6 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue flex items-center justify-center w-full"
+                size="sm"
+                className="text-xs sm:text-sm md:text-base lg:text-lg px-2 py-2 sm:px-4 sm:py-4 md:px-6 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue flex items-center justify-center w-full"
               >
-                <Search className="mr-2 h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
-                Scopri i Servizi
+                <Search className="mr-1 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
+                Servizi
               </Button>
             </Link>
           </div>
