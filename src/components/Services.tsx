@@ -100,8 +100,49 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-3 max-w-7xl mx-auto">
-          {services.slice(0, 6).map((service, index) => {
+        {/* Mobile: Scroll orizzontale | Desktop: Griglia */}
+        <div className="md:hidden overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
+          <div className="flex gap-3 w-max">
+            {services.map((service, index) => {
+              const IconComponent = service.icon;
+              const delay = index * 50;
+              
+              const card = (
+                <Card 
+                  className={`w-[160px] flex-shrink-0 h-full flex flex-col border hover:border-giolab-blue transition-all duration-300 group cursor-pointer ${
+                    isVisible ? 'animate-fade-in' : 'opacity-0'
+                  }`}
+                  style={{ animationDelay: `${delay}ms` }}
+                >
+                  <CardHeader className="p-3">
+                    <div className={`w-10 h-10 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue/5 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform`}>
+                      <IconComponent className={`h-5 w-5 ${service.iconColor}`} width="20" height="20" />
+                    </div>
+                    <CardTitle className="text-xs leading-tight line-clamp-2 font-semibold">{service.title}</CardTitle>
+                  </CardHeader>
+                </Card>
+              );
+
+              return service.link ? (
+                <Link key={index} to={service.link}>
+                  {card}
+                </Link>
+              ) : (
+                <div key={index}>
+                  {card}
+                </div>
+              );
+            })}
+          </div>
+          {/* Indicatore scroll */}
+          <div className="flex justify-center mt-3 gap-1">
+            <span className="text-xs text-muted-foreground">← Scorri per vedere tutti i servizi →</span>
+          </div>
+        </div>
+
+        {/* Desktop: Griglia completa */}
+        <div className="hidden md:grid md:grid-cols-4 lg:grid-cols-6 gap-3 max-w-7xl mx-auto">
+          {services.map((service, index) => {
             const IconComponent = service.icon;
             const delay = index * 100;
             
@@ -112,14 +153,14 @@ const Services = () => {
                 }`}
                 style={{ animationDelay: `${delay}ms` }}
               >
-                <CardHeader className="p-3 md:p-4">
-                  <div className={`w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue/5 flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform`}>
-                    <IconComponent className={`h-5 w-5 md:h-6 md:w-6 ${service.iconColor}`} width="24" height="24" />
+                <CardHeader className="p-4">
+                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue/5 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
+                    <IconComponent className={`h-6 w-6 ${service.iconColor}`} width="24" height="24" />
                   </div>
-                  <CardTitle className="text-sm md:text-base leading-tight line-clamp-2 font-semibold">{service.title}</CardTitle>
+                  <CardTitle className="text-base leading-tight line-clamp-2 font-semibold">{service.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="flex-1 p-3 pt-0 md:p-4 md:pt-0">
-                  <CardDescription className="text-sm md:text-sm leading-relaxed line-clamp-3 hidden sm:block">{service.description}</CardDescription>
+                <CardContent className="flex-1 p-4 pt-0">
+                  <CardDescription className="text-sm leading-relaxed line-clamp-3">{service.description}</CardDescription>
                 </CardContent>
               </Card>
             );
@@ -136,16 +177,16 @@ const Services = () => {
           })}
         </div>
 
-        {/* Additional features - Mobile optimized */}
-        <div className="mt-4 md:mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 max-w-4xl mx-auto">
-          <div className="text-center p-4 md:p-4 rounded-lg bg-white/50 backdrop-blur border border-border">
-            <div className="text-giolab-blue font-bold text-base md:text-base">✓ Garanzia 12 mesi</div>
+        {/* Additional features */}
+        <div className="mt-4 md:mt-6 grid grid-cols-3 gap-2 md:gap-4 max-w-4xl mx-auto">
+          <div className="text-center p-3 md:p-4 rounded-lg bg-white/50 backdrop-blur border border-border">
+            <div className="text-giolab-blue font-bold text-xs md:text-base">✓ Garanzia 12 mesi</div>
           </div>
-          <div className="text-center p-4 md:p-4 rounded-lg bg-white/50 backdrop-blur border border-border">
-            <div className="text-giolab-blue font-bold text-base md:text-base">✓ Ricambi Certificati</div>
+          <div className="text-center p-3 md:p-4 rounded-lg bg-white/50 backdrop-blur border border-border">
+            <div className="text-giolab-blue font-bold text-xs md:text-base">✓ Ricambi Certificati</div>
           </div>
-          <div className="text-center p-4 md:p-4 rounded-lg bg-white/50 backdrop-blur border border-border">
-            <div className="text-giolab-blue font-bold text-base md:text-base">✓ Preventivo Gratuito</div>
+          <div className="text-center p-3 md:p-4 rounded-lg bg-white/50 backdrop-blur border border-border">
+            <div className="text-giolab-blue font-bold text-xs md:text-base">✓ Preventivo Gratuito</div>
           </div>
         </div>
       </div>
