@@ -1,6 +1,7 @@
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook, Wrench } from "lucide-react";
 import giolabIcon from "@/assets/giolab-logo-new.png";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const socialLinks = [
@@ -43,8 +44,16 @@ const Header = () => {
             />
           </Link>
 
-          {/* Desktop Navigation - Solo Social Media */}
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
+            {/* Link Servizi */}
+            <Link to="/servizi">
+              <Button variant="ghost" className="text-foreground hover:text-giolab-blue flex items-center gap-2">
+                <Wrench className="h-4 w-4" />
+                Servizi
+              </Button>
+            </Link>
+
             {/* Social Media Icons */}
             <div className="flex items-center gap-3">
               {socialLinks.map((social) => (
