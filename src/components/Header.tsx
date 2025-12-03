@@ -1,10 +1,28 @@
 import { Instagram, Facebook, Wrench, Users, Phone, BookOpen, FileText, Menu, X, Home } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleHomeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    
+    if (location.pathname === '/') {
+      // Già sulla homepage: scrolla in cima
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    } else {
+      // Naviga alla homepage e poi scrolla in cima
+      navigate('/');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }, 50);
+    }
+  };
 
   const socialLinks = [
     { 
@@ -43,20 +61,13 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link
-            to="/"
-            className="flex items-center group relative z-10 cursor-pointer"
-            onClick={(e) => {
-              setIsMenuOpen(false);
-              // Se già sulla homepage, scrolla in cima
-              if (window.location.pathname === '/') {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }
-            }}
+          <button
+            onClick={handleHomeClick}
+            className="flex items-center group relative z-10 cursor-pointer bg-transparent border-none p-0"
+            aria-label="Torna alla homepage"
           >
             <Home className="h-8 md:h-10 w-8 md:w-10 text-giolab-blue transition-transform group-hover:scale-110" />
-          </Link>
+          </button>
 
           {/* Mobile Menu Button */}
           <button
