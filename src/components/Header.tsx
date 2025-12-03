@@ -1,5 +1,4 @@
-import { Instagram, Facebook, Wrench, Users, Phone, BookOpen, FileText, Menu, X } from "lucide-react";
-import giolabIcon from "@/assets/giolab-logo-new.png";
+import { Instagram, Facebook, Wrench, Users, Phone, BookOpen, FileText, Menu, X, Home } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -49,12 +48,7 @@ const Header = () => {
             className="flex items-center group"
             onClick={() => setIsMenuOpen(false)}
           >
-            <img
-              src={giolabIcon}
-              alt="Giolab"
-              className="h-12 md:h-16 w-auto transition-transform group-hover:scale-110"
-              loading="lazy"
-            />
+            <Home className="h-8 md:h-10 w-8 md:w-10 text-giolab-blue transition-transform group-hover:scale-110" />
           </Link>
 
           {/* Mobile Menu Button */}
