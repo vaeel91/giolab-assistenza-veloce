@@ -46,7 +46,14 @@ const Header = () => {
           <Link
             to="/"
             className="flex items-center group relative z-10 cursor-pointer"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={(e) => {
+              setIsMenuOpen(false);
+              // Se già sulla homepage, scrolla in cima
+              if (window.location.pathname === '/') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
           >
             <Home className="h-8 md:h-10 w-8 md:w-10 text-giolab-blue transition-transform group-hover:scale-110" />
           </Link>
