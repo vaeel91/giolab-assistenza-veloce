@@ -118,7 +118,7 @@ const Index = () => {
       />
       <Header />
       
-      <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth pb-20 md:pb-0">
+      <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth pb-20 md:pb-0 scroll-pt-16 md:scroll-pt-0">
         <section 
           id="hero" 
           ref={(el) => (sectionsRef.current[0] = el as HTMLDivElement)}
