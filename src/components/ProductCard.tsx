@@ -33,67 +33,86 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
   return (
     <Card className={`group hover:shadow-xl transition-all duration-300 ${!product.available && 'opacity-60'}`}>
-      <CardContent className="p-6">
-        <div className="flex justify-between items-start mb-4">
-          <Badge className={conditionColors[product.condition]}>
-            {conditionLabels[product.condition]}
-          </Badge>
-          {product.featured && (
-            <Badge variant="default" className="bg-giolab-blue">
-              In Offerta
+      <CardContent className="p-0">
+        {/* Product Image */}
+        {product.image && (
+          <div className="relative aspect-square overflow-hidden rounded-t-lg bg-gradient-to-br from-gray-100 to-gray-200">
+            <img 
+              src={product.image} 
+              alt={`${product.model} - Giolab Assemini`}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+            {discount > 0 && (
+              <Badge className="absolute top-3 right-3 bg-red-500 text-white border-0">
+                -{discount}%
+              </Badge>
+            )}
+          </div>
+        )}
+        
+        <div className="p-6">
+          <div className="flex justify-between items-start mb-4">
+            <Badge className={conditionColors[product.condition]}>
+              {conditionLabels[product.condition]}
+            </Badge>
+            {product.featured && !product.image && (
+              <Badge variant="default" className="bg-giolab-blue">
+                In Offerta
+              </Badge>
+            )}
+          </div>
+
+          <div className="mb-4">
+            <h3 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors">
+              {product.model}
+            </h3>
+            <p className="text-muted-foreground text-sm">{product.memory}</p>
+          </div>
+
+          {product.aestheticGrade && (
+            <div className="flex items-center gap-2 mb-2">
+              <Award className="h-4 w-4 text-muted-foreground" />
+              <span className="text-sm">
+                Grado: <strong>{gradeLabels[product.aestheticGrade]}</strong> ({product.aestheticGrade})
+              </span>
+            </div>
+          )}
+
+          {product.batteryHealth && (
+            <div className="flex items-center gap-2 mb-4">
+              <Battery className="h-4 w-4 text-muted-foreground" />
+              <span className="text-sm">Batteria: <strong>{product.batteryHealth}</strong></span>
+            </div>
+          )}
+
+          <div className="mb-4">
+            <div className="flex items-baseline gap-2">
+              <span className="text-3xl font-bold text-primary">€{product.price}</span>
+              {product.originalPrice && (
+                <span className="text-lg text-muted-foreground line-through">
+                  €{product.originalPrice}
+                </span>
+              )}
+            </div>
+            {discount > 0 && (
+              <p className="text-sm text-green-600 font-semibold mt-1">
+                Risparmi €{product.originalPrice! - product.price} ({discount}%)
+              </p>
+            )}
+          </div>
+
+          <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+            <Award className="h-4 w-4" />
+            <span>{product.warranty}</span>
+          </div>
+
+          {!product.available && (
+            <Badge variant="secondary" className="w-full justify-center mb-3">
+              Momentaneamente esaurito
             </Badge>
           )}
         </div>
-
-        <div className="mb-4">
-          <h3 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors">
-            {product.model}
-          </h3>
-          <p className="text-muted-foreground text-sm">{product.memory}</p>
-        </div>
-
-        {product.aestheticGrade && (
-          <div className="flex items-center gap-2 mb-2">
-            <Award className="h-4 w-4 text-muted-foreground" />
-            <span className="text-sm">
-              Grado: <strong>{gradeLabels[product.aestheticGrade]}</strong> ({product.aestheticGrade})
-            </span>
-          </div>
-        )}
-
-        {product.batteryHealth && (
-          <div className="flex items-center gap-2 mb-4">
-            <Battery className="h-4 w-4 text-muted-foreground" />
-            <span className="text-sm">Batteria: <strong>{product.batteryHealth}</strong></span>
-          </div>
-        )}
-
-        <div className="mb-4">
-          <div className="flex items-baseline gap-2">
-            <span className="text-3xl font-bold text-primary">€{product.price}</span>
-            {product.originalPrice && (
-              <span className="text-lg text-muted-foreground line-through">
-                €{product.originalPrice}
-              </span>
-            )}
-          </div>
-          {discount > 0 && (
-            <p className="text-sm text-green-600 font-semibold mt-1">
-              Risparmi €{product.originalPrice! - product.price} ({discount}%)
-            </p>
-          )}
-        </div>
-
-        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-          <Award className="h-4 w-4" />
-          <span>Garanzia {product.warranty}</span>
-        </div>
-
-        {!product.available && (
-          <Badge variant="secondary" className="w-full justify-center mb-3">
-            Momentaneamente esaurito
-          </Badge>
-        )}
       </CardContent>
 
       <CardFooter className="p-6 pt-0 flex flex-col gap-2">

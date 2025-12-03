@@ -15,8 +15,26 @@ export interface Product {
   image?: string;
 }
 
+// Immagini prodotti
+import nintendoSwitchOled from '@/assets/products/nintendo-switch-oled-giolab.png';
+
 export const products: Product[] = [
-  // Aggiungi qui i prodotti reali
+  // Console
+  {
+    id: 'switch-oled-usato-001',
+    brand: 'console',
+    model: 'Nintendo Switch OLED',
+    memory: '64GB',
+    condition: 'usato',
+    aestheticGrade: 'A',
+    price: 220,
+    originalPrice: 349,
+    warranty: 'Garanzia negozio',
+    available: true,
+    featured: true,
+    description: 'Grado A Certificato - Condizioni impeccabili, nessun graffio, joy-con perfetti. Dotazione completa: scatola originale, cavi, dock e accessori. Pellicola protettiva già applicata sul display.',
+    image: nintendoSwitchOled
+  },
 ];
 
 export const brandInfo = {
