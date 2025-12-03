@@ -35,7 +35,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-0 md:py-2 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-0 md:space-y-1">
           {/* Logo */}
-          <div className="flex justify-center -mb-10 md:-mb-28">
+          <div className="flex justify-center -mb-6 md:-mb-12">
             <img src={giolabLogo} alt="Giolab Assemini - Centro assistenza riparazione iPhone, smartphone, PC e console" width="256" height="256" loading="eager" decoding="async" className="h-32 md:h-44 lg:h-52 w-auto animate-zoom-in object-scale-down" />
           </div>
 
