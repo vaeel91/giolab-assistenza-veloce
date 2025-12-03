@@ -88,7 +88,7 @@ const Hero = () => {
           </p>
 
           {/* CTA buttons - Mobile First con CTA principale in evidenza */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center pt-4 md:pt-6 px-4 sm:px-0 animate-fade-in-up delay-300 max-w-xl mx-auto">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center pt-4 md:pt-6 px-4 sm:px-0 animate-fade-in-up delay-300 max-w-2xl mx-auto flex-wrap">
             {/* CTA PRINCIPALE - Richiedi Preventivo */}
             <QuoteRequestDialog>
               <Button
@@ -111,6 +111,18 @@ const Hero = () => {
               <Phone className="mr-2 h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
               <span className="sm:hidden">Contattaci su </span>WhatsApp
             </Button>
+
+            {/* Bottone Servizi */}
+            <Link to="/servizi" className="w-full sm:w-auto">
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-base sm:text-sm md:text-base lg:text-lg px-6 py-6 sm:px-4 sm:py-4 md:px-6 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue flex items-center justify-center w-full"
+              >
+                <Search className="mr-2 h-5 w-5 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
+                Scopri i Servizi
+              </Button>
+            </Link>
           </div>
           
           {/* Link secondari - visibili solo su desktop */}
