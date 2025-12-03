@@ -43,6 +43,7 @@ const Blog = () => {
         title="Blog Riparazione iPhone - Giolab Assemini"
         description="Guide e consigli su riparazione iPhone, smartphone e PC ad Assemini. Articoli tecnici e tutorial. Contattaci al 340 69 70 686."
         keywords="blog riparazione iPhone, guide iPhone, consigli batteria iPhone, manutenzione smartphone, assistenza iPhone Assemini"
+        ogImage="https://giolabriparazioni.it/og-image-giolab.jpg"
         breadcrumbs={[
           { name: "Home", url: "https://giolabriparazioni.it/" },
           { name: "Blog" }

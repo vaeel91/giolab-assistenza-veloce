@@ -241,7 +241,7 @@ const IPhoneRicondizionati = () => {
     },
     {
       question: "Dove acquistare un iPhone ricondizionato ad Assemini e Cagliari?",
-      answer: "GioLab Riparazioni ad Assemini è il punto di riferimento per iPhone ricondizionati certificati nell'area di Cagliari. Viale Repubblica 123, Assemini. Vieni a trovarci per visionare i modelli disponibili."
+      answer: "GioLab Riparazioni ad Assemini è il punto di riferimento per iPhone ricondizionati certificati nell'area di Cagliari. Via Carmine 20, 09032 Assemini (CA). Vieni a trovarci per visionare i modelli disponibili."
     },
     {
       question: "Posso vedere il telefono prima dell'acquisto?",
@@ -273,8 +273,8 @@ const IPhoneRicondizionati = () => {
     "name": "GioLab Riparazioni - iPhone Ricondizionati",
     "description": "Vendita iPhone ricondizionati certificati ad Assemini e Cagliari",
     "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Viale Repubblica 123",
+    "@type": "PostalAddress",
+      "streetAddress": "Via Carmine 20",
       "addressLocality": "Assemini",
       "addressRegion": "CA",
       "postalCode": "09032",
@@ -292,13 +292,6 @@ const IPhoneRicondizionati = () => {
           "brand": {
             "@type": "Brand",
             "name": "Apple"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "150",
-            "bestRating": "5",
-            "worstRating": "1"
           },
           "review": [
             {

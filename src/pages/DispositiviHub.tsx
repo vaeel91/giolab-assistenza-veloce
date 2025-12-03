@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BrandCard } from "@/components/BrandCard";
@@ -6,6 +5,7 @@ import { products, brandInfo } from "@/data/products";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ScrollToTop from "@/components/ScrollToTop";
 import StickyMobileActionBar from "@/components/StickyMobileActionBar";
+import SEOHead from "@/components/SEOHead";
 import { Smartphone, Shield, Clock, MapPin } from "lucide-react";
 
 const DispositiviHub = () => {
@@ -17,23 +17,13 @@ const DispositiviHub = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Vendita Smartphone Nuovi, Usati e Ricondizionati – Giolab Assemini</title>
-        <meta 
-          name="description" 
-          content="iPhone, Samsung, Xiaomi, OPPO e Huawei. Nuovi, usati e ricondizionati certificati. Garanzia 12 mesi. Prezzi trasparenti. ☎️ 340 69 70 686" 
-        />
-        <meta 
-          name="keywords" 
-          content="vendita smartphone assemini, iphone ricondizionati cagliari, samsung usati certificati, xiaomi nuovi assemini, vendita dispositivi assemini" 
-        />
-        <link rel="canonical" href="https://giolabriparazioni.it/dispositivi" />
-        
-        <meta property="og:title" content="Vendita Smartphone Nuovi, Usati e Ricondizionati – Giolab Assemini" />
-        <meta property="og:description" content="iPhone, Samsung, Xiaomi, OPPO e Huawei. Nuovi, usati e ricondizionati certificati. Garanzia 12 mesi." />
-        <meta property="og:url" content="https://giolabriparazioni.it/dispositivi" />
-        <meta property="og:type" content="website" />
-      </Helmet>
+      <SEOHead
+        title="Vendita Smartphone Nuovi, Usati e Ricondizionati – Giolab Assemini"
+        description="iPhone, Samsung, Xiaomi, OPPO e Huawei. Nuovi, usati e ricondizionati certificati. Garanzia 12 mesi. Prezzi trasparenti. ☎️ 340 69 70 686"
+        keywords="vendita smartphone assemini, iphone ricondizionati cagliari, samsung usati certificati, xiaomi nuovi assemini, vendita dispositivi assemini"
+        ogUrl="https://giolabriparazioni.it/dispositivi"
+        ogImage="https://giolabriparazioni.it/og-image-giolab.jpg"
+      />
 
       <div className="min-h-screen flex flex-col bg-white">
         <Header />
