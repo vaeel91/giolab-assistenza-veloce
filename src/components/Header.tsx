@@ -8,19 +8,25 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const scrollToTop = () => {
+    // Cerca il main con overflow scroll (homepage)
+    const mainElement = document.querySelector('main.overflow-y-scroll');
+    if (mainElement) {
+      mainElement.scrollTo({ top: 0, behavior: 'instant' });
+    }
+    // Scrolla anche la window per sicurezza
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
   const handleHomeClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsMenuOpen(false);
     
     if (location.pathname === '/') {
-      // Già sulla homepage: scrolla in cima
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      scrollToTop();
     } else {
-      // Naviga alla homepage e poi scrolla in cima
       navigate('/');
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'instant' });
-      }, 50);
+      setTimeout(scrollToTop, 100);
     }
   };
 
