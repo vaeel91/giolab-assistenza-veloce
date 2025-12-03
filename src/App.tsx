@@ -26,6 +26,7 @@ const TrovaModelloDispositivo = lazy(() => import("./pages/TrovaModelloDispositi
 // Lazy load - Servizi
 const RiparazioneDisplayIPhone = lazy(() => import("./pages/services/RiparazioneDisplayIPhone"));
 const BatteriaMaggiorataIPhoneService = lazy(() => import("./pages/services/BatteriaMaggiorataIPhone"));
+const RestauroVetriCertificato = lazy(() => import("./pages/services/RestauroVetriCertificato"));
 
 // Lazy load - Articoli Blog
 const RiparazioneIPhone1Ora = lazy(() => import("./pages/blog/RiparazioneIPhone1Ora"));
@@ -115,6 +116,7 @@ const App = () => (
         {/* Servizi specifici */}
         <Route path="/servizi/riparazione-display-iphone-assemini" element={<RiparazioneDisplayIPhone />} />
         <Route path="/servizi/batteria-maggiorata-iphone" element={<BatteriaMaggiorataIPhoneService />} />
+        <Route path="/servizi/restauro-vetri-certificato" element={<RestauroVetriCertificato />} />
         
         {/* Dispositivi in Vendita */}
         <Route path="/dispositivi" element={<DispositiviHub />} />
