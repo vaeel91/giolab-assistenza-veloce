@@ -21,7 +21,7 @@ const Servizi = () => {
       <div className="min-h-screen bg-background">
         <Header />
         
-        <main className="container mx-auto px-4 pt-32 pb-16">
+        <main className="container mx-auto px-2 md:px-4 pt-20 md:pt-32 pb-8 md:pb-16">
           <Services />
         </main>
         

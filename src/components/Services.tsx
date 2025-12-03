@@ -90,54 +90,68 @@ const services = [
 const Services = () => {
   const { ref, isVisible } = useScrollAnimation();
   
+  // Titoli abbreviati per mobile
+  const getShortTitle = (title: string) => {
+    const shortTitles: Record<string, string> = {
+      "Riparazione iPhone e Smartphone Assemini": "iPhone",
+      "Assistenza PC e Notebook": "PC",
+      "Riparazione Console": "Console",
+      "Batterie Maggiorate iPhone Assemini": "Batterie",
+      "Micro-saldature e Riparazioni Avanzate": "Saldature",
+      "Rigenerazione Vetro": "Vetro",
+      "Sostituzione Vetro Posteriore iPhone": "Back Glass",
+      "Pulizia e Manutenzione Interna": "Pulizia",
+      "Telefono di Cortesia": "Cortesia",
+      "Protezione Schermo e Accessori": "Accessori",
+      "Configurazione e Trasferimento Dati": "Dati",
+      "Diagnosi e Preventivo Rapido": "Diagnosi",
+      "Servizi per Centri Assistenza (B2B)": "B2B",
+    };
+    return shortTitles[title] || title.split(" ")[0];
+  };
+  
   return (
-    <section id="servizi" ref={ref} className="py-4 md:py-6 pt-20 md:pt-24 bg-gradient-to-b from-background to-giolab-gray h-full flex flex-col justify-center">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-4 md:mb-6">
-          <h2 className="text-xl md:text-3xl font-bold text-foreground mb-2">Servizi di Riparazione</h2>
-          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
+    <section id="servizi" ref={ref} className="py-2 md:py-6 pt-4 md:pt-24 bg-gradient-to-b from-background to-giolab-gray min-h-0 md:h-full flex flex-col justify-center">
+      <div className="container mx-auto px-2 md:px-4">
+        <div className="text-center mb-3 md:mb-6">
+          <h2 className="text-lg md:text-3xl font-bold text-foreground mb-1 md:mb-2">Servizi di Riparazione</h2>
+          <p className="text-xs md:text-base text-muted-foreground max-w-2xl mx-auto hidden md:block">
             Riparazione professionale di iPhone, smartphone, PC e console. Garanzia 12 mesi.
           </p>
         </div>
 
-        {/* Mobile: Scroll orizzontale | Desktop: Griglia */}
-        <div className="md:hidden overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
-          <div className="flex gap-3 w-max">
-            {services.map((service, index) => {
-              const IconComponent = service.icon;
-              const delay = index * 50;
-              
-              const card = (
-                <Card 
-                  className={`w-[160px] flex-shrink-0 h-full flex flex-col border hover:border-giolab-blue transition-all duration-300 group cursor-pointer ${
-                    isVisible ? 'animate-fade-in' : 'opacity-0'
-                  }`}
-                  style={{ animationDelay: `${delay}ms` }}
-                >
-                  <CardHeader className="p-3">
-                    <div className={`w-10 h-10 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue/5 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform`}>
-                      <IconComponent className={`h-5 w-5 ${service.iconColor}`} width="20" height="20" />
-                    </div>
-                    <CardTitle className="text-xs leading-tight line-clamp-2 font-semibold">{service.title}</CardTitle>
-                  </CardHeader>
-                </Card>
-              );
-
-              return service.link ? (
-                <Link key={index} to={service.link}>
-                  {card}
-                </Link>
-              ) : (
-                <div key={index}>
-                  {card}
+        {/* Mobile: Griglia compatta 4x4 senza scroll */}
+        <div className="md:hidden grid grid-cols-4 gap-1.5 max-w-sm mx-auto">
+          {services.map((service, index) => {
+            const IconComponent = service.icon;
+            const delay = index * 30;
+            
+            const card = (
+              <Card 
+                className={`aspect-square flex flex-col items-center justify-center p-1.5 border rounded-xl hover:border-giolab-blue transition-all duration-300 group cursor-pointer bg-white/80 ${
+                  isVisible ? 'animate-fade-in' : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${delay}ms` }}
+              >
+                <div className={`w-8 h-8 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue/5 flex items-center justify-center mb-1 group-hover:scale-110 transition-transform`}>
+                  <IconComponent className={`h-4 w-4 ${service.iconColor}`} />
                 </div>
-              );
-            })}
-          </div>
-          {/* Indicatore scroll */}
-          <div className="flex justify-center mt-3 gap-1">
-            <span className="text-xs text-muted-foreground">← Scorri per vedere tutti i servizi →</span>
-          </div>
+                <span className="text-[9px] font-medium text-foreground text-center leading-tight line-clamp-1">
+                  {getShortTitle(service.title)}
+                </span>
+              </Card>
+            );
+
+            return service.link ? (
+              <Link key={index} to={service.link}>
+                {card}
+              </Link>
+            ) : (
+              <div key={index}>
+                {card}
+              </div>
+            );
+          })}
         </div>
 
         {/* Desktop: Griglia completa */}
@@ -178,15 +192,15 @@ const Services = () => {
         </div>
 
         {/* Additional features */}
-        <div className="mt-4 md:mt-6 grid grid-cols-3 gap-2 md:gap-4 max-w-4xl mx-auto">
-          <div className="text-center p-3 md:p-4 rounded-lg bg-white/50 backdrop-blur border border-border">
-            <div className="text-giolab-blue font-bold text-xs md:text-base">✓ Garanzia 12 mesi</div>
+        <div className="mt-3 md:mt-6 grid grid-cols-3 gap-1.5 md:gap-4 max-w-4xl mx-auto">
+          <div className="text-center p-2 md:p-4 rounded-xl bg-white/50 backdrop-blur border border-border">
+            <div className="text-giolab-blue font-bold text-[10px] md:text-base">✓ Garanzia 12 mesi</div>
           </div>
-          <div className="text-center p-3 md:p-4 rounded-lg bg-white/50 backdrop-blur border border-border">
-            <div className="text-giolab-blue font-bold text-xs md:text-base">✓ Ricambi Certificati</div>
+          <div className="text-center p-2 md:p-4 rounded-xl bg-white/50 backdrop-blur border border-border">
+            <div className="text-giolab-blue font-bold text-[10px] md:text-base">✓ Ricambi Certificati</div>
           </div>
-          <div className="text-center p-3 md:p-4 rounded-lg bg-white/50 backdrop-blur border border-border">
-            <div className="text-giolab-blue font-bold text-xs md:text-base">✓ Preventivo Gratuito</div>
+          <div className="text-center p-2 md:p-4 rounded-xl bg-white/50 backdrop-blur border border-border">
+            <div className="text-giolab-blue font-bold text-[10px] md:text-base">✓ Preventivo Gratuito</div>
           </div>
         </div>
       </div>
