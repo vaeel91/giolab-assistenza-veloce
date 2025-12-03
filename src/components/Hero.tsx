@@ -75,11 +75,11 @@ const Hero = () => {
             </Link>
           </div>
           
-          {/* Link secondari - visibili solo su desktop */}
-          <div className="hidden md:flex flex-row gap-3 justify-center items-center pt-3 animate-fade-in-up delay-400">
+          {/* Link secondari - visibili su mobile e desktop */}
+          <div className="flex flex-row gap-2 md:gap-3 justify-center items-center pt-3 animate-fade-in-up delay-400">
             <Link to="/trova-modello-dispositivo">
-              <Button variant="ghost" size="sm" className="text-sm px-4 py-2 hover:text-giolab-blue">
-                <Search className="mr-2 h-4 w-4" />
+              <Button variant="ghost" size="sm" className="text-xs md:text-sm px-2 md:px-4 py-2 hover:text-giolab-blue">
+                <Search className="mr-1 md:mr-2 h-3.5 w-3.5 md:h-4 md:w-4" />
                 Trova Modello
               </Button>
             </Link>
@@ -92,8 +92,8 @@ const Hero = () => {
                 block: "nearest"
               });
             }
-          }} className="text-sm px-4 py-2 hover:text-giolab-blue">
-              <BookOpen className="mr-2 h-4 w-4" />
+          }} className="text-xs md:text-sm px-2 md:px-4 py-2 hover:text-giolab-blue">
+              <BookOpen className="mr-1 md:mr-2 h-3.5 w-3.5 md:h-4 md:w-4" />
               Leggi Articoli
             </Button>
           </div>
