@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
@@ -9,9 +10,35 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Shield, Sparkles, PiggyBank, Microscope, Clock, Phone, MessageCircle, Check, X, Star, Award, MapPin, Truck, ChevronRight, BookOpen } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Shield, Sparkles, PiggyBank, Microscope, Clock, Phone, MessageCircle, Check, X, Star, Award, MapPin, Truck, ChevronRight, BookOpen, Calculator } from "lucide-react";
 import { BUSINESS_INFO, getWhatsAppLink } from "@/config/businessInfo";
+
+const devicePricing = [
+  { id: "iphone-15-pro-max", name: "iPhone 15 Pro Max", restauro: 179, servicePack: 449 },
+  { id: "iphone-15-pro", name: "iPhone 15 Pro", restauro: 169, servicePack: 399 },
+  { id: "iphone-15", name: "iPhone 15 / 15 Plus", restauro: 149, servicePack: 349 },
+  { id: "iphone-14-pro-max", name: "iPhone 14 Pro Max", restauro: 169, servicePack: 429 },
+  { id: "iphone-14-pro", name: "iPhone 14 Pro", restauro: 159, servicePack: 379 },
+  { id: "iphone-14", name: "iPhone 14 / 14 Plus", restauro: 139, servicePack: 329 },
+  { id: "iphone-13-pro-max", name: "iPhone 13 Pro Max", restauro: 149, servicePack: 379 },
+  { id: "iphone-13-pro", name: "iPhone 13 Pro", restauro: 139, servicePack: 329 },
+  { id: "iphone-13", name: "iPhone 13 / 13 Mini", restauro: 129, servicePack: 299 },
+  { id: "iphone-12-pro-max", name: "iPhone 12 Pro Max", restauro: 139, servicePack: 349 },
+  { id: "iphone-12-pro", name: "iPhone 12 Pro", restauro: 129, servicePack: 299 },
+  { id: "iphone-12", name: "iPhone 12 / 12 Mini", restauro: 119, servicePack: 279 },
+  { id: "iphone-11-pro-max", name: "iPhone 11 Pro Max", restauro: 129, servicePack: 329 },
+  { id: "iphone-11-pro", name: "iPhone 11 Pro", restauro: 119, servicePack: 299 },
+  { id: "iphone-11", name: "iPhone 11", restauro: 99, servicePack: 229 },
+  { id: "ipad-pro-12", name: "iPad Pro 12.9\"", restauro: 199, servicePack: 699 },
+  { id: "ipad-pro-11", name: "iPad Pro 11\"", restauro: 169, servicePack: 549 },
+  { id: "ipad-air", name: "iPad Air", restauro: 149, servicePack: 449 },
+  { id: "apple-watch-ultra", name: "Apple Watch Ultra", restauro: 149, servicePack: 499 },
+  { id: "apple-watch-series", name: "Apple Watch Series 7/8/9", restauro: 99, servicePack: 299 },
+];
+
 const RestauroVetriCertificato = () => {
+  const [selectedDevice, setSelectedDevice] = useState<string>("");
   const whatsappMessage = "Ciao! Vorrei un preventivo per il restauro del vetro del mio display. Invio foto del danno.";
   const vantaggi = [{
     icon: Sparkles,
@@ -308,6 +335,99 @@ const RestauroVetriCertificato = () => {
                         Risultati garantiti
                       </Badge>
                     </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </section>
+
+          {/* CALCOLATORE RISPARMIO */}
+          <section className="py-16 lg:py-20 bg-gradient-to-br from-green-50 to-emerald-50">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto">
+                <div className="text-center mb-10">
+                  <Badge className="mb-4 bg-green-100 text-green-700 border-green-200">
+                    <Calculator className="w-4 h-4 mr-2" />
+                    Calcolatore Risparmio
+                  </Badge>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                    Quanto Risparmi con il Restauro Certificato?
+                  </h2>
+                  <p className="text-muted-foreground">
+                    Seleziona il tuo dispositivo per vedere il risparmio stimato rispetto al Service Pack Apple.
+                  </p>
+                </div>
+
+                <Card className="border-2 border-green-200 shadow-xl bg-white">
+                  <CardContent className="p-6 md:p-8">
+                    <div className="mb-6">
+                      <label className="block text-sm font-medium text-foreground mb-2">
+                        Seleziona il tuo dispositivo
+                      </label>
+                      <Select value={selectedDevice} onValueChange={setSelectedDevice}>
+                        <SelectTrigger className="w-full bg-white">
+                          <SelectValue placeholder="Scegli il modello..." />
+                        </SelectTrigger>
+                        <SelectContent className="bg-white z-50">
+                          {devicePricing.map((device) => (
+                            <SelectItem key={device.id} value={device.id}>
+                              {device.name}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    {selectedDevice && (() => {
+                      const device = devicePricing.find(d => d.id === selectedDevice);
+                      if (!device) return null;
+                      const risparmio = device.servicePack - device.restauro;
+                      const percentuale = Math.round((risparmio / device.servicePack) * 100);
+                      
+                      return (
+                        <div className="space-y-6 animate-fade-in">
+                          <div className="grid md:grid-cols-2 gap-4">
+                            <div className="p-4 rounded-xl bg-red-50 border border-red-200">
+                              <p className="text-sm text-red-600 font-medium mb-1">Service Pack Apple</p>
+                              <p className="text-2xl font-bold text-red-700">€{device.servicePack}</p>
+                            </div>
+                            <div className="p-4 rounded-xl bg-green-50 border border-green-200">
+                              <p className="text-sm text-green-600 font-medium mb-1">Restauro GioLab</p>
+                              <p className="text-2xl font-bold text-green-700">€{device.restauro}</p>
+                            </div>
+                          </div>
+
+                          <div className="p-6 rounded-xl bg-gradient-to-r from-green-500 to-emerald-500 text-white text-center">
+                            <p className="text-sm font-medium opacity-90 mb-1">Il tuo risparmio</p>
+                            <p className="text-4xl font-bold mb-2">€{risparmio}</p>
+                            <Badge className="bg-white/20 text-white border-white/30 text-lg px-4 py-1">
+                              -{percentuale}% rispetto ad Apple
+                            </Badge>
+                          </div>
+
+                          <div className="flex flex-col sm:flex-row gap-3">
+                            <Button 
+                              className="flex-1 bg-giolab-blue hover:bg-giolab-blue/90"
+                              onClick={() => window.open(getWhatsAppLink(`Ciao! Vorrei un preventivo per il restauro vetro del mio ${device.name}. Invio foto del danno.`), "_blank")}
+                            >
+                              <MessageCircle className="w-4 h-4 mr-2" />
+                              Richiedi Preventivo per {device.name.split(" ")[0]} {device.name.split(" ")[1]}
+                            </Button>
+                          </div>
+
+                          <p className="text-xs text-muted-foreground text-center">
+                            * Prezzi indicativi. Il preventivo finale dipende dalle condizioni del display.
+                          </p>
+                        </div>
+                      );
+                    })()}
+
+                    {!selectedDevice && (
+                      <div className="text-center py-8 text-muted-foreground">
+                        <Calculator className="w-12 h-12 mx-auto mb-3 opacity-30" />
+                        <p>Seleziona un dispositivo per calcolare il risparmio</p>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               </div>
