@@ -11,7 +11,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Shield, Sparkles, PiggyBank, Microscope, Clock, Phone, MessageCircle, Check, X, Star, Award, MapPin, Truck, ChevronRight, BookOpen, Calculator } from "lucide-react";
+import { Shield, Sparkles, PiggyBank, Microscope, Clock, Phone, MessageCircle, Check, X, Star, Award, MapPin, Truck, ChevronRight, BookOpen, Calculator, Calendar } from "lucide-react";
 import { BUSINESS_INFO, getWhatsAppLink } from "@/config/businessInfo";
 
 const devicePricing = [
@@ -247,6 +247,12 @@ const RestauroVetriCertificato = () => {
                       <Phone className="w-5 h-5 mr-2" />
                       Chiama Ora
                     </a>
+                  </Button>
+                  <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6" asChild>
+                    <Link to="/prenota">
+                      <Calendar className="w-5 h-5 mr-2" />
+                      Prenota Appuntamento
+                    </Link>
                   </Button>
                 </div>
 

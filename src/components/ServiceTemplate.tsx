@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, Clock, Shield, Award, Instagram } from "lucide-react";
+import { Phone, Clock, Shield, Award, Instagram, Calendar } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -260,6 +260,17 @@ const ServiceTemplate = ({
               >
                 <Phone className="mr-2 h-5 w-5" />
                 Chiama Ora
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                asChild
+                className="border-2 hover:border-giolab-orange hover:text-giolab-orange"
+              >
+                <Link to="/prenota">
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Prenota Online
+                </Link>
               </Button>
               <Button
                 variant="outline"
