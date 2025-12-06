@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Shield, Sparkles, PiggyBank, Microscope, Clock, Phone, MessageCircle, Check, X, Star, Award, MapPin, Truck, ChevronRight } from "lucide-react";
+import { Shield, Sparkles, PiggyBank, Microscope, Clock, Phone, MessageCircle, Check, X, Star, Award, MapPin, Truck, ChevronRight, BookOpen } from "lucide-react";
 import { BUSINESS_INFO, getWhatsAppLink } from "@/config/businessInfo";
 const RestauroVetriCertificato = () => {
   const whatsappMessage = "Ciao! Vorrei un preventivo per il restauro del vetro del mio display. Invio foto del danno.";
@@ -422,6 +422,38 @@ const RestauroVetriCertificato = () => {
                       <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
                     </AccordionItem>)}
                 </Accordion>
+              </div>
+            </div>
+          </section>
+
+          {/* LINK ARTICOLO BLOG */}
+          <section className="py-12 bg-white border-t border-border">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto">
+                <Card className="border-2 border-giolab-blue/20 bg-gradient-to-br from-giolab-blue/5 to-white hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6 md:p-8">
+                    <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
+                      <div className="w-14 h-14 rounded-xl bg-giolab-blue/10 flex items-center justify-center flex-shrink-0">
+                        <BookOpen className="w-7 h-7 text-giolab-blue" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-lg text-foreground mb-2">
+                          Vuoi saperne di più sulla rigenerazione vetro?
+                        </h3>
+                        <p className="text-muted-foreground text-sm mb-4">
+                          Leggi la nostra guida completa con tutti i dettagli tecnici, i dispositivi compatibili e le risposte alle domande più frequenti.
+                        </p>
+                        <Button asChild variant="outline" className="border-giolab-blue text-giolab-blue hover:bg-giolab-blue hover:text-white">
+                          <Link to="/blog/rigenerazione-vetro-iphone-ipad-apple-watch">
+                            <BookOpen className="w-4 h-4 mr-2" />
+                            Leggi l'Articolo Completo
+                            <ChevronRight className="w-4 h-4 ml-2" />
+                          </Link>
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </section>
