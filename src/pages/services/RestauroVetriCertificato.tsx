@@ -8,155 +8,132 @@ import RatingStars from "@/components/RatingStars";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { 
-  Shield, 
-  Sparkles, 
-  PiggyBank, 
-  Microscope, 
-  Clock, 
-  Phone, 
-  MessageCircle,
-  Check,
-  X,
-  Star,
-  Award,
-  MapPin,
-  Truck,
-  ChevronRight
-} from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Shield, Sparkles, PiggyBank, Microscope, Clock, Phone, MessageCircle, Check, X, Star, Award, MapPin, Truck, ChevronRight } from "lucide-react";
 import { BUSINESS_INFO, getWhatsAppLink } from "@/config/businessInfo";
-
 const RestauroVetriCertificato = () => {
   const whatsappMessage = "Ciao! Vorrei un preventivo per il restauro del vetro del mio display. Invio foto del danno.";
-
-  const vantaggi = [
-    {
-      icon: Sparkles,
-      title: "Qualità Originale Preservata",
-      description: "Mantieni il pannello OLED/LCD Apple originale. Nessun ricambio compatibile cinese."
-    },
-    {
-      icon: PiggyBank,
-      title: "Risparmio Reale",
-      description: "Fino al 50% rispetto alla sostituzione Service Pack Apple."
-    },
-    {
-      icon: Microscope,
-      title: "Tecniche di Laminazione Avanzate",
-      description: "Il tuo tecnico è un Chirurgo Digitale con macchinari professionali."
-    },
-    {
-      icon: Clock,
-      title: "Tempi Certi",
-      description: "Intervento completato in 1-2 giorni lavorativi."
-    }
-  ];
-
-  const pricingOptions = [
-    {
-      title: "Ricambio Compatibile",
-      subtitle: "Economico ma compromesso",
-      price: "da €79",
-      highlighted: false,
-      features: [
-        { text: "Colori spenti e sbiaditi", included: false },
-        { text: "Vetro fragile e sottile", included: false },
-        { text: "Touch impreciso", included: false },
-        { text: "True Tone non supportato", included: false },
-        { text: "Garanzia limitata 3 mesi", included: false },
-      ]
-    },
-    {
-      title: "Restauro Vetro Certificato",
-      subtitle: "Miglior rapporto qualità/prezzo",
-      price: "da €129",
-      highlighted: true,
-      badge: "PIÙ SCELTO",
-      features: [
-        { text: "Colori originali Apple", included: true },
-        { text: "Vetro premium OCA", included: true },
-        { text: "Touch perfetto", included: true },
-        { text: "True Tone preservato", included: true },
-        { text: "Garanzia 12 mesi", included: true },
-      ]
-    },
-    {
-      title: "Service Pack Apple",
-      subtitle: "Originale ma costoso",
-      price: "da €350+",
-      highlighted: false,
-      features: [
-        { text: "Colori originali Apple", included: true },
-        { text: "Vetro originale Apple", included: true },
-        { text: "Touch perfetto", included: true },
-        { text: "True Tone incluso", included: true },
-        { text: "Garanzia Apple", included: true },
-      ]
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: "Marco R.",
-      rating: 5,
-      text: "Ho portato il mio iPhone 14 Pro con il vetro rotto. Non volevo perdere la qualità del display originale e la rigenerazione è stata perfetta. Sembra nuovo!",
-      date: "2 settimane fa"
-    },
-    {
-      name: "Alessia P.",
-      rating: 5,
-      text: "Finalmente qualcuno che non ti propone solo ricambi compatibili! Il mio Apple Watch ha il vetro rigenerato e la qualità è identica all'originale.",
-      date: "1 mese fa"
-    },
-    {
-      name: "Giuseppe M.",
-      rating: 5,
-      text: "Professionalità e competenza. Mi hanno spiegato tutto il processo e il risultato è eccellente. Risparmiato oltre 200€ rispetto al Service Pack.",
-      date: "3 settimane fa"
-    }
-  ];
-
-  const faqs = [
-    {
-      question: "Cosa significa 'Restauro Vetro Certificato'?",
-      answer: "È un processo professionale che permette di sostituire solo il vetro esterno danneggiato del display, mantenendo intatto il pannello OLED o LCD originale Apple. Utilizziamo macchinari di laminazione professionali e adesivi OCA di alta qualità per garantire un risultato perfetto."
-    },
-    {
-      question: "Quali dispositivi possono essere rigenerati?",
-      answer: "Rigeneriamo display di iPhone (dal modello 6 in poi), iPad e Apple Watch. La fattibilità dipende dalle condizioni del pannello interno: se l'OLED/LCD non presenta danni, il restauro è possibile."
-    },
-    {
-      question: "Il True Tone e Face ID funzioneranno ancora?",
-      answer: "Sì, assolutamente. Il processo di rigenerazione non tocca i componenti elettronici. True Tone, Face ID, 3D Touch e tutte le funzionalità originali rimangono perfettamente operative."
-    },
-    {
-      question: "Quanto tempo richiede l'intervento?",
-      answer: "Il processo di rigenerazione richiede 1-2 giorni lavorativi. Questo tempo è necessario per garantire una laminazione perfetta e test di qualità approfonditi."
-    },
-    {
-      question: "Cosa succede se il display si danneggia durante la rigenerazione?",
-      answer: "Offriamo la Garanzia di Restauro Totale: se il display si danneggia irreparabilmente durante il nostro intervento, lo sostituiamo con un display di pari qualità a nostre spese. Zero rischi per te."
-    },
-    {
-      question: "Posso spedire il dispositivo da tutta Italia?",
-      answer: "Sì! Accettiamo spedizioni da tutta Italia. Ti forniamo istruzioni dettagliate per l'imballaggio sicuro e un preventivo gratuito basato sulle foto che ci invii via WhatsApp."
-    }
-  ];
-
-  return (
-    <>
+  const vantaggi = [{
+    icon: Sparkles,
+    title: "Qualità Originale Preservata",
+    description: "Mantieni il pannello OLED/LCD Apple originale. Nessun ricambio compatibile cinese."
+  }, {
+    icon: PiggyBank,
+    title: "Risparmio Reale",
+    description: "Fino al 50% rispetto alla sostituzione Service Pack Apple."
+  }, {
+    icon: Microscope,
+    title: "Tecniche di Laminazione Avanzate",
+    description: "Il tuo tecnico è un Chirurgo Digitale con macchinari professionali."
+  }, {
+    icon: Clock,
+    title: "Tempi Certi",
+    description: "Intervento completato in 1-2 giorni lavorativi."
+  }];
+  const pricingOptions = [{
+    title: "Ricambio Compatibile",
+    subtitle: "Economico ma compromesso",
+    price: "da €79",
+    highlighted: false,
+    features: [{
+      text: "Colori spenti e sbiaditi",
+      included: false
+    }, {
+      text: "Vetro fragile e sottile",
+      included: false
+    }, {
+      text: "Touch impreciso",
+      included: false
+    }, {
+      text: "True Tone non supportato",
+      included: false
+    }, {
+      text: "Garanzia limitata 3 mesi",
+      included: false
+    }]
+  }, {
+    title: "Restauro Vetro Certificato",
+    subtitle: "Miglior rapporto qualità/prezzo",
+    price: "da €129",
+    highlighted: true,
+    badge: "PIÙ SCELTO",
+    features: [{
+      text: "Colori originali Apple",
+      included: true
+    }, {
+      text: "Vetro premium OCA",
+      included: true
+    }, {
+      text: "Touch perfetto",
+      included: true
+    }, {
+      text: "True Tone preservato",
+      included: true
+    }, {
+      text: "Garanzia 12 mesi",
+      included: true
+    }]
+  }, {
+    title: "Service Pack Apple",
+    subtitle: "Originale ma costoso",
+    price: "da €350+",
+    highlighted: false,
+    features: [{
+      text: "Colori originali Apple",
+      included: true
+    }, {
+      text: "Vetro originale Apple",
+      included: true
+    }, {
+      text: "Touch perfetto",
+      included: true
+    }, {
+      text: "True Tone incluso",
+      included: true
+    }, {
+      text: "Garanzia Apple",
+      included: true
+    }]
+  }];
+  const testimonials = [{
+    name: "Marco R.",
+    rating: 5,
+    text: "Ho portato il mio iPhone 14 Pro con il vetro rotto. Non volevo perdere la qualità del display originale e la rigenerazione è stata perfetta. Sembra nuovo!",
+    date: "2 settimane fa"
+  }, {
+    name: "Alessia P.",
+    rating: 5,
+    text: "Finalmente qualcuno che non ti propone solo ricambi compatibili! Il mio Apple Watch ha il vetro rigenerato e la qualità è identica all'originale.",
+    date: "1 mese fa"
+  }, {
+    name: "Giuseppe M.",
+    rating: 5,
+    text: "Professionalità e competenza. Mi hanno spiegato tutto il processo e il risultato è eccellente. Risparmiato oltre 200€ rispetto al Service Pack.",
+    date: "3 settimane fa"
+  }];
+  const faqs = [{
+    question: "Cosa significa 'Restauro Vetro Certificato'?",
+    answer: "È un processo professionale che permette di sostituire solo il vetro esterno danneggiato del display, mantenendo intatto il pannello OLED o LCD originale Apple. Utilizziamo macchinari di laminazione professionali e adesivi OCA di alta qualità per garantire un risultato perfetto."
+  }, {
+    question: "Quali dispositivi possono essere rigenerati?",
+    answer: "Rigeneriamo display di iPhone (dal modello 6 in poi), iPad e Apple Watch. La fattibilità dipende dalle condizioni del pannello interno: se l'OLED/LCD non presenta danni, il restauro è possibile."
+  }, {
+    question: "Il True Tone e Face ID funzioneranno ancora?",
+    answer: "Sì, assolutamente. Il processo di rigenerazione non tocca i componenti elettronici. True Tone, Face ID, 3D Touch e tutte le funzionalità originali rimangono perfettamente operative."
+  }, {
+    question: "Quanto tempo richiede l'intervento?",
+    answer: "Il processo di rigenerazione richiede 1-2 giorni lavorativi. Questo tempo è necessario per garantire una laminazione perfetta e test di qualità approfonditi."
+  }, {
+    question: "Cosa succede se il display si danneggia durante la rigenerazione?",
+    answer: "Offriamo la Garanzia di Restauro Totale: se il display si danneggia irreparabilmente durante il nostro intervento, lo sostituiamo con un display di pari qualità a nostre spese. Zero rischi per te."
+  }, {
+    question: "Posso spedire il dispositivo da tutta Italia?",
+    answer: "Sì! Accettiamo spedizioni da tutta Italia. Ti forniamo istruzioni dettagliate per l'imballaggio sicuro e un preventivo gratuito basato sulle foto che ci invii via WhatsApp."
+  }];
+  return <>
       <Helmet>
         <title>Restauro Vetri Certificato iPhone iPad | GioLab Assemini</title>
-        <meta 
-          name="description" 
-          content="Restauro vetro display iPhone e iPad ad Assemini. Mantieni l'OLED originale Apple, risparmia fino al 50%. Garanzia totale inclusa." 
-        />
+        <meta name="description" content="Restauro vetro display iPhone e iPad ad Assemini. Mantieni l'OLED originale Apple, risparmia fino al 50%. Garanzia totale inclusa." />
         <meta name="keywords" content="restauro vetro iPhone, rigenerazione display, display originale Apple, riparazione vetro Assemini, GioLab, laminazione display" />
         <link rel="canonical" href="https://giolabriparazioni.it/servizi/restauro-vetri-certificato" />
         
@@ -167,40 +144,40 @@ const RestauroVetriCertificato = () => {
 
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Restauro Vetri Certificato iPhone iPad",
-            "description": "Servizio professionale di rigenerazione vetro display per iPhone, iPad e Apple Watch. Mantieni la qualità originale Apple risparmiando fino al 50%.",
-            "provider": {
-              "@type": "LocalBusiness",
-              "@id": "https://giolabriparazioni.it/#business"
-            },
-            "serviceType": "Riparazione Display",
-            "areaServed": {
-              "@type": "Country",
-              "name": "Italia"
-            },
-            "offers": {
-              "@type": "Offer",
-              "priceRange": "€129 - €299",
-              "priceCurrency": "EUR"
-            }
-          })}
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Restauro Vetri Certificato iPhone iPad",
+          "description": "Servizio professionale di rigenerazione vetro display per iPhone, iPad e Apple Watch. Mantieni la qualità originale Apple risparmiando fino al 50%.",
+          "provider": {
+            "@type": "LocalBusiness",
+            "@id": "https://giolabriparazioni.it/#business"
+          },
+          "serviceType": "Riparazione Display",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Italia"
+          },
+          "offers": {
+            "@type": "Offer",
+            "priceRange": "€129 - €299",
+            "priceCurrency": "EUR"
+          }
+        })}
         </script>
 
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqs.map(faq => ({
-              "@type": "Question",
-              "name": faq.question,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
-              }
-            }))
-          })}
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.answer
+            }
+          }))
+        })}
         </script>
       </Helmet>
 
@@ -216,8 +193,7 @@ const RestauroVetriCertificato = () => {
             
             <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-4xl mx-auto text-center">
-                <Badge className="mb-6 bg-giolab-orange/20 text-giolab-orange border-giolab-orange/30 text-sm px-4 py-1">
-                  <Microscope className="w-4 h-4 mr-2" />
+                <Badge className="mb-6 bg-giolab-orange/20 text-giolab-orange border-giolab-orange/30 text-sm px-4 py-1">Rigenerazione Vetro <Microscope className="w-4 h-4 mr-2" />
                   Chirurgia Digitale di Precisione
                 </Badge>
                 
@@ -233,20 +209,11 @@ const RestauroVetriCertificato = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-                  <Button 
-                    size="lg" 
-                    className="bg-giolab-orange hover:bg-giolab-orange/90 text-white text-lg px-8 py-6"
-                    onClick={() => window.open(getWhatsAppLink(whatsappMessage), '_blank')}
-                  >
+                  <Button size="lg" className="bg-giolab-orange hover:bg-giolab-orange/90 text-white text-lg px-8 py-6" onClick={() => window.open(getWhatsAppLink(whatsappMessage), '_blank')}>
                     <MessageCircle className="w-5 h-5 mr-2" />
                     Richiedi un Preventivo Rapido
                   </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6"
-                    asChild
-                  >
+                  <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6" asChild>
                     <a href={`tel:${BUSINESS_INFO.contacts.phoneInternational}`}>
                       <Phone className="w-5 h-5 mr-2" />
                       Chiama Ora
@@ -285,8 +252,7 @@ const RestauroVetriCertificato = () => {
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {vantaggi.map((vantaggio, index) => (
-                  <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow bg-gradient-to-br from-slate-50 to-white">
+                {vantaggi.map((vantaggio, index) => <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow bg-gradient-to-br from-slate-50 to-white">
                     <CardContent className="p-6 text-center">
                       <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-giolab-blue/10 flex items-center justify-center">
                         <vantaggio.icon className="w-7 h-7 text-giolab-blue" />
@@ -294,8 +260,7 @@ const RestauroVetriCertificato = () => {
                       <h3 className="font-semibold text-lg mb-2 text-foreground">{vantaggio.title}</h3>
                       <p className="text-muted-foreground text-sm">{vantaggio.description}</p>
                     </CardContent>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
             </div>
           </section>
@@ -356,20 +321,10 @@ const RestauroVetriCertificato = () => {
               </div>
 
               <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                {pricingOptions.map((option, index) => (
-                  <Card 
-                    key={index} 
-                    className={`relative overflow-hidden transition-all duration-300 ${
-                      option.highlighted 
-                        ? 'border-2 border-giolab-blue shadow-2xl scale-105 z-10' 
-                        : 'border border-slate-200 hover:shadow-lg'
-                    }`}
-                  >
-                    {option.badge && (
-                      <div className="absolute top-0 right-0 bg-giolab-orange text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                {pricingOptions.map((option, index) => <Card key={index} className={`relative overflow-hidden transition-all duration-300 ${option.highlighted ? 'border-2 border-giolab-blue shadow-2xl scale-105 z-10' : 'border border-slate-200 hover:shadow-lg'}`}>
+                    {option.badge && <div className="absolute top-0 right-0 bg-giolab-orange text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
                         {option.badge}
-                      </div>
-                    )}
+                      </div>}
                     <CardContent className="p-6">
                       <div className="text-center mb-6">
                         <h3 className={`font-bold text-lg mb-1 ${option.highlighted ? 'text-giolab-blue' : 'text-foreground'}`}>
@@ -381,31 +336,19 @@ const RestauroVetriCertificato = () => {
                         </div>
                       </div>
                       <ul className="space-y-3">
-                        {option.features.map((feature, fIndex) => (
-                          <li key={fIndex} className="flex items-center gap-3 text-sm">
-                            {feature.included ? (
-                              <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                            ) : (
-                              <X className="w-5 h-5 text-red-400 flex-shrink-0" />
-                            )}
+                        {option.features.map((feature, fIndex) => <li key={fIndex} className="flex items-center gap-3 text-sm">
+                            {feature.included ? <Check className="w-5 h-5 text-green-500 flex-shrink-0" /> : <X className="w-5 h-5 text-red-400 flex-shrink-0" />}
                             <span className={feature.included ? 'text-foreground' : 'text-muted-foreground'}>
                               {feature.text}
                             </span>
-                          </li>
-                        ))}
+                          </li>)}
                       </ul>
-                      {option.highlighted && (
-                        <Button 
-                          className="w-full mt-6 bg-giolab-blue hover:bg-giolab-blue/90"
-                          onClick={() => window.open(getWhatsAppLink(whatsappMessage), '_blank')}
-                        >
+                      {option.highlighted && <Button className="w-full mt-6 bg-giolab-blue hover:bg-giolab-blue/90" onClick={() => window.open(getWhatsAppLink(whatsappMessage), '_blank')}>
                           Scegli Restauro
                           <ChevronRight className="w-4 h-4 ml-2" />
-                        </Button>
-                      )}
+                        </Button>}
                     </CardContent>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
             </div>
           </section>
@@ -427,8 +370,7 @@ const RestauroVetriCertificato = () => {
               </div>
 
               <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
-                {testimonials.map((testimonial, index) => (
-                  <Card key={index} className="bg-white/5 border-white/10 backdrop-blur">
+                {testimonials.map((testimonial, index) => <Card key={index} className="bg-white/5 border-white/10 backdrop-blur">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-2 mb-4">
                         <RatingStars rating={testimonial.rating} size="sm" showText={false} />
@@ -441,24 +383,18 @@ const RestauroVetriCertificato = () => {
                         <span className="text-xs text-slate-500">{testimonial.date}</span>
                       </div>
                     </CardContent>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
 
               {/* Gallery Placeholder */}
               <div className="max-w-4xl mx-auto">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div 
-                      key={i} 
-                      className="aspect-square bg-white/10 rounded-lg flex items-center justify-center border border-white/5"
-                    >
+                  {[1, 2, 3, 4].map(i => <div key={i} className="aspect-square bg-white/10 rounded-lg flex items-center justify-center border border-white/5">
                       <div className="text-center text-slate-500">
                         <Microscope className="w-8 h-8 mx-auto mb-2 opacity-50" />
                         <span className="text-xs">Before/After #{i}</span>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
                 <p className="text-center text-slate-500 text-sm mt-4">
                   Spazio riservato per gallery fotografica del processo di rigenerazione
@@ -481,20 +417,14 @@ const RestauroVetriCertificato = () => {
                 </div>
 
                 <Accordion type="single" collapsible className="space-y-4">
-                  {faqs.map((faq, index) => (
-                    <AccordionItem 
-                      key={index} 
-                      value={`faq-${index}`}
-                      className="border rounded-lg px-6 bg-slate-50"
-                    >
+                  {faqs.map((faq, index) => <AccordionItem key={index} value={`faq-${index}`} className="border rounded-lg px-6 bg-slate-50">
                       <AccordionTrigger className="text-left font-semibold hover:no-underline">
                         {faq.question}
                       </AccordionTrigger>
                       <AccordionContent className="text-muted-foreground">
                         {faq.answer}
                       </AccordionContent>
-                    </AccordionItem>
-                  ))}
+                    </AccordionItem>)}
                 </Accordion>
               </div>
             </div>
@@ -512,20 +442,11 @@ const RestauroVetriCertificato = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                  <Button 
-                    size="lg" 
-                    className="bg-[#25D366] hover:bg-[#20BA5A] text-white text-lg px-8 py-6"
-                    onClick={() => window.open(getWhatsAppLink(whatsappMessage), '_blank')}
-                  >
+                  <Button size="lg" className="bg-[#25D366] hover:bg-[#20BA5A] text-white text-lg px-8 py-6" onClick={() => window.open(getWhatsAppLink(whatsappMessage), '_blank')}>
                     <MessageCircle className="w-5 h-5 mr-2" />
                     Invia Foto su WhatsApp
                   </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6"
-                    asChild
-                  >
+                  <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6" asChild>
                     <a href={`tel:${BUSINESS_INFO.contacts.phoneInternational}`}>
                       <Phone className="w-5 h-5 mr-2" />
                       {BUSINESS_INFO.contacts.phone}
@@ -547,12 +468,7 @@ const RestauroVetriCertificato = () => {
                             {BUSINESS_INFO.address.street}<br />
                             {BUSINESS_INFO.address.postalCode} {BUSINESS_INFO.address.city} ({BUSINESS_INFO.address.province})
                           </p>
-                          <a 
-                            href={BUSINESS_INFO.urls.googleMaps}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm text-giolab-orange hover:underline mt-2 inline-block"
-                          >
+                          <a href={BUSINESS_INFO.urls.googleMaps} target="_blank" rel="noopener noreferrer" className="text-sm text-giolab-orange hover:underline mt-2 inline-block">
                             Apri in Google Maps →
                           </a>
                         </div>
@@ -590,8 +506,6 @@ const RestauroVetriCertificato = () => {
 
       <FloatingWhatsApp />
       <ScrollToTop />
-    </>
-  );
+    </>;
 };
-
 export default RestauroVetriCertificato;
