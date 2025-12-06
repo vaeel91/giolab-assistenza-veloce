@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Mail, Clock, Instagram, Facebook, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Instagram, Facebook, MessageCircle, Calendar } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { BUSINESS_INFO, getWhatsAppLink, getGoogleMapsLink, getPhoneLink, getEmailLink } from "@/config/businessInfo";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const handleWhatsApp = () => {
@@ -67,15 +68,28 @@ const Contact = () => {
           <div className="bg-gradient-to-br from-giolab-blue to-giolab-blue-light rounded-2xl p-4 md:p-6 text-center text-white shadow-xl">
             <h3 className="text-base md:text-2xl font-bold mb-2">Prenota la tua riparazione</h3>
             <p className="text-xs md:text-sm mb-3 md:mb-4 opacity-90">Preventivo gratuito e senza impegno</p>
-            <Button
-              size="sm"
-              variant="outline"
-              onClick={handleWhatsApp}
-              className="bg-white text-giolab-blue hover:bg-white/90 border-0 text-xs md:text-sm px-4 py-2 h-auto font-semibold flex items-center justify-center"
-            >
-              <MessageCircle className="mr-1.5 md:mr-2 h-3 w-3 md:h-4 md:w-4 flex-shrink-0" />
-              Contattaci su WhatsApp
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-2 justify-center">
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={handleWhatsApp}
+                className="bg-white text-giolab-blue hover:bg-white/90 border-0 text-xs md:text-sm px-4 py-2 h-auto font-semibold flex items-center justify-center"
+              >
+                <MessageCircle className="mr-1.5 md:mr-2 h-3 w-3 md:h-4 md:w-4 flex-shrink-0" />
+                WhatsApp
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                asChild
+                className="bg-white/20 text-white hover:bg-white/30 border-white/30 text-xs md:text-sm px-4 py-2 h-auto font-semibold flex items-center justify-center"
+              >
+                <Link to="/prenota">
+                  <Calendar className="mr-1.5 md:mr-2 h-3 w-3 md:h-4 md:w-4 flex-shrink-0" />
+                  Prenota Online
+                </Link>
+              </Button>
+            </div>
           </div>
 
           {/* Social links */}
