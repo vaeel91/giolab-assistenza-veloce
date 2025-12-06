@@ -143,6 +143,72 @@ const TestimonialsShowcase = ({
         date: "Settembre 2024",
         avatar: "https://api.dicebear.com/7.x/initials/svg?seed=Marco%20Piras",
         service: "Recensione Google"
+      },
+      {
+        id: 7,
+        name: "Alessia Mura",
+        role: "Cliente Google",
+        location: "Cagliari, CA",
+        rating: 5,
+        text: "Ho portato il mio Samsung Galaxy con lo schermo rotto e me l'hanno riparato in giornata. Qualità eccellente e prezzo competitivo. Molto soddisfatta!",
+        date: "Settembre 2024",
+        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=Alessia%20Mura",
+        service: "Recensione Google"
+      },
+      {
+        id: 8,
+        name: "Giovanni Melis",
+        role: "Cliente Google",
+        location: "Assemini, CA",
+        rating: 5,
+        text: "PlayStation 5 riparata perfettamente! Avevo problemi di surriscaldamento e ora funziona come nuova. Grazie Giolab, siete i migliori!",
+        date: "Agosto 2024",
+        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=Giovanni%20Melis",
+        service: "Recensione Google"
+      },
+      {
+        id: 9,
+        name: "Francesca Sanna",
+        role: "Cliente Google",
+        location: "Decimomannu, CA",
+        rating: 5,
+        text: "Batteria maggiorata per il mio iPhone 12, incredibile la differenza! Ora dura tutto il giorno senza problemi. Servizio rapido e personale gentilissimo.",
+        date: "Agosto 2024",
+        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=Francesca%20Sanna",
+        service: "Recensione Google"
+      },
+      {
+        id: 10,
+        name: "Andrea Lai",
+        role: "Cliente Google",
+        location: "Elmas, CA",
+        rating: 5,
+        text: "Recupero dati da iPhone bloccato su mela bianca. Pensavo di aver perso tutto ma hanno salvato tutte le mie foto! Professionisti veri.",
+        date: "Luglio 2024",
+        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=Andrea%20Lai",
+        service: "Recensione Google"
+      },
+      {
+        id: 11,
+        name: "Sara Cabras",
+        role: "Cliente Google",
+        location: "Uta, CA",
+        rating: 5,
+        text: "Face ID riparato sul mio iPhone X! Pensavo fosse impossibile ma loro ci sono riusciti. Tecnici bravissimi, vale ogni euro speso.",
+        date: "Luglio 2024",
+        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=Sara%20Cabras",
+        service: "Recensione Google"
+      },
+      {
+        id: 12,
+        name: "Luca Fadda",
+        role: "Cliente Google",
+        location: "Assemini, CA",
+        rating: 5,
+        text: "PC lentissimo tornato veloce come nuovo! SSD installato e pulizia completa. Consiglio Giolab a chiunque abbia problemi con dispositivi elettronici.",
+        date: "Giugno 2024",
+        avatar: "https://api.dicebear.com/7.x/initials/svg?seed=Luca%20Fadda",
+        service: "Recensione Google"
       }
     ];
     
