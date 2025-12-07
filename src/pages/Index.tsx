@@ -1,9 +1,8 @@
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import About from "@/components/About";
+import AboutAndLocation from "@/components/AboutAndLocation";
 import TestimonialsShowcase from "@/components/TestimonialsShowcase";
 import BlogPreview from "@/components/BlogPreview";
-import SocialAndLocation from "@/components/SocialAndLocation";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -163,18 +162,15 @@ const Index = () => {
           <Services />
         </section>
         <section id="chi-siamo" ref={el => sectionsRef.current[4] = el as HTMLDivElement} className="min-h-screen snap-start snap-always section-animate">
-          <About />
+          <AboutAndLocation />
         </section>
         <section id="testimonianze" ref={el => sectionsRef.current[5] = el as HTMLDivElement} className="min-h-screen snap-start snap-always section-animate">
           <TestimonialsShowcase variant="scroll" />
         </section>
-        <section id="dove-siamo" ref={el => sectionsRef.current[6] = el as HTMLDivElement} className="min-h-screen snap-start snap-always section-animate">
-          <SocialAndLocation />
-        </section>
-        <section id="faq" ref={el => sectionsRef.current[7] = el as HTMLDivElement} className="min-h-screen snap-start snap-always section-animate">
+        <section id="faq" ref={el => sectionsRef.current[6] = el as HTMLDivElement} className="min-h-screen snap-start snap-always section-animate">
           <FAQ />
         </section>
-        <section id="contatti" ref={el => sectionsRef.current[8] = el as HTMLDivElement} className="min-h-screen snap-start snap-always section-animate">
+        <section id="contatti" ref={el => sectionsRef.current[7] = el as HTMLDivElement} className="min-h-screen snap-start snap-always section-animate">
           <Contact />
           <Footer />
         </section>
