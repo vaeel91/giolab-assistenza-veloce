@@ -9,14 +9,7 @@ const Location = () => {
   };
 
   return (
-    <section id="dove-siamo" className="py-8 md:py-12">
-      <div className="h-full">
-        <div className="text-center mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Dove Siamo</h2>
-          <p className="text-sm md:text-base text-muted-foreground px-4">
-            Vieni a trovarci ad Assemini
-          </p>
-        </div>
+    <div className="h-full">
 
         <Card className="overflow-hidden border-2 shadow-xl">
           <CardContent className="p-0">
@@ -60,9 +53,8 @@ const Location = () => {
               </div>
             </div>
           </CardContent>
-        </Card>
-      </div>
-    </section>
+      </Card>
+    </div>
   );
 };
 
