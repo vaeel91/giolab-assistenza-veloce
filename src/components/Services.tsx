@@ -1,207 +1,250 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { Smartphone, Laptop, Gamepad2, BatteryCharging, Cpu, Sparkles, Package, Wind, Shield, Wrench, Cloud, Search, Building2 } from "lucide-react";
+import { Smartphone, Laptop, Gamepad2, BatteryCharging, Cpu, Sparkles, Package, Wind, Shield, Wrench, Cloud, Search, Building2, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const services = [
   {
     icon: Smartphone,
-    iconColor: "text-blue-500",
+    gradient: "from-blue-500 to-cyan-400",
+    bgGradient: "from-blue-500/10 to-cyan-400/5",
     title: "Riparazione iPhone e Smartphone Assemini",
-    description: "Sostituzione display, batterie, fotocamere e componenti per iPhone, Samsung, Huawei, Xiaomi. Riparazioni rapide anche in 1 ora con ricambi certificati. Servizio disponibile ad Assemini e Cagliari.",
-    link: "/servizi/riparazione-display-iphone-assemini"
+    shortTitle: "iPhone & Smartphone",
+    description: "Sostituzione display, batterie, fotocamere e componenti per iPhone, Samsung, Huawei, Xiaomi. Riparazioni rapide anche in 1 ora con ricambi certificati.",
+    link: "/servizi/riparazione-display-iphone-assemini",
+    featured: true
   },
   {
     icon: Laptop,
-    iconColor: "text-purple-500",
+    gradient: "from-purple-500 to-pink-400",
+    bgGradient: "from-purple-500/10 to-pink-400/5",
     title: "Assistenza PC e Notebook",
+    shortTitle: "PC & Notebook",
     description: "Riparazioni hardware e software, upgrade SSD o RAM, pulizia interna e ottimizzazione completa.",
   },
   {
     icon: Gamepad2,
-    iconColor: "text-pink-500",
+    gradient: "from-pink-500 to-rose-400",
+    bgGradient: "from-pink-500/10 to-rose-400/5",
     title: "Riparazione Console",
+    shortTitle: "Console Gaming",
     description: "PlayStation, Xbox e Nintendo Switch. Risolviamo problemi hardware e software con ricambi originali.",
   },
   {
     icon: BatteryCharging,
-    iconColor: "text-green-500",
+    gradient: "from-green-500 to-emerald-400",
+    bgGradient: "from-green-500/10 to-emerald-400/5",
     title: "Batterie Maggiorate iPhone Assemini",
-    description: "Sostituzione batteria iPhone con batterie di capacità superiore. Più autonomia e prestazioni per il tuo iPhone. Servizio specializzato disponibile ad Assemini e provincia di Cagliari.",
-    link: "/servizi/batteria-maggiorata-iphone"
+    shortTitle: "Batterie Maggiorate",
+    description: "Sostituzione batteria iPhone con batterie di capacità superiore. Più autonomia e prestazioni per il tuo iPhone.",
+    link: "/servizi/batteria-maggiorata-iphone",
+    featured: true
   },
   {
     icon: Cpu,
-    iconColor: "text-red-500",
+    gradient: "from-red-500 to-orange-400",
+    bgGradient: "from-red-500/10 to-orange-400/5",
     title: "Micro-saldature e Riparazioni Avanzate",
+    shortTitle: "Micro-saldature",
     description: "Interventi su schede madri e circuiti elettronici. Riparazioni di corti, danni da liquidi e chip guasti.",
   },
   {
     icon: Sparkles,
-    iconColor: "text-cyan-500",
+    gradient: "from-cyan-500 to-teal-400",
+    bgGradient: "from-cyan-500/10 to-teal-400/5",
     title: "Rigenerazione Vetro",
-    description: "Rigenerazione professionale del vetro per iPhone e Apple Watch. Sostituiamo solo il vetro del tuo display, consentendoti di mantere lo schermo originale e abbassando il prezzo finale della lavorazione.",
-    link: "/servizi/restauro-vetri-certificato"
+    shortTitle: "Rigenerazione Vetro",
+    description: "Rigenerazione professionale del vetro per iPhone e Apple Watch. Mantieni lo schermo originale.",
+    link: "/servizi/restauro-vetri-certificato",
+    featured: true
   },
   {
     icon: Wrench,
-    iconColor: "text-orange-500",
+    gradient: "from-orange-500 to-amber-400",
+    bgGradient: "from-orange-500/10 to-amber-400/5",
     title: "Sostituzione Vetro Posteriore iPhone",
-    description: "Ripariamo il retro in vetro del tuo iPhone con risultati perfetti, senza cambiare la scocca completa.",
+    shortTitle: "Back Glass",
+    description: "Ripariamo il retro in vetro del tuo iPhone con risultati perfetti.",
   },
   {
     icon: Wind,
-    iconColor: "text-amber-500",
+    gradient: "from-amber-500 to-yellow-400",
+    bgGradient: "from-amber-500/10 to-yellow-400/5",
     title: "Pulizia e Manutenzione Interna",
-    description: "Rimuoviamo polvere e ossidazioni da smartphone e PC per migliorare prestazioni e raffreddamento.",
+    shortTitle: "Pulizia Interna",
+    description: "Rimuoviamo polvere e ossidazioni per migliorare prestazioni e raffreddamento.",
   },
   {
     icon: Package,
-    iconColor: "text-indigo-500",
+    gradient: "from-indigo-500 to-violet-400",
+    bgGradient: "from-indigo-500/10 to-violet-400/5",
     title: "Telefono di Cortesia",
-    description: "Non restare mai senza telefono: dispositivi di cortesia disponibili durante la riparazione.",
+    shortTitle: "Cortesia",
+    description: "Non restare mai senza telefono durante la riparazione.",
   },
   {
     icon: Shield,
-    iconColor: "text-emerald-500",
+    gradient: "from-emerald-500 to-green-400",
+    bgGradient: "from-emerald-500/10 to-green-400/5",
     title: "Protezione Schermo e Accessori",
-    description: "Pellicole in vetro, cover, cavi e caricabatterie di qualità per proteggere e completare il tuo dispositivo.",
+    shortTitle: "Accessori",
+    description: "Pellicole in vetro, cover, cavi e caricabatterie di qualità.",
   },
   {
     icon: Cloud,
-    iconColor: "text-sky-500",
+    gradient: "from-sky-500 to-blue-400",
+    bgGradient: "from-sky-500/10 to-blue-400/5",
     title: "Configurazione e Trasferimento Dati",
-    description: "Impostiamo il tuo nuovo smartphone o PC e trasferiamo tutti i tuoi dati in modo sicuro.",
+    shortTitle: "Trasferimento Dati",
+    description: "Impostiamo il tuo nuovo smartphone e trasferiamo i tuoi dati.",
   },
   {
     icon: Search,
-    iconColor: "text-violet-500",
+    gradient: "from-violet-500 to-purple-400",
+    bgGradient: "from-violet-500/10 to-purple-400/5",
     title: "Diagnosi e Preventivo Rapido",
-    description: "Controllo tecnico immediato e preventivo chiaro prima di qualsiasi intervento.",
+    shortTitle: "Diagnosi Gratuita",
+    description: "Controllo tecnico immediato e preventivo chiaro.",
   },
   {
     icon: Building2,
-    iconColor: "text-slate-500",
+    gradient: "from-slate-500 to-gray-400",
+    bgGradient: "from-slate-500/10 to-gray-400/5",
     title: "Servizi per Centri Assistenza (B2B)",
-    description: "Rigenerazione display, micro-saldature conto terzi e fornitura di ricambi professionali.",
+    shortTitle: "Servizi B2B",
+    description: "Rigenerazione display, micro-saldature conto terzi e fornitura ricambi.",
   },
+];
+
+const guarantees = [
+  { icon: CheckCircle2, text: "Garanzia 12 mesi" },
+  { icon: CheckCircle2, text: "Ricambi Certificati" },
+  { icon: CheckCircle2, text: "Preventivo Gratuito" },
 ];
 
 const Services = () => {
   const { ref, isVisible } = useScrollAnimation();
   
-  // Titoli abbreviati per mobile
-  const getShortTitle = (title: string) => {
-    const shortTitles: Record<string, string> = {
-      "Riparazione iPhone e Smartphone Assemini": "iPhone",
-      "Assistenza PC e Notebook": "PC",
-      "Riparazione Console": "Console",
-      "Batterie Maggiorate iPhone Assemini": "Batterie",
-      "Micro-saldature e Riparazioni Avanzate": "Saldature",
-      "Rigenerazione Vetro": "Vetro",
-      "Sostituzione Vetro Posteriore iPhone": "Back Glass",
-      "Pulizia e Manutenzione Interna": "Pulizia",
-      "Telefono di Cortesia": "Cortesia",
-      "Protezione Schermo e Accessori": "Accessori",
-      "Configurazione e Trasferimento Dati": "Dati",
-      "Diagnosi e Preventivo Rapido": "Diagnosi",
-      "Servizi per Centri Assistenza (B2B)": "B2B",
-    };
-    return shortTitles[title] || title.split(" ")[0];
-  };
-  
   return (
-    <section id="servizi" ref={ref} className="py-2 md:py-6 pt-4 md:pt-24 bg-gradient-to-b from-background to-giolab-gray min-h-0 md:h-full flex flex-col justify-center">
-      <div className="container mx-auto px-2 md:px-4">
-        <div className="text-center mb-3 md:mb-6">
-          <h2 className="text-lg md:text-3xl font-bold text-foreground mb-1 md:mb-2">Servizi di Riparazione</h2>
-          <p className="text-xs md:text-base text-muted-foreground max-w-2xl mx-auto hidden md:block">
-            Riparazione professionale di iPhone, smartphone, PC e console. Garanzia 12 mesi.
+    <section id="servizi" ref={ref} className="py-8 md:py-20 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-giolab-blue/5 to-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-500/5 to-pink-500/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-8 md:mb-16">
+          <span className={`inline-block px-4 py-1.5 rounded-full bg-giolab-blue/10 text-giolab-blue text-sm font-medium mb-4 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+            I Nostri Servizi
+          </span>
+          <h2 className={`text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '100ms' }}>
+            Riparazioni Professionali
+          </h2>
+          <p className={`text-base md:text-lg text-slate-600 max-w-2xl mx-auto ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
+            Esperienza e precisione al servizio dei tuoi dispositivi. iPhone, smartphone, PC e console.
           </p>
         </div>
 
-        {/* Mobile: Griglia compatta 4x4 senza scroll */}
-        <div className="md:hidden grid grid-cols-4 gap-1.5 max-w-sm mx-auto">
-          {services.map((service, index) => {
+        {/* Featured Services - Large Cards */}
+        <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-10">
+          {services.filter(s => s.featured).map((service, index) => {
             const IconComponent = service.icon;
-            const delay = index * 30;
+            const delay = 300 + index * 100;
             
             const card = (
               <Card 
-                className={`aspect-square flex flex-col items-center justify-center p-1.5 border rounded-xl hover:border-giolab-blue transition-all duration-300 group cursor-pointer bg-white/80 ${
+                className={`group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer bg-white ${
                   isVisible ? 'animate-fade-in' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${delay}ms` }}
               >
-                <div className={`w-8 h-8 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue/5 flex items-center justify-center mb-1 group-hover:scale-110 transition-transform`}>
-                  <IconComponent className={`h-4 w-4 ${service.iconColor}`} />
-                </div>
-                <span className="text-[9px] font-medium text-foreground text-center leading-tight line-clamp-1">
-                  {getShortTitle(service.title)}
-                </span>
-              </Card>
-            );
-
-            return service.link ? (
-              <Link key={index} to={service.link}>
-                {card}
-              </Link>
-            ) : (
-              <div key={index}>
-                {card}
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Desktop: Griglia completa */}
-        <div className="hidden md:grid md:grid-cols-4 lg:grid-cols-6 gap-3 max-w-7xl mx-auto">
-          {services.map((service, index) => {
-            const IconComponent = service.icon;
-            const delay = index * 100;
-            
-            const card = (
-              <Card 
-                className={`h-full flex flex-col border hover:border-giolab-blue transition-all duration-300 group cursor-pointer ${
-                  isVisible ? 'animate-fade-in' : 'opacity-0'
-                }`}
-                style={{ animationDelay: `${delay}ms` }}
-              >
-                <CardHeader className="p-4">
-                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue/5 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
-                    <IconComponent className={`h-6 w-6 ${service.iconColor}`} width="24" height="24" />
+                {/* Gradient accent bar */}
+                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${service.gradient}`} />
+                
+                <CardContent className="p-6 md:p-8">
+                  <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br ${service.bgGradient} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
+                    <IconComponent className={`h-7 w-7 md:h-8 md:w-8 bg-gradient-to-r ${service.gradient} bg-clip-text`} style={{ color: 'transparent', background: `linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to))`, WebkitBackgroundClip: 'text', backgroundClip: 'text' }} />
+                    <IconComponent className={`h-7 w-7 md:h-8 md:w-8 text-giolab-blue`} />
                   </div>
-                  <CardTitle className="text-base leading-tight line-clamp-2 font-semibold">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-1 p-4 pt-0">
-                  <CardDescription className="text-sm leading-relaxed line-clamp-3">{service.description}</CardDescription>
+                  
+                  <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-3 group-hover:text-giolab-blue transition-colors">
+                    {service.shortTitle}
+                  </h3>
+                  
+                  <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-5">
+                    {service.description}
+                  </p>
+                  
+                  <div className="flex items-center text-giolab-blue font-medium text-sm group-hover:gap-3 gap-2 transition-all">
+                    <span>Scopri di più</span>
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </CardContent>
               </Card>
             );
 
             return service.link ? (
-              <Link key={index} to={service.link}>
+              <Link key={index} to={service.link} className="block">
                 {card}
               </Link>
             ) : (
-              <div key={index}>
-                {card}
-              </div>
+              <div key={index}>{card}</div>
             );
           })}
         </div>
 
-        {/* Additional features */}
-        <div className="mt-3 md:mt-6 grid grid-cols-3 gap-1.5 md:gap-4 max-w-4xl mx-auto">
-          <div className="text-center p-2 md:p-4 rounded-xl bg-white/50 backdrop-blur border border-border">
-            <div className="text-giolab-blue font-bold text-[10px] md:text-base">✓ Garanzia 12 mesi</div>
-          </div>
-          <div className="text-center p-2 md:p-4 rounded-xl bg-white/50 backdrop-blur border border-border">
-            <div className="text-giolab-blue font-bold text-[10px] md:text-base">✓ Ricambi Certificati</div>
-          </div>
-          <div className="text-center p-2 md:p-4 rounded-xl bg-white/50 backdrop-blur border border-border">
-            <div className="text-giolab-blue font-bold text-[10px] md:text-base">✓ Preventivo Gratuito</div>
-          </div>
+        {/* Other Services - Compact Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4 mb-10 md:mb-16">
+          {services.filter(s => !s.featured).map((service, index) => {
+            const IconComponent = service.icon;
+            const delay = 600 + index * 50;
+            
+            const card = (
+              <Card 
+                className={`group relative overflow-hidden border border-slate-100 hover:border-giolab-blue/30 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer bg-white ${
+                  isVisible ? 'animate-fade-in' : 'opacity-0'
+                }`}
+                style={{ animationDelay: `${delay}ms` }}
+              >
+                <CardContent className="p-4 md:p-5">
+                  <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br ${service.bgGradient} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                    <IconComponent className="h-5 w-5 md:h-6 md:w-6 text-slate-700" />
+                  </div>
+                  
+                  <h3 className="text-sm md:text-base font-semibold text-slate-900 mb-1.5 group-hover:text-giolab-blue transition-colors line-clamp-2">
+                    {service.shortTitle}
+                  </h3>
+                  
+                  <p className="text-slate-500 text-xs md:text-sm leading-relaxed line-clamp-2 hidden md:block">
+                    {service.description}
+                  </p>
+                </CardContent>
+              </Card>
+            );
+
+            return service.link ? (
+              <Link key={index} to={service.link} className="block">
+                {card}
+              </Link>
+            ) : (
+              <div key={index}>{card}</div>
+            );
+          })}
+        </div>
+
+        {/* Guarantees */}
+        <div className={`flex flex-wrap justify-center gap-4 md:gap-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '800ms' }}>
+          {guarantees.map((item, index) => (
+            <div 
+              key={index} 
+              className="flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-giolab-blue/5 to-cyan-500/5 border border-giolab-blue/10"
+            >
+              <item.icon className="h-5 w-5 text-giolab-blue" />
+              <span className="text-slate-800 font-medium text-sm md:text-base">{item.text}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
