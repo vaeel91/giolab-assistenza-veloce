@@ -15,7 +15,6 @@ import Blog from "./pages/Blog";
 // Lazy load - Pagine secondarie
 const ChiSiamo = lazy(() => import("./pages/ChiSiamo"));
 const FAQPage = lazy(() => import("./pages/FAQ"));
-const DoveSiamo = lazy(() => import("./pages/DoveSiamo"));
 const Contatti = lazy(() => import("./pages/Contatti"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const SEODocumentation = lazy(() => import("./pages/SEODocumentation"));
@@ -84,7 +83,6 @@ const App = () => (
         <Route path="/servizi" element={<Servizi />} />
         <Route path="/chi-siamo" element={<ChiSiamo />} />
         <Route path="/faq" element={<FAQPage />} />
-        <Route path="/dove-siamo" element={<DoveSiamo />} />
         <Route path="/contatti" element={<Contatti />} />
         <Route path="/iphone-ricondizionati-assemini" element={<IPhoneRicondizionati />} />
         <Route path="/social-preview" element={<SocialPreview />} />

@@ -35,3 +35,7 @@ http://giolabriparazioni.it/*  https://giolabriparazioni.it/:splat  301!
 # Vecchio slug display → Nuovo slug servizio
 /blog/riparazione-display-iphone  /servizi/riparazione-display-iphone-assemini  301!
 /servizi/display-iphone  /servizi/riparazione-display-iphone-assemini  301!
+
+# ============= REDIRECT PAGINE UNIFICATE =============
+# Redirect dove-siamo a chi-siamo (pagine unificate)
+/dove-siamo  /chi-siamo  301!
