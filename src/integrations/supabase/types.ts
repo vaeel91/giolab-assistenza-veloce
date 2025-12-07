@@ -14,13 +14,87 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      admin_users: {
+        Row: {
+          created_at: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      products: {
+        Row: {
+          aesthetic_grade: string | null
+          available: boolean
+          battery_health: string | null
+          brand: string
+          condition: string
+          created_at: string
+          description: string | null
+          featured: boolean
+          id: string
+          image_url: string | null
+          memory: string
+          model: string
+          original_price: number | null
+          price: number
+          updated_at: string
+          warranty: string
+        }
+        Insert: {
+          aesthetic_grade?: string | null
+          available?: boolean
+          battery_health?: string | null
+          brand: string
+          condition: string
+          created_at?: string
+          description?: string | null
+          featured?: boolean
+          id?: string
+          image_url?: string | null
+          memory: string
+          model: string
+          original_price?: number | null
+          price: number
+          updated_at?: string
+          warranty: string
+        }
+        Update: {
+          aesthetic_grade?: string | null
+          available?: boolean
+          battery_health?: string | null
+          brand?: string
+          condition?: string
+          created_at?: string
+          description?: string | null
+          featured?: boolean
+          id?: string
+          image_url?: string | null
+          memory?: string
+          model?: string
+          original_price?: number | null
+          price?: number
+          updated_at?: string
+          warranty?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_admin: { Args: { check_user_id: string }; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
