@@ -224,6 +224,18 @@ const ServiceTemplate = ({
               </ol>
             </nav>
 
+            {/* Hero Image */}
+            {heroImage && (
+              <div className="mb-6 rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src={heroImage} 
+                  alt={heroImageAlt || h1Title}
+                  className="w-full h-auto object-cover"
+                  loading="eager"
+                />
+              </div>
+            )}
+
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-4">
               {h1Title}
             </h1>
