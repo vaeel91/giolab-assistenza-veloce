@@ -2,8 +2,12 @@ import { MapPin, Navigation, Shield, Zap, Award, GraduationCap } from "lucide-re
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BUSINESS_INFO, getGoogleMapsLink } from "@/config/businessInfo";
+import { useEffect, useRef, useState } from "react";
 
 const AboutAndLocation = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
   const features = [
     { icon: Award, title: "10+ Anni", desc: "Esperienza" },
     { icon: Shield, title: "12 Mesi", desc: "Garanzia" },
@@ -15,12 +19,36 @@ const AboutAndLocation = () => {
     window.open(getGoogleMapsLink(), "_blank", "noopener,noreferrer");
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="min-h-screen flex items-center justify-center py-12 md:py-20 bg-gradient-to-br from-background via-secondary/5 to-background">
+    <section 
+      ref={sectionRef}
+      className="min-h-screen flex items-center justify-center py-12 md:py-20 bg-gradient-to-br from-background via-secondary/5 to-background"
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-10 md:mb-14">
+          <div 
+            className={`text-center mb-10 md:mb-14 transition-all duration-700 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
+          >
             <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-3">
               Il Tuo Centro Assistenza di Fiducia
             </h2>
@@ -33,7 +61,11 @@ const AboutAndLocation = () => {
           <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
             
             {/* Chi Siamo Card */}
-            <Card className="border-0 shadow-xl bg-gradient-to-br from-white to-secondary/30 overflow-hidden">
+            <Card 
+              className={`border-0 shadow-xl bg-gradient-to-br from-white to-secondary/30 overflow-hidden transition-all duration-700 delay-200 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
               <CardContent className="p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 rounded-xl bg-giolab-blue flex items-center justify-center">
@@ -53,7 +85,10 @@ const AboutAndLocation = () => {
                   {features.map((feat, i) => (
                     <div 
                       key={i}
-                      className="text-center p-2 md:p-3 rounded-xl bg-white/70 border border-border/50 hover:border-giolab-blue/30 transition-colors"
+                      className={`text-center p-2 md:p-3 rounded-xl bg-white/70 border border-border/50 hover:border-giolab-blue/30 hover:shadow-md transition-all duration-500 hover-scale ${
+                        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                      }`}
+                      style={{ transitionDelay: isVisible ? `${400 + i * 100}ms` : "0ms" }}
                     >
                       <feat.icon className="h-5 w-5 md:h-6 md:w-6 text-giolab-blue mx-auto mb-1.5" />
                       <div className="text-xs md:text-sm font-bold text-foreground">{feat.title}</div>
@@ -65,7 +100,11 @@ const AboutAndLocation = () => {
             </Card>
 
             {/* Dove Siamo Card */}
-            <Card className="border-0 shadow-xl overflow-hidden">
+            <Card 
+              className={`border-0 shadow-xl overflow-hidden transition-all duration-700 delay-300 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
               <CardContent className="p-0">
                 {/* Map */}
                 <div className="relative w-full h-[180px] md:h-[220px]">
@@ -101,7 +140,7 @@ const AboutAndLocation = () => {
                   
                   <Button
                     onClick={handleGetDirections}
-                    className="w-full bg-giolab-blue hover:bg-giolab-blue-dark text-white font-semibold"
+                    className="w-full bg-giolab-blue hover:bg-giolab-blue-dark text-white font-semibold hover-scale"
                   >
                     <Navigation className="mr-2 h-4 w-4" />
                     Ottieni Indicazioni
