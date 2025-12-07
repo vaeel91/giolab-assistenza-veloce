@@ -243,43 +243,43 @@ const ServiceTemplate = ({
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 mb-12">
+            <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 md:gap-4 mb-12">
               <Button
-                size="lg"
+                size="default"
                 onClick={handleWhatsApp}
-                className="bg-giolab-blue hover:bg-giolab-blue/90 text-white"
+                className="bg-giolab-blue hover:bg-giolab-blue/90 text-white text-xs md:text-sm h-9 md:h-11 px-3 md:px-4"
               >
-                <Phone className="mr-2 h-5 w-5" />
-                Prenota su WhatsApp
+                <Phone className="mr-1 md:mr-2 h-4 w-4 md:h-5 md:w-5" />
+                <span className="hidden md:inline">Prenota su </span>WhatsApp
               </Button>
               <Button
                 variant="outline"
-                size="lg"
+                size="default"
                 onClick={handleCall}
-                className="border-2 hover:border-giolab-blue hover:text-giolab-blue"
+                className="border-2 hover:border-giolab-blue hover:text-giolab-blue text-xs md:text-sm h-9 md:h-11 px-3 md:px-4"
               >
-                <Phone className="mr-2 h-5 w-5" />
-                Chiama Ora
+                <Phone className="mr-1 md:mr-2 h-4 w-4 md:h-5 md:w-5" />
+                Chiama
               </Button>
               <Button
                 variant="outline"
-                size="lg"
+                size="default"
                 asChild
-                className="border-2 hover:border-giolab-orange hover:text-giolab-orange"
+                className="border-2 hover:border-giolab-orange hover:text-giolab-orange text-xs md:text-sm h-9 md:h-11 px-3 md:px-4"
               >
                 <Link to="/prenota">
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Prenota Online
+                  <Calendar className="mr-1 md:mr-2 h-4 w-4 md:h-5 md:w-5" />
+                  Prenota
                 </Link>
               </Button>
               <Button
                 variant="outline"
-                size="lg"
+                size="default"
                 onClick={() => window.open("https://instagram.com/giolab_iphonefix", "_blank", "noopener,noreferrer")}
-                className="border-2 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white border-0 hover:opacity-90"
+                className="border-2 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white border-0 hover:opacity-90 text-xs md:text-sm h-9 md:h-11 px-3 md:px-4"
               >
-                <Instagram className="mr-2 h-5 w-5" />
-                Seguici su Instagram
+                <Instagram className="mr-1 md:mr-2 h-4 w-4 md:h-5 md:w-5" />
+                Instagram
               </Button>
             </div>
 
