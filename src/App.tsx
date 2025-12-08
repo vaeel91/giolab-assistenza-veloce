@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
 import SEOMonitor from "@/components/SEOMonitor";
-import { AuthProvider } from "@/hooks/useAuth";
 
 // Eager load - Pagine critiche (sempre caricate subito)
 import Index from "./pages/Index";
@@ -23,9 +22,6 @@ const SocialPreview = lazy(() => import("./pages/SocialPreview"));
 const IPhoneRicondizionati = lazy(() => import("./pages/IPhoneRicondizionati"));
 const TrovaModelloDispositivo = lazy(() => import("./pages/TrovaModelloDispositivo"));
 
-// Lazy load - Admin
-const Admin = lazy(() => import("./pages/Admin"));
-const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 
 // Lazy load - Servizi
 const RiparazioneDisplayIPhone = lazy(() => import("./pages/services/RiparazioneDisplayIPhone"));
@@ -73,79 +69,73 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <AuthProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          {import.meta.env.DEV && <SEOMonitor />}
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Index />} />
-          
-          {/* Pagine principali */}
-          <Route path="/servizi" element={<Servizi />} />
-          <Route path="/chi-siamo" element={<ChiSiamo />} />
-          <Route path="/faq" element={<FAQPage />} />
-          <Route path="/contatti" element={<Contatti />} />
-          <Route path="/iphone-ricondizionati-assemini" element={<IPhoneRicondizionati />} />
-          <Route path="/social-preview" element={<SocialPreview />} />
-          
-          
-          {/* Guide Modelli Dispositivi */}
-          <Route path="/trova-modello-dispositivo" element={<TrovaModelloDispositivo />} />
-          <Route path="/trova-modello-dispositivo/iphone" element={<TrovaModelloIPhone />} />
-          <Route path="/trova-modello-dispositivo/samsung" element={<TrovaModelloSamsung />} />
-          
-          {/* Blog */}
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/riparazione-iphone-1-ora-giolab-assemini" element={<RiparazioneIPhone1Ora />} />
-          <Route path="/blog/batteria-maggiorata-iphone-giolab-assemini" element={<BatteriaMaggiorataIPhoneBlog />} />
-          <Route path="/blog/recupero-dati-iphone-rotto-assemini" element={<RecuperoDatiIPhoneRotto />} />
-          <Route path="/blog/come-capire-batteria-iphone-sostituita" element={<ComeCabireBatteriaIPhone />} />
-          <Route path="/blog/display-originali-vs-compatibili" element={<DisplayOriginaliVsCompatibili />} />
-              <Route path="/blog/rigenerazione-vetro-iphone-ipad-apple-watch" element={<RigenerazioneVetroIphoneIpadAppleWatch />} />
-              <Route path="/blog/manutenzione-playstation-5" element={<ManutenzionePlayStation5 />} />
-              <Route path="/blog/come-trovare-codice-modello-dispositivo-giolab-assemini" element={<CodiceModelloDispositivo />} />
-              <Route path="/blog/riparazione-face-id-iphone-giolab-assemini" element={<RiparazioneFaceIDIPhone />} />
-              <Route path="/blog/pc-lento-velocizzare-ssd-pulizia-giolab-assemini" element={<PCLentoVelocizzare />} />
-          
-          {/* Guide Modelli */}
-          <Route path="/trova-modello-dispositivo/xiaomi" element={<TrovaModelloXiaomi />} />
-          <Route path="/trova-modello-dispositivo/oppo" element={<TrovaModelloOPPO />} />
-          <Route path="/trova-modello-dispositivo/huawei" element={<TrovaModelloHuawei />} />
-          <Route path="/trova-modello-dispositivo/ipad" element={<TrovaModelloiPad />} />
-          <Route path="/trova-modello-dispositivo/macbook" element={<TrovaModelloMacBook />} />
-          
-          {/* Servizi specifici */}
-          <Route path="/servizi/riparazione-display-iphone-assemini" element={<RiparazioneDisplayIPhone />} />
-          <Route path="/servizi/batteria-maggiorata-iphone" element={<BatteriaMaggiorataIPhoneService />} />
-          <Route path="/servizi/restauro-vetri-certificato" element={<RestauroVetriCertificato />} />
-          
-          {/* Dispositivi in Vendita */}
-          <Route path="/dispositivi" element={<DispositiviHub />} />
-          <Route path="/dispositivi/iphone" element={<DispositiviApple />} />
-          <Route path="/dispositivi/samsung" element={<DispositiviSamsung />} />
-          <Route path="/dispositivi/xiaomi" element={<DispositiviXiaomi />} />
-          <Route path="/dispositivi/oppo" element={<DispositiviOPPO />} />
-          <Route path="/dispositivi/huawei" element={<DispositiviHuawei />} />
-          <Route path="/dispositivi/console" element={<DispositiviConsole />} />
-          
-          {/* Admin */}
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/admin/login" element={<AdminLogin />} />
-          
-          {/* Documentazione */}
-          <Route path="/seo-docs" element={<SEODocumentation />} />
-          
-          {/* 404 */}
-          <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </BrowserRouter>
-      </TooltipProvider>
-    </AuthProvider>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <ScrollToTop />
+        {import.meta.env.DEV && <SEOMonitor />}
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Index />} />
+        
+        {/* Pagine principali */}
+        <Route path="/servizi" element={<Servizi />} />
+        <Route path="/chi-siamo" element={<ChiSiamo />} />
+        <Route path="/faq" element={<FAQPage />} />
+        <Route path="/contatti" element={<Contatti />} />
+        <Route path="/iphone-ricondizionati-assemini" element={<IPhoneRicondizionati />} />
+        <Route path="/social-preview" element={<SocialPreview />} />
+        
+        
+        {/* Guide Modelli Dispositivi */}
+        <Route path="/trova-modello-dispositivo" element={<TrovaModelloDispositivo />} />
+        <Route path="/trova-modello-dispositivo/iphone" element={<TrovaModelloIPhone />} />
+        <Route path="/trova-modello-dispositivo/samsung" element={<TrovaModelloSamsung />} />
+        
+        {/* Blog */}
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/riparazione-iphone-1-ora-giolab-assemini" element={<RiparazioneIPhone1Ora />} />
+        <Route path="/blog/batteria-maggiorata-iphone-giolab-assemini" element={<BatteriaMaggiorataIPhoneBlog />} />
+        <Route path="/blog/recupero-dati-iphone-rotto-assemini" element={<RecuperoDatiIPhoneRotto />} />
+        <Route path="/blog/come-capire-batteria-iphone-sostituita" element={<ComeCabireBatteriaIPhone />} />
+        <Route path="/blog/display-originali-vs-compatibili" element={<DisplayOriginaliVsCompatibili />} />
+            <Route path="/blog/rigenerazione-vetro-iphone-ipad-apple-watch" element={<RigenerazioneVetroIphoneIpadAppleWatch />} />
+            <Route path="/blog/manutenzione-playstation-5" element={<ManutenzionePlayStation5 />} />
+            <Route path="/blog/come-trovare-codice-modello-dispositivo-giolab-assemini" element={<CodiceModelloDispositivo />} />
+            <Route path="/blog/riparazione-face-id-iphone-giolab-assemini" element={<RiparazioneFaceIDIPhone />} />
+            <Route path="/blog/pc-lento-velocizzare-ssd-pulizia-giolab-assemini" element={<PCLentoVelocizzare />} />
+        
+        {/* Guide Modelli */}
+        <Route path="/trova-modello-dispositivo/xiaomi" element={<TrovaModelloXiaomi />} />
+        <Route path="/trova-modello-dispositivo/oppo" element={<TrovaModelloOPPO />} />
+        <Route path="/trova-modello-dispositivo/huawei" element={<TrovaModelloHuawei />} />
+        <Route path="/trova-modello-dispositivo/ipad" element={<TrovaModelloiPad />} />
+        <Route path="/trova-modello-dispositivo/macbook" element={<TrovaModelloMacBook />} />
+        
+        {/* Servizi specifici */}
+        <Route path="/servizi/riparazione-display-iphone-assemini" element={<RiparazioneDisplayIPhone />} />
+        <Route path="/servizi/batteria-maggiorata-iphone" element={<BatteriaMaggiorataIPhoneService />} />
+        <Route path="/servizi/restauro-vetri-certificato" element={<RestauroVetriCertificato />} />
+        
+        {/* Dispositivi in Vendita */}
+        <Route path="/dispositivi" element={<DispositiviHub />} />
+        <Route path="/dispositivi/iphone" element={<DispositiviApple />} />
+        <Route path="/dispositivi/samsung" element={<DispositiviSamsung />} />
+        <Route path="/dispositivi/xiaomi" element={<DispositiviXiaomi />} />
+        <Route path="/dispositivi/oppo" element={<DispositiviOPPO />} />
+        <Route path="/dispositivi/huawei" element={<DispositiviHuawei />} />
+        <Route path="/dispositivi/console" element={<DispositiviConsole />} />
+        
+        {/* Documentazione */}
+        <Route path="/seo-docs" element={<SEODocumentation />} />
+        
+        {/* 404 */}
+        <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
+    </TooltipProvider>
   </QueryClientProvider>
 );
 

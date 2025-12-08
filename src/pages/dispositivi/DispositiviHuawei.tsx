@@ -5,24 +5,20 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductFilters } from "@/components/ProductFilters";
-import { useAvailableProducts } from "@/hooks/useProducts";
+import { products } from "@/data/products";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ScrollToTop from "@/components/ScrollToTop";
 import StickyMobileActionBar from "@/components/StickyMobileActionBar";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Loader2 } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 const DispositiviHuawei = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [condition, setCondition] = useState<string>("all");
   const [sortBy, setSortBy] = useState("featured");
 
-  const { data: products, isLoading } = useAvailableProducts('huawei');
-
   const filteredProducts = useMemo(() => {
-    if (!products) return [];
-    
-    let filtered = [...products];
+    let filtered = products.filter(p => p.brand === 'huawei');
 
     if (condition !== 'all') {
       filtered = filtered.filter(p => p.condition === condition);
@@ -37,9 +33,9 @@ const DispositiviHuawei = () => {
     filtered.sort((a, b) => {
       switch (sortBy) {
         case 'price-asc':
-          return Number(a.price) - Number(b.price);
+          return a.price - b.price;
         case 'price-desc':
-          return Number(b.price) - Number(a.price);
+          return b.price - a.price;
         case 'model':
           return a.model.localeCompare(b.model);
         case 'featured':
@@ -49,7 +45,7 @@ const DispositiviHuawei = () => {
     });
 
     return filtered;
-  }, [products, searchQuery, condition, sortBy]);
+  }, [searchQuery, condition, sortBy]);
 
   return (
     <>
@@ -101,11 +97,7 @@ const DispositiviHuawei = () => {
               resultCount={filteredProducts.length}
             />
 
-            {isLoading ? (
-              <div className="flex items-center justify-center py-12">
-                <Loader2 className="w-8 h-8 animate-spin text-primary" />
-              </div>
-            ) : filteredProducts.length > 0 ? (
+            {filteredProducts.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredProducts.map(product => (
                   <ProductCard key={product.id} product={product} />
