@@ -5,20 +5,24 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductFilters } from "@/components/ProductFilters";
-import { products } from "@/data/products";
+import { useAvailableProducts } from "@/hooks/useProducts";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ScrollToTop from "@/components/ScrollToTop";
 import StickyMobileActionBar from "@/components/StickyMobileActionBar";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Loader2 } from "lucide-react";
 
 const DispositiviOPPO = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [condition, setCondition] = useState<string>("all");
   const [sortBy, setSortBy] = useState("featured");
 
+  const { data: products, isLoading } = useAvailableProducts('oppo');
+
   const filteredProducts = useMemo(() => {
-    let filtered = products.filter(p => p.brand === 'oppo');
+    if (!products) return [];
+    
+    let filtered = [...products];
 
     if (condition !== 'all') {
       filtered = filtered.filter(p => p.condition === condition);
@@ -33,9 +37,9 @@ const DispositiviOPPO = () => {
     filtered.sort((a, b) => {
       switch (sortBy) {
         case 'price-asc':
-          return a.price - b.price;
+          return Number(a.price) - Number(b.price);
         case 'price-desc':
-          return b.price - a.price;
+          return Number(b.price) - Number(a.price);
         case 'model':
           return a.model.localeCompare(b.model);
         case 'featured':
@@ -45,7 +49,7 @@ const DispositiviOPPO = () => {
     });
 
     return filtered;
-  }, [searchQuery, condition, sortBy]);
+  }, [products, searchQuery, condition, sortBy]);
 
   return (
     <>
@@ -97,7 +101,11 @@ const DispositiviOPPO = () => {
               resultCount={filteredProducts.length}
             />
 
-            {filteredProducts.length > 0 ? (
+            {isLoading ? (
+              <div className="flex items-center justify-center py-12">
+                <Loader2 className="w-8 h-8 animate-spin text-primary" />
+              </div>
+            ) : filteredProducts.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredProducts.map(product => (
                   <ProductCard key={product.id} product={product} />

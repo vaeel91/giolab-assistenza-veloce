@@ -7,17 +7,20 @@ import ScrollToTop from "@/components/ScrollToTop";
 import StickyMobileActionBar from "@/components/StickyMobileActionBar";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductFilters } from "@/components/ProductFilters";
-import { products } from "@/data/products";
-import { Gamepad2 } from "lucide-react";
+import { useAvailableProducts } from "@/hooks/useProducts";
+import { Gamepad2, Loader2 } from "lucide-react";
 
 const DispositiviConsole = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [condition, setCondition] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("featured");
 
+  const { data: products, isLoading } = useAvailableProducts('console');
+
   const filteredProducts = useMemo(() => {
+    if (!products) return [];
+    
     return products
-      .filter(p => p.brand === 'console')
       .filter(p => {
         if (condition !== "all" && p.condition !== condition) return false;
         if (searchQuery) {
@@ -29,13 +32,13 @@ const DispositiviConsole = () => {
       })
       .sort((a, b) => {
         switch (sortBy) {
-          case "price-asc": return a.price - b.price;
-          case "price-desc": return b.price - a.price;
+          case "price-asc": return Number(a.price) - Number(b.price);
+          case "price-desc": return Number(b.price) - Number(a.price);
           case "model": return a.model.localeCompare(b.model);
           default: return (b.featured ? 1 : 0) - (a.featured ? 1 : 0);
         }
       });
-  }, [searchQuery, condition, sortBy]);
+  }, [products, searchQuery, condition, sortBy]);
 
   return (
     <>
@@ -76,7 +79,11 @@ const DispositiviConsole = () => {
           />
 
           {/* Products Grid */}
-          {filteredProducts.length > 0 ? (
+          {isLoading ? (
+            <div className="flex items-center justify-center py-12">
+              <Loader2 className="w-8 h-8 animate-spin text-primary" />
+            </div>
+          ) : filteredProducts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
               {filteredProducts.map(product => (
                 <ProductCard key={product.id} product={product} />
