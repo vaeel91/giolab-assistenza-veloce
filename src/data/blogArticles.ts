@@ -8,8 +8,18 @@ import codiceModelloDispositivo from "@/assets/trova-codice-modello-ipad-iphone-
 import riparazioneFaceID from "/og-images/riparazione-face-id-iphone-truedepth-sensore-giolab-assemini.jpg";
 import pcLentoVelocizzare from "@/assets/pc-lento-velocizzare-ssd-pulizia-giolab-assemini.jpg";
 import displayOriginaliCompatibili from "@/assets/display-iphone-originale-oem-oled-compatibile-tft-confronto-giolab.jpg";
+import displayMacBook from "/og-images/sostituzione-display-macbook-giolab-assemini.jpg";
 
 export const blogArticles: BlogArticle[] = [
+  {
+    slug: "sostituzione-display-macbook-protocollo-qualita-garanzia",
+    title: "Sostituzione Display MacBook - Giolab Assemini",
+    description: "Sostituzione display MacBook: Full Assembly, test rigorosi, 12 mesi garanzia. ☎️ 340 69 70 686.",
+    date: "2025-12-09",
+    readTime: "7 min",
+    category: "Guide",
+    image: displayMacBook
+  },
   {
     slug: "riparazione-iphone-1-ora-giolab-assemini",
     title: "Riparazione iPhone 1 Ora - Giolab Assemini",
