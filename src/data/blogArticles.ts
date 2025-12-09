@@ -8,7 +8,7 @@ import codiceModelloDispositivo from "@/assets/trova-codice-modello-ipad-iphone-
 import riparazioneFaceID from "/og-images/riparazione-face-id-iphone-truedepth-sensore-giolab-assemini.jpg";
 import pcLentoVelocizzare from "@/assets/pc-lento-velocizzare-ssd-pulizia-giolab-assemini.jpg";
 import displayOriginaliCompatibili from "@/assets/display-iphone-originale-oem-oled-compatibile-tft-confronto-giolab.jpg";
-import displayMacBook from "/og-images/sostituzione-display-macbook-giolab-assemini.jpg";
+// displayMacBook placeholder - use display comparison image until dedicated OG image is created
 
 export const blogArticles: BlogArticle[] = [
   {
@@ -18,7 +18,7 @@ export const blogArticles: BlogArticle[] = [
     date: "2025-12-09",
     readTime: "7 min",
     category: "Guide",
-    image: displayMacBook
+    image: displayOriginaliCompatibili
   },
   {
     slug: "riparazione-iphone-1-ora-giolab-assemini",
