@@ -1,6 +1,12 @@
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
-import { Wrench, Shield, CheckCircle2, Monitor, Cpu, Settings } from "lucide-react";
+import { Wrench, Shield, CheckCircle2, Monitor, Cpu, Settings, HelpCircle } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const SostituzioneDisplayMacBook = () => {
   const content = (
@@ -144,6 +150,95 @@ const SostituzioneDisplayMacBook = () => {
         <p className="blog-paragraph">
           Offriamo diagnosi gratuita e preventivi trasparenti. Il tuo MacBook merita le cure migliori.
         </p>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="blog-section">
+        <h2 id="faq" className="blog-h2">
+          <HelpCircle className="inline-block w-6 h-6 mr-2 text-giolab-blue" />
+          Domande Frequenti
+        </h2>
+        
+        <Accordion type="single" collapsible className="w-full space-y-3">
+          <AccordionItem value="qualita-visiva" className="border rounded-lg px-4">
+            <AccordionTrigger className="text-left font-semibold hover:no-underline">
+              Il nuovo schermo avrà la stessa qualità, luminosità e colori del mio originale Apple?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              Assolutamente sì. Il nostro protocollo di qualità prevede l'utilizzo di pannelli Retina conformi agli standard originali. 
+              Questo significa che luminosità, fedeltà cromatica (gamma colori P3), risoluzione e angoli di visione saranno 
+              indistinguibili dal display che avevi appena acquistato il Mac. Non noterai alcuna differenza nella definizione 
+              del testo o nella vividezza delle immagini.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="tempi-attesa" className="border rounded-lg px-4">
+            <AccordionTrigger className="text-left font-semibold hover:no-underline">
+              Quanto tempo dovrò restare senza il mio MacBook? Mi serve per lavorare!
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              Sappiamo quanto il Mac sia fondamentale per il tuo lavoro. A differenza dei canali ufficiali che possono richiedere 
+              giorni o settimane, il nostro laboratorio è strutturato per interventi rapidi. Una volta prenotato il ricambio e 
+              confermato l'appuntamento, riduciamo al minimo i tempi di fermo macchina, permettendoti di tornare operativo 
+              nel più breve tempo possibile.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="perdita-dati" className="border rounded-lg px-4">
+            <AccordionTrigger className="text-left font-semibold hover:no-underline">
+              Devo formattare il Mac o perderò i miei file durante la riparazione?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              No. La sostituzione del display è un intervento hardware che non tocca la memoria del tuo computer. 
+              I tuoi documenti, foto e applicazioni rimarranno esattamente dove sono. Tuttavia, come buona norma per 
+              qualsiasi intervento tecnico, consigliamo sempre di avere un backup recente (Time Machine) per la tua totale tranquillità.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="garanzia-post" className="border rounded-lg px-4">
+            <AccordionTrigger className="text-left font-semibold hover:no-underline">
+              E se lo schermo smette di funzionare dopo un mese? Che garanzia offrite?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              Offriamo una <strong>Garanzia di 12 Mesi</strong> sul display sostituito, esattamente come (o spesso meglio) 
+              degli standard di mercato. La garanzia copre qualsiasi difetto di fabbricazione o anomalia funzionale 
+              (es. touch non reattivo, pixel difettosi, spegnimenti improvvisi) che non sia causata da nuovi danni accidentali.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="webcam-truetone" className="border rounded-lg px-4">
+            <AccordionTrigger className="text-left font-semibold hover:no-underline">
+              La webcam e la regolazione automatica della luminosità (True Tone) funzioneranno ancora?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              Sì. I nostri tecnici sono specializzati nel trapianto corretto dei sensori. Durante il processo di sostituzione, 
+              ci assicuriamo che la videocamera FaceTime e i sensori di luce ambientale vengano preservati e reinstallati 
+              correttamente, mantenendo attive tutte le funzionalità originali del tuo modello (laddove il ricambio lo preveda tecnicamente).
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="costo-apple-store" className="border rounded-lg px-4">
+            <AccordionTrigger className="text-left font-semibold hover:no-underline">
+              Perché dovrei scegliervi rispetto all'Apple Store?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              Per il rapporto <strong>Qualità/Prezzo/Tempo</strong>. Offriamo un servizio di livello "Premium" con ricambi 
+              di altissima qualità e una garanzia solida, ma a un costo spesso più competitivo rispetto alla sostituzione 
+              fuori garanzia della casa madre, e con tempistiche decisamente più snelle.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="controllo-finale" className="border rounded-lg px-4">
+            <AccordionTrigger className="text-left font-semibold hover:no-underline">
+              Come fate a essere sicuri che tutto funzioni?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              Prima di riconsegnarti il dispositivo, eseguiamo una serie di <strong>Test Post-Riparazione</strong> 
+              (parte integrante del nostro Protocollo Qualità). Verifichiamo non solo l'accensione, ma anche la calibrazione 
+              dei colori, la retroilluminazione uniforme e la risposta della webcam, per garantirti un MacBook perfetto al 100%.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </section>
 
       {/* ArticleCTA Component */}
