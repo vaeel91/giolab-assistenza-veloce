@@ -248,8 +248,8 @@ const SostituzioneDisplayMacBook = () => {
 
   return (
     <BlogArticleTemplate
-      title="Sostituzione Display MacBook: Qualità Originale, Protocolli Rigidi e Garanzia 12 Mesi"
-      description="Scopri il nostro protocollo per la sostituzione display MacBook: ricambi Full Assembly, test rigorosi e 12 mesi di garanzia per un risultato impeccabile."
+      title="Display MacBook: Qualità e Garanzia 12 Mesi | Giolab"
+      description="Sostituzione display MacBook ad Assemini: ricambi Full Assembly, test rigorosi e 12 mesi di garanzia."
       keywords="sostituzione display macbook, riparazione schermo macbook, display macbook assemini, riparazione macbook cagliari, display full assembly macbook, garanzia riparazione macbook, tecnico macbook sardegna"
       slug="sostituzione-display-macbook-protocollo-qualita-garanzia"
       ogImage="https://giolabriparazioni.it/og-images/sostituzione-display-macbook-giolab-assemini.jpg"

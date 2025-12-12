@@ -246,7 +246,7 @@ export const BlogArticleTemplate = ({
           </Breadcrumb>
 
           {/* Metadati Articolo */}
-          <div className="flex flex-wrap items-center gap-4 mb-8 text-sm text-muted-foreground border-b border-border pb-4">
+          <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-muted-foreground border-b border-border pb-4">
             <Link 
               to={extractPath(categoryInfo.url)}
               className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium hover:bg-primary/20 transition-colors"
@@ -262,6 +262,11 @@ export const BlogArticleTemplate = ({
               <span>{readingTime} min di lettura</span>
             </div>
           </div>
+
+          {/* Titolo H1 */}
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-8 leading-tight">
+            {cleanTitle}
+          </h1>
           
               {/* Main Article Content with Auto-Linking */}
               <article className="prose prose-lg max-w-none dark:prose-invert blog-content overflow-x-hidden">
