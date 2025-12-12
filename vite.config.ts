@@ -22,9 +22,47 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'ui-vendor': ['lucide-react', '@radix-ui/react-dialog', '@radix-ui/react-accordion'],
+        manualChunks: (id) => {
+          // React core - loaded first
+          if (id.includes('react-dom') || id.includes('react/')) {
+            return 'react-core';
+          }
+          // React Router - separate chunk
+          if (id.includes('react-router')) {
+            return 'react-router';
+          }
+          // TanStack Query - lazy load
+          if (id.includes('@tanstack/react-query')) {
+            return 'tanstack-query';
+          }
+          // Radix UI components - separate chunk
+          if (id.includes('@radix-ui')) {
+            return 'radix-ui';
+          }
+          // Recharts - heavy, lazy load
+          if (id.includes('recharts') || id.includes('d3-')) {
+            return 'charts';
+          }
+          // Lucide icons - separate chunk
+          if (id.includes('lucide-react')) {
+            return 'icons';
+          }
+          // Date utilities
+          if (id.includes('date-fns')) {
+            return 'date-utils';
+          }
+          // Embla carousel
+          if (id.includes('embla-carousel')) {
+            return 'carousel';
+          }
+          // Form utilities
+          if (id.includes('react-hook-form') || id.includes('@hookform') || id.includes('zod')) {
+            return 'forms';
+          }
+          // Supabase client
+          if (id.includes('@supabase')) {
+            return 'supabase';
+          }
         },
         assetFileNames: (assetInfo) => {
           const info = assetInfo.name?.split('.');
