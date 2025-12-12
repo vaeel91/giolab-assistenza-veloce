@@ -88,7 +88,7 @@ export default function RiparazioneIPhone1Ora() {
         <h2 className="blog-h2">🔧 Ripariamo il Tuo iPhone in Meno di 60 Minuti</h2>
         
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">✔️ 1. Vieni direttamente o prenota</h4>
+          <h3 className="blog-h3">✔️ 1. Vieni direttamente o prenota</h3>
           <p className="blog-paragraph">
             📞 <strong>340 69 70 686</strong><br />
             📍 Via Carmine 20, 09032 Assemini (CA)
@@ -96,14 +96,14 @@ export default function RiparazioneIPhone1Ora() {
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">✔️ 2. Diagnosi gratuita (10 minuti)</h4>
+          <h3 className="blog-h3">✔️ 2. Diagnosi gratuita (10 minuti)</h3>
           <p className="blog-paragraph">
             Identificazione immediata del problema e preventivo trasparente.
           </p>
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">✔️ 3. Riparazione Express (30–50 minuti)</h4>
+          <h3 className="blog-h3">✔️ 3. Riparazione Express (30–50 minuti)</h3>
           <p className="blog-paragraph">Ripariamo in 1 ora:</p>
           <ul className="blog-list-bulleted">
             <li>schermo</li>
@@ -115,7 +115,7 @@ export default function RiparazioneIPhone1Ora() {
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">✔️ 4. Test finale + garanzia 12 mesi</h4>
+          <h3 className="blog-h3">✔️ 4. Test finale + garanzia 12 mesi</h3>
           <p className="blog-paragraph">Prima della consegna controlliamo:</p>
           <ul className="blog-list-bulleted">
             <li>sensori</li>
