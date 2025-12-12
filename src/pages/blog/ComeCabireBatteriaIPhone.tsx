@@ -96,7 +96,7 @@ export default function ComeCabireBatteriaIPhone() {
 
       <section>
         <div className="blog-highlight-box info">
-          <h2 id="sostituzione-giolab" className="blog-h3">
+          <h2 id="sostituzione-giolab" className="blog-h2">
             Sostituzione Batteria iPhone da Giolab Assemini
           </h2>
           <p className="blog-paragraph">

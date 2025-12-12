@@ -65,7 +65,7 @@ export default function DisplayOriginaliVsCompatibili() {
         
         <h3 className="blog-h3">Tipologie di Display Compatibili</h3>
         
-        <h4 className="font-semibold text-lg mt-4">1. Display TFT (LCD)</h4>
+        <p className="font-semibold text-lg mt-4">1. Display TFT (LCD)</p>
         <p className="blog-paragraph">
           Utilizzano tecnologia <strong>LCD a cristalli liquidi</strong> con retroilluminazione.
         </p>
@@ -75,7 +75,7 @@ export default function DisplayOriginaliVsCompatibili() {
           <li><strong>Ideale per:</strong> iPhone 6, 7, 8 con budget ridotto</li>
         </ul>
 
-        <h4 className="font-semibold text-lg mt-4">2. Display Hard OLED</h4>
+        <p className="font-semibold text-lg mt-4">2. Display Hard OLED</p>
         <p className="blog-paragraph">
           Utilizzano pannelli <strong>OLED rigidi</strong> di qualità medio-alta.
         </p>
@@ -85,7 +85,7 @@ export default function DisplayOriginaliVsCompatibili() {
           <li><strong>Ideale per:</strong> iPhone X, 11, 12 con buon rapporto qualità/prezzo</li>
         </ul>
 
-        <h4 className="font-semibold text-lg mt-4">3. Display Soft OLED (Premium)</h4>
+        <p className="font-semibold text-lg mt-4">3. Display Soft OLED (Premium)</p>
         <p className="blog-paragraph">
           Pannelli <strong>OLED flessibili</strong> di qualità superiore, simili agli originali.
         </p>
@@ -115,7 +115,7 @@ export default function DisplayOriginaliVsCompatibili() {
         
         <h3 className="blog-h3">Tipologie di Display Originali</h3>
         
-        <h4 className="font-semibold text-lg mt-4">1. Display Originale Nuovo</h4>
+        <p className="font-semibold text-lg mt-4">1. Display Originale Nuovo</p>
         <p className="blog-paragraph">
           Display mai utilizzato, proveniente da fornitore Apple o da scorte certificate.
         </p>
@@ -126,7 +126,7 @@ export default function DisplayOriginaliVsCompatibili() {
           <li>Massima durata nel tempo</li>
         </ul>
 
-        <h4 className="font-semibold text-lg mt-4">2. Display Pulled (Originale Recuperato)</h4>
+        <p className="font-semibold text-lg mt-4">2. Display Pulled (Originale Recuperato)</p>
         <p className="blog-paragraph">
           Display originali Apple <strong>recuperati da iPhone dismessi o danneggiati</strong>, testati e ricondizionati.
         </p>
@@ -275,7 +275,7 @@ export default function DisplayOriginaliVsCompatibili() {
         </p>
 
         <div className="blog-box-warning">
-          <h4 className="blog-box-title">⚠️ Display TFT (LCD)</h4>
+          <p className="font-semibold">⚠️ Display TFT (LCD)</p>
           <p className="blog-paragraph">
             La retroilluminazione è sempre attiva, anche per mostrare il nero. Questo comporta un <strong>consumo 
             energetico superiore del 25-35%</strong> rispetto a un OLED.
@@ -283,7 +283,7 @@ export default function DisplayOriginaliVsCompatibili() {
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">✅ Display OLED (Hard, Soft, Originale)</h4>
+          <p className="font-semibold">✅ Display OLED (Hard, Soft, Originale)</p>
           <p className="blog-paragraph">
             I pixel neri sono completamente spenti. Utilizzando temi scuri e sfondi neri, la batteria può durare 
             <strong>fino al 30% in più</strong>.
@@ -322,7 +322,7 @@ export default function DisplayOriginaliVsCompatibili() {
         </ul>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">🛡️ Garanzia GioLab Assemini</h4>
+          <p className="font-semibold">🛡️ Garanzia GioLab Assemini</p>
           <p className="blog-paragraph">
             Su tutti i display installati da GioLab offriamo <strong>12 mesi di garanzia</strong> su difetti di 
             fabbricazione e manodopera. Per i display TFT base: 6 mesi.
