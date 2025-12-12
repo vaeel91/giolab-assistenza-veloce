@@ -153,13 +153,7 @@ const ServiceTemplate = ({
       "url": absoluteUrl,
       "priceValidUntil": new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "150",
-      "bestRating": "5",
-      "worstRating": "1"
-    }
+    "url": absoluteUrl
   };
 
   // Product schema for services with specific pricing
@@ -180,21 +174,11 @@ const ServiceTemplate = ({
       "availability": "https://schema.org/InStock",
       "url": absoluteUrl,
       "seller": {
-        "@type": "Organization",
-        "name": "Giolab",
         "@id": "https://giolabriparazioni.it/#business"
       },
       "priceValidUntil": new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
       "itemCondition": "https://schema.org/NewCondition"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "150",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    ...(relevantReviews.length > 0 && { "review": relevantReviews })
+    }
   } : null;
 
   return (
