@@ -171,6 +171,10 @@
 
   <body>
     <div id="root"></div>
+    
+    <!-- Modulepreload for critical chunks - improves JS loading -->
+    <link rel="modulepreload" href="/src/main.tsx">
+    
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
