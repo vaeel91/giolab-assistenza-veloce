@@ -281,7 +281,7 @@ export default function RecuperoDatiIPhoneRotto() {
 
   return (
     <BlogArticleTemplate
-      title="Recupero Dati iPhone Rotto | Servizio Professionale Assemini"
+      title="Recupero Dati iPhone Rotto | Giolab Assemini"
       description="Recupero dati da iPhone danneggiati, caduti in acqua o non funzionanti. Microsaldature, estrazione chip NAND. Oltre 85% di successo. GioLab Assemini."
       keywords="recupero dati iPhone, iPhone rotto recupero dati, recupero iPhone caduto in acqua, microsaldature iPhone, estrazione dati iPhone, GioLab Assemini, recupero dati Cagliari"
       slug="recupero-dati-iphone-rotto-assemini"

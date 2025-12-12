@@ -379,8 +379,8 @@ export default function RigenerazioneVetroIphoneIpadAppleWatch() {
 
   return (
     <BlogArticleTemplate
-      title="Rigenerazione Vetro iPhone, iPad e Apple Watch | GioLab Assemini"
-      description="Rigenerazione del vetro per iPhone, iPad e Apple Watch ad Assemini (Cagliari). Risparmio fino al 50%, qualità certificata e tempi rapidi. Scopri come funziona."
+      title="Rigenerazione Vetro iPhone iPad Watch | Giolab"
+      description="Rigenerazione vetro iPhone, iPad e Apple Watch ad Assemini. Risparmio 50%, qualità certificata. ☎️ 340 69 70 686."
       keywords="rigenerazione vetro iPhone, rigenerazione schermo iPad, cambio vetro Apple Watch, riparazione display iPhone Assemini, rigenerazione vetro Cagliari, GioLab"
       slug="rigenerazione-vetro-iphone-ipad-apple-watch"
       ogImage="https://giolabriparazioni.it/og-images/rigenerazione-vetro.jpg"
