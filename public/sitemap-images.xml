@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- HOMEPAGE -->
+  <!-- HOMEPAGE - Ultimo aggiornamento: 2025-12-12 -->
   <url>
     <loc>https://giolabriparazioni.it/</loc>
     <image:image>
@@ -12,11 +12,11 @@
     </image:image>
   </url>
 
-  <!-- BLOG ARTICLES -->
+  <!-- BLOG ARTICLES - Ultimo aggiornamento: 2025-12-12 -->
   <url>
     <loc>https://giolabriparazioni.it/blog/riparazione-iphone-1-ora-giolab-assemini</loc>
     <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/riparazione-iphone-1-ora-giolab-assemini.jpg</image:loc>
+      <image:loc>https://giolabriparazioni.it/og-images/riparazione-iphone-1-ora-assemini.jpg</image:loc>
       <image:title>Riparazione iPhone in 1 ora - GioLab Assemini</image:title>
       <image:caption>Servizio di riparazione iPhone rapida in 1 ora ad Assemini: display, batteria e componenti</image:caption>
     </image:image>
@@ -25,7 +25,7 @@
   <url>
     <loc>https://giolabriparazioni.it/blog/batteria-maggiorata-iphone-giolab-assemini</loc>
     <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/batteria-maggiorata-iphone-giolab-assemini.jpg</image:loc>
+      <image:loc>https://giolabriparazioni.it/og-images/batteria-maggiorata-iphone.jpg</image:loc>
       <image:title>Batteria Maggiorata iPhone - GioLab Assemini</image:title>
       <image:caption>Installazione batteria maggiorata per iPhone con fino al 30% di autonomia in più ad Assemini</image:caption>
     </image:image>
@@ -34,7 +34,7 @@
   <url>
     <loc>https://giolabriparazioni.it/blog/recupero-dati-iphone-rotto-assemini</loc>
     <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/recupero-dati-iphone-rotto-assemini.jpg</image:loc>
+      <image:loc>https://giolabriparazioni.it/og-images/recupero-dati-iphone.jpg</image:loc>
       <image:title>Recupero Dati iPhone Rotto - GioLab Assemini</image:title>
       <image:caption>Servizio professionale di recupero dati da iPhone danneggiato, rotto o non funzionante ad Assemini</image:caption>
     </image:image>
@@ -94,11 +94,20 @@
     </image:image>
   </url>
 
-  <!-- SERVIZI -->
+  <url>
+    <loc>https://giolabriparazioni.it/blog/sostituzione-display-macbook-protocollo-qualita-garanzia</loc>
+    <image:image>
+      <image:loc>https://giolabriparazioni.it/og-images/sostituzione-display-macbook-giolab-assemini.jpg</image:loc>
+      <image:title>Sostituzione Display MacBook - GioLab Assemini</image:title>
+      <image:caption>Servizio professionale di sostituzione display MacBook con protocollo qualità e garanzia ad Assemini</image:caption>
+    </image:image>
+  </url>
+
+  <!-- SERVIZI - Ultimo aggiornamento: 2025-12-12 -->
   <url>
     <loc>https://giolabriparazioni.it/servizi/riparazione-display-iphone-assemini</loc>
     <image:image>
-      <image:loc>https://giolabriparazioni.it/og-images/riparazione-display-iphone-assemini.jpg</image:loc>
+      <image:loc>https://giolabriparazioni.it/og-images/riparazione-iphone-1-ora.jpg</image:loc>
       <image:title>Riparazione Display iPhone Assemini - GioLab</image:title>
       <image:caption>Servizio certificato di riparazione display iPhone ad Assemini: qualità garantita, intervento rapido</image:caption>
     </image:image>
@@ -110,6 +119,15 @@
       <image:loc>https://giolabriparazioni.it/og-images/batteria-maggiorata-iphone.jpg</image:loc>
       <image:title>Batteria Maggiorata iPhone - GioLab Assemini</image:title>
       <image:caption>Servizio di installazione batteria maggiorata iPhone con +30% autonomia ad Assemini</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://giolabriparazioni.it/servizi/restauro-vetri-certificato</loc>
+    <image:image>
+      <image:loc>https://giolabriparazioni.it/og-images/rigenerazione-vetro-apple-watch-iphone-ipad-giolab-assemini.jpg</image:loc>
+      <image:title>Restauro Vetri Certificato - GioLab Assemini</image:title>
+      <image:caption>Servizio certificato di restauro vetri per iPhone, iPad e Apple Watch con garanzia totale ad Assemini</image:caption>
     </image:image>
   </url>
 
