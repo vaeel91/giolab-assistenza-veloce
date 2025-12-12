@@ -6,7 +6,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { blogArticles } from "@/data/blogArticles";
 import { useState, useMemo } from "react";
 import { Input } from "@/components/ui/input";
-import OptimizedImage from "@/components/OptimizedImage";
+import LazyImage from "@/components/LazyImage";
 
 const BlogPreview = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -73,12 +73,14 @@ const BlogPreview = () => {
                 <Card className="border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg bg-card">
                   <CardHeader className="p-2 pb-1">
                   <div className="flex items-start gap-2 mb-1">
-                    <OptimizedImage
+                    <LazyImage
                       src={article.image} 
                       alt={article.title}
                       width={32}
                       height={32}
-                      className="w-7 h-7 md:w-8 md:h-8 rounded-lg object-cover flex-shrink-0 group-hover:scale-110 transition-transform"
+                      className="w-7 h-7 md:w-8 md:h-8 rounded-lg overflow-hidden flex-shrink-0"
+                      imgClassName="group-hover:scale-110 transition-transform"
+                      rootMargin="100px"
                     />
                     <div className="flex-1 min-w-0">
                         <div className="inline-block px-1.5 py-0.5 rounded-full bg-giolab-blue/10 mb-1">
