@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Instagram, ExternalLink } from "lucide-react";
+import LazyImage from "@/components/LazyImage";
 
 const galleryImages = [
   {
@@ -56,11 +57,12 @@ const ServiceGallery = () => {
                 className="group relative aspect-square rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
                 onClick={handleInstagramClick}
               >
-                <img
+                <LazyImage
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
+                  aspectRatio="square"
+                  imgClassName="group-hover:scale-110 transition-transform duration-500"
+                  rootMargin="300px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-3">
