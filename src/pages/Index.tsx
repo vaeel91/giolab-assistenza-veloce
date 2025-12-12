@@ -45,57 +45,15 @@ const Index = () => {
     };
   }, []);
   return <>
-      <SEOHead title="Riparazione iPhone e Smartphone a Assemini e Cagliari | Giolab" description="Riparazione iPhone e smartphone ad Assemini in 1 ora. Garanzia 12 mesi. Preventivo gratuito ☎️ 340 69 70 686. Contattaci ora!" keywords="riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza iPhone Cagliari, batteria maggiorata iPhone Assemini, riparazione vetro iPhone Assemini, micro-saldature Assemini, riparazione PC Assemini, assistenza console Assemini, centro assistenza iPhone Cagliari, rigenerazione vetro iPhone" breadcrumbs={[{
-      name: "Home",
-      url: "https://giolabriparazioni.it/"
-    }]} structuredData={{
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://giolabriparazioni.it/#localbusiness",
-      "name": "Giolab Riparazioni Smartphone e PC",
-      "description": "Centro assistenza specializzato in riparazione iPhone, smartphone, PC e console ad Assemini (Cagliari)",
-      "url": "https://giolabriparazioni.it",
-      "telephone": "+39 340 69 70 686",
-      "email": "giolabassemini@gmail.com",
-      "priceRange": "€€",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Via Carmine 20",
-        "addressLocality": "Assemini",
-        "postalCode": "09032",
-        "addressRegion": "CA",
-        "addressCountry": "IT"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "39.2891",
-        "longitude": "8.9947"
-      },
-      "openingHoursSpecification": [{
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "13:00"
-      }, {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "16:00",
-        "closes": "20:00"
-      }, {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "10:00",
-        "closes": "12:30"
-      }],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": aggregateRating.ratingValue,
-        "reviewCount": aggregateRating.reviewCount,
-        "bestRating": aggregateRating.bestRating,
-        "worstRating": aggregateRating.worstRating
-      },
-      "review": reviews
-    }} />
+      <SEOHead 
+        title="Riparazione iPhone e Smartphone a Assemini e Cagliari | Giolab" 
+        description="Riparazione iPhone e smartphone ad Assemini in 1 ora. Garanzia 12 mesi. Preventivo gratuito ☎️ 340 69 70 686. Contattaci ora!" 
+        keywords="riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza iPhone Cagliari, batteria maggiorata iPhone Assemini, riparazione vetro iPhone Assemini, micro-saldature Assemini, riparazione PC Assemini, assistenza console Assemini, centro assistenza iPhone Cagliari, rigenerazione vetro iPhone" 
+        breadcrumbs={[{
+          name: "Home",
+          url: "https://giolabriparazioni.it/"
+        }]} 
+      />
       <Header />
       
       <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth pb-20 md:pb-0 scroll-pt-16 md:scroll-pt-0">
