@@ -10,7 +10,7 @@ import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 export default function PCLentoVelocizzare() {
   const articleData = {
     title: "PC Lento? Velocizzalo con SSD e Pulizia | Giolab Assemini",
-    description: "Scopri come rendere veloce un PC lento: installazione SSD, pulizia interna, pasta termica e ottimizzazione software. Assistenza PC Assemini ☎️ 340 69 70 686",
+    description: "PC lento? Velocizzalo con SSD, pulizia interna e pasta termica. Assistenza PC Assemini. ☎️ 340 69 70 686.",
     keywords: "pc lento, velocizzare pc, installazione ssd, pulizia pc, pasta termica, pc che si scalda, ottimizzazione pc, assistenza pc assemini, riparazione pc cagliari, pc surriscaldato, upgrade ssd, manutenzione pc",
     slug: "pc-lento-velocizzare-ssd-pulizia-giolab-assemini",
     ogImage: "https://giolabriparazioni.it/og-images/pc-lento-velocizzare-ssd-pulizia-giolab-assemini.jpg",

@@ -240,7 +240,7 @@ export default function RiparazioneIPhone1Ora() {
       slug="riparazione-iphone-1-ora-giolab-assemini"
       ogImage="https://giolabriparazioni.it/og-images/riparazione-iphone-1-ora-assemini.jpg"
       author="GioLab Team"
-      datePublished="2024-01-15"
+      datePublished="2025-01-15"
       category="Riparazione"
       content={articleContent}
       readingTime={7}
