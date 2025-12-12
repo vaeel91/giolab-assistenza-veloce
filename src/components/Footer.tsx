@@ -1,5 +1,5 @@
 import { Instagram, Facebook, Mail, Phone } from "lucide-react";
-import giolabIcon from "@/assets/giolab-icon.webp";
+import giolabIcon from "@/assets/giolab-icon.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
