@@ -4,6 +4,7 @@ import { Calendar, Clock, ArrowRight, Sparkles } from "lucide-react";
 import { blogArticles } from "@/data/blogArticles";
 import { findRelatedArticles } from "@/utils/articleKeywordMatcher";
 import { BlogArticle } from "@/types/blogArticle";
+import LazyImage from "@/components/LazyImage";
 
 interface RelatedArticlesProps {
   currentSlug: string;
@@ -55,10 +56,12 @@ const RelatedArticles = ({ currentSlug, category, maxArticles = 3 }: RelatedArti
             <Card className="h-full border-2 hover:border-giolab-blue transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in">
               <CardHeader>
                 <div className="w-full h-48 rounded-lg overflow-hidden mb-4">
-                  <img 
+                  <LazyImage 
                     src={article.image} 
                     alt={article.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    aspectRatio="video"
+                    imgClassName="group-hover:scale-105 transition-transform duration-300"
+                    rootMargin="200px"
                   />
                 </div>
                 <div className="flex items-center gap-3 text-xs text-muted-foreground mb-2">
