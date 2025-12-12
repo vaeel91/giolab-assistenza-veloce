@@ -10,6 +10,48 @@ let cachedReviews: any = null;
 let cacheTimestamp: number = 0;
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minuti
 
+// Rate limiting configuration
+const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minuto
+const MAX_REQUESTS_PER_WINDOW = 30; // max 30 richieste per minuto
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+
+// Funzione per ottenere l'IP del client
+function getClientIP(req: Request): string {
+  return req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 
+         req.headers.get('x-real-ip') || 
+         'unknown';
+}
+
+// Funzione per verificare il rate limit
+function checkRateLimit(clientIP: string): { allowed: boolean; remaining: number; resetIn: number } {
+  const now = Date.now();
+  const clientData = rateLimitMap.get(clientIP);
+  
+  // Pulisci entries scadute ogni tanto
+  if (rateLimitMap.size > 1000) {
+    for (const [ip, data] of rateLimitMap.entries()) {
+      if (now > data.resetTime) {
+        rateLimitMap.delete(ip);
+      }
+    }
+  }
+  
+  if (!clientData || now > clientData.resetTime) {
+    // Nuova finestra temporale
+    rateLimitMap.set(clientIP, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
+    return { allowed: true, remaining: MAX_REQUESTS_PER_WINDOW - 1, resetIn: RATE_LIMIT_WINDOW };
+  }
+  
+  if (clientData.count >= MAX_REQUESTS_PER_WINDOW) {
+    // Rate limit superato
+    return { allowed: false, remaining: 0, resetIn: clientData.resetTime - now };
+  }
+  
+  // Incrementa contatore
+  clientData.count++;
+  return { allowed: true, remaining: MAX_REQUESTS_PER_WINDOW - clientData.count, resetIn: clientData.resetTime - now };
+}
+
 // Funzione per fetch con retry
 async function fetchWithRetry(url: string, maxRetries: number = 2): Promise<any> {
   let lastError: Error | null = null;
@@ -57,6 +99,27 @@ serve(async (req) => {
   }
 
   try {
+    // Rate limiting check
+    const clientIP = getClientIP(req);
+    const rateLimit = checkRateLimit(clientIP);
+    
+    if (!rateLimit.allowed) {
+      console.log(`⛔ Rate limit exceeded for IP: ${clientIP}`);
+      return new Response(
+        JSON.stringify({ error: 'Too many requests. Please try again later.' }),
+        {
+          status: 429,
+          headers: {
+            ...corsHeaders,
+            'Content-Type': 'application/json',
+            'Retry-After': Math.ceil(rateLimit.resetIn / 1000).toString(),
+            'X-RateLimit-Remaining': '0',
+            'X-RateLimit-Reset': Math.ceil(rateLimit.resetIn / 1000).toString(),
+          },
+        }
+      );
+    }
+
     const now = Date.now();
     
     // Controlla se abbiamo dati in cache validi
@@ -64,7 +127,13 @@ serve(async (req) => {
       console.log('✅ Returning cached reviews (age:', Math.round((now - cacheTimestamp) / 1000), 'seconds)');
       return new Response(
         JSON.stringify(cachedReviews),
-        { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        { 
+          headers: { 
+            ...corsHeaders, 
+            'Content-Type': 'application/json',
+            'X-RateLimit-Remaining': rateLimit.remaining.toString(),
+          } 
+        }
       );
     }
 
