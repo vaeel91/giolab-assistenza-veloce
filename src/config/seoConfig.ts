@@ -36,8 +36,9 @@ export const BUSINESS_INFO = {
     whatsapp: '+393406970686',
   },
   social: {
-    instagram: 'https://www.instagram.com/giolab_iphonefix/',
-    facebook: 'https://www.facebook.com/giolab.assemini',
+    instagram: 'https://www.instagram.com/giolab_iphonefix',
+    facebook: 'https://www.facebook.com/giolabassemini',
+    tiktok: 'https://www.tiktok.com/@giolab_iphonefix',
   },
   hours: {
     weekdays: 'Lun-Ven: 9:00-13:00, 16:00-20:00',
@@ -80,12 +81,13 @@ export const ORGANIZATION_SCHEMA = {
   logo: SEO_IMAGES.logo,
 };
 
-// Schema LocalBusiness/RepairShop globale per Local SEO
+// Schema LocalBusiness globale per Local SEO
 export const LOCAL_BUSINESS_SCHEMA = {
   '@context': 'https://schema.org',
-  '@type': 'RepairShop',
+  '@type': 'LocalBusiness',
   '@id': `${CANONICAL_DOMAIN}/#business`,
   name: BUSINESS_INFO.name,
+  alternateName: 'Giolab Assistenza Smartphone PC Console',
   legalName: BUSINESS_INFO.legalName,
   description: BUSINESS_INFO.description,
   url: CANONICAL_DOMAIN,
@@ -94,6 +96,8 @@ export const LOCAL_BUSINESS_SCHEMA = {
   telephone: BUSINESS_INFO.contact.phone,
   email: BUSINESS_INFO.contact.email,
   priceRange: '€€',
+  vatID: 'IT03896540925',
+  foundingDate: BUSINESS_INFO.foundingDate,
   address: {
     '@type': 'PostalAddress',
     streetAddress: BUSINESS_INFO.address.street,
@@ -128,8 +132,9 @@ export const LOCAL_BUSINESS_SCHEMA = {
     },
   ],
   sameAs: [
-    BUSINESS_INFO.social.instagram,
-    BUSINESS_INFO.social.facebook,
+    'https://www.instagram.com/giolab_iphonefix',
+    'https://www.facebook.com/giolabassemini',
+    'https://www.tiktok.com/@giolab_iphonefix',
   ],
   areaServed: [
     {
