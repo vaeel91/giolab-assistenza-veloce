@@ -27,6 +27,9 @@
     <link rel="preload" href="/fonts/source-sans-pro-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/source-sans-pro-700.woff2" as="font" type="font/woff2" crossorigin>
     
+    <!-- Preload Critical Logo (above-the-fold) -->
+    <link rel="preload" href="/favicon.png" as="image" type="image/png" fetchpriority="high">
+    
     <!-- Preload LCP Image (Hero background) - Local WebP images -->
     <link rel="preload" 
           href="/images/hero-mobile.webp" 
@@ -40,6 +43,10 @@
           fetchpriority="high"
           type="image/webp"
           media="(min-width: 769px)">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     
     <!-- Primary Meta Tags -->
     <title>Riparazione iPhone Assemini | Smartphone, PC, Console | Giolab</title>
