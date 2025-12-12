@@ -24,20 +24,18 @@
     </style>
     
     <!-- Preconnect to Critical Domains -->
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-    <link rel="dns-prefetch" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Preload LCP Image (Hero background) - WebP with JPEG fallback -->
+    <!-- Preload LCP Image (Hero background) - Local WebP images -->
     <link rel="preload" 
-          href="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=80&w=800&auto=format&fit=crop&fm=webp" 
+          href="/images/hero-mobile.webp" 
           as="image" 
           fetchpriority="high"
           type="image/webp"
           media="(max-width: 768px)">
     <link rel="preload" 
-          href="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?q=75&w=1440&auto=format&fit=crop&fm=webp" 
+          href="/images/hero-desktop.webp" 
           as="image" 
           fetchpriority="high"
           type="image/webp"
