@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ProductCard } from "@/components/ProductCard";
@@ -49,22 +49,17 @@ const DispositiviHuawei = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Huawei Ricondizionati e Nuovi in Vendita – Giolab Assemini</title>
-        <meta 
-          name="description" 
-          content="Huawei P e Nova ricondizionati certificati e nuovi ad Assemini. Garanzia 12 mesi, prezzi competitivi. ☎️ 340 69 70 686" 
-        />
-        <meta 
-          name="keywords" 
-          content="huawei ricondizionati assemini, huawei p usati cagliari, huawei nova nuovi assemini, huawei certificati" 
-        />
-        <link rel="canonical" href="https://giolabriparazioni.it/dispositivi/huawei" />
-        
-        <meta property="og:title" content="Huawei Ricondizionati e Nuovi in Vendita – Giolab Assemini" />
-        <meta property="og:description" content="Huawei P e Nova ricondizionati certificati e nuovi ad Assemini. Garanzia 12 mesi." />
-        <meta property="og:url" content="https://giolabriparazioni.it/dispositivi/huawei" />
-      </Helmet>
+      <SEOHead
+        title="Huawei Ricondizionati e Nuovi – Giolab Assemini"
+        description="Huawei P e Nova ricondizionati certificati e nuovi ad Assemini. Garanzia 12 mesi, prezzi competitivi. ☎️ 340 69 70 686"
+        keywords="huawei ricondizionati assemini, huawei p usati cagliari, huawei nova nuovi assemini, huawei certificati"
+        ogUrl="https://giolabriparazioni.it/dispositivi/huawei"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolabriparazioni.it/" },
+          { name: "Dispositivi", url: "https://giolabriparazioni.it/dispositivi" },
+          { name: "Huawei", url: "https://giolabriparazioni.it/dispositivi/huawei" }
+        ]}
+      />
 
       <div className="min-h-screen flex flex-col bg-white">
         <Header />

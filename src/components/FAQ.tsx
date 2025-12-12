@@ -77,17 +77,17 @@ const FAQ = () => {
       }))
     };
 
-    let script = document.querySelector('script[type="application/ld+json"]#faq-schema');
+    let script = document.querySelector('script[type="application/ld+json"]#faq-service-schema');
     if (!script) {
       script = document.createElement('script');
       script.setAttribute('type', 'application/ld+json');
-      script.setAttribute('id', 'faq-schema');
+      script.setAttribute('id', 'faq-service-schema');
       document.head.appendChild(script);
     }
     script.textContent = JSON.stringify(faqSchema);
 
     return () => {
-      const scriptToRemove = document.querySelector('script[type="application/ld+json"]#faq-schema');
+      const scriptToRemove = document.querySelector('script[type="application/ld+json"]#faq-service-schema');
       if (scriptToRemove) {
         scriptToRemove.remove();
       }

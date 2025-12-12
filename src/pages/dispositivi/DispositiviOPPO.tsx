@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ProductCard } from "@/components/ProductCard";
@@ -49,22 +49,17 @@ const DispositiviOPPO = () => {
 
   return (
     <>
-      <Helmet>
-        <title>OPPO Ricondizionati e Nuovi in Vendita – Giolab Assemini</title>
-        <meta 
-          name="description" 
-          content="OPPO Find e Reno ricondizionati certificati e nuovi ad Assemini. Garanzia 12 mesi, prezzi competitivi. ☎️ 340 69 70 686" 
-        />
-        <meta 
-          name="keywords" 
-          content="oppo ricondizionati assemini, oppo find usati cagliari, oppo reno nuovi assemini, oppo certificati" 
-        />
-        <link rel="canonical" href="https://giolabriparazioni.it/dispositivi/oppo" />
-        
-        <meta property="og:title" content="OPPO Ricondizionati e Nuovi in Vendita – Giolab Assemini" />
-        <meta property="og:description" content="OPPO Find e Reno ricondizionati certificati e nuovi ad Assemini. Garanzia 12 mesi." />
-        <meta property="og:url" content="https://giolabriparazioni.it/dispositivi/oppo" />
-      </Helmet>
+      <SEOHead
+        title="OPPO Ricondizionati e Nuovi – Giolab Assemini"
+        description="OPPO Find e Reno ricondizionati certificati e nuovi ad Assemini. Garanzia 12 mesi, prezzi competitivi. ☎️ 340 69 70 686"
+        keywords="oppo ricondizionati assemini, oppo find usati cagliari, oppo reno nuovi assemini, oppo certificati"
+        ogUrl="https://giolabriparazioni.it/dispositivi/oppo"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolabriparazioni.it/" },
+          { name: "Dispositivi", url: "https://giolabriparazioni.it/dispositivi" },
+          { name: "OPPO", url: "https://giolabriparazioni.it/dispositivi/oppo" }
+        ]}
+      />
 
       <div className="min-h-screen flex flex-col bg-white">
         <Header />
