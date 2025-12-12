@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ProductCard } from "@/components/ProductCard";
@@ -49,22 +49,17 @@ const DispositiviApple = () => {
 
   return (
     <>
-      <Helmet>
-        <title>iPhone Ricondizionati e Nuovi in Vendita – Giolab Assemini</title>
-        <meta 
-          name="description" 
-          content="iPhone ricondizionati certificati e nuovi ad Assemini. Garanzia 12 mesi, prezzi trasparenti. iPhone 13, 14, 15 disponibili. ☎️ 340 69 70 686" 
-        />
-        <meta 
-          name="keywords" 
-          content="iphone ricondizionati assemini, vendita iphone usati cagliari, iphone nuovi assemini, iphone certificati garanzia" 
-        />
-        <link rel="canonical" href="https://giolabriparazioni.it/dispositivi/iphone" />
-        
-        <meta property="og:title" content="iPhone Ricondizionati e Nuovi in Vendita – Giolab Assemini" />
-        <meta property="og:description" content="iPhone ricondizionati certificati e nuovi ad Assemini. Garanzia 12 mesi, prezzi trasparenti." />
-        <meta property="og:url" content="https://giolabriparazioni.it/dispositivi/iphone" />
-      </Helmet>
+      <SEOHead
+        title="iPhone Ricondizionati e Nuovi – Giolab Assemini"
+        description="iPhone ricondizionati certificati e nuovi ad Assemini. Garanzia 12 mesi, prezzi trasparenti. iPhone 13, 14, 15 disponibili. ☎️ 340 69 70 686"
+        keywords="iphone ricondizionati assemini, vendita iphone usati cagliari, iphone nuovi assemini, iphone certificati garanzia"
+        ogUrl="https://giolabriparazioni.it/dispositivi/iphone"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolabriparazioni.it/" },
+          { name: "Dispositivi", url: "https://giolabriparazioni.it/dispositivi" },
+          { name: "iPhone", url: "https://giolabriparazioni.it/dispositivi/iphone" }
+        ]}
+      />
 
       <div className="min-h-screen flex flex-col bg-white">
         <Header />

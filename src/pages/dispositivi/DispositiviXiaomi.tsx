@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ProductCard } from "@/components/ProductCard";
@@ -49,22 +49,17 @@ const DispositiviXiaomi = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Xiaomi Ricondizionati e Nuovi in Vendita – Giolab Assemini</title>
-        <meta 
-          name="description" 
-          content="Xiaomi e Redmi ricondizionati certificati e nuovi ad Assemini. Prezzi competitivi, garanzia 12 mesi. ☎️ 340 69 70 686" 
-        />
-        <meta 
-          name="keywords" 
-          content="xiaomi ricondizionati assemini, redmi usati cagliari, xiaomi nuovi assemini, redmi note certificati" 
-        />
-        <link rel="canonical" href="https://giolabriparazioni.it/dispositivi/xiaomi" />
-        
-        <meta property="og:title" content="Xiaomi Ricondizionati e Nuovi in Vendita – Giolab Assemini" />
-        <meta property="og:description" content="Xiaomi e Redmi ricondizionati certificati e nuovi ad Assemini. Garanzia 12 mesi." />
-        <meta property="og:url" content="https://giolabriparazioni.it/dispositivi/xiaomi" />
-      </Helmet>
+      <SEOHead
+        title="Xiaomi Ricondizionati e Nuovi – Giolab Assemini"
+        description="Xiaomi e Redmi ricondizionati certificati e nuovi ad Assemini. Prezzi competitivi, garanzia 12 mesi. ☎️ 340 69 70 686"
+        keywords="xiaomi ricondizionati assemini, redmi usati cagliari, xiaomi nuovi assemini, redmi note certificati"
+        ogUrl="https://giolabriparazioni.it/dispositivi/xiaomi"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolabriparazioni.it/" },
+          { name: "Dispositivi", url: "https://giolabriparazioni.it/dispositivi" },
+          { name: "Xiaomi", url: "https://giolabriparazioni.it/dispositivi/xiaomi" }
+        ]}
+      />
 
       <div className="min-h-screen flex flex-col bg-white">
         <Header />

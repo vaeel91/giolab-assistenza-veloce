@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -157,56 +157,55 @@ const RestauroVetriCertificato = () => {
     question: "Posso spedire il dispositivo da tutta Italia?",
     answer: "Sì! Accettiamo spedizioni da tutta Italia. Ti forniamo istruzioni dettagliate per l'imballaggio sicuro e un preventivo gratuito basato sulle foto che ci invii via WhatsApp."
   }];
+
+  // Schema Service
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Restauro Vetri Certificato iPhone iPad",
+    description: "Servizio professionale di rigenerazione vetro display per iPhone, iPad e Apple Watch. Mantieni la qualità originale Apple risparmiando fino al 50%.",
+    provider: {
+      "@id": "https://giolabriparazioni.it/#business"
+    },
+    serviceType: "Riparazione Display",
+    areaServed: {
+      "@type": "Country",
+      name: "Italia"
+    },
+    offers: {
+      "@type": "Offer",
+      priceRange: "€129 - €299",
+      priceCurrency: "EUR"
+    }
+  };
+
+  // Schema FAQ
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+      }
+    }))
+  };
+
   return <>
-      <Helmet>
-        <title>Restauro Vetri Certificato iPhone iPad | GioLab Assemini</title>
-        <meta name="description" content="Restauro vetro display iPhone e iPad ad Assemini. Mantieni l'OLED originale Apple, risparmia fino al 50%. Garanzia totale inclusa." />
-        <meta name="keywords" content="restauro vetro iPhone, rigenerazione display, display originale Apple, riparazione vetro Assemini, GioLab, laminazione display" />
-        <link rel="canonical" href="https://giolabriparazioni.it/servizi/restauro-vetri-certificato" />
-
-        <meta property="og:title" content="Restauro Vetri Certificato iPhone iPad | GioLab Assemini" />
-        <meta property="og:description" content="Restauro vetro display iPhone e iPad ad Assemini. Mantieni l'OLED originale Apple, risparmia fino al 50%." />
-        <meta property="og:url" content="https://giolabriparazioni.it/servizi/restauro-vetri-certificato" />
-        <meta property="og:type" content="website" />
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Service",
-          name: "Restauro Vetri Certificato iPhone iPad",
-          description: "Servizio professionale di rigenerazione vetro display per iPhone, iPad e Apple Watch. Mantieni la qualità originale Apple risparmiando fino al 50%.",
-          provider: {
-            "@type": "LocalBusiness",
-            "@id": "https://giolabriparazioni.it/#business"
-          },
-          serviceType: "Riparazione Display",
-          areaServed: {
-            "@type": "Country",
-            name: "Italia"
-          },
-          offers: {
-            "@type": "Offer",
-            priceRange: "€129 - €299",
-            priceCurrency: "EUR"
-          }
-        })}
-        </script>
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: faqs.map(faq => ({
-            "@type": "Question",
-            name: faq.question,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: faq.answer
-            }
-          }))
-        })}
-        </script>
-      </Helmet>
+      <SEOHead
+        title="Restauro Vetri Certificato iPhone iPad | GioLab Assemini"
+        description="Restauro vetro display iPhone e iPad ad Assemini. Mantieni l'OLED originale Apple, risparmia fino al 50%. Garanzia totale inclusa."
+        keywords="restauro vetro iPhone, rigenerazione display, display originale Apple, riparazione vetro Assemini, GioLab, laminazione display"
+        ogUrl="https://giolabriparazioni.it/servizi/restauro-vetri-certificato"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolabriparazioni.it/" },
+          { name: "Servizi", url: "https://giolabriparazioni.it/servizi" },
+          { name: "Restauro Vetri Certificato", url: "https://giolabriparazioni.it/servizi/restauro-vetri-certificato" }
+        ]}
+        structuredData={[serviceSchema, faqSchema]}
+      />
 
       <div className="min-h-screen bg-background">
         <Header />

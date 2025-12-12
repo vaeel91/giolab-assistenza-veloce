@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ProductCard } from "@/components/ProductCard";
@@ -49,22 +49,17 @@ const DispositiviSamsung = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Samsung Galaxy Ricondizionati e Nuovi – Giolab Assemini</title>
-        <meta 
-          name="description" 
-          content="Samsung Galaxy ricondizionati certificati e nuovi ad Assemini. S23, A54 e altri modelli. Garanzia 12 mesi. ☎️ 340 69 70 686" 
-        />
-        <meta 
-          name="keywords" 
-          content="samsung ricondizionati assemini, galaxy usati cagliari, samsung nuovi assemini, galaxy certificati garanzia" 
-        />
-        <link rel="canonical" href="https://giolabriparazioni.it/dispositivi/samsung" />
-        
-        <meta property="og:title" content="Samsung Galaxy Ricondizionati e Nuovi – Giolab Assemini" />
-        <meta property="og:description" content="Samsung Galaxy ricondizionati certificati e nuovi ad Assemini. Garanzia 12 mesi." />
-        <meta property="og:url" content="https://giolabriparazioni.it/dispositivi/samsung" />
-      </Helmet>
+      <SEOHead
+        title="Samsung Galaxy Ricondizionati e Nuovi – Giolab Assemini"
+        description="Samsung Galaxy ricondizionati certificati e nuovi ad Assemini. S23, A54 e altri modelli. Garanzia 12 mesi. ☎️ 340 69 70 686"
+        keywords="samsung ricondizionati assemini, galaxy usati cagliari, samsung nuovi assemini, galaxy certificati garanzia"
+        ogUrl="https://giolabriparazioni.it/dispositivi/samsung"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolabriparazioni.it/" },
+          { name: "Dispositivi", url: "https://giolabriparazioni.it/dispositivi" },
+          { name: "Samsung", url: "https://giolabriparazioni.it/dispositivi/samsung" }
+        ]}
+      />
 
       <div className="min-h-screen flex flex-col bg-white">
         <Header />

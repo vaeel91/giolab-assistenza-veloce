@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { useMemo } from "react";
 import { 
   CheckCircle2, 
   Shield, 
@@ -354,16 +354,12 @@ const IPhoneRicondizionati = () => {
         keywords="iphone ricondizionati, iphone usati certificati, iphone ricondizionati assemini, iphone ricondizionati cagliari, vendita iphone ricondizionati, iphone ricondizionati garantiti, gradi estetici iphone, batteria iphone ricondizionato, garanzia iphone ricondizionato, permuta iphone assemini"
         ogUrl={pageUrl}
         ogImage="https://giolabriparazioni.it/og-image-giolab.jpg"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolabriparazioni.it/" },
+          { name: "iPhone Ricondizionati", url: pageUrl }
+        ]}
+        structuredData={[faqSchema, productSchema]}
       />
-      
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(productSchema)}
-        </script>
-      </Helmet>
 
       <FloatingWhatsApp />
 

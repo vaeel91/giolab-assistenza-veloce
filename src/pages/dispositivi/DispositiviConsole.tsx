@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Helmet } from "react-helmet-async";
+import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -39,12 +39,17 @@ const DispositiviConsole = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Console Ricondizionate e Usate | PlayStation, Nintendo, Xbox - Giolab Assemini</title>
-        <meta name="description" content="Console ricondizionate e usate con garanzia: PS5, PS4, Nintendo Switch, Xbox. Testate e certificate ad Assemini (Cagliari). Garanzia fino a 12 mesi." />
-        <meta name="keywords" content="console ricondizionate, PS5 usata, PlayStation ricondizionata, Nintendo Switch usata, Xbox ricondizionata, console Assemini, console Cagliari, PS4 usata" />
-        <link rel="canonical" href="https://giolabriparazioni.it/dispositivi/console" />
-      </Helmet>
+      <SEOHead
+        title="Console Ricondizionate | PlayStation, Nintendo, Xbox - Giolab Assemini"
+        description="Console ricondizionate e usate con garanzia: PS5, PS4, Nintendo Switch, Xbox. Testate e certificate ad Assemini (Cagliari). Garanzia fino a 12 mesi."
+        keywords="console ricondizionate, PS5 usata, PlayStation ricondizionata, Nintendo Switch usata, Xbox ricondizionata, console Assemini, console Cagliari, PS4 usata"
+        ogUrl="https://giolabriparazioni.it/dispositivi/console"
+        breadcrumbs={[
+          { name: "Home", url: "https://giolabriparazioni.it/" },
+          { name: "Dispositivi", url: "https://giolabriparazioni.it/dispositivi" },
+          { name: "Console", url: "https://giolabriparazioni.it/dispositivi/console" }
+        ]}
+      />
 
       <Header />
       
