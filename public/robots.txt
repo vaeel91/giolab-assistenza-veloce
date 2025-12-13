@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://giolabriparazioni.it/sitemap.xml
+Sitemap: https://giolabriparazioni.it/sitemap-images.xml
