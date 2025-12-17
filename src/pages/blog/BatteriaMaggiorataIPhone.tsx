@@ -6,6 +6,7 @@
 
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
+import { Link } from "react-router-dom";
 export default function BatteriaMaggiorataIPhone() {
   const articleContent = <div className="blog-content">
       {/* INTRODUZIONE */}
@@ -44,6 +45,9 @@ export default function BatteriaMaggiorataIPhone() {
           <li><strong>Surriscaldamento</strong> durante l'uso</li>
           <li>Capacità massima sotto l'<strong>80%</strong> nelle impostazioni iOS</li>
         </ul>
+        <p className="blog-paragraph">
+          Se riconosci uno o più di questi segnali, leggi la nostra guida completa su <Link to="/blog/come-capire-batteria-iphone-da-sostituire" className="text-giolab-blue hover:underline font-medium">come capire quando la batteria iPhone va sostituita</Link>.
+        </p>
         <div className="blog-highlight-box warning">
           <p>
             <strong>Nota:</strong> una batteria gonfia può danneggiare display, flat interni e scheda logica.
@@ -217,7 +221,7 @@ export default function BatteriaMaggiorataIPhone() {
         <ul className="blog-list-bulleted">
           <li><strong>+10/12%</strong> sui modelli standard</li>
           <li>Fino a <strong>+30%</strong> sui Pro Max</li>
-          <li>Installazione professionale in <strong>1 ora</strong></li>
+          <li>Installazione professionale in <strong>1 ora</strong> - scopri il nostro <Link to="/blog/riparazione-iphone-1-ora-giolab-assemini" className="text-giolab-blue hover:underline">servizio express</Link></li>
           <li><strong>Garanzia 12 mesi</strong></li>
           <li>Ricambi certificati e testati</li>
           <li>Assistenza continua</li>
