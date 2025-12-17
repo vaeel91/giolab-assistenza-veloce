@@ -411,7 +411,7 @@ export default function DisplayOriginaliVsCompatibili() {
         </ul>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">📍 Dove Trovarci</h4>
+          <p className="blog-box-title font-semibold text-lg">📍 Dove Trovarci</p>
           <p className="blog-paragraph">
             <strong>GioLab Assemini</strong><br />
             📍 Via Carmine 20, 09032 Assemini (CA)<br />
@@ -501,7 +501,7 @@ export default function DisplayOriginaliVsCompatibili() {
           Hai lo schermo rotto? Vuoi migliorare la qualità visiva del tuo iPhone? Hai dubbi su quale display scegliere?
         </p>
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">💬 Contatta GioLab Assemini</h4>
+          <p className="blog-box-title font-semibold text-lg">💬 Contatta GioLab Assemini</p>
           <p className="blog-paragraph">
             📞 <strong>Chiama o scrivi su WhatsApp: 340 69 70 686</strong><br />
             📍 Via Carmine 20, 09032 Assemini (CA)<br />
