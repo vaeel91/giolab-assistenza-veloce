@@ -4,6 +4,7 @@
 
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
+import { Link } from "react-router-dom";
 export default function ManutenzionePlayStation5() {
   const articleContent = <div className="blog-content">
       <section>
@@ -173,6 +174,9 @@ export default function ManutenzionePlayStation5() {
           <li>⭐ Ventola più silenziosa</li>
           <li>⭐ Prestazioni più stabili nel tempo</li>
         </ul>
+        <p className="blog-paragraph">
+          Lo stesso tipo di <strong>manutenzione preventiva</strong> vale anche per PC e notebook. Scopri come <Link to="/blog/pc-lento-velocizzare-ssd-pulizia-giolab-assemini" className="text-giolab-blue hover:underline font-medium">velocizzare un PC lento con SSD, pulizia e pasta termica</Link>.
+        </p>
       </section>
 
       <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=1200&h=600&fit=crop" alt="Tecnico GioLab manutenzione professionale PlayStation 5 PS5 console riparazione Assemini Cagliari" className="w-full h-auto rounded-lg mb-8" style={{
