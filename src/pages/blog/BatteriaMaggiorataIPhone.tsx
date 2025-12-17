@@ -7,19 +7,21 @@
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
 import { Link } from "react-router-dom";
+
 export default function BatteriaMaggiorataIPhone() {
-  const articleContent = <div className="blog-content">
+  const articleContent = (
+    <div className="blog-content">
       {/* INTRODUZIONE */}
       <section>
         <h2 className="blog-h2">Introduzione: Perché l'iPhone Dura Sempre Meno?</h2>
         <p className="blog-paragraph">
           Dopo 2–3 anni di utilizzo la batteria dell'iPhone perde capacità e inizia a durare sempre meno. 
           Se sei costretto a ricaricare il telefono più volte al giorno, oppure noti spegnimenti improvvisi, 
-          significa che la batteria è degradata. Presso il nostro <strong>laboratorio riparazioni professionali Assemini</strong> interveniamo su questo problema ogni giorno con <strong>servizio tecnico certificato</strong>.
+          significa che la batteria è degradata.
         </p>
         <p className="blog-paragraph">
-          A <strong>GioLab – Centro assistenza iPhone Cagliari</strong> ad Assemini installiamo <strong>batterie maggiorate</strong> ad alta qualità, 
-          progettate per offrire la migliore <strong>assistenza smartphone Assemini</strong> e <strong>riparazione iPhone Assemini</strong>:
+          Da <strong>GioLab ad Assemini</strong> installiamo <strong>batterie maggiorate</strong> ad alta qualità, 
+          progettate per offrire maggiore autonomia senza compromessi:
         </p>
         <ul className="blog-list-bulleted">
           <li><strong>+10/12% di autonomia</strong> sui modelli standard</li>
@@ -27,7 +29,7 @@ export default function BatteriaMaggiorataIPhone() {
           <li>mantenendo sicurezza, compatibilità iOS e prestazioni elevate</li>
         </ul>
         <p className="blog-paragraph">
-          Come <strong>tecnico iPhone Assemini</strong> specializzato in <strong>riparazioni Apple Sardegna</strong>, offriamo la soluzione ideale per chi cerca <strong>sostituzione batteria iPhone Assemini</strong> di qualità superiore nel <strong>negozio riparazioni telefoni</strong> più affidabile della zona.
+          È la soluzione ideale per chi usa intensamente lo smartphone e vuole evitare di portarsi dietro un powerbank.
         </p>
       </section>
 
@@ -46,7 +48,7 @@ export default function BatteriaMaggiorataIPhone() {
           <li>Capacità massima sotto l'<strong>80%</strong> nelle impostazioni iOS</li>
         </ul>
         <p className="blog-paragraph">
-          Se riconosci uno o più di questi segnali, leggi la nostra guida completa su <Link to="/blog/come-capire-batteria-iphone-da-sostituire" className="text-giolab-blue hover:underline font-medium">come capire quando la batteria iPhone va sostituita</Link>.
+          Se riconosci uno o più di questi segnali, leggi la nostra guida completa su <Link to="/blog/come-capire-batteria-iphone-da-sostituire" className="text-giolab-blue hover:underline font-medium">come capire quando la batteria va sostituita</Link>.
         </p>
         <div className="blog-highlight-box warning">
           <p>
@@ -69,7 +71,7 @@ export default function BatteriaMaggiorataIPhone() {
 
       {/* VANTAGGI */}
       <section>
-        <h2 className="blog-h2">⭐ Vantaggi della Batteria Maggiorata installata da GioLab</h2>
+        <h2 className="blog-h2">⭐ Vantaggi della Batteria Maggiorata</h2>
         <ul className="blog-list-bulleted">
           <li><strong>+10/12% di autonomia</strong> sui modelli "standard" (Mini, base, Plus)</li>
           <li>Fino al <strong>+30% di autonomia</strong> sui modelli Pro Max</li>
@@ -84,7 +86,7 @@ export default function BatteriaMaggiorataIPhone() {
         <div className="blog-highlight-box info">
           <p>
             • Batteria originale Apple: <strong>3.227 mAh</strong><br />
-            • Batteria maggiorata GioLab: <strong>3.500 mAh</strong><br />
+            • Batteria maggiorata: <strong>3.500 mAh</strong><br />
             • Aumento stimato: <strong>+10% circa</strong>
           </p>
         </div>
@@ -100,7 +102,7 @@ export default function BatteriaMaggiorataIPhone() {
       <section>
         <h2 className="blog-h2">🔒 Sicurezza e Qualità Certificate</h2>
         <p className="blog-paragraph">
-          Le batterie maggiorate installate da GioLab rispettano tutti gli standard europei e vengono testate singolarmente.
+          Le batterie maggiorate che installiamo rispettano tutti gli standard europei e vengono testate singolarmente.
         </p>
         
         <h3 className="blog-h3">Certificazioni e caratteristiche principali:</h3>
@@ -121,7 +123,7 @@ export default function BatteriaMaggiorataIPhone() {
 
       {/* INSTALLAZIONE */}
       <section>
-        <h2 className="blog-h2">⚙️ Installazione Professionale – GioLab Assemini (Cagliari)</h2>
+        <h2 className="blog-h2">⚙️ Come Avviene l'Installazione</h2>
         <p className="blog-paragraph">
           Un processo rapido, sicuro e trasparente:
         </p>
@@ -167,23 +169,20 @@ export default function BatteriaMaggiorataIPhone() {
         </ul>
       </section>
 
-      {/* SEO LOCALE */}
+      {/* PERCHÉ GIOLAB */}
       <section>
-        <h2 className="blog-h2">📍 Perché Scegliere GioLab</h2>
+        <h2 className="blog-h2">📍 Perché Affidarsi a GioLab</h2>
         <p className="blog-paragraph">
-          <strong>GioLab</strong> è il <strong>centro specializzato iPhone Cagliari</strong> e punto di riferimento per:
+          Nel nostro laboratorio ad Assemini ci occupiamo ogni giorno di sostituzioni batteria e interventi su iPhone. Ecco cosa offriamo:
         </p>
         <ul className="blog-list-bulleted">
-          <li><strong>Sostituzione batteria iPhone Assemini</strong> con ricambi certificati</li>
-          <li><strong>Riparazione smartphone Cagliari</strong> e provincia con <strong>servizio riparazione iPhone urgente</strong></li>
-          <li>Installazione batterie maggiorate per iPhone da <strong>esperto riparazioni Apple Assemini</strong></li>
-          <li><strong>Assistenza tecnica smartphone Cagliari</strong> certificata in <strong>Sardegna</strong></li>
-          <li><strong>Laboratorio riparazioni professionali Assemini</strong> con tecnici specializzati</li>
-          <li><strong>Negozio riparazioni telefoni</strong> di fiducia per Cagliari, Elmas, Quartu, Decimomannu</li>
+          <li>Ricambi certificati con garanzia inclusa</li>
+          <li>Interventi rapidi, spesso completati in giornata</li>
+          <li>Batterie maggiorate per tutti i modelli iPhone</li>
+          <li>Tecnici esperti e attrezzature professionali</li>
+          <li>Clienti da Cagliari, Elmas, Quartu, Decimomannu e provincia</li>
+          <li>Diagnosi gratuita prima di ogni intervento</li>
         </ul>
-        <p className="blog-paragraph">
-          Ricambi certificati, garanzia inclusa e interventi rapidi da <strong>tecnico iPhone Assemini</strong> qualificato nel tuo <strong>centro assistenza iPhone Cagliari</strong> di riferimento per tutte le <strong>riparazioni Apple Sardegna</strong>.
-        </p>
       </section>
 
       {/* QUANDO CONVIENE */}
@@ -216,7 +215,7 @@ export default function BatteriaMaggiorataIPhone() {
           e far durare il tuo iPhone molto più a lungo.
         </p>
         <p className="blog-paragraph">
-          Con <strong>GioLab ad Assemini (Cagliari)</strong> ottieni:
+          Da <strong>GioLab ad Assemini</strong> ottieni:
         </p>
         <ul className="blog-list-bulleted">
           <li><strong>+10/12%</strong> sui modelli standard</li>
@@ -233,6 +232,21 @@ export default function BatteriaMaggiorataIPhone() {
           </p>
         </div>
       </section>
-    </div>;
-  return <BlogArticleTemplate title="Batteria Maggiorata iPhone" description="Batteria Maggiorata iPhone ad Assemini. Fino al +30% di autonomia, certificata. Installazione rapida con Garanzia 12 mesi." keywords="batteria maggiorata iPhone, batteria iPhone alta capacità, sostituzione batteria iPhone, aumentare autonomia iPhone, batteria iPhone Assemini, GioLab Cagliari" slug="batteria-maggiorata-iphone-giolab-assemini" ogImage="https://giolabriparazioni.it/og-images/batteria-maggiorata-iphone.jpg" author="Giolab Team" datePublished="2025-01-27" category="Assistenza" content={articleContent} readingTime={8} />;
+    </div>
+  );
+
+  return (
+    <BlogArticleTemplate
+      title="Batteria Maggiorata iPhone"
+      description="Batteria Maggiorata iPhone ad Assemini. Fino al +30% di autonomia, certificata. Installazione rapida con Garanzia 12 mesi."
+      keywords="batteria maggiorata iPhone, batteria iPhone alta capacità, sostituzione batteria iPhone, aumentare autonomia iPhone, batteria iPhone Assemini, GioLab Cagliari"
+      slug="batteria-maggiorata-iphone-giolab-assemini"
+      ogImage="https://giolabriparazioni.it/og-images/batteria-maggiorata-iphone.jpg"
+      author="Giolab Team"
+      datePublished="2025-01-27"
+      category="Assistenza"
+      content={articleContent}
+      readingTime={8}
+    />
+  );
 }

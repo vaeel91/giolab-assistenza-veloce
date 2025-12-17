@@ -10,42 +10,42 @@ export default function RiparazioneIPhone1Ora() {
   const articleContent = (
     <div className="blog-content">
       <section>
-        <h2 className="blog-h2">Introduzione: iPhone Rotto? Riparazione Rapida e Garantita ad Assemini</h2>
+        <h2 className="blog-h2">Introduzione: iPhone Rotto? Riparazione Rapida e Garantita</h2>
         <p className="blog-paragraph">
           Quando l'iPhone si rompe, restare senza smartphone anche solo per poche ore può diventare un problema serio: 
-          lavoro, pagamenti, foto, WhatsApp, navigazione… tutto si ferma. Per questo il nostro <strong>servizio riparazione iPhone urgente Assemini</strong> è la soluzione ideale.
+          lavoro, pagamenti, foto, WhatsApp, navigazione… tutto si ferma.
         </p>
         <p className="blog-paragraph">
-          Per questo <strong>GioLab ad Assemini (provincia di Cagliari)</strong>, il tuo <strong>centro assistenza iPhone Cagliari</strong> di fiducia, offre un servizio di <strong>riparazione 
-          iPhone in 1 ora</strong>, utilizzando solo ricambi certificati e attrezzature professionali nel nostro <strong>laboratorio riparazioni professionali Assemini</strong>.
+          Da <strong>GioLab ad Assemini</strong> ripariamo il tuo iPhone in meno di un'ora, 
+          utilizzando ricambi certificati e attrezzature professionali. Ogni intervento è coperto da garanzia 12 mesi.
         </p>
         <p className="blog-paragraph">
-          Siamo il <strong>negozio riparazioni telefoni</strong> situato nel centro di <strong>Assemini</strong> e facilmente raggiungibili da tutta la provincia di 
-          Cagliari, Elmas, Decimomannu, Selargius, Quartu e hinterland. Come <strong>tecnico iPhone Assemini</strong> specializzato, garantiamo <strong>assistenza smartphone Assemini</strong> e <strong>riparazione smartphone Cagliari</strong> professionale per tutte le <strong>riparazioni Apple Sardegna</strong>.
+          Il nostro laboratorio si trova nel centro di Assemini, facilmente raggiungibile da 
+          Cagliari, Elmas, Decimomannu, Selargius, Quartu e tutto l'hinterland.
         </p>
       </section>
 
       <section>
         <h2 className="blog-h2">🔍 Perché una Riparazione Rapida è Fondamentale</h2>
         <p className="blog-paragraph">
-          I problemi più frequenti per cui i nostri clienti del <strong>centro specializzato iPhone Cagliari</strong> richiedono una <strong>riparazione iPhone Assemini</strong> veloce includono:
+          I problemi più frequenti per cui i clienti ci contattano includono:
         </p>
         <ul className="blog-list-bulleted">
-          <li><strong>Riparazione display iPhone Cagliari</strong> per schermo rotto o completamente nero - scopri le <Link to="/blog/display-originali-vs-compatibili" className="text-giolab-blue hover:underline">differenze tra display originali e compatibili</Link></li>
-          <li><strong>Sostituzione batteria iPhone Assemini</strong> degradata che non arriva a fine giornata - considera anche una <Link to="/blog/batteria-maggiorata-iphone-giolab-assemini" className="text-giolab-blue hover:underline">batteria maggiorata</Link> per +30% di autonomia</li>
+          <li>Schermo rotto o completamente nero - scopri le <Link to="/blog/display-originali-vs-compatibili" className="text-giolab-blue hover:underline">differenze tra display originali e compatibili</Link></li>
+          <li>Batteria degradata che non arriva a fine giornata - considera anche una <Link to="/blog/batteria-maggiorata-iphone-giolab-assemini" className="text-giolab-blue hover:underline">batteria maggiorata</Link> per +30% di autonomia</li>
           <li><strong>Fotocamera</strong> non funzionante o sfocata</li>
           <li><strong>Connettore Lightning</strong> difettoso (non carica)</li>
           <li><strong>Altoparlante o microfono</strong> non funzionanti</li>
           <li><strong>iPhone che si surriscalda</strong> o si riavvia da solo</li>
         </ul>
         <p className="blog-paragraph">
-          Molti centri richiedono giorni o settimane per la riparazione.
-          <br />Da <strong>GioLab</strong>, il tuo <strong>esperto riparazioni Apple Assemini</strong> con <strong>servizio tecnico certificato</strong>, no: la maggior parte degli interventi del nostro <strong>laboratorio riparazioni professionali Assemini</strong> viene completata in meno di 60 minuti grazie alla nostra <strong>assistenza tecnica smartphone Cagliari</strong>.
+          Molti centri richiedono giorni o settimane per completare una riparazione.
+          Da noi, la maggior parte degli interventi viene completata in meno di 60 minuti.
         </p>
       </section>
 
       <section>
-        <h2 className="blog-h2">⚙️ Come Funziona la Riparazione iPhone in 1 Ora – Servizio Express GioLab</h2>
+        <h2 className="blog-h2">⚙️ Come Funziona il Servizio Express</h2>
         <p className="blog-paragraph">
           Il nostro metodo si basa su <strong>qualità, velocità e trasparenza</strong>.
         </p>
@@ -72,10 +72,10 @@ export default function RiparazioneIPhone1Ora() {
           Disponibili per tutti i modelli, da <strong>iPhone 6 a iPhone 15 Pro Max</strong>.
         </p>
 
-        <h3 className="blog-h3">3. Tecnici Certificati + Attrezzature Professionali</h3>
-        <p className="blog-paragraph">Il laboratorio GioLab dispone di:</p>
+        <h3 className="blog-h3">3. Tecnici Esperti e Attrezzature Professionali</h3>
+        <p className="blog-paragraph">Il laboratorio dispone di:</p>
         <ul className="blog-list-bulleted">
-          <li>strumentazione professionale stile Apple-level</li>
+          <li>strumentazione professionale di livello Apple</li>
           <li>microscopi di precisione</li>
           <li>strumenti di diagnostica avanzata</li>
           <li>attrezzatura dedicata per interventi complessi</li>
@@ -148,31 +148,31 @@ export default function RiparazioneIPhone1Ora() {
       <ArticleCTA />
 
       <section>
-        <h2 className="blog-h2">📍 Perché Scegliere GioLab per la Riparazione iPhone ad Assemini (Cagliari)</h2>
+        <h2 className="blog-h2">📍 Perché i Clienti Scelgono GioLab</h2>
         <ul className="blog-list-checkmark">
-          <li><strong>Servizio riparazione iPhone urgente Assemini</strong> in 1 ora</li>
-          <li>Ricambi certificati e garantiti dal tuo <strong>negozio riparazioni telefoni</strong> di fiducia</li>
-          <li><strong>Tecnico iPhone Assemini</strong> esperto e costantemente aggiornato</li>
-          <li><strong>Laboratorio riparazioni professionali Assemini</strong> per interventi avanzati</li>
+          <li>Interventi rapidi: la maggior parte completata in 1 ora</li>
+          <li>Ricambi certificati con garanzia inclusa</li>
+          <li>Tecnici esperti e costantemente aggiornati</li>
+          <li>Attrezzature professionali per interventi avanzati</li>
           <li>Garanzia 12 mesi su ricambi e manodopera</li>
-          <li>Trasparenza e massima professionalità del <strong>centro assistenza iPhone Cagliari</strong></li>
-          <li><strong>Assistenza smartphone Assemini</strong> e <strong>riparazione smartphone Cagliari</strong> certificata</li>
-          <li><strong>Esperto riparazioni Apple Assemini</strong> con <strong>servizio tecnico certificato Assemini</strong></li>
+          <li>Trasparenza totale sui prezzi</li>
+          <li>Telefono di cortesia gratuito</li>
+          <li>Posizione comoda, raggiungibile da tutta la provincia</li>
         </ul>
         <p className="blog-paragraph">
-          Clienti da <strong>Cagliari, Elmas, Decimomannu, Selargius, Quartu, Monserrato</strong> e tutta la 
-          Sardegna ci scelgono ogni giorno per la migliore <strong>assistenza tecnica smartphone Cagliari</strong> e <strong>riparazioni Apple Sardegna</strong> nella zona. Il nostro <strong>centro specializzato iPhone Cagliari</strong> è il punto di riferimento per <strong>riparazione iPhone Assemini</strong>, <strong>sostituzione batteria iPhone Assemini</strong> e <strong>riparazione display iPhone Cagliari</strong>.
+          Clienti da <strong>Cagliari, Elmas, Decimomannu, Selargius, Quartu, Monserrato</strong> e altre zone 
+          ci scelgono ogni giorno per la qualità del servizio e la rapidità degli interventi.
         </p>
       </section>
 
       <section>
-        <h2 className="blog-h2">📞 Richiedi la Tua Riparazione iPhone in 1 Ora – Assemini (Cagliari)</h2>
+        <h2 className="blog-h2">📞 Contattaci per la Tua Riparazione</h2>
         <p className="blog-paragraph">
           Hai lo schermo rotto? La batteria dura poco? Il tuo iPhone non si accende?
         </p>
         <div className="blog-box-tip">
           <p className="blog-paragraph">
-            📞 <strong>Chiama subito GioLab: 340 69 70 686</strong><br />
+            📞 <strong>Chiama subito: 340 69 70 686</strong><br />
             📍 Via Carmine 20, 09032 Assemini (CA)<br />
             🕘 Lun–Sab: 9:00–13:00 / 16:00–20:00
           </p>
@@ -183,7 +183,7 @@ export default function RiparazioneIPhone1Ora() {
       </section>
 
       <section>
-        <h2 className="blog-h2">❓ FAQ – Riparazione iPhone ad Assemini</h2>
+        <h2 className="blog-h2">❓ FAQ – Domande Frequenti</h2>
         
         <h3 className="blog-h3">▶️ Quanto tempo richiede la riparazione di un iPhone?</h3>
         <p className="blog-paragraph">
@@ -215,7 +215,7 @@ export default function RiparazioneIPhone1Ora() {
           Sì, offriamo <strong>telefono di cortesia gratuito</strong> quando necessario.
         </p>
 
-        <h3 className="blog-h3">▶️ Dove si trova il vostro centro assistenza?</h3>
+        <h3 className="blog-h3">▶️ Dove si trova il laboratorio?</h3>
         <p className="blog-paragraph">
           📍 <strong>Via Carmine 20, 09032 Assemini (CA)</strong>, facilmente raggiungibile da Cagliari e dintorni.
         </p>
@@ -227,7 +227,7 @@ export default function RiparazioneIPhone1Ora() {
 
         <h3 className="blog-h3">▶️ Servite solo Assemini?</h3>
         <p className="blog-paragraph">
-          No: molti clienti arrivano da <strong>Cagliari, Selargius, Elmas, Decimomannu, Monserrato, Quartu, Pirri</strong> e tutta la Sardegna.
+          No: molti clienti arrivano da <strong>Cagliari, Selargius, Elmas, Decimomannu, Monserrato, Quartu, Pirri</strong> e altre zone della Sardegna.
         </p>
       </section>
     </div>
