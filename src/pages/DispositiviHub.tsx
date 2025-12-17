@@ -18,8 +18,8 @@ const DispositiviHub = () => {
   return (
     <>
       <SEOHead
-        title="Vendita Smartphone Nuovi, Usati e Ricondizionati – Giolab Assemini"
-        description="iPhone, Samsung, Xiaomi, OPPO e Huawei. Nuovi, usati e ricondizionati certificati. Garanzia 12 mesi. Prezzi trasparenti. ☎️ 340 69 70 686"
+        title="Vendita Smartphone e iPhone – Giolab Assemini"
+        description="iPhone, Samsung, Xiaomi ricondizionati certificati. Garanzia 12 mesi, prezzi trasparenti. ☎️ 340 69 70 686"
         keywords="vendita smartphone assemini, iphone ricondizionati cagliari, samsung usati certificati, xiaomi nuovi assemini, vendita dispositivi assemini"
         ogUrl="https://giolabriparazioni.it/dispositivi"
         ogImage="https://giolabriparazioni.it/og-image-giolab.jpg"

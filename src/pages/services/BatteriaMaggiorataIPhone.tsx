@@ -6,10 +6,10 @@ const BatteriaMaggiorataIPhone = () => {
   return (
     <>
       <ServiceTemplate
-      seoTitle="Batteria Maggiorata iPhone Assemini | Più Autonomia e Prestazioni | Giolab Cagliari"
+      seoTitle="Batteria Maggiorata iPhone – Giolab Assemini"
       heroImage={batteriaMaggiorataHero}
       heroImageAlt="Batteria maggiorata iPhone con +30% autonomia - confronto prima e dopo sostituzione Giolab Assemini"
-      seoDescription="Sostituzione batteria maggiorata iPhone ad Assemini e Cagliari. Aumenta l'autonomia del tuo iPhone fino al 30% in più. Servizio rapido, ricambi certificati, garanzia 12 mesi ☎️ 340 69 70 686"
+      seoDescription="Batteria maggiorata iPhone ad Assemini. Fino al 30% di autonomia in più. Servizio rapido, garanzia 12 mesi. ☎️ 340 69 70 686"
       seoKeywords="batteria maggiorata iPhone Assemini, sostituzione batteria iPhone Cagliari, batteria potenziata iPhone, aumentare autonomia iPhone Assemini, batteria capacità superiore iPhone, riparazione batteria iPhone veloce Cagliari"
       h1Title="Batteria Maggiorata iPhone ad Assemini"
       subtitle="Aumenta l'autonomia del tuo iPhone fino al 30% con le nostre batterie maggiorate di alta qualità. Riparazione rapida, garanzia 12 mesi."
