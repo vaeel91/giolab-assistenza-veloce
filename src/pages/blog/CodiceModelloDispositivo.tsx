@@ -32,7 +32,7 @@ export default function CodiceModelloDispositivo() {
         </p>
         
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">✅ Per riparazioni precise</h4>
+          <p className="blog-box-title font-semibold text-lg">✅ Per riparazioni precise</p>
           <p className="blog-paragraph">
             Ogni modello richiede <strong>componenti specifici</strong>. Ad esempio, lo schermo di un iPhone 13 non è compatibile con iPhone 13 Pro. 
             Il nostro <strong>centro assistenza ad Assemini</strong> utilizza il codice modello per ordinare i ricambi corretti e garantire 
@@ -41,7 +41,7 @@ export default function CodiceModelloDispositivo() {
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">✅ Per preventivi accurati</h4>
+          <p className="blog-box-title font-semibold text-lg">✅ Per preventivi accurati</p>
           <p className="blog-paragraph">
             I prezzi di riparazione variano in base al modello esatto. Conoscere il <strong>numero modello smartphone</strong> permette a GioLab di fornirti 
             un <strong>preventivo trasparente</strong> e immediato, senza sorprese.
@@ -49,7 +49,7 @@ export default function CodiceModelloDispositivo() {
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">✅ Per vendita/permuta</h4>
+          <p className="blog-box-title font-semibold text-lg">✅ Per vendita/permuta</p>
           <p className="blog-paragraph">
             Il valore di mercato dipende dal <strong>modello esatto</strong>, dalla memoria interna e dall'anno di produzione. Identificare correttamente 
             il dispositivo garantisce una <strong>valutazione corretta</strong> per la vendita o permuta.
@@ -57,7 +57,7 @@ export default function CodiceModelloDispositivo() {
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">✅ Per verifica garanzia</h4>
+          <p className="blog-box-title font-semibold text-lg">✅ Per verifica garanzia</p>
           <p className="blog-paragraph">
             Il codice modello consente di verificare la <strong>data di produzione</strong> e la <strong>copertura garanzia</strong> del dispositivo, 
             fondamentale per richieste di assistenza o sostituzioni.
@@ -76,7 +76,7 @@ export default function CodiceModelloDispositivo() {
         <h3 id="iphone-funzionante" className="blog-h3">iPhone Funzionante</h3>
         
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">📱 Metodo 1: Impostazioni</h4>
+          <p className="blog-box-title font-semibold text-lg">📱 Metodo 1: Impostazioni</p>
           <p className="blog-paragraph">
             Il metodo più semplice e veloce per <strong>identificare modello iPhone</strong>:
           </p>
@@ -93,7 +93,7 @@ export default function CodiceModelloDispositivo() {
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">📦 Metodo 2: Confezione originale</h4>
+          <p className="blog-box-title font-semibold text-lg">📦 Metodo 2: Confezione originale</p>
           <p className="blog-paragraph">
             Sull'etichetta posteriore della scatola originale trovi:
           </p>
@@ -105,7 +105,7 @@ export default function CodiceModelloDispositivo() {
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">🔍 Metodo 3: Incisione sul retro (solo modelli vecchi)</h4>
+          <p className="blog-box-title font-semibold text-lg">🔍 Metodo 3: Incisione sul retro (solo modelli vecchi)</p>
           <p className="blog-paragraph">
             🔍 Metodo 3: Incisione sul retro (Non sempre c'è) è inciso sul retro in piccolo (necessaria luce intensa). <strong>🔍 Metodo 3: Incisione sul retro (Non sempre c'è)       </strong> è inciso sul retro in piccolo (necessaria luce intensa).
           </p>
@@ -117,28 +117,28 @@ export default function CodiceModelloDispositivo() {
         </p>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">🔧 Slot SIM</h4>
+          <p className="blog-box-title font-semibold text-lg">🔧 Slot SIM</p>
           <p className="blog-paragraph">
             Estrai il carrellino SIM con la graffetta: su molti modelli il <strong>codice è inciso</strong> sul carrellino stesso o visibile nello slot.
           </p>
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">📦 Confezione originale</h4>
+          <p className="blog-box-title font-semibold text-lg">📦 Confezione originale</p>
           <p className="blog-paragraph">
             La soluzione più sicura se conservi la scatola originale con etichetta integra.
           </p>
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">💻 iTunes/Finder</h4>
+          <p className="blog-box-title font-semibold text-lg">💻 iTunes/Finder</p>
           <p className="blog-paragraph">
             Se l'iPhone viene ancora riconosciuto dal computer (anche con schermo rotto), collegalo e verifica il modello su iTunes (Windows) o Finder (Mac).
           </p>
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">☁️ iCloud</h4>
+          <p className="blog-box-title font-semibold text-lg">☁️ iCloud</p>
           <p className="blog-paragraph">
             Accedi a <strong>icloud.com</strong> → Impostazioni → I tuoi dispositivi. Troverai tutti gli iPhone registrati con il tuo ID Apple.
           </p>
@@ -230,7 +230,7 @@ export default function CodiceModelloDispositivo() {
         <h3 id="samsung-funzionante" className="blog-h3">Samsung Funzionante</h3>
         
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">📱 Metodo 1: Impostazioni</h4>
+          <p className="blog-box-title font-semibold text-lg">📱 Metodo 1: Impostazioni</p>
           <ol className="blog-list-numbered">
             <li>Apri <strong>Impostazioni</strong></li>
             <li>Scorri fino a <strong>Info sul telefono</strong></li>
@@ -242,7 +242,7 @@ export default function CodiceModelloDispositivo() {
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">📞 Metodo 2: Codice USSD</h4>
+          <p className="blog-box-title font-semibold text-lg">📞 Metodo 2: Codice USSD</p>
           <p className="blog-paragraph">
             Apri il tastierino telefono e digita:
           </p>
@@ -255,7 +255,7 @@ export default function CodiceModelloDispositivo() {
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">🔍 Metodo 3: Sul retro (modelli più vecchi)</h4>
+          <p className="blog-box-title font-semibold text-lg">🔍 Metodo 3: Sul retro (modelli più vecchi)</p>
           <p className="blog-paragraph">
             Sui Samsung Galaxy più datati, il numero modello è stampato sul retro vicino alla fotocamera.
           </p>
@@ -264,28 +264,28 @@ export default function CodiceModelloDispositivo() {
         <h3 id="samsung-non-funzionante" className="blog-h3">Samsung Non Funzionante</h3>
         
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">🔋 Batteria rimovibile (modelli vecchi)</h4>
+          <p className="blog-box-title font-semibold text-lg">🔋 Batteria rimovibile (modelli vecchi)</p>
           <p className="blog-paragraph">
             Se il tuo Samsung ha batteria rimovibile (serie J, A vecchi), rimuovila: il <strong>codice modello</strong> è stampato sotto.
           </p>
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">🔧 Slot SIM</h4>
+          <p className="blog-box-title font-semibold text-lg">🔧 Slot SIM</p>
           <p className="blog-paragraph">
             Estrai il carrellino SIM: alcuni modelli hanno il codice inciso sul carrellino o visibile nello slot.
           </p>
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">📦 Confezione</h4>
+          <p className="blog-box-title font-semibold text-lg">📦 Confezione</p>
           <p className="blog-paragraph">
             La confezione originale riporta l'etichetta con <strong>codice SM-####</strong> e numero IMEI.
           </p>
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">📱 Samsung Members/Account</h4>
+          <p className="blog-box-title font-semibold text-lg">📱 Samsung Members/Account</p>
           <p className="blog-paragraph">
             Se il dispositivo era sincronizzato con il tuo Samsung Account, accedi online per vedere tutti i dispositivi registrati.
           </p>
@@ -361,7 +361,7 @@ export default function CodiceModelloDispositivo() {
         <h3 id="xiaomi-funzionante" className="blog-h3">Xiaomi Funzionante</h3>
         
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">📱 Metodo 1: Impostazioni</h4>
+          <p className="blog-box-title font-semibold text-lg">📱 Metodo 1: Impostazioni</p>
           <ol className="blog-list-numbered">
             <li>Apri <strong>Impostazioni</strong></li>
             <li>Vai su <strong>Info sistema</strong></li>
@@ -371,7 +371,7 @@ export default function CodiceModelloDispositivo() {
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">📞 Metodo 2: Info telefono</h4>
+          <p className="blog-box-title font-semibold text-lg">📞 Metodo 2: Info telefono</p>
           <p className="blog-paragraph">
             In alternativa:
           </p>
@@ -384,28 +384,28 @@ export default function CodiceModelloDispositivo() {
         <h3 id="xiaomi-non-funzionante" className="blog-h3">Xiaomi Non Funzionante</h3>
         
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">🔍 Sul retro</h4>
+          <p className="blog-box-title font-semibold text-lg">🔍 Sul retro</p>
           <p className="blog-paragraph">
             Molti modelli Xiaomi, Redmi e POCO hanno il <strong>codice modello inciso</strong> sul retro vicino alla fotocamera o sul frame laterale.
           </p>
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">🔧 Slot SIM</h4>
+          <p className="blog-box-title font-semibold text-lg">🔧 Slot SIM</p>
           <p className="blog-paragraph">
             Estrai il carrellino SIM e controlla l'area circostante: alcuni modelli hanno il codice inciso.
           </p>
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">📦 Confezione</h4>
+          <p className="blog-box-title font-semibold text-lg">📦 Confezione</p>
           <p className="blog-paragraph">
             La confezione originale riporta l'etichetta con codice tipo <strong>M2101K9G</strong> (Redmi Note 10 Pro) e IMEI.
           </p>
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">☁️ Mi Account</h4>
+          <p className="blog-box-title font-semibold text-lg">☁️ Mi Account</p>
           <p className="blog-paragraph">
             Accedi al tuo Mi Account online per vedere tutti i dispositivi Xiaomi associati con relativi modelli.
           </p>
@@ -426,7 +426,7 @@ export default function CodiceModelloDispositivo() {
         <h3 id="ipad-funzionante" className="blog-h3">iPad Funzionante</h3>
         
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">📱 Metodo: Impostazioni</h4>
+          <p className="blog-box-title font-semibold text-lg">📱 Metodo: Impostazioni</p>
           <ol className="blog-list-numbered">
             <li>Apri <strong>Impostazioni</strong></li>
             <li>Vai su <strong>Generali</strong> → <strong>Info</strong></li>
@@ -438,28 +438,28 @@ export default function CodiceModelloDispositivo() {
         <h3 id="ipad-non-funzionante" className="blog-h3">iPad Non Funzionante</h3>
         
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">🔍 Sul retro</h4>
+          <p className="blog-box-title font-semibold text-lg">🔍 Sul retro</p>
           <p className="blog-paragraph">
             Tutti gli iPad hanno il <strong>codice modello inciso</strong> sul retro in basso: "Modello A####" (necessaria buona luce).
           </p>
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">📦 Confezione originale</h4>
+          <p className="blog-box-title font-semibold text-lg">📦 Confezione originale</p>
           <p className="blog-paragraph">
             L'etichetta della confezione riporta il codice modello completo.
           </p>
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">💻 Finder/iTunes</h4>
+          <p className="blog-box-title font-semibold text-lg">💻 Finder/iTunes</p>
           <p className="blog-paragraph">
             Se l'iPad viene riconosciuto dal computer, collegalo e verifica il modello su Finder (Mac) o iTunes (Windows).
           </p>
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">🌐 Supporto Apple online</h4>
+          <p className="blog-box-title font-semibold text-lg">🌐 Supporto Apple online</p>
           <p className="blog-paragraph">
             Con il <strong>numero di serie</strong> (visibile sul retro o sulla confezione), vai su <strong>checkcoverage.apple.com</strong> per identificare il modello.
           </p>
@@ -479,7 +479,7 @@ export default function CodiceModelloDispositivo() {
         <h3 id="macbook-funzionante" className="blog-h3">MacBook Funzionante</h3>
         
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">🍎 Metodo: Menu Apple</h4>
+          <p className="blog-box-title font-semibold text-lg">🍎 Metodo: Menu Apple</p>
           <ol className="blog-list-numbered">
             <li>Clicca sul logo Apple  in alto a sinistra</li>
             <li>Seleziona <strong>Informazioni su questo Mac</strong></li>
@@ -493,7 +493,7 @@ export default function CodiceModelloDispositivo() {
         <h3 id="macbook-non-funzionante" className="blog-h3">MacBook Non Funzionante</h3>
         
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">🔍 Scocca inferiore</h4>
+          <p className="blog-box-title font-semibold text-lg">🔍 Scocca inferiore</p>
           <p className="blog-paragraph">
             Capovolgi il MacBook: il <strong>codice modello</strong> e il <strong>numero di serie</strong> sono incisi sulla scocca inferiore 
             vicino alle cerniere (caratteri molto piccoli, usa luce intensa).
@@ -501,14 +501,14 @@ export default function CodiceModelloDispositivo() {
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">📦 Confezione originale</h4>
+          <p className="blog-box-title font-semibold text-lg">📦 Confezione originale</p>
           <p className="blog-parameter">
             L'etichetta riporta numero modello, numero di serie e specifiche tecniche.
           </p>
         </div>
 
         <div className="blog-box-tip">
-          <h4 className="blog-box-title">🔢 Numero di serie</h4>
+          <p className="blog-box-title font-semibold text-lg">🔢 Numero di serie</p>
           <p className="blog-paragraph">
             Anche con MacBook spento, il <strong>numero di serie</strong> (visibile sulla scocca) può essere inserito su 
             <strong>checkcoverage.apple.com</strong> per identificare il modello esatto.
@@ -573,7 +573,7 @@ export default function CodiceModelloDispositivo() {
         <h2 id="quando-contattare-giolab" className="blog-h2">Quando Rivolgersi a GioLab Assemini</h2>
         
         <div className="blog-box-warning">
-          <h4 className="blog-box-title">💡 GioLab ti aiuta a identificare il modello anche nei casi più difficili:</h4>
+          <p className="blog-box-title font-semibold text-lg">💡 GioLab ti aiuta a identificare il modello anche nei casi più difficili:</p>
           <ul className="blog-list-bulleted">
             <li>📱 <strong>Dispositivo completamente spento o rotto</strong></li>
             <li>🔍 <strong>Codice illeggibile o cancellato</strong></li>

@@ -107,7 +107,7 @@ export default function RiparazioneWebcamHPVictus() {
               <div className="flex items-start gap-3">
                 <div className="bg-giolab-orange text-white rounded-full w-7 h-7 flex items-center justify-center flex-shrink-0 font-bold">1</div>
                 <div>
-                  <h4 className="font-semibold text-lg mb-1">Verifica Driver e Software</h4>
+                  <p className="font-semibold text-lg mb-1">Verifica Driver e Software</p>
                   <p className="text-gray-700">Controlliamo che i driver della webcam siano installati e aggiornati, testiamo diverse app di videochiamata</p>
                 </div>
               </div>
@@ -117,7 +117,7 @@ export default function RiparazioneWebcamHPVictus() {
               <div className="flex items-start gap-3">
                 <div className="bg-giolab-orange text-white rounded-full w-7 h-7 flex items-center justify-center flex-shrink-0 font-bold">2</div>
                 <div>
-                  <h4 className="font-semibold text-lg mb-1">Test BIOS e Impostazioni Privacy</h4>
+                  <p className="font-semibold text-lg mb-1">Test BIOS e Impostazioni Privacy</p>
                   <p className="text-gray-700">Verifichiamo che la webcam non sia disabilitata nel BIOS o bloccata dalle impostazioni privacy di Windows</p>
                 </div>
               </div>
@@ -127,7 +127,7 @@ export default function RiparazioneWebcamHPVictus() {
               <div className="flex items-start gap-3">
                 <div className="bg-giolab-orange text-white rounded-full w-7 h-7 flex items-center justify-center flex-shrink-0 font-bold">3</div>
                 <div>
-                  <h4 className="font-semibold text-lg mb-1">Ispezione Hardware</h4>
+                  <p className="font-semibold text-lg mb-1">Ispezione Hardware</p>
                   <p className="text-gray-700">Apriamo il notebook per controllare il cavo flat della webcam e il connettore sulla scheda madre</p>
                 </div>
               </div>
@@ -137,7 +137,7 @@ export default function RiparazioneWebcamHPVictus() {
               <div className="flex items-start gap-3">
                 <div className="bg-giolab-orange text-white rounded-full w-7 h-7 flex items-center justify-center flex-shrink-0 font-bold">4</div>
                 <div>
-                  <h4 className="font-semibold text-lg mb-1">Test con Modulo Esterno</h4>
+                  <p className="font-semibold text-lg mb-1">Test con Modulo Esterno</p>
                   <p className="text-gray-700">Colleghiamo una webcam USB esterna per verificare che il problema non sia software</p>
                 </div>
               </div>
@@ -332,7 +332,7 @@ export default function RiparazioneWebcamHPVictus() {
 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div className="bg-blue-50 p-5 rounded-lg border border-blue-200">
-              <h4 className="font-semibold text-lg mb-3 text-giolab-blue">✓ Puoi provare tu stesso</h4>
+              <p className="font-semibold text-lg mb-3 text-giolab-blue">✓ Puoi provare tu stesso</p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
                   <span className="text-giolab-orange">→</span>
@@ -353,7 +353,7 @@ export default function RiparazioneWebcamHPVictus() {
               </ul>
             </div>
             <div className="bg-red-50 p-5 rounded-lg border border-red-200">
-              <h4 className="font-semibold text-lg mb-3 text-red-700">✗ Meglio un professionista</h4>
+              <p className="font-semibold text-lg mb-3 text-red-700">✗ Meglio un professionista</p>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start gap-2">
                   <span className="text-red-500">→</span>

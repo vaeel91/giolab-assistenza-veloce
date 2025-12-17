@@ -91,22 +91,22 @@ export default function PCLentoVelocizzare() {
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div className="bg-green-50 p-5 rounded-lg border border-green-200">
               <CheckCircle className="h-6 w-6 text-green-600 mb-3" />
-              <h4 className="font-semibold text-lg mb-2">Velocità di Accesso</h4>
+              <p className="font-semibold text-lg mb-2">Velocità di Accesso</p>
               <p className="text-gray-700">I dati vengono letti e scritti <strong>fino a 10 volte più velocemente</strong> rispetto a un HDD tradizionale</p>
             </div>
             <div className="bg-green-50 p-5 rounded-lg border border-green-200">
               <CheckCircle className="h-6 w-6 text-green-600 mb-3" />
-              <h4 className="font-semibold text-lg mb-2">Avvio Istantaneo</h4>
+              <p className="font-semibold text-lg mb-2">Avvio Istantaneo</p>
               <p className="text-gray-700">Windows si avvia in <strong>10-15 secondi</strong> invece che in 2-3 minuti</p>
             </div>
             <div className="bg-green-50 p-5 rounded-lg border border-green-200">
               <CheckCircle className="h-6 w-6 text-green-600 mb-3" />
-              <h4 className="font-semibold text-lg mb-2">Programmi Reattivi</h4>
+              <p className="font-semibold text-lg mb-2">Programmi Reattivi</p>
               <p className="text-gray-700">Apertura istantanea di programmi, documenti e file pesanti</p>
             </div>
             <div className="bg-green-50 p-5 rounded-lg border border-green-200">
               <CheckCircle className="h-6 w-6 text-green-600 mb-3" />
-              <h4 className="font-semibold text-lg mb-2">Affidabilità</h4>
+              <p className="font-semibold text-lg mb-2">Affidabilità</p>
               <p className="text-gray-700">Nessuna parte meccanica = <strong>meno rischio di guasti</strong></p>
             </div>
           </div>
@@ -276,14 +276,14 @@ export default function PCLentoVelocizzare() {
 
           <div className="space-y-6 mb-8">
             <div className="bg-red-50 p-5 rounded-lg border-l-4 border-red-500">
-              <h4 className="font-semibold text-lg mb-2 text-red-800">1. Polvere e Sporcizia</h4>
+              <p className="font-semibold text-lg mb-2 text-red-800">1. Polvere e Sporcizia</p>
               <p className="text-gray-700">
                 Con il tempo, <strong>ventole e dissipatori si riempiono di polvere</strong>. Questo blocca il flusso d'aria e impedisce al calore di uscire. Le ventole devono girare al massimo per compensare, ma non basta.
               </p>
             </div>
 
             <div className="bg-red-50 p-5 rounded-lg border-l-4 border-red-500">
-              <h4 className="font-semibold text-lg mb-2 text-red-800">2. Pasta Termica Secca</h4>
+              <p className="font-semibold text-lg mb-2 text-red-800">2. Pasta Termica Secca</p>
               <p className="text-gray-700">
                 La <strong>pasta termica</strong> è un composto che viene applicato tra CPU e dissipatore per migliorare il trasferimento di calore. Dopo 3-4 anni si secca e perde efficacia, causando temperature alte anche con ventole pulite.
               </p>
@@ -382,25 +382,25 @@ export default function PCLentoVelocizzare() {
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div className="bg-giolab-blue/5 p-6 rounded-lg border border-giolab-blue/20">
               <HardDrive className="h-8 w-8 text-giolab-blue mb-3" />
-              <h4 className="font-semibold text-lg mb-3">Installazione SSD con Clonazione Dati</h4>
+              <p className="font-semibold text-lg mb-3">Installazione SSD con Clonazione Dati</p>
               <p className="text-gray-700">Sostituiamo il vecchio hard disk con un SSD veloce (SATA o NVMe), clonando tutti i tuoi dati senza perdere nulla</p>
             </div>
 
             <div className="bg-giolab-blue/5 p-6 rounded-lg border border-giolab-blue/20">
               <Wind className="h-8 w-8 text-giolab-blue mb-3" />
-              <h4 className="font-semibold text-lg mb-3">Pulizia Completa e Pasta Termica</h4>
+              <p className="font-semibold text-lg mb-3">Pulizia Completa e Pasta Termica</p>
               <p className="text-gray-700">Pulizia profonda di ventole e dissipatori, sostituzione pasta termica di alta qualità per abbattere le temperature</p>
             </div>
 
             <div className="bg-giolab-blue/5 p-6 rounded-lg border border-giolab-blue/20">
               <Settings className="h-8 w-8 text-giolab-blue mb-3" />
-              <h4 className="font-semibold text-lg mb-3">Ottimizzazione Software Completa</h4>
+              <p className="font-semibold text-lg mb-3">Ottimizzazione Software Completa</p>
               <p className="text-gray-700">Rimozione bloatware, ottimizzazione avvio, aggiornamento driver, pulizia file temporanei</p>
             </div>
 
             <div className="bg-giolab-blue/5 p-6 rounded-lg border border-giolab-blue/20">
               <CheckCircle className="h-8 w-8 text-giolab-blue mb-3" />
-              <h4 className="font-semibold text-lg mb-3">Test e Garanzia</h4>
+              <p className="font-semibold text-lg mb-3">Test e Garanzia</p>
               <p className="text-gray-700">Testiamo tutto prima della riconsegna e garantiamo il nostro lavoro</p>
             </div>
           </div>
