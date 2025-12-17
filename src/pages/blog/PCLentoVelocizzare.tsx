@@ -32,7 +32,7 @@ export default function PCLentoVelocizzare() {
 
           <OptimizedImage 
             src={pcLentoImage}
-            alt="pc-lento-windows-bloccato-caricamento-assemini"
+            alt="PC lento bloccato Windows caricamento infinito riparazione assistenza computer Giolab Assemini"
             className="w-full rounded-lg shadow-md my-8"
           />
 
@@ -113,7 +113,7 @@ export default function PCLentoVelocizzare() {
 
           <OptimizedImage 
             src={installazioneSSDImage}
-            alt="installazione-ssd-pc-desktop-tecnico-giolab-assemini"
+            alt="Installazione SSD su PC desktop tecnico professionista upgrade disco Giolab Assemini Cagliari"
             className="w-full rounded-lg shadow-md my-8"
           />
 
@@ -292,7 +292,7 @@ export default function PCLentoVelocizzare() {
 
           <OptimizedImage 
             src={puliziaVentoleImage}
-            alt="ventole-pc-sporche-polvere-surriscaldamento-giolab-assemini"
+            alt="Ventole PC sporche polvere surriscaldamento pulizia professionale laboratorio Giolab Assemini"
             className="w-full rounded-lg shadow-md my-8"
           />
 
@@ -338,7 +338,7 @@ export default function PCLentoVelocizzare() {
 
           <OptimizedImage 
             src={pastaTermicaImage}
-            alt="applicazione-pasta-termica-cpu-tecnico-giolab-assemini"
+            alt="Applicazione pasta termica CPU processore surriscaldamento riparazione PC Giolab Assemini Cagliari"
             className="w-full rounded-lg shadow-md my-8"
           />
 
