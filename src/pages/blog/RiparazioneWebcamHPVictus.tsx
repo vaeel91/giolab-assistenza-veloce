@@ -1,7 +1,12 @@
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
 import OptimizedImage from "@/components/OptimizedImage";
 import { Camera, Search, CheckCircle, Wrench, AlertCircle, Monitor, Settings, Cpu, Zap } from "lucide-react";
-import webcamHPVictusImage from "@/assets/riparazione-webcam-hp-victus-giolab-assemini.jpg";
+import hpVictusNotebook from "@/assets/hp-victus-notebook-laboratorio-giolab.jpg";
+import hpVictusGestionePrima from "@/assets/hp-victus-gestione-dispositivi-prima-giolab.jpg";
+import hpVictusWebcamModulo from "@/assets/hp-victus-webcam-modulo-bezel-giolab.jpg";
+import hpVictusRicambioOriginale from "@/assets/hp-victus-webcam-ricambio-originale-giolab.jpg";
+import hpVictusWebcamFunzionante from "@/assets/hp-victus-webcam-funzionante-dopo-giolab.jpg";
+import hpVictusGestioneDopo from "@/assets/hp-victus-gestione-dispositivi-dopo-giolab.jpg";
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 
 export default function RiparazioneWebcamHPVictus() {
@@ -28,8 +33,8 @@ export default function RiparazioneWebcamHPVictus() {
           </p>
 
           <OptimizedImage 
-            src={webcamHPVictusImage}
-            alt="riparazione-webcam-hp-victus-sostituzione-modulo-giolab-assemini"
+            src={hpVictusNotebook}
+            alt="HP Victus notebook gaming nel laboratorio Giolab Assemini per riparazione webcam"
             className="w-full rounded-lg shadow-md my-8"
           />
 
@@ -138,6 +143,16 @@ export default function RiparazioneWebcamHPVictus() {
               </div>
             </div>
           </div>
+
+          <p className="text-lg leading-relaxed mb-4">
+            Nel caso dell'HP Victus, la Gestione Dispositivi non mostrava alcuna webcam nella categoria "Fotocamere":
+          </p>
+
+          <OptimizedImage 
+            src={hpVictusGestionePrima}
+            alt="Gestione Dispositivi Windows HP Victus - webcam non rilevata prima della riparazione"
+            className="w-full rounded-lg shadow-md my-8"
+          />
         </section>
 
         {/* Sezione 2: Il Caso HP Victus */}
@@ -159,6 +174,12 @@ export default function RiparazioneWebcamHPVictus() {
           <p className="text-lg leading-relaxed mb-6">
             Aprendo il notebook, abbiamo ispezionato attentamente il modulo webcam integrato nella cornice del display. L'HP Victus, come molti notebook gaming, ha la webcam posizionata nella parte superiore del pannello LCD.
           </p>
+
+          <OptimizedImage 
+            src={hpVictusWebcamModulo}
+            alt="Modulo webcam HP Victus nel bezel del display - vista ravvicinata durante riparazione"
+            className="w-full rounded-lg shadow-md my-8"
+          />
 
           <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg my-8">
             <div className="flex items-start gap-3">
@@ -207,6 +228,16 @@ export default function RiparazioneWebcamHPVictus() {
               <p className="text-gray-700">Ricambi originali garantiti per una lunga durata operativa</p>
             </div>
           </div>
+
+          <p className="text-lg leading-relaxed mb-4">
+            Ecco il ricambio originale HP (codice N07280-001) utilizzato per la sostituzione, confrontato con il modulo danneggiato:
+          </p>
+
+          <OptimizedImage 
+            src={hpVictusRicambioOriginale}
+            alt="Ricambio originale HP webcam N07280-001 per Victus 16-D 16-E confronto con modulo danneggiato"
+            className="w-full rounded-lg shadow-md my-8"
+          />
         </section>
 
         {/* Sezione 3: Il Processo di Riparazione */}
@@ -268,6 +299,23 @@ export default function RiparazioneWebcamHPVictus() {
                 </p>
               </div>
             </div>
+          </div>
+
+          <p className="text-lg leading-relaxed mb-4">
+            Ecco il risultato finale con la webcam HP Wide Vision HD Camera perfettamente funzionante:
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6 my-8">
+            <OptimizedImage 
+              src={hpVictusWebcamFunzionante}
+              alt="HP Victus webcam funzionante dopo riparazione - test fotocamera Giolab Assemini"
+              className="w-full rounded-lg shadow-md"
+            />
+            <OptimizedImage 
+              src={hpVictusGestioneDopo}
+              alt="Gestione Dispositivi Windows - HP Wide Vision HD Camera rilevata dopo sostituzione"
+              className="w-full rounded-lg shadow-md"
+            />
           </div>
         </section>
 
