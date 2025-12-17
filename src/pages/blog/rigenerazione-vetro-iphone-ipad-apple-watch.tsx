@@ -13,8 +13,10 @@ export default function RigenerazioneVetroIphoneIpadAppleWatch() {
     <div className="blog-content">
       <section>
         <p className="blog-paragraph text-lg">
-          Scopri come funziona la rigenerazione del solo vetro per dispositivi Apple ad Assemini (Cagliari) presso il nostro <strong>laboratorio riparazioni professionali Assemini</strong>: 
-          vantaggi economici, processo tecnico professionale dal tuo <strong>centro assistenza iPhone Cagliari</strong> e quando conviene davvero. Il nostro <strong>servizio tecnico certificato Assemini</strong> garantisce <strong>riparazione display iPhone Cagliari</strong> di qualità per iPhone, iPad e Apple Watch.
+          Se il vetro del tuo iPhone, iPad o Apple Watch è rotto ma il display funziona ancora perfettamente, 
+          potresti risparmiare fino al 50% rispetto alla sostituzione completa. Nel nostro laboratorio ad <strong>Assemini</strong> 
+          offriamo la rigenerazione del vetro: un intervento tecnico che sostituisce solo la parte danneggiata, 
+          mantenendo intatto il pannello originale Apple.
         </p>
       </section>
 
@@ -90,8 +92,9 @@ export default function RigenerazioneVetroIphoneIpadAppleWatch() {
         />
 
         <p className="blog-paragraph">
-          Da <strong>GioLab ad Assemini</strong>, il tuo <strong>centro specializzato iPhone Cagliari</strong>, utilizziamo esclusivamente macchinari professionali 
-          certificati e vetri di grado premium, garantendo risultati identici allo standard Apple. Come <strong>esperto riparazioni Apple Assemini</strong>, il nostro <strong>tecnico iPhone Assemini</strong> offre <strong>assistenza smartphone Assemini</strong> e <strong>riparazione smartphone Cagliari</strong> di alta qualità nel <strong>negozio riparazioni telefoni</strong> più affidabile per tutte le <strong>riparazioni Apple Sardegna</strong> della zona.
+          Nel nostro laboratorio utilizziamo macchinari professionali certificati e vetri di grado premium, 
+          garantendo risultati identici allo standard Apple. Ogni intervento viene eseguito con la massima 
+          precisione per restituirti un dispositivo come nuovo.
         </p>
       </section>
 
@@ -354,13 +357,12 @@ export default function RigenerazioneVetroIphoneIpadAppleWatch() {
         <h2 className="blog-h2">🎯 Conclusione</h2>
         <p className="blog-paragraph">
           La rigenerazione del vetro è una soluzione intelligente ed economica per riparare iPhone, 
-          iPad e Apple Watch mantenendo la qualità originale Apple. Il nostro <strong>servizio riparazione iPhone urgente Assemini</strong> nel <strong>laboratorio riparazioni professionali Assemini</strong> garantisce risultati professionali. 
-          Offriamo anche servizi come la <Link to="/blog/batteria-maggiorata-iphone-giolab-assemini" className="text-giolab-blue hover:underline font-medium">batteria maggiorata per iPhone</Link> e la <Link to="/blog/riparazione-face-id-iphone-giolab-assemini" className="text-giolab-blue hover:underline font-medium">riparazione Face ID</Link>.
+          iPad e Apple Watch mantenendo la qualità originale Apple. Se cerchi altri servizi, 
+          offriamo anche la <Link to="/blog/batteria-maggiorata-iphone-giolab-assemini" className="text-giolab-blue hover:underline font-medium">batteria maggiorata per iPhone</Link> e la <Link to="/blog/riparazione-face-id-iphone-giolab-assemini" className="text-giolab-blue hover:underline font-medium">riparazione Face ID</Link>.
         </p>
         <p className="blog-paragraph">
           Se il tuo dispositivo ha solo il vetro rotto ma il display funziona perfettamente, 
-          contatta <strong>GioLab ad Assemini</strong>, il tuo <strong>centro assistenza iPhone Cagliari</strong> e <strong>centro specializzato iPhone Cagliari</strong>, per una diagnosi gratuita e un preventivo 
-          personalizzato.
+          passa a trovarci ad <strong>Assemini</strong> per una diagnosi gratuita e un preventivo personalizzato.
         </p>
 
         <div className="my-8 p-6 bg-gradient-to-r from-primary/10 to-primary/5 border-l-4 border-primary rounded-r-xl">

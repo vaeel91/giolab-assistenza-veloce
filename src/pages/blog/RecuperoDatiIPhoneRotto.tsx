@@ -14,14 +14,18 @@ export default function RecuperoDatiIPhoneRotto() {
       <section className="blog-section">
         <h2 className="blog-h2">📱 Introduzione: Quando il Tuo iPhone Sembra Irrimediabilmente Perso</h2>
         <p className="blog-paragraph">
-          Un iPhone che non si accende, con schermo nero, caduto in acqua o danneggiato gravemente può sembrare una tragedia, soprattutto se contiene foto, video, documenti di lavoro, contatti e messaggi importanti. Il nostro <strong>servizio tecnico certificato Assemini</strong> interviene proprio in questi casi critici.
+          Un iPhone che non si accende, con schermo nero, caduto in acqua o danneggiato gravemente può sembrare una tragedia. 
+          Soprattutto quando contiene foto insostituibili, video di famiglia, documenti di lavoro e messaggi importanti.
         </p>
         <p className="blog-paragraph">
-          <strong>La verità?</strong><br />
-          Nella maggior parte dei casi i dati possono essere recuperati, anche quando il dispositivo sembra completamente morto. Il nostro <strong>laboratorio riparazioni professionali Assemini</strong> ha un tasso di successo superiore all'85% nel recupero dati.
+          <strong>La buona notizia?</strong><br />
+          Nella maggior parte dei casi i dati possono essere recuperati, anche quando il dispositivo sembra completamente morto. 
+          Il nostro tasso di successo supera l'85%.
         </p>
         <p className="blog-paragraph">
-          <strong>GioLab</strong>, il tuo <strong>centro assistenza iPhone Cagliari</strong> ad Assemini, è specializzato nel recupero dati da iPhone danneggiati, grazie a tecniche avanzate di diagnostica elettronica, microsaldatura e interventi diretti su scheda madre e chip NAND. Come <strong>esperto riparazioni Apple Assemini</strong>, offriamo <strong>assistenza smartphone Assemini</strong> e <strong>riparazione smartphone Cagliari</strong> con competenze di <strong>tecnico iPhone Assemini</strong> certificate per tutte le <strong>riparazioni Apple Sardegna</strong>.
+          Nel nostro laboratorio ad <strong>Assemini</strong> siamo specializzati nel recupero dati da iPhone danneggiati. 
+          Utilizziamo tecniche avanzate di diagnostica elettronica, microsaldatura e interventi diretti su scheda madre e chip NAND 
+          per estrarre i tuoi dati anche nei casi più difficili.
         </p>
       </section>
 
@@ -216,22 +220,21 @@ export default function RecuperoDatiIPhoneRotto() {
       </section>
 
       <section className="blog-section">
-        <h2 className="blog-h2">📍 Perché Scegliere GioLab ad Assemini (Cagliari)</h2>
+        <h2 className="blog-h2">📍 Perché Scegliere GioLab ad Assemini</h2>
         <p className="blog-paragraph">
-          Il nostro <strong>centro specializzato iPhone Cagliari</strong> è specializzato in:
+          Nel nostro laboratorio siamo specializzati in:
         </p>
         <ul className="blog-list-bulleted">
-          <li>recupero dati iPhone non funzionanti con <strong>assistenza tecnica smartphone Cagliari</strong></li>
-          <li>microsaldature professionali nel nostro <strong>laboratorio riparazioni professionali Assemini</strong></li>
-          <li>danni da liquidi gestiti da <strong>tecnico iPhone Assemini</strong> esperto</li>
-          <li>schede madri in corto con <strong>servizio riparazione iPhone urgente Assemini</strong></li>
-          <li>estrazione NAND per <strong>riparazione iPhone Assemini</strong> avanzata</li>
-          <li>ripristino accesso ai dati da dispositivi completamente morti</li>
-          <li><strong>Riparazione smartphone Cagliari</strong> con competenze certificate</li>
-          <li><strong>Servizio tecnico certificato Assemini</strong> per tutte le <strong>riparazioni Apple Sardegna</strong></li>
+          <li>Recupero dati da iPhone non funzionanti</li>
+          <li>Microsaldature professionali su schede madri</li>
+          <li>Interventi su danni da liquidi</li>
+          <li>Riparazione schede madri in corto circuito</li>
+          <li>Estrazione diretta da chip NAND</li>
+          <li>Ripristino accesso da dispositivi completamente morti</li>
         </ul>
         <p className="blog-paragraph">
-          Competenza tecnica da <strong>esperto riparazioni Apple Assemini</strong>, trasparenza del tuo <strong>negozio riparazioni telefoni</strong> di fiducia e strumentazione da <strong>laboratorio riparazioni professionali</strong>. Serviamo Cagliari, Quartu, Elmas, Decimomannu e tutta la Sardegna con <strong>assistenza smartphone Assemini</strong> di qualità.
+          Uniamo competenza tecnica, strumentazione professionale e comunicazione trasparente. 
+          Serviamo clienti da Cagliari, Quartu, Elmas, Decimomannu e tutta la Sardegna.
         </p>
       </section>
 
