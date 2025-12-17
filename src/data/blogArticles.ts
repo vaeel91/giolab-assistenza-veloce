@@ -9,7 +9,7 @@ import riparazioneFaceID from "/og-images/riparazione-face-id-iphone-truedepth-s
 import pcLentoVelocizzare from "@/assets/pc-lento-velocizzare-ssd-pulizia-giolab-assemini.jpg";
 import displayOriginaliCompatibili from "@/assets/display-iphone-originale-oem-oled-compatibile-tft-confronto-giolab.jpg";
 import sostituzioneDisplayMacBook from "@/assets/sostituzione-display-macbook-giolab-assemini.jpg";
-import riparazioneWebcamHPVictus from "@/assets/riparazione-webcam-hp-victus-giolab-assemini.jpg";
+import riparazioneWebcamHPVictus from "@/assets/hp-victus-notebook-laboratorio-giolab.jpg";
 
 export const blogArticles: BlogArticle[] = [
   {
