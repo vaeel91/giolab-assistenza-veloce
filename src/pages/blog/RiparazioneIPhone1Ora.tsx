@@ -4,6 +4,7 @@
 
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
+import { Link } from "react-router-dom";
 
 export default function RiparazioneIPhone1Ora() {
   const articleContent = (
@@ -30,8 +31,8 @@ export default function RiparazioneIPhone1Ora() {
           I problemi più frequenti per cui i nostri clienti del <strong>centro specializzato iPhone Cagliari</strong> richiedono una <strong>riparazione iPhone Assemini</strong> veloce includono:
         </p>
         <ul className="blog-list-bulleted">
-          <li><strong>Riparazione display iPhone Cagliari</strong> per schermo rotto o completamente nero</li>
-          <li><strong>Sostituzione batteria iPhone Assemini</strong> degradata che non arriva a fine giornata</li>
+          <li><strong>Riparazione display iPhone Cagliari</strong> per schermo rotto o completamente nero - scopri le <Link to="/blog/display-originali-vs-compatibili" className="text-giolab-blue hover:underline">differenze tra display originali e compatibili</Link></li>
+          <li><strong>Sostituzione batteria iPhone Assemini</strong> degradata che non arriva a fine giornata - considera anche una <Link to="/blog/batteria-maggiorata-iphone-giolab-assemini" className="text-giolab-blue hover:underline">batteria maggiorata</Link> per +30% di autonomia</li>
           <li><strong>Fotocamera</strong> non funzionante o sfocata</li>
           <li><strong>Connettore Lightning</strong> difettoso (non carica)</li>
           <li><strong>Altoparlante o microfono</strong> non funzionanti</li>

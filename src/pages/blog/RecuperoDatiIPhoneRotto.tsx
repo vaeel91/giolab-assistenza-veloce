@@ -6,6 +6,7 @@
 
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
+import { Link } from "react-router-dom";
 
 export default function RecuperoDatiIPhoneRotto() {
   const articleContent = (
@@ -96,6 +97,9 @@ export default function RecuperoDatiIPhoneRotto() {
           <li>ossidazioni da liquido</li>
           <li>cortocircuiti sulla motherboard</li>
         </ul>
+        <p className="blog-paragraph">
+          Le stesse tecniche di microsaldatura vengono utilizzate per la <Link to="/blog/riparazione-face-id-iphone-giolab-assemini" className="text-giolab-blue hover:underline font-medium">riparazione del Face ID iPhone</Link>, uno degli interventi più complessi su smartphone.
+        </p>
 
         <h3 className="blog-h3">4. Estrazione diretta del chip NAND (casi estremi)</h3>
         <p className="blog-paragraph">

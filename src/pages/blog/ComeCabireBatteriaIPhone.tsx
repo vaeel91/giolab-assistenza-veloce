@@ -103,7 +103,7 @@ export default function ComeCabireBatteriaIPhone() {
             Se riconosci uno o più di questi segnali, è il momento di <strong>sostituire la batteria del tuo iPhone</strong>. Da Giolab ad Assemini offriamo:
           </p>
           <ul className="blog-list-bulleted">
-            <li>Sostituzione batteria in <strong>30 minuti - 1 ora</strong></li>
+            <li>Sostituzione batteria in <strong>30 minuti - 1 ora</strong> - scopri il nostro <Link to="/blog/riparazione-iphone-1-ora-giolab-assemini" className="text-giolab-blue hover:underline">servizio di riparazione iPhone in 1 ora</Link></li>
             <li>Batterie originali o maggiorate con <strong>garanzia 12 mesi</strong></li>
             <li>Telefono di cortesia per riparazioni più lunghe</li>
             <li>Prezzi trasparenti e competitivi</li>
