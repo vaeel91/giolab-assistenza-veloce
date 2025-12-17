@@ -209,22 +209,22 @@ export default function RiparazioneWebcamHPVictus() {
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div className="bg-green-50 p-5 rounded-lg border border-green-200">
               <CheckCircle className="h-6 w-6 text-green-600 mb-3" />
-              <h4 className="font-semibold text-lg mb-2">Compatibilità Garantita</h4>
+              <p className="font-semibold text-lg mb-2">Compatibilità Garantita</p>
               <p className="text-gray-700">Il modulo originale si integra perfettamente con il firmware del notebook</p>
             </div>
             <div className="bg-green-50 p-5 rounded-lg border border-green-200">
               <CheckCircle className="h-6 w-6 text-green-600 mb-3" />
-              <h4 className="font-semibold text-lg mb-2">Stessa Qualità Video</h4>
+              <p className="font-semibold text-lg mb-2">Stessa Qualità Video</p>
               <p className="text-gray-700">Risoluzione e qualità dell'immagine identiche all'originale</p>
             </div>
             <div className="bg-green-50 p-5 rounded-lg border border-green-200">
               <CheckCircle className="h-6 w-6 text-green-600 mb-3" />
-              <h4 className="font-semibold text-lg mb-2">Riconoscimento Automatico</h4>
+              <p className="font-semibold text-lg mb-2">Riconoscimento Automatico</p>
               <p className="text-gray-700">Windows riconosce la webcam immediatamente senza installare driver aggiuntivi</p>
             </div>
             <div className="bg-green-50 p-5 rounded-lg border border-green-200">
               <CheckCircle className="h-6 w-6 text-green-600 mb-3" />
-              <h4 className="font-semibold text-lg mb-2">Durata nel Tempo</h4>
+              <p className="font-semibold text-lg mb-2">Durata nel Tempo</p>
               <p className="text-gray-700">Ricambi originali garantiti per una lunga durata operativa</p>
             </div>
           </div>
