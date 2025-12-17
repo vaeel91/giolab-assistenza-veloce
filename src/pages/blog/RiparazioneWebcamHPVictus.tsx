@@ -1,5 +1,6 @@
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
 import OptimizedImage from "@/components/OptimizedImage";
+import { Link } from "react-router-dom";
 import { Camera, Search, CheckCircle, Wrench, AlertCircle, Monitor, Settings, Cpu, Zap } from "lucide-react";
 import hpVictusNotebook from "@/assets/hp-victus-notebook-laboratorio-giolab.jpg";
 import hpVictusGestionePrima from "@/assets/hp-victus-gestione-dispositivi-prima-giolab.jpg";
@@ -30,6 +31,10 @@ export default function RiparazioneWebcamHPVictus() {
           
           <p className="text-lg leading-relaxed mb-6">
             Nel nostro laboratorio a <strong>Assemini</strong> abbiamo recentemente risolto proprio questo problema su un HP Victus portato da un cliente. La webcam risultava completamente non rilevata dal sistema e, dopo una <strong>diagnosi approfondita</strong>, abbiamo identificato un danno fisico al modulo webcam. Ecco come lo abbiamo risolto.
+          </p>
+
+          <p className="text-lg leading-relaxed mb-6">
+            Se il tuo notebook presenta anche altri problemi come <strong>lentezza generale o surriscaldamento</strong>, ti consigliamo di leggere la nostra guida su <Link to="/blog/pc-lento-velocizzare-ssd-pulizia-giolab-assemini" className="text-giolab-blue hover:underline font-medium">come velocizzare un PC lento con SSD e pulizia interna</Link>.
           </p>
 
           <OptimizedImage 
