@@ -71,7 +71,9 @@ export const calculateRelevanceScore = (
   // 4. Bonus per keywords specifiche molto rilevanti
   const highValueKeywords = [
     'iphone', 'riparazione', 'batteria', 'display', 'schermo',
-    'face', 'recupero', 'dati', 'maggiorata', 'vetro', 'playstation'
+    'face', 'recupero', 'dati', 'maggiorata', 'vetro', 'playstation',
+    'macbook', 'webcam', 'laptop', 'notebook', 'ps5', 'console',
+    'computer', 'ssd', 'pulizia', 'pasta', 'termica', 'surriscaldamento'
   ];
 
   const currentHighValue = currentKeywords.filter(kw => 
