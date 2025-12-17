@@ -40,6 +40,7 @@ const CodiceModelloDispositivo = lazy(() => import("./pages/blog/CodiceModelloDi
 const RiparazioneFaceIDIPhone = lazy(() => import("./pages/blog/RiparazioneFaceIDIPhone"));
 const SostituzioneDisplayMacBook = lazy(() => import("./pages/blog/SostituzioneDisplayMacBook"));
 const PCLentoVelocizzare = lazy(() => import("./pages/blog/PCLentoVelocizzare"));
+const RiparazioneWebcamHPVictus = lazy(() => import("./pages/blog/RiparazioneWebcamHPVictus"));
 
 // Lazy load - Guide Modelli
 const TrovaModelloIPhone = lazy(() => import("./pages/guide-modelli/TrovaModelloIPhone"));
@@ -107,6 +108,7 @@ const App = () => (
             <Route path="/blog/riparazione-face-id-iphone-giolab-assemini" element={<RiparazioneFaceIDIPhone />} />
             <Route path="/blog/pc-lento-velocizzare-ssd-pulizia-giolab-assemini" element={<PCLentoVelocizzare />} />
             <Route path="/blog/sostituzione-display-macbook-protocollo-qualita-garanzia" element={<SostituzioneDisplayMacBook />} />
+            <Route path="/blog/riparazione-webcam-hp-victus-giolab-assemini" element={<RiparazioneWebcamHPVictus />} />
         
         {/* Guide Modelli */}
         <Route path="/trova-modello-dispositivo/xiaomi" element={<TrovaModelloXiaomi />} />

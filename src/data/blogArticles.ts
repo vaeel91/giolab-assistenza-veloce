@@ -9,8 +9,18 @@ import riparazioneFaceID from "/og-images/riparazione-face-id-iphone-truedepth-s
 import pcLentoVelocizzare from "@/assets/pc-lento-velocizzare-ssd-pulizia-giolab-assemini.jpg";
 import displayOriginaliCompatibili from "@/assets/display-iphone-originale-oem-oled-compatibile-tft-confronto-giolab.jpg";
 import sostituzioneDisplayMacBook from "@/assets/sostituzione-display-macbook-giolab-assemini.jpg";
+import riparazioneWebcamHPVictus from "@/assets/riparazione-webcam-hp-victus-giolab-assemini.jpg";
 
 export const blogArticles: BlogArticle[] = [
+  {
+    slug: "riparazione-webcam-hp-victus-giolab-assemini",
+    title: "Riparazione Webcam HP Victus – Giolab Assemini",
+    description: "Webcam HP Victus non funziona? Diagnosi e sostituzione con ricambio originale. Assistenza PC Assemini. ☎️ 340 69 70 686.",
+    date: "2025-12-17",
+    readTime: "7 min",
+    category: "Riparazione",
+    image: riparazioneWebcamHPVictus
+  },
   {
     slug: "sostituzione-display-macbook-protocollo-qualita-garanzia",
     title: "Sostituzione Display MacBook - Giolab Assemini",
