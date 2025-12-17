@@ -178,7 +178,8 @@ export default function RigenerazioneVetroIphoneIpadAppleWatch() {
         <p className="blog-paragraph">
           Il processo di rigenerazione per iPhone preserva tutte le funzionalità avanzate del 
           display originale: <strong>True Tone, Haptic Touch, ProMotion 120Hz</strong> (sui modelli Pro), 
-          e la calibrazione colore perfetta Apple.
+          e la calibrazione colore perfetta Apple. Se invece il display è completamente danneggiato, 
+          leggi la nostra <Link to="/blog/display-originali-vs-compatibili" className="text-giolab-blue hover:underline font-medium">guida sui display originali vs compatibili</Link>.
         </p>
 
         <div className="blog-box-warning">
@@ -353,7 +354,8 @@ export default function RigenerazioneVetroIphoneIpadAppleWatch() {
         <h2 className="blog-h2">🎯 Conclusione</h2>
         <p className="blog-paragraph">
           La rigenerazione del vetro è una soluzione intelligente ed economica per riparare iPhone, 
-          iPad e Apple Watch mantenendo la qualità originale Apple. Il nostro <strong>servizio riparazione iPhone urgente Assemini</strong> nel <strong>laboratorio riparazioni professionali Assemini</strong> garantisce risultati professionali.
+          iPad e Apple Watch mantenendo la qualità originale Apple. Il nostro <strong>servizio riparazione iPhone urgente Assemini</strong> nel <strong>laboratorio riparazioni professionali Assemini</strong> garantisce risultati professionali. 
+          Offriamo anche servizi come la <Link to="/blog/batteria-maggiorata-iphone-giolab-assemini" className="text-giolab-blue hover:underline font-medium">batteria maggiorata per iPhone</Link> e la <Link to="/blog/riparazione-face-id-iphone-giolab-assemini" className="text-giolab-blue hover:underline font-medium">riparazione Face ID</Link>.
         </p>
         <p className="blog-paragraph">
           Se il tuo dispositivo ha solo il vetro rotto ma il display funziona perfettamente, 

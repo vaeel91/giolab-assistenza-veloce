@@ -1,6 +1,7 @@
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
 import { Wrench, Shield, CheckCircle2, Monitor, Cpu, Settings, HelpCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import {
   Accordion,
   AccordionContent,
@@ -36,7 +37,7 @@ const SostituzioneDisplayMacBook = () => {
         <p className="blog-paragraph">
           La differenza tra una riparazione mediocre e una perfetta sta nel componente utilizzato. 
           Noi di <strong>Giolab</strong> non effettuiamo la rischiosa separazione del vetro dal pannello LCD 
-          (che causa spesso infiltrazioni di polvere o aloni).
+          (che causa spesso infiltrazioni di polvere o aloni), come spieghiamo anche nella nostra <Link to="/blog/display-originali-vs-compatibili" className="text-giolab-blue hover:underline font-medium">guida sui display originali vs compatibili</Link>.
         </p>
         <p className="blog-paragraph">
           Utilizziamo esclusivamente moduli <strong>Full Assembly Original Quality</strong>.
@@ -77,7 +78,7 @@ const SostituzioneDisplayMacBook = () => {
           </li>
           <li>
             <strong>Pulizia Profonda:</strong> Prima di montare il nuovo schermo, rimuoviamo polvere e residui dalle ventole 
-            e dalle griglie di aerazione (un servizio che offriamo sempre incluso).
+            e dalle griglie di aerazione (un servizio che offriamo sempre incluso, simile alla <Link to="/blog/pc-lento-velocizzare-ssd-pulizia-giolab-assemini" className="text-giolab-blue hover:underline font-medium">manutenzione preventiva per PC</Link>).
           </li>
           <li>
             <strong>Serraggio Controllato:</strong> Le viti delle cerniere vengono serrate rispettando la coppia di forza corretta. 
