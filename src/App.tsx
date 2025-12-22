@@ -51,14 +51,10 @@ const TrovaModelloHuawei = lazy(() => import("./pages/guide-modelli/TrovaModello
 const TrovaModelloiPad = lazy(() => import("./pages/guide-modelli/TrovaModelloiPad"));
 const TrovaModelloMacBook = lazy(() => import("./pages/guide-modelli/TrovaModelloMacBook"));
 
-// Lazy load - Dispositivi in Vendita
-const DispositiviHub = lazy(() => import("./pages/DispositiviHub"));
-const DispositiviApple = lazy(() => import("./pages/dispositivi/DispositiviApple"));
-const DispositiviSamsung = lazy(() => import("./pages/dispositivi/DispositiviSamsung"));
-const DispositiviXiaomi = lazy(() => import("./pages/dispositivi/DispositiviXiaomi"));
-const DispositiviOPPO = lazy(() => import("./pages/dispositivi/DispositiviOPPO"));
-const DispositiviHuawei = lazy(() => import("./pages/dispositivi/DispositiviHuawei"));
-const DispositiviConsole = lazy(() => import("./pages/dispositivi/DispositiviConsole"));
+// Lazy load - Catalogo
+const CatalogoHub = lazy(() => import("./pages/CatalogoHub"));
+const CategoriaAccessori = lazy(() => import("./pages/catalogo/CategoriaAccessori"));
+const PellicoleHydrogel = lazy(() => import("./pages/catalogo/PellicoleHydrogel"));
 
 // Suspense fallback - Leggero e non invasivo
 const PageLoader = () => (
@@ -122,14 +118,10 @@ const App = () => (
         <Route path="/servizi/batteria-maggiorata-iphone" element={<BatteriaMaggiorataIPhoneService />} />
         <Route path="/servizi/restauro-vetri-certificato" element={<RestauroVetriCertificato />} />
         
-        {/* Dispositivi in Vendita */}
-        <Route path="/dispositivi" element={<DispositiviHub />} />
-        <Route path="/dispositivi/iphone" element={<DispositiviApple />} />
-        <Route path="/dispositivi/samsung" element={<DispositiviSamsung />} />
-        <Route path="/dispositivi/xiaomi" element={<DispositiviXiaomi />} />
-        <Route path="/dispositivi/oppo" element={<DispositiviOPPO />} />
-        <Route path="/dispositivi/huawei" element={<DispositiviHuawei />} />
-        <Route path="/dispositivi/console" element={<DispositiviConsole />} />
+        {/* Catalogo */}
+        <Route path="/catalogo" element={<CatalogoHub />} />
+        <Route path="/catalogo/accessori" element={<CategoriaAccessori />} />
+        <Route path="/catalogo/accessori/pellicole-hydrogel" element={<PellicoleHydrogel />} />
         
         {/* Documentazione */}
         <Route path="/seo-docs" element={<SEODocumentation />} />

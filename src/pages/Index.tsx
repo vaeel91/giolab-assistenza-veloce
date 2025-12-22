@@ -64,52 +64,49 @@ const Index = () => {
           <BlogPreview />
         </section>
         
-        {/* Nuova sezione CTA Dispositivi - Mobile optimized */}
-        <section id="dispositivi-cta" ref={el => sectionsRef.current[2] = el as HTMLDivElement} className="min-h-screen snap-start snap-always section-animate flex items-center justify-center bg-gradient-to-br from-background via-background to-secondary/20 px-4">
+        {/* Sezione CTA Catalogo Accessori */}
+        <section id="catalogo-cta" ref={el => sectionsRef.current[2] = el as HTMLDivElement} className="min-h-screen snap-start snap-always section-animate flex items-center justify-center bg-gradient-to-br from-background via-background to-secondary/20 px-4">
           <div className="container mx-auto py-12 md:py-20">
             <div className="max-w-4xl mx-auto text-center space-y-5 md:space-y-8">
               <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-giolab-blue/10">
-                <Smartphone className="w-8 h-8 md:w-10 md:h-10 text-giolab-blue" />
+                <ShoppingBag className="w-8 h-8 md:w-10 md:h-10 text-giolab-blue" />
               </div>
               
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                Dispositivi Nuovi, Usati e Ricondizionati
+                Catalogo Accessori
               </h2>
               
-              <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">Console, PC, MacBook, iPhone, Samsung, Xiaomi, OPPO e Huawei. Certificati, garantiti e pronti alla vendita ad Assemini.<strong>Assemini</strong>.
+              <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                Pellicole hydrogel, cover e accessori di qualità per il tuo smartphone. Applicazione professionale inclusa ad <strong>Assemini</strong>.
               </p>
               
               <div className="flex flex-col gap-3 items-stretch sm:flex-row sm:items-center sm:justify-center pt-4 md:pt-6">
                 <Button asChild size="lg" className="bg-giolab-blue hover:bg-giolab-blue/90 text-white px-6 py-5 md:px-8 md:py-6 text-base md:text-lg w-full sm:w-auto">
-                  <Link to="/dispositivi">
+                  <Link to="/catalogo">
                     <ShoppingBag className="mr-2 h-5 w-5" />
                     Scopri il Catalogo
                   </Link>
                 </Button>
                 
                 <Button asChild variant="outline" size="lg" className="border-giolab-blue text-giolab-blue hover:bg-giolab-blue/10 px-6 py-5 md:px-8 md:py-6 text-base md:text-lg w-full sm:w-auto">
-                  <a href="https://wa.me/393406970686?text=Ciao,%20vorrei%20informazioni%20sui%20dispositivi%20in%20vendita">
+                  <a href="https://wa.me/393406970686?text=Ciao,%20vorrei%20informazioni%20sugli%20accessori">
                     Contattaci su WhatsApp
                   </a>
                 </Button>
               </div>
               
-              <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6 pt-8 md:pt-12 max-w-3xl mx-auto">
+              <div className="grid grid-cols-3 gap-4 md:gap-6 pt-8 md:pt-12 max-w-2xl mx-auto">
                 <div className="text-center p-3 md:p-0 rounded-lg bg-white/50 md:bg-transparent">
-                  <div className="text-2xl md:text-3xl font-bold text-giolab-blue mb-1">12 mesi</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">Garanzia</div>
+                  <div className="text-3xl mb-2">✨</div>
+                  <div className="text-sm font-semibold">Lucide</div>
                 </div>
                 <div className="text-center p-3 md:p-0 rounded-lg bg-white/50 md:bg-transparent">
-                  <div className="text-2xl md:text-3xl font-bold text-giolab-blue mb-1">100%</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">Certificati</div>
+                  <div className="text-3xl mb-2">🎮</div>
+                  <div className="text-sm font-semibold">Opache</div>
                 </div>
                 <div className="text-center p-3 md:p-0 rounded-lg bg-white/50 md:bg-transparent">
-                  <div className="text-2xl md:text-3xl font-bold text-giolab-blue mb-1">5 Brand</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">Disponibili</div>
-                </div>
-                <div className="text-center p-3 md:p-0 rounded-lg bg-white/50 md:bg-transparent">
-                  <div className="text-2xl md:text-3xl font-bold text-giolab-blue mb-1">3 Stati</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">Nuovo/Usato/Ricondizionato</div>
+                  <div className="text-3xl mb-2">🔒</div>
+                  <div className="text-sm font-semibold">Privacy</div>
                 </div>
               </div>
             </div>
