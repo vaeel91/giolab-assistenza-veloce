@@ -45,15 +45,10 @@ const Index = () => {
     };
   }, []);
   return <>
-      <SEOHead 
-        title="Riparazione iPhone e Smartphone a Assemini e Cagliari | Giolab" 
-        description="Riparazione iPhone e smartphone ad Assemini in 1 ora. Garanzia 12 mesi. Preventivo gratuito ☎️ 340 69 70 686. Contattaci ora!" 
-        keywords="riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza iPhone Cagliari, batteria maggiorata iPhone Assemini, riparazione vetro iPhone Assemini, micro-saldature Assemini, riparazione PC Assemini, assistenza console Assemini, centro assistenza iPhone Cagliari, rigenerazione vetro iPhone" 
-        breadcrumbs={[{
-          name: "Home",
-          url: "https://giolabriparazioni.it/"
-        }]} 
-      />
+      <SEOHead title="Riparazione iPhone e Smartphone a Assemini e Cagliari | Giolab" description="Riparazione iPhone e smartphone ad Assemini in 1 ora. Garanzia 12 mesi. Preventivo gratuito ☎️ 340 69 70 686. Contattaci ora!" keywords="riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza iPhone Cagliari, batteria maggiorata iPhone Assemini, riparazione vetro iPhone Assemini, micro-saldature Assemini, riparazione PC Assemini, assistenza console Assemini, centro assistenza iPhone Cagliari, rigenerazione vetro iPhone" breadcrumbs={[{
+      name: "Home",
+      url: "https://giolabriparazioni.it/"
+    }]} />
       <Header />
       
       <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth pb-20 md:pb-0 scroll-pt-16 md:scroll-pt-0">
@@ -95,20 +90,7 @@ const Index = () => {
                 </Button>
               </div>
               
-              <div className="grid grid-cols-3 gap-4 md:gap-6 pt-8 md:pt-12 max-w-2xl mx-auto">
-                <div className="text-center p-3 md:p-0 rounded-lg bg-white/50 md:bg-transparent">
-                  <div className="text-3xl mb-2">✨</div>
-                  <div className="text-sm font-semibold">Lucide</div>
-                </div>
-                <div className="text-center p-3 md:p-0 rounded-lg bg-white/50 md:bg-transparent">
-                  <div className="text-3xl mb-2">🎮</div>
-                  <div className="text-sm font-semibold">Opache</div>
-                </div>
-                <div className="text-center p-3 md:p-0 rounded-lg bg-white/50 md:bg-transparent">
-                  <div className="text-3xl mb-2">🔒</div>
-                  <div className="text-sm font-semibold">Privacy</div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </section>
