@@ -39,8 +39,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/dispositivi" className="hover:text-giolab-blue-light transition-colors">
-                  Dispositivi in Vendita
+                <a href="/catalogo" className="hover:text-giolab-blue-light transition-colors">
+                  Catalogo Accessori
                 </a>
               </li>
               <li>
