@@ -3,6 +3,8 @@ import { Phone, FileText, BookOpen, Search, Percent, Sparkles } from "lucide-rea
 import { Link } from "react-router-dom";
 import giolabLogo from "@/assets/giolab-logo-new.png";
 import { QuoteRequestDialog } from "./QuoteRequestDialog";
+import SaleCountdown from "./SaleCountdown";
+import { getSaleEndDate } from "@/data/saleProducts";
 const Hero = () => {
   const whatsappNumber = "393406970686";
   const whatsappMessage = encodeURIComponent("Ciao! Vorrei richiedere informazioni sui vostri servizi.");
@@ -61,21 +63,24 @@ const Hero = () => {
             Centro assistenza specializzato ad Assemini (CA) e Cagliari. Riparazioni rapide anche in 1 ora con garanzia 12 mesi. Ricambi certificati e preventivo gratuito.
           </p>
 
-          {/* Banner Saldi Dispositivi */}
+          {/* Banner Saldi Dispositivi con Countdown */}
           <Link 
-            to="/iphone-ricondizionati" 
-            className="group inline-flex items-center gap-2 md:gap-3 px-4 py-2.5 md:px-6 md:py-3 rounded-full bg-gradient-to-r from-amber-500/90 via-orange-500/90 to-red-500/90 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fade-in-up delay-250"
+            to="/saldi" 
+            className="group inline-flex flex-col sm:flex-row items-center gap-2 md:gap-3 px-4 py-3 md:px-6 md:py-3 rounded-2xl bg-gradient-to-r from-amber-500/90 via-orange-500/90 to-red-500/90 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fade-in-up delay-250"
           >
-            <span className="flex items-center justify-center w-6 h-6 md:w-8 md:h-8 bg-white/20 rounded-full">
-              <Percent className="w-3.5 h-3.5 md:w-4 md:h-4" />
-            </span>
-            <span className="text-xs md:text-sm lg:text-base">
-              <Sparkles className="inline w-3 h-3 md:w-4 md:h-4 mr-1 animate-pulse" />
-              SALDI: iPhone e Dispositivi Ricondizionati
-            </span>
-            <span className="text-[10px] md:text-xs bg-white/20 px-2 py-0.5 rounded-full hidden sm:inline">
-              Fino al -40%
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="flex items-center justify-center w-6 h-6 md:w-8 md:h-8 bg-white/20 rounded-full">
+                <Percent className="w-3.5 h-3.5 md:w-4 md:h-4" />
+              </span>
+              <span className="text-xs md:text-sm lg:text-base flex items-center gap-1">
+                <Sparkles className="w-3 h-3 md:w-4 md:h-4 animate-pulse" />
+                SALDI: Fino al -40%
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] md:text-xs opacity-80">Termina tra:</span>
+              <SaleCountdown endDate={getSaleEndDate()} />
+            </div>
           </Link>
 
           {/* CTA buttons - Mobile compatto affiancato */}
