@@ -49,6 +49,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
+                <a href="/saldi" className="hover:text-giolab-blue-light transition-colors flex items-center gap-1">
+                  🔥 Saldi
+                </a>
+              </li>
+              <li>
                 <a href="/servizi/riparazione-display-iphone-assemini" className="hover:text-giolab-blue-light transition-colors">
                   Riparazione Display iPhone
                 </a>
