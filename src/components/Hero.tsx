@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Phone, FileText, BookOpen, Search, Percent, Sparkles } from "lucide-react";
+import { Phone, FileText, BookOpen, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import giolabLogo from "@/assets/giolab-logo-new.png";
 import { QuoteRequestDialog } from "./QuoteRequestDialog";
-import SaleCountdown from "./SaleCountdown";
-import { getSaleEndDate } from "@/data/saleProducts";
 const Hero = () => {
   const whatsappNumber = "393406970686";
   const whatsappMessage = encodeURIComponent("Ciao! Vorrei richiedere informazioni sui vostri servizi.");
@@ -62,26 +60,6 @@ const Hero = () => {
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in-up delay-200 leading-relaxed">
             Centro assistenza specializzato ad Assemini (CA) e Cagliari. Riparazioni rapide anche in 1 ora con garanzia 12 mesi. Ricambi certificati e preventivo gratuito.
           </p>
-
-          {/* Banner Saldi Dispositivi con Countdown */}
-          <Link 
-            to="/saldi" 
-            className="group inline-flex flex-col sm:flex-row items-center gap-2 md:gap-3 px-4 py-3 md:px-6 md:py-3 rounded-2xl bg-gradient-to-r from-amber-500/90 via-orange-500/90 to-red-500/90 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 animate-fade-in-up delay-250"
-          >
-            <div className="flex items-center gap-2">
-              <span className="flex items-center justify-center w-6 h-6 md:w-8 md:h-8 bg-white/20 rounded-full">
-                <Percent className="w-3.5 h-3.5 md:w-4 md:h-4" />
-              </span>
-              <span className="text-xs md:text-sm lg:text-base flex items-center gap-1">
-                <Sparkles className="w-3 h-3 md:w-4 md:h-4 animate-pulse" />
-                SALDI: Fino al -40%
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[10px] md:text-xs opacity-80">Termina tra:</span>
-              <SaleCountdown endDate={getSaleEndDate()} />
-            </div>
-          </Link>
 
           {/* CTA buttons - Mobile compatto affiancato */}
           <div className="grid grid-cols-3 gap-2 sm:flex sm:flex-row sm:gap-4 justify-center items-center pt-4 md:pt-6 px-2 sm:px-0 animate-fade-in-up delay-300 max-w-2xl mx-auto">

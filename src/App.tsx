@@ -21,7 +21,6 @@ const SEODocumentation = lazy(() => import("./pages/SEODocumentation"));
 const SocialPreview = lazy(() => import("./pages/SocialPreview"));
 const IPhoneRicondizionati = lazy(() => import("./pages/IPhoneRicondizionati"));
 const TrovaModelloDispositivo = lazy(() => import("./pages/TrovaModelloDispositivo"));
-const Saldi = lazy(() => import("./pages/Saldi"));
 
 
 // Lazy load - Servizi
@@ -84,7 +83,6 @@ const App = () => (
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/contatti" element={<Contatti />} />
         <Route path="/iphone-ricondizionati-assemini" element={<IPhoneRicondizionati />} />
-        <Route path="/saldi" element={<Saldi />} />
         <Route path="/social-preview" element={<SocialPreview />} />
         
         
