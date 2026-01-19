@@ -10,8 +10,18 @@ import pcLentoVelocizzare from "@/assets/pc-lento-velocizzare-ssd-pulizia-giolab
 import displayOriginaliCompatibili from "@/assets/display-iphone-originale-oem-oled-compatibile-tft-confronto-giolab.jpg";
 import sostituzioneDisplayMacBook from "@/assets/sostituzione-display-macbook-giolab-assemini.jpg";
 import riparazioneWebcamHPVictus from "@/assets/hp-victus-notebook-laboratorio-giolab.jpg";
+import ripristinoFaceIDIPhone11 from "@/assets/face-id-iphone-11-configurato-giolab-assemini.jpg";
 
 export const blogArticles: BlogArticle[] = [
+  {
+    slug: "ripristino-face-id-iphone-11-acqua-giolab-assemini",
+    title: "Ripristino Face ID iPhone 11 dopo Acqua – Giolab",
+    description: "Face ID iPhone 11 non funziona dopo acqua? Ripristino con Tag-on Flex e micro-saldatura. Diagnosi gratuita. ☎️ 340 69 70 686.",
+    date: "2026-01-19",
+    readTime: "9 min",
+    category: "Riparazione",
+    image: ripristinoFaceIDIPhone11
+  },
   {
     slug: "riparazione-webcam-hp-victus-giolab-assemini",
     title: "Riparazione Webcam HP Victus – Giolab Assemini",
