@@ -57,10 +57,54 @@ const CatalogoHub = lazy(() => import("./pages/CatalogoHub"));
 const CategoriaAccessori = lazy(() => import("./pages/catalogo/CategoriaAccessori"));
 const PellicoleHydrogel = lazy(() => import("./pages/catalogo/PellicoleHydrogel"));
 
-// Suspense fallback - Leggero e non invasivo
+// Suspense fallback - Skeleton UI per SEO e UX migliorata
 const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-background">
-    <div className="animate-pulse text-giolab-blue">Caricamento...</div>
+  <div className="min-h-screen bg-background">
+    {/* Header skeleton per mostrare struttura */}
+    <div className="h-16 md:h-20 bg-background border-b shadow-sm" />
+    
+    <div className="container mx-auto px-4 py-12">
+      {/* Skeleton content visuale */}
+      <div className="max-w-4xl mx-auto space-y-6">
+        {/* Breadcrumb skeleton */}
+        <div className="flex gap-2">
+          <div className="h-4 bg-muted rounded w-16 animate-pulse" />
+          <div className="h-4 bg-muted rounded w-4 animate-pulse" />
+          <div className="h-4 bg-muted rounded w-24 animate-pulse" />
+        </div>
+        
+        {/* Title skeleton */}
+        <div className="h-10 bg-muted rounded w-3/4 animate-pulse" />
+        
+        {/* Content skeleton */}
+        <div className="space-y-3">
+          <div className="h-4 bg-muted rounded w-full animate-pulse" />
+          <div className="h-4 bg-muted rounded w-5/6 animate-pulse" />
+          <div className="h-4 bg-muted rounded w-4/5 animate-pulse" />
+          <div className="h-4 bg-muted rounded w-full animate-pulse" />
+          <div className="h-4 bg-muted rounded w-3/4 animate-pulse" />
+        </div>
+        
+        {/* Image skeleton */}
+        <div className="h-48 md:h-64 bg-muted rounded-lg animate-pulse" />
+        
+        {/* More content skeleton */}
+        <div className="space-y-3">
+          <div className="h-4 bg-muted rounded w-full animate-pulse" />
+          <div className="h-4 bg-muted rounded w-2/3 animate-pulse" />
+        </div>
+      </div>
+    </div>
+    
+    {/* Contenuto nascosto per crawler senza JavaScript */}
+    <noscript>
+      <div className="container mx-auto px-4 py-8 text-center">
+        <h1>Giolab - Centro Assistenza Riparazione iPhone e Smartphone</h1>
+        <p>Riparazione iPhone, smartphone, PC e console ad Assemini (CA). Servizi professionali con garanzia 12 mesi.</p>
+        <p>Via Carmine 20, 09032 Assemini - Tel: 340 69 70 686</p>
+        <p>Attiva JavaScript per visualizzare correttamente il sito.</p>
+      </div>
+    </noscript>
   </div>
 );
 
