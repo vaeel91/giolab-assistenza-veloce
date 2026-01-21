@@ -120,5 +120,14 @@ export const blogArticles: BlogArticle[] = [
     readTime: "8 min",
     category: "Guide",
     image: pcLentoVelocizzare
+  },
+  {
+    slug: "come-capire-batteria-iphone-da-sostituire",
+    title: "Batteria iPhone da Sostituire - Giolab Assemini",
+    description: "Segnali batteria iPhone da sostituire. Guida completa per riconoscerli. Centro Giolab Assemini. ☎️ 340 69 70 686.",
+    date: "2025-01-15",
+    readTime: "5 min",
+    category: "Guide",
+    image: batteriaMaggiorataIPhoneAssemini
   }
 ];
