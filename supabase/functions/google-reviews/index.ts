@@ -178,8 +178,8 @@ serve(async (req) => {
       throw new Error(`Google API error: ${data.status}${data.error_message ? ' - ' + data.error_message : ''}`);
     }
 
-    // Transform Google reviews to our format
-    const reviews = data.result.reviews?.map((review: any, index: number) => ({
+    // Transform Google reviews to our format - filter only 5-star reviews
+    const allReviews = data.result.reviews?.map((review: any, index: number) => ({
       id: `google-${index + 1}`,
       name: review.author_name,
       role: "Cliente Google",
@@ -194,6 +194,9 @@ serve(async (req) => {
       avatar: review.profile_photo_url || `https://api.dicebear.com/7.x/initials/svg?seed=${review.author_name}`,
       service: "Recensione Google"
     })) || [];
+    
+    // Show only 5-star reviews
+    const reviews = allReviews.filter((review: any) => review.rating === 5);
 
     const result = {
       reviews,
