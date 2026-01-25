@@ -52,7 +52,9 @@ const TestimonialsShowcase = ({
       if (error) throw error;
       
       if (data?.reviews && data.reviews.length > 0) {
-        setTestimonials(data.reviews);
+        // Filtra solo le recensioni a 5 stelle
+        const fiveStarReviews = data.reviews.filter((review: any) => review.rating === 5);
+        setTestimonials(fiveStarReviews.length > 0 ? fiveStarReviews : data.reviews.filter((r: any) => r.rating >= 4));
         setAggregateRating(data.aggregateRating || 4.9);
         setTotalReviews(data.totalReviews || data.reviews.length);
         
