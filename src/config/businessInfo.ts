@@ -60,21 +60,21 @@ export const BUSINESS_INFO = {
   openingHours: {
     // Formato leggibile per UI
     display: {
-      weekdays: "Lun-Ven: 9:00-13:00 / 16:00-20:00",
-      saturday: "Sab: 10:00-12:30",
+      weekdays: "Lun-Ven: 10:00-12:30 / 16:00-19:00",
+      saturday: "Sab: Solo su appuntamento",
       sunday: "Domenica: Chiuso",
-      full: "Lun-Ven: 9:00-13:00 / 16:00-20:00 | Sab: 10:00-12:30",
-      compact: "Lun-Ven 9:00-13:00 / 16:00-20:00 | Sab 10:00-12:30",
+      full: "Lun-Ven: 10:00-12:30 / 16:00-19:00 | Sab: Su appuntamento",
+      compact: "Lun-Ven 10:00-12:30 / 16:00-19:00 | Sab su appuntamento",
     },
     
     // Formato strutturato per componenti
     structured: {
-      monday: { morning: "9:00 - 13:00", afternoon: "16:00 - 20:00" },
-      tuesday: { morning: "9:00 - 13:00", afternoon: "16:00 - 20:00" },
-      wednesday: { morning: "9:00 - 13:00", afternoon: "16:00 - 20:00" },
-      thursday: { morning: "9:00 - 13:00", afternoon: "16:00 - 20:00" },
-      friday: { morning: "9:00 - 13:00", afternoon: "16:00 - 20:00" },
-      saturday: { morning: "10:00 - 12:30", afternoon: null },
+      monday: { morning: "10:00 - 12:30", afternoon: "16:00 - 19:00" },
+      tuesday: { morning: "10:00 - 12:30", afternoon: "16:00 - 19:00" },
+      wednesday: { morning: "10:00 - 12:30", afternoon: "16:00 - 19:00" },
+      thursday: { morning: "10:00 - 12:30", afternoon: "16:00 - 19:00" },
+      friday: { morning: "10:00 - 12:30", afternoon: "16:00 - 19:00" },
+      saturday: { morning: "Su appuntamento", afternoon: null },
       sunday: { closed: true },
     },
     
@@ -83,20 +83,14 @@ export const BUSINESS_INFO = {
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "13:00"
+        "opens": "10:00",
+        "closes": "12:30"
       },
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         "opens": "16:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "10:00",
-        "closes": "12:30"
+        "closes": "19:00"
       }
     ],
   },
