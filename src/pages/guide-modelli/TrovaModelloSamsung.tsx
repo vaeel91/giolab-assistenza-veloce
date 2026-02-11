@@ -243,7 +243,7 @@ const TrovaModelloSamsung = () => {
                   </a>
                 </div>
                 <p className="text-center text-sm text-muted-foreground mt-4">
-                  📍 Via Carmine 20, 09032 Assemini (CA) | Lun-Ven 10:00-12:30 / 16:00-19:00 | Sab su appuntamento
+                  📍 Via Carmine 20, 09032 Assemini (CA) | Lun-Ven 10:00-12:30 / 16:00-19:00 | Sab 10:00-12:30
                 </p>
               </Card>
 

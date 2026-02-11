@@ -61,10 +61,10 @@ export const BUSINESS_INFO = {
     // Formato leggibile per UI
     display: {
       weekdays: "Lun-Ven: 10:00-12:30 / 16:00-19:00",
-      saturday: "Sab: Solo su appuntamento",
+      saturday: "Sab: 10:00-12:30",
       sunday: "Domenica: Chiuso",
-      full: "Lun-Ven: 10:00-12:30 / 16:00-19:00 | Sab: Su appuntamento",
-      compact: "Lun-Ven 10:00-12:30 / 16:00-19:00 | Sab su appuntamento",
+      full: "Lun-Ven: 10:00-12:30 / 16:00-19:00 | Sab: 10:00-12:30",
+      compact: "Lun-Ven 10:00-12:30 / 16:00-19:00 | Sab 10:00-12:30",
     },
     
     // Formato strutturato per componenti
@@ -74,7 +74,7 @@ export const BUSINESS_INFO = {
       wednesday: { morning: "10:00 - 12:30", afternoon: "16:00 - 19:00" },
       thursday: { morning: "10:00 - 12:30", afternoon: "16:00 - 19:00" },
       friday: { morning: "10:00 - 12:30", afternoon: "16:00 - 19:00" },
-      saturday: { morning: "Su appuntamento", afternoon: null },
+      saturday: { morning: "10:00 - 12:30", afternoon: null },
       sunday: { closed: true },
     },
     
@@ -91,6 +91,12 @@ export const BUSINESS_INFO = {
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         "opens": "16:00",
         "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday"],
+        "opens": "10:00",
+        "closes": "12:30"
       }
     ],
   },

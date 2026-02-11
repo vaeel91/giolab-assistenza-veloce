@@ -585,7 +585,7 @@ export default function CodiceModelloDispositivo() {
           marginTop: '1rem'
         }}>
             <strong>📍 Dove siamo:</strong> Via Carmine 20, 09032 Assemini (CA)<br />
-            <strong>🕒 Orari:</strong> Lun-Ven 10:00-12:30 / 16:00-19:00 | Sab su appuntamento<br />
+            <strong>🕒 Orari:</strong> Lun-Ven 10:00-12:30 / 16:00-19:00 | Sab 10:00-12:30<br />
             <strong>📱 WhatsApp:</strong> 340 69 70 686<br />
             <strong>📷 Instagram:</strong> @giolab_iphonefix
           </p>

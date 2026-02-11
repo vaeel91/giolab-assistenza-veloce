@@ -174,7 +174,7 @@ export default function RiparazioneIPhone1Ora() {
           <p className="blog-paragraph">
             📞 <strong>Chiama subito: 340 69 70 686</strong><br />
             📍 Via Carmine 20, 09032 Assemini (CA)<br />
-            🕘 Lun–Ven: 10:00–12:30 / 16:00–19:00 | Sab su appuntamento
+            🕘 Lun–Ven: 10:00–12:30 / 16:00–19:00 | Sab 10:00–12:30
           </p>
         </div>
         <p className="blog-paragraph">

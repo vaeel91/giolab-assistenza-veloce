@@ -425,7 +425,7 @@ export default function DisplayOriginaliVsCompatibili() {
             <strong>GioLab Assemini</strong><br />
             📍 Via Carmine 20, 09032 Assemini (CA)<br />
             📞 <strong>340 69 70 686</strong><br />
-            🕘 Lun–Ven: 10:00–12:30 / 16:00–19:00 | Sab su appuntamento<br />
+            🕘 Lun–Ven: 10:00–12:30 / 16:00–19:00 | Sab 10:00–12:30<br />
             📧 info@giolabriparazioni.it
           </p>
         </div>
@@ -516,7 +516,7 @@ export default function DisplayOriginaliVsCompatibili() {
             📍 Via Carmine 20, 09032 Assemini (CA)<br />
             📧 info@giolabriparazioni.it<br />
             📷 Instagram: <strong>@giolabriparazioni</strong><br />
-            🕘 Lun–Ven: 10:00–12:30 / 16:00–19:00 | Sab su appuntamento
+            🕘 Lun–Ven: 10:00–12:30 / 16:00–19:00 | Sab 10:00–12:30
           </p>
         </div>
         <p className="blog-paragraph">

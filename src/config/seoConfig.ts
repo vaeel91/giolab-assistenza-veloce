@@ -42,7 +42,7 @@ export const BUSINESS_INFO = {
   },
   hours: {
     weekdays: 'Lun-Ven: 10:00-12:30, 16:00-19:00',
-    saturday: 'Sab: Solo su appuntamento',
+    saturday: 'Sab: 10:00-12:30',
     sunday: 'Chiuso',
   },
 };
@@ -123,6 +123,12 @@ export const LOCAL_BUSINESS_SCHEMA = {
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       opens: '16:00',
       closes: '19:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Saturday'],
+      opens: '10:00',
+      closes: '12:30',
     },
   ],
   sameAs: [
