@@ -125,7 +125,7 @@ const Footer = () => {
             Tel: <a href="tel:+393406970686" className="hover:text-white transition-colors">340 69 70 686</a>
           </p>
           <p className="mt-2">
-            <strong>Orari:</strong> Lun-Ven 10:00-12:30 / 16:00-19:00 | Sab su appuntamento
+            <strong>Orari:</strong> Lun-Ven 10:00-12:30 / 16:00-19:00 | Sab 10:00-12:30
           </p>
         </div>
       </div>
