@@ -227,7 +227,7 @@ const TrovaModelloHuawei = () => {
                   </a>
                 </div>
                 <p className="mt-4 text-sm text-muted-foreground">
-                  📍 Via Carmine 20, 09032 Assemini (CA) | Lun-Sab 9:00-13:00 / 16:00-20:00
+                  📍 Via Carmine 20, 09032 Assemini (CA) | Lun-Ven 10:00-12:30 / 16:00-19:00 | Sab su appuntamento
                 </p>
               </section>
 

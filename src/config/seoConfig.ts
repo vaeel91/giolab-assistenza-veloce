@@ -41,8 +41,8 @@ export const BUSINESS_INFO = {
     tiktok: 'https://www.tiktok.com/@giolab_iphonefix',
   },
   hours: {
-    weekdays: 'Lun-Ven: 9:00-13:00, 16:00-20:00',
-    saturday: 'Sab: 10:00-12:30',
+    weekdays: 'Lun-Ven: 10:00-12:30, 16:00-19:00',
+    saturday: 'Sab: Solo su appuntamento',
     sunday: 'Chiuso',
   },
 };
@@ -115,20 +115,14 @@ export const LOCAL_BUSINESS_SCHEMA = {
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '09:00',
-      closes: '13:00',
+      opens: '10:00',
+      closes: '12:30',
     },
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       opens: '16:00',
-      closes: '20:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Saturday',
-      opens: '10:00',
-      closes: '12:30',
+      closes: '19:00',
     },
   ],
   sameAs: [
