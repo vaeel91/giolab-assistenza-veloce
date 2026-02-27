@@ -9,8 +9,8 @@ const FAQPage = () => {
   return (
     <>
       <SEOHead 
-        title="FAQ Riparazione iPhone - Giolab Assemini"
-        description="Risposte su riparazione iPhone e smartphone: tempi, costi, garanzia, sicurezza dati. Giolab Assemini ti aiuta. ☎️ 340 69 70 686."
+        title="Domande Frequenti Riparazione | Giolab Assemini"
+        description="Risposte alle domande più comuni su riparazioni iPhone, garanzie, tempi e costi. Centro assistenza Giolab ad Assemini."
         keywords="faq riparazione iPhone, domande frequenti assistenza smartphone, costi riparazione iPhone Assemini, garanzia riparazione, tempi riparazione iPhone"
         breadcrumbs={[
           { name: "Home", url: "https://giolabriparazioni.it/" },
