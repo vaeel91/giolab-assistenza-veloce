@@ -10,8 +10,8 @@ const ChiSiamo = () => {
   return (
     <>
       <SEOHead 
-        title="Chi Siamo e Dove Siamo - Giolab Assemini"
-        description="Centro assistenza iPhone e smartphone in Via Carmine 20, Assemini. 10 anni di esperienza, tecnici certificati. ☎️ 340 69 70 686."
+        title="Chi Siamo | Giolab - Centro Assistenza Assemini"
+        description="Giolab è guidato da Stefano Giordano, con oltre 10 anni di esperienza. Ripariamo iPhone, smartphone, PC e console ad Assemini con ricambi certificati."
         keywords="chi siamo Giolab, dove siamo Giolab, centro assistenza iPhone Assemini, Via Carmine 20, tecnici certificati Cagliari"
         breadcrumbs={[
           { name: "Home", url: "https://giolabriparazioni.it/" },

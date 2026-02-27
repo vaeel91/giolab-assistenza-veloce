@@ -9,8 +9,8 @@ const Contatti = () => {
   return (
     <>
       <SEOHead 
-        title="Contatti - Giolab Assemini ☎️ 340 69 70 686"
-        description="Contatta Giolab per riparazioni iPhone ad Assemini. Via Carmine 20, 09032. Preventivo gratuito. Chiama ora al 340 69 70 686!"
+        title="Contatti e Orari | Giolab - Assemini"
+        description="Contatta Giolab ad Assemini: Via Carmine 20, tel. 340 69 70 686. Aperto Lun-Ven 10:00-12:30 / 16:00-19:00, Sab 10:00-12:30. Preventivo gratuito."
         keywords="contatti Giolab, telefono Giolab Assemini, email Giolab, preventivo riparazione iPhone, assistenza clienti smartphone Cagliari"
         breadcrumbs={[
           { name: "Home", url: "https://giolabriparazioni.it/" },
