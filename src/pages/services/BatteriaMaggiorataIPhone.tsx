@@ -6,7 +6,7 @@ const BatteriaMaggiorataIPhone = () => {
   return (
     <>
       <ServiceTemplate
-      seoTitle="Batteria Maggiorata iPhone – Giolab Assemini"
+      seoTitle="Batteria Maggiorata iPhone ad Assemini | Giolab"
       heroImage={batteriaMaggiorataHero}
       heroImageAlt="Batteria maggiorata iPhone con +30% autonomia - confronto prima e dopo sostituzione Giolab Assemini"
       seoDescription="Batteria maggiorata iPhone ad Assemini. Fino al 30% di autonomia in più. Servizio rapido, garanzia 12 mesi. ☎️ 340 69 70 686"
