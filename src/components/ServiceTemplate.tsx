@@ -38,6 +38,7 @@ interface ServiceTemplateProps {
     answer: string;
   }>;
   showTestimonials?: boolean;
+  structuredData?: object;
   breadcrumbs?: Array<{
     name: string;
     url?: string;
@@ -59,6 +60,7 @@ const ServiceTemplate = ({
   timeRange,
   faqs,
   showTestimonials = true,
+  structuredData,
   breadcrumbs,
 }: ServiceTemplateProps) => {
   const handleWhatsApp = () => {
@@ -187,7 +189,7 @@ const ServiceTemplate = ({
         title={seoTitle}
         description={seoDescription}
         keywords={seoKeywords}
-        structuredData={productSchema ? [serviceSchema, productSchema] : serviceSchema}
+        structuredData={structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : (productSchema ? [serviceSchema, productSchema] : serviceSchema)}
         faqData={faqs}
         breadcrumbs={breadcrumbs}
       />
