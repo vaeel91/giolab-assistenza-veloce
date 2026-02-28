@@ -47,6 +47,7 @@ const SostituzioneDisplayMacBook = lazy(() => import("./pages/blog/SostituzioneD
 const PCLentoVelocizzare = lazy(() => import("./pages/blog/PCLentoVelocizzare"));
 const RiparazioneWebcamHPVictus = lazy(() => import("./pages/blog/RiparazioneWebcamHPVictus"));
 const RipristinoFaceIDIPhone11 = lazy(() => import("./pages/blog/RipristinoFaceIDIPhone11"));
+const BatteriaIPhoneSiScaricaVelocemente = lazy(() => import("./pages/blog/BatteriaIPhoneSiScaricaVelocemente"));
 
 // Lazy load - Guide Modelli
 const TrovaModelloIPhone = lazy(() => import("./pages/guide-modelli/TrovaModelloIPhone"));
@@ -156,6 +157,7 @@ const App = () => (
             <Route path="/blog/sostituzione-display-macbook-protocollo-qualita-garanzia" element={<SostituzioneDisplayMacBook />} />
             <Route path="/blog/riparazione-webcam-hp-victus-giolab-assemini" element={<RiparazioneWebcamHPVictus />} />
             <Route path="/blog/ripristino-face-id-iphone-11-acqua-giolab-assemini" element={<RipristinoFaceIDIPhone11 />} />
+            <Route path="/blog/batteria-iphone-si-scarica-velocemente-assemini" element={<BatteriaIPhoneSiScaricaVelocemente />} />
         
         {/* Guide Modelli */}
         <Route path="/trova-modello-dispositivo/xiaomi" element={<TrovaModelloXiaomi />} />

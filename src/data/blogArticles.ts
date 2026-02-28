@@ -129,5 +129,14 @@ export const blogArticles: BlogArticle[] = [
     readTime: "5 min",
     category: "Guide",
     image: batteriaMaggiorataIPhoneAssemini
+  },
+  {
+    slug: "batteria-iphone-si-scarica-velocemente-assemini",
+    title: "Batteria iPhone Scarica? Cause e Soluzioni – Giolab",
+    description: "La batteria del tuo iPhone si scarica subito? Scopri le 5 cause più comuni e come risolverle. Giolab Assemini: cambio batteria in 1 ora.",
+    date: "2026-02-28",
+    readTime: "5 min",
+    category: "Guide",
+    image: batteriaMaggiorataIPhoneAssemini
   }
 ];
