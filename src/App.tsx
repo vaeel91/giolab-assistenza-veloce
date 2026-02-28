@@ -171,7 +171,7 @@ const App = () => (
         <Route path="/catalogo/accessori/pellicole-hydrogel" element={<PellicoleHydrogel />} />
         
         {/* Documentazione */}
-        <Route path="/seo-docs" element={<SEODocumentation />} />
+        <Route path="/seo-docs" element={<AdminRoute><SEODocumentation /></AdminRoute>} />
         
         {/* 404 */}
         <Route path="*" element={<NotFound />} />
