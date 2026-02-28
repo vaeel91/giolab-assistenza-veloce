@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
 import SEOMonitor from "@/components/SEOMonitor";
+import AdminRoute from "@/components/AdminRoute";
 
 // Eager load - Pagine critiche (sempre caricate subito)
 import Index from "./pages/Index";
@@ -128,7 +129,7 @@ const App = () => (
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/contatti" element={<Contatti />} />
         <Route path="/iphone-ricondizionati-assemini" element={<IPhoneRicondizionati />} />
-        <Route path="/social-preview" element={<SocialPreview />} />
+        <Route path="/social-preview" element={<AdminRoute><SocialPreview /></AdminRoute>} />
         
         
         {/* Guide Modelli Dispositivi */}
