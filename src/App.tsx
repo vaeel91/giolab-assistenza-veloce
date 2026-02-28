@@ -49,6 +49,7 @@ const RiparazioneWebcamHPVictus = lazy(() => import("./pages/blog/RiparazioneWeb
 const RipristinoFaceIDIPhone11 = lazy(() => import("./pages/blog/RipristinoFaceIDIPhone11"));
 const BatteriaIPhoneSiScaricaVelocemente = lazy(() => import("./pages/blog/BatteriaIPhoneSiScaricaVelocemente"));
 const CostoRiparazioneSchermoSmartphone = lazy(() => import("./pages/blog/CostoRiparazioneSchermoSmartphone"));
+const PS5SurriscaldataRumorosaPulizia = lazy(() => import("./pages/blog/PS5SurriscaldataRumorosaPulizia"));
 
 // Lazy load - Guide Modelli
 const TrovaModelloIPhone = lazy(() => import("./pages/guide-modelli/TrovaModelloIPhone"));
@@ -160,6 +161,7 @@ const App = () => (
             <Route path="/blog/ripristino-face-id-iphone-11-acqua-giolab-assemini" element={<RipristinoFaceIDIPhone11 />} />
             <Route path="/blog/batteria-iphone-si-scarica-velocemente-assemini" element={<BatteriaIPhoneSiScaricaVelocemente />} />
             <Route path="/blog/costo-riparazione-schermo-smartphone-cagliari-assemini" element={<CostoRiparazioneSchermoSmartphone />} />
+            <Route path="/blog/ps5-surriscaldata-rumorosa-pulizia-manutenzione-cagliari" element={<PS5SurriscaldataRumorosaPulizia />} />
         
         {/* Guide Modelli */}
         <Route path="/trova-modello-dispositivo/xiaomi" element={<TrovaModelloXiaomi />} />
