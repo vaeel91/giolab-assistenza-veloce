@@ -40,8 +40,8 @@ const Blog = () => {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="Blog Riparazione Smartphone e iPhone | Giolab"
-        description="Leggi le guide e gli articoli di Giolab su riparazione iPhone, smartphone, PC e console. Consigli pratici dal nostro laboratorio di Assemini."
+        title="Blog Riparazione Smartphone e iPhone | Guide e Consigli – Giolab Assemini"
+        description="Leggi le guide Giolab su riparazione iPhone, Samsung, PS5 e PC. Consigli pratici dal tecnico specializzato di Assemini per prenderti cura dei tuoi dispositivi."
         keywords="blog riparazione iPhone, guide iPhone, consigli batteria iPhone, manutenzione smartphone, assistenza iPhone Assemini"
         ogImage="https://giolabriparazioni.it/og-image-giolab.jpg"
         breadcrumbs={[

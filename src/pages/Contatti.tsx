@@ -9,8 +9,8 @@ const Contatti = () => {
   return (
     <>
       <SEOHead 
-        title="Contatti e Orari | Giolab - Assemini"
-        description="Contatta Giolab ad Assemini: Via Carmine 20, tel. 340 69 70 686. Aperto Lun-Ven 10:00-12:30 / 16:00-19:00, Sab 10:00-12:30. Preventivo gratuito."
+        title="Contatti Giolab Assemini | Prenota Riparazione Smartphone e PC"
+        description="Contatta Giolab ad Assemini (Via Carmine 20). Aperto Lun-Ven 10:00-12:30 / 16:00-19:00 | Sab 10:00-12:30. WhatsApp, telefono o preventivo online."
         keywords="contatti Giolab, telefono Giolab Assemini, email Giolab, preventivo riparazione iPhone, assistenza clienti smartphone Cagliari"
         breadcrumbs={[
           { name: "Home", url: "https://giolabriparazioni.it/" },
