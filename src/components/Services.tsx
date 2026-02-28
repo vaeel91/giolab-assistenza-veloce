@@ -234,6 +234,39 @@ const Services = () => {
           })}
         </div>
 
+        {/* Approfondisci i nostri servizi */}
+        <div className={`mb-10 md:mb-16 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '750ms' }}>
+          <h3 className="text-xl md:text-2xl font-bold text-slate-900 text-center mb-6 md:mb-8">
+            Approfondisci i nostri servizi
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
+            {[
+              { icon: Laptop, title: "Riparazione MacBook", link: "/servizi/riparazione-macbook-assemini", gradient: "from-purple-500 to-pink-400", bgGradient: "from-purple-500/10 to-pink-400/5" },
+              { icon: Smartphone, title: "Riparazione Samsung", link: "/servizi/riparazione-samsung-assemini", gradient: "from-blue-500 to-cyan-400", bgGradient: "from-blue-500/10 to-cyan-400/5" },
+              { icon: HardDrive, title: "Recupero Dati", link: "/servizi/recupero-dati-smartphone", gradient: "from-emerald-500 to-green-400", bgGradient: "from-emerald-500/10 to-green-400/5" },
+              { icon: Gamepad2, title: "Riparazione Console", link: "/servizi/riparazione-console-assemini", gradient: "from-pink-500 to-rose-400", bgGradient: "from-pink-500/10 to-rose-400/5" },
+            ].map((item, index) => (
+              <Link key={index} to={item.link} className="block">
+                <Card className="group relative overflow-hidden border border-slate-100 hover:border-giolab-blue/30 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer bg-white">
+                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity`} />
+                  <CardContent className="p-4 md:p-6 text-center">
+                    <div className={`w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br ${item.bgGradient} flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                      <item.icon className="h-6 w-6 md:h-7 md:w-7 text-slate-700" />
+                    </div>
+                    <h4 className="text-sm md:text-base font-semibold text-slate-900 mb-2 group-hover:text-giolab-blue transition-colors">
+                      {item.title}
+                    </h4>
+                    <div className="flex items-center justify-center text-giolab-blue font-medium text-xs md:text-sm gap-1 group-hover:gap-2 transition-all">
+                      <span>Scopri</span>
+                      <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {/* Guarantees */}
         <div className={`flex flex-wrap justify-center gap-4 md:gap-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '800ms' }}>
           {guarantees.map((item, index) => (
