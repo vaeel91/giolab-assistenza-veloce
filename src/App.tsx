@@ -157,6 +157,7 @@ const App = () => (
             <Route path="/blog/sostituzione-display-macbook-protocollo-qualita-garanzia" element={<SostituzioneDisplayMacBook />} />
             <Route path="/blog/riparazione-webcam-hp-victus-giolab-assemini" element={<RiparazioneWebcamHPVictus />} />
             <Route path="/blog/ripristino-face-id-iphone-11-acqua-giolab-assemini" element={<RipristinoFaceIDIPhone11 />} />
+            <Route path="/blog/batteria-iphone-si-scarica-velocemente-assemini" element={<BatteriaIPhoneSiScaricaVelocemente />} />
         
         {/* Guide Modelli */}
         <Route path="/trova-modello-dispositivo/xiaomi" element={<TrovaModelloXiaomi />} />
