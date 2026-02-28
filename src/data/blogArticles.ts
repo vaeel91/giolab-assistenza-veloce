@@ -147,5 +147,14 @@ export const blogArticles: BlogArticle[] = [
     readTime: "5 min",
     category: "Guide",
     image: riparazioneIPhone1OraAssemini
+  },
+  {
+    slug: "ps5-surriscaldata-rumorosa-pulizia-manutenzione-cagliari",
+    title: "PS5 Surriscaldata? Pulizia e Manutenzione – Giolab",
+    description: "PS5 rumorosa o si surriscalda? Scopri le cause e prenota la pulizia professionale da Giolab Assemini. Console come nuova in 1 ora.",
+    date: "2026-02-28",
+    readTime: "5 min",
+    category: "Guide",
+    image: manutenzionePS5
   }
 ];
