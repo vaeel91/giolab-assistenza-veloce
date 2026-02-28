@@ -60,6 +60,7 @@ const ServiceTemplate = ({
   timeRange,
   faqs,
   showTestimonials = true,
+  structuredData,
   breadcrumbs,
 }: ServiceTemplateProps) => {
   const handleWhatsApp = () => {
