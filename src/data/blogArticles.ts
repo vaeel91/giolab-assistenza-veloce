@@ -138,5 +138,14 @@ export const blogArticles: BlogArticle[] = [
     readTime: "5 min",
     category: "Guide",
     image: batteriaMaggiorataIPhoneAssemini
+  },
+  {
+    slug: "costo-riparazione-schermo-smartphone-cagliari-assemini",
+    title: "Costo Riparazione Display Smartphone – Giolab",
+    description: "Hai rotto il display del tuo smartphone? Scopri i costi per iPhone, Samsung e altri. Riparazioni rapide con garanzia 12 mesi da Giolab Assemini.",
+    date: "2026-02-28",
+    readTime: "5 min",
+    category: "Guide",
+    image: riparazioneIPhone1OraAssemini
   }
 ];
