@@ -49,6 +49,7 @@ const RiparazioneWebcamHPVictus = lazy(() => import("./pages/blog/RiparazioneWeb
 const RipristinoFaceIDIPhone11 = lazy(() => import("./pages/blog/RipristinoFaceIDIPhone11"));
 const BatteriaIPhoneSiScaricaVelocemente = lazy(() => import("./pages/blog/BatteriaIPhoneSiScaricaVelocemente"));
 const CostoRiparazioneSchermoSmartphone = lazy(() => import("./pages/blog/CostoRiparazioneSchermoSmartphone"));
+const PS5SurriscaldataRumorosaPulizia = lazy(() => import("./pages/blog/PS5SurriscaldataRumorosaPulizia"));
 
 // Lazy load - Guide Modelli
 const TrovaModelloIPhone = lazy(() => import("./pages/guide-modelli/TrovaModelloIPhone"));
