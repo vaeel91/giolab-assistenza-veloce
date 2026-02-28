@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
 import SEOMonitor from "@/components/SEOMonitor";
+import AdminRoute from "@/components/AdminRoute";
 
 // Eager load - Pagine critiche (sempre caricate subito)
 import Index from "./pages/Index";
