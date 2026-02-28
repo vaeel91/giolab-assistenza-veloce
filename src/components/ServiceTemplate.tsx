@@ -189,7 +189,7 @@ const ServiceTemplate = ({
         title={seoTitle}
         description={seoDescription}
         keywords={seoKeywords}
-        structuredData={productSchema ? [serviceSchema, productSchema] : serviceSchema}
+        structuredData={structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : (productSchema ? [serviceSchema, productSchema] : serviceSchema)}
         faqData={faqs}
         breadcrumbs={breadcrumbs}
       />

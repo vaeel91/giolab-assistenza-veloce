@@ -168,6 +168,10 @@ const App = () => (
         <Route path="/servizi/riparazione-display-iphone-assemini" element={<RiparazioneDisplayIPhone />} />
         <Route path="/servizi/batteria-maggiorata-iphone" element={<BatteriaMaggiorataIPhoneService />} />
         <Route path="/servizi/restauro-vetri-certificato" element={<RestauroVetriCertificato />} />
+        <Route path="/servizi/riparazione-macbook-assemini" element={<RiparazioneMacBook />} />
+        <Route path="/servizi/riparazione-samsung-assemini" element={<RiparazioneSamsung />} />
+        <Route path="/servizi/recupero-dati-smartphone" element={<RecuperoDatiSmartphone />} />
+        <Route path="/servizi/riparazione-console-assemini" element={<RiparazioneConsole />} />
         
         {/* Catalogo */}
         <Route path="/catalogo" element={<CatalogoHub />} />
