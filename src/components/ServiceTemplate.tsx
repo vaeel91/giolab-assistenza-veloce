@@ -38,6 +38,7 @@ interface ServiceTemplateProps {
     answer: string;
   }>;
   showTestimonials?: boolean;
+  structuredData?: object;
   breadcrumbs?: Array<{
     name: string;
     url?: string;
