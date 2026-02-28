@@ -28,6 +28,10 @@ const TrovaModelloDispositivo = lazy(() => import("./pages/TrovaModelloDispositi
 const RiparazioneDisplayIPhone = lazy(() => import("./pages/services/RiparazioneDisplayIPhone"));
 const BatteriaMaggiorataIPhoneService = lazy(() => import("./pages/services/BatteriaMaggiorataIPhone"));
 const RestauroVetriCertificato = lazy(() => import("./pages/services/RestauroVetriCertificato"));
+const RiparazioneMacBook = lazy(() => import("./pages/services/RiparazioneMacBook"));
+const RiparazioneSamsung = lazy(() => import("./pages/services/RiparazioneSamsung"));
+const RecuperoDatiSmartphone = lazy(() => import("./pages/services/RecuperoDatiSmartphone"));
+const RiparazioneConsole = lazy(() => import("./pages/services/RiparazioneConsole"));
 
 // Lazy load - Articoli Blog
 const RiparazioneIPhone1Ora = lazy(() => import("./pages/blog/RiparazioneIPhone1Ora"));
