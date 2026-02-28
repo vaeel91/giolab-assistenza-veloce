@@ -47,6 +47,7 @@ const SostituzioneDisplayMacBook = lazy(() => import("./pages/blog/SostituzioneD
 const PCLentoVelocizzare = lazy(() => import("./pages/blog/PCLentoVelocizzare"));
 const RiparazioneWebcamHPVictus = lazy(() => import("./pages/blog/RiparazioneWebcamHPVictus"));
 const RipristinoFaceIDIPhone11 = lazy(() => import("./pages/blog/RipristinoFaceIDIPhone11"));
+const BatteriaIPhoneSiScaricaVelocemente = lazy(() => import("./pages/blog/BatteriaIPhoneSiScaricaVelocemente"));
 
 // Lazy load - Guide Modelli
 const TrovaModelloIPhone = lazy(() => import("./pages/guide-modelli/TrovaModelloIPhone"));
