@@ -98,7 +98,7 @@ const FAQ = () => {
     <section id="faq" className="py-4 md:py-6 pt-20 md:pt-24 bg-background h-full flex flex-col justify-center overflow-y-auto">
       <div className="container mx-auto px-4">
         <div className="text-center mb-3 md:mb-4">
-          <h2 className="text-xl md:text-3xl font-bold mb-2">Domande Frequenti</h2>
+          <h2 className="text-xl md:text-3xl font-bold mb-2 sr-only">Domande Frequenti</h2>
         </div>
 
         <div className="max-w-3xl mx-auto">

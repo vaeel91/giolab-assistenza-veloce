@@ -280,14 +280,17 @@ export const allReviews: Review[] = [
  * Calcola automaticamente il rating medio e il conteggio totale
  * da tutte le recensioni disponibili
  */
-export const calculateAggregateRating = () => {
-  const totalReviews = allReviews.length;
-  const totalRating = allReviews.reduce((sum, review) => sum + review.rating, 0);
-  const averageRating = totalReviews > 0 ? (totalRating / totalReviews).toFixed(1) : "5.0";
+/**
+ * 📊 DATI GOOGLE BUSINESS PROFILE
+ * Allineati con il profilo reale su Google Maps
+ */
+export const GOOGLE_TOTAL_REVIEWS = 165;
+export const GOOGLE_RATING = 4.9;
 
+export const calculateAggregateRating = () => {
   return {
-    ratingValue: averageRating,
-    reviewCount: totalReviews.toString(),
+    ratingValue: GOOGLE_RATING.toString(),
+    reviewCount: GOOGLE_TOTAL_REVIEWS.toString(),
     bestRating: "5",
     worstRating: "1"
   };

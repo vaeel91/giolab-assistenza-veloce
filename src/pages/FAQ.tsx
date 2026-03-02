@@ -22,6 +22,9 @@ const FAQPage = () => {
         <Header />
         
         <main className="container mx-auto px-4 pt-32 pb-16">
+          <h1 className="text-2xl md:text-4xl font-bold text-center mb-6">
+            Domande Frequenti sulla Riparazione Smartphone ad Assemini
+          </h1>
           <FAQ />
         </main>
         
