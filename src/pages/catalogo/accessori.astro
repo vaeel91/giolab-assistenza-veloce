@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Page from '../../components/pages/catalogo/CategoriaAccessori';
+---
+<BaseLayout
+  title="Accessori Smartphone Assemini | Giolab – Pellicole e Cover"
+  description="Scopri gli accessori per smartphone disponibili da Giolab Assemini: cover, pellicole, caricatori e molto altro. Qualità garantita e applicazione professionale."
+  keywords="accessori smartphone Assemini, cover iPhone Cagliari, pellicole protettive smartphone Assemini, accessori Samsung Assemini"
+  canonical="https://giolabriparazioni.it/catalogo/accessori"
+  breadcrumbs={[{ name: 'Home', url: 'https://giolabriparazioni.it/' }, { name: 'Catalogo', url: 'https://giolabriparazioni.it/catalogo' }, { name: 'Accessori' }]}
+>
+  <Page client:load />
+</BaseLayout>

@@ -1,69 +1,8 @@
 /**
- * Blog Article Template Component
- * 
- * ⚠️ IMPORTANTE: TUTTI GLI ARTICOLI BLOG DEVONO USARE QUESTO TEMPLATE
- * 
- * Questo template automatico garantisce uniformità e coerenza in tutti gli articoli del blog.
- * 
- * ✅ COSA INCLUDE AUTOMATICAMENTE:
- * - Breadcrumbs dinamici con categoria (Home → Blog → Categoria → Articolo)
- * - Table of Contents (TOC) automatico da titoli H2/H3
- * - Meta tags SEO completi (title, description, keywords, OG, Twitter Card)
- * - Schema markup (Article + Breadcrumbs)
- * - Header, Footer, BlogNavigation
- * - ReadingProgress bar
- * - SocialShare buttons
- * - RelatedArticles
- * - FloatingWhatsApp
- * 
- * 📋 USAGE OBBLIGATORIO:
- * ```tsx
- * import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
- * 
- * export default function NomeArticolo() {
- *   const articleContent = (
- *     <div className="space-y-8">
- *       <section>
- *         <h2>Prima Sezione</h2>
- *         <p>Contenuto...</p>
- *       </section>
- *       <section>
- *         <h2>Seconda Sezione</h2>
- *         <h3>Sottosezione</h3>
- *         <p>Contenuto...</p>
- *       </section>
- *     </div>
- *   );
- * 
- *   return (
- *     <BlogArticleTemplate
- *       title="Titolo Completo | Giolab Assemini"
- *       description="Descrizione SEO 150-160 caratteri"
- *       keywords="keyword1, keyword2, Assemini, Cagliari"
- *       slug="titolo-articolo"
- *       ogImage="https://giolabriparazioni.it/og-images/nome.jpg"
- *       author="Giolab Team"
- *       datePublished="2025-01-27"
- *       category="Guide"
- *       content={articleContent}
- *       readingTime={8}
- *     />
- *   );
- * }
- * ```
- * 
- * 📂 CATEGORIE DISPONIBILI:
- * - "Guide" → /blog/guide
- * - "Assistenza" → /blog/assistenza-smartphone
- * - "Riparazione" → /blog/riparazione-iphone
- * - "Tecnologia" → /blog/riparazione-pc
- * - "Console" → /blog/console
- * - "Sicurezza" → /blog/sicurezza-digitale
- * 
- * 📖 DOCUMENTAZIONE COMPLETA: /BLOG_ARTICLE_STANDARD.md
+ * Blog Article Template Component - Astro-compatible
+ * SEO is handled by Astro page <head>. Navigation uses plain <a> tags.
  */
 
-import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SocialShare from "@/components/SocialShare";
@@ -74,15 +13,14 @@ import { TableOfContents } from "@/components/TableOfContents";
 import { BackToBlog } from "@/components/blog/BackToBlog";
 import { AutoLinkedContent } from "@/components/blog/AutoLinkedContent";
 import { BlogSidebarCTA } from "@/components/blog/BlogSidebarCTA";
-import { getCanonicalUrl, extractPath, BUSINESS_INFO } from "@/config/seoConfig";
 import "@/styles/blog.css";
-import { 
-  Breadcrumb, 
-  BreadcrumbList, 
-  BreadcrumbItem, 
-  BreadcrumbLink, 
-  BreadcrumbSeparator, 
-  BreadcrumbPage 
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  BreadcrumbPage
 } from "@/components/ui/breadcrumb";
 import {
   Sheet,
@@ -91,184 +29,97 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Link } from "react-router-dom";
 import { Calendar, Clock, List } from "lucide-react";
 import { useState } from "react";
 import type { BlogArticleData } from "@/types/blogArticle";
 
 interface BlogArticleTemplateProps extends BlogArticleData {
-  readingTime?: number; // tempo di lettura in minuti
+  readingTime?: number;
 }
 
 export const BlogArticleTemplate = ({
   title,
-  description,
-  keywords,
   slug,
-  ogImage,
-  author = "Giolab Team",
   datePublished,
   category,
   content,
   readingTime = 5,
 }: BlogArticleTemplateProps) => {
   const [isTOCOpen, setIsTOCOpen] = useState(false);
-  
-  // Costruisci URL completo
-  const fullUrl = `https://giolabriparazioni.it/blog/${slug}`;
-  
-  // Mappa categorie alle etichette - link tutti puntano al blog principale
-  // Le pagine categoria non esistono, quindi linkiamo al blog con filtro
-  const categoryUrls: Record<string, { name: string; url: string }> = {
-    "Guide": { name: "Guide e Consigli", url: "https://giolabriparazioni.it/blog" },
-    "Assistenza": { name: "Assistenza Smartphone", url: "https://giolabriparazioni.it/blog" },
-    "Riparazione": { name: "Riparazione iPhone", url: "https://giolabriparazioni.it/blog" },
-    "Tecnologia": { name: "Riparazione PC", url: "https://giolabriparazioni.it/blog" },
-    "Console": { name: "Console", url: "https://giolabriparazioni.it/blog" },
-    "Sicurezza": { name: "Sicurezza Digitale", url: "https://giolabriparazioni.it/blog" },
-    "Consigli": { name: "Guide e Consigli", url: "https://giolabriparazioni.it/blog" },
-  };
-  
-  // Genera breadcrumbs dinamicamente con categoria
-  const categoryInfo = categoryUrls[category] || { name: category, url: "https://giolabriparazioni.it/blog" };
-  const breadcrumbs = [
-    { name: "Home", url: "https://giolabriparazioni.it/" },
-    { name: "Blog", url: "https://giolabriparazioni.it/blog" },
-    { name: categoryInfo.name, url: categoryInfo.url },
-    { name: title.split("|")[0].trim(), url: fullUrl },
-  ];
 
-  // Estrai titolo pulito per display (rimuovi " | Giolab Assemini")
+  const fullUrl = `https://giolabriparazioni.it/blog/${slug}`;
+
+  const categoryUrls: Record<string, { name: string; url: string }> = {
+    "Guide": { name: "Guide e Consigli", url: "/blog" },
+    "Assistenza": { name: "Assistenza Smartphone", url: "/blog" },
+    "Riparazione": { name: "Riparazione iPhone", url: "/blog" },
+    "Tecnologia": { name: "Riparazione PC", url: "/blog" },
+    "Console": { name: "Console", url: "/blog" },
+    "Sicurezza": { name: "Sicurezza Digitale", url: "/blog" },
+    "Consigli": { name: "Guide e Consigli", url: "/blog" },
+  };
+
+  const categoryInfo = categoryUrls[category] || { name: category, url: "/blog" };
   const cleanTitle = title.split("|")[0].trim();
-  
-  // Formatta data in italiano
+
   const formatDate = (dateString: string): string => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('it-IT', { 
-      day: 'numeric', 
-      month: 'long', 
-      year: 'numeric' 
-    });
+    return date.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
   };
-
-  // Schema Service condizionale per articoli di vendita (Assistenza e Riparazione)
-  const isServiceArticle = category === "Assistenza" || category === "Riparazione";
-  const serviceSchema = isServiceArticle ? {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": cleanTitle,
-    "name": cleanTitle,
-    "description": description,
-    "provider": {
-      "@type": "LocalBusiness",
-      "@id": "https://giolabriparazioni.it/#business"
-    },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Assemini"
-      },
-      {
-        "@type": "City",
-        "name": "Cagliari"
-      },
-      {
-        "@type": "State",
-        "name": "Sardegna"
-      }
-    ],
-    "offers": {
-      "@type": "Offer",
-      "price": "Preventivo gratuito",
-      "priceCurrency": "EUR",
-      "availability": "https://schema.org/InStock",
-      "url": fullUrl
-    }
-  } : null;
 
   return (
     <>
-      <SEOHead
-        title={title}
-        description={description}
-        keywords={keywords}
-        ogImage={ogImage}
-        breadcrumbs={breadcrumbs}
-        articleData={{
-          headline: cleanTitle,
-          description: description,
-          author: author,
-          datePublished: datePublished,
-          image: ogImage,
-          category: category,
-        }}
-        structuredData={serviceSchema ? [serviceSchema] : undefined}
-      />
-      
       <ReadingProgress />
-      
+
       <div className="min-h-screen bg-background">
         <Header />
         <BackToBlog variant="top" currentSlug={slug} />
-        
+
         <div className="container mx-auto px-4 pt-24 pb-8 overflow-x-hidden">
           <div className="flex gap-8 max-w-7xl mx-auto">
-            {/* Sidebar CTA - visibile solo su schermi LG+ */}
             <BlogSidebarCTA />
-            
-            {/* Contenuto principale articolo */}
+
             <article className="flex-1 max-w-4xl min-w-0 overflow-x-hidden">
-          {/* Breadcrumb Navigation */}
-          <Breadcrumb className="mb-6">
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/">Home</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/blog">Blog</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to={extractPath(categoryInfo.url)}>{categoryInfo.name}</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>{cleanTitle}</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
+              {/* Breadcrumb */}
+              <Breadcrumb className="mb-6">
+                <BreadcrumbList>
+                  <BreadcrumbItem>
+                    <BreadcrumbLink asChild><a href="/">Home</a></BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbLink asChild><a href="/blog">Blog</a></BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbLink asChild><a href={categoryInfo.url}>{categoryInfo.name}</a></BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbPage>{cleanTitle}</BreadcrumbPage>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
 
-          {/* Metadati Articolo */}
-          <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-muted-foreground border-b border-border pb-4">
-            <Link 
-              to={extractPath(categoryInfo.url)}
-              className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium hover:bg-primary/20 transition-colors"
-            >
-              {categoryInfo.name}
-            </Link>
-            <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4" />
-              <span>Pubblicato il {formatDate(datePublished)}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4" />
-              <span>{readingTime} min di lettura</span>
-            </div>
-          </div>
+              {/* Metadati */}
+              <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-muted-foreground border-b border-border pb-4">
+                <a href={categoryInfo.url} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium hover:bg-primary/20 transition-colors">
+                  {categoryInfo.name}
+                </a>
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4" />
+                  <span>Pubblicato il {formatDate(datePublished)}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  <span>{readingTime} min di lettura</span>
+                </div>
+              </div>
 
-          {/* Titolo H1 */}
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-8 leading-tight">
-            {cleanTitle}
-          </h1>
-          
-              {/* Main Article Content with Auto-Linking */}
+              <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-8 leading-tight">
+                {cleanTitle}
+              </h1>
+
               <article className="prose prose-lg max-w-none dark:prose-invert blog-content overflow-x-hidden">
                 <AutoLinkedContent currentSlug={slug}>
                   {content}
@@ -276,18 +127,17 @@ export const BlogArticleTemplate = ({
               </article>
             </article>
 
-            {/* Table of Contents Desktop - visibile solo su schermi XL */}
             <aside className="hidden xl:block w-64 flex-shrink-0">
               <TableOfContents />
             </aside>
           </div>
         </div>
 
-        {/* Pulsante floating mobile per TOC con label */}
+        {/* Mobile TOC */}
         <Sheet open={isTOCOpen} onOpenChange={setIsTOCOpen}>
           <SheetTrigger asChild>
-            <button 
-              className="xl:hidden fixed bottom-20 right-4 z-40 bg-primary text-primary-foreground px-4 py-3 rounded-full shadow-lg hover:bg-primary/90 transition-all group flex items-center gap-2"
+            <button
+              className="xl:hidden fixed bottom-20 right-4 z-40 bg-primary text-primary-foreground px-4 py-3 rounded-full shadow-lg hover:bg-primary/90 transition-all flex items-center gap-2"
               aria-label="Apri indice articolo"
             >
               <List className="w-5 h-5" />
@@ -303,13 +153,12 @@ export const BlogArticleTemplate = ({
         </Sheet>
 
         <SocialShare title={cleanTitle} url={fullUrl} />
-
         <RelatedArticles currentSlug={slug} category={category} />
-        
+
         <div className="container mx-auto px-4">
           <BackToBlog variant="bottom" currentSlug={slug} />
         </div>
-        
+
         <Footer />
         <ScrollToTop />
       </div>

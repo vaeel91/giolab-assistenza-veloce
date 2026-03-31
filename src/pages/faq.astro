@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQPage from '../components/pages/FAQ';
+
+const faqData = [
+  { question: "Quanto dura la garanzia delle riparazioni?", answer: "Tutte le nostre riparazioni sono coperte da garanzia di 12 mesi su ricambi e manodopera." },
+  { question: "In quanto tempo riparate uno smartphone?", answer: "La maggior parte delle riparazioni viene completata in 30-60 minuti. Per interventi più complessi può essere necessaria qualche ora." },
+  { question: "Riparate anche PC e MacBook?", answer: "Sì, offriamo assistenza completa per PC Windows e MacBook: diagnosi, sostituzione SSD, RAM, display e molto altro." },
+  { question: "Siete vicini a Cagliari?", answer: "Sì, siamo ad Assemini, a pochi minuti da Cagliari, Elmas e Decimomannu. Serviamo clienti da tutta la provincia." },
+  { question: "Usate ricambi originali?", answer: "Utilizziamo ricambi certificati di alta qualità, equivalenti per prestazioni e sicurezza agli originali." }
+];
+---
+<BaseLayout
+  title="FAQ – Domande Frequenti | Giolab Assemini"
+  description="Risposte alle domande più frequenti su Giolab: garanzie, tempi di riparazione, prezzi, ricambi e come raggiungerci ad Assemini (CA)."
+  keywords="FAQ giolab, domande frequenti riparazione smartphone, garanzia riparazione iPhone, tempi riparazione Assemini"
+  canonical="https://giolabriparazioni.it/faq"
+  faqData={faqData}
+  breadcrumbs={[
+    { name: 'Home', url: 'https://giolabriparazioni.it/' },
+    { name: 'FAQ', url: 'https://giolabriparazioni.it/faq' }
+  ]}
+>
+  <FAQPage client:load />
+</BaseLayout>

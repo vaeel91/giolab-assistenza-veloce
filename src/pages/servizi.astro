@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiziPage from '../components/pages/Servizi';
+---
+<BaseLayout
+  title="Servizi di Riparazione Smartphone, PC e Console | Giolab Assemini"
+  description="Tutti i servizi di riparazione Giolab: iPhone, Samsung, MacBook, PC, console. Ricambi certificati, garanzia 12 mesi. Assemini (CA) – anche da Cagliari."
+  keywords="servizi riparazione iPhone Assemini, riparazione smartphone Assemini, riparazione PC Assemini, riparazione console Assemini, garanzia 12 mesi"
+  canonical="https://giolabriparazioni.it/servizi"
+  breadcrumbs={[
+    { name: 'Home', url: 'https://giolabriparazioni.it/' },
+    { name: 'Servizi', url: 'https://giolabriparazioni.it/servizi' }
+  ]}
+>
+  <ServiziPage client:load />
+</BaseLayout>

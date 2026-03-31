@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Article from '../../components/pages/blog/ComeCabireBatteriaIPhone';
+const slug = 'come-capire-batteria-iphone-da-sostituire';
+---
+<BaseLayout
+  title="Come Capire se la Batteria iPhone va Sostituita | Giolab"
+  description="Segnali che la batteria del tuo iPhone va sostituita: si scarica velocemente, si spegne all'improvviso, si surriscalda. Guida completa di Giolab Assemini."
+  keywords="batteria iPhone da sostituire, iPhone si scarica veloce, salute batteria iPhone, quando cambiare batteria iPhone"
+  canonical={`https://giolabriparazioni.it/blog/${slug}`}
+  ogType="article"
+  articleData={{ headline: "Come Capire se la Batteria iPhone va Sostituita", description: "Guida ai segnali che indicano che la batteria del tuo iPhone va sostituita.", author: "GioLab Team", datePublished: "2025-02-01", image: "https://giolabriparazioni.it/og-image-giolab.jpg", category: "Guide" }}
+  breadcrumbs={[{ name: 'Home', url: 'https://giolabriparazioni.it/' }, { name: 'Blog', url: 'https://giolabriparazioni.it/blog' }, { name: 'Come Capire Batteria iPhone' }]}
+>
+  <Article client:load />
+</BaseLayout>

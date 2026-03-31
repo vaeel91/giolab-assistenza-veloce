@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ChiSiamoPage from '../components/pages/ChiSiamo';
+---
+<BaseLayout
+  title="Chi Siamo – Giolab Assemini | Centro Assistenza Smartphone"
+  description="Giolab è il centro assistenza di Assemini fondato da Stefano Giordano. Riparazione iPhone, smartphone, PC e console con oltre 10 anni di esperienza."
+  keywords="chi siamo giolab, centro assistenza Assemini, Stefano Giordano giolab, storia giolab"
+  canonical="https://giolabriparazioni.it/chi-siamo"
+  breadcrumbs={[
+    { name: 'Home', url: 'https://giolabriparazioni.it/' },
+    { name: 'Chi Siamo', url: 'https://giolabriparazioni.it/chi-siamo' }
+  ]}
+>
+  <ChiSiamoPage client:load />
+</BaseLayout>

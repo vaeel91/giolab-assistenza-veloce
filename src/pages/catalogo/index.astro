@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Page from '../../components/pages/CatalogoHub';
+---
+<BaseLayout
+  title="Catalogo Accessori Smartphone Assemini | Pellicole, Cover | Giolab"
+  description="Catalogo accessori Giolab Assemini: pellicole hydrogel, cover protettive e accessori di qualità. Applicazione professionale inclusa. Consegna in negozio."
+  keywords="catalogo accessori smartphone Assemini, pellicole hydrogel Assemini, cover smartphone Cagliari, accessori iPhone Assemini"
+  canonical="https://giolabriparazioni.it/catalogo"
+  breadcrumbs={[{ name: 'Home', url: 'https://giolabriparazioni.it/' }, { name: 'Catalogo', url: 'https://giolabriparazioni.it/catalogo' }]}
+>
+  <Page client:load />
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPage from '../../components/pages/Blog';
+---
+<BaseLayout
+  title="Blog Giolab | Guide, Consigli e News su Riparazione iPhone e Smartphone"
+  description="Il blog di Giolab Assemini: guide pratiche, consigli su riparazione iPhone, batterie, display, PC e console. Leggi gli articoli degli esperti."
+  keywords="blog riparazione iPhone, guide smartphone Assemini, consigli batteria iPhone, news riparazione cellulare Cagliari"
+  canonical="https://giolabriparazioni.it/blog"
+  breadcrumbs={[
+    { name: 'Home', url: 'https://giolabriparazioni.it/' },
+    { name: 'Blog', url: 'https://giolabriparazioni.it/blog' }
+  ]}
+>
+  <BlogPage client:load />
+</BaseLayout>

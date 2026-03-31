@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Article from '../../components/pages/services/RiparazioneDisplayIPhone';
+const faqData = [
+  { question: "Quanto tempo ci vuole per riparare il display del mio iPhone?", answer: "La maggior parte delle riparazioni display vengono completate in 30-60 minuti." },
+  { question: "Perdo i dati se riparo il display?", answer: "No, la sostituzione del display non comporta la perdita di dati." },
+  { question: "Il display sostituito mantiene la qualità originale?", answer: "Sì, utilizziamo display di alta qualità certificati comparabili agli standard Apple." },
+  { question: "Cosa include la garanzia di 12 mesi?", answer: "La garanzia copre difetti di fabbricazione del display e problemi tecnici legati alla sostituzione." }
+];
+---
+<BaseLayout
+  title="Riparazione Display iPhone ad Assemini | Giolab"
+  description="Vetro rotto o schermo nero? Ripariamo il display del tuo iPhone ad Assemini in 30-60 minuti. Ricambi certificati, garanzia 12 mesi. Preventivo gratuito."
+  keywords="riparazione display iPhone Assemini, sostituzione schermo iPhone Assemini, riparazione vetro iPhone Cagliari, schermo iPhone rotto Assemini"
+  canonical="https://giolabriparazioni.it/servizi/riparazione-display-iphone-assemini"
+  ogType="website"
+  faqData={faqData}
+  breadcrumbs={[{ name: 'Home', url: 'https://giolabriparazioni.it/' }, { name: 'Servizi', url: 'https://giolabriparazioni.it/servizi' }, { name: 'Riparazione Display iPhone' }]}
+>
+  <Article client:load />
+</BaseLayout>

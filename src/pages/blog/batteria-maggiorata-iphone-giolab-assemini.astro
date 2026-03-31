@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Article from '../../components/pages/blog/BatteriaMaggiorataIPhone';
+const slug = 'batteria-maggiorata-iphone-giolab-assemini';
+---
+<BaseLayout
+  title="Batteria Maggiorata iPhone Assemini | +30% Autonomia | Giolab"
+  description="Sostituisci la batteria del tuo iPhone con una batteria maggiorata ad Assemini. +30% di autonomia garantita. Garanzia 12 mesi. Giolab – 340 69 70 686."
+  keywords="batteria maggiorata iPhone Assemini, sostituzione batteria iPhone Cagliari, batteria iPhone durata lunga, batteria potenziata iPhone"
+  canonical={`https://giolabriparazioni.it/blog/${slug}`}
+  ogType="article"
+  articleData={{ headline: "Batteria Maggiorata iPhone – Giolab Assemini", description: "Sostituisci la batteria del tuo iPhone con una batteria maggiorata. +30% autonomia garantita.", author: "GioLab Team", datePublished: "2025-01-20", image: "https://giolabriparazioni.it/og-image-giolab.jpg", category: "Riparazione" }}
+  breadcrumbs={[{ name: 'Home', url: 'https://giolabriparazioni.it/' }, { name: 'Blog', url: 'https://giolabriparazioni.it/blog' }, { name: 'Batteria Maggiorata iPhone' }]}
+>
+  <Article client:load />
+</BaseLayout>

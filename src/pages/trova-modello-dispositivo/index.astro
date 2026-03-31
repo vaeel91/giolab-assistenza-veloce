@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Page from '../../components/pages/TrovaModelloDispositivo';
+---
+<BaseLayout
+  title="Trova il Modello del tuo Dispositivo | Giolab Assemini"
+  description="Scopri come trovare il modello esatto del tuo iPhone, Samsung, iPad, Xiaomi, OPPO, Huawei o MacBook. Guide pratiche di Giolab Assemini."
+  keywords="trovare modello iPhone, trovare modello Samsung, trovare modello iPad, trovare modello smartphone, codice modello dispositivo"
+  canonical="https://giolabriparazioni.it/trova-modello-dispositivo"
+  breadcrumbs={[{ name: 'Home', url: 'https://giolabriparazioni.it/' }, { name: 'Trova Modello Dispositivo' }]}
+>
+  <Page client:load />
+</BaseLayout>

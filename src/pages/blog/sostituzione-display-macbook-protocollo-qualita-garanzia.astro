@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Article from '../../components/pages/blog/SostituzioneDisplayMacBook';
+const slug = 'sostituzione-display-macbook-protocollo-qualita-garanzia';
+---
+<BaseLayout
+  title="Sostituzione Display MacBook Assemini | Garanzia Qualità | Giolab"
+  description="Sostituzione display MacBook ad Assemini con protocollo qualità certificato. Schermo rotto o con linee? Giolab Assemini ripara tutti i modelli MacBook."
+  keywords="sostituzione display MacBook Assemini, riparazione schermo MacBook Cagliari, MacBook schermo rotto, display MacBook sostituzione garanzia"
+  canonical={`https://giolabriparazioni.it/blog/${slug}`}
+  ogType="article"
+  articleData={{ headline: "Sostituzione Display MacBook – Protocollo Qualità e Garanzia", description: "Sostituzione display MacBook ad Assemini con protocollo qualità certificato e garanzia 12 mesi.", author: "GioLab Team", datePublished: "2025-03-05", image: "https://giolabriparazioni.it/og-image-giolab.jpg", category: "Tecnologia" }}
+  breadcrumbs={[{ name: 'Home', url: 'https://giolabriparazioni.it/' }, { name: 'Blog', url: 'https://giolabriparazioni.it/blog' }, { name: 'Sostituzione Display MacBook' }]}
+>
+  <Article client:load />
+</BaseLayout>

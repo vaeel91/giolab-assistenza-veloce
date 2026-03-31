@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Article from '../../components/pages/blog/RecuperoDatiIPhoneRotto';
+const slug = 'recupero-dati-iphone-rotto-assemini';
+---
+<BaseLayout
+  title="Recupero Dati iPhone Rotto Assemini | Giolab"
+  description="Hai perso i dati del tuo iPhone rotto? Giolab Assemini recupera foto, contatti e file anche da iPhone con schermo rotto o danneggiato dall'acqua."
+  keywords="recupero dati iPhone Assemini, recupero dati smartphone rotto Cagliari, recupero foto iPhone rotto, recupero dati iPhone acqua"
+  canonical={`https://giolabriparazioni.it/blog/${slug}`}
+  ogType="article"
+  articleData={{ headline: "Recupero Dati iPhone Rotto – Giolab Assemini", description: "Recupero dati iPhone rotto ad Assemini. Foto, contatti e file recuperati anche da dispositivi danneggiati.", author: "GioLab Team", datePublished: "2025-01-25", image: "https://giolabriparazioni.it/og-image-giolab.jpg", category: "Guide" }}
+  breadcrumbs={[{ name: 'Home', url: 'https://giolabriparazioni.it/' }, { name: 'Blog', url: 'https://giolabriparazioni.it/blog' }, { name: 'Recupero Dati iPhone Rotto' }]}
+>
+  <Article client:load />
+</BaseLayout>

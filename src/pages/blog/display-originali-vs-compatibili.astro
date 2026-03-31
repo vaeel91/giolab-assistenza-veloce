@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Article from '../../components/pages/blog/DisplayOriginaliVsCompatibili';
+const slug = 'display-originali-vs-compatibili';
+---
+<BaseLayout
+  title="Display Originali vs Compatibili iPhone: Differenze | Giolab"
+  description="Differenza tra display originali Apple e compatibili per iPhone: qualità, durata, prezzo. Quale scegliere? La guida completa di Giolab Assemini."
+  keywords="display originale iPhone, display compatibile iPhone, differenza display iPhone, sostituzione schermo iPhone originale vs compatibile"
+  canonical={`https://giolabriparazioni.it/blog/${slug}`}
+  ogType="article"
+  articleData={{ headline: "Display Originali vs Compatibili iPhone – Quali Scegliere?", description: "Confronto completo tra display originali e compatibili per iPhone: qualità, durata e prezzo.", author: "GioLab Team", datePublished: "2025-02-10", image: "https://giolabriparazioni.it/og-image-giolab.jpg", category: "Guide" }}
+  breadcrumbs={[{ name: 'Home', url: 'https://giolabriparazioni.it/' }, { name: 'Blog', url: 'https://giolabriparazioni.it/blog' }, { name: 'Display Originali vs Compatibili' }]}
+>
+  <Article client:load />
+</BaseLayout>

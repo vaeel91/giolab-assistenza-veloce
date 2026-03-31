@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Article from '../../components/pages/blog/RiparazioneWebcamHPVictus';
+const slug = 'riparazione-webcam-hp-victus-giolab-assemini';
+---
+<BaseLayout
+  title="Riparazione Webcam HP Victus Assemini | Giolab"
+  description="Webcam HP Victus non funziona? Giolab Assemini ripara la webcam di laptop HP con ricambi originali e garanzia. Intervento rapido anche in giornata."
+  keywords="riparazione webcam HP Victus Assemini, webcam laptop non funziona Cagliari, sostituzione webcam HP Assemini"
+  canonical={`https://giolabriparazioni.it/blog/${slug}`}
+  ogType="article"
+  articleData={{ headline: "Riparazione Webcam HP Victus – Giolab Assemini", description: "Webcam HP Victus non funziona? Riparazione rapida con garanzia ad Assemini.", author: "GioLab Team", datePublished: "2025-03-15", image: "https://giolabriparazioni.it/og-image-giolab.jpg", category: "Tecnologia" }}
+  breadcrumbs={[{ name: 'Home', url: 'https://giolabriparazioni.it/' }, { name: 'Blog', url: 'https://giolabriparazioni.it/blog' }, { name: 'Riparazione Webcam HP Victus' }]}
+>
+  <Article client:load />
+</BaseLayout>

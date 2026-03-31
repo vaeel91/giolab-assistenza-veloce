@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContattiPage from '../components/pages/Contatti';
+---
+<BaseLayout
+  title="Contatti – Giolab Assemini | Via Carmine 20 | Tel. 340 69 70 686"
+  description="Contatta Giolab ad Assemini: Via Carmine 20, 09032. Tel. 340 69 70 686. Lun-Ven 10:00-12:30 / 16:00-19:00, Sab 10:00-12:30. WhatsApp disponibile."
+  keywords="contatti giolab assemini, telefono giolab, indirizzo giolab assemini, via carmine 20 assemini, orari giolab"
+  canonical="https://giolabriparazioni.it/contatti"
+  breadcrumbs={[
+    { name: 'Home', url: 'https://giolabriparazioni.it/' },
+    { name: 'Contatti', url: 'https://giolabriparazioni.it/contatti' }
+  ]}
+>
+  <ContattiPage client:load />
+</BaseLayout>

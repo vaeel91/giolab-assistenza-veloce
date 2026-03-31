@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Article from '../../components/pages/blog/CodiceModelloDispositivo';
+const slug = 'come-trovare-codice-modello-dispositivo-giolab-assemini';
+---
+<BaseLayout
+  title="Come Trovare il Codice Modello del tuo Dispositivo | Giolab"
+  description="Guida per trovare il codice modello di iPhone, Samsung, iPad e altri dispositivi. Utile per richiedere ricambi e preventivi a Giolab Assemini."
+  keywords="trovare modello iPhone, codice modello smartphone, trovare modello Samsung, come trovare modello dispositivo"
+  canonical={`https://giolabriparazioni.it/blog/${slug}`}
+  ogType="article"
+  articleData={{ headline: "Come Trovare il Codice Modello del Dispositivo", description: "Guida per trovare il codice modello di iPhone, Samsung, iPad e altri dispositivi.", author: "GioLab Team", datePublished: "2025-02-25", image: "https://giolabriparazioni.it/og-image-giolab.jpg", category: "Guide" }}
+  breadcrumbs={[{ name: 'Home', url: 'https://giolabriparazioni.it/' }, { name: 'Blog', url: 'https://giolabriparazioni.it/blog' }, { name: 'Trovare Codice Modello Dispositivo' }]}
+>
+  <Article client:load />
+</BaseLayout>

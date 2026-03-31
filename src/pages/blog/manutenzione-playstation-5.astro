@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Article from '../../components/pages/blog/manutenzione-playstation-5';
+const slug = 'manutenzione-playstation-5';
+---
+<BaseLayout
+  title="Manutenzione PlayStation 5 Assemini | Pulizia PS5 | Giolab"
+  description="Manutenzione e pulizia professionale PlayStation 5 ad Assemini. PS5 rumorosa o surriscaldata? Giolab risolve il problema con garanzia."
+  keywords="manutenzione PS5 Assemini, pulizia PlayStation 5 Cagliari, PS5 rumorosa riparazione, surriscaldamento PS5 Assemini"
+  canonical={`https://giolabriparazioni.it/blog/${slug}`}
+  ogType="article"
+  articleData={{ headline: "Manutenzione PlayStation 5 – Giolab Assemini", description: "Manutenzione e pulizia professionale PS5 ad Assemini. PS5 rumorosa o surriscaldata? Risolviamo.", author: "GioLab Team", datePublished: "2025-02-20", image: "https://giolabriparazioni.it/og-image-giolab.jpg", category: "Console" }}
+  breadcrumbs={[{ name: 'Home', url: 'https://giolabriparazioni.it/' }, { name: 'Blog', url: 'https://giolabriparazioni.it/blog' }, { name: 'Manutenzione PlayStation 5' }]}
+>
+  <Article client:load />
+</BaseLayout>

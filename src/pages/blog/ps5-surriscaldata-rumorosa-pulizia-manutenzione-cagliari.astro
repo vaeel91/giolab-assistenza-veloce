@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Article from '../../components/pages/blog/PS5SurriscaldataRumorosaPulizia';
+const slug = 'ps5-surriscaldata-rumorosa-pulizia-manutenzione-cagliari';
+---
+<BaseLayout
+  title="PS5 Surriscaldata o Rumorosa? Pulizia e Manutenzione Cagliari | Giolab"
+  description="La tua PS5 si surriscalda o fa troppo rumore? Giolab Assemini esegue pulizia e manutenzione professionale della PlayStation 5. Servizio anche da Cagliari."
+  keywords="PS5 surriscaldata Cagliari, PS5 rumorosa Assemini, pulizia PS5 Cagliari, manutenzione PlayStation 5 Sardegna, ventola PS5 rumorosa"
+  canonical={`https://giolabriparazioni.it/blog/${slug}`}
+  ogType="article"
+  articleData={{ headline: "PS5 Surriscaldata o Rumorosa – Pulizia e Manutenzione a Cagliari", description: "PS5 che si surriscalda o fa rumore? Giolab Assemini esegue pulizia e manutenzione professionale con garanzia.", author: "GioLab Team", datePublished: "2025-03-25", image: "https://giolabriparazioni.it/og-image-giolab.jpg", category: "Console" }}
+  breadcrumbs={[{ name: 'Home', url: 'https://giolabriparazioni.it/' }, { name: 'Blog', url: 'https://giolabriparazioni.it/blog' }, { name: 'PS5 Surriscaldata o Rumorosa' }]}
+>
+  <Article client:load />
+</BaseLayout>

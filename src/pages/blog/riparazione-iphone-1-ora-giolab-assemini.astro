@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Article from '../../components/pages/blog/RiparazioneIPhone1Ora';
+const slug = 'riparazione-iphone-1-ora-giolab-assemini';
+---
+<BaseLayout
+  title="Riparazione iPhone 1 Ora - Giolab Assemini"
+  description="Riparazione iPhone rapida in 1 ora ad Assemini. Ricambi certificati, garanzia 12 mesi. ☎️ 340 69 70 686."
+  keywords="riparazione iphone assemini, riparazione iphone 1 ora, assistenza iphone cagliari, giolab assemini"
+  canonical={`https://giolabriparazioni.it/blog/${slug}`}
+  ogImage="https://giolabriparazioni.it/og-images/riparazione-iphone-1-ora-assemini.jpg"
+  ogType="article"
+  articleData={{ headline: "Riparazione iPhone 1 Ora - Giolab Assemini", description: "Riparazione iPhone rapida in 1 ora ad Assemini. Ricambi certificati, garanzia 12 mesi.", author: "GioLab Team", datePublished: "2025-01-15", image: "https://giolabriparazioni.it/og-images/riparazione-iphone-1-ora-assemini.jpg", category: "Riparazione" }}
+  breadcrumbs={[{ name: 'Home', url: 'https://giolabriparazioni.it/' }, { name: 'Blog', url: 'https://giolabriparazioni.it/blog' }, { name: 'Riparazione iPhone 1 Ora' }]}
+>
+  <Article client:load />
+</BaseLayout>

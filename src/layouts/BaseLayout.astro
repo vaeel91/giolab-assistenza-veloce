@@ -1,0 +1,259 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  ogImage?: string;
+  ogType?: string;
+  canonical?: string;
+  structuredData?: object | object[];
+  breadcrumbs?: { name: string; url?: string }[];
+  articleData?: {
+    headline: string;
+    description: string;
+    author: string;
+    datePublished: string;
+    dateModified?: string;
+    image: string;
+    category?: string;
+  };
+  faqData?: { question: string; answer: string }[];
+}
+
+const {
+  title,
+  description,
+  keywords,
+  ogImage = 'https://giolabriparazioni.it/og-image-giolab.jpg',
+  ogType = 'website',
+  canonical,
+  structuredData,
+  breadcrumbs,
+  articleData,
+  faqData,
+} = Astro.props;
+
+const SITE = 'https://giolabriparazioni.it';
+const canonicalUrl = canonical || SITE + Astro.url.pathname;
+const imageUrl = ogImage || `${SITE}/og-image-giolab.jpg`;
+
+// Truncate title/description to SEO limits
+const safeTitle = title.length > 60 ? title.substring(0, 57) + '...' : title;
+const safeDesc = description.length > 160 ? description.substring(0, 157) + '...' : description;
+
+// Schema: Organization + LocalBusiness (always present)
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${SITE}/#business`,
+  "name": "Giolab Riparazioni Smartphone e PC",
+  "alternateName": "Giolab Assistenza Smartphone PC Console",
+  "legalName": "Giolab di Stefano Giordano",
+  "description": "Centro assistenza specializzato in riparazione iPhone, smartphone, PC e console ad Assemini (Cagliari)",
+  "url": SITE,
+  "logo": `${SITE}/favicon.png`,
+  "image": `${SITE}/og-image-giolab.jpg`,
+  "telephone": "+39 340 69 70 686",
+  "email": "giolabassemini@gmail.com",
+  "priceRange": "€€",
+  "vatID": "IT03896540925",
+  "foundingDate": "2014",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Carmine 20",
+    "addressLocality": "Assemini",
+    "postalCode": "09032",
+    "addressRegion": "CA",
+    "addressCountry": "IT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "39.2891",
+    "longitude": "8.9947"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "12:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "16:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "10:00", "closes": "12:30" }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/giolab_iphonefix",
+    "https://www.facebook.com/giolabassemini",
+    "https://www.tiktok.com/@giolab_iphonefix"
+  ],
+  "areaServed": [
+    { "@type": "City", "name": "Assemini" },
+    { "@type": "City", "name": "Cagliari" },
+    { "@type": "AdministrativeArea", "name": "Sardegna" }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "150",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+
+// Breadcrumb schema
+const breadcrumbSchema = breadcrumbs ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((item, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": item.name,
+    ...(item.url && { "item": item.url })
+  }))
+} : null;
+
+// Article schema
+const articleSchema = articleData ? {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": articleData.headline,
+  "description": articleData.description,
+  "image": articleData.image,
+  "datePublished": articleData.datePublished,
+  "dateModified": articleData.dateModified || articleData.datePublished,
+  "author": {
+    "@type": "Person",
+    "name": articleData.author,
+    "url": SITE
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Giolab",
+    "@id": `${SITE}/#organization`,
+    "logo": { "@type": "ImageObject", "url": `${SITE}/favicon.png` }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+  ...(articleData.category && { "articleSection": articleData.category })
+} : null;
+
+// FAQ schema
+const faqSchema = faqData && faqData.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+  }))
+} : null;
+
+// Collect all schemas
+const allSchemas = [
+  localBusinessSchema,
+  ...(breadcrumbSchema ? [breadcrumbSchema] : []),
+  ...(articleSchema ? [articleSchema] : []),
+  ...(faqSchema ? [faqSchema] : []),
+  ...(structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : []),
+];
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <!-- Google Analytics - Deferred for performance -->
+    <script>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-60QZT0Q9EN';
+          script.async = true;
+          document.head.appendChild(script);
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', 'G-60QZT0Q9EN', { send_page_view: true });
+        }, 100);
+      });
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#1e90ff" />
+
+    <!-- Primary SEO Meta Tags -->
+    <title>{safeTitle}</title>
+    <meta name="title" content={safeTitle} />
+    <meta name="description" content={safeDesc} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <meta name="author" content="Giolab - Stefano Giordano" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="language" content="it" />
+    <meta name="geo.region" content="IT-CA" />
+    <meta name="geo.placename" content="Assemini, Cagliari" />
+    <meta name="geo.position" content="39.2891;8.9947" />
+    <meta name="ICBM" content="39.2891, 8.9947" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="it" href={canonicalUrl} />
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Giolab Assemini" />
+    <meta property="og:title" content={safeTitle} />
+    <meta property="og:description" content={safeDesc} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:secure_url" content={imageUrl} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={safeTitle} />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="business:contact_data:street_address" content="Via Carmine 20" />
+    <meta property="business:contact_data:locality" content="Assemini" />
+    <meta property="business:contact_data:region" content="CA" />
+    <meta property="business:contact_data:postal_code" content="09032" />
+    <meta property="business:contact_data:country_name" content="Italia" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@giolab_iphonefix" />
+    <meta name="twitter:creator" content="@giolab_iphonefix" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={safeTitle} />
+    <meta name="twitter:description" content={safeDesc} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={safeTitle} />
+
+    <!-- Structured Data JSON-LD -->
+    {allSchemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
+
+    <!-- Preload Fonts -->
+    <link rel="preload" href="/fonts/source-sans-pro-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/source-sans-pro-700.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Preload LCP Images -->
+    <link rel="preload" href="/images/hero-mobile.webp" as="image" type="image/webp" fetchpriority="high" media="(max-width: 768px)" />
+    <link rel="preload" href="/images/hero-desktop.webp" as="image" type="image/webp" fetchpriority="high" media="(min-width: 769px)" />
+
+    <!-- Prefetch critical pages -->
+    <link rel="prefetch" href="/servizi" as="document" />
+    <link rel="prefetch" href="/contatti" as="document" />
+    <link rel="prefetch" href="/blog" as="document" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>

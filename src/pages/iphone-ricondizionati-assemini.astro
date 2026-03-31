@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import IPhoneRicondizionatiPage from '../components/pages/IPhoneRicondizionati';
+---
+<BaseLayout
+  title="iPhone Ricondizionati Assemini | Giolab – Garanzia 12 Mesi"
+  description="Acquista iPhone ricondizionati certificati ad Assemini. Tutti i modelli disponibili con garanzia 12 mesi, testati e revisionati da tecnici esperti Giolab."
+  keywords="iPhone ricondizionati Assemini, iPhone usato garantito Assemini, iPhone rigenerato Cagliari, comprare iPhone ricondizionato Sardegna"
+  canonical="https://giolabriparazioni.it/iphone-ricondizionati-assemini"
+  ogType="website"
+  breadcrumbs={[
+    { name: 'Home', url: 'https://giolabriparazioni.it/' },
+    { name: 'iPhone Ricondizionati', url: 'https://giolabriparazioni.it/iphone-ricondizionati-assemini' }
+  ]}
+>
+  <IPhoneRicondizionatiPage client:load />
+</BaseLayout>

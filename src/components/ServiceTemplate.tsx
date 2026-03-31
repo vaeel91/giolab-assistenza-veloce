@@ -4,13 +4,10 @@ import { Phone, Clock, Shield, Award, Instagram, Calendar } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import SEOHead from "@/components/SEOHead";
 import ScrollToTop from "@/components/ScrollToTop";
 import RatingStars from "@/components/RatingStars";
 import TestimonialsShowcase from "@/components/TestimonialsShowcase";
 import ServiceGallery from "@/components/ServiceGallery";
-import { Link } from "react-router-dom";
-import { getCanonicalUrl, extractPath } from "@/config/seoConfig";
 import { allReviews } from "@/data/reviews";
 
 interface ServiceTemplateProps {
@@ -73,11 +70,9 @@ const ServiceTemplate = ({
     window.location.href = "tel:+393406970686";
   };
 
-  // Genera URL canonico corretto per lo schema markup
-  const currentPath = typeof window !== 'undefined' 
-    ? extractPath(window.location.href)
-    : '/';
-  const absoluteUrl = getCanonicalUrl(currentPath);
+  const absoluteUrl = typeof window !== 'undefined'
+    ? window.location.href
+    : 'https://giolabriparazioni.it';
 
   // Filtra review pertinenti al servizio corrente (top 5 per rating e data)
   const relevantReviews = allReviews
@@ -185,14 +180,6 @@ const ServiceTemplate = ({
 
   return (
     <div className="min-h-screen">
-      <SEOHead 
-        title={seoTitle}
-        description={seoDescription}
-        keywords={seoKeywords}
-        structuredData={structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : (productSchema ? [serviceSchema, productSchema] : serviceSchema)}
-        faqData={faqs}
-        breadcrumbs={breadcrumbs}
-      />
       <Header />
       
       {/* Hero Section */}
@@ -202,9 +189,9 @@ const ServiceTemplate = ({
             {/* Breadcrumb */}
             <nav className="mb-6 text-sm">
               <ol className="flex items-center gap-2 text-muted-foreground">
-                <li><Link to="/" className="hover:text-giolab-blue">Home</Link></li>
+                <li><a href="/" className="hover:text-giolab-blue">Home</a></li>
                 <li>/</li>
-                <li><Link to="/#servizi" className="hover:text-giolab-blue">Servizi</Link></li>
+                <li><a href="/#servizi" className="hover:text-giolab-blue">Servizi</a></li>
                 <li>/</li>
                 <li className="text-foreground font-medium">{h1Title}</li>
               </ol>
@@ -265,10 +252,10 @@ const ServiceTemplate = ({
                 asChild
                 className="border-2 hover:border-giolab-orange hover:text-giolab-orange text-xs md:text-sm h-9 md:h-11 px-3 md:px-4"
               >
-                <Link to="/prenota">
+                <a href="/contatti">
                   <Calendar className="mr-1 md:mr-2 h-4 w-4 md:h-5 md:w-5" />
                   Prenota
-                </Link>
+                </a>
               </Button>
               <Button
                 variant="outline"

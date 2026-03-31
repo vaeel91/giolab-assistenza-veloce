@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Article from '../../components/pages/blog/CostoRiparazioneSchermoSmartphone';
+const slug = 'costo-riparazione-schermo-smartphone-cagliari-assemini';
+---
+<BaseLayout
+  title="Costo Riparazione Schermo Smartphone Cagliari e Assemini | Giolab"
+  description="Quanto costa riparare lo schermo di uno smartphone a Cagliari e Assemini? Prezzi trasparenti per iPhone, Samsung, Xiaomi e altri. Preventivo gratuito da Giolab."
+  keywords="costo riparazione schermo smartphone Cagliari, prezzo sostituzione display iPhone Assemini, quanto costa riparare schermo Samsung, preventivo riparazione smartphone"
+  canonical={`https://giolabriparazioni.it/blog/${slug}`}
+  ogType="article"
+  articleData={{ headline: "Costo Riparazione Schermo Smartphone a Cagliari e Assemini", description: "Prezzi trasparenti per la riparazione dello schermo di iPhone, Samsung e altri smartphone a Giolab Assemini.", author: "GioLab Team", datePublished: "2025-03-22", image: "https://giolabriparazioni.it/og-image-giolab.jpg", category: "Guide" }}
+  breadcrumbs={[{ name: 'Home', url: 'https://giolabriparazioni.it/' }, { name: 'Blog', url: 'https://giolabriparazioni.it/blog' }, { name: 'Costo Riparazione Schermo Smartphone' }]}
+>
+  <Article client:load />
+</BaseLayout>

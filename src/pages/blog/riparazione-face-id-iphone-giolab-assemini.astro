@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Article from '../../components/pages/blog/RiparazioneFaceIDIPhone';
+const slug = 'riparazione-face-id-iphone-giolab-assemini';
+---
+<BaseLayout
+  title="Riparazione Face ID iPhone Assemini | Giolab"
+  description="Face ID iPhone non funziona? Giolab Assemini ripara il Face ID di tutti i modelli iPhone con ricambi certificati. Garanzia 12 mesi. Preventivo gratuito."
+  keywords="riparazione Face ID iPhone Assemini, Face ID non funziona iPhone, ripristino Face ID Cagliari, sostituzione Face ID iPhone"
+  canonical={`https://giolabriparazioni.it/blog/${slug}`}
+  ogType="article"
+  articleData={{ headline: "Riparazione Face ID iPhone – Giolab Assemini", description: "Face ID iPhone non funziona? Ripariamo il Face ID di tutti i modelli con ricambi certificati.", author: "GioLab Team", datePublished: "2025-03-01", image: "https://giolabriparazioni.it/og-image-giolab.jpg", category: "Riparazione" }}
+  breadcrumbs={[{ name: 'Home', url: 'https://giolabriparazioni.it/' }, { name: 'Blog', url: 'https://giolabriparazioni.it/blog' }, { name: 'Riparazione Face ID iPhone' }]}
+>
+  <Article client:load />
+</BaseLayout>

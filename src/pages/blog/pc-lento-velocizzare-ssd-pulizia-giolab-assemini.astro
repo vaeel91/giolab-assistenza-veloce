@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Article from '../../components/pages/blog/PCLentoVelocizzare';
+const slug = 'pc-lento-velocizzare-ssd-pulizia-giolab-assemini';
+---
+<BaseLayout
+  title="PC Lento? Come Velocizzarlo con SSD e Pulizia | Giolab Assemini"
+  description="PC lento? Giolab Assemini lo velocizza con upgrade SSD, pulizia interna e ottimizzazione software. Interventi rapidi con garanzia. Anche da Cagliari."
+  keywords="PC lento Assemini, velocizzare PC Cagliari, upgrade SSD PC Assemini, pulizia PC Assemini, riparazione PC lento"
+  canonical={`https://giolabriparazioni.it/blog/${slug}`}
+  ogType="article"
+  articleData={{ headline: "PC Lento? Come Velocizzarlo con SSD e Pulizia", description: "Come velocizzare un PC lento: upgrade SSD, pulizia interna e ottimizzazione software a Giolab Assemini.", author: "GioLab Team", datePublished: "2025-03-10", image: "https://giolabriparazioni.it/og-image-giolab.jpg", category: "Tecnologia" }}
+  breadcrumbs={[{ name: 'Home', url: 'https://giolabriparazioni.it/' }, { name: 'Blog', url: 'https://giolabriparazioni.it/blog' }, { name: 'PC Lento – Come Velocizzarlo' }]}
+>
+  <Article client:load />
+</BaseLayout>

@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import BlogPreview from '../components/BlogPreview';
+import Services from '../components/Services';
+import AboutAndLocation from '../components/AboutAndLocation';
+import TestimonialsShowcase from '../components/TestimonialsShowcase';
+import FAQ from '../components/FAQ';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
+import FloatingWhatsApp from '../components/FloatingWhatsApp';
+import StickyMobileActionBar from '../components/StickyMobileActionBar';
+import ScrollToTop from '../components/ScrollToTop';
+import { ShoppingBag } from 'lucide-react';
+
+const breadcrumbs = [{ name: 'Home', url: 'https://giolabriparazioni.it/' }];
+
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Giolab Riparazioni",
+  "url": "https://giolabriparazioni.it",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": { "@type": "EntryPoint", "urlTemplate": "https://giolabriparazioni.it/blog?q={search_term_string}" },
+    "query-input": "required name=search_term_string"
+  }
+};
+---
+
+<BaseLayout
+  title="Riparazione iPhone e Smartphone ad Assemini | Giolab"
+  description="Riparazione iPhone, Samsung e altri smartphone in 1 ora ad Assemini. ✅ Garanzia 12 mesi ✅ Preventivo gratuito. Assistenza specializzata anche per PC, MacBook e Console."
+  keywords="riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza iPhone Cagliari, batteria maggiorata iPhone Assemini, riparazione vetro iPhone Assemini, micro-saldature Assemini, riparazione PC Assemini"
+  breadcrumbs={breadcrumbs}
+  structuredData={homeSchema}
+>
+  <Header client:load />
+
+  <main class="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth pb-20 md:pb-0 scroll-pt-16 md:scroll-pt-0">
+    <section id="hero" class="min-h-screen snap-start snap-always">
+      <Hero client:load />
+    </section>
+
+    <section id="blog" class="min-h-screen snap-start snap-always">
+      <BlogPreview />
+    </section>
+
+    <section id="catalogo-cta" class="min-h-screen snap-start snap-always flex items-center justify-center bg-gradient-to-br from-background via-background to-secondary/20 px-4">
+      <div class="container mx-auto py-12 md:py-20">
+        <div class="max-w-4xl mx-auto text-center space-y-5 md:space-y-8">
+          <div class="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-giolab-blue/10">
+            <ShoppingBag client:visible className="w-8 h-8 md:w-10 md:h-10 text-giolab-blue" />
+          </div>
+          <h2 class="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight">Catalogo Accessori</h2>
+          <p class="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Pellicole hydrogel, cover e accessori di qualità per il tuo smartphone. Applicazione professionale inclusa ad <strong>Assemini</strong>.
+          </p>
+          <div class="flex flex-col gap-3 items-stretch sm:flex-row sm:items-center sm:justify-center pt-4 md:pt-6">
+            <a href="/catalogo" class="inline-flex items-center justify-center bg-giolab-blue hover:bg-giolab-blue/90 text-white px-6 py-3 md:px-8 md:py-4 text-base md:text-lg rounded-md font-medium w-full sm:w-auto transition-colors">
+              Scopri il Catalogo
+            </a>
+            <a href="https://wa.me/393406970686?text=Ciao,%20vorrei%20informazioni%20sugli%20accessori" class="inline-flex items-center justify-center border border-giolab-blue text-giolab-blue hover:bg-giolab-blue/10 px-6 py-3 md:px-8 md:py-4 text-base md:text-lg rounded-md font-medium w-full sm:w-auto transition-colors">
+              Contattaci su WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servizi" class="min-h-screen snap-start snap-always">
+      <Services />
+    </section>
+
+    <section id="chi-siamo" class="min-h-screen snap-start snap-always">
+      <AboutAndLocation />
+    </section>
+
+    <section id="testimonianze" class="min-h-screen snap-start snap-always">
+      <TestimonialsShowcase client:visible variant="scroll" />
+    </section>
+
+    <section id="faq" class="min-h-screen snap-start snap-always">
+      <FAQ client:visible />
+    </section>
+
+    <section id="contatti" class="min-h-screen snap-start snap-always">
+      <Contact client:visible />
+      <Footer />
+    </section>
+  </main>
+
+  <StickyMobileActionBar client:load />
+  <FloatingWhatsApp client:idle />
+  <ScrollToTop client:load />
+</BaseLayout>
