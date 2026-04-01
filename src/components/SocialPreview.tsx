@@ -49,8 +49,8 @@ blogArticles.forEach(article => {
     }
     // Skip emoji strings - use default fallback
   } else {
-    // Imported image - use the import directly (Vite resolves this)
-    imageUrl = article.image as string;
+    // Imported image (ImageMetadata) - use .src for the URL
+    imageUrl = (article.image as any).src ?? imageUrl;
   }
   
   pages[`blog-${article.slug}`] = {

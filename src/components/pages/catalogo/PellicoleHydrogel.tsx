@@ -4,8 +4,6 @@ import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ScrollToTop from "@/components/ScrollToTop";
 import StickyMobileActionBar from "@/components/StickyMobileActionBar";
-import SEOHead from "@/components/SEOHead";
-import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -21,13 +19,6 @@ const PellicoleHydrogel = () => {
 
   return (
     <>
-      <SEOHead
-        title="Pellicole Hydrogel – Lucide, Opache, Privacy | Giolab Assemini"
-        description="Pellicole hydrogel auto-rigeneranti per iPhone, Samsung, Xiaomi. Lucide, opache e privacy. Applicazione professionale inclusa ad Assemini. ☎️ 340 69 70 686"
-        keywords="pellicole hydrogel assemini, pellicola privacy iphone, pellicola opaca samsung, pellicola lucida smartphone cagliari"
-        ogUrl="https://giolabriparazioni.it/catalogo/accessori/pellicole-hydrogel"
-        ogImage="https://giolabriparazioni.it/og-image-giolab.jpg"
-      />
 
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
@@ -36,10 +27,10 @@ const PellicoleHydrogel = () => {
           {/* Breadcrumb */}
           <div className="container mx-auto px-4 mb-6">
             <Button variant="ghost" asChild className="gap-2">
-              <Link to="/catalogo/accessori">
+              <a href="/catalogo/accessori">
                 <ArrowLeft className="w-4 h-4" />
                 Torna agli Accessori
-              </Link>
+              </a>
             </Button>
           </div>
 

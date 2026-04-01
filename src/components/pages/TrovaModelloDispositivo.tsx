@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import SEOHead from "@/components/SEOHead";
 import { Card } from "@/components/ui/card";
 import { Smartphone, Tablet, Laptop } from "lucide-react";
 const brands = [{
@@ -56,7 +54,6 @@ const brands = [{
 }];
 const TrovaModelloDispositivo = () => {
   return <>
-      <SEOHead title="Trova Modello Dispositivo - Giolab Assemini" description="Guida per identificare modello iPhone, Samsung, Xiaomi, iPad, MacBook. GioLab assistenza Assemini. ☎️ 340 69 70 686." ogUrl="https://giolabriparazioni.it/trova-modello-dispositivo" ogImage="https://giolabriparazioni.it/og-images/trova-codice-modello-ipad-iphone-samsung-xiaomi-giolab.jpg" />
       <div className="min-h-screen bg-white flex flex-col">
         <Header />
         
@@ -80,7 +77,7 @@ const TrovaModelloDispositivo = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
               {brands.map(brand => {
               const Icon = brand.icon;
-              return <Link key={brand.id} to={brand.path}>
+              return <a key={brand.id} href={brand.path}>
                     <Card className="group h-full p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border-2 hover:border-primary">
                       <div className="flex flex-col items-center text-center space-y-4">
                         <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${brand.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
@@ -97,7 +94,7 @@ const TrovaModelloDispositivo = () => {
                         </span>
                       </div>
                     </Card>
-                  </Link>;
+                  </a>;
             })}
             </div>
 
@@ -115,9 +112,9 @@ const TrovaModelloDispositivo = () => {
                   <a href="https://wa.me/393406970686" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 bg-[#25D366] text-white rounded-lg font-semibold hover:bg-[#20BA5A] transition-colors">
                     Contattaci su WhatsApp
                   </a>
-                  <Link to="/contatti" className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+                  <a href="/contatti" className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors">
                     Vai ai Contatti
-                  </Link>
+                  </a>
                 </div>
               </div>
             </Card>

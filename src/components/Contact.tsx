@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Mail, Clock, Instagram, Facebook, MessageCircle, Calendar } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { BUSINESS_INFO, getWhatsAppLink, getGoogleMapsLink, getPhoneLink, getEmailLink } from "@/config/businessInfo";
-import { Link } from "react-router-dom";
 
 const Contact = () => {
   const handleWhatsApp = () => {
@@ -84,10 +83,10 @@ const Contact = () => {
                 asChild
                 className="bg-white/20 text-white hover:bg-white/30 border-white/30 text-xs md:text-sm px-4 py-2 h-auto font-semibold flex items-center justify-center"
               >
-                <Link to="/prenota">
+                <a href="/prenota">
                   <Calendar className="mr-1.5 md:mr-2 h-3 w-3 md:h-4 md:w-4 flex-shrink-0" />
                   Prenota Online
-                </Link>
+                </a>
               </Button>
             </div>
           </div>

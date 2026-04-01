@@ -1,18 +1,9 @@
-import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
 import { Home, Wrench, BookOpen, Phone, Search, ArrowLeft } from "lucide-react";
 
 const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
-  }, [location.pathname]);
-
   const quickLinks = [
     {
       to: "/",
@@ -42,11 +33,6 @@ const NotFound = () => {
 
   return (
     <>
-      <SEOHead
-        title="404 - Pagina Non Trovata | Giolab Assemini"
-        description="La pagina cercata non esiste. Scopri i servizi di riparazione iPhone, smartphone e PC di Giolab ad Assemini."
-        ogUrl="https://giolabriparazioni.it/404"
-      />
       
       <Header />
       
@@ -68,19 +54,12 @@ const NotFound = () => {
               </p>
             </div>
 
-            {/* URL attempted (for debugging) */}
-            <div className="mb-8 p-4 bg-muted/50 rounded-lg">
-              <p className="text-sm text-muted-foreground">
-                URL richiesto: <code className="text-foreground">{location.pathname}</code>
-              </p>
-            </div>
-
             {/* Quick navigation links */}
             <div className="grid gap-4 sm:grid-cols-2 mb-10">
               {quickLinks.map((link) => (
-                <Link 
-                  key={link.to} 
-                  to={link.to}
+                <a
+                  key={link.to}
+                  href={link.to}
                   className="group p-5 border rounded-xl hover:border-primary hover:shadow-md transition-all bg-card"
                 >
                   <div className="flex items-center gap-4">
@@ -96,7 +75,7 @@ const NotFound = () => {
                       </p>
                     </div>
                   </div>
-                </Link>
+                </a>
               ))}
             </div>
 
@@ -110,12 +89,12 @@ const NotFound = () => {
                 <ArrowLeft className="h-4 w-4" />
                 Torna Indietro
               </Button>
-              <Link to="/">
+              <a href="/">
                 <Button className="gap-2">
                   <Home className="h-4 w-4" />
                   Vai alla Homepage
                 </Button>
-              </Link>
+              </a>
             </div>
 
             {/* Help text */}

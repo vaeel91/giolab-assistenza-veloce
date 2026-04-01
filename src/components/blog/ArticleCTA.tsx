@@ -9,7 +9,6 @@
  * - Pulsante secondario "Chiamaci"
  */
 
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { PhoneCall, MessageSquare, MessageCircle } from "lucide-react";
 
@@ -35,7 +34,7 @@ export const ArticleCTA = () => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-          <Link to="/#contatti">
+          <a href="/#contatti">
             <Button 
               size="lg" 
               className="w-full sm:w-auto gap-2 shadow-md hover:shadow-lg transition-all"
@@ -43,7 +42,7 @@ export const ArticleCTA = () => {
               <MessageSquare className="w-5 h-5" />
               Richiedi un Preventivo Gratuito
             </Button>
-          </Link>
+          </a>
           
           <a href="tel:+393406970686">
             <Button 

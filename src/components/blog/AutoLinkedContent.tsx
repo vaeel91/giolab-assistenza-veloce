@@ -5,7 +5,6 @@
  */
 
 import React, { ReactNode, ReactElement } from 'react';
-import { Link } from 'react-router-dom';
 import { blogArticles } from '@/data/blogArticles';
 import { extractKeywords } from '@/utils/articleKeywordMatcher';
 import { ExternalLink, Clock, Tag, Link2 } from 'lucide-react';
@@ -135,14 +134,14 @@ const linkifyText = (
       <span key={`wrapper-${idx}-${match.keyword}`} className="inline-flex items-center gap-1.5 align-baseline">
         <Tooltip>
           <TooltipTrigger asChild>
-            <Link
-              to={`/blog/${match.articleSlug}`}
+            <a
+              href={`/blog/${match.articleSlug}`}
               className="text-giolab-blue hover:text-giolab-blue/80 underline decoration-giolab-blue/30 hover:decoration-giolab-blue transition-colors font-medium inline-flex items-center gap-1"
               title={match.articleTitle}
             >
               {text.substring(startIndex, endIndex)}
               <ExternalLink className="h-3 w-3 inline" />
-            </Link>
+            </a>
           </TooltipTrigger>
           {linkedArticle && (
             <TooltipContent className="max-w-xs p-3">
@@ -211,8 +210,7 @@ const processChildren = (
       if (
         element.type === 'a' ||
         element.type === 'code' ||
-        element.type === 'pre' ||
-        element.type === Link
+        element.type === 'pre'
       ) {
         return child;
       }

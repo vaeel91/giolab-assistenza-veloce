@@ -1,5 +1,4 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Link } from "react-router-dom";
 import { Smartphone, Laptop, Gamepad2, BatteryCharging, Cpu, Sparkles, Package, Wind, Shield, Wrench, Cloud, Search, Building2, ArrowRight, CheckCircle2, HardDrive } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -186,9 +185,9 @@ const Services = () => {
             );
 
             return service.link ? (
-              <Link key={index} to={service.link} className="block">
+              <a key={index} href={service.link} className="block">
                 {card}
-              </Link>
+              </a>
             ) : (
               <div key={index}>{card}</div>
             );
@@ -225,9 +224,9 @@ const Services = () => {
             );
 
             return service.link ? (
-              <Link key={index} to={service.link} className="block">
+              <a key={index} href={service.link} className="block">
                 {card}
-              </Link>
+              </a>
             ) : (
               <div key={index}>{card}</div>
             );
@@ -246,7 +245,7 @@ const Services = () => {
               { icon: HardDrive, title: "Recupero Dati", link: "/servizi/recupero-dati-smartphone", gradient: "from-emerald-500 to-green-400", bgGradient: "from-emerald-500/10 to-green-400/5" },
               { icon: Gamepad2, title: "Riparazione Console", link: "/servizi/riparazione-console-assemini", gradient: "from-pink-500 to-rose-400", bgGradient: "from-pink-500/10 to-rose-400/5" },
             ].map((item, index) => (
-              <Link key={index} to={item.link} className="block">
+              <a key={index} href={item.link} className="block">
                 <Card className="group relative overflow-hidden border border-slate-100 hover:border-giolab-blue/30 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer bg-white">
                   <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity`} />
                   <CardContent className="p-4 md:p-6 text-center">
@@ -262,7 +261,7 @@ const Services = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </Link>
+              </a>
             ))}
           </div>
         </div>

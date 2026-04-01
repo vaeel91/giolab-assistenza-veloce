@@ -1,5 +1,4 @@
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 export default function CostoRiparazioneSchermoSmartphone() {
@@ -29,7 +28,7 @@ export default function CostoRiparazioneSchermoSmartphone() {
           I display compatibili di alta qualità (<strong>INCELL</strong> o <strong>AMOLED aftermarket</strong>) offrono un ottimo rapporto qualità-prezzo. Sono la scelta giusta per chi vuole risparmiare senza rinunciare a una buona esperienza d'uso. La differenza con l'originale è minima nella maggior parte dei casi.
         </p>
         <p className="blog-paragraph">
-          Da <strong>Giolab Assemini</strong> offriamo entrambe le opzioni e ti consigliamo la soluzione più adatta al tuo budget e alle tue esigenze. Approfondisci le differenze nella nostra guida dedicata: <Link to="/blog/display-originali-vs-compatibili" className="text-giolab-blue hover:underline">Display Originali vs Compatibili: confronto completo</Link>.
+          Da <strong>Giolab Assemini</strong> offriamo entrambe le opzioni e ti consigliamo la soluzione più adatta al tuo budget e alle tue esigenze. Approfondisci le differenze nella nostra guida dedicata: <a href="/blog/display-originali-vs-compatibili" className="text-giolab-blue hover:underline">Display Originali vs Compatibili: confronto completo</a>.
         </p>
       </section>
 
@@ -106,7 +105,7 @@ export default function CostoRiparazioneSchermoSmartphone() {
           <li><strong>Riassemblaggio e verifica finale</strong> — controlliamo che tutto funzioni perfettamente prima della consegna</li>
         </ol>
         <p className="blog-paragraph">
-          Ogni riparazione è coperta da <strong>garanzia di 12 mesi</strong>. Il tempo medio di intervento è di circa <strong>1 ora</strong> per la maggior parte dei modelli. Scopri di più sul nostro <Link to="/blog/riparazione-iphone-1-ora-giolab-assemini" className="text-giolab-blue hover:underline">servizio di riparazione rapida in 1 ora</Link>.
+          Ogni riparazione è coperta da <strong>garanzia di 12 mesi</strong>. Il tempo medio di intervento è di circa <strong>1 ora</strong> per la maggior parte dei modelli. Scopri di più sul nostro <a href="/blog/riparazione-iphone-1-ora-giolab-assemini" className="text-giolab-blue hover:underline">servizio di riparazione rapida in 1 ora</a>.
         </p>
       </section>
 
@@ -185,7 +184,7 @@ export default function CostoRiparazioneSchermoSmartphone() {
 
         <h3 id="faq-face-id" className="blog-h3">Il Face ID continua a funzionare dopo la sostituzione?</h3>
         <p className="blog-paragraph">
-          Sì, i nostri tecnici eseguono il <strong>trasferimento del sensore Face ID</strong> sul nuovo display per garantire il corretto funzionamento. Scopri di più sulla <Link to="/blog/riparazione-face-id-iphone-giolab-assemini" className="text-giolab-blue hover:underline">riparazione Face ID</Link>.
+          Sì, i nostri tecnici eseguono il <strong>trasferimento del sensore Face ID</strong> sul nuovo display per garantire il corretto funzionamento. Scopri di più sulla <a href="/blog/riparazione-face-id-iphone-giolab-assemini" className="text-giolab-blue hover:underline">riparazione Face ID</a>.
         </p>
       </section>
     </div>

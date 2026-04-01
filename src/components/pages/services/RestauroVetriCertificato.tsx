@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -194,18 +192,6 @@ const RestauroVetriCertificato = () => {
   };
 
   return <>
-      <SEOHead
-        title="Restauro Vetri Certificato iPhone iPad | GioLab Assemini"
-        description="Restauro vetro display iPhone e iPad ad Assemini. Mantieni l'OLED originale Apple, risparmia fino al 50%. Garanzia totale inclusa."
-        keywords="restauro vetro iPhone, rigenerazione display, display originale Apple, riparazione vetro Assemini, GioLab, laminazione display"
-        ogUrl="https://giolabriparazioni.it/servizi/restauro-vetri-certificato"
-        breadcrumbs={[
-          { name: "Home", url: "https://giolabriparazioni.it/" },
-          { name: "Servizi", url: "https://giolabriparazioni.it/servizi" },
-          { name: "Restauro Vetri Certificato", url: "https://giolabriparazioni.it/servizi/restauro-vetri-certificato" }
-        ]}
-        structuredData={[serviceSchema, faqSchema]}
-      />
 
       <div className="min-h-screen bg-background">
         <Header />
@@ -248,10 +234,10 @@ const RestauroVetriCertificato = () => {
                     </a>
                   </Button>
                   <Button size="lg" className="bg-giolab-blue hover:bg-giolab-blue/90 text-white text-lg px-8 py-6" asChild>
-                    <Link to="/prenota">
+                    <a href="/prenota">
                       <Calendar className="w-5 h-5 mr-2" />
                       Prenota Appuntamento
-                    </Link>
+                    </a>
                   </Button>
                 </div>
 
@@ -569,11 +555,11 @@ const RestauroVetriCertificato = () => {
                           Leggi la nostra guida completa con tutti i dettagli tecnici, i dispositivi compatibili e le risposte alle domande più frequenti.
                         </p>
                         <Button asChild variant="outline" className="border-giolab-blue text-giolab-blue hover:bg-giolab-blue hover:text-white">
-                          <Link to="/blog/rigenerazione-vetro-iphone-ipad-apple-watch">
+                          <a href="/blog/rigenerazione-vetro-iphone-ipad-apple-watch">
                             <BookOpen className="w-4 h-4 mr-2" />
                             Leggi l'Articolo Completo
                             <ChevronRight className="w-4 h-4 ml-2" />
-                          </Link>
+                          </a>
                         </Button>
                       </div>
                     </div>

@@ -2,12 +2,10 @@ import { useState, useMemo } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import SEOHead from "@/components/SEOHead";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { Calendar, Clock, Search, X, Filter } from "lucide-react";
 import { blogArticles } from "@/data/blogArticles";
 import OptimizedImage from "@/components/OptimizedImage";
@@ -39,16 +37,6 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen">
-      <SEOHead 
-        title="Blog Riparazione Smartphone e iPhone | Guide e Consigli – Giolab Assemini"
-        description="Leggi le guide Giolab su riparazione iPhone, Samsung, PS5 e PC. Consigli pratici dal tecnico specializzato di Assemini per prenderti cura dei tuoi dispositivi."
-        keywords="blog riparazione iPhone, guide iPhone, consigli batteria iPhone, manutenzione smartphone, assistenza iPhone Assemini"
-        ogImage="https://giolabriparazioni.it/og-image-giolab.jpg"
-        breadcrumbs={[
-          { name: "Home", url: "https://giolabriparazioni.it/" },
-          { name: "Blog" }
-        ]}
-      />
       <Header />
       
       {/* Hero Section */}
@@ -140,13 +128,13 @@ const Blog = () => {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredArticles.map((post) => (
-                  <Link key={post.slug} to={`/blog/${post.slug}`}>
+                  <a key={post.slug} href={`/blog/${post.slug}`}>
                     <Card className="h-full border-2 hover:border-giolab-blue transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group cursor-pointer">
                       <CardHeader>
-                        {post.image.startsWith('http') || post.image.startsWith('/') ? (
+                        {(() => { const imgSrc = typeof post.image === 'string' ? post.image : (post.image as any).src; return imgSrc.startsWith('http') || imgSrc.startsWith('/') ? (
                           <div className="w-full h-48 rounded-lg overflow-hidden mb-4 group-hover:shadow-lg transition-all bg-gray-50">
                             <OptimizedImage
-                              src={post.image} 
+                              src={imgSrc}
                               alt={post.title}
                               width={400}
                               height={192}
@@ -155,9 +143,9 @@ const Blog = () => {
                           </div>
                         ) : (
                           <div className="w-full h-48 rounded-lg bg-gradient-to-br from-giolab-blue/10 to-giolab-blue-light/10 flex items-center justify-center mb-4 group-hover:from-giolab-blue/20 group-hover:to-giolab-blue-light/20 transition-all">
-                            <span className="text-6xl">{post.image}</span>
+                            <span className="text-6xl">{imgSrc}</span>
                           </div>
-                        )}
+                        ); })()}
                         <div className="flex items-center gap-4 text-xs text-muted-foreground mb-2">
                           <span className="px-2 py-1 bg-giolab-blue/10 text-giolab-blue rounded-full font-medium">
                             {post.category}
@@ -181,7 +169,7 @@ const Blog = () => {
                         </CardDescription>
                       </CardContent>
                     </Card>
-                  </Link>
+                  </a>
                 ))}
               </div>
             )}
@@ -198,11 +186,11 @@ const Blog = () => {
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
             Vieni a trovarci ad Assemini o contattaci per un preventivo gratuito!
           </p>
-          <Link to="/#contatti">
+          <a href="/#contatti">
             <button className="bg-white text-giolab-blue hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-colors">
               Contattaci Ora
             </button>
-          </Link>
+          </a>
         </div>
       </section>
 

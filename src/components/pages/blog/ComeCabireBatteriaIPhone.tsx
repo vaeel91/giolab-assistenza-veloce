@@ -1,5 +1,4 @@
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 export default function ComeCabireBatteriaIPhone() {
@@ -52,7 +51,7 @@ export default function ComeCabireBatteriaIPhone() {
           Se la mattina parti con il 100% di carica e a metà pomeriggio sei già sotto il 20%, senza aver usato il telefono più del solito, è probabile che la batteria sia degradata. Con il tempo, le batterie perdono la capacità di trattenere la carica, e l'autonomia si riduce drasticamente.
         </p>
         <p className="blog-paragraph">
-          Una batteria in buone condizioni dovrebbe garantire almeno una giornata intera di utilizzo normale. Se non riesci più a raggiungere questo obiettivo, contattaci o valuta una <Link to="/servizi/batteria-maggiorata-iphone" className="text-giolab-blue hover:underline">batteria maggiorata</Link> per iPhone, che ti darà fino al 40% di autonomia in più.
+          Una batteria in buone condizioni dovrebbe garantire almeno una giornata intera di utilizzo normale. Se non riesci più a raggiungere questo obiettivo, contattaci o valuta una <a href="/servizi/batteria-maggiorata-iphone" className="text-giolab-blue hover:underline">batteria maggiorata</a> per iPhone, che ti darà fino al 40% di autonomia in più.
         </p>
       </section>
 
@@ -103,7 +102,7 @@ export default function ComeCabireBatteriaIPhone() {
             Se riconosci uno o più di questi segnali, è il momento di <strong>sostituire la batteria del tuo iPhone</strong>. Da Giolab ad Assemini offriamo:
           </p>
           <ul className="blog-list-bulleted">
-            <li>Sostituzione batteria in <strong>30 minuti - 1 ora</strong> - scopri il nostro <Link to="/blog/riparazione-iphone-1-ora-giolab-assemini" className="text-giolab-blue hover:underline">servizio di riparazione rapida</Link></li>
+            <li>Sostituzione batteria in <strong>30 minuti - 1 ora</strong> - scopri il nostro <a href="/blog/riparazione-iphone-1-ora-giolab-assemini" className="text-giolab-blue hover:underline">servizio di riparazione rapida</a></li>
             <li>Batterie originali o maggiorate con <strong>garanzia 12 mesi</strong></li>
             <li>Telefono di cortesia per riparazioni più lunghe</li>
             <li>Prezzi trasparenti e competitivi</li>

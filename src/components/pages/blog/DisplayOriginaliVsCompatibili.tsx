@@ -4,7 +4,6 @@
 
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
-import { Link } from "react-router-dom";
 
 export default function DisplayOriginaliVsCompatibili() {
   const articleContent = (
@@ -300,7 +299,7 @@ export default function DisplayOriginaliVsCompatibili() {
           <li><strong>Originale Apple:</strong> 7 ore e 10 minuti</li>
         </ul>
         <p className="blog-paragraph">
-          Se noti che la batteria si scarica troppo velocemente dopo la sostituzione del display, il problema potrebbe essere sia il display che la batteria stessa. Scopri <Link to="/blog/come-capire-batteria-iphone-da-sostituire" className="text-giolab-blue hover:underline font-medium">come capire se la batteria iPhone va sostituita</Link>.
+          Se noti che la batteria si scarica troppo velocemente dopo la sostituzione del display, il problema potrebbe essere sia il display che la batteria stessa. Scopri <a href="/blog/come-capire-batteria-iphone-da-sostituire" className="text-giolab-blue hover:underline font-medium">come capire se la batteria iPhone va sostituita</a>.
         </p>
         <p className="blog-paragraph">
           (Test effettuato con luminosità al 50%, uso misto, iOS 17)
@@ -324,10 +323,10 @@ export default function DisplayOriginaliVsCompatibili() {
           <li>Yellowing (ingiallimento dei bianchi)</li>
           <li>Dead pixel più frequenti</li>
           <li>Sensibilità al tocco ridotta nel tempo</li>
-          <li>Problemi con True Tone e <Link to="/blog/riparazione-face-id-iphone-giolab-assemini" className="text-giolab-blue hover:underline">Face ID</Link></li>
+          <li>Problemi con True Tone e <a href="/blog/riparazione-face-id-iphone-giolab-assemini" className="text-giolab-blue hover:underline">Face ID</a></li>
         </ul>
         <p className="blog-paragraph">
-          Se il vetro è rotto ma il display funziona perfettamente, valuta la nostra <Link to="/blog/rigenerazione-vetro-iphone-ipad-apple-watch" className="text-giolab-blue hover:underline font-medium">rigenerazione del vetro</Link>: costa meno e mantiene il display originale.
+          Se il vetro è rotto ma il display funziona perfettamente, valuta la nostra <a href="/blog/rigenerazione-vetro-iphone-ipad-apple-watch" className="text-giolab-blue hover:underline font-medium">rigenerazione del vetro</a>: costa meno e mantiene il display originale.
         </p>
 
         <div className="blog-box-tip">

@@ -1,6 +1,5 @@
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
-import { Link } from "react-router-dom";
 import erroreTrueDepth from "@/assets/errore-truedepth-iphone-11-giolab.jpg";
 import programmatoreFaceIdErrore from "@/assets/programmatore-face-id-tag-on-flex-errore-giolab.jpg";
 import programmatoreFaceIdNormale from "@/assets/programmatore-face-id-iphone-11-normale-giolab.jpg";
@@ -22,7 +21,7 @@ export default function RipristinoFaceIDIPhone11() {
         </p>
 
         <p className="blog-paragraph">
-          Se non conosci il modello esatto del tuo iPhone, consulta la nostra <Link to="/blog/come-trovare-codice-modello-dispositivo-giolab-assemini" className="text-primary hover:underline font-medium">guida per trovare il codice modello del dispositivo</Link>.
+          Se non conosci il modello esatto del tuo iPhone, consulta la nostra <a href="/blog/come-trovare-codice-modello-dispositivo-giolab-assemini" className="text-primary hover:underline font-medium">guida per trovare il codice modello del dispositivo</a>.
         </p>
 
         <img 
@@ -233,7 +232,7 @@ export default function RipristinoFaceIDIPhone11() {
 
         <h3 id="faq-iphone-modelli" className="blog-h3">▶️ Su quali iPhone eseguite questa riparazione?</h3>
         <p className="blog-paragraph">
-          Eseguiamo riparazioni Face ID con Tag-on Flex su tutti i modelli dotati di Face ID: <strong>iPhone X, XS, XS Max, XR, 11, 11 Pro, 11 Pro Max, 12, 12 Mini, 12 Pro, 12 Pro Max, 13, 13 Mini, 13 Pro, 13 Pro Max, 14, 14 Plus, 14 Pro, 14 Pro Max, 15</strong> e successivi. Per verificare il tuo modello, consulta la nostra <Link to="/blog/come-trovare-codice-modello-dispositivo-giolab-assemini" className="text-primary hover:underline">guida al codice modello</Link>.
+          Eseguiamo riparazioni Face ID con Tag-on Flex su tutti i modelli dotati di Face ID: <strong>iPhone X, XS, XS Max, XR, 11, 11 Pro, 11 Pro Max, 12, 12 Mini, 12 Pro, 12 Pro Max, 13, 13 Mini, 13 Pro, 13 Pro Max, 14, 14 Plus, 14 Pro, 14 Pro Max, 15</strong> e successivi. Per verificare il tuo modello, consulta la nostra <a href="/blog/come-trovare-codice-modello-dispositivo-giolab-assemini" className="text-primary hover:underline">guida al codice modello</a>.
         </p>
       </section>
     </>

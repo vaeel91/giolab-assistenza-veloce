@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, Clock, ArrowRight, Sparkles } from "lucide-react";
 import { blogArticles } from "@/data/blogArticles";
@@ -47,17 +46,17 @@ const RelatedArticles = ({ currentSlug, category, maxArticles = 3 }: RelatedArti
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {relatedArticles.map((article, index) => (
-          <Link 
+          <a 
             key={article.slug} 
-            to={`/blog/${article.slug}`}
+            href={`/blog/${article.slug}`}
             className="group"
             style={{ animationDelay: `${index * 100}ms` }}
           >
             <Card className="h-full border-2 hover:border-giolab-blue transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in">
               <CardHeader>
                 <div className="w-full h-48 rounded-lg overflow-hidden mb-4">
-                  <LazyImage 
-                    src={article.image} 
+                  <LazyImage
+                    src={typeof article.image === 'string' ? article.image : (article.image as any).src}
                     alt={article.title}
                     aspectRatio="video"
                     imgClassName="group-hover:scale-105 transition-transform duration-300"
@@ -87,7 +86,7 @@ const RelatedArticles = ({ currentSlug, category, maxArticles = 3 }: RelatedArti
                 </div>
               </CardContent>
             </Card>
-          </Link>
+          </a>
         ))}
       </div>
     </section>

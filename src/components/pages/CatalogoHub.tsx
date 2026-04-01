@@ -3,8 +3,6 @@ import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ScrollToTop from "@/components/ScrollToTop";
 import StickyMobileActionBar from "@/components/StickyMobileActionBar";
-import SEOHead from "@/components/SEOHead";
-import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { catalogCategories } from "@/data/catalogo";
 import { ShoppingBag, Shield, MapPin, Phone } from "lucide-react";
@@ -12,13 +10,6 @@ import { ShoppingBag, Shield, MapPin, Phone } from "lucide-react";
 const CatalogoHub = () => {
   return (
     <>
-      <SEOHead
-        title="Catalogo Accessori Smartphone – Giolab Assemini"
-        description="Pellicole hydrogel, cover, caricatori e accessori per iPhone, Samsung, Xiaomi. Qualità professionale ad Assemini. ☎️ 340 69 70 686"
-        keywords="accessori smartphone assemini, pellicole hydrogel cagliari, cover iphone assemini, caricatori originali assemini"
-        ogUrl="https://giolabriparazioni.it/catalogo"
-        ogImage="https://giolabriparazioni.it/og-image-giolab.jpg"
-      />
 
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
@@ -67,7 +58,7 @@ const CatalogoHub = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {catalogCategories.map((category) => (
-                <Link key={category.id} to={`/catalogo/${category.slug}`}>
+                <a key={category.id} href={`/catalogo/${category.slug}`}>
                   <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border-2 hover:border-primary h-full">
                     <CardContent className="p-6">
                       <div className={`w-full h-24 mb-4 rounded-lg bg-gradient-to-br ${category.color} flex items-center justify-center`}>
@@ -88,7 +79,7 @@ const CatalogoHub = () => {
                       </div>
                     </CardContent>
                   </Card>
-                </Link>
+                </a>
               ))}
             </div>
           </section>

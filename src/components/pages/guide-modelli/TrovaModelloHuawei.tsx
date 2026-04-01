@@ -1,10 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import SEOHead from "@/components/SEOHead";
 import SocialShare from "@/components/SocialShare";
 import { TableOfContents } from "@/components/TableOfContents";
 import { ArrowLeft, Smartphone, Settings, Info, Box, HelpCircle, Phone, MessageCircle } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const TrovaModelloHuawei = () => {
   const pageUrl = "https://giolabriparazioni.it/trova-modello-dispositivo/huawei";
@@ -13,25 +11,16 @@ const TrovaModelloHuawei = () => {
 
   return (
     <>
-      <SEOHead
-        title={pageTitle}
-        description={pageDescription}
-        ogUrl={pageUrl}
-        ogImage="https://giolabriparazioni.it/og-image-giolab.jpg"
-        ogType="article"
-        keywords="trova modello Huawei, codice modello Huawei, identificare Huawei, modello P Series, modello Mate, riparazione Huawei Assemini, assistenza Huawei Cagliari"
-      />
       <Header />
       <main className="min-h-screen bg-white pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Back button */}
-          <Link 
-            to="/trova-modello-dispositivo" 
+          <a href="/trova-modello-dispositivo" 
             className="inline-flex items-center text-primary hover:text-primary/80 mb-6 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Torna alla selezione dei brand
-          </Link>
+          </a>
 
           {/* Social Share Top */}
           <div className="mb-6">

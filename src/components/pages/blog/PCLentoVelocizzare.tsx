@@ -1,6 +1,5 @@
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
 import OptimizedImage from "@/components/OptimizedImage";
-import { Link } from "react-router-dom";
 import { AlertCircle, Cpu, HardDrive, Wind, Zap, Settings, CheckCircle, Wrench } from "lucide-react";
 import pcLentoImage from "@/assets/pc-lento-bloccato.jpg";
 import installazioneSSDImage from "@/assets/installazione-ssd-pc.jpg";
@@ -154,7 +153,7 @@ export default function PCLentoVelocizzare() {
           </p>
 
           <p className="text-lg leading-relaxed mb-6">
-            Nel nostro centro a <strong>Assemini</strong> eseguiamo questa operazione in modo rapido e sicuro, testando il tutto prima di riconsegnare il PC. Oltre all'upgrade SSD, ci occupiamo anche di <Link to="/blog/riparazione-webcam-hp-victus-giolab-assemini" className="text-giolab-blue hover:underline font-medium">riparazioni hardware come la sostituzione della webcam su notebook gaming</Link>.
+            Nel nostro centro a <strong>Assemini</strong> eseguiamo questa operazione in modo rapido e sicuro, testando il tutto prima di riconsegnare il PC. Oltre all'upgrade SSD, ci occupiamo anche di <a href="/blog/riparazione-webcam-hp-victus-giolab-assemini" className="text-giolab-blue hover:underline font-medium">riparazioni hardware come la sostituzione della webcam su notebook gaming</a>.
           </p>
         </section>
 
@@ -267,7 +266,7 @@ export default function PCLentoVelocizzare() {
           </p>
 
           <p className="text-lg leading-relaxed mb-6">
-            Lo stesso problema di <strong>surriscaldamento e manutenzione termica</strong> riguarda anche le console gaming. Se hai una PlayStation 5, ti consigliamo la nostra guida sulla <Link to="/blog/manutenzione-playstation-5" className="text-giolab-blue hover:underline font-medium">manutenzione della PS5 e il problema del metallo liquido</Link>.
+            Lo stesso problema di <strong>surriscaldamento e manutenzione termica</strong> riguarda anche le console gaming. Se hai una PlayStation 5, ti consigliamo la nostra guida sulla <a href="/blog/manutenzione-playstation-5" className="text-giolab-blue hover:underline font-medium">manutenzione della PS5 e il problema del metallo liquido</a>.
           </p>
 
           <h3 id="cause-surriscaldamento" className="text-2xl font-semibold mb-4 flex items-center gap-2">

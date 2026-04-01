@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useLocation } from 'react-router-dom';
 
 /**
  * Componente Scroll To Top
@@ -20,12 +19,6 @@ import { useLocation } from 'react-router-dom';
  */
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const { pathname } = useLocation();
-
-  // Scrolla in cima quando cambia la route
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
 
   // Mostra/nascondi il pulsante in base allo scroll
   useEffect(() => {

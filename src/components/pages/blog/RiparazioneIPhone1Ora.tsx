@@ -4,7 +4,6 @@
 
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
-import { Link } from "react-router-dom";
 
 export default function RiparazioneIPhone1Ora() {
   const articleContent = (
@@ -31,8 +30,8 @@ export default function RiparazioneIPhone1Ora() {
           I problemi più frequenti per cui i clienti ci contattano includono:
         </p>
         <ul className="blog-list-bulleted">
-          <li>Schermo rotto o completamente nero - scopri le <Link to="/blog/display-originali-vs-compatibili" className="text-giolab-blue hover:underline">differenze tra display originali e compatibili</Link></li>
-          <li>Batteria degradata che non arriva a fine giornata - considera anche una <Link to="/blog/batteria-maggiorata-iphone-giolab-assemini" className="text-giolab-blue hover:underline">batteria maggiorata</Link> per +30% di autonomia</li>
+          <li>Schermo rotto o completamente nero - scopri le <a href="/blog/display-originali-vs-compatibili" className="text-giolab-blue hover:underline">differenze tra display originali e compatibili</a></li>
+          <li>Batteria degradata che non arriva a fine giornata - considera anche una <a href="/blog/batteria-maggiorata-iphone-giolab-assemini" className="text-giolab-blue hover:underline">batteria maggiorata</a> per +30% di autonomia</li>
           <li><strong>Fotocamera</strong> non funzionante o sfocata</li>
           <li><strong>Connettore Lightning</strong> difettoso (non carica)</li>
           <li><strong>Altoparlante o microfono</strong> non funzionanti</li>

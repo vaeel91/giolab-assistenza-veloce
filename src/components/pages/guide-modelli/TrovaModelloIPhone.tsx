@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import SEOHead from "@/components/SEOHead";
 import { TableOfContents } from "@/components/TableOfContents";
 import SocialShare from "@/components/SocialShare";
 import { Card } from "@/components/ui/card";
@@ -13,26 +11,18 @@ const TrovaModelloIPhone = () => {
 
   return (
     <>
-      <SEOHead
-        title="Trova Modello iPhone - Giolab Assemini"
-        description="Guida per identificare modello iPhone. Codice su impostazioni, scocca e confezione. GioLab Assemini. ☎️ 340 69 70 686."
-        ogUrl={shareUrl}
-        ogImage="https://giolabriparazioni.it/og-images/codice-modello-dispositivo.jpg"
-        ogType="article"
-      />
       <div className="min-h-screen bg-white flex flex-col">
         <Header />
         
         <main className="flex-grow pt-32 pb-16 px-4">
           <div className="container mx-auto max-w-5xl">
             {/* Back Button */}
-            <Link 
-              to="/trova-modello-dispositivo"
+            <a href="/trova-modello-dispositivo"
               className="inline-flex items-center gap-2 text-primary hover:underline mb-8 font-semibold"
             >
               <ArrowLeft className="w-5 h-5" />
               Torna alla selezione dei brand
-            </Link>
+            </a>
 
             {/* Title */}
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -312,13 +302,12 @@ const TrovaModelloIPhone = () => {
 
             {/* Back Button Bottom */}
             <div className="mt-12 text-center">
-              <Link 
-                to="/trova-modello-dispositivo"
+              <a href="/trova-modello-dispositivo"
                 className="inline-flex items-center gap-2 text-primary hover:underline font-semibold text-lg"
               >
                 <ArrowLeft className="w-5 h-5" />
                 Torna alla selezione dei brand
-              </Link>
+              </a>
             </div>
           </div>
         </main>

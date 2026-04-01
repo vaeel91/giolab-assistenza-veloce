@@ -1,4 +1,3 @@
-import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
@@ -7,17 +6,6 @@ import { CheckCircle, Code, FileText, Image, Link as LinkIcon, Search } from "lu
 const SEODocumentation = () => {
   return (
     <>
-      <SEOHead
-        title="Documentazione SEO | Giolab Assemini"
-        description="Guida completa alla struttura SEO del sito Giolab: meta tags, schema markup, breadcrumbs e best practices per l'ottimizzazione sui motori di ricerca."
-        keywords="documentazione seo, meta tags, schema markup, breadcrumbs, ottimizzazione seo"
-        ogUrl="https://giolabriparazioni.it/seo-docs"
-        ogImage="https://giolabriparazioni.it/og-image-giolab.jpg"
-        breadcrumbs={[
-          { name: "Home", url: "https://giolabriparazioni.it" },
-          { name: "Documentazione SEO", url: "https://giolabriparazioni.it/seo-docs" }
-        ]}
-      />
       
       <div className="min-h-screen bg-background">
         <Header />

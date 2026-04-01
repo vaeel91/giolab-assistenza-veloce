@@ -4,7 +4,6 @@
 
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
-import { Link } from "react-router-dom";
 export default function CodiceModelloDispositivo() {
   const articleContent = <div className="blog-content">
       <section>
@@ -17,7 +16,7 @@ export default function CodiceModelloDispositivo() {
         <p className="blog-paragraph">
           In questa guida completa, ti spiegheremo <strong>come trovare il codice modello</strong> di ogni tipo di dispositivo, sia quando è funzionante 
           sia quando non si accende più. Se hai difficoltà, <strong>GioLab ad Assemini</strong> ti aiuta gratuitamente a identificare qualsiasi modello nel nostro 
-          <strong>laboratorio di assistenza tecnica</strong> vicino a Cagliari, dove offriamo anche <Link to="/blog/riparazione-iphone-1-ora-giolab-assemini" className="text-giolab-blue hover:underline font-medium">riparazioni iPhone in 1 ora</Link>.
+          <strong>laboratorio di assistenza tecnica</strong> vicino a Cagliari, dove offriamo anche <a href="/blog/riparazione-iphone-1-ora-giolab-assemini" className="text-giolab-blue hover:underline font-medium">riparazioni iPhone in 1 ora</a>.
         </p>
         <p className="blog-paragraph">
           La guida copre iPhone, Samsung Galaxy, Xiaomi/Redmi, iPad e MacBook con metodi pratici per il <strong>riconoscimento del numero di serie</strong> e 
@@ -148,7 +147,7 @@ export default function CodiceModelloDispositivo() {
           <p className="blog-paragraph">
             <strong>🔧 GioLab Assemini:</strong> Porta il tuo iPhone da noi in <strong>Via Carmine 20, 09032 Assemini (CA)</strong>. 
             Identifichiamo il modello anche da dispositivi completamente non funzionanti tramite <strong>analisi chip e componenti interni</strong> nel nostro 
-            <strong>laboratorio specializzato</strong> vicino a Cagliari. Offriamo anche il <Link to="/blog/recupero-dati-iphone-rotto-giolab-assemini" className="text-giolab-blue hover:underline font-medium">recupero dati da iPhone rotti</Link>.
+            <strong>laboratorio specializzato</strong> vicino a Cagliari. Offriamo anche il <a href="/blog/recupero-dati-iphone-rotto-giolab-assemini" className="text-giolab-blue hover:underline font-medium">recupero dati da iPhone rotti</a>.
           </p>
         </div>
 
@@ -468,7 +467,7 @@ export default function CodiceModelloDispositivo() {
         <div className="blog-box-warning">
           <p className="blog-paragraph">
             <strong>🔧 Nota GioLab:</strong> Ad Assemini ripariamo <strong>tutti i modelli di iPad</strong>. Identificazione gratuita del modello in laboratorio 
-            anche per dispositivi non funzionanti. <Link to="/servizi" className="text-primary hover:underline">Scopri i nostri servizi</Link>.
+            anche per dispositivi non funzionanti. <a href="/servizi" className="text-primary hover:underline">Scopri i nostri servizi</a>.
           </p>
         </div>
       </section>
@@ -646,7 +645,7 @@ export default function CodiceModelloDispositivo() {
         <p className="blog-paragraph">
           Sì, il <strong>codice modello esatto</strong> è fondamentale per ordinare lo schermo compatibile. Display di modelli diversi 
           (anche dello stesso brand) non sono intercambiabili. Per questo <strong>GioLab verifica sempre il modello</strong> prima della 
-          <Link to="/servizi/riparazione-display-iphone-assemini" className="text-primary hover:underline">riparazione display</Link>.
+          <a href="/servizi/riparazione-display-iphone-assemini" className="text-primary hover:underline">riparazione display</a>.
         </p>
       </section>
     </div>;

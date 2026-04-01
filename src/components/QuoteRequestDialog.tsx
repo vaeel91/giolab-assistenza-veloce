@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Link } from "react-router-dom";
 import {
   Dialog,
   DialogContent,
@@ -364,13 +363,13 @@ ${data.message}`;
                     <div className="flex items-center gap-1.5 mt-2 text-sm text-muted-foreground">
                       <HelpCircle className="h-4 w-4" />
                       <span>Non sei sicuro sul modello?</span>
-                      <Link 
-                        to="/trova-modello-dispositivo" 
+                      <a 
+                        href="/trova-modello-dispositivo" 
                         target="_blank"
                         className="text-primary hover:underline font-medium"
                       >
                         Scopri come trovarlo
-                      </Link>
+                      </a>
                     </div>
                   </FormItem>
                 )}

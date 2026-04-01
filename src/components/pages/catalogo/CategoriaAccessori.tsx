@@ -3,8 +3,6 @@ import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ScrollToTop from "@/components/ScrollToTop";
 import StickyMobileActionBar from "@/components/StickyMobileActionBar";
-import SEOHead from "@/components/SEOHead";
-import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { catalogCategories } from "@/data/catalogo";
@@ -23,13 +21,6 @@ const CategoriaAccessori = () => {
 
   return (
     <>
-      <SEOHead
-        title="Accessori Smartphone – Pellicole, Cover, Caricatori | Giolab Assemini"
-        description="Pellicole hydrogel lucide, opache e privacy. Cover e caricatori per iPhone, Samsung, Xiaomi. Applicazione inclusa ad Assemini. ☎️ 340 69 70 686"
-        keywords="pellicole hydrogel assemini, cover smartphone cagliari, caricatori iphone assemini, accessori samsung assemini"
-        ogUrl="https://giolabriparazioni.it/catalogo/accessori"
-        ogImage="https://giolabriparazioni.it/og-image-giolab.jpg"
-      />
 
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
@@ -38,10 +29,10 @@ const CategoriaAccessori = () => {
           {/* Breadcrumb */}
           <div className="container mx-auto px-4 mb-6">
             <Button variant="ghost" asChild className="gap-2">
-              <Link to="/catalogo">
+              <a href="/catalogo">
                 <ArrowLeft className="w-4 h-4" />
                 Torna al Catalogo
-              </Link>
+              </a>
             </Button>
           </div>
 
@@ -66,7 +57,7 @@ const CategoriaAccessori = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {category.subcategories.map((subcategory) => (
-                <Link key={subcategory.id} to={`/catalogo/accessori/${subcategory.slug}`}>
+                <a key={subcategory.id} href={`/catalogo/accessori/${subcategory.slug}`}>
                   <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border-2 hover:border-primary h-full">
                     <CardContent className="p-6 text-center">
                       <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
@@ -80,7 +71,7 @@ const CategoriaAccessori = () => {
                       </p>
                     </CardContent>
                   </Card>
-                </Link>
+                </a>
               ))}
             </div>
           </section>

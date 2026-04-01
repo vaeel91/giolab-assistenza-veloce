@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock, ArrowRight, Search } from "lucide-react";
-import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { blogArticles } from "@/data/blogArticles";
 import { useState, useMemo } from "react";
@@ -65,16 +64,16 @@ const BlogPreview = () => {
             const delayClass = `animation-delay-${(index % 4) * 100}`;
             
             return (
-              <Link 
+              <a 
                 key={article.slug} 
-                to={`/blog/${article.slug}`} 
+                href={`/blog/${article.slug}`} 
                 className={`group ${isVisible ? 'animate-fade-in' : 'opacity-0'} ${delayClass}`}
               >
                 <Card className="border hover:border-giolab-blue transition-all duration-300 hover:shadow-lg bg-card">
                   <CardHeader className="p-2 pb-1">
                   <div className="flex items-start gap-2 mb-1">
                     <LazyImage
-                      src={article.image} 
+                      src={typeof article.image === 'string' ? article.image : (article.image as any).src}
                       alt={article.title}
                       width={32}
                       height={32}
@@ -107,19 +106,19 @@ const BlogPreview = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </Link>
+              </a>
             );
           })}
         </div>
         
         {/* Bottone per vedere tutti gli articoli */}
         <div className="text-center flex-shrink-0 pt-2 pb-4">
-          <Link to="/blog">
+          <a href="/blog">
             <div className="inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 bg-giolab-blue hover:bg-giolab-blue/90 text-white rounded-lg transition-all hover:shadow-lg text-xs md:text-sm font-semibold">
               Visualizza tutti i {blogArticles.length} articoli
               <ArrowRight className="h-3 w-3 md:h-4 md:w-4" />
             </div>
-          </Link>
+          </a>
         </div>
       </div>
       <style>{`

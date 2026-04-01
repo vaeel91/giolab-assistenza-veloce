@@ -5,7 +5,6 @@
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
 import { Card } from "@/components/ui/card";
-import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 export default function RigenerazioneVetroIphoneIpadAppleWatch() {
@@ -145,12 +144,11 @@ export default function RigenerazioneVetroIphoneIpadAppleWatch() {
           <p className="text-lg font-medium mb-3">
             🎯 Vuoi scoprire tutti i dettagli sul nostro servizio di Restauro Vetri Certificato?
           </p>
-          <Link 
-            to="/servizi/restauro-vetri-certificato" 
+          <a href="/servizi/restauro-vetri-certificato" 
             className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
           >
             Scopri il Restauro Vetri Certificato GioLab <ArrowRight className="h-4 w-4" />
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -182,7 +180,7 @@ export default function RigenerazioneVetroIphoneIpadAppleWatch() {
           Il processo di rigenerazione per iPhone preserva tutte le funzionalità avanzate del 
           display originale: <strong>True Tone, Haptic Touch, ProMotion 120Hz</strong> (sui modelli Pro), 
           e la calibrazione colore perfetta Apple. Se invece il display è completamente danneggiato, 
-          leggi la nostra <Link to="/blog/display-originali-vs-compatibili" className="text-giolab-blue hover:underline font-medium">guida sui display originali vs compatibili</Link>.
+          leggi la nostra <a href="/blog/display-originali-vs-compatibili" className="text-giolab-blue hover:underline font-medium">guida sui display originali vs compatibili</a>.
         </p>
 
         <div className="blog-box-warning">
@@ -358,7 +356,7 @@ export default function RigenerazioneVetroIphoneIpadAppleWatch() {
         <p className="blog-paragraph">
           La rigenerazione del vetro è una soluzione intelligente ed economica per riparare iPhone, 
           iPad e Apple Watch mantenendo la qualità originale Apple. Se cerchi altri servizi, 
-          offriamo anche la <Link to="/blog/batteria-maggiorata-iphone-giolab-assemini" className="text-giolab-blue hover:underline font-medium">batteria maggiorata per iPhone</Link> e la <Link to="/blog/riparazione-face-id-iphone-giolab-assemini" className="text-giolab-blue hover:underline font-medium">riparazione Face ID</Link>.
+          offriamo anche la <a href="/blog/batteria-maggiorata-iphone-giolab-assemini" className="text-giolab-blue hover:underline font-medium">batteria maggiorata per iPhone</a> e la <a href="/blog/riparazione-face-id-iphone-giolab-assemini" className="text-giolab-blue hover:underline font-medium">riparazione Face ID</a>.
         </p>
         <p className="blog-paragraph">
           Se il tuo dispositivo ha solo il vetro rotto ma il display funziona perfettamente, 
@@ -370,12 +368,11 @@ export default function RigenerazioneVetroIphoneIpadAppleWatch() {
           <p className="mb-4">
             Scopri la nostra pagina dedicata con tutti i dettagli su garanzie, prezzi e confronto qualità.
           </p>
-          <Link 
-            to="/servizi/restauro-vetri-certificato" 
+          <a href="/servizi/restauro-vetri-certificato" 
             className="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
           >
             Vai al Restauro Vetri Certificato <ArrowRight className="h-4 w-4" />
-          </Link>
+          </a>
         </div>
       </section>
     </div>

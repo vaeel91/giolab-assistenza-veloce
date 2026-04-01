@@ -7,7 +7,6 @@
  * - "bottom": Static alla fine dell'articolo
  */
 
-import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { blogArticles } from "@/data/blogArticles";
@@ -35,7 +34,7 @@ export const BackToBlog = ({ variant = "top", currentSlug }: BackToBlogProps) =>
       <div className="sticky top-20 z-40 bg-background/95 backdrop-blur-sm border-b border-border py-3">
         <div className="container mx-auto px-4 flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <Link to="/blog">
+            <a href="/blog">
               <Button 
                 variant="outline" 
                 size="sm"
@@ -45,10 +44,10 @@ export const BackToBlog = ({ variant = "top", currentSlug }: BackToBlogProps) =>
                 <span className="hidden sm:inline">Torna al Blog</span>
                 <span className="sm:hidden">Blog</span>
               </Button>
-            </Link>
+            </a>
             
             {prevArticle && (
-              <Link to={`/blog/${prevArticle.slug}`}>
+              <a href={`/blog/${prevArticle.slug}`}>
                 <Button 
                   variant="ghost" 
                   size="sm"
@@ -57,12 +56,12 @@ export const BackToBlog = ({ variant = "top", currentSlug }: BackToBlogProps) =>
                   <ArrowLeft className="w-4 h-4" />
                   <span className="hidden md:inline">Precedente</span>
                 </Button>
-              </Link>
+              </a>
             )}
           </div>
           
           {nextArticle && (
-            <Link to={`/blog/${nextArticle.slug}`}>
+            <a href={`/blog/${nextArticle.slug}`}>
               <Button 
                 variant="ghost" 
                 size="sm"
@@ -71,7 +70,7 @@ export const BackToBlog = ({ variant = "top", currentSlug }: BackToBlogProps) =>
                 <span className="hidden md:inline">Prossimo</span>
                 <ArrowRight className="w-4 h-4" />
               </Button>
-            </Link>
+            </a>
           )}
         </div>
       </div>
@@ -86,7 +85,7 @@ export const BackToBlog = ({ variant = "top", currentSlug }: BackToBlogProps) =>
         {(prevArticle || nextArticle) && (
           <div className="flex flex-col sm:flex-row items-stretch gap-4">
             {prevArticle ? (
-              <Link to={`/blog/${prevArticle.slug}`} className="flex-1">
+              <a href={`/blog/${prevArticle.slug}`} className="flex-1">
                 <Button 
                   variant="outline" 
                   size="lg"
@@ -100,13 +99,13 @@ export const BackToBlog = ({ variant = "top", currentSlug }: BackToBlogProps) =>
                     {prevArticle.title}
                   </span>
                 </Button>
-              </Link>
+              </a>
             ) : (
               <div className="flex-1" />
             )}
             
             {nextArticle ? (
-              <Link to={`/blog/${nextArticle.slug}`} className="flex-1">
+              <a href={`/blog/${nextArticle.slug}`} className="flex-1">
                 <Button 
                   variant="outline" 
                   size="lg"
@@ -120,7 +119,7 @@ export const BackToBlog = ({ variant = "top", currentSlug }: BackToBlogProps) =>
                     {nextArticle.title}
                   </span>
                 </Button>
-              </Link>
+              </a>
             ) : (
               <div className="flex-1" />
             )}
@@ -128,7 +127,7 @@ export const BackToBlog = ({ variant = "top", currentSlug }: BackToBlogProps) =>
         )}
         
         {/* Bottone torna al blog */}
-        <Link to="/blog">
+        <a href="/blog">
           <Button 
             variant="default" 
             size="lg"
@@ -137,7 +136,7 @@ export const BackToBlog = ({ variant = "top", currentSlug }: BackToBlogProps) =>
             <ArrowLeft className="w-5 h-5" />
             Torna agli Articoli del Blog
           </Button>
-        </Link>
+        </a>
       </div>
     </div>
   );

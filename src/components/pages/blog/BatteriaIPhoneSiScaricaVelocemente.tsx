@@ -1,5 +1,4 @@
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 export default function BatteriaIPhoneSiScaricaVelocemente() {
@@ -92,7 +91,7 @@ export default function BatteriaIPhoneSiScaricaVelocemente() {
           Se riconosci anche solo uno di questi sintomi, ti consigliamo di non aspettare. Da <strong>Giolab ad Assemini</strong> offriamo un <strong>controllo gratuito</strong> della salute della batteria: vieni in negozio o contattaci su WhatsApp al <a href="tel:+393406970686" className="text-giolab-blue hover:underline font-semibold">340 69 70 686</a>.
         </p>
         <p className="blog-paragraph">
-          Approfondisci tutti i segnali nella nostra guida completa: <Link to="/blog/come-capire-batteria-iphone-da-sostituire" className="text-giolab-blue hover:underline">Come capire se la batteria iPhone è da sostituire</Link>.
+          Approfondisci tutti i segnali nella nostra guida completa: <a href="/blog/come-capire-batteria-iphone-da-sostituire" className="text-giolab-blue hover:underline">Come capire se la batteria iPhone è da sostituire</a>.
         </p>
       </section>
 
@@ -104,14 +103,14 @@ export default function BatteriaIPhoneSiScaricaVelocemente() {
           Il servizio di <strong>sostituzione batteria di Giolab</strong> è rapido, sicuro e garantito. Ecco cosa offriamo:
         </p>
         <ul className="blog-list-bulleted">
-          <li>Intervento completato in circa <strong>1 ora</strong> — scopri il nostro <Link to="/blog/riparazione-iphone-1-ora-giolab-assemini" className="text-giolab-blue hover:underline">servizio di riparazione rapida</Link></li>
+          <li>Intervento completato in circa <strong>1 ora</strong> — scopri il nostro <a href="/blog/riparazione-iphone-1-ora-giolab-assemini" className="text-giolab-blue hover:underline">servizio di riparazione rapida</a></li>
           <li>Batterie di alta qualità con <strong>garanzia 12 mesi</strong></li>
           <li>Disponibile per <strong>tutti i modelli iPhone</strong>: dal 7, 8, X fino ai più recenti 13, 14, 15</li>
           <li>Prezzo <strong>trasparente</strong> e comunicato prima dell'intervento, senza sorprese</li>
           <li><strong>Diagnosi gratuita</strong> dello stato batteria</li>
         </ul>
         <p className="blog-paragraph">
-          Vuoi ancora più autonomia? Scopri la nostra <Link to="/blog/batteria-maggiorata-iphone-giolab-assemini" className="text-giolab-blue hover:underline">batteria maggiorata per iPhone</Link>, con fino al <strong>+30% di autonomia</strong> rispetto all'originale.
+          Vuoi ancora più autonomia? Scopri la nostra <a href="/blog/batteria-maggiorata-iphone-giolab-assemini" className="text-giolab-blue hover:underline">batteria maggiorata per iPhone</a>, con fino al <strong>+30% di autonomia</strong> rispetto all'originale.
         </p>
         <p className="blog-paragraph">
           Siamo in <strong>Via Cagliari 200, Assemini</strong>, a pochi minuti dal centro di Cagliari. Raggiungici facilmente da Quartu Sant'Elena, Elmas, Decimomannu e tutta l'area metropolitana.

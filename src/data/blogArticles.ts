@@ -3,9 +3,9 @@ import recuperoDatiIPhoneRottoAssemini from "@/assets/recupero-dati-iphone-rotto
 import batteriaMaggiorataIPhoneAssemini from "@/assets/batteria-maggiorata-iphone-assemini.jpg";
 import riparazioneIPhone1OraAssemini from "@/assets/riparazione-iphone-1-ora-assemini.jpg";
 import rigenerazioneVetro from "@/assets/rigenerazione-vetro-apple-watch-iphone-ipad-giolab-assemini.jpg";
-import manutenzionePS5 from "/og-images/manutenzione-playstation-5-ps5-pulizia-surriscaldamento-giolab-assemini.jpg";
+import manutenzionePS5 from "@/assets/manutenzione-playstation-5-ps5-pulizia-surriscaldamento-giolab-assemini.jpg";
 import codiceModelloDispositivo from "@/assets/trova-codice-modello-ipad-iphone-samsung-xiaomi-giolab.jpg";
-import riparazioneFaceID from "/og-images/riparazione-face-id-iphone-truedepth-sensore-giolab-assemini.jpg";
+import riparazioneFaceID from "@/assets/riparazione-face-id-iphone-truedepth-sensore-giolab-assemini.jpg";
 import pcLentoVelocizzare from "@/assets/pc-lento-velocizzare-ssd-pulizia-giolab-assemini.jpg";
 import displayOriginaliCompatibili from "@/assets/display-iphone-originale-oem-oled-compatibile-tft-confronto-giolab.jpg";
 import sostituzioneDisplayMacBook from "@/assets/sostituzione-display-macbook-giolab-assemini.jpg";

@@ -1,6 +1,5 @@
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
 import OptimizedImage from "@/components/OptimizedImage";
-import { Link } from "react-router-dom";
 import { Camera, Search, CheckCircle, Wrench, AlertCircle, Monitor, Settings, Cpu, Zap } from "lucide-react";
 import hpVictusNotebook from "@/assets/hp-victus-notebook-laboratorio-giolab.jpg";
 import hpVictusGestionePrima from "@/assets/hp-victus-gestione-dispositivi-prima-giolab.jpg";
@@ -34,7 +33,7 @@ export default function RiparazioneWebcamHPVictus() {
           </p>
 
           <p className="text-lg leading-relaxed mb-6">
-            Se il tuo notebook presenta anche altri problemi come <strong>lentezza generale o surriscaldamento</strong>, ti consigliamo di leggere la nostra guida su <Link to="/blog/pc-lento-velocizzare-ssd-pulizia-giolab-assemini" className="text-giolab-blue hover:underline font-medium">come velocizzare un PC lento con SSD e pulizia interna</Link>.
+            Se il tuo notebook presenta anche altri problemi come <strong>lentezza generale o surriscaldamento</strong>, ti consigliamo di leggere la nostra guida su <a href="/blog/pc-lento-velocizzare-ssd-pulizia-giolab-assemini" className="text-giolab-blue hover:underline font-medium">come velocizzare un PC lento con SSD e pulizia interna</a>.
           </p>
 
           <OptimizedImage 

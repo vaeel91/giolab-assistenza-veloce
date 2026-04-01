@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Phone, FileText, BookOpen, Search } from "lucide-react";
-import { Link } from "react-router-dom";
 import giolabLogo from "@/assets/giolab-logo-new.png";
 import { QuoteRequestDialog } from "./QuoteRequestDialog";
 const Hero = () => {
@@ -78,22 +77,22 @@ const Hero = () => {
             </Button>
 
             {/* Bottone Servizi */}
-            <Link to="/servizi" className="w-full">
+            <a href="/servizi" className="w-full">
               <Button variant="outline" size="sm" className="text-xs sm:text-sm md:text-base lg:text-lg px-2 py-2 sm:px-4 sm:py-4 md:px-6 md:py-6 h-auto border-2 hover:border-giolab-blue hover:text-giolab-blue flex items-center justify-center w-full">
                 <Search className="mr-1 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
                 Servizi
               </Button>
-            </Link>
+            </a>
           </div>
           
           {/* Link secondari - visibili su mobile e desktop */}
           <div className="flex flex-row gap-2 md:gap-3 justify-center items-center pt-3 animate-fade-in-up delay-400">
-            <Link to="/trova-modello-dispositivo">
+            <a href="/trova-modello-dispositivo">
               <Button variant="ghost" size="sm" className="text-xs md:text-sm px-2 md:px-4 py-2 hover:text-giolab-blue">
                 <Search className="mr-1 md:mr-2 h-3.5 w-3.5 md:h-4 md:w-4" />
                 Trova Modello
               </Button>
-            </Link>
+            </a>
             <Button variant="ghost" size="sm" onClick={() => {
             const element = document.getElementById('blog');
             if (element) {

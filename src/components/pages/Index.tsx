@@ -9,11 +9,9 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import StickyMobileActionBar from "@/components/StickyMobileActionBar";
-import SEOHead from "@/components/SEOHead";
 import ScrollToTop from "@/components/ScrollToTop";
 import { useEffect, useRef, useState } from "react";
 import { calculateAggregateRating, getReviewsForSchema } from "@/data/reviews";
-import { Link } from "react-router-dom";
 import { Smartphone, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 const Index = () => {
@@ -45,10 +43,6 @@ const Index = () => {
     };
   }, []);
   return <>
-      <SEOHead title="Riparazione iPhone e Smartphone ad Assemini | Giolab – Anche a Cagliari" description="Riparazione iPhone, Samsung e altri smartphone in 1 ora ad Assemini. ✅ Garanzia 12 mesi ✅ Preventivo gratuito. Assistenza specializzata anche per PC, MacBook e Console." keywords="riparazione iPhone Assemini, riparazione smartphone Assemini, assistenza iPhone Cagliari, batteria maggiorata iPhone Assemini, riparazione vetro iPhone Assemini, micro-saldature Assemini, riparazione PC Assemini, assistenza console Assemini, centro assistenza iPhone Cagliari, rigenerazione vetro iPhone" breadcrumbs={[{
-      name: "Home",
-      url: "https://giolabriparazioni.it/"
-    }]} />
       <Header />
       
       <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth pb-20 md:pb-0 scroll-pt-16 md:scroll-pt-0">
@@ -77,10 +71,10 @@ const Index = () => {
               
               <div className="flex flex-col gap-3 items-stretch sm:flex-row sm:items-center sm:justify-center pt-4 md:pt-6">
                 <Button asChild size="lg" className="bg-giolab-blue hover:bg-giolab-blue/90 text-white px-6 py-5 md:px-8 md:py-6 text-base md:text-lg w-full sm:w-auto">
-                  <Link to="/catalogo">
+                  <a href="/catalogo">
                     <ShoppingBag className="mr-2 h-5 w-5" />
                     Scopri il Catalogo
-                  </Link>
+                  </a>
                 </Button>
                 
                 <Button asChild variant="outline" size="lg" className="border-giolab-blue text-giolab-blue hover:bg-giolab-blue/10 px-6 py-5 md:px-8 md:py-6 text-base md:text-lg w-full sm:w-auto">

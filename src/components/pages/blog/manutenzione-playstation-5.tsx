@@ -4,7 +4,6 @@
 
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
 import { ArticleCTA } from "@/components/blog/ArticleCTA";
-import { Link } from "react-router-dom";
 export default function ManutenzionePlayStation5() {
   const articleContent = <div className="blog-content">
       <section>
@@ -175,7 +174,7 @@ export default function ManutenzionePlayStation5() {
           <li>⭐ Prestazioni più stabili nel tempo</li>
         </ul>
         <p className="blog-paragraph">
-          Lo stesso tipo di <strong>manutenzione preventiva</strong> vale anche per PC e notebook. Scopri come <Link to="/blog/pc-lento-velocizzare-ssd-pulizia-giolab-assemini" className="text-giolab-blue hover:underline font-medium">velocizzare un PC lento con SSD, pulizia e pasta termica</Link>.
+          Lo stesso tipo di <strong>manutenzione preventiva</strong> vale anche per PC e notebook. Scopri come <a href="/blog/pc-lento-velocizzare-ssd-pulizia-giolab-assemini" className="text-giolab-blue hover:underline font-medium">velocizzare un PC lento con SSD, pulizia e pasta termica</a>.
         </p>
       </section>
 

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useMemo } from "react";
 import { 
   CheckCircle2, 
@@ -23,7 +22,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import SEOHead from "@/components/SEOHead";
 import SocialShare from "@/components/SocialShare";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { getCanonicalUrl } from "@/config/seoConfig";
@@ -348,18 +346,6 @@ const IPhoneRicondizionati = () => {
 
   return (
     <>
-      <SEOHead
-        title={pageTitle}
-        description={pageDescription}
-        keywords="iphone ricondizionati, iphone usati certificati, iphone ricondizionati assemini, iphone ricondizionati cagliari, vendita iphone ricondizionati, iphone ricondizionati garantiti, gradi estetici iphone, batteria iphone ricondizionato, garanzia iphone ricondizionato, permuta iphone assemini"
-        ogUrl={pageUrl}
-        ogImage="https://giolabriparazioni.it/og-image-giolab.jpg"
-        breadcrumbs={[
-          { name: "Home", url: "https://giolabriparazioni.it/" },
-          { name: "iPhone Ricondizionati", url: pageUrl }
-        ]}
-        structuredData={[faqSchema, productSchema]}
-      />
 
       <FloatingWhatsApp />
 
@@ -593,10 +579,10 @@ const IPhoneRicondizionati = () => {
                       {product.available ? (
                         <div className="space-y-2 pt-4">
                           <Button className="w-full" asChild>
-                            <Link to="/contatti">
+                            <a href="/contatti">
                               <Store className="w-4 h-4 mr-2" />
                               Prenota ora
-                            </Link>
+                            </a>
                           </Button>
                           <Button 
                             variant="outline" 
@@ -622,10 +608,10 @@ const IPhoneRicondizionati = () => {
                   La disponibilità viene aggiornata quotidianamente. Contattaci per modelli specifici.
                 </p>
                 <Button variant="outline" asChild>
-                  <Link to="/contatti">
+                  <a href="/contatti">
                     <Phone className="w-4 h-4 mr-2" />
                     Contattaci per altre disponibilità
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </div>
@@ -706,10 +692,10 @@ const IPhoneRicondizionati = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <Button size="lg" asChild>
-                  <Link to="/contatti">
+                  <a href="/contatti">
                     <Store className="w-5 h-5 mr-2" />
                     Ritira in negozio ad Assemini
-                  </Link>
+                  </a>
                 </Button>
                 <Button 
                   size="lg" 

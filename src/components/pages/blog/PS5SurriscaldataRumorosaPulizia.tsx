@@ -1,5 +1,4 @@
 import { BlogArticleTemplate } from "@/components/BlogArticleTemplate";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 export default function PS5SurriscaldataRumorosaPulizia() {
@@ -28,7 +27,7 @@ export default function PS5SurriscaldataRumorosaPulizia() {
           <li><strong>Usura accelerata</strong> dei componenti interni</li>
         </ul>
         <p className="blog-paragraph">
-          Per approfondire il tema del metallo liquido e della manutenzione preventiva, leggi la nostra guida completa: <Link to="/blog/manutenzione-playstation-5" className="text-giolab-blue hover:underline">Manutenzione PlayStation 5: tutto quello che devi sapere</Link>.
+          Per approfondire il tema del metallo liquido e della manutenzione preventiva, leggi la nostra guida completa: <a href="/blog/manutenzione-playstation-5" className="text-giolab-blue hover:underline">Manutenzione PlayStation 5: tutto quello che devi sapere</a>.
         </p>
       </section>
 
@@ -113,7 +112,7 @@ export default function PS5SurriscaldataRumorosaPulizia() {
           <li>Riparazione <strong>lettore dischi</strong></li>
         </ul>
         <p className="blog-paragraph">
-          Scopri tutti i dettagli nella nostra pagina dedicata: <Link to="/servizi/riparazione-console-assemini" className="text-giolab-blue hover:underline">Riparazione Console ad Assemini</Link>.
+          Scopri tutti i dettagli nella nostra pagina dedicata: <a href="/servizi/riparazione-console-assemini" className="text-giolab-blue hover:underline">Riparazione Console ad Assemini</a>.
         </p>
       </section>
 
